@@ -36,13 +36,14 @@ cd "$(dirname "$0")"
 # packages.
 PRUNE_PACKAGES=(
     4ti2interface ace agt anupq browse caratinterface cddinterface
-    cohomolo crypting curlinterface cvec datastructures deepthought
-    digraphs ferret fining float fplsa fr francy fwtree genss hap
-    hapcryst help images io io_forhomalg itc json jupyterkernel
-    jupyterviz kan kbmag majoranaalgebras matgrp nconvex
-    normalizinterface nq openmath orb packagemanager polymaking
-    profiling rcwa recog scscp semigroups sgpviz simpcomp singular
-    unitlib walrus xgap xmod xmodalg zeromqinterface
+    classicalmaximals cohomolo crypting curlinterface cvec
+    datastructures deepthought digraphs ferret fining float fplsa fr
+    francy fwtree genss hap hapcryst help images io io_forhomalg itc
+    json jupyterkernel jupyterviz kan kbmag majoranaalgebras matgrp
+    nconvex normalizinterface nq openmath orb origami packagemaker
+    packagemanager polymaking profiling rcwa recog scscp semigroups
+    sgpviz simpcomp singular unitlib walrus xgap xmod xmodalg
+    zeromqinterface
 )
 
 SRC=build/gap
