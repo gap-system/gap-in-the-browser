@@ -29,20 +29,25 @@ cd "$(dirname "$0")"
 #       either, or
 #   (c) it loads but is useless in a browser (X11 GUIs, interfaces to
 #       external systems, the package manager).
-# Notable casualties of (b): hap (via nq), simpcomp (via io), rcwa (via
-# fr -> io), unitlib (via io), agt (via digraphs). If GAP's wasm build
-# ever gains kernel modules for io/orb/digraphs, revisit this list --
-# statically linking just io and orb would revive ~150 MB of pure-GAP
-# packages.
+#
+# Exception: the GAP emscripten build statically links the 'io' package's
+# kernel module into the kernel (etc/emscripten/build.sh), so io and the
+# pure-GAP packages that only needed io -- simpcomp, fr, rcwa, unitlib --
+# DO load and are kept. We still drop the packages that needed io purely
+# as transport to external solvers/systems (help/HeLP, 4ti2interface,
+# openmath, scscp, io_forhomalg) and packagemaker (skeleton generator,
+# pointless in a browser): they would load but cannot do their job.
+# Linking orb the same way would revive a further group (fining, recog,
+# genss, ...) -- a candidate next step.
 PRUNE_PACKAGES=(
     4ti2interface ace agt anupq browse caratinterface cddinterface
     classicalmaximals cohomolo crypting curlinterface cvec
-    datastructures deepthought digraphs ferret fining float fplsa fr
-    francy fwtree genss hap hapcryst help images io io_forhomalg itc
+    datastructures deepthought digraphs ferret fining float fplsa
+    francy fwtree genss hap hapcryst help images io_forhomalg itc
     json jupyterkernel jupyterviz kan kbmag majoranaalgebras matgrp
     nconvex normalizinterface nq openmath orb origami packagemaker
-    packagemanager polymaking profiling rcwa recog scscp semigroups
-    sgpviz simpcomp singular unitlib walrus xgap xmod xmodalg
+    packagemanager polymaking profiling recog scscp semigroups
+    sgpviz singular walrus xgap xmod xmodalg
     zeromqinterface
 )
 
