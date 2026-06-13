@@ -1,0 +1,34 @@
+\GAPDocLabFile{nofoma}
+\makelabel{nofoma:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{nofoma:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{nofoma:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{nofoma:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{nofoma:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{nofoma:The nofoma package}{1}{X7D9CADDE7991BC82}
+\makelabel{nofoma:Installation of the nofoma package}{1.1}{X81239C057F616FC3}
+\makelabel{nofoma:Normal forms of matrices}{2}{X7CB17C628017D2B2}
+\makelabel{nofoma:The Frobenius normal form}{2.1}{X872D4005810328D8}
+\makelabel{nofoma:The Jordan normal form}{2.2}{X8617E70787358AAD}
+\makelabel{nofoma:Other functionality}{3}{X86888B667BC469D8}
+\makelabel{nofoma:The Jordan-Chevalley decomposition}{3.1}{X85FD78337E4F199D}
+\makelabel{nofoma:The primary decomposition}{3.2}{X8202AE3378FA1965}
+\makelabel{nofoma:Auxiliary functions}{4}{X866E18057EF83F65}
+\makelabel{nofoma:Vectors and matrices and their associated polynomials}{4.1}{X78EBB30F827DBDF4}
+\makelabel{nofoma:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{nofoma:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{nofoma:Index}{Ind}{X83A0356F839C696F}
+\makelabel{nofoma:FrobeniusNormalForm}{2.1.1}{X831DC8FD82FB92CE}
+\makelabel{nofoma:FrobeniusNormalFormLikeRCFT}{2.1.2}{X81D3D6CC7E704CE7}
+\makelabel{nofoma:InvariantFactorsMat}{2.1.3}{X7B675811827CBCEC}
+\makelabel{nofoma:JordanNormalForm}{2.2.1}{X86D2B8A98222AC4C}
+\makelabel{nofoma:JordanChevalleyDecMat}{3.1.1}{X7E20260B7DE0AAA2}
+\makelabel{nofoma:JordanChevalleyDecMatF}{3.1.2}{X811E309378DAD798}
+\makelabel{nofoma:PrimaryDecomposition for IsMatrixOrMatrixObj}{3.2.1}{X7DD44F8E79BFDE8B}
+\makelabel{nofoma:GcdCoprimeSplit}{4.1.1}{X868E1E5878D2DB25}
+\makelabel{nofoma:PolynomialToMatVec}{4.1.2}{X8228A5537A30AD38}
+\makelabel{nofoma:LcmMaximalVectorMat}{4.1.3}{X7D07B0E67857FFA4}
+\makelabel{nofoma:SpinMatVector}{4.1.4}{X84C7CEF97C03673D}
+\makelabel{nofoma:CyclicChainMat}{4.1.5}{X810E09A77D1CA2A8}
+\makelabel{nofoma:MaximalVectorMat}{4.1.6}{X7915F1A4798392DF}
+\makelabel{nofoma:JacobMatComplement}{4.1.7}{X83FABFE183BD7477}
+\makelabel{nofoma:RatFormStep1}{4.1.8}{X8741791C7A022080}

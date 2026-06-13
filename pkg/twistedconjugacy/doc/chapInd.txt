@@ -1,0 +1,98 @@
+  
+  
+  [1XIndex[101X
+  
+  [2X\=[102X, for double cosets of a PcpGroup 7.2-5 
+      for orbits of an affine action 10.3-10 
+      for twisted conjugacy classes 4.2-10 
+  [2X\in[102X, for an element and a double coset of a PcpGroup 7.2-1 
+      for an element and a group derivation image 9.3-1 
+      for an element and a twisted conjugacy class 4.2-4 
+      for an element and an orbit of an affine action 10.3-4 
+  [2XActingDomain[102X, of a twisted conjugacy class 4.2-2 
+      of an orbit of an affine action 10.3-2 
+  [2XAffineActionByGroupDerivation[102X 10.1-1 
+  [2XAsList[102X, for a double coset of a PcpGroup 7.2-4 
+      for a group derivation image 9.3-4 
+      for a twisted conjugacy class 4.2-8 
+      for an orbit of an affine action 10.3-8 
+  [2XCoincidenceGroup[102X 8.2-2 
+  [2XCoincidenceReidemeisterSpectrum[102X 5.2-3 
+  [2XDoubleCosetIndex[102X 7.2-8 
+  [2XDoubleCosetIndexNC[102X 7.2-8 
+  [2XDoubleCosetRepsAndSizes[102X, for PcpGroups 7.2-7 
+  [2XDoubleCosets[102X, for PcpGroups 7.2-6 
+  [2XDoubleCosetsNC[102X, for PcpGroups 7.2-6 
+  [2XExtendedReidemeisterSpectrum[102X 5.2-2 
+  [2XFixedPointGroup[102X 8.2-1 
+  [2XFunctionAction[102X, of a twisted conjugacy class 4.2-3 
+      of an orbit of an affine action 10.3-3 
+  [2XGroupDerivationByAffineAction[102X 9.1-3 
+  [2XGroupDerivationByFunction[102X 9.1-2 
+  [2XGroupDerivationByImages[102X 9.1-1 
+  [2XGroupDerivationByImagesNC[102X 9.1-1 
+  [2XImage[102X, of a group derivation 9.2-5 
+      of a subgroup under a group derivation 9.2-5 
+      of an element under a group derivation 9.2-5 
+  [2XInducedHomomorphism[102X 8.3-1 
+  [2XIntersection[102X, of a list of right cosets of a PcpGroup 7.1-1 
+      of right cosets of a PcpGroup 7.1-1 
+  [2XIsBijective[102X, for a group derivation 9.2-3 
+  [2XIsFinite[102X, for a double coset of a PcpGroup 7.2-2 
+      for a group derivation image 9.3-2 
+      for a twisted conjugacy class 4.2-5 
+      for an orbit of an affine action 10.3-5 
+  [2XIsInjective[102X, for a group derivation 9.2-1 
+  [2XIsRationalReidemeisterGeneratingFunction[102X 6.3-1 
+  [2XIsRationalReidemeisterZetaFunction[102X 6.2-1 
+  [2XIsSurjective[102X, for a group derivation 9.2-2 
+  [2XIsTwistedConjugate[102X 3.2-1 
+  [2XIteratedReidemeisterNumberDecomposition[102X 6.1-1 
+  [2XKernel[102X, of a group derivation 9.2-4 
+  [2XList[102X, of a double coset of a PcpGroup 7.2-4 
+      of a group derivation image 9.3-4 
+      of a twisted conjugacy class 4.2-8 
+      of an orbit of an affine action 10.3-8 
+  [2XNrOrbitsAffineAction[102X 10.2-3 
+  [2XNrTwistedConjugacyClasses[102X 5.1-1 
+  [2XOrbitAffineAction[102X 10.2-1 
+  [2XOrbitsAffineAction[102X 10.2-2 
+  [2XPreImages[102X, of an element under a group derivation 9.2-7 
+  [2XPreImagesRepresentative[102X, of an element under a group derivation 9.2-6 
+  [2XPrintReidemeisterGeneratingFunction[102X 6.3-3 
+  [2XPrintReidemeisterZetaFunction[102X 6.2-3 
+  [2XRandom[102X, in a twisted conjugacy class 4.2-9 
+      in an orbit of an affine action 10.3-9 
+  [2XReidemeisterClass[102X 4.1-1 
+  [2XReidemeisterClasses[102X 4.3-1 
+  [2XReidemeisterGeneratingFunction[102X 6.3-2 
+  [2XReidemeisterNumber[102X 5.1-1 
+  [2XReidemeisterSpectrum[102X 5.2-1 
+  [2XReidemeisterZetaFunction[102X 6.2-2 
+  [2XRepresentative[102X, of a twisted conjugacy class 4.2-1 
+      of an orbit of an affine action 10.3-1 
+  [2XRepresentativeAffineAction[102X 10.2-5 
+  [2XRepresentativesAutomorphismClasses[102X 8.1-1 
+  [2XRepresentativesEndomorphismClasses[102X 8.1-2 
+  [2XRepresentativesHomomorphismClasses[102X 8.1-3 
+  [2XRepresentativesReidemeisterClasses[102X 4.3-2 
+  [2XRepresentativesTwistedConjugacyClasses[102X 4.3-2 
+  [2XRepresentativeTwistedConjugation[102X 3.2-2 
+  [2XRestrictedHomomorphism[102X 8.3-2 
+  [2XSize[102X, of a double coset of a PcpGroup 7.2-3 
+      of a group derivation image 9.3-3 
+      of a twisted conjugacy class 4.2-6 
+      of an orbit of an affine action 10.3-6 
+  [2XStabiliserAffineAction[102X 10.2-4 
+  [2XStabiliserOfExternalSet[102X, of a twisted conjugacy class 4.2-7 
+      of an orbit of an affine action 10.3-7 
+  [2XStabilizerAffineAction[102X 10.2-4 
+  [2XStabilizerOfExternalSet[102X, of a twisted conjugacy class 4.2-7 
+      of an orbit of an affine action 10.3-7 
+  [2XTotalReidemeisterSpectrum[102X 5.2-4 
+  [2XTwistedConjugacyClass[102X 4.1-1 
+  [2XTwistedConjugacyClasses[102X 4.3-1 
+  [2XTwistedConjugation[102X 3.1-1 
+  
+  
+  -------------------------------------------------------

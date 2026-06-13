@@ -1,0 +1,76 @@
+  
+  
+  [1XReferences[101X
+  
+  [[20XAS72[120X]  ([1m[31mAbramowitz,  M.  and Stegun, I. A.[15X, Eds.), [17XHandbook of Mathematical
+  Functions[117X, Dover, New York (1972).
+  
+  [[20XBae02[120X]  [16XBaez,  J.[116X,  [17XThe  octonions[117X,  [18XBulletin  of the American Mathematical
+  Society[118X, [19X39[119X, 2 (2002), 145--205.
+  
+  [[20XBBIT21[120X]  [16XBannai,  E.,  Bannai,  E.,  Ito,  T.  and  Tanaka,  R.[116X,  [17XAlgebraic
+  Combinatorics[117X,  Walter de Gruyter GmbH, De {Gruyter}, {Series} in {Discrete}
+  {Mathematics}   and   {Applications},   5,   Berlin/Boston   (2021),  (OCLC:
+  on1243061900).
+  
+  [[20XCS03[120X]  [16XConway,  J. H. and Smith, D. A.[116X, [17XOn Quaternions and Octonions: Their
+  Geometry, Arithmetic, and Symmetry[117X, CRC Press (2003).
+  
+  [[20XCS13[120X]  [16XConway,  J.  H.  and Sloane, N. J. A.[116X, [17XSphere packings, lattices and
+  groups[117X, Springer Science \& Business Media, [19X290[119X (2013).
+  
+  [[20XCVL91[120X] [16XCameron, P. J. and Van Lint, J. H.[116X, [17XDesigns, graphs, codes and their
+  links[117X, Cambridge University Press, [19X3[119X, Cambridge (1991).
+  
+  [[20XDGS77[120X] [16XDelsarte, P., Goethals, J. M. and Seidel, J. J.[116X, [17XSpherical codes and
+  designs[117X, [18XGeometriae Dedicata[118X, [19X6[119X (1977), 363--388.
+  
+  [[20XEG96[120X]  [16XElkies,  N.  D. and Gross, B. H.[116X, [17XThe exceptional cone and the Leech
+  lattice[117X,  [18XInternational  Mathematics  Research  Notices[118X,  [19X1996[119X,  14  (1996),
+  665--698, (Publisher: Citeseer).
+  
+  [[20XEG01[120X]  [16XElkies,  N.  D.  and  Gross,  B. H.[116X, [17XCubic Rings and the Exceptional
+  Jordan Algebra[117X, [18XDuke Mathematical Journal[118X, [19X109[119X, 2 (2001), 383--410.
+  
+  [[20XFK94[120X]  [16XFaraut,  J.  and Koranyi, A.[116X, [17XAnalysis on Symmetric Cones[117X, Clarendon
+  Press (1994).
+  
+  [[20XFKK+00[120X]  [16XFaraut,  J.,  Kaneyuki,  S.,  Koranyi, A., Lu, Q.-k. and Roos, G.[116X,
+  [17XAnalysis  and  Geometry on Complex Homogeneous Domains[117X, Birkhäuser, Progress
+  in mathematics, 185, Boston (2000).
+  
+  [[20XHog82[120X]  [16XHoggar,  S. G.[116X, [17Xt-Designs in projective spaces[117X, [18XEuropean Journal of
+  Combinatorics[118X, [19X3[119X, 3 (1982), 233--254.
+  
+  [[20XHog92[120X] [16XHoggar, S. G.[116X, [17Xt-Designs with general angle set[117X, [18XEuropean Journal of
+  Combinatorics[118X, [19X13[119X, 4 (1992), 257--271.
+  
+  [[20XLyu09[120X]  [16XLyubich,  Y.  I.[116X,  [17XOn  tight projective designs[117X, [18XDesigns, Codes and
+  Cryptography[118X, [19X51[119X, 1 (2009), 21--31.
+  
+  [[20XMcC04[120X]   [16XMcCrimmon,  K.[116X,  [17XA  Taste  of  Jordan  Algebras[117X,  Springer-Verlag,
+  Universitext, New York (2004).
+  
+  [[20XNas22[120X]  [16XNasmith,  B.[116X,  [17XOctonions  and  the  two  strictly  projective tight
+  5-designs[117X, [18XAlgebraic Combinatorics[118X, [19X5[119X, 3 (2022), 401--411.
+  
+  [[20XNas23[120X]  [16XNasmith, B.[116X, [17XTight Projective 5-Designs and Exceptional Structures[117X,
+  {PhD}  {Thesis},  Royal  Military  College  of  Canada,  Kingston ON (2023),
+  (Accepted: 2023-07-27T12:24:01Z).
+  
+  [[20XSV00[120X]  [16XSpringer,  T. A. and Veldkamp, F. D.[116X, [17XOctonions, Jordan Algebras and
+  Exceptional Groups[117X, Springer-Verlag, Springer {Monographs} in {Mathematics},
+  Berlin Heidelberg (2000).
+  
+  [[20XWil09a[120X]  [16XWilson, R. A.[116X, [17XThe Finite Simple Groups[117X, Springer-Verlag, Graduate
+  {Texts} in {Mathematics}, London (2009).
+  
+  [[20XWil09b[120X] [16XWilson, R. A.[116X, [17XOctonions and the Leech lattice[117X, [18XJournal of Algebra[118X,
+  [19X322[119X, 6 (2009), 2186--2190.
+  
+  [[20XWil11[120X]  [16XWilson,  R.  A.[116X,  [17XConway's  group  and  octonions[117X, [18XJournal of Group
+  Theory[118X, [19X14[119X, 1 (2011), 1--8.
+  
+  
+  
+  [32X

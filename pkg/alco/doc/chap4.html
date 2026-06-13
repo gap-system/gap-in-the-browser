@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (ALCO) - Chapter 4: Spherical and Projective Designs</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap4"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap5.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap4_mj.html">[MathJax on]</a></p>
+<p><a id="X7B34D3B17F1B8391" name="X7B34D3B17F1B8391"></a></p>
+<div class="ChapSects"><a href="chap4.html#X7B34D3B17F1B8391">4 <span class="Heading">Spherical and Projective Designs</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X79A71E957D5B9755">4.1 <span class="Heading">Jacobi Polynomials</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X872DC5F085155040">4.1-1 JacobiPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C78C3A57DDC372B">4.1-2 <span class="Heading">Renormalized Jacobi Polynomials</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X83D7DAD082EAD26D">4.2 <span class="Heading">Jordan Designs</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X82BCF4BA84BDEE9E">4.2-1 <span class="Heading">Jordan Design Categories</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7FD006D77B3C98E2">4.2-2 JordanDesignByParameters</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X82BB5F997B7B7B3A">4.2-3 <span class="Heading">Jordan Rank and Degree</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X87D80CFF7F4FD7D6">4.2-4 JordanDesignQPolynomials</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X80A1BCF87B87D691">4.2-5 JordanDesignConnectionCoefficients</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X87DA51657F7EC947">4.3 <span class="Heading">Designs with an Angle Set</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X848E40D6842751A6">4.3-1 IsJordanDesignWithAngleSet</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X78AC6815875A2024">4.3-2 <span class="Heading">Design Angle Sets</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X840BF5428457449B">4.3-3 JordanDesignByAngleSet</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7923181A81406714">4.3-4 JordanDesignNormalizedAnnihilatorPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85E104A27EC8435A">4.3-5 JordanDesignNormalizedIndicatorCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85E1790D86685EAF">4.3-6 IsJordanDesignWithPositiveIndicatorCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X858B619F7E32D5EB">4.3-7 JordanDesignSpecialBound</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X803F6A9986E27413">4.4 <span class="Heading">Designs with Angle Set and Cardinality</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F730A1C7FC9D987">4.4-1 <span class="Heading">Design Cardinality</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7CA9D3F585A7CBC3">4.4-2 <span class="Heading">Designs at the Special Bound</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X80BE4157859BAA6A">4.4-3 JordanDesignAnnihilatorPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C7C5DEF86F051F4">4.4-4 JordanDesignIndicatorCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C4ADEEA8355A774">4.4-5 <span class="Heading">Design Strength</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7DBF21947AB79F1B">4.4-6 <span class="Heading">Schemes and Tight Designs</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X814E031B82F35E16">4.5 <span class="Heading">Designs Admitting a Regular Scheme</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X83501A01792752CC">4.5-1 JordanDesignSubdegrees</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7EE9F8D97A51FBF9">4.6 <span class="Heading">Designs Admitting an Association Scheme</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85F7CF2D7FDF58D7">4.6-1 JordanDesignBoseMesnerAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F95AE4A7B7B5B2B">4.6-2 JordanDesignBoseMesnerIdempotentBasis</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X851F03427CFDC513">4.6-3 JordanDesignIntersectionNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X84E0CAFE83145B3F">4.6-4 JordanDesignKreinNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X87C0A2067F13F01A">4.6-5 JordanDesignFirstEigenmatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7FC9FDCC7DD82286">4.6-6 JordanDesignSecondEigenmatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7FB944C182A2FBE3">4.6-7 JordanDesignMultiplicities</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7E7012EB7BFE889D">4.6-8 DesignValencies</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X788831797E45CE02">4.6-9 JordanDesignReducedAdjacencyMatrices</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7A489A5D79DA9E5C">4.7 <span class="Heading">Examples</span></a>
+</span>
+</div>
+</div>
+
+<h3>4 <span class="Heading">Spherical and Projective Designs</span></h3>
+
+<p>A spherical or projective design is a finite subset of a sphere or projective space (see <a href="chapBib.html#biBdelsarte_spherical_1977">[DGS77]</a> and <a href="chapBib.html#biBhoggar_t-designs_1982">[Hog82]</a> for more details). Certain designs have special properties and interesting symmetries. The <strong class="pkg">ALCO</strong> package allows users to study both spherical and projective designs by modelling both as finite sets of primitive idempotents of a simple Euclidean Jordan algebra.</p>
+
+<p>Specifically, the primitive idempotents of simple Euclidean Jordan algebras of rank <span class="Math">2</span> have the geometry of a sphere. The correspondence involves converting Euclidean inner product <span class="Math">\cos(\alpha)</span> between two unit vectors on a sphere into the corresponding Jordan inner product <span class="Math">\mathrm{Tr}(x\circ y)</span> given by <span class="Math">(1 + \cos(\alpha))/2</span> (described in <a href="chapBib.html#biBnasmith_tight_2023">[Nas23, p. 72]</a>). Likewise, the primitive idempotents of a simple Euclidean Jordan algebras of degrees <span class="Math">1</span>, <span class="Math">2</span>, <span class="Math">4</span>, or <span class="Math">8</span> have the geometry of a real, complex, quaternion, or octonion projective space.</p>
+
+<p>The tools below allow one to construct a <strong class="pkg">GAP</strong> object to represent a design and collect various computed attributes. Constructing a design and its parameters using these tools does not guarantee the existence of such a design, although known examples and possible instances may be studied using these tools.</p>
+
+<p><a id="X79A71E957D5B9755" name="X79A71E957D5B9755"></a></p>
+
+<h4>4.1 <span class="Heading">Jacobi Polynomials</span></h4>
+
+<p>One advantage of studying spherical and projective designs together as sets of Jordan primitive idempotents is both the spherical and projective cases can be studied together using Jacobi polynomials, with suitable parameters chosen for the appropriate simple Euclidean Jordan algebra.</p>
+
+<p><a id="X872DC5F085155040" name="X872DC5F085155040"></a></p>
+
+<h5>4.1-1 JacobiPolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JacobiPolynomial</code>( <var class="Arg">k</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function returns the Jacobi polynomial <span class="Math">P_k^{(a,b)}(x)</span> of degree <var class="Arg">k</var> and type <var class="Arg">(a,b)</var> as defined in <a href="chapBib.html#biBabramowitz_handbook_1972">[AS72, chap. 22]</a>. The argument <var class="Arg">k</var> must be a non-negative integer. The arguments <var class="Arg">a</var> and <var class="Arg">b</var> must be either rational numbers greater than <span class="Math">-1</span> or must satisfy <code class="code">IsPolynomial</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := Indeterminate(Rationals, "a");; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := Indeterminate(Rationals, "b");; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Indeterminate(Rationals, "x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JacobiPolynomial(0,a,b);</span>
+[ 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JacobiPolynomial(1,a,b);</span>
+[ 1/2*a-1/2*b, 1/2*a+1/2*b+1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ValuePol(last,x);</span>
+1/2*a*x+1/2*b*x+1/2*a-1/2*b+x</pre></div>
+
+<p><a id="X7C78C3A57DDC372B" name="X7C78C3A57DDC372B"></a></p>
+
+<h5>4.1-2 <span class="Heading">Renormalized Jacobi Polynomials</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Q_k_epsilon</code>( <var class="Arg">k</var>, <var class="Arg">epsilon</var>, <var class="Arg">rank</var>, <var class="Arg">degree</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; R_k_epsilon</code>( <var class="Arg">k</var>, <var class="Arg">epsilon</var>, <var class="Arg">rank</var>, <var class="Arg">degree</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>These functions return polynomials of degree <var class="Arg">k</var> in the indeterminate <var class="Arg">x</var> corresponding the the renormalized Jacobi polynomials given in <a href="chapBib.html#biBhoggar_t-designs_1982">[Hog82]</a>. The value of <var class="Arg">epsilon</var> must be 0 or 1. The arguments <var class="Arg">rank</var> and <var class="Arg">degree</var> correspond to the rank and degree of the relevant simple Euclidean Jordan algebra.</p>
+
+<p><a id="X83D7DAD082EAD26D" name="X83D7DAD082EAD26D"></a></p>
+
+<h4>4.2 <span class="Heading">Jordan Designs</span></h4>
+
+<p>The <strong class="pkg">ALCO</strong> package defines new categories within <code class="code">IsObject</code> in order to construct and study Jordan designs.</p>
+
+<p><a id="X82BCF4BA84BDEE9E" name="X82BCF4BA84BDEE9E"></a></p>
+
+<h5>4.2-1 <span class="Heading">Jordan Design Categories</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsJordanDesign</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSphericalJordanDesign</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsProjectiveJordanDesign</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>These filters determine whether an object is a Jordan design and whether the design is constructed in a spherical or projective manifold of Jordan primitive idempotents.</p>
+
+<p><a id="X7FD006D77B3C98E2" name="X7FD006D77B3C98E2"></a></p>
+
+<h5>4.2-2 JordanDesignByParameters</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignByParameters</code>( <var class="Arg">rank</var>, <var class="Arg">degree</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function constructs a Jordan design in the manifold of Jordan primitive idempotents of rank <var class="Arg">rank</var> and degree <var class="Arg">degree</var>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByParameters(3,8);</span>
+&lt;design with rank 3 and degree 8&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsJordanDesign(D);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSphericalJordanDesign(D);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsProjectiveJordanDesign(D);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByParameters(4,8);</span>
+fail
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByParameters(3,9);</span>
+fail</pre></div>
+
+<p><a id="X82BB5F997B7B7B3A" name="X82BB5F997B7B7B3A"></a></p>
+
+<h5>4.2-3 <span class="Heading">Jordan Rank and Degree</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignRank</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignDegree</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The rank and degree of an object satisfying filter <code class="code">IsJordanDesign</code> are stored as attributes.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByParameters(3,8);</span>
+&lt;design with rank 3 and degree 8&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[JordanDesignRank(D), JordanDesignDegree(D)];</span>
+[ 3, 8 ]</pre></div>
+
+<p><a id="X87D80CFF7F4FD7D6" name="X87D80CFF7F4FD7D6"></a></p>
+
+<h5>4.2-4 JordanDesignQPolynomials</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignQPolynomials</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Many properties of a Jordan design are computed using the family of renormalized Jacobi polynomials that correspond to the spherical or projective space in question. This attribute stores a function <code class="code">DesignQPolynomial(<var class="Arg">D</var>)(<var class="Arg">k</var>)</code> that returns the <var class="Arg">k</var>-th polynomial in the family, as a list of coefficients, where <var class="Arg">k</var> is a non-negative integer.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByParameters(3,8);</span>
+&lt;design with rank 3 and degree 8&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r := JordanDesignRank(D);; d := JordanDesignDegree(D);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Indeterminate(Rationals, "x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignQPolynomials(D);</span>
+function( k ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignQPolynomials(D)(2);</span>
+[ 90, -585, 819 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CoefficientsOfUnivariatePolynomial(Q_k_epsilon(2,0,r,d,x));</span>
+[ 90, -585, 819 ]</pre></div>
+
+<p><a id="X80A1BCF87B87D691" name="X80A1BCF87B87D691"></a></p>
+
+<h5>4.2-5 JordanDesignConnectionCoefficients</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignConnectionCoefficients</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The connection coefficients of a design <var class="Arg">D</var> determine which linear combinations of <code class="code">JordanDesignQPolynomials(<var class="Arg">D</var>)</code> yield each power of the indeterminate <a href="chapBib.html#biBhoggar_t-designs_1992">[Hog92, p. 261]</a>. This attribute stores a function <code class="code">JordanDesignConnectionCoefficients(<var class="Arg">D</var>)(<var class="Arg">s</var>)</code> that computes the connection coefficients of each power up to positive integer <var class="Arg">s</var>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByParameters(3,8);</span>
+&lt;design with rank 3 and degree 8&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignConnectionCoefficients(D);</span>
+function( s ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := JordanDesignConnectionCoefficients(D)(3);; Display(f);</span>
+[ [        1,        0,        0,        0 ],
+  [      1/3,     1/39,        0,        0 ],
+  [     5/39,    5/273,    1/819,        0 ],
+  [     5/91,     1/91,    1/728,  1/12376 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for j in [1..4] do Display(Sum(List([1..4], i -&gt; </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">f[j][i]*JordanDesignQPolynomials(D)(i-1)))); od;</span>
+[ 1, 0, 0, 0 ]
+[ 0, 1, 0, 0 ]
+[ 0, 0, 1, 0 ]
+[ 0, 0, 0, 1 ]</pre></div>
+
+<p><a id="X87DA51657F7EC947" name="X87DA51657F7EC947"></a></p>
+
+<h4>4.3 <span class="Heading">Designs with an Angle Set</span></h4>
+
+<p>The angle set of a design is the set of all inner products between distinct elements in the design. In the case of a Jordan design, each inner product is computed as <span class="Math">\mathrm{Tr}(x\circ y)</span> for <span class="Math">x</span> and <span class="Math">y</span> primitive idempotents. This means that the angle set of a design is a set of real numbers in the interval <span class="Math">[0, 1)</span>. We can compute many additional properties of a design once the angle set is known.</p>
+
+<p><a id="X848E40D6842751A6" name="X848E40D6842751A6"></a></p>
+
+<h5>4.3-1 IsJordanDesignWithAngleSet</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsJordanDesignWithAngleSet</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>This filter identifies whether an object that satisfies <code class="code">IsJordanDesign</code> is equipped with an angle set.</p>
+
+<p><a id="X78AC6815875A2024" name="X78AC6815875A2024"></a></p>
+
+<h5>4.3-2 <span class="Heading">Design Angle Sets</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignAddAngleSet</code>( <var class="Arg">D</var>, <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignAngleSet</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>For a design <var class="Arg">D</var> without an angle set, records the angle set <var class="Arg">A</var> as an attribute <code class="code">JordanDesignAngleSet</code>. The angle set <var class="Arg">A</var> must be a list of real-valued elements in <code class="code">IsCyc</code> in the interval <span class="Math">[0, 1)</span>. Note that when <var class="Arg">A</var> contains irrational elements for which &lt; does not provide an ordering, inclusion in the interval given above is not checked. Also note that the angle set cannot be modified once set as an attribute of the design.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByParameters(4,4);</span>
+&lt;design with rank 4 and degree 4&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddAngleSet(D, [2]);</span>
+fail
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D;</span>
+&lt;design with rank 4 and degree 4&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddAngleSet(D, [1/3,1/9]);</span>
+&lt;design with rank 4, degree 4, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAngleSet(D);</span>
+[ 1/9, 1/3 ]</pre></div>
+
+<p><a id="X840BF5428457449B" name="X840BF5428457449B"></a></p>
+
+<h5>4.3-3 JordanDesignByAngleSet</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignByAngleSet</code>( <var class="Arg">rank</var>, <var class="Arg">degree</var>, <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function constructs a new design with Jordan rank and degree given by <var class="Arg">rank</var> and <var class="Arg">degree</var>, with angle set <var class="Arg">A</var>. The same constrains on angle set <var class="Arg">A</var> given in <code class="func">JordanDesignAddAngleSet</code> (<a href="chap4.html#X78AC6815875A2024"><span class="RefLink">4.3-2</span></a>) apply.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);</span>
+&lt;design with rank 4, degree 4, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAngleSet(D);</span>
+[ 1/9, 1/3 ]</pre></div>
+
+<p><a id="X7923181A81406714" name="X7923181A81406714"></a></p>
+
+<h5>4.3-4 JordanDesignNormalizedAnnihilatorPolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignNormalizedAnnihilatorPolynomial</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The normalized annihilator polynomial is defined for an angle set <span class="Math">A</span> as the polynomial <span class="Math">p(x)</span> of degree equal to the cardinality of <span class="Math">A</span> with the elements of <span class="Math">A</span> for roots and normalization such that <span class="Math">p(1) = 1</span> <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, p. 185]</a>. The coefficients of this polynomial are stored as an attribute of a design with an angle set.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);</span>
+&lt;design with rank 4, degree 4, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p := JordanDesignNormalizedAnnihilatorPolynomial(D);</span>
+[ 1/16, -3/4, 27/16 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ValuePol(p, 1/9);</span>
+0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ValuePol(p, 1/3);</span>
+0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ValuePol(p, 1);</span>
+1</pre></div>
+
+<p><a id="X85E104A27EC8435A" name="X85E104A27EC8435A"></a></p>
+
+<h5>4.3-5 JordanDesignNormalizedIndicatorCoefficients</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignNormalizedIndicatorCoefficients</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The normalized indicator coefficients are the <code class="code">JordanDesignQPolynomials(<var class="Arg">D</var>)</code>-expansion coefficients of <code class="code">JordanDesignNormalizedAnnihilatorPolynomial(<var class="Arg">D</var>)</code>, discussed for the spherical case in <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, p. 185]</a>. These coefficients are stored as an attribute of a design with an angle set.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);</span>
+&lt;design with rank 4, degree 4, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := JordanDesignNormalizedIndicatorCoefficients(D);</span>
+[ 1/64, 7/960, 9/3520 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Sum(List([1..3], i -&gt; f[i]*JordanDesignQPolynomials(D)(i-1)));</span>
+[ 1/16, -3/4, 27/16 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignNormalizedAnnihilatorPolynomial(D);</span>
+[ 1/16, -3/4, 27/16 ]</pre></div>
+
+<p><a id="X85E1790D86685EAF" name="X85E1790D86685EAF"></a></p>
+
+<h5>4.3-6 IsJordanDesignWithPositiveIndicatorCoefficients</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsJordanDesignWithPositiveIndicatorCoefficients</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>This filter determines whether the normalized indicator coefficients of a design are positive, which has significance for certain theorems about designs.</p>
+
+<p><a id="X858B619F7E32D5EB" name="X858B619F7E32D5EB"></a></p>
+
+<h5>4.3-7 JordanDesignSpecialBound</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignSpecialBound</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The special bound of a design satisfying <code class="code">IsJordanDesignWithPositiveIndicatorCoefficients</code> is the upper limit on the possible cardinality for the given angle set <a href="chapBib.html#biBhoggar_t-designs_1992">[Hog92, pp. 257-258]</a>. This attribute stores the special bound when it exists for a design.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3,1/9]);</span>
+&lt;design with rank 4, degree 4, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsJordanDesignWithPositiveIndicatorCoefficients(D);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignSpecialBound(D);</span>
+64</pre></div>
+
+<p><a id="X803F6A9986E27413" name="X803F6A9986E27413"></a></p>
+
+<h4>4.4 <span class="Heading">Designs with Angle Set and Cardinality</span></h4>
+
+<p>Many more properties of a design with an angle set can be computed once the cardinality of the design is also known. In what follows let <span class="Math">v</span> be the cardinality of a design and let <span class="Math">s</span> be the cardinality of the angle set <span class="Math">A</span> of that design.</p>
+
+<p><a id="X7F730A1C7FC9D987" name="X7F730A1C7FC9D987"></a></p>
+
+<h5>4.4-1 <span class="Heading">Design Cardinality</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsJordanDesignWithCardinality</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignAddCardinality</code>( <var class="Arg">D</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignCardinality</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>As a finite set, each design has a cardinality. When this cardinality is known for an object <var class="Arg">D</var> that satisfies <code class="code">IsJordanDesign(<var class="Arg">D</var>)</code>, the cardinality is stored as the attribute <code class="code">JordanDesignCardinality(<var class="Arg">D</var>)</code>. In order to set the cardinality of a design, we can use the operation <code class="code">JordanDesignAddCardinality(<var class="Arg">D</var>, v)</code>. When <code class="code">JordanDesignAddCardinality</code> is called, the <strong class="pkg">ALCO</strong> package immediately attempts to compute <code class="func">JordanDesignStrength</code> (<a href="chap4.html#X7C4ADEEA8355A774"><span class="RefLink">4.4-5</span></a>).</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4,4, [1/3,1/9]);</span>
+&lt;design with rank 4, degree 4, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HasJordanDesignCardinality(D);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(D, 64);</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignCardinality(D);</span>
+64</pre></div>
+
+<p><a id="X7CA9D3F585A7CBC3" name="X7CA9D3F585A7CBC3"></a></p>
+
+<h5>4.4-2 <span class="Heading">Designs at the Special Bound</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSpecialBoundJordanDesign</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>As described in <code class="func">JordanDesignSpecialBound</code> (<a href="chap4.html#X858B619F7E32D5EB"><span class="RefLink">4.3-7</span></a>), we can compute the special bound of a design using the angle set. Once the cardinality is also known we can assess whether the design reaches the special bound. This filter identifies when a design with an angle set and cardinality also meets the special bound.</p>
+
+<p><a id="X80BE4157859BAA6A" name="X80BE4157859BAA6A"></a></p>
+
+<h5>4.4-3 JordanDesignAnnihilatorPolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignAnnihilatorPolynomial</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The annihilator polynomial for design <var class="Arg">D</var> is defined by multiplying the <code class="code">JordanDesignNormalizedAnnihilatorPolynomial(<var class="Arg">D</var>)</code> by <code class="code">JordanDesignCardinality(<var class="Arg">D</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAnnihilatorPolynomial(D);</span>
+[ 4, -48, 108 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ValuePol(last, 1);</span>
+64</pre></div>
+
+<p><a id="X7C7C5DEF86F051F4" name="X7C7C5DEF86F051F4"></a></p>
+
+<h5>4.4-4 JordanDesignIndicatorCoefficients</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignIndicatorCoefficients</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The indicator coefficients for design <var class="Arg">D</var> are defined by multiplying <code class="code"> JordanDesignNormalizedIndicatorCoefficients(<var class="Arg">D</var>)</code> by <code class="code">JordanDesignCardinality(<var class="Arg">D</var>)</code>. These indicator coefficients are often useful for directly determining the strength of a design at the special bound.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignIndicatorCoefficients(D);</span>
+[ 1, 7/15, 9/55 ]</pre></div>
+
+<p><a id="X7C4ADEEA8355A774" name="X7C4ADEEA8355A774"></a></p>
+
+<h5>4.4-5 <span class="Heading">Design Strength</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsJordanDesignWithStrength</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignStrength</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The <span class="Math">t</span>-design is a design with the following special property: the integral of any degree <span class="Math">t</span> polynomial over the sphere or projective space containing the design is equal to the average value of that polynomial evaluated at the points of the <span class="Math">t</span>-design (see <a href="chapBib.html#biBdelsarte_spherical_1977">[DGS77]</a> and <a href="chapBib.html#biBhoggar_t-designs_1982">[Hog82]</a> for detailed definitions). The parameter <span class="Math">t</span> is called the <em>strength</em> of the design.</p>
+
+<p>For a design <var class="Arg">D</var> that satisfies <code class="code">IsJordanDesignWithPositiveIndicatorCoefficients</code>, <code class="code">IsJordanDesignWithCardinality</code>, and <code class="code">IsSpecialBoundJordanDesign</code>, we can compute the strength <span class="Math">t</span> of the design using a theorem given in <a href="chapBib.html#biBhoggar_t-designs_1992">[Hog92, p. 258]</a> that examines the indicator coefficients. The filter <code class="code">IsJordanDesignWithStrength</code> indicates when the attribute <code class="code">JordanDesignStrength</code> has been successfully computed.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4,4, [1/3,1/9]);</span>
+&lt;design with rank 4, degree 4, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(D, 64);</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsJordanDesignWithStrength(D);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignStrength(D);</span>
+2</pre></div>
+
+<p><a id="X7DBF21947AB79F1B" name="X7DBF21947AB79F1B"></a></p>
+
+<h5>4.4-6 <span class="Heading">Schemes and Tight Designs</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsRegularSchemeJordanDesign</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAssociationSchemeJordanDesign</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTightJordanDesign</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>These filters identify various special categories of designs that satisfy <code class="func">IsJordanDesignWithStrength</code> (<a href="chap4.html#X7C4ADEEA8355A774"><span class="RefLink">4.4-5</span></a>). In what follows recall that <span class="Math">t</span> denotes the strength of the design and <span class="Math">s</span> denotes the cardinality of the angle set <span class="Math">A</span>. The definitions below are provided in <a href="chapBib.html#biBhoggar_t-designs_1992">[Hog92]</a>.</p>
+
+<p>A design admits a <em>regular scheme</em> when <span class="Math">t \ge s - 1 </span>. The filter <code class="code">IsRegularSchemeJordanDesign</code> returns true when both <span class="Math">t</span> and <span class="Math">s</span> are known and satisfy the regular scheme inequality given above.</p>
+
+<p>A design admits an <em>association scheme</em> when <span class="Math">t \ge 2s - 2 </span>. The filter <code class="code">IsAssociationSchemeJordanDesign</code> returns true when both <span class="Math">t</span> and <span class="Math">s</span> are known and satisfy the association scheme inequality given above.</p>
+
+<p>Finally, a design is <em>tight</em> when it satisfies <span class="Math">t = 2s - 1</span> for <span class="Math">0</span> in <span class="Math">A</span> or <span class="Math">t = 2s</span> otherwise. The filter <code class="code">IsTightJordanDesign</code> returns true when the appropriate equality is satisfied for a design.</p>
+
+<p><a id="X814E031B82F35E16" name="X814E031B82F35E16"></a></p>
+
+<h4>4.5 <span class="Heading">Designs Admitting a Regular Scheme</span></h4>
+
+<p><a id="X83501A01792752CC" name="X83501A01792752CC"></a></p>
+
+<h5>4.5-1 JordanDesignSubdegrees</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignSubdegrees</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>For a design <var class="Arg">D</var> with cardinality and angle set that satisfies <code class="code">IsRegularSchemeJordanDesign</code>, namely <span class="Math">t \ge s - 1</span>, we can compute the regular subdegrees as described in <a href="chapBib.html#biBhoggar_t-designs_1992">[Hog92, Theorem 3.2]</a>. The subdegrees count the number of elements forming each angle with some representative element in the design. So, in the example below, there are <span class="Math">27</span> elements forming an angle (inner product) of <span class="Math">1/9</span> with some representative design element.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignSubdegrees(D);</span>
+[ 27, 36 ]</pre></div>
+
+<p><a id="X7EE9F8D97A51FBF9" name="X7EE9F8D97A51FBF9"></a></p>
+
+<h4>4.6 <span class="Heading">Designs Admitting an Association Scheme</span></h4>
+
+<p>When a design satisfies <span class="Math">t \ge 2s - 2</span> then it also admits an association scheme. We can use results given in <a href="chapBib.html#biBhoggar_t-designs_1992">[Hog92]</a> to determine the parameters of the corresponding association scheme. For more details about association schemes see <a href="chapBib.html#biBcameron_designs_1991">[CVL91]</a> or <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21]</a>.</p>
+
+<p><a id="X85F7CF2D7FDF58D7" name="X85F7CF2D7FDF58D7"></a></p>
+
+<h5>4.6-1 JordanDesignBoseMesnerAlgebra</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignBoseMesnerAlgebra</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>For a design that satisfies <code class="code">IsAssociationSchemeJordanDesign</code>, we can define the corresponding Bose-Mesner algebra <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, pp. 53-57]</a>. The canonical basis for this algebra corresponds to the adjacency matrices <span class="Math">A_i</span>, with the <code class="code">s+1</code>-th basis vector corresponding to <span class="Math">A_0</span>. The adjacenty matrices themselves are not provided and the algebra is constructed from the known structure constants so that elements of this algebra satisfy <code class="code">IsSCAlgebraObj</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B := JordanDesignBoseMesnerAlgebra(D);</span>
+&lt;algebra of dimension 3 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BasisVectors(CanonicalBasis(B));</span>
+[ A1, A2, A3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">One(B); IsSCAlgebraObj(last);</span>
+A3
+true</pre></div>
+
+<p><a id="X7F95AE4A7B7B5B2B" name="X7F95AE4A7B7B5B2B"></a></p>
+
+<h5>4.6-2 JordanDesignBoseMesnerIdempotentBasis</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignBoseMesnerIdempotentBasis</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>For a design that satisfies <code class="code">IsAssociationSchemeJordanDesign</code>, we can also define the idempotent basis of the corresponding Bose-Mesner algebra <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, pp. 53-57]</a>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for x in BasisVectors(JordanDesignBoseMesnerIdempotentBasis(D)) do Display(x); </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">od;</span>
+(-5/64)*A1+(3/64)*A2+(27/64)*A3
+(1/16)*A1+(-1/16)*A2+(9/16)*A3
+(1/64)*A1+(1/64)*A2+(1/64)*A3
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(JordanDesignBoseMesnerIdempotentBasis(D), IsIdempotent);</span>
+true</pre></div>
+
+<p><a id="X851F03427CFDC513" name="X851F03427CFDC513"></a></p>
+
+<h5>4.6-3 JordanDesignIntersectionNumbers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignIntersectionNumbers</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The intersection numbers <span class="Math">p^k_{i,j}</span> are given by <code class="code"> JordanDesignIntersectionNumbers(<var class="Arg">D</var>)[k][i][j]</code>. These intersection numbers serve as the structure constants for the <code class="code">JordanDesignBoseMesnerAlgebra(<var class="Arg">D</var>)</code>. Namely, <span class="Math">A_i A_j = \sum_{k = 1}^{s+1} p^{k}_{i,j} A_k</span> (see <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, pp. 53-57]</a>).</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := BasisVectors(Basis(JordanDesignBoseMesnerAlgebra(D)));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p := JordanDesignIntersectionNumbers(D);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A[1]*A[2] = Sum(List([1..3]), k -&gt; p[k][1][2]*A[k]);</span>
+true</pre></div>
+
+<p><a id="X84E0CAFE83145B3F" name="X84E0CAFE83145B3F"></a></p>
+
+<h5>4.6-4 JordanDesignKreinNumbers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignKreinNumbers</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The Krein numbers <span class="Math">q^k_{i,j}</span> are given by <code class="code">JordanDesignKreinNumbers(<var class="Arg">D</var>)[k][i][j]</code>. The Krein numbers serve as the structure constants for the <code class="code">JordanDesignBoseMesnerAlgebra(<var class="Arg">D</var>)</code> in the idempotent basis given by <code class="code">JordanDesignBoseMesnerIdempotentBasis(<var class="Arg">D</var>)</code> using the Hadamard matrix product <span class="Math">\circ</span>. Namely, for idempotent basis <span class="Math">E_i</span> and Hadamard product <span class="Math">\circ</span>, we have <span class="Math">E_i \circ E_j = \sum_{k = 1}^{s+1} q^{k}_{i,j} E_k</span> (see <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, pp. 53-57]</a>).</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 4, [1/3, 1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q := JordanDesignKreinNumbers(D);; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(q);</span>
+[ [ [ 10, 16, 1 ], [ 16, 20, 0 ], [ 1, 0, 0 ] ], 
+  [ [ 12, 15, 0 ], [ 15, 20, 1 ], [ 0, 1, 0 ] ], 
+  [ [ 27, 0, 0 ], [ 0, 36, 0 ], [ 0, 0, 1 ] ] ]
+  </pre></div>
+
+<p><a id="X87C0A2067F13F01A" name="X87C0A2067F13F01A"></a></p>
+
+<h5>4.6-5 JordanDesignFirstEigenmatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignFirstEigenmatrix</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>As describe in <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, p. 58]</a>, the first eigenmatrix of a Bose-Mesner algebra <span class="Math">P_i(j)</span> defines the expansion of the adjacency matrix basis <span class="Math">A_i</span> in terms of the idempotent basis <span class="Math">E_j</span> as follows: <span class="Math">A_i = \sum_{j = 1}^{s+1} P_i(j) E_j </span>. This attribute returns the component <span class="Math">P_i(j)</span> as <code class="code">JordanDesignFirstEigenmatrix(<var class="Arg">D</var>)[i][j]</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4,4,[1/3,1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := Basis(JordanDesignBoseMesnerAlgebra(D));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e := JordanDesignBoseMesnerIdempotentBasis(D);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll([1..3], i -&gt; a[i] = Sum([1..3], j -&gt;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">JordanDesignFirstEigenmatrix(D)[i][j]*e[j]));</span>
+true</pre></div>
+
+<p><a id="X7FC9FDCC7DD82286" name="X7FC9FDCC7DD82286"></a></p>
+
+<h5>4.6-6 JordanDesignSecondEigenmatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignSecondEigenmatrix</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>As describe in <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, p. 58]</a>, the second eigenmatrix of a Bose-Mesner algebra <span class="Math">Q_i(j)</span> defines the expansion of the idempotent basis <span class="Math">E_i</span> in terms of the adjacency matrix basis <span class="Math">A_j</span> as follows: <span class="Math">E_i = (1/v)\sum_{j = 1}^{s+1} Q_i(j) A_j </span>. This attribute returns the component <span class="Math">Q_i(j)</span> as <code class="code">JordanDesignSecondEigenmatrix(<var class="Arg">D</var>)[i][j]</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4,4,[1/3,1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := Basis(JordanDesignBoseMesnerAlgebra(D));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e := JordanDesignBoseMesnerIdempotentBasis(D);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll([1..3], i -&gt; e[i]*JordanDesignCardinality(D) =</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">Sum([1..3], j -&gt; JordanDesignSecondEigenmatrix(D)[i][j]*a[j]));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignFirstEigenmatrix(D) = Inverse(JordanDesignSecondEigenmatrix(D))</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">*JordanDesignCardinality(D);</span>
+true</pre></div>
+
+<p><a id="X7FB944C182A2FBE3" name="X7FB944C182A2FBE3"></a></p>
+
+<h5>4.6-7 JordanDesignMultiplicities</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignMultiplicities</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>As describe in <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, pp. 58-59]</a>, the design multiplicy <span class="Math">m_i</span> is defined as the dimension of the space that idempotent matrix <span class="Math">E_i</span> projects onto, or <span class="Math">m_i = \mathrm{Tr}(E_i)</span>. We also have <span class="Math">m_i = Q_i(s+1)</span>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4,4,[1/3,1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignMultiplicities(D);</span>
+[ 27, 36, 1 ]</pre></div>
+
+<p><a id="X7E7012EB7BFE889D" name="X7E7012EB7BFE889D"></a></p>
+
+<h5>4.6-8 DesignValencies</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DesignValencies</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>As describe in <a href="chapBib.html#biBbannai_algebraic_2021">[BBIT21, pp. 55, 59]</a>, the design valency <span class="Math">k_i</span> is defined as the fixed number of <span class="Math">i</span>-associates of any element in the association scheme (also known as the subdegree). We also have <span class="Math">k_i = P_i(s+1)</span>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4,4,[1/3,1/9]);; JordanDesignAddCardinality(D, 64);; D;</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DesignValencies(D);</span>
+[ 27, 36, 1 ]</pre></div>
+
+<p><a id="X788831797E45CE02" name="X788831797E45CE02"></a></p>
+
+<h5>4.6-9 JordanDesignReducedAdjacencyMatrices</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanDesignReducedAdjacencyMatrices</code>( <var class="Arg">D</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>As defined in <a href="chapBib.html#biBcameron_designs_1991">[CVL91, p. 201]</a>, the reduced adjacency matrices multiply with the same structure constants as the adjacency matrices, which allows for a simpler construction of an algebra isomorphic to the Bose-Mesner algebra. The matrices <code class="code">JordanDesignReducedAdjacencyMatrices(<var class="Arg">D</var>)</code> are used to construct <code class="code">JordanDesignBoseMesnerAlgebra(<var class="Arg">D</var>)</code>.</p>
+
+<p><a id="X7A489A5D79DA9E5C" name="X7A489A5D79DA9E5C"></a></p>
+
+<h4>4.7 <span class="Heading">Examples</span></h4>
+
+<p>This section provides a number of known examples that can be studied using the <strong class="pkg">ALCO</strong> package. The following tight projective t-designs are identified in <a href="chapBib.html#biBhoggar_t-designs_1982">[Hog82, Examples 1-11]</a>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 1, [0,1/2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 3-design with rank 2, degree 1, cardinality 4, and angle set 
+[ 0, 1/2 ]&gt; 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 2, [0,1/2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 3-design with rank 2, degree 2, cardinality 6, and angle set
+[ 0, 1/2 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 4, [0,1/2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 3-design with rank 2, degree 4, cardinality 10, and angle set
+[ 0, 1/2 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 8, [0,1/2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 3-design with rank 2, degree 8, cardinality 18, and angle set
+[ 0, 1/2 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(3, 2, [1/4]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 2-design with rank 3, degree 2, cardinality 9, and angle set [ 1/4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(4, 2, [0,1/3]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 3-design with rank 4, degree 2, cardinality 40, and angle set
+[ 0, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(6, 2, [0,1/4]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 3-design with rank 6, degree 2, cardinality 126, and angle set
+[ 0, 1/4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(8, 2, [1/9]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 2-design with rank 8, degree 2, cardinality 64, and angle set [ 1/9 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(5, 4, [0,1/4]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 3-design with rank 5, degree 4, cardinality 165, and angle set
+[ 0, 1/4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(3, 8, [0,1/4,1/2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 5-design with rank 3, degree 8, cardinality 819, and angle set
+[ 0, 1/4, 1/2 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(24, 1, [0,1/16,1/4]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 5-design with rank 24, degree 1, cardinality 98280, and angle set
+[ 0, 1/16, 1/4 ]&gt;</pre></div>
+
+<p>An additional icosahedron projective example is identified in <a href="chapBib.html#biBlyubich_tight_2009">[Lyu09]</a>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 2, [ 0, (5-Sqrt(5))/10, (5+Sqrt(5))/10 ]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 5-design with rank 2, degree 2, cardinality 12, and angle set
+[ 0, -3/5*E(5)-2/5*E(5)^2-2/5*E(5)^3-3/5*E(5)^4,
+  -2/5*E(5)-3/5*E(5)^2-3/5*E(5)^3-2/5*E(5)^4 ]&gt;</pre></div>
+
+<p>The Leech lattice short vector design and several other tight spherical designs are given below:</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 23, [ 0, 1/4, 3/8, 1/2, 5/8, 3/4 ]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 11-design with rank 2, degree 23, cardinality 196560, and angle set
+[ 0, 1/4, 3/8, 1/2, 5/8, 3/4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 5, [ 1/4, 5/8 ]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 4-design with rank 2, degree 5, cardinality 27, and angle set
+[ 1/4, 5/8 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 6, [0,1/3,2/3]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 5-design with rank 2, degree 6, cardinality 56, and angle set
+[ 0, 1/3, 2/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 21, [3/8, 7/12]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 4-design with rank 2, degree 21, cardinality 275, and angle set
+[ 3/8, 7/12 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 22, [0,2/5,3/5]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 5-design with rank 2, degree 22, cardinality 552, and angle set
+[ 0, 2/5, 3/5 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 7, [0,1/4,1/2,3/4]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 7-design with rank 2, degree 7, cardinality 240, and angle set
+[ 0, 1/4, 1/2, 3/4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(2, 22, [0,1/3,1/2,2/3]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;Tight 7-design with rank 2, degree 22, cardinality 4600, and angle set
+[ 0, 1/3, 1/2, 2/3 ]&gt;</pre></div>
+
+<p>Some projective designs meeting the special bound are given in <a href="chapBib.html#biBhoggar_t-designs_1982">[Hog82, Examples 1-11]</a>:</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(4, 4, [0,1/4,1/2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;3-design with rank 4, degree 4, cardinality 180, and angle set
+[ 0, 1/4, 1/2 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(3, 2, [0,1/3]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;2-design with rank 3, degree 2, cardinality 12, and angle set [ 0, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(5, 2, [0,1/4]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;2-design with rank 5, degree 2, cardinality 45, and angle set [ 0, 1/4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(9, 2, [0,1/9]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;2-design with rank 9, degree 2, cardinality 90, and angle set [ 0, 1/9 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(28, 2, [0,1/16]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;2-design with rank 28, degree 2, cardinality 4060, and angle set [ 0, 1/16 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(4, 4, [0,1/4]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;2-design with rank 4, degree 4, cardinality 36, and angle set [ 0, 1/4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(4, 4, [1/9,1/3]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;2-design with rank 4, degree 4, cardinality 64, and angle set [ 1/9, 1/3 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(16, 1, [0,1/9]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;2-design with rank 16, degree 1, cardinality 256, and angle set [ 0, 1/9 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(4, 2, [0,1/4,1/2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;3-design with rank 4, degree 2, cardinality 60, and angle set
+[ 0, 1/4, 1/2 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(16, 1, [0,1/16,1/4]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;3-design with rank 16, degree 1, cardinality 2160, and angle set
+[ 0, 1/16, 1/4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(3, 4, [0,1/4,1/2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;3-design with rank 3, degree 4, cardinality 63, and angle set
+[ 0, 1/4, 1/2 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(3, 4, [0,1/4,1/2,(3+Sqrt(5))/8, (3-Sqrt(5))/8]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;5-design with rank 3, degree 4, cardinality 315, and angle set
+[ 0, 1/4, 1/2, -1/2*E(5)-1/4*E(5)^2-1/4*E(5)^3-1/2*E(5)^4,
+  -1/4*E(5)-1/2*E(5)^2-1/2*E(5)^3-1/4*E(5)^4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignByAngleSet(12, 2, [0,1/3,1/4,1/12]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;5-design with rank 12, degree 2, cardinality 32760, and angle set
+[ 0, 1/12, 1/4, 1/3 ]&gt;</pre></div>
+
+<p>Two important designs related to the <span class="Math">H_4</span> Weyl group are as follows:</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := [ 0, 1/4, 1/2, 3/4, (5-Sqrt(5))/8, (5+Sqrt(5))/8,</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">(3-Sqrt(5))/8, (3+Sqrt(5))/8 ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(2, 3, A);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;11-design with rank 2, degree 3, cardinality 120, and angle set
+[ 0, 1/4, 1/2, 3/4, -3/4*E(5)-1/2*E(5)^2-1/2*E(5)^3-3/4*E(5)^4,
+  -1/2*E(5)-3/4*E(5)^2-3/4*E(5)^3-1/2*E(5)^4,
+  -1/2*E(5)-1/4*E(5)^2-1/4*E(5)^3-1/2*E(5)^4,
+  -1/4*E(5)-1/2*E(5)^2-1/2*E(5)^3-1/4*E(5)^4 ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := [ 0, 1/4, (3-Sqrt(5))/8, (3+Sqrt(5))/8 ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := JordanDesignByAngleSet(4, 1, A);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">JordanDesignAddCardinality(last, JordanDesignSpecialBound(last));</span>
+&lt;5-design with rank 4, degree 1, cardinality 60, and angle set
+[ 0, 1/4, -1/2*E(5)-1/4*E(5)^2-1/4*E(5)^3-1/2*E(5)^4,
+  -1/4*E(5)-1/2*E(5)^2-1/2*E(5)^3-1/4*E(5)^4 ]&gt;</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap5.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

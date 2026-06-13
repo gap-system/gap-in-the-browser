@@ -1,0 +1,90 @@
+<Chapter Label="Operations">
+<Heading>Operations</Heading>
+
+The generic representation of wreath product elements in wreath products of finite groups
+and in particular their (sparse) wreath cycle decompositions
+can be used to speed up certain computations in wreath products. <P/>
+
+In particular this package provides efficient methods for finding conjugating elements, conjugacy classes, and centralisers.
+The implementations are based on <Cite Key="WPE"/> and references therein.
+
+<Section Label="Operations List">
+<Heading>Operations List</Heading>
+
+Here we include a list of operations that take advantage
+of the generic representation of wreath product elements.<P/>
+
+We include python scripts in the <C>dev/</C> directory that benchmark
+the &WPE; and native &GAP; implementations of these operations separately.
+The comparison of the runtimes supports the conclusion that the &WPE; implementations are
+an order of magnitude faster than the native &GAP; implementations.
+We can now solve these computational tasks for large wreath products
+that were previously not feasible in &GAP;<P/>
+
+<Subsection Label="Wreath Product Representations">
+<Heading>Wreath Product Representations</Heading>
+
+In the following let <M>G = K \wr H</M> be a wreath product, where <M>H \leq \textrm{Sym}(m)</M>.<P/>
+
+In &GAP; the wreath product <M>G</M> can be given in one of the following representations :
+
+<List>
+<Item> Generic Representation</Item>
+<Item> Permutation Representation in Imprimitive Action </Item>
+<Item> Permutation Representation in Product Action </Item>
+<Item> Matrix Representation </Item>
+</List>
+
+</Subsection>
+
+<Subsection Label="Operations for all Representations">
+<Heading>Operations for all Representations</Heading>
+
+Further let <M>x, y \in P = K \wr \textrm{Sym}(m)</M>
+be elements of the parent wreath product <M>P</M>
+which is given in the same representation as <M>G</M>.<P/>
+
+<!-- Additionaly let <M>z \in S</M> be an element of a group <M>S</M> given in the same representation as <M>G</M>.<P/> -->
+
+The following operations use implementations that exploit the generic representation and (sparse) wreath cycle decompositions :
+
+<List>
+<Item> <C>RepresentativeAction(G, x, y)</C> </Item>
+<Item> <C>Centraliser(G, x)</C> </Item>
+<Item> <C>ConjugacyClasses(G)</C> </Item>
+<!-- <Item> <C>z in G</C> </Item> -->
+</List>
+
+</Subsection>
+
+<Subsection Label="Operations for Permutation Representation">
+<Heading>Operations for Permutation Representations</Heading>
+
+Here we assume that <M>G</M> is given in some permutation representation.<P/>
+
+The following operations use implementations that exploit the generic representation and (sparse) wreath cycle decompositions :
+
+<List>
+<Item> <C>CycleIndex(G)</C> </Item>
+</List>
+
+</Subsection>
+
+<Subsection Label="Operations for Generic Representation">
+<Heading>Operations for Generic Representation</Heading>
+
+Here we assume that <M>G</M> is given in generic representation.<P/>
+
+The following operations use implementations that exploit the generic representation and (sparse) wreath cycle decompositions :
+
+<List>
+<Item> <C>Order(x)</C> </Item>
+</List>
+
+</Subsection>
+
+</Section>
+
+<!-- ############################################################ -->
+
+</Chapter>

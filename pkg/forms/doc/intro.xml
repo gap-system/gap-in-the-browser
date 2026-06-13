@@ -1,0 +1,124 @@
+<!-- 
+
+  intro.xml            'Forms' package documentation 
+                                                                  John Bamberg
+                                                               and Jan De Beule
+                                                                  
+
+  Copyright (C) 2022, The University of Western Australia
+  Copyright (C) 2022, Vrije Universiteit Brussel
+
+This chapter gives a short introduction to the package.
+
+-->
+
+<Chapter Label="intro">
+<Heading>Introduction</Heading>
+
+<Section Label="philosophy">
+<Heading>Philosophy</Heading>
+
+<Package>Forms</Package> is a package for computing with
+sesquilinear and quadratic forms on finite vector spaces.
+It provides users with the basic algebraic tools to 
+work with classical groups and polar geometries,
+and enables one to specify a form and its corresponding
+geometry. The functionality of the package includes:
+<List>
+ <Item>the construction of sesquilinear and quadratic forms;</Item>
+ <Item>operations which allow a user to change coordinates, that is,
+to ``change form'' and work in an isometric (or similar)
+formed vector space; and</Item>
+<Item>a way to determine the form(s) left invariant by a matrix group (up to a scalar).</Item>
+</List>
+
+</Section>
+
+<Section Label="overview">
+<Heading>Overview over this manual</Heading>
+
+The next chapter (<Ref Chap="examples"/>) gives some basic examples of
+the use of this package. In "Background Theory of Forms" (Chapter
+<Ref Chap="theory"/>) we revise the basic notions of the theory of
+sesquilinear and quadratic forms, where we also set the notation
+and conventions adopted by this package. In "Constructing forms and basic
+functionality" (Chapter <Ref Chap="functionality"/>), we describe all operations
+to construct sesquilinear and quadratic forms and basic attributes and
+properties that do not require morphisms. In "Morphims of forms" (Chapter
+<Ref Chap="morphisms"/>) we revise the basic notions of morphisms of forms, and
+the classification of sesquilinear and quadratic forms on vector spaces over
+finite fields. Operations, attributes and properties that are related to the
+computation of morphisms of forms, are also described in this chapter. 
+</Section>
+
+<Section Label="howto">
+<Heading>How to read this manual</Heading>
+
+We have tried to make this manual pleasant to read for the general
+reader. So it is inevitable that we will use Greek symbols and simple
+mathematical formulas. To make these visible in the HTML version of this
+documentation, you may have to change the default character set
+of your browser to UTF-8.
+</Section>
+
+<Section Label="web">
+<Heading>Web resources</Heading>
+<List>
+<Item>Find <Package>Forms</Package> on the Packages section of the GAP-website: <Homepage>https://www.gap-system.org/Packages/forms.html</Homepage>.</Item>
+<Item>Find <Package>Forms</Package> on its homepage: <Homepage>https://gap-packages.github.io/forms</Homepage>.</Item>
+<Item>Report bugs, questions and issues on the <Package>Forms</Package> issue tracker: <Homepage>https://github.com/gap-packages/forms/issues</Homepage></Item>
+</List>
+</Section>
+
+<Section Label="release_notes">
+<Heading>Release notes</Heading>
+
+Version 1.2.1 of <Package>Forms</Package> contains some changed and extra
+functionality with relation to trivial forms. The changed and new functionality
+is described completely in Section <Ref Sect="trivialform"/>. We gratefully
+acknowledge the useful feedback of Alice Niemeyer. 
+<P/>
+In version 1.2.2 of <Package>Forms</Package> a minor bug, pointed out by John Bamberg, 
+in the code of <F>IsTotallyIsotropicSubspace</F> is repaired. On the occasion of the release
+of the first beta versions of GAP4r5, we changed the names of some global functions such that 
+a name clash becomes unlikely. Version 1.2.2 of <Package>Forms</Package> is compatible with GAP4r4 
+and GAP4r5.
+<P/>Version 1.2.3 contains a new operation <F>TypeOfForm</F>. Together with this addition, some parts of
+the documentation, especially concerning degenerate and singular forms, have been edited. A bug found
+in the methods for <F>\^</F> applicable on a pair of vectors and a hermitian form, and a pair of matrices
+and a hermitian form has been fixed. A series of test files is now included in the tst directory.
+Alexander Konovalov pointed out the the init.g and read.g files had windows line breaks, this is also
+fixed. Finally, the documentation has been recompiled with the MathJax option.
+<P/>Max Horn pointed out that we still used the deprecated GAP_ROOT_PATHS. This has been changed now
+into GAPInfo.RootPaths in version 1.2.4. More tests have been added to reach a better code coverage.
+Due to these tests, a bug in one of the methods for <C>EvaluateForm</C> was discovered and fixed.
+Alexander Konovalov noted that we used the deprecated <F>ReadTest</F> in our test files. This has
+been changed to <F>Test</F>. Finally some LaTeX issues were resolved in the documentation.
+<P/>In version 1.2.5, some small changes were made to the recognition part.
+Some new examples in the documentation explain better the functionality.
+<P/>Version 1.2.6 is an intermediate update. It contains a number of corrections/additions suggested/implemented by Thomas Breuer and Max Horn, including an extension of some GAP library functions to create classical matrix groups. These additions are not yet documented. 
+<P/>In version 1.2.7, only an issue with the automatic release was fixed.
+<P/>Version 1.2.8 optimizes the computation of base change matrices, making it
+faster by several orders of magnitude for large inputs. Moreover, Max Horn was
+added to the list of maintainers. Finally, various janitorial changes were made.
+<P/>Version 1.2.9 fixes an unexpected error in <C>BaseChangeToCanonical</C> if the input
+was over a finite field with more than 256 elements.
+<P/>Version 1.2.10 optimizes the computation of base change matrices for symplectic and quadratic forms.
+<P/>Version 1.2.11 optimizes the computation of base change matrices for hermitian and quadratic forms.
+It also fixes a regression in the base change computation for bilinear forms introduced in 1.2.10;
+and a long-standing bug in the base change computation for degenerate alternating forms.
+<P/>Version 1.2.12 is to be considered as an intermediate release. Part of the recognition functionality has been
+updated and corrected. This work in progress will be continued.
+<P/>Version 1.2.13 fixes a bug <C>BaseChangeToCanonical</C> in dimension 1 where an error could be thrown.
+This now works. Moreover the undocumented internal functions <C>IsSymplecticMatrix</C>, <C>IsOrthogonalMatrix</C>
+and <C>IsHermitianMatrix</C> were renamed to prevent anyone from accidentally using them.
+Various other internal changes were made that should not affect users.
+<P/>Version 1.2.14 prepares for a change in a future GAP version where GAP will
+enhance <C>InvariantQuadraticForm</C>, <C>InvariantBilinearForm</C> and
+<C>InvariantSesquilinearForm</C> to also provide the field of definition.
+<P/>Version 1.3.0 adds <C>ConformalSymplecticGroup</C>, fixes a bug in <C>PreservedSesquilinearForms</C>
+and improves various internals to better work with matrix objects.
+</Section>
+<!-- ############################################################ -->
+
+</Chapter>

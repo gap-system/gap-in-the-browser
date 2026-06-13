@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE file SYSTEM "bibxmlext.dtd">
+<file>
+
+%% ü ö 
+
+<entry id="AutoDoc"><manual>
+  <author>
+    <name><first>Sebastian</first><last>Gutsche</last></name>
+    <name><first>Max</first><last>Horn</last></name>
+  </author>
+  <title><C>AutoDoc - Generate documentation from GAP source code 
+            (Version 2023.06.19)</C></title>
+  <year>2023</year>
+  <other type="note">
+    GAP package, <URL>https://github.com/gap-packages/AutoDoc</URL>
+  </other>
+</manual></entry>
+
+<entry id="GAPDoc"><manual>
+  <author>
+    <name><first>Frank</first><last>Lübeck</last></name>
+    <name><first>Max</first><last>Neunhöffer</last></name>
+  </author>
+  <title><C>GAPDoc (Version 1.6)</C></title>
+  <organization>RWTH Aachen</organization>
+  <year>2017</year>
+  <other type="note">
+    GAP package, 
+    <URL>https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/index.html</URL>
+  </other>
+</manual></entry>
+
+<entry id="GBNP"><manual>
+  <author>
+    <name><first>A.M.</first><last>Cohen</last></name>
+    <name><first>J.W.</first><last>Knopper</last></name>
+  </author>
+  <title><C>GBNP - computing Gröbner bases of noncommutative polynomials 
+         (Version 1.1.0)</C></title>
+  <organization>Discrete
+Algebra and Geometry (DAM) group at the Department of Mathematics and 
+Computer Science of Eindhoven University of Technology</organization>
+  <year>2001-2024</year>
+  <other type="note">
+    GAP package, 
+    <URL>https://github.com/gap-packages/gbnp</URL>
+  </other>
+</manual></entry>
+
+<entry id="GitHubPagesForGAP"><manual>
+  <author>
+    <name><first>Max</first><last>Horn</last></name>
+  </author>
+  <title><C>A GitHub Pages generator for GAP packages
+            (Version 0.3)</C></title>
+  <year>2019</year>
+  <other type="note">
+    GAP package, <URL>https://github.com/gap-system/GitHubPagesForGAP/</URL>
+  </other>
+</manual></entry>
+
+<entry id="GBNP1.0.5"><misc>
+  <author>
+    <name><first>A.M.</first><last>Cohen</last></name>
+    <name><first>J.W.</first><last>Knopper</last></name>
+  </author>
+  <title><C>GBNP</C>, computing Gröbner bases of noncommutative polynomials,
+         <C>V</C>ersion 1.0.5</title>
+  <howpublished><URL>https://gap-packages.github.io/gbnp/</URL></howpublished>
+  <year>2022</year>
+  <note>Refereed GAP package</note>
+</misc></entry>
+
+<entry id="gareth-thesis"><phdthesis>
+  <author>
+    <name><first>Gareth A.</first><last>Evans</last></name>
+  </author>  
+  <title>Noncommutative Involutive Bases</title>
+  <school>University of Wales, Bangor</school>
+  <year>2005</year>
+  <note>
+    <URL>https://arxiv.org/pdf/math/0602140.pdf</URL>
+  </note>
+</phdthesis></entry>
+
+<entry id="Beaumont"><inproceedings>
+  <author>
+    <name><first>Gareth A.</first><last>Evans</last></name>
+  </author>  
+  <title> Noncommutative Involutive Bases </title>
+  <booktitle> Proc. Int. Conf. Applications of Computer Algebra </booktitle>
+  <year>1970</year>
+  <editor>
+    <name><first>J.</first><last>Leech</last></name>
+  </editor>  
+  <pages>263-297</pages>
+  <publisher> Pergamon Press </publisher>
+</inproceedings></entry>
+
+<entry id="EW-JSC"><article>
+  <author>
+    <name><first>G. A.</first><last>Evans</last></name>
+    <name><first>C. D.</first><last>Wensley</last></name>
+  </author>  
+  <title> Complete involutive rewriting systems </title>
+  <journal> Symbolic Comput.</journal>
+  <year>2007</year>
+  <volume>42</volume>
+  <pages>1034-1051</pages>
+</article></entry>
+
+<entry id="onthewalk"><article>
+  <author>
+    <name><first>B.</first><last>Amrhein</last></name>
+    <name><first>O.</first><last>Gloor</last></name>
+    <name><first>W.</first><last>Küchlin</last></name>
+  </author>  
+  <title> On the Walk </title>
+  <journal> Theoret. Comput. Sci. </journal>
+  <year>1997</year>
+  <volume>187 (1-2)</volume>
+  <pages>179-202</pages>
+</article></entry>
+
+<entry id="bergman"><article>
+  <author>
+    <name><first>G. M.</first><last>Bergman</last></name>
+  </author>  
+  <title> The Diamond Lemma for Ring Theory </title>
+  <journal> Adv. in Math.</journal>
+  <year>1978</year>
+  <volume>29 (2)</volume>
+  <pages>178-218</pages>
+</article></entry>
+
+<entry id="buchberger"><inproceedings>
+  <author>
+    <name><first>B.</first><last>Buchberger</last></name>
+  </author>  
+  <title>An Algorithmic Criterion for the Solvability of a 
+         System of Algebraic Equations. 
+         <C>T</C>ranslation of <C>P</C>h.<C>D</C>. thesis 
+         by <C>M</C>. <C>A</C>bramson and <C>R</C>. <C>L</C>umbert
+  </title>
+  <booktitle>Gröbner Bases and Applications</booktitle>
+  <year>1998</year>
+  <editor>
+    <name><first>B.</first><last>Buchberger</last></name>
+    <name><first>F.</first><last>Winkler</last></name>
+  </editor>  
+  <pages>535-545</pages>
+  <series>Proc. London Math. Soc.</series>
+  <volume>251</volume>
+  <publisher>Cambridge University Press</publisher>
+</inproceedings></entry>
+
+<entry id="knuth-bendix"><inproceedings>
+  <author>
+    <name><first>D. E.</first><last>Knuth</last></name>
+    <name><first>P. B.</first><last>Bendix</last></name>
+  </author>  
+  <title> Simple word problems in universal algebras </title>
+  <booktitle> Computational Problems in Abstract Algebra </booktitle>
+  <year>2004</year>
+  <editor>
+    <name><first>J.</first><last>Leech</last></name>
+  </editor>  
+  <pages>263-297</pages>
+  <publisher> Pergamon Press </publisher>
+</inproceedings></entry>
+
+<entry id="lambe-radford"><book>
+  <author>
+    <name><first>L. A.</first><last>Lambe</last></name>
+    <name><first>D. E.</first><last>Radford</last></name>
+  </author>  
+  <title>Introduction to the Quantum Yang-Baxter Equation
+         and Quantum Groups: An Algebraic Approach</title>
+  <publisher>Kluwer Academic</publisher>
+  <year>1997</year>
+  <series>Mathematics and its Applications</series>
+  <volume>423</volume>
+</book></entry>
+
+<entry id="mora"><inproceedings>
+  <author>
+    <name><first>T.</first><last>Mora</last></name>
+  </author>  
+  <title>Gröbner Bases for non-commutative polynomial rings </title>
+  <booktitle> AAECC-3: Proc. 3rd Int. Conf. on Algebraic Algorithms
+              and Error-Correcting Codes
+              (Grenoble, France, July 15-19, 1985)
+  </booktitle>
+  <year>1986</year>
+  <editor>
+    <name><first>J.</first><last>Calmet</last></name>
+  </editor>  
+  <pages>353-362</pages>
+  <series> Lecture Notes in Comput. Sci. </series>
+  <volume>223</volume>
+  <publisher> Springer </publisher>
+</inproceedings></entry>
+
+<entry id="yuyu"><article>
+  <author>
+    <name><first>A. Yu.</first><last>Zharkov</last></name>
+    <name><first>Yu. A.</first><last>Blinkov</last></name>
+  </author>  
+  <title> Involution approach to investigating polynomial systems </title>
+  <journal> Math. Comput. Simulation </journal>
+  <year>1996</year>
+  <volume>(42) 4-6</volume>
+  <pages>323-332</pages>
+</article></entry>
+
+</file>

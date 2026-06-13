@@ -1,0 +1,22 @@
+  
+  
+  [1XIndex[101X
+  
+  [2XCyclicChainMat[102X 4.1-5 
+  [2XFrobeniusNormalForm[102X 2.1-1 
+  [2XFrobeniusNormalFormLikeRCFT[102X 2.1-2 
+  [2XGcdCoprimeSplit[102X 4.1-1 
+  [2XInvariantFactorsMat[102X 2.1-3 
+  [2XJacobMatComplement[102X 4.1-7 
+  [2XJordanChevalleyDecMat[102X 3.1-1 
+  [2XJordanChevalleyDecMatF[102X 3.1-2 
+  [2XJordanNormalForm[102X 2.2-1 
+  [2XLcmMaximalVectorMat[102X 4.1-3 
+  [2XMaximalVectorMat[102X 4.1-6 
+  [2XPolynomialToMatVec[102X 4.1-2 
+  [2XPrimaryDecomposition[102X, for IsMatrixOrMatrixObj 3.2-1 
+  [2XRatFormStep1[102X 4.1-8 
+  [2XSpinMatVector[102X 4.1-4 
+  
+  
+  -------------------------------------------------------

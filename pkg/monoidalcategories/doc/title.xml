@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    MonoidalCategories
+  </Title>
+  <Subtitle>
+    Monoidal and monoidal (co)closed categories
+  </Subtitle>
+  <Version>
+    2026.06-01
+  </Version>
+  <Author>
+    Mohamed Barakat
+<Address>
+Walter-Flex-Str. 3<Br/>
+57068 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>mohamed.barakat@uni-siegen.de</Email>
+<Homepage>http://algebra.mathematik.uni-siegen.de/barakat/</Homepage>
+  </Author>
+  <Author>
+    Sebastian Gutsche
+<Address>
+Department Mathematik<Br/>
+Universität Siegen<Br/>
+Walter-Flex-Straße 3<Br/>
+57068 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>sebastian.gutsche@gmail.com</Email>
+<Homepage>http://algebra.mathematik.uni-siegen.de/gutsche/</Homepage>
+  </Author>
+  <Author>
+    Sebastian Posur
+<Address>
+Department Mathematik<Br/>
+Universität Siegen<Br/>
+Walter-Flex-Straße 3<Br/>
+57068 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>sebastian.posur@uni-muenster.de</Email>
+<Homepage>http://algebra.mathematik.uni-siegen.de/posur/</Homepage>
+  </Author>
+  <Author>
+    Tom Kuhmichel
+<Address>
+Department Mathematik<Br/>
+Universität Siegen<Br/>
+Walter-Flex-Straße 3<Br/>
+57068 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>tom.kuhmichel@student.uni-siegen.de</Email>
+<Homepage>https://github.com/TKuh</Homepage>
+  </Author>
+  <Author>
+    Fabian Zickgraf
+<Address>
+Walter-Flex-Str. 3<Br/>
+57068 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>f.zickgraf@dashdos.com</Email>
+<Homepage>https://github.com/zickgraf/</Homepage>
+  </Author>
+  <Date>
+    2 June 2026
+  </Date>
+  </TitlePage>

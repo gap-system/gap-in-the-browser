@@ -1,0 +1,3 @@
+PyGitHub
+requests
+types-requests

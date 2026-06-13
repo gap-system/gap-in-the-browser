@@ -1,0 +1,376 @@
+  
+  [1X2 [33X[0;0YStandard finite fields[133X[101X
+  
+  
+  [1X2.1 [33X[0;0YDefinition of standard finite fields[133X[101X
+  
+  [33X[0;0YIn  [Lüb23] we define for each prime [22Xp[122X and positive integer [22Xn[122X a standardized
+  model  for  the finite field with [22Xp^n[122X elements. This is done by defining for
+  each  prime  [22Xr[122X  polynomials  of  degree  [22Xr[122X  which define recursively [22Xr[122X-power
+  extensions  of the prime field [22XGF(p)[122X and by combining these for all [22Xr | n[122X in
+  a  unique  tower of extensions of finite fields where the successive degrees
+  are non-decreasing primes.[133X
+  
+  [33X[0;0YRelative  to this tower of prime degree extensions the resulting field comes
+  with  a  natural  basis  over the prime field which we call the [13Xtower basis[113X.
+  This  construction  has the nice property that whenever [22Xn | m[122X then the tower
+  basis  of  the field with [22Xp^n[122X elements is a subset of the tower basis of the
+  field with [22Xp^m[122X elements. (See [Lüb23] for more details.)[133X
+  
+  [33X[0;0YExpressing  elements  as  linear  combination of the tower basis we define a
+  bijection  from  the  elements  in  the  field  of  order  [22Xp^n[122X  to the range
+  [10X[0..p^n-1][110X; we call the number assigned to an element its [13XSteinitz number[113X.[133X
+  
+  [33X[0;0YVia  this construction each element in the algebraic closure of [22XGF(p)[122X can be
+  identified  by  its degree [22Xd[122X over the prime field and its Steinitz number in
+  the field with [22Xp^d[122X elements (we call this a [13XSteinitz pair[113X).[133X
+  
+  [33X[0;0YSince  arithmetic  in  simple algebraic extensions is more efficient than in
+  iterated   extensions   we   construct  the  fields  recursively  as  simple
+  extensions,  and  including  information  about  the base change between the
+  tower basis and the basis given by the powers of the generator.[133X
+  
+  
+  [1X2.2 [33X[0;0YCreating standard finite fields[133X[101X
+  
+  
+  [1X2.2-1 [33X[0;0YConstructing standard finite fields[133X[101X
+  
+  [33X[1;0Y[29X[2XStandardFiniteField[102X( [3Xp[103X, [3Xn[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XFF[102X( [3Xp[103X, [3Xn[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya finite field[133X
+  
+  [33X[1;0Y[29X[2XStandardPrimeDegreePolynomial[102X( [3Xp[103X, [3Xr[103X, [3Xk[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya polynomial of degree [3Xr[103X[133X
+  
+  [33X[0;0YThe  arguments  are  a prime [3Xp[103X and a positive integer [3Xn[103X. The function [2XFF[102X (or
+  its  synomym  [2XStandardFiniteField[102X)  is  one  of  the  main functions of this
+  package.  It  returns a standardized field [10XF[110X of order [22X[3Xp[103X^[3Xn[103X[122X. It is implemented
+  as  a  simple  extension over the prime field [10XGF(p)[110X using [2XAlgebraicExtension[102X
+  ([14XReference: AlgebraicExtension[114X)[133X
+  
+  [33X[0;0YThe  polynomials  used  for  the prime degree extensions are accessible with
+  [2XStandardPrimeDegreePolynomial[102X.   For  arguments  [3Xp,  r,  k[103X  it  returns  the
+  irreducible polynomial of degree [3Xr[103X for the [3Xk[103X-th iterated extension of degree
+  [3Xr[103X  over  the  prime  field.  The  polynomial is in the variable [10Xx[110X[13Xr[113X[10X_[110X[13Xk[113X and the
+  coefficients can contain variables [10Xx[110X[13Xr[113X[10X_[110X[13Xl[113X with [22Xl < k[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XFp := FF(2, 1);[127X[104X
+    [4X[28XGF(2)[128X[104X
+    [4X[25Xgap>[125X [27XF := FF(2, 100);[127X[104X
+    [4X[28XFF(2, 100)[128X[104X
+    [4X[25Xgap>[125X [27XSize(F);[127X[104X
+    [4X[28X1267650600228229401496703205376[128X[104X
+    [4X[25Xgap>[125X [27Xp := NextPrimeInt(10^50);[127X[104X
+    [4X[28X100000000000000000000000000000000000000000000000151[128X[104X
+    [4X[25Xgap>[125X [27XK := FF(p, 60);[127X[104X
+    [4X[28XFF(100000000000000000000000000000000000000000000000151, 60)[128X[104X
+    [4X[25Xgap>[125X [27XLogInt(Size(K), 10);[127X[104X
+    [4X[28X3000[128X[104X
+    [4X[25Xgap>[125X [27XF := FF(13, 9*5);[127X[104X
+    [4X[28XFF(13, 45)[128X[104X
+    [4X[25Xgap>[125X [27XStandardPrimeDegreePolynomial(13, 3, 1);[127X[104X
+    [4X[28Xx3_1^3+Z(13)^7[128X[104X
+    [4X[25Xgap>[125X [27XStandardPrimeDegreePolynomial(13, 3, 2);[127X[104X
+    [4X[28Xx3_2^3-x3_1[128X[104X
+    [4X[25Xgap>[125X [27XStandardPrimeDegreePolynomial(13, 5, 1);[127X[104X
+    [4X[28Xx5_1^5+Z(13)^4*x5_1^2+Z(13)^4*x5_1-Z(13)^0[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.2-2 [33X[0;0YFilters for standard fields[133X[101X
+  
+  [33X[1;0Y[29X[2XIsStandardPrimeField[102X( [3XF[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsStandardFiniteField[102X( [3XF[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsStandardFiniteFieldElement[102X( [3Xx[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YThese  properties  identify  the  finite fields constructed with [2XFF[102X ([14X2.2-1[114X).
+  Prime fields constructed as [10XFF(p, 1)[110X have the property [2XIsStandardPrimeField[102X.
+  They are identical with [10XGF(p)[110X, but calling them via [2XFF[102X ([14X2.2-1[114X) we store some
+  additional information in these objects.[133X
+  
+  [33X[0;0YThe   fields   constructed   by  [10XFF(p,k)[110X  with  [10Xk[110X  [22X>  1[122X  have  the  property
+  [2XIsStandardFiniteField[102X.    Elements    [3Xx[103X    in    such   a   field   are   in
+  [2XIsStandardFiniteFieldElement[102X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(19,1);[127X[104X
+    [4X[28XGF(19)[128X[104X
+    [4X[25Xgap>[125X [27XIsStandardFiniteField(F);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsStandardPrimeField(F);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XF := FF(23,48);[127X[104X
+    [4X[28XFF(23, 48)[128X[104X
+    [4X[25Xgap>[125X [27XIsStandardFiniteField(F);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsStandardFiniteFieldElement(Random(F));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.3 [33X[0;0YElements in standard finite fields[133X[101X
+  
+  [33X[0;0YFor  fields  in  [2XIsStandardFiniteField[102X  ([14X2.2-2[114X)  we provide functions to map
+  elements  to  their linear combination of the tower basis, to their Steinitz
+  number  and  Steinitz pair, or to their representing multivariate polynomial
+  with respect to all prime degree extensions, and vice versa.[133X
+  
+  
+  [1X2.3-1 [33X[0;0YMaps for elements of standard finite fields[133X[101X
+  
+  [33X[1;0Y[29X[2XAsVector[102X( [3Xa[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Ya vector over prime field of [10XF[110X[133X
+  
+  [33X[1;0Y[29X[2XElementVector[102X( [3XF[103X, [3Xv[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Yan element in [10XF[110X[133X
+  
+  [33X[1;0Y[29X[2XAsPolynomial[102X( [3Xa[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Ya polynomial in variables of the tower of [10XF[110X[133X
+  
+  [33X[1;0Y[29X[2XElementPolynomial[102X( [3XF[103X, [3Xpol[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Yan element in [10XF[110X[133X
+  
+  [33X[1;0Y[29X[2XSteinitzNumber[102X( [3Xa[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Yan integer[133X
+  
+  [33X[1;0Y[29X[2XElementSteinitzNumber[102X( [3XF[103X, [3Xnr[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Yan element in [10XF[110X[133X
+  
+  [33X[0;0YHere,  [3XF[103X  is  always a standard finite field ([2XIsStandardFiniteField[102X ([14X2.2-2[114X))
+  and [3Xa[103X is an element of [3XF[103X.[133X
+  
+  [33X[0;0Y[2XAsVector[102X returns the coefficient vector of [3Xa[103X with respect to the tower basis
+  of  [3XF[103X.  And vice versa [2XElementVector[102X returns the element of [3XF[103X with the given
+  coefficient vector.[133X
+  
+  [33X[0;0YSimilarly,   [2XAsPolynomial[102X   returns   the   (reduced)   polynomial   in  the
+  indeterminates  defining the tower of [3XF[103X. Here, for each prime [22Xr[122X dividing the
+  degree  of  the field the polynomial defining the [22Xk[122X-th extension of degree [22Xr[122X
+  over  the prime field is written in the variable [10Xx[110X[22Xr[122X[10X_[110X[22Xk[122X. And [2XElementPolynomial[102X
+  returns the element of [3XF[103X represented by the given polynomial (which does not
+  need to be reduced).[133X
+  
+  [33X[0;0YFinally,   [2XSteinitzNumber[102X   returns   the   Steinitz   number   of   [3Xa[103X.  And
+  [2XElementSteinitzNumber[102X returns the element with given Steinitz number.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(17, 12);[127X[104X
+    [4X[28XFF(17, 12)[128X[104X
+    [4X[25Xgap>[125X [27Xa := PrimitiveElement(F);; a := a^11-3*a^5+a;[127X[104X
+    [4X[28XZZ(17,12,[0,1,0,0,0,14,0,0,0,0,0,1])[128X[104X
+    [4X[25Xgap>[125X [27Xv := AsVector(a);[127X[104X
+    [4X[28X< immutable compressed vector length 12 over GF(17) >[128X[104X
+    [4X[25Xgap>[125X [27Xa = ElementVector(F, v);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XExtRepOfObj(a) = v * TowerBasis(F);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xpol := AsPolynomial(a);;[127X[104X
+    [4X[25Xgap>[125X [27XElementPolynomial(F, pol^10) = a^10;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xnr := SteinitzNumber(a);[127X[104X
+    [4X[28X506020624175737[128X[104X
+    [4X[25Xgap>[125X [27Xa = ElementSteinitzNumber(F, nr);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X## primitive element of FF(17, 6)[127X[104X
+    [4X[25Xgap>[125X [27Xy := ElementSteinitzNumber(F, 17^5);[127X[104X
+    [4X[28XZZ(17,12,[0,0,1,0,0,0,12,0,0,0,5,0])[128X[104X
+    [4X[25Xgap>[125X [27Xy = ValuePol([0,0,1,0,0,0,12,0,0,0,5,0], PrimitiveElement(F));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xx6 := Indeterminate(FF(17,1), "x6");;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalPolynomial(FF(17,1), y, x6) = DefiningPolynomial(FF(17,6));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.4 [33X[0;0YEmbeddings of standard finite fields[133X[101X
+  
+  [33X[0;0YThe tower basis of a standard finite field [10XF[110X contains the tower basis of any
+  subfield.  This  yields  a  construction  of  canonical  embeddings  of  all
+  subfields  of  [10XF[110X  into  [10XF[110X. And one can easily read off the smallest subfield
+  containing  an  element in [10XF[110X from its coefficient vector with respect to the
+  tower  basis.  Each  element of the algebraic closure of [10XFF(p,1)[110X is uniquely
+  determined by its degree [10Xd[110X and its Steinitz number in [10XFF(p, d)[110X.[133X
+  
+  [1X2.4-1 SteinitzPair[101X
+  
+  [33X[1;0Y[29X[2XSteinitzPair[102X( [3Xa[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya pair of integers[133X
+  
+  [33X[1;0Y[29X[2XSteinitzPair[102X( [3XK[103X, [3Xsnr[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Ya pair of integers[133X
+  
+  [33X[1;0Y[29X[2XSteinitzNumber[102X( [3XK[103X, [3Xpair[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Yan integer[133X
+  
+  [33X[0;0YThe  argument  [3Xa[103X must be an element in [2XIsStandardFiniteFieldElement[102X ([14X2.2-2[114X).
+  Then [2XSteinitzPair[102X returns a pair [10X[d, nr][110X where [10Xd[110X is the degree of [3Xa[103X over the
+  prime  field  [10XFF(p,  1)[110X  and  [10Xnr[110X  is  the Steinitz number of [3Xa[103X considered as
+  element of [10XFF(p, d)[110X.[133X
+  
+  [33X[0;0YIn  the  second  variant a standard finite field [3XK[103X is given and the Steinitz
+  number  of  an  element  in  [3XK[103X  and  the  result is the Steinitz pair of the
+  corresponding element.[133X
+  
+  [33X[0;0YThe  inverse  map  is  provided  by a method for [2XSteinitzNumber[102X which gets a
+  standard finite field and a Steinitz pair.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(7, 360);[127X[104X
+    [4X[28XFF(7, 360)[128X[104X
+    [4X[25Xgap>[125X [27Xt := ElementSteinitzNumber(F, 7^10);; # prim. elt of FF(7,12)[127X[104X
+    [4X[25Xgap>[125X [27Xsp := SteinitzPair(t);[127X[104X
+    [4X[28X[ 12, 117649 ][128X[104X
+    [4X[25Xgap>[125X [27XH := FF(7, 12);[127X[104X
+    [4X[28XFF(7, 12)[128X[104X
+    [4X[25Xgap>[125X [27Xb := ElementSteinitzNumber(H, 117649);[127X[104X
+    [4X[28XZZ(7,12,[0,1,0,0,0,0,0,0,0,0,0,0])[128X[104X
+    [4X[25Xgap>[125X [27XValue(MinimalPolynomial(FF(7,1), t), b);[127X[104X
+    [4X[28XZZ(7,12,[0])[128X[104X
+    [4X[25Xgap>[125X [27Xnr := SteinitzNumber(t);[127X[104X
+    [4X[28X282475249[128X[104X
+    [4X[25Xgap>[125X [27Xnr = SteinitzNumber(F, sp);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xsp = SteinitzPair(F, nr);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.4-2 Embedding[101X
+  
+  [33X[1;0Y[29X[2XEmbedding[102X( [3XH[103X, [3XF[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Ya field homomorphism[133X
+  
+  [33X[0;0YLet  [3XF[103X  and [3XH[103X be standard finite fields and [3XH[103X be isomorphic to a subfield of
+  [3XF[103X. This function returns the canonical embedding of [3XH[103X into [3XF[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(7, 360);[127X[104X
+    [4X[28XFF(7, 360)[128X[104X
+    [4X[25Xgap>[125X [27XH := FF(7, 45);[127X[104X
+    [4X[28XFF(7, 45)[128X[104X
+    [4X[25Xgap>[125X [27Xemb := Embedding(H, F);[127X[104X
+    [4X[28XMappingByFunction( FF(7, 45), FF(7, 360), function( x ) ... end )[128X[104X
+    [4X[25Xgap>[125X [27Xy := PrimitiveElement(H);[127X[104X
+    [4X[28XZZ(7,45,[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,[128X[104X
+    [4X[28X0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])[128X[104X
+    [4X[25Xgap>[125X [27Xx := y^emb;;[127X[104X
+    [4X[25Xgap>[125X [27X((y+One(H))^12345)^emb = (x+One(F))^12345;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XPreImageElm(emb, x^5);[127X[104X
+    [4X[28XZZ(7,45,[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,[128X[104X
+    [4X[28X0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])[128X[104X
+    [4X[25Xgap>[125X [27XPreImageElm(emb, PrimitiveElement(F));[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XSteinitzNumber(y);[127X[104X
+    [4X[28X13841287201[128X[104X
+    [4X[25Xgap>[125X [27XSteinitzNumber(x) mod 10^50;[127X[104X
+    [4X[28X72890819326613454654477690085519113574118965817601[128X[104X
+    [4X[25Xgap>[125X [27XSteinitzPair(x);[127X[104X
+    [4X[28X[ 45, 13841287201 ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.4-3 ZZ[101X
+  
+  [33X[1;0Y[29X[2XZZ[102X( [3Xp[103X, [3Xn[103X, [3Xcoeffs[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XZZ[102X( [3Xp[103X, [3Xn[103X, [3Xffe[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan element in [10XFF([3Xp[103X[10X, [3Xn[103X[10X)[110X[133X
+  
+  [33X[0;0YFor  a  prime [3Xp[103X, positive integer [3Xn[103X and an integer list [3Xcoeffs[103X this function
+  returns  the  element  in  [10XFF([3Xp[103X[10X,  [3Xn[103X[10X)[110X  represented  by  the  polynomial  with
+  coefficient  list  [3Xcoeffs[103X  modulo  [3Xp[103X. Elements in standard finite fields are
+  also printed in this way.[133X
+  
+  [33X[0;0YFor  convenience  the  third  argument  [3Xffe[103X  can  be  in  `GF(p,n)`  (see [2XGF[102X
+  ([14XReference: GF for characteristic and degree[114X) and [2XIsFFE[102X ([14XReference: IsFFE[114X)).
+  This  returns  the  image  of [3Xffe[103X under the [2XStandardIsomorphismGF[102X ([14X2.4-5[114X) of
+  [10XFF([3Xp[103X[10X,[3Xn[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx := ZZ(19,5,[1,2,3,4,5]);[127X[104X
+    [4X[28XZZ(19,5,[1,2,3,4,5])[128X[104X
+    [4X[25Xgap>[125X [27Xa := PrimitiveElement(FF(19,5));[127X[104X
+    [4X[28XZZ(19,5,[0,1,0,0,0])[128X[104X
+    [4X[25Xgap>[125X [27Xx = [1,2,3,4,5]*[a^0,a^1,a^2,a^3,a^4];[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XOne(FF(19,5)); # elements in prime field abbreviated[127X[104X
+    [4X[28XZZ(19,5,[1])[128X[104X
+    [4X[25Xgap>[125X [27XOne(FF(19,5)) = ZZ(19,5,[1]);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XZZ(19,5,Z(19^5)); # zero of ConwayPolynomial(19,5)[127X[104X
+    [4X[28XZZ(19,5,[12,5,3,4,5])[128X[104X
+  [4X[32X[104X
+  
+  [1X2.4-4 MoveToSmallestStandardField[101X
+  
+  [33X[1;0Y[29X[2XMoveToSmallestStandardField[102X( [3Xx[103X ) [32X function[133X
+  [33X[1;0Y[29X[2X\+[102X( [3Xx[103X, [3Xy[103X ) [32X method[133X
+  [33X[1;0Y[29X[2X\*[102X( [3Xx[103X, [3Xy[103X ) [32X method[133X
+  [33X[1;0Y[29X[2X\-[102X( [3Xx[103X, [3Xy[103X ) [32X method[133X
+  [33X[1;0Y[29X[2X\/[102X( [3Xx[103X, [3Xy[103X ) [32X method[133X
+  [6XReturns:[106X  [33X[0;10Ya field element[133X
+  
+  [33X[0;0YHere  [3Xx[103X  and  [3Xy[103X  must  be  elements  in  standard finite fields (of the same
+  characteristic).[133X
+  
+  [33X[0;0YThen  [2XMoveToSmallestStandardField[102X  returns  the  element [3Xx[103X as element of the
+  smallest possible degree extension over the prime field.[133X
+  
+  [33X[0;0YThe arithmetic operations are even possible when [3Xx[103X and [3Xy[103X are not represented
+  as elements in the same field. In this case the elements are first mapped to
+  the smallest field containing both.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(1009,4);[127X[104X
+    [4X[28XFF(1009, 4)[128X[104X
+    [4X[25Xgap>[125X [27XG := FF(1009,6);[127X[104X
+    [4X[28XFF(1009, 6)[128X[104X
+    [4X[25Xgap>[125X [27Xx := (PrimitiveElement(F)+One(F))^13;[127X[104X
+    [4X[28XZZ(1009,4,[556,124,281,122])[128X[104X
+    [4X[25Xgap>[125X [27Xy := (PrimitiveElement(G)+One(G))^5;[127X[104X
+    [4X[28XZZ(1009,6,[1,5,10,10,5,1])[128X[104X
+    [4X[25Xgap>[125X [27Xx+y;[127X[104X
+    [4X[28XZZ(1009,12,[557,0,936,713,332,0,462,0,843,191,797,0])[128X[104X
+    [4X[25Xgap>[125X [27Xx-y;[127X[104X
+    [4X[28XZZ(1009,12,[555,0,73,713,677,0,97,0,166,191,212,0])[128X[104X
+    [4X[25Xgap>[125X [27Xx*y;[127X[104X
+    [4X[28XZZ(1009,12,[253,289,700,311,109,851,345,408,813,657,147,887])[128X[104X
+    [4X[25Xgap>[125X [27Xx/y;[127X[104X
+    [4X[28XZZ(1009,12,[690,599,714,648,184,217,563,130,251,675,73,782])[128X[104X
+    [4X[25Xgap>[125X [27Xz  := -y + (x+y);[127X[104X
+    [4X[28XZZ(1009,12,[556,0,0,713,0,0,784,0,0,191,0,0])[128X[104X
+    [4X[25Xgap>[125X [27XSteinitzPair(z);[127X[104X
+    [4X[28X[ 4, 125450261067 ][128X[104X
+    [4X[25Xgap>[125X [27Xx=z;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XMoveToSmallestStandardField(z);[127X[104X
+    [4X[28XZZ(1009,4,[556,124,281,122])[128X[104X
+  [4X[32X[104X
+  
+  [1X2.4-5 StandardIsomorphismGF[101X
+  
+  [33X[1;0Y[29X[2XStandardIsomorphismGF[102X( [3XF[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya field isomorphism[133X
+  
+  [33X[0;0YThe  argument  [3XF[103X  must be a standard finite field, say [10XFF(p,n)[110X such that [5XGAP[105X
+  can  generate  [10XGF(p,n)[110X.  This  function  returns  the field isomorphism from
+  [10XGF(p,n)[110X  to [3XF[103X, which sends [10XZ(p,n)[110X to the element with Steinitz pair computed
+  by [2XSteinitzPairConwayGenerator[102X ([14X4.4-3[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(13,21);[127X[104X
+    [4X[28XFF(13, 21)[128X[104X
+    [4X[25Xgap>[125X [27Xiso := StandardIsomorphismGF(F);[127X[104X
+    [4X[28XMappingByFunction( GF(13^21), FF(13, 21), function( x ) ... end )[128X[104X
+    [4X[25Xgap>[125X [27XK := GF(13,21);[127X[104X
+    [4X[28XGF(13^21)[128X[104X
+    [4X[25Xgap>[125X [27Xx := Random(K);;[127X[104X
+    [4X[25Xgap>[125X [27Xl := [1,2,3,4,5];;[127X[104X
+    [4X[25Xgap>[125X [27XValuePol(l, x)^iso = ValuePol(l, x^iso);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xy :=  ElementSteinitzNumber(F, SteinitzPairConwayGenerator(F)[2]);;[127X[104X
+    [4X[25Xgap>[125X [27XPreImageElm(iso, y);[127X[104X
+    [4X[28Xz[128X[104X
+  [4X[32X[104X
+  

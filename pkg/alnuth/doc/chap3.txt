@@ -1,0 +1,111 @@
+  
+  [1X3 [33X[0;0YAn example application[133X[101X
+  
+  [33X[0;0YIn  this  section  we outline two example computations with the functions of
+  the  previous  chapter.  The  first  example  uses  number fields defined by
+  matrices  and  the  second  example  considers  number  fields  defined by a
+  polynomial.[133X
+  
+  
+  [1X3.1 [33X[0;0YNumber fields defined by matrices[133X[101X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xm1 := [ [ 1, 0, 0, -7 ], [127X[104X
+    [4X[25X>[125X [27X           [ 7, 1, 0, -7 ], [127X[104X
+    [4X[25X>[125X [27X           [ 0, 7, 1, -7 ], [127X[104X
+    [4X[25X>[125X [27X           [ 0, 0, 7, -6 ] ];;[127X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27Xm2 := [ [ 0, 0, -13, 14 ], [127X[104X
+    [4X[25X>[125X [27X           [ -1, 0, -13, 1 ], [127X[104X
+    [4X[25X>[125X [27X           [ 13, -1, -13, 1 ], [127X[104X
+    [4X[25X>[125X [27X           [ 0, 13, -14, 1 ] ];;[127X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XF := FieldByMatricesNC( [m1, m2] );[127X[104X
+    [4X[28X<rational matrix field of unknown degree>[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XDegreeOverPrimeField(F);[127X[104X
+    [4X[28X4[128X[104X
+    [4X[25Xgap>[125X [27XPrimitiveElement(F);[127X[104X
+    [4X[28X[ [ 0, -1, 1, 0 ], [ 0, -1, 0, 1 ], [ 0, -1, 0, 0 ], [ 1, -1, 0, 0 ] ][128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XBasis(F);[127X[104X
+    [4X[28XBasis( <rational matrix field of degree 4>, [128X[104X
+    [4X[28X[ [ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ], [128X[104X
+    [4X[28X  [ [ 0, 1, 0, 0 ], [ -1, 1, 1, 0 ], [ -1, 0, 1, 1 ], [ -1, 0, 0, 1 ] ], [128X[104X
+    [4X[28X  [ [ 0, 0, 1, 0 ], [ -1, 0, 1, 1 ], [ -1, -1, 1, 1 ], [ 0, -1, 0, 1 ] ], [128X[104X
+    [4X[28X  [ [ 0, 0, 0, 1 ], [ -1, 0, 0, 1 ], [ 0, -1, 0, 1 ], [ 0, 0, -1, 1 ] ] ] )[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XMaximalOrderBasis(F);[127X[104X
+    [4X[28XBasis( <rational matrix field of degree 4>, [128X[104X
+    [4X[28X[ [ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ], [128X[104X
+    [4X[28X  [ [ 0, -1, 1, 0 ], [ 0, -1, 0, 1 ], [ 0, -1, 0, 0 ], [ 1, -1, 0, 0 ] ], [128X[104X
+    [4X[28X  [ [ 0, 0, 0, -1 ], [ 1, 0, 0, -1 ], [ 0, 1, 0, -1 ], [ 0, 0, 1, -1 ] ], [128X[104X
+    [4X[28X  [ [ -1, 1, 0, 0 ], [ -1, 0, 1, 0 ], [ -1, 0, 0, 1 ], [ -1, 0, 0, 0 ] ] ] )[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XU := UnitGroup(F);[127X[104X
+    [4X[28X<matrix group with 2 generators>[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27Xu := GeneratorsOfGroup( U );;[127X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27Xnat := IsomorphismPcpGroup(U);;[127X[104X
+    [4X[25Xgap>[125X [27XH := Image(nat);[127X[104X
+    [4X[28XPcp-group with orders [ 10, 0 ][128X[104X
+    [4X[25Xgap>[125X [27XImageElm( nat, u[1] );[127X[104X
+    [4X[28Xg1[128X[104X
+    [4X[25Xgap>[125X [27XImageElm( nat, u[2] );[127X[104X
+    [4X[28Xg2[128X[104X
+    [4X[25Xgap>[125X [27XImageElm( nat, u[1]*u[2] );[127X[104X
+    [4X[28Xg1*g2[128X[104X
+    [4X[25Xgap>[125X [27Xu[1] = PreImagesRepresentative(nat, GeneratorsOfGroup(H)[1] );[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X3.2 [33X[0;0YNumber fields defined by a polynomial[133X[101X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg := UnivariatePolynomial( Rationals, [ 16, 64, -28, -4, 1 ] );[127X[104X
+    [4X[28Xx^4-4*x^3-28*x^2+64*x+16[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XF := FieldByPolynomialNC(g);[127X[104X
+    [4X[28X<algebraic extension over the Rationals of degree 4>[128X[104X
+    [4X[25Xgap>[125X [27XPrimitiveElement(F);[127X[104X
+    [4X[28Xa[128X[104X
+    [4X[25Xgap>[125X [27XMaximalOrderBasis(F);[127X[104X
+    [4X[28XBasis( <algebraic extension over the Rationals of degree 4>, [128X[104X
+    [4X[28X[ !1, 1/2*a, 1/4*a^2, 1/56*a^3+1/14*a^2+1/14*a-2/7 ] )[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XU := UnitGroup(F);[127X[104X
+    [4X[28X<group with 4 generators>[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XnatU := IsomorphismPcpGroup(U);;[127X[104X
+    [4X[25Xgap>[125X [27Xelms := List( [1..10], x-> Random(F) );;[127X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27X PcpPresentationOfMultiplicativeSubgroup( F, elms );[127X[104X
+    [4X[28XPcp-group with orders [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ][128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27Xisom := IsomorphismPcpGroup( F, elms );;[127X[104X
+    [4X[25Xgap>[125X [27Xy := RandomGroupElement( elms );;[127X[104X
+    [4X[25Xgap>[125X [27Xz := ImageElm( isom, y );;[127X[104X
+    [4X[25Xgap>[125X [27Xy = PreImagesRepresentative( isom, z );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X#[128X[104X
+    [4X[25Xgap>[125X [27XFactorsPolynomialAlgExt( F, g );[127X[104X
+    [4X[28X[ x_1+(-a), x_1+(a-2), x_1+(-1/7*a^3+3/7*a^2+31/7*a-40/7), [128X[104X
+    [4X[28X  x_1+(1/7*a^3-3/7*a^2-31/7*a+26/7) ][128X[104X
+  [4X[32X[104X
+  

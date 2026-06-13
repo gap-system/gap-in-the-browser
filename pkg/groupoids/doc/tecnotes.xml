@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-tecnotes">
+<Heading>Technical Notes</Heading>
+
+This short chapter is included for the benefit of anyone wishing to 
+implement some other variety of many-object structures, 
+for example <E>ringoids</E>, which are rings with many objects; 
+<E>Lie groupoids</E>, which are Lie groups with many objects; and so on. 
+
+<Section Label="sec-tec-mwo">
+<Heading>Many object structures</Heading>
+
+Structures with many objects, and their elements, are defined in a manner similar to the single object case. For elements we have: 
+<List>
+<Item>
+<C>DeclareCategory( "IsMultiplicativeElementWithObjects", 
+    IsMultiplicativeElement ); </C>
+</Item>
+<Item>
+<C>DeclareCategory( "IsMultiplicativeElementWithObjectsAndOnes", 
+    IsMultiplicativeElementWithObjects ); </C>
+</Item>
+<Item>
+<C>DeclareCategory( "IsMultiplicativeElementWithObjectsAndInverses", 
+    IsMultiplicativeElementWithObjectsAndOnes ); </C>
+</Item>
+<Item>
+<C>DeclareCategory( "IsGroupoidElement", </C>
+<P/>
+<C>IsMultiplicativeElementWithObjectsAndInverses ); </C>
+</Item>
+</List>
+as well as various category collections. 
+For the various structures we have: 
+<List>
+<Item>
+<C>DeclareCategory( "IsDomainWithObjects", IsDomain ); </C>
+</Item>
+<Item>
+<C>DeclareCategory( "IsMagmaWithObjects", IsDomainWithObjects and 
+    IsMultiplicativeElementWithObjectsCollection );</C>
+</Item>
+<Item>
+<C>DeclareCategory( "IsSemigroupWithObjects",
+    IsMagmaWithObjects and IsAssociative ); </C>
+</Item>
+<Item>
+<C>DeclareCategory( "IsMonoidWithObjects", 
+    IsSemigroupWithObjects and 
+    IsMultiplicativeElementWithObjectsAndOnesCollection ); </C> 
+</Item>
+<Item>
+<C>DeclareCategory( "IsGroupoid", IsMonoidWithObjects and 
+    IsGroupoidElementCollection ); </C>
+</Item>
+</List>
+
+Among the groupoids constructed earlier are the single piece 
+<C>Gd8</C> and the five component union <C>U5</C>: 
+<P/>
+<Example>
+<![CDATA[
+gap> CategoriesOfObject( Gd8 );
+[ "IsListOrCollection", "IsCollection", "IsExtLElement", 
+  "CategoryCollections(IsExtLElement)", "IsExtRElement", 
+  "CategoryCollections(IsExtRElement)", 
+  "CategoryCollections(IsMultiplicativeElement)", "IsGeneralizedDomain", 
+  "IsDomainWithObjects", 
+  "CategoryCollections(IsMultiplicativeElementWithObjects)", 
+  "CategoryCollections(IsMultiplicativeElementWithObjectsAndOnes)", 
+  "CategoryCollections(IsMultiplicativeElementWithObjectsAndInverses)", 
+  "CategoryCollections(IsGroupoidElement)", "IsMagmaWithObjects", 
+  "IsSemigroupWithObjects", "IsMonoidWithObjects", "IsGroupoid" ]
+gap> FamilyObj( Gd8 );                     
+<Family: "CollectionsFamily(...)">
+gap> Display(last);   
+name:
+    CollectionsFamily(...)
+required filters:
+    IsCollection
+implied filters:
+    IsListOrCollection
+    IsCollection
+    IsExtLElement
+    CategoryCollections(IsExtLElement)
+    IsExtRElement
+    CategoryCollections(IsExtRElement)
+    CategoryCollections(IsMultiplicativeElement)
+    IsOddAdditiveNestingDepthObject
+    CategoryCollections(IsMultiplicativeElementWithObjects)
+    CategoryCollections(IsMultiplicativeElementWithObjectsAndOnes)
+    CategoryCollections(IsMultiplicativeElementWithObjectsAndInverses)
+    CategoryCollections(IsGroupoidElement)
+gap> KnownAttributesOfObject( Gd8 ); 
+[ "Name", "ObjectList", "GeneratorsOfMagmaWithObjects", 
+  "GeneratorsOfGroupoid" ]
+gap> KnownTruePropertiesOfObject( Gd8 ); 
+[ "IsDuplicateFree", "IsAssociative", "IsSinglePieceDomain", 
+  "IsDirectProductWithCompleteDigraphDomain" ]
+gap> RepresentationsOfObject( Gd8 );
+[ "IsComponentObjectRep", "IsAttributeStoringRep", "IsMWOSinglePieceRep" ]
+gap> RepresentationsOfObject( U5 ); 
+[ "IsComponentObjectRep", "IsAttributeStoringRep", "IsPiecesRep" ]
+]]>
+</Example>
+ 
+Similarly, for arrows, we have: 
+<P/>
+<Example>
+<![CDATA[
+gap> e1;
+[(5,6,7,8) : -9 -> -8]
+gap> CategoriesOfObject( e1 );
+[ "IsExtLElement", "IsExtRElement", "IsMultiplicativeElement", 
+  "IsMultiplicativeElementWithObjects", 
+  "IsMultiplicativeElementWithObjectsAndOnes", 
+  "IsMultiplicativeElementWithObjectsAndInverses", "IsGroupoidElement" ]
+gap> FamilyObj( e1 );
+<Family: "IsGroupoidElementFamily">
+]]>
+</Example>
+</Section>
+
+
+<Section Label="sec-tec-mwohom">
+<Heading>Many object homomorphisms</Heading>
+
+Homomorphisms of structures with many objects have a similar heirarchy. 
+A few examples: 
+<List>
+<Item>
+<C>DeclareCategory( "IsGeneralMappingWithObjects", IsGeneralMapping ); </C>
+</Item>
+<Item>
+<C>DeclareSynonymAttr( "IsMagmaWithObjectsGeneralMapping", 
+    IsGeneralMappingWithObjects and RespectsMultiplication ); </C>
+</Item>
+<Item>
+<C>DeclareSynonymAttr( "IsMagmaWithObjectsHomomorphism", 
+    IsMagmaWithObjectsGeneralMapping and IsSPGeneralMappingWithObjects ); </C>
+</Item>
+<Item>
+<C>DeclareCategory("IsGroupoidHomomorphism",IsMagmaWithObjectsHomomorphism); 
+</C>
+</Item>
+</List>
+<P/>
+Two forms of representation are used: for mappings to a single piece; 
+and for unions of such mappings: 
+<List>
+<Item>
+<C>DeclareRepresentation( "IsMappingToSinglePieceRep",
+    IsMagmaWithObjectsHomomorphism and IsAttributeStoringRep 
+        and IsComponentObjectRep and IsGeneralMapping, 
+    [ "Source", "Range", "MappingToSinglePieceData" ] ); </C>
+</Item>
+<Item>
+<C>DeclareRepresentation( "IsMappingWithPiecesRep", 
+    IsMagmaWithObjectsHomomorphism and IsAttributeStoringRep 
+        and IsComponentObjectRep and IsGeneralMapping, 
+    [ "Source", "Range", "PiecesOfMapping" ] ); </C>
+</Item>
+</List>
+<P/>
+In previous chapters, <C>hom9</C> was a homomorphism 
+from <C>Gd8</C> to <C>Kk4</C>; 
+and  <C>aut1</C> was an automorphism of <C>Ha4</C>. 
+<Example>
+<![CDATA[
+gap> hom9;
+groupoid homomorphism : Gd8 -> Kk4
+[ [ [(5,6,7,8) : -9 -> -9], [(5,7) : -9 -> -9], [() : -9 -> -8], 
+      [() : -9 -> -7] ], 
+  [ [(1,4)(2,3) : -14 -> -14], [() : -14 -> -14], [(1,3,4) : -14 -> -13], 
+      [(1,4)(2,3) : -14 -> -12] ] ]
+gap> CategoriesOfObject( hom9 );
+[ "IsExtLElement", "IsExtRElement", "IsMultiplicativeElement", 
+  "IsMultiplicativeElementWithOne", "IsMultiplicativeElementWithInverse", 
+  "IsAssociativeElement", "IsGeneralMapping", "IsSPGeneralMapping", 
+  "IsGeneralMappingWithObjects", "IsSPGeneralMappingWithObjects", 
+  "IsGroupoidHomomorphism" ]
+gap> FamilyObj( hom9 );
+<Family: "GroupoidHomomorphismFamily">
+gap> Display( last );
+name:
+    GroupoidHomomorphismFamily
+required filters:
+    IsGroupoidHomomorphism
+implied filters:
+    CanEasilyCompareElements
+    HasCanEasilyCompareElements
+    CanEasilySortElements
+    HasCanEasilySortElements
+    IsExtLElement
+    IsExtRElement
+    IsMultiplicativeElement
+    IsMultiplicativeElementWithOne
+    IsMultiplicativeElementWithInverse
+    IsAssociativeElement
+    IsGeneralMapping
+    IsSPGeneralMapping
+    RespectsMultiplication
+    HasRespectsMultiplication
+    IsGeneralMappingWithObjects
+    IsSPGeneralMappingWithObjects
+    IsGroupoidHomomorphism
+gap> FamilyObj( hom9 ) = FamilyObj( aut1 );
+true
+gap> KnownTruePropertiesOfObject( hom9 );
+[ "CanEasilyCompareElements", "CanEasilySortElements", 
+  "RespectsMultiplication", "IsGroupWithObjectsHomomorphism", 
+  "IsGeneralMappingToSinglePiece", "IsGeneralMappingFromSinglePiece", 
+  "IsInjectiveOnObjects", "IsSurjectiveOnObjects" ]
+gap> KnownTruePropertiesOfObject( aut1 );
+[ "CanEasilyCompareElements", "CanEasilySortElements", "IsEndoGeneralMapping",
+  "RespectsMultiplication", "IsGroupWithObjectsHomomorphism", 
+  "IsGeneralMappingToSinglePiece", "IsGeneralMappingFromSinglePiece", 
+  "IsInjectiveOnObjects", "IsSurjectiveOnObjects", 
+  "IsEndomorphismWithObjects", "IsAutomorphismWithObjects", 
+  "IsGroupoidAutomorphismByObjectPerm" ]
+gap> KnownAttributesOfObject( hom9 );
+[ "Range", "Source", "MappingGeneratorsImages", "MappingToSinglePieceData", 
+  "ImagesOfObjects", "ImageElementsOfRays", "RootGroupHomomorphism" ]
+gap> KnownAttributesOfObject( aut1 );
+[ "Order", "Range", "Source", "MappingGeneratorsImages", "AutomorphismDomain",
+  "MappingToSinglePieceData", "ImagesOfObjects", "ImageElementsOfRays", 
+  "RootGroupHomomorphism" ]
+]]>
+</Example>
+
+
+</Section>
+
+
+</Chapter>

@@ -1,0 +1,115 @@
+\GAPDocLabFile{modulargroup}
+\makelabel{modulargroup:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{modulargroup:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{modulargroup:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{modulargroup:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{modulargroup:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{modulargroup:General aims of the ModularGroup package}{1.1}{X8776EC4F822F431D}
+\makelabel{modulargroup:Technicalities}{1.2}{X811AAE8182C9C012}
+\makelabel{modulargroup:Subgroups of SL2(ℤ)}{2}{X8708256C7CDEDC88}
+\makelabel{modulargroup:Construction of modular subgroups}{2.1}{X82B1267A8369ABC3}
+\makelabel{modulargroup:ModularSubgroup}{2.1.1}{X7EFCADC57AA4FEC2}
+\makelabel{modulargroup:ModularSubgroupST}{2.1.2}{X85492D1F7A2C97CB}
+\makelabel{modulargroup:ModularSubgroupRT}{2.1.3}{X84D89E0B80CA1ED2}
+\makelabel{modulargroup:ModularSubgroupSJ}{2.1.4}{X7AE9DEC97F4BC1D5}
+\makelabel{modulargroup:Getters for the coset action}{2.2}{X7A38ED567DB2C5EC}
+\makelabel{modulargroup:SAction}{2.2.1}{X7806F137806CE532}
+\makelabel{modulargroup:TAction}{2.2.2}{X845C82DF798AAC68}
+\makelabel{modulargroup:RAction}{2.2.3}{X8261818C871C963B}
+\makelabel{modulargroup:JAction}{2.2.4}{X87229CA6862A5FBE}
+\makelabel{modulargroup:CosetActionOf}{2.2.5}{X859D10B779F28DFD}
+\makelabel{modulargroup:Computing with modular subgroups}{2.3}{X7B2F1C71867A167F}
+\makelabel{modulargroup:CosetRepresentatives}{2.3.3}{X806A331E8509C9F4}
+\makelabel{modulargroup:Miscellaneous}{2.4}{X7C5563A37D566DA5}
+\makelabel{modulargroup:CosetActionFromGenerators}{2.4.4}{X7D96A4DE84701927}
+\makelabel{modulargroup:Subgroups of PSL2(ℤ)}{3}{X7F6A6DE77A993D2B}
+\makelabel{modulargroup:Construction of projective modular subgroups}{3.1}{X809E1406842D5ADC}
+\makelabel{modulargroup:ProjectiveModularSubgroup}{3.1.1}{X8253E7267976838F}
+\makelabel{modulargroup:Getters for the coset action}{3.2}{X7A38ED567DB2C5EC}
+\makelabel{modulargroup:SAction}{3.2.1}{X7806F137806CE532}
+\makelabel{modulargroup:TAction}{3.2.2}{X845C82DF798AAC68}
+\makelabel{modulargroup:Computing with projective modular subgroups}{3.3}{X7942A9F0799620E7}
+\makelabel{modulargroup:CosetRepresentatives}{3.3.3}{X806A331E8509C9F4}
+\makelabel{modulargroup:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{modulargroup:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{modulargroup:Index}{Ind}{X83A0356F839C696F}
+\makelabel{modulargroup:ModularSubgroupViaRightAction}{2.1.1}{X7EFCADC57AA4FEC2}
+\makelabel{modulargroup:ModularSubgroupViaLeftAction}{2.1.1}{X7EFCADC57AA4FEC2}
+\makelabel{modulargroup:ModularSubgroupSTViaRightAction}{2.1.2}{X85492D1F7A2C97CB}
+\makelabel{modulargroup:ModularSubgroupSTViaLeftAction}{2.1.2}{X85492D1F7A2C97CB}
+\makelabel{modulargroup:ModularSubgroupRTViaRightAction}{2.1.3}{X84D89E0B80CA1ED2}
+\makelabel{modulargroup:ModularSubgroupRTViaLeftAction}{2.1.3}{X84D89E0B80CA1ED2}
+\makelabel{modulargroup:ModularSubgroupSJViaRightAction}{2.1.4}{X7AE9DEC97F4BC1D5}
+\makelabel{modulargroup:ModularSubgrouSJViaLeftAction}{2.1.4}{X7AE9DEC97F4BC1D5}
+\makelabel{modulargroup:ModularSubgroup ModularSubgroupGens}{2.1.5}{X7D6FE1E8831BEB59}
+\makelabel{modulargroup:SRightAction}{2.2.1}{X7806F137806CE532}
+\makelabel{modulargroup:SLeftAction}{2.2.1}{X7806F137806CE532}
+\makelabel{modulargroup:TRightAction}{2.2.2}{X845C82DF798AAC68}
+\makelabel{modulargroup:TLeftAction}{2.2.2}{X845C82DF798AAC68}
+\makelabel{modulargroup:RRightAction}{2.2.3}{X8261818C871C963B}
+\makelabel{modulargroup:RLeftAction}{2.2.3}{X8261818C871C963B}
+\makelabel{modulargroup:JRightAction}{2.2.4}{X87229CA6862A5FBE}
+\makelabel{modulargroup:JLeftAction}{2.2.4}{X87229CA6862A5FBE}
+\makelabel{modulargroup:CosetRightActionOf}{2.2.5}{X859D10B779F28DFD}
+\makelabel{modulargroup:CosetLeftActionOf}{2.2.5}{X859D10B779F28DFD}
+\makelabel{modulargroup:Index IndexSL2Z}{2.3.1}{X789D6D848365E376}
+\makelabel{modulargroup:GeneralizedLevel GeneralizedLevelSL2Z}{2.3.2}{X81C43D8E7FB0EB1C}
+\makelabel{modulargroup:RightCosetRepresentatives RightCosetRepresentativesSL2Z}{2.3.3}{X806A331E8509C9F4}
+\makelabel{modulargroup:LeftCosetRepresentatives LeftCosetRepresentativesSL2Z}{2.3.3}{X806A331E8509C9F4}
+\makelabel{modulargroup:WordGeneratorsOfGroup GeneratorsOfGroupSL2Z}{2.3.4}{X878C488F84FD9039}
+\makelabel{modulargroup:GeneratorsOfGroup}{2.3.5}{X79C44528864044C5}
+\makelabel{modulargroup:IsCongruence IsCongruenceSL2Z}{2.3.6}{X873013BD876F7DAD}
+\makelabel{modulargroup:Cusps CuspsSL2Z}{2.3.7}{X78BF0B867D965A6C}
+\makelabel{modulargroup:CuspWidth CuspWidthSL2Z}{2.3.8}{X83E84049842EC55A}
+\makelabel{modulargroup:CuspsEquivalent CuspsEquivalentSL2Z}{2.3.9}{X80EBA8E17B6DC9F1}
+\makelabel{modulargroup:CosetRepresentativeOfCusp CosetRepresentativeOfCuspSL2Z}{2.3.10}{X7A73C80F7AA9FCF1}
+\makelabel{modulargroup:IndexModN IndexModNSL2Z}{2.3.11}{X7FEB5D3B853CA831}
+\makelabel{modulargroup:Deficiency DeficiencySL2Z}{2.3.12}{X7E6754897B892B4A}
+\makelabel{modulargroup:Deficiency DeficiencySL2ZAttr}{2.3.13}{X7B704B49846C54E7}
+\makelabel{modulargroup:Projectivization}{2.3.14}{X81E057F386298DB2}
+\makelabel{modulargroup:ConjugateGroup ConjugateGroupSL2Z}{2.3.15}{X7AD35F397834117F}
+\makelabel{modulargroup:NormalCore NormalCoreSL2Z}{2.3.16}{X874DC4FA8436FCBC}
+\makelabel{modulargroup:QuotientByNormalCore QuotientByNormalCoreSL2Z}{2.3.17}{X7D645ABF7BF4600B}
+\makelabel{modulargroup:AssociatedCharacterTable AssociatedCharacterTableSL2Z}{2.3.18}{X874C4C4584FB5D03}
+\makelabel{modulargroup:IsElementOf IsElementOfSL2Z}{2.3.19}{X79E8C4D97BF50B74}
+\makelabel{modulargroup:IsWordElementOf IsWordElementOfSL2ZString}{2.3.20}{X801BE17A799532FB}
+\makelabel{modulargroup:IsWordElementOf IsWordElementOfSL2Z}{2.3.21}{X7EFB6B6C80ACBE93}
+\makelabel{modulargroup:Genus GenusSL2Z}{2.3.22}{X87B255C4784B8CBC}
+\makelabel{modulargroup:DefinesCosetActionST}{2.4.1}{X7DF96C8184DCF28E}
+\makelabel{modulargroup:DefinesCosetActionRT}{2.4.2}{X7C68DF9579A2DA8B}
+\makelabel{modulargroup:DefinesCosetActionSJ}{2.4.3}{X82599F577B4F1C8A}
+\makelabel{modulargroup:RightCosetActionFromGenerators}{2.4.4}{X7D96A4DE84701927}
+\makelabel{modulargroup:LeftCosetActionFromGenerators}{2.4.4}{X7D96A4DE84701927}
+\makelabel{modulargroup:STDecomposition}{2.4.5}{X7CC5EB727FF9442E}
+\makelabel{modulargroup:RTDecomposition}{2.4.6}{X875A56CC78893727}
+\makelabel{modulargroup:SJDecomposition}{2.4.7}{X86177DEC82BD57D3}
+\makelabel{modulargroup:STDecompositionAsList}{2.4.8}{X7AFE18407D135E5D}
+\makelabel{modulargroup:ProjectiveModularSubgroupViaRightAction}{3.1.1}{X8253E7267976838F}
+\makelabel{modulargroup:ProjectiveModularSubgroupViaLeftAction}{3.1.1}{X8253E7267976838F}
+\makelabel{modulargroup:SRightAction SRightActionPSL2Z}{3.2.1}{X7806F137806CE532}
+\makelabel{modulargroup:SLeftAction SLeftActionPSL2Z}{3.2.1}{X7806F137806CE532}
+\makelabel{modulargroup:TRightAction TRightActionPSL2Z}{3.2.2}{X845C82DF798AAC68}
+\makelabel{modulargroup:TLeftAction TLeftActionPSL2Z}{3.2.2}{X845C82DF798AAC68}
+\makelabel{modulargroup:Index IndexPSL2Z}{3.3.1}{X8400F2D48474810D}
+\makelabel{modulargroup:GeneralizedLevel GeneralizedLevelPSL2Z}{3.3.2}{X80F454A187CF784D}
+\makelabel{modulargroup:RightCosetRepresentatives RightCosetRepresentativesPSL2Z}{3.3.3}{X806A331E8509C9F4}
+\makelabel{modulargroup:LeftCosetRepresentatives LeftCosetRepresentativesPSL2Z}{3.3.3}{X806A331E8509C9F4}
+\makelabel{modulargroup:WordGeneratorsOfGroup GeneratorsOfGroupPSL2Z}{3.3.4}{X78B9F8C97BC4E107}
+\makelabel{modulargroup:IsCongruence IsCongruencePSL2Z}{3.3.5}{X7B94C25C81A424DF}
+\makelabel{modulargroup:Cusps CuspsPSL2Z}{3.3.6}{X7E507BE47A873817}
+\makelabel{modulargroup:CuspWidth CuspWidthPSL2Z}{3.3.7}{X821D38048561DBE4}
+\makelabel{modulargroup:CuspsEquivalent CuspsEquivalentPSL2Z}{3.3.8}{X7C280B5D7F4FF4CC}
+\makelabel{modulargroup:CosetRepresentativeOfCusp CosetRepresentativeOfCuspPSL2Z}{3.3.9}{X7F29CCC382880A6F}
+\makelabel{modulargroup:LiftToSL2ZEven}{3.3.10}{X83153565839269C2}
+\makelabel{modulargroup:LiftToSL2ZOdd}{3.3.11}{X83FBC7C57B8CFB80}
+\makelabel{modulargroup:IndexModN IndexModNPSL2Z}{3.3.12}{X81D105548473B68F}
+\makelabel{modulargroup:Deficiency DeficiencyPSL2Z}{3.3.13}{X858D7C9A7D134684}
+\makelabel{modulargroup:Deficiency DeficiencyPSL2ZAttr}{3.3.14}{X78AE745D8277319E}
+\makelabel{modulargroup:ConjugateGroup ConjugateGroupPSL2Z}{3.3.15}{X82F9BB987AC90A9B}
+\makelabel{modulargroup:NormalCore NormalCorePSL2Z}{3.3.16}{X8772A1C282AC9172}
+\makelabel{modulargroup:QuotientByNormalCore QuotientByNormalCorePSL2Z}{3.3.17}{X7F5807107867298D}
+\makelabel{modulargroup:AssociatedCharacterTable AssociatedCharacterTablePSL2Z}{3.3.18}{X7CDFA32A86529C5A}
+\makelabel{modulargroup:IsElementOf IsElementOfPSL2Z}{3.3.19}{X7BF171DA7DBE5CDB}
+\makelabel{modulargroup:IsWordElementOf IsWordElementOfPSL2ZString}{3.3.20}{X829E1DBD7A2AEE51}
+\makelabel{modulargroup:IsWordElementOf IsWordElementOfPSL2Z}{3.3.21}{X7DDBB3A8848E83AE}
+\makelabel{modulargroup:Genus GenusPSL2Z}{3.3.22}{X7A99E7BF7F5AEEC7}

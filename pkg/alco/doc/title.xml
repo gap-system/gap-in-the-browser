@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    ALCO
+  </Title>
+  <Subtitle>
+    Tools for algebraic combinatorics
+  </Subtitle>
+  <Version>
+    1.1.2
+  </Version>
+  <Author>
+    Benjamin Nasmith<Alt Only="LaTeX"><Br/></Alt>
+<Email>bnasmith@proton.me</Email>
+<Homepage>https://github.com/BNasmith/</Homepage>
+
+  </Author>
+  <Date>
+    5 September 2025
+  </Date>
+  <Abstract>
+    ALCO provides implementations in &GAP; of octonion algebras, Jordan algebras, and certain important integer subrings of those algebras. It also provides tools to compute the parameters of t-designs in spherical and projective spaces (modeled as manifolds of primitive idempotent elements in a simple Euclidean Jordan algebra). Finally, this package provides tools to explore octonion lattice constructions, including octonion Leech lattices.
+  </Abstract>
+  <Copyright>
+    &copyright; 2024 by Benjamin Nasmith<P/>
+
+This package may be distributed under the terms and conditions of the GNU Public License Version 3 or (at your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+    This documentation was prepared using the &GAPDoc; package.
+<P/>
+  </Acknowledgements>
+  </TitlePage>

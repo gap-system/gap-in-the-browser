@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Tools">
+<Heading>Tools</Heading>
+
+<Section Label="Chapter_Tools_Section_Functions">
+<Heading>Functions</Heading>
+
+<ManSection>
+  <Func Arg="arg" Name="homalgTotalRuntimes" />
+ <Returns>an integer
+</Returns>
+ <Description>
+  A tool to compute the runtime of several methods.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="AddLeftRightLogicalImplicationsForHomalg" />
+ <Description>
+  A tool to install equivalence between filters.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="LogicalImplicationsForOneHomalgObject" />
+ <Description>
+  Installs a logical implication for one type with all it's contrapositions.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="LogicalImplicationsForTwoHomalgBasicObjects" />
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallLogicalImplicationsForHomalgBasicObjects" />
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="LeftRightAttributesForHomalg" />
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallLeftRightAttributesForHomalg" />
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="MatchPropertiesAndAttributes" />
+ <Description>
+  A method to match the properties and attributes of two objects.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullPropertyOrAttribute" />
+ <Description>
+  Installs methods to pull new known properties and attributes from one object to another
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToConditionallyPullPropertyOrAttribute" />
+ <Description>
+  Installs methods to pull new known properties and attributes under certain conditions from one object to another.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullPropertyOrAttributeWithDifferentName" />
+ <Description>
+  Installs an immediate method which can pull a property from one object to another with different names.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullPropertiesOrAttributes" />
+ <Description>
+  Installs an immediate method to pull several properties or attributes from one object to another.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullTrueProperty" />
+ <Description>
+  Installs an immediate method to pull a property if it is true.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToConditionallyPullTrueProperty" />
+ <Description>
+  Installs an immediate method which conditionally pulls a property if it is true.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullTruePropertyWithDifferentName" />
+ <Description>
+  Installs an immediate method which pulls a property with a different name if it is true.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullTrueProperties" />
+ <Description>
+  Installs an immediate method which pulls several properties if they are true
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullFalseProperty" />
+ <Description>
+  Installs an immediate method to pull a property if it is false.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToConditionallyPullFalseProperty" />
+ <Description>
+  Installs an immediate method which conditionally pulls a property if it is false.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullFalsePropertyWithDifferentName" />
+ <Description>
+  Installs an immediate method which pulls a property with a different name if it is false.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPullFalseProperties" />
+ <Description>
+  Installs an immediate method which pulls several properties if they are false.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushPropertyOrAttribute" />
+ <Description>
+  Installs an immediate method to push a property from one object to another.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToConditionallyPushPropertyOrAttribute" />
+ <Description>
+  Installs an immediate method to conditionally push a property from one object to another.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushPropertyOrAttributeWithDifferentName" />
+ <Description>
+  Installs an immediate method which can push a property from one object to another with different names.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushPropertiesOrAttributes" />
+ <Description>
+  Installs an immediate method to push several properties or attributes from one object to another.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushTrueProperty" />
+ <Description>
+  Installs an immediate method to push a property if it is true.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushTruePropertyWithDifferentName" />
+ <Description>
+  Installs an immediate method which pushes a property with a different name if it is true.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushTrueProperties" />
+ <Description>
+  Installs an immediate method which pushes several properties if they are true
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushFalseProperty" />
+ <Description>
+  Installs an immediate method to push a property if it is false.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushFalsePropertyWithDifferentName" />
+ <Description>
+  Installs an immediate method which pushes a property with a different name if it is false.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallImmediateMethodToPushFalseProperties" />
+ <Description>
+  Installs an immediate method which push several properties if they are false.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="DeclareAttributeWithCustomGetter" />
+ <Description>
+  Installs an attribute with a coustom getter function.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="AppendToAhomalgTable" />
+ <Description>
+  Appends an entry to a homalg table.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="homalgNamesOfComponentsToIntLists" />
+ <Returns>a list of integers
+</Returns>
+ <Description>
+  Creates a list of integers out of the names of components.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="IncreaseExistingCounterInObject" />
+ <Description>
+  Increases an existing counter in an object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="IncreaseExistingCounterInObjectWithTiming" />
+ <Description>
+  Increases an existiing counter on an object with timing.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="IncreaseCounterInObject" />
+ <Description>
+  Increases a counter in an object and creates one if it not exists
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="MemoryToString" />
+ <Description>
+  Converts the current memory state to a string
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="n, p" Name="PrimePowerExponent" />
+ <Returns>A nonnegative integer
+</Returns>
+ <Description>
+  Returns the <A>p</A>-exponent of the integer <A>n</A>, where <A>p</A> is a rational prime.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L" Name="ViewList" Label="for IsList"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+  Apply ViewObj to the list <A>L</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="homalgLaTeX" Label="for IsObject"/>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L, o" Name="IdenticalPosition" Label="for IsList, IsObject"/>
+ <Returns>a positive integer or fail
+</Returns>
+ <Description>
+  Return the position of the object identical to <A>o</A> in the list <A>L</A>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L, f" Name="PositionsOfMaximalObjects" Label="for IsList, IsFunction"/>
+ <Returns>a list
+</Returns>
+ <Description>
+  Return the list of positions of maximal objects in <A>L</A>
+  w.r.t. the partial order defined by the binary function <A>f</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L, f" Name="MaximalObjects" Label="for IsList, IsFunction"/>
+ <Returns>a list
+</Returns>
+ <Description>
+  Return the sublist of maximal objects in <A>L</A>
+  w.r.t. the partial order defined by the binary function <A>f</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list" Name="CollectEntries" />
+ <Returns>a list
+</Returns>
+ <Description>
+  returns  a new list that contains for each element <A>elm</A> of the list <A>list</A> a list of length two,
+  the first element of this is <A>elm</A> itself and the second element is the number of times <A>elm</A>
+  appears in list until the next different element. The default comparing function is <C>\=</C>, which can be
+  changed by passing an optional value to <A>ComparingFunction</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="mime_types, filter" Name="MakeShowable" />
+ <Description>
+  Installs a method for <Code>IsShowable</Code> such that
+  <Code>IsShowable( mime_type, object )</Code> returns <Keyword>true</Keyword> for any
+  <Code>mime_type</Code> in the list <A>mime_types</A> and <Code>object</Code> in the filter <A>filter</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="filter" Name="MakeShowableWithLaTeX" />
+ <Description>
+  Installs a method for <Code>IsShowable</Code> such that
+  <Code>IsShowable( &quot;text/latex&quot;, object )</Code> and <Code>IsShowable( &quot;application/x-latex&quot;, object )</Code> return <Keyword>true</Keyword>
+  for an <Code>object</Code> in the filter <A>filter</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="string, record" Name="ReplacedStringViaRecord" />
+ <Description>
+   Searches for the keys of <A>record</A> in <A>string</A> and replaces them by their values.
+   The values can be strings or lists of strings. In the second case, the search term must be followed by <Code>...</Code>
+   and the replacement string is formed by joining the entries of the list with the separator <Code>&quot;, &quot;</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="name" Name="StartTimer" />
+ <Description>
+   (Re-)Starts a timer with the given name.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="name" Name="StopTimer" />
+ <Description>
+   Stops a timer with the given name.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="name" Name="ResetTimer" />
+ <Description>
+   Resets a timer with the given name.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="name" Name="DisplayTimer" />
+ <Description>
+   Displays the current value of the timer with the given name.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="filt" Name="ListImpliedFilters" />
+ <Description>
+   The input is a filter <A>filt</A>.
+   The output is the list of all filters implied by <A>filt</A>, including <A>filt</A> itself.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="name[, break_at[, break_function]]" Name="Breakpoint" />
+ <Description>
+   If only a string <A>name</A> is given, displays an incrementing number every time a breakpoint with this name is visited.
+   If additionally an integer <A>break_at</A> is given, enters a break-loop if the breakpoint has been visited the specified number of times.
+   If a function <A>break_function</A> is given, it is executed before entering the break-loop.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="name" Name="ReadPackageOnce" />
+ <Description>
+   Like <C>ReadPackage</C> but reads the file only once in the runnig GAP session.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Tools_Section_Example_functions">
+<Heading>Example functions</Heading>
+
+<ManSection>
+  <Oper Arg="" Name="ExamplesForHomalg" />
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+  Runs the examples for homalg if the package is loadable.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="ExamplesForHomalg" Label="for IsInt"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+  Runs the named example for homalg
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

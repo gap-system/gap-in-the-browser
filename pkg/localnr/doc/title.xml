@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    LocalNR
+  </Title>
+  <Subtitle>
+    Package of local nearrings
+  </Subtitle>
+  <Version>
+    2.1.0
+  </Version>
+  <Author>
+    Iryna Raievska
+<Address>
+Institute of Mathematics<Br/>
+National Academy of Sciences of Ukraine<Br/>
+01024 Ukraine, Kyiv, 3, Tereshchenkivska st.<Br/>
+</Address>
+<Email>raeirina@imath.kiev.ua</Email>
+<Homepage>https://www.imath.kiev.ua/~algebra/Raievska_I/</Homepage>
+  </Author>
+  <Author>
+    Maryna Raievska
+<Address>
+Institute of Mathematics<Br/>
+National Academy of Sciences of Ukraine<Br/>
+01024 Ukraine, Kyiv, 3, Tereshchenkivska st.<Br/>
+</Address>
+<Email>raemarina@imath.kiev.ua</Email>
+<Homepage>https://www.imath.kiev.ua/~algebra/Raievska_M/</Homepage>
+  </Author>
+  <Author>
+    Yaroslav Sysak
+<Address>
+Institute of Mathematics<Br/>
+National Academy of Sciences of Ukraine<Br/>
+01024 Ukraine, Kyiv, 3, Tereshchenkivska st.<Br/>
+</Address>
+<Email>sysak@imath.kiev.ua</Email>
+<Homepage>https://www.imath.kiev.ua/~algebra/Sysak/</Homepage>
+  </Author>
+  <Date>
+    22 May 2026
+  </Date>
+  </TitlePage>

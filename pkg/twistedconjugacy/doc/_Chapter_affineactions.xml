@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_affineactions">
+<Heading>Affine actions</Heading>
+
+<P/>
+Let <Math>G</Math> and <Math>H</Math> be groups, let <Math>H</Math> act on <Math>G</Math> (via automorphisms) by
+<Display>\alpha \colon H \to \operatorname{Aut}(G) \colon h \mapsto \alpha_h</Display>
+and let <Math>\delta \colon H \to G</Math> be a group derivation with respect to this
+action. Then we can construct a new action, called the <Emph>affine action</Emph>
+associated to <Math>\delta</Math>, by
+<Display>G \times H \to G \colon g^h = \alpha_h(g) \delta(h).</Display>
+If <Math>K</Math> is a subgroup of <Math>H</Math>, then the restriction of the affine action of
+<Math>H</Math> on <Math>G</Math> to <Math>K</Math> coincides with the affine action of <Math>K</Math> on <Math>G</Math> associated
+to the restriction of <Math>\delta</Math> to <Math>K</Math>.
+<P/>
+<P/>
+<P/>
+Algorithms designed for computing with twisted conjugacy classes can be
+leveraged to do computations involving affine actions, see
+<Cite Key='tert26-a' Where='Sec. 10'/> for a description on this.
+<P/>
+<P/>
+<P/>
+Please note that the functions in this chapter require <Math>G</Math> and <Math>H</Math> to either
+both be finite, or both be PcpGroups.
+<P/>
+<Section Label="Chapter_affineactions_Section_affact_creating">
+<Heading>Creating an affine action</Heading>
+
+<P/>
+<ManSection Label="AutoDoc_generated_group1">
+  <Func Arg="K, der" Name="AffineActionByGroupDerivation" />
+ <Returns>the affine action of <A>K</A> associated to the derivation  <A>der</A>.
+</Returns>
+ <Description>
+ The group <A>K</A> must be a subgroup of <C>Source(<A>der</A>)</C>.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> aff := AffineActionByGroupDerivation( H, der );
+function( g, k ) ... end
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_affineactions_Section_affact_operations">
+<Heading>Operations for affine actions</Heading>
+
+<P/>
+These functions are analogues of existing &GAP; functions for group actions.
+<P/>
+<ManSection Label="AutoDoc_generated_group2">
+<Heading>OrbitAffineAction</Heading>
+  <Func Arg="K, g, der" Name="OrbitAffineAction" />
+ <Returns>the orbit of <A>g</A> under the affine action of <A>K</A>  associated to <A>der</A>.
+</Returns>
+ <Description>
+ The group <A>K</A> must be a subgroup of <C>Source(<A>der</A>)</C>.
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group3">
+<Heading>OrbitsAffineAction</Heading>
+  <Func Arg="K, der" Name="OrbitsAffineAction" />
+ <Returns>a list containing the orbits under the affine action of <A>K</A>  associated to  <A>der</A> if there are finitely many, or <K>fail</K> if
+  there are infinitely many.
+</Returns>
+ <Description>
+ The group <A>K</A> must be a subgroup of <C>Source(<A>der</A>)</C>.
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group4">
+<Heading>NrOrbitsAffineAction</Heading>
+  <Func Arg="K, der" Name="NrOrbitsAffineAction" />
+ <Returns>the number of orbits under the affine action of <A>K</A>  associated to <A>der</A>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group5">
+<Heading>StabiliserAffineAction</Heading>
+  <Func Arg="K, g, der" Name="StabiliserAffineAction" />
+  <Func Arg="K, g, der" Name="StabilizerAffineAction" />
+ <Returns>the stabiliser of <A>g</A> under the affine action of <A>K</A>  associated to <A>der</A>.
+</Returns>
+ <Description>
+ The group <A>K</A> must be a subgroup of <C>Source(<A>der</A>)</C>.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group6">
+<Heading>RepresentativeAffineAction</Heading>
+  <Func Arg="K, g1, g2, der" Name="RepresentativeAffineAction" />
+ <Returns>an element of <A>K</A> that maps <A>g1</A> to <A>g2</A> under the  affine action of <A>K</A> associated to <A>der</A>, or <K>fail</K> if no
+  such element exists.
+</Returns>
+ <Description>
+ The group <A>K</A> must be a subgroup of <C>Source(<A>der</A>)</C>.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> g1 := G.1;;
+gap> orb := OrbitAffineAction( H, g1, der );
+f1^G
+gap> NrOrbitsAffineAction( H, der );
+10
+gap> stab := StabiliserAffineAction( H, g1, der );;
+gap> Set( stab );
+[ <identity> of ..., f3, f3^2, f2^2*f5, f2*f4*f5,
+  f2^2*f3*f5, f2*f3*f4*f5, f2^2*f3^2*f5, f2*f3^2*f4*f5 ]
+gap> g2 := G.1 * G.4 * G.5;;
+gap> h := RepresentativeAffineAction( H, g1, g2, der );;
+gap> aff( g1, h ) = g2;
+true
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_affineactions_Section_affact_orbits">
+<Heading>Operations on orbits of affine actions</Heading>
+
+<ManSection Label="AutoDoc_generated_group7">
+<Heading>Representative</Heading>
+  <Attr Arg="orb" Name="Representative" Label="of an orbit of an affine action"/>
+ <Returns>the group element that was used to construct <A>orb</A>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group8">
+<Heading>ActingDomain</Heading>
+  <Attr Arg="orb" Name="ActingDomain" Label="of an orbit of an affine action"/>
+ <Returns>the group whose affine action <A>orb</A> is an orbit of.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group9">
+<Heading>FunctionAction</Heading>
+  <Attr Arg="orb" Name="FunctionAction" Label="of an orbit of an affine action"/>
+ <Returns>the affine action that <A>orb</A> is an orbit of.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group10">
+<Heading>\in</Heading>
+  <Oper Arg="elm, orb" Name="\in" Label="for an element and an orbit of an affine action"/>
+ <Returns><K>true</K> if <A>elm</A> is an element of <A>orb</A>, otherwise  <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group11">
+<Heading>IsFinite</Heading>
+  <Prop Arg="orb" Name="IsFinite" Label="for an orbit of an affine action"/>
+ <Returns><K>true</K> if <A>orb</A> is finite, otherwise <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group12">
+<Heading>Size</Heading>
+  <Attr Arg="orb" Name="Size" Label="of an orbit of an affine action"/>
+ <Returns>the number of elements in <A>orb</A>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group13">
+<Heading>StabiliserOfExternalSet</Heading>
+  <Attr Arg="orb" Name="StabiliserOfExternalSet" Label="of an orbit of an affine action"/>
+  <Attr Arg="orb" Name="StabilizerOfExternalSet" Label="of an orbit of an affine action"/>
+ <Returns>the stabiliser of <C>Representative(<A>orb</A>)</C> under the  action <C>FunctionAction(<A>orb</A>)</C>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group14">
+<Heading>List</Heading>
+  <Func Arg="orb" Name="List" Label="of an orbit of an affine action"/>
+  <Attr Arg="orb" Name="AsList" Label="for an orbit of an affine action"/>
+ <Returns>a list containing the elements of <A>orb</A>.
+</Returns>
+ <Description>
+ If <A>orb</A> is infinite, this will run forever or cause an error. It is
+ recommended to first test the finiteness of <A>orb</A> using
+ <Ref Prop="IsFinite" Label="for an orbit of an affine action"
+ Style="Number"/>.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group15">
+<Heading>Random</Heading>
+  <Oper Arg="orb" Name="Random" Label="in an orbit of an affine action"/>
+ <Returns>a random element in <A>orb</A>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group16">
+<Heading>\=</Heading>
+  <Oper Arg="orb1, orb2" Name="\=" Label="for orbits of an affine action"/>
+ <Returns><K>true</K> if <A>orb1</A> is equal to <A>orb2</A>, otherwise  <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> g2 in orb;
+true
+gap> G.2 in orb;
+false
+gap> Size( orb );
+8
+]]></Example>
+
+</Section>
+
+</Chapter>
+

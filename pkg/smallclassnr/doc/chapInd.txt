@@ -1,0 +1,22 @@
+  
+  
+  [1XIndex[101X
+  
+  [2XAllSmallClassNrGroups[102X 3.2-1 
+      with AsPermGroup 3.2-1 
+  [2XIdClassNr[102X 3.1-2 
+  [2XIdClassNrToAtlasName[102X 4.5-1 
+  [2XIdClassNrToIdGroup[102X 4.1-1 
+  [2XIdClassNrToPerfGrp[102X 4.2-1 
+  [2XIdClassNrToPrimGrp[102X 4.3-1 
+  [2XIdClassNrToTransGrp[102X 4.4-1 
+  [2XIteratorSmallClassNrGroups[102X 3.2-4 
+  [2XNrSmallClassNrGroups[102X 3.2-3 
+  [2XOneSmallClassNrGroup[102X 3.2-2 
+      with AsPermGroup 3.2-2 
+  [2XSmallClassNrGroup[102X 3.1-1 
+      with AsPermGroup 3.1-1 
+  [2XSmallClassNrGroupsAvailable[102X 3.3-1 
+  
+  
+  -------------------------------------------------------

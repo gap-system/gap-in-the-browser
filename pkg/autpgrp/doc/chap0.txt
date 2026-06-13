@@ -1,0 +1,107 @@
+  
+  
+                                   [1X AutPGrp [101X
+  
+  
+                [1X Computing the Automorphism Group of a p-Group [101X
+  
+  
+                                     1.12.0
+  
+  
+                                  17 May 2026
+  
+  
+                                  Bettina Eick
+  
+                                 Eamonn O'Brien
+  
+  
+  
+  Bettina Eick
+      Email:    [7Xmailto:beick@tu-bs.de[107X
+      Homepage: [7Xhttp://www.iaa.tu-bs.de/beick[107X
+      Address:  [33X[0;14YInstitut Analysis und Algebra[133X
+                [33X[0;14YTU Braunschweig[133X
+                [33X[0;14YUniversitätsplatz 2[133X
+                [33X[0;14YD-38106 Braunschweig[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Eamonn O'Brien
+      Email:    [7Xmailto:obrien@math.auckland.ac.nz[107X
+      Homepage: [7Xhttp://www.math.auckland.ac.nz/~obrien[107X
+      Address:  [33X[0;14YDepartment of Mathematics[133X
+                [33X[0;14YUniversity of Auckland[133X
+                [33X[0;14YPrivate Bag 92019[133X
+                [33X[0;14YAuckland[133X
+                [33X[0;14YNew Zealand[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XAbstract[101X
+  [33X[0;0YThe  [5XAutPGrp[105X  package  introduces a new function to compute the automorphism
+  group  of  a finite [22Xp[122X-group. The underlying algorithm is a refinement of the
+  methods  described  in O'Brien (1995). In particular, this implementation is
+  more  efficient  in  both  time and space requirements and hence has a wider
+  range  of  applications than the ANUPQ method. Our package is written in [5XGAP[105X
+  code  and  it  makes use of a number of methods from the [5XGAP[105X library such as
+  the  MeatAxe  for  matrix  groups  and  permutation group functions. We have
+  compared  our  method  to  the  others available in [5XGAP[105X. Our package usually
+  out-performs  all but the method designed for finite abelian groups. We note
+  that our method uses the small groups library in certain cases and hence our
+  algorithm is more effective if the small groups library is installed.[133X
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0YBettina Eick and Eamonn O'Brien.[133X
+  
+  [33X[0;0YAutPGrp is free software; you can redistribute it and/or modify it under the
+  terms        of       the       GNU       General       Public       License
+  ([7Xhttps://www.fsf.org/licenses/gpl.html[107X)  as  published  by the Free Software
+  Foundation;  either  version 2 of the License, or (at your option) any later
+  version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YWe  thank  Alexander  Hulpke for helping us with efficiency problems. Werner
+  Nickel provided some functions from the [5XGAP[105X [10XPQuotient[110X which are used in this
+  package.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (AutPGrp)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YIntroduction[133X
+  2 [33X[0;0YThe automorphism group method[133X
+    2.1 [33X[0;0YThe automorphism group method[133X
+      2.1-1 AutomorphismGroup
+      2.1-2 InfoAutGrp
+  3 [33X[0;0YThe underlying function[133X
+    3.1 [33X[0;0YThe underlying function[133X
+      3.1-1 AutomorphismGroupPGroup
+      3.1-2 ConvertHybridAutGroup
+      3.1-3 PcGroupAutPGroup
+  4 [33X[0;0YInfluencing the algorithm[133X
+    4.1 [33X[0;0YOutline of the algorithm[133X
+    4.2 [33X[0;0YThe initialisation step[133X
+    4.3 [33X[0;0YStabilisers in matrix groups[133X
+      4.3-1 CHOP_MULT
+    4.4 [33X[0;0YSearching for a small generating set[133X
+      4.4-1 NICE_STAB
+    4.5 [33X[0;0YAn interactive version of the algorithm[133X
+  5 [33X[0;0YAdditional features of the package[133X
+    5.1 [33X[0;0YAdditional features of the package[133X
+      5.1-1 NumberOfPClass2PGroups
+      5.1-2 NumberOfPClass2PGroups
+      5.1-3 NumberOfClass2LieAlgebras
+      5.1-4 NumberOfClass2LieAlgbras
+  
+  
+  [32X

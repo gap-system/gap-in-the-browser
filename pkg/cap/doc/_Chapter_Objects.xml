@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Objects">
+<Heading>Objects</Heading>
+
+<P/>
+  Any GAP object which is IsCapCategoryObject can be added to a category
+  and then becomes an object in this category.
+  Any object can belong to one or no category.
+  After a GAP object is added to the category, it knows which things can be
+  computed in its category and to which category it belongs.
+  It knows categorial properties and attributes, and the functions for existential quantifiers
+  can be applied to the object.
+<Section Label="Chapter_Objects_Section_Attributes_for_the_Type_of_Objects">
+<Heading>Attributes for the Type of Objects</Heading>
+
+<ManSection>
+  <Attr Arg="a" Name="CapCategory" Label="for IsCapCategoryObject"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math>.
+ The output is the category <Math>\mathbf{C}</Math>
+ to which <Math>a</Math> was added.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Section_Adding_Objects_to_a_Category">
+<Heading>Adding Objects to a Category</Heading>
+
+<ManSection>
+  <Oper Arg="category, object" Name="Add" Label="for IsCapCategory, IsCapCategoryObject"/>
+ <Description>
+  Adds <A>object</A> as an object to <A>category</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="category, object" Name="AddObject" Label="for IsCapCategory, IsAttributeStoringRep"/>
+ <Description>
+  Adds <A>object</A> as an object to <A>category</A>.
+  If <A>object</A> already lies in the filter <C>IsCapCategoryObject</C>,
+  the operation <Ref Oper="Add" Label="for IsCapCategory, IsCapCategoryObject" />
+  can be used instead.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="category, [attribute1, value1, ...]" Name="CreateCapCategoryObjectWithAttributes" />
+ <Returns>an object
+</Returns>
+ <Description>
+  Creates an object in <A>category</A> with the given attributes.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="category, value" Name="AsCapCategoryObject" />
+ <Returns>an object
+</Returns>
+ <Description>
+  EXPERIMENTAL: This specification might change any time without prior notice.
+  Views <A>value</A> as an object in <A>category</A>.
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group15">
+  <Attr Arg="object" Name="AsPrimitiveValue" Label="for IsCapCategoryObject"/>
+  <Attr Arg="object" Name="AsInteger" Label="for IsCapCategoryObject"/>
+  <Attr Arg="object" Name="AsHomalgMatrix" Label="for IsCapCategoryObject"/>
+ <Returns>a value
+</Returns>
+ <Description>
+  EXPERIMENTAL: This specification might change any time without prior notice.
+  Views an object obtained via <Ref Func="AsCapCategoryObject" /> as a primitive value again.
+  Here, the word <Emph>primitive</Emph> means <Emph>primitive from the perspective of the category</Emph>.
+  For example, from the perspective of an opposite category, objects of the underlying category
+  are primitive values.
+  The attribute is chosen according to the object datum type:
+<List>
+<Item>
+For <Code>IsInt</Code>, the attribute <Code>AsInteger</Code> is used.
+</Item>
+<Item>
+For <Code>IsHomalgMatrix</Code>, the attribute <Code>AsHomalgMatrix</Code> is used.
+</Item>
+</List>
+<P/>
+  In all other cases or if no object datum type is given, the attribute <Code>AsPrimitiveValue</Code> is used.
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Equalities_for_Objects">
+<Heading>Equalities for Objects</Heading>
+
+<ManSection>
+  <Oper Arg="a,b" Name="IsEqualForObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two objects <Math>a</Math> and <Math>b</Math>.
+ The output is <C>true</C> if <Math>a = b</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a,b" Name="IsIsomorphicForObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two objects <Math>a</Math> and <Math>b</Math>.
+ The output is <C>true</C> if <Math>a</Math> and <Math>b</Math> are isomorphic,
+ that is, if there exists an isomorphism <Math>a \to b</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a,b" Name="SomeIsomorphismBetweenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an isomorphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are two isomorphic objects <Math>a</Math> and <Math>b</Math>.
+ The output is an isomorphism <Math>a \to b</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Categorical_Properties_of_Objects">
+<Heading>Categorical Properties of Objects</Heading>
+
+<ManSection>
+  <Prop Arg="a" Name="IsBijectiveObject" Label="for IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math>.
+ The output is <C>true</C> if <Math>a</Math> is a bijective object,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="a" Name="IsProjective" Label="for IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math>.
+ The output is <C>true</C> if <Math>a</Math> is a projective object,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="a" Name="IsInjective" Label="for IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math>.
+ The output is <C>true</C> if <Math>a</Math> is an injective object,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="a" Name="IsTerminal" Label="for IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math> of a category <Math>\mathbf{C}</Math>.
+ The output is <C>true</C> if <Math>a</Math> is isomorphic to the terminal object of <Math>\mathbf{C}</Math>, 
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="a" Name="IsInitial" Label="for IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math> of a category <Math>\mathbf{C}</Math>.
+ The output is <C>true</C> if <Math>a</Math> is isomorphic to the initial object of <Math>\mathbf{C}</Math>, 
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="a" Name="IsZeroForObjects" Label="for IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math> of a category <Math>\mathbf{C}</Math>.
+ The output is <C>true</C> if <Math>a</Math> is isomorphic to the zero object of <Math>\mathbf{C}</Math>, 
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="a" Name="IsZero" Label="for IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math> of a category <Math>\mathbf{C}</Math>.
+ The output is <C>true</C> if <Math>a</Math> is isomorphic to the zero object of <Math>\mathbf{C}</Math>, 
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Random_Objects">
+<Heading>Random Objects</Heading>
+
+ CAP provides two principal methods to generate random objects:
+<List>
+<Item>
+<E>By integers</E>: The integer is simply a parameter that can be used to create a random object.
+</Item>
+<Item>
+<E>By lists</E>: The list is used when creating a random object would need more than one parameter. Lists offer more
+    flexibility at the expense of the genericity of the methods. This happens because lists that are valid as input in
+    some category may be not valid for other categories. Hence, these operations are not thought to be used in
+    generic categorical algorithms.
+</Item>
+</List>
+<ManSection>
+  <Oper Arg="C, n" Name="RandomObjectByInteger" Label="for IsCapCategory, IsInt"/>
+ <Returns>an object in <Math>C</Math>
+</Returns>
+ <Description>
+ The arguments are a category <Math>C</Math> and an integer <Math>n</Math>.
+ The output is a random object in <Math>C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, L" Name="RandomObjectByList" Label="for IsCapCategory, IsList"/>
+ <Returns>an object in <Math>C</Math>
+</Returns>
+ <Description>
+ The arguments are a category <Math>C</Math> and a list <Math>L</Math>.
+ The output is a random object in <Math>C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, n" Name="RandomObject" Label="for IsCapCategory, IsInt"/>
+ <Description>
+ These are convenient methods and they, depending on the input, delegate to one of the above methods.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, L" Name="RandomObject" Label="for IsCapCategory, IsList"/>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Tool_functions_for_caches">
+<Heading>Tool functions for caches</Heading>
+
+<ManSection>
+  <Oper Arg="phi, psi" Name="IsEqualForCacheForObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>true or false
+</Returns>
+ <Description>
+  By default, CAP uses caches to store the values of Categorical operations.
+  To get a value out of the cache, one needs to compare the input of a basic operation
+  with its previous input. To compare objects in the category, IsEqualForCacheForObjects is
+  used. By default, IsEqualForCacheForObjects falls back to IsEqualForCache (see ToolsForHomalg),
+  which in turn defaults to recursive comparison for lists and <Code>IsIdenticalObj</Code> in all other cases.
+  If you add a function via <Code>AddIsEqualForCacheForObjects</Code>, that function is used instead.
+  A function <Math>F: a,b \mapsto bool</Math> is expected there. The output has to be
+  true or false. Fail is not allowed in this context.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Object_constructors">
+<Heading>Object constructors</Heading>
+
+<ManSection>
+  <Oper Arg="C, a" Name="ObjectConstructor" Label="for IsCapCategory, IsObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The arguments are a category <Math>C</Math> and an object datum <Math>a</Math>
+ (type and semantics of the object datum depend on the category).
+ The output is an object of <Math>C</Math> defined by <Math>a</Math>.
+ Note that by default this CAP operation is not cached. You can change this behaviour
+ by calling <Code>SetCachingToWeak( C, &quot;ObjectConstructor&quot; )</Code> resp. <Code>SetCachingToCrisp( C, &quot;ObjectConstructor&quot; )</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, C" Name="/" Label="for IsObject, IsCapCategory"/>
+ <Returns>an object
+</Returns>
+ <Description>
+   Shorthand for <Code>ObjectConstructor( C, a )</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="obj" Name="ObjectDatum" Label="for IsCapCategoryObject"/>
+ <Returns>depends on the category
+</Returns>
+ <Description>
+ The argument is a CAP category object <A>obj</A>.
+ The output is a datum which can be used to construct <A>obj</A>, that is,
+ <Code>IsEqualForObjects( </Code><A>obj</A><Code>, ObjectConstructor( CapCategory( </Code><A>obj</A><Code> ), ObjectDatum( </Code><A>obj</A><Code> ) ) )</Code>.
+ Note that by default this CAP operation is not cached. You can change this behaviour
+ by calling <Code>SetCachingToWeak( C, &quot;ObjectDatum&quot; )</Code> resp. <Code>SetCachingToCrisp( C, &quot;ObjectDatum&quot; )</Code>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Well-Definedness_of_Objects">
+<Heading>Well-Definedness of Objects</Heading>
+
+<ManSection>
+  <Oper Arg="a" Name="IsWellDefinedForObjects" Label="for IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math>.
+ The output is <C>true</C> if <Math>a</Math> is well-defined,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_SetOfObjects">
+<Heading>SetOfObjects</Heading>
+
+<ManSection>
+  <Attr Arg="C" Name="SetOfObjectsOfCategory" Label="for IsCapCategory"/>
+ <Returns>a list of &CAP; category objects
+</Returns>
+ <Description>
+  Return a duplicate free list of objects of the category <A>C</A>.
+  The ordering of the returned list must always be the same.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="SetOfObjects" Label="for IsCapCategory"/>
+ <Returns>a list of &CAP; category objects
+</Returns>
+ <Description>
+  Return a duplicate free list of objects of the category <A>C</A>.
+  The ordering of the returned list must always be the same.
+  The corresponding &CAP; operation is <C>SetOfObjectsOfCategory</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Projectives">
+<Heading>Projectives</Heading>
+
+ For a given object <Math>A</Math> in an abelian category having enough projectives,
+ the following commands allow us to compute some projective object <Math>P</Math>
+ together with an epimorphism <Math>\pi: P \rightarrow A</Math>.
+<ManSection>
+  <Attr Arg="A" Name="SomeProjectiveObject" Label="for IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is some projective object <Math>P</Math>
+ for which there exists an epimorphism <Math>\pi: P \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="EpimorphismFromSomeProjectiveObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(P,A)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is an epimorphism <Math>\pi: P \rightarrow A</Math>
+ with <Math>P</Math> a projective object that equals the output of <Math>\mathrm{SomeProjectiveObject}(A)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, P" Name="EpimorphismFromSomeProjectiveObjectWithGivenSomeProjectiveObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(P,A)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>
+ and a projective object <Math>P</Math> that equals the output of <Math>\mathrm{SomeProjectiveObject}(A)</Math>.
+ The output is an epimorphism <Math>\pi: P \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="pi, epsilon" Name="ProjectiveLift" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(P,B)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\pi: P \rightarrow A</Math> with <Math>P</Math> a projective, 
+ and an epimorphism <Math>\epsilon: B \rightarrow A</Math>.
+ The output is a morphism <Math>\lambda: P \rightarrow B</Math> such that
+ <Math>\epsilon \circ \lambda = \pi</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Injectives">
+<Heading>Injectives</Heading>
+
+ For a given object <Math>A</Math> in an abelian category having enough injectives,
+ the following commands allow us to compute some injective object <Math>I</Math>
+ together with a monomorphism <Math>\iota: A \rightarrow I</Math>.
+<ManSection>
+  <Attr Arg="A" Name="SomeInjectiveObject" Label="for IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is some injective object <Math>I</Math>
+ for which there exists a monomorphism <Math>\iota: A \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="MonomorphismIntoSomeInjectiveObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I,A)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is a monomorphism <Math>\iota: A \rightarrow I</Math>
+ with <Math>I</Math> an injective object that equals the output of <Math>\mathrm{SomeInjectiveObject}(A)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, I" Name="MonomorphismIntoSomeInjectiveObjectWithGivenSomeInjectiveObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I,A)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>
+ and an injective object <Math>I</Math> that equals the output of <Math>\mathrm{SomeInjectiveObject}(A)</Math>.
+ The output is a monomorphism <Math>\iota: A \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="iota, beta" Name="InjectiveColift" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A,I)</Math>
+</Returns>
+ <Description>
+ The arguments are a monomorphism <Math>\iota: B \rightarrow A</Math>
+ and a morphism <Math>\beta: B \rightarrow I</Math> where <Math>I</Math> is an injective object.
+ The output is a morphism <Math>\lambda: A \rightarrow I</Math> such that
+ <Math>\lambda \circ \iota = \beta</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Simplified_Objects">
+<Heading>Simplified Objects</Heading>
+
+ Let <Math>i</Math> be a positive integer or <Math>\infty</Math>.
+ For a given object <Math>A</Math>, an <Math>i</Math>-th simplified object of <Math>A</Math> consists of
+<List>
+<Item>
+an object <Math>A_i</Math>, 
+</Item>
+<Item>
+an isomorphism <Math>\iota_A^i: A \rightarrow A_i</Math>.
+</Item>
+</List>
+ The idea is that the greater the <Math>i</Math>, the "simpler" the <Math>A_i</Math> (but this could mean the harder the computation)
+ with <Math>\infty</Math> as a possible value.
+<ManSection>
+  <Attr Arg="A" Name="Simplify" Label="for IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is a simplified object <Math>A_{\infty}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, i" Name="SimplifyObject" Label="for IsCapCategoryObject, IsObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a positive integer <Math>i</Math> or <C>infinity</C>.
+ The output is a simplified object <Math>A_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, i" Name="SimplifyObject_IsoFromInputObject" Label="for IsCapCategoryObject, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A,A_i)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a positive integer <Math>i</Math> or <C>infinity</C>.
+ The output is an isomorphism to a simplified object <Math>\iota_A^i: A \rightarrow A_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, i" Name="SimplifyObject_IsoToInputObject" Label="for IsCapCategoryObject, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A_i,A)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a positive integer <Math>i</Math> or <C>infinity</C>.
+ The output is an isomorphism from a simplified object <Math>(\iota_A^i)^{-1}: A_i \rightarrow A</Math>
+ which is the inverse of the output of <C>SimplifyObject_IsoFromInputObject</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Objects_Section_Dimensions">
+<Heading>Dimensions</Heading>
+
+<ManSection>
+  <Attr Arg="A" Name="ProjectiveDimension" Label="for IsCapCategoryObject"/>
+ <Returns>a nonnegative integer or infinity
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is a the projective dimension of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="InjectiveDimension" Label="for IsCapCategoryObject"/>
+ <Returns>a nonnegative integer or infinity
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is a the injective dimension of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

@@ -1,0 +1,41 @@
+\GAPDocLabFile{liealgdb}
+\makelabel{liealgdb:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{liealgdb:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{liealgdb:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{liealgdb:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{liealgdb:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{liealgdb:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{liealgdb:The families of Lie algebras included in the database}{2}{X7DD822827FAF0B46}
+\makelabel{liealgdb:Non-solvable Lie algebras}{2.1}{X79B7688E808E0460}
+\makelabel{liealgdb:Dimension 1 and 2}{2.1.2}{X82F0F10285A94949}
+\makelabel{liealgdb:Dimension 3}{2.1.3}{X78C35F937D99AB14}
+\makelabel{liealgdb:Dimension 4}{2.1.4}{X812516C97F0A1A4C}
+\makelabel{liealgdb:Dimension 5}{2.1.5}{X865565C08312F7B0}
+\makelabel{liealgdb:Dimension 6}{2.1.6}{X7FC5F0DB7A8CD1D0}
+\makelabel{liealgdb:Solvable and nilpotent Lie algebras}{2.2}{X8697F2028731A29F}
+\makelabel{liealgdb:A description of the Lie algebras that are contained in the package}{3}{X7BB72096877E0847}
+\makelabel{liealgdb:Description of the non-solvable Lie algebras}{3.1}{X7D10CF477EF901A7}
+\makelabel{liealgdb:Dimension 3}{3.2}{X78C35F937D99AB14}
+\makelabel{liealgdb:Dimension 4}{3.3}{X812516C97F0A1A4C}
+\makelabel{liealgdb:Dimension 5}{3.4}{X865565C08312F7B0}
+\makelabel{liealgdb:Characteristic 2}{3.4.1}{X783B7FC180919CBC}
+\makelabel{liealgdb:Odd characteristic}{3.4.2}{X80DAF658844AF393}
+\makelabel{liealgdb:Dimension 6}{3.5}{X7FC5F0DB7A8CD1D0}
+\makelabel{liealgdb:Characteristic 2}{3.5.1}{X783B7FC180919CBC}
+\makelabel{liealgdb:General odd characteristic}{3.5.2}{X7CC42FD178D384FD}
+\makelabel{liealgdb:Characteristic 3}{3.5.3}{X7F4B0CC87A7715A5}
+\makelabel{liealgdb:Characteristic 5}{3.5.4}{X81DD369B7F4E033B}
+\makelabel{liealgdb:Description of the simple Lie algebras}{3.6}{X8411625F7E7DA71D}
+\makelabel{liealgdb:Description of the solvable and nilpotent Lie algebras}{3.7}{X79FBD14A7959B5D2}
+\makelabel{liealgdb:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{liealgdb:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{liealgdb:License}{}{X81488B807F2A1CF1}
+\makelabel{liealgdb:NonSolvableLieAlgebra}{2.1.1}{X8527F9157C850557}
+\makelabel{liealgdb:AllNonSolvableLieAlgebras}{2.1.7}{X85CFDCF687153158}
+\makelabel{liealgdb:AllSimpleLieAlgebras}{2.1.8}{X7B54426D7B43CEF8}
+\makelabel{liealgdb:SolvableLieAlgebra}{2.2.1}{X81FDF3D17E495C6A}
+\makelabel{liealgdb:NilpotentLieAlgebra}{2.2.2}{X7DA312A97A6242B4}
+\makelabel{liealgdb:AllSolvableLieAlgebras}{2.2.3}{X8217183E7C19FA16}
+\makelabel{liealgdb:AllNilpotentLieAlgebras}{2.2.4}{X86629DF87C2AEB4E}
+\makelabel{liealgdb:NrNilpotentLieAlgebras}{2.2.5}{X8770350D84304182}
+\makelabel{liealgdb:LieAlgebraIdentification}{2.2.6}{X8068FF417F93FCD2}

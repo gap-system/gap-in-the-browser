@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (StandardFF) - Chapter 1: Introduction to StandardFF package</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1_mj.html">[MathJax on]</a></p>
+<p><a id="X7BC4C7287FDF6602" name="X7BC4C7287FDF6602"></a></p>
+<div class="ChapSects"><a href="chap1.html#X7BC4C7287FDF6602">1 <span class="Heading">Introduction to <strong class="pkg">StandardFF</strong> package</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X8599E5B885932EEC">1.1 <span class="Heading">Aim</span></a>
+</span>
+</div>
+</div>
+
+<h3>1 <span class="Heading">Introduction to <strong class="pkg">StandardFF</strong> package</span></h3>
+
+<p><a id="X8599E5B885932EEC" name="X8599E5B885932EEC"></a></p>
+
+<h4>1.1 <span class="Heading">Aim</span></h4>
+
+<p>This <strong class="pkg">GAP</strong>-package provides a reference implementation for the standardized constructions of finite fields and generators of cyclic subgroups defined in the article <a href="chapBib.html#biBStdFFCyc">[Lüb23]</a>.</p>
+
+<p>The main functions are <code class="func">FF</code> (<a href="chap2.html#X80DCBB4F84F04DDB"><span class="RefLink">2.2-1</span></a>) to construct the finite field of order <span class="SimpleMath">p^n</span> and <code class="func">StandardCyclicGenerator</code> (<a href="chap3.html#X79D3165F833F28DA"><span class="RefLink">3.1-1</span></a>) to construct a standardized generator of the multiplicative subgroup of a given order <span class="SimpleMath">m</span> in such a finite field. The condition on <span class="SimpleMath">m</span> is that it divides <span class="SimpleMath">p^n-1</span> and that <strong class="pkg">GAP</strong> can factorize this number. (The factorization of the multiplicative group order <span class="SimpleMath">p^n-1</span> is not needed.)</p>
+
+<p>Each field of order <span class="SimpleMath">p^n</span> comes with a natural <span class="SimpleMath">F_p</span>-basis which is a subset of the natural basis of each extension field of order <span class="SimpleMath">p^nm</span>. The union of these bases is a basis of the algebraic closure of <span class="SimpleMath">F_p</span>. Each element of the algebraic closure can be identified by its degree <span class="SimpleMath">d</span> over its prime field and a number <span class="SimpleMath">0 ≤ k ≤ p^d-1</span> (see <code class="func">SteinitzPair</code> (<a href="chap2.html#X85BC2EF17DA2E707"><span class="RefLink">2.4-1</span></a>)) or, equivalently, by a certain multivariate polynomial (see <code class="func">AsPolynomial</code> (<a href="chap2.html#X8569D7B1786AE5FC"><span class="RefLink">2.3-1</span></a>)). This can be useful for transferring finite field elements between programs which use the same construction of finite fields.</p>
+
+<p>The standardized generators of multiplicative cyclic groups have a nice compatibility property: There is a unique group isomorphism from the multiplicative group of the algebraic closure of the finite field with <span class="SimpleMath">p</span> elements into the group of complex roots of unity whose order is not divisible by <span class="SimpleMath">p</span> which maps a standard generator of order <span class="SimpleMath">m</span> to <span class="SimpleMath">exp(2π i/m)</span>. In particular, the minimal polynomials of standard generators of order <span class="SimpleMath">p^n-1</span> for all <span class="SimpleMath">n</span> fulfill the same compatibility conditions as Conway polynomials (see <code class="func">ConwayPolynomial</code> (<a href="../../../doc/ref/chap59.html#X7C2425A786F09054"><span class="RefLink">Reference: ConwayPolynomial</span></a>)). This can provide an alternative for the lifts used by <code class="func">BrauerCharacterValue</code> (<a href="../../../doc/ref/chap72.html#X8304B68E84511685"><span class="RefLink">Reference: BrauerCharacterValue</span></a>) which works for a much wider set of finite field elements where Conway polynomials are very difficult or impossible to compute.</p>
+
+<p>A translation of existing Brauer character tables relative to the lift defined by Conway polynomials to the lift defined by our <code class="func">StandardCyclicGenerator</code> (<a href="chap3.html#X79D3165F833F28DA"><span class="RefLink">3.1-1</span></a>) can be computed with <code class="func">StandardValuesBrauerCharacter</code> (<a href="chap4.html#X86408E6883916C5D"><span class="RefLink">4.7-1</span></a>), provided the relevant Conway polynomials are known.</p>
+
+<p>The article <a href="chapBib.html#biBStdFFCyc">[Lüb23]</a> also defines a standardized embedding of <strong class="pkg">GAP</strong>s finite fields constructed with <code class="func">GF</code> (<a href="../../../doc/ref/chap59.html#X8592DBB086A8A9BE"><span class="RefLink">Reference: GF for field size</span></a>) into the algebraic closure of the prime field <span class="SimpleMath">F_p</span> constructed here. This is available with <code class="func">StandardIsomorphismGF</code> (<a href="chap2.html#X7ECCD8D27FBA9505"><span class="RefLink">2.4-5</span></a>).</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

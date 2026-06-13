@@ -1,0 +1,18 @@
+  
+  
+  [1XIndex[101X
+  
+  [2XAutomorphismGroup[102X 2.1-1 
+  [2XAutomorphismGroupPGroup[102X 3.1-1 
+  [2XCHOP_MULT[102X 4.3-1 
+  [2XConvertHybridAutGroup[102X 3.1-2 
+  [2XInfoAutGrp[102X 2.1-2 
+  [2XNICE_STAB[102X 4.4-1 
+  [2XNumberOfClass2LieAlgbras[102X, for 2 arguments 5.1-4 
+  [2XNumberOfClass2LieAlgebras[102X, for 3 arguments 5.1-3 
+  [2XNumberOfPClass2PGroups[102X, for 2 arguments 5.1-2 
+      for 3 arguments 5.1-1 
+  [2XPcGroupAutPGroup[102X 3.1-3 
+  
+  
+  -------------------------------------------------------

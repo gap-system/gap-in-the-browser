@@ -1,0 +1,234 @@
+\makelabel{AutomGrp:Introduction}{1}
+\makelabel{AutomGrp:Short math background}{1.1}
+\makelabel{AutomGrp:Installation instructions}{1.2}
+\makelabel{AutomGrp:Quick example}{1.3}
+\makelabel{AutomGrp:Properties and operations with groups and semigroups}{2}
+\makelabel{AutomGrp:Creation of groups and semigroups}{2.1}
+\makelabel{AutomGrp:AutomatonGroup}{2.1.1}
+\makelabel{AutomGrp:AutomatonGroup}{2.1.1}
+\makelabel{AutomGrp:AutomatonGroup}{2.1.1}
+\makelabel{AutomGrp:AutomatonSemigroup}{2.1.2}
+\makelabel{AutomGrp:AutomatonSemigroup}{2.1.2}
+\makelabel{AutomGrp:AutomatonSemigroup}{2.1.2}
+\makelabel{AutomGrp:SelfSimilarGroup}{2.1.3}
+\makelabel{AutomGrp:SelfSimilarGroup}{2.1.3}
+\makelabel{AutomGrp:SelfSimilarGroup}{2.1.3}
+\makelabel{AutomGrp:SelfSimilarSemigroup}{2.1.4}
+\makelabel{AutomGrp:SelfSimilarSemigroup}{2.1.4}
+\makelabel{AutomGrp:SelfSimilarSemigroup}{2.1.4}
+\makelabel{AutomGrp:IsTreeAutomorphismGroup}{2.1.5}
+\makelabel{AutomGrp:IsAutomGroup}{2.1.6}
+\makelabel{AutomGrp:IsAutomatonGroup}{2.1.7}
+\makelabel{AutomGrp:IsSelfSimGroup}{2.1.8}
+\makelabel{AutomGrp:IsSelfSimilarGroup}{2.1.9}
+\makelabel{AutomGrp:Basic properties of groups and semigroups}{2.2}
+\makelabel{AutomGrp:TopDegreeOfTree}{2.2.1}
+\makelabel{AutomGrp:DegreeOfTree}{2.2.2}
+\makelabel{AutomGrp:IsFractal}{2.2.3}
+\makelabel{AutomGrp:IsFractalByWords}{2.2.4}
+\makelabel{AutomGrp:IsSphericallyTransitive! for tree homomorphism (semi)group}{2.2.5}
+\makelabel{AutomGrp:ContainsSphericallyTransitiveElement}{2.2.6}
+\makelabel{AutomGrp:IsTransitiveOnLevel! for tree homomorphism (semi)group}{2.2.7}
+\makelabel{AutomGrp:IsSelfSimilar}{2.2.8}
+\makelabel{AutomGrp:IsContracting}{2.2.9}
+\makelabel{AutomGrp:IsNoncontracting}{2.2.10}
+\makelabel{AutomGrp:IsGeneratedByAutomatonOfPolynomialGrowth}{2.2.11}
+\makelabel{AutomGrp:IsGeneratedByBoundedAutomaton}{2.2.12}
+\makelabel{AutomGrp:PolynomialDegreeOfGrowthOfUnderlyingAutomaton}{2.2.13}
+\makelabel{AutomGrp:IsOfSubexponentialGrowth}{2.2.14}
+\makelabel{AutomGrp:IsAmenable}{2.2.15}
+\makelabel{AutomGrp:UnderlyingAutomaton}{2.2.16}
+\makelabel{AutomGrp:AutomatonList! for tree homomorphism (semi)group}{2.2.17}
+\makelabel{AutomGrp:RecurList! for tree homomorphism (semi)group}{2.2.18}
+\makelabel{AutomGrp:Operations with groups and semigroups}{2.3}
+\makelabel{AutomGrp:PermGroupOnLevel}{2.3.1}
+\makelabel{AutomGrp:TransformationSemigroupOnLevel}{2.3.2}
+\makelabel{AutomGrp:StabilizerOfLevel}{2.3.3}
+\makelabel{AutomGrp:StabilizerOfFirstLevel}{2.3.4}
+\makelabel{AutomGrp:StabilizerOfVertex}{2.3.5}
+\makelabel{AutomGrp:FixesLevel}{2.3.6}
+\makelabel{AutomGrp:FixesVertex}{2.3.7}
+\makelabel{AutomGrp:Projection}{2.3.8}
+\makelabel{AutomGrp:ProjectionNC}{2.3.8}
+\makelabel{AutomGrp:ProjStab}{2.3.9}
+\makelabel{AutomGrp:FindGroupRelations}{2.3.10}
+\makelabel{AutomGrp:FindGroupRelations}{2.3.10}
+\makelabel{AutomGrp:FindSemigroupRelations}{2.3.11}
+\makelabel{AutomGrp:FindSemigroupRelations}{2.3.11}
+\makelabel{AutomGrp:Iterator}{2.3.12}
+\makelabel{AutomGrp:FindElement}{2.3.13}
+\makelabel{AutomGrp:FindElements}{2.3.13}
+\makelabel{AutomGrp:FindElementOfInfiniteOrder}{2.3.14}
+\makelabel{AutomGrp:FindElementsOfInfiniteOrder}{2.3.14}
+\makelabel{AutomGrp:SphericallyTransitiveElement}{2.3.15}
+\makelabel{AutomGrp:Growth}{2.3.16}
+\makelabel{AutomGrp:ListOfElements}{2.3.17}
+\makelabel{AutomGrp:FindNucleus}{2.3.18}
+\makelabel{AutomGrp:LevelOfFaithfulAction}{2.3.19}
+\makelabel{AutomGrp:LevelOfFaithfulAction}{2.3.19}
+\makelabel{AutomGrp:IsomorphismPermGroup}{2.3.20}
+\makelabel{AutomGrp:IsomorphismPermGroup}{2.3.20}
+\makelabel{AutomGrp:Random}{2.3.21}
+\makelabel{AutomGrp:MarkovOperator}{2.3.22}
+\makelabel{AutomGrp:MihailovaSystem}{2.3.23}
+\makelabel{AutomGrp:AbelImage}{2.3.24}
+\makelabel{AutomGrp:DiagonalPower}{2.3.25}
+\makelabel{AutomGrp:MultAutomAlphabet}{2.3.26}
+\makelabel{AutomGrp:UnderlyingAutomFamily}{2.3.27}
+\makelabel{AutomGrp:Self-similar groups and semigroups defined by the wreath recursion}{2.4}
+\makelabel{AutomGrp:IsFiniteState! for tree homomorphism (semi)group}{2.4.1}
+\makelabel{AutomGrp:IsomorphicAutomGroup}{2.4.2}
+\makelabel{AutomGrp:IsomorphicAutomSemigroup}{2.4.3}
+\makelabel{AutomGrp:UnderlyingAutomatonGroup}{2.4.4}
+\makelabel{AutomGrp:UnderlyingAutomatonSemigroup}{2.4.5}
+\makelabel{AutomGrp:MonomorphismToAutomatonGroup}{2.4.6}
+\makelabel{AutomGrp:MonomorphismToAutomatonSemigroup}{2.4.7}
+\makelabel{AutomGrp:Contracting groups}{2.5}
+\makelabel{AutomGrp:GroupNucleus}{2.5.1}
+\makelabel{AutomGrp:GeneratingSetWithNucleus}{2.5.2}
+\makelabel{AutomGrp:GeneratingSetWithNucleusAutom}{2.5.3}
+\makelabel{AutomGrp:ContractingLevel}{2.5.4}
+\makelabel{AutomGrp:ContractingTable}{2.5.5}
+\makelabel{AutomGrp:UseContraction}{2.5.6}
+\makelabel{AutomGrp:DoNotUseContraction}{2.5.6}
+\makelabel{AutomGrp:Rewriting Systems}{2.6}
+\makelabel{AutomGrp:AG_UseRewritingSystem}{2.6.1}
+\makelabel{AutomGrp:AG_AddRelators}{2.6.2}
+\makelabel{AutomGrp:AG_UpdateRewritingSystem}{2.6.3}
+\makelabel{AutomGrp:AG_RewritingSystemRules}{2.6.4}
+\makelabel{AutomGrp:Properties and operations with group and semigroup elements}{3}
+\makelabel{AutomGrp:Creation of tree automorphisms and homomorphisms}{3.1}
+\makelabel{AutomGrp:TreeAutomorphism}{3.1.1}
+\makelabel{AutomGrp:TreeHomomorphism}{3.1.2}
+\makelabel{AutomGrp:Representative}{3.1.3}
+\makelabel{AutomGrp:Representative}{3.1.3}
+\makelabel{AutomGrp:Properties and attributes of tree automorphisms and homomorphisms}{3.2}
+\makelabel{AutomGrp:IsSphericallyTransitive! for tree homomorphism}{3.2.1}
+\makelabel{AutomGrp:IsTransitiveOnLevel! for tree homomorphism}{3.2.2}
+\makelabel{AutomGrp:IsOne}{3.2.3}
+\makelabel{AutomGrp:IsOneContr}{3.2.4}
+\makelabel{AutomGrp:Order}{3.2.5}
+\makelabel{AutomGrp:OrderUsingSections}{3.2.6}
+\makelabel{AutomGrp:Perm}{3.2.7}
+\makelabel{AutomGrp:PermOnLevel}{3.2.8}
+\makelabel{AutomGrp:PermOnLevelAsMatrix}{3.2.9}
+\makelabel{AutomGrp:TransformationOnLevel}{3.2.10}
+\makelabel{AutomGrp:TransformationOnFirstLevel}{3.2.10}
+\makelabel{AutomGrp:TransformationOnLevelAsMatrix}{3.2.11}
+\makelabel{AutomGrp:Word}{3.2.12}
+\makelabel{AutomGrp:Operations with tree automorphisms and homomorphisms}{3.3}
+\makelabel{AutomGrp:product! for tree homomorphisms}{3.3.1}
+\makelabel{AutomGrp:action! of tree homomorphism on letter}{3.3.2}
+\makelabel{AutomGrp:action! of tree homomorphism on vertex}{3.3.2}
+\makelabel{AutomGrp:Section! for tree homomorphism}{3.3.3}
+\makelabel{AutomGrp:Sections}{3.3.4}
+\makelabel{AutomGrp:Decompose}{3.3.5}
+\makelabel{AutomGrp:in}{3.3.6}
+\makelabel{AutomGrp:OrbitOfVertex}{3.3.7}
+\makelabel{AutomGrp:PrintOrbitOfVertex}{3.3.8}
+\makelabel{AutomGrp:PermActionOnLevel}{3.3.9}
+\makelabel{AutomGrp:Elements of groups and semigroups defined by wreath recursion}{3.4}
+\makelabel{AutomGrp:IsFiniteState! for tree homomorphism}{3.4.1}
+\makelabel{AutomGrp:AllSections}{3.4.2}
+\makelabel{AutomGrp:Elements of contracting groups}{3.5}
+\makelabel{AutomGrp:AutomPortrait}{3.5.1}
+\makelabel{AutomGrp:AutomPortraitBoundary}{3.5.1}
+\makelabel{AutomGrp:AutomPortraitDepth}{3.5.1}
+\makelabel{AutomGrp:Noninitial automata}{4}
+\makelabel{AutomGrp:Definition}{4.1}
+\makelabel{AutomGrp:MealyAutomaton}{4.1.1}
+\makelabel{AutomGrp:MealyAutomaton}{4.1.1}
+\makelabel{AutomGrp:MealyAutomaton}{4.1.1}
+\makelabel{AutomGrp:MealyAutomaton}{4.1.1}
+\makelabel{AutomGrp:MealyAutomaton}{4.1.1}
+\makelabel{AutomGrp:MealyAutomaton}{4.1.1}
+\makelabel{AutomGrp:IsMealyAutomaton}{4.1.2}
+\makelabel{AutomGrp:NumberOfStates}{4.1.3}
+\makelabel{AutomGrp:SizeOfAlphabet}{4.1.4}
+\makelabel{AutomGrp:AutomatonList! for automaton}{4.1.5}
+\makelabel{AutomGrp:Tools}{4.2}
+\makelabel{AutomGrp:IsTrivial}{4.2.1}
+\makelabel{AutomGrp:IsInvertible}{4.2.2}
+\makelabel{AutomGrp:MinimizationOfAutomaton}{4.2.3}
+\makelabel{AutomGrp:MinimizationOfAutomatonTrack}{4.2.4}
+\makelabel{AutomGrp:IsOfPolynomialGrowth}{4.2.5}
+\makelabel{AutomGrp:IsBounded}{4.2.6}
+\makelabel{AutomGrp:PolynomialDegreeOfGrowth}{4.2.7}
+\makelabel{AutomGrp:AdjacencyMatrix}{4.2.8}
+\makelabel{AutomGrp:IsAcyclic}{4.2.9}
+\makelabel{AutomGrp:DualAutomaton}{4.2.10}
+\makelabel{AutomGrp:InverseAutomaton}{4.2.11}
+\makelabel{AutomGrp:IsBireversible}{4.2.12}
+\makelabel{AutomGrp:IsReversible}{4.2.13}
+\makelabel{AutomGrp:IsIRAutomaton}{4.2.14}
+\makelabel{AutomGrp:MDReduction}{4.2.15}
+\makelabel{AutomGrp:IsMDTrivial}{4.2.16}
+\makelabel{AutomGrp:IsMDReduced}{4.2.17}
+\makelabel{AutomGrp:DisjointUnion}{4.2.18}
+\makelabel{AutomGrp:product! for noninitial automata}{4.2.19}
+\makelabel{AutomGrp:SubautomatonWithStates}{4.2.20}
+\makelabel{AutomGrp:AutomatonNucleus}{4.2.21}
+\makelabel{AutomGrp:AreEquivalentAutomata}{4.2.22}
+\makelabel{AutomGrp:Miscellaneous}{5}
+\makelabel{AutomGrp:Converters to and from FR package}{5.1}
+\makelabel{AutomGrp:FR2AutomGrp}{5.1.1}
+\makelabel{AutomGrp:AutomGrp2FR}{5.1.2}
+\makelabel{AutomGrp:Trees}{5.2}
+\makelabel{AutomGrp:NumberOfVertex}{5.2.1}
+\makelabel{AutomGrp:VertexNumber}{5.2.2}
+\makelabel{AutomGrp:Some predefined groups}{5.3}
+\makelabel{AutomGrp:GrigorchukGroup}{5.3.1}
+\makelabel{AutomGrp:UniversalGrigorchukGroup}{5.3.2}
+\makelabel{AutomGrp:Basilica}{5.3.3}
+\makelabel{AutomGrp:Lamplighter}{5.3.4}
+\makelabel{AutomGrp:AddingMachine}{5.3.5}
+\makelabel{AutomGrp:InfiniteDihedral}{5.3.6}
+\makelabel{AutomGrp:AleshinGroup}{5.3.7}
+\makelabel{AutomGrp:Bellaterra}{5.3.8}
+\makelabel{AutomGrp:SushchanskyGroup}{5.3.9}
+\makelabel{AutomGrp:Hanoi3}{5.3.10}
+\makelabel{AutomGrp:Hanoi4}{5.3.10}
+\makelabel{AutomGrp:GuptaSidki3Group}{5.3.11}
+\makelabel{AutomGrp:GuptaFabrikowskiGroup}{5.3.12}
+\makelabel{AutomGrp:BartholdiGrigorchukGroup}{5.3.13}
+\makelabel{AutomGrp:GrigorchukErschlerGroup}{5.3.14}
+\makelabel{AutomGrp:BartholdiNonunifExponGroup}{5.3.15}
+\makelabel{AutomGrp:IMG_z2plusI}{5.3.16}
+\makelabel{AutomGrp:Airplane}{5.3.17}
+\makelabel{AutomGrp:Rabbit}{5.3.17}
+\makelabel{AutomGrp:TwoStateSemigroupOfIntermediateGrowth}{5.3.18}
+\makelabel{AutomGrp:UniversalD_omega}{5.3.19}
+\makelabel{AutomGrp:Index}{}
+\makelabel{AutomGrp:Bibliography}{}
+\setcitlab {AKL}{AKL{+}12}
+\setcitlab {Ale83}{Ale83}
+\setcitlab {Bar03}{Bar03}
+\setcitlab {BG02}{BG02}
+\setcitlab {BGK32}{BGK{+}08}
+\setcitlab {BGK07}{BGK{+}09}
+\setcitlab {BKNV05}{BKN10}
+\setcitlab {BN06}{BN06}
+\setcitlab {BP06}{BP06}
+\setcitlab {BRS06}{BRS06}
+\setcitlab {BS07}{BS07}
+\setcitlab {BV05}{BV05}
+\setcitlab {Ers04}{Ers04}
+\setcitlab {FG85}{FG85}
+\setcitlab {GLSZ00}{GLSZ00}
+\setcitlab {GNS00}{GNS00}
+\setcitlab {Gri80}{Gri80}
+\setcitlab {Gri84}{Gri84}
+\setcitlab {Gri05}{Gri05}
+\setcitlab {GS83}{GS83}
+\setcitlab {GS06a}{G{{\accent 20 S}}06}
+\setcitlab {GS06b}{G{{\accent 20 S}}08}
+\setcitlab {GSESS}{GS14}
+\setcitlab {GSS07}{GS{{\accent 20 S}}07}
+\setcitlab {GZ02a}{GZ02a}
+\setcitlab {GZ02b}{GZ02b}
+\setcitlab {KLI}{Kli13}
+\setcitlab {Nek07}{Nek07}
+\setcitlab {Sid00}{Sid00}
+\setcitlab {Sus79}{Sus79}
+\setcitlab {VV05}{VV07}
+\setcitlab {Wil04}{Wil04}

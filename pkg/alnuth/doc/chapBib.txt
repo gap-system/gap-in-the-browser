@@ -1,0 +1,32 @@
+  
+  
+  [1XReferences[101X
+  
+  [[20XCoh93[120X]  [16XCohen,  H.[116X,  [17XA  course  in  computational  algebraic number theory[117X,
+  Springer-Verlag, New York, Heidelberg, Berlin (1993).
+  
+  [[20XDEF+25[120X]  ([1m[31mDecker, W., Eder, C., Fieker, C., Horn, M. and Joswig, M.[15X, Eds.),
+  [17XThe  Computer  Algebra  System  OSCAR:  Algorithms and Examples[117X, Springer, 1
+  edition,    Algorithms   and   Computation   in   Mathematics,   [19X32[119X   (2025)
+  (https://doi.org/10.1007/978-3-031-62127-7).
+  
+  [[20XEHN11[120X]  [16XEick,  B.,  Horn,  M.  and  Nickel,  W.[116X, [17XPolycyclic - a GAP package[117X
+  (2011).
+  
+  [[20XOSC24[120X]  [17XOSCAR  --  Open  Source  Computer  Algebra Research system, Version
+  1.0.0[117X, The OSCAR Team (2024).
+  
+  [[20XPAR11[120X] [17XPARI/GP, version 2.5.0[117X, {The PARI~Group}, Bordeaux (2011).
+  
+  [[20XPoh93[120X] [16XPohst, M. E.[116X, [17XComputational Algebraic Number Theory[117X, Birkhäuser, DMV
+  Seminar, [19X21[119X (1993).
+  
+  [[20XPZ89[120X]  [16XPohst,  M.  and Zassenhaus, H.[116X, [17XAlgorithmic algebraic number theory[117X,
+  Cambridge University Press (1989).
+  
+  [[20XST79[120X]  [16XStuart,  I. N. and Tall, D. O.[116X, [17XAlgebraic number theory[117X, Chapman and
+  Hall (1979).
+  
+  
+  
+  [32X

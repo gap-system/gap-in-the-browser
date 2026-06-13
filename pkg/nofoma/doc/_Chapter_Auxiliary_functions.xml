@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Auxiliary_functions">
+<Heading>Auxiliary functions</Heading>
+
+<Section Label="Chapter_Auxiliary_functions_Section_Vectors_and_matrices_and_their_associated_polynomials">
+<Heading>Vectors and matrices and their associated polynomials</Heading>
+
+<ManSection>
+  <Func Arg="a,b" Name="GcdCoprimeSplit" />
+ <Description>
+ Computes a divisor <M>a_1</M> of the polynomial <A>a</A> and a
+ divisor <M>b_1</M> of the polynomial <A>b</A> such that <M>a_1</M> and <M>b_1</M> are coprime
+ and the lcm of <A>a</A>, <A>b</A> is <M>a_1*b_1</M>. This is based on Lemma 5 in <Cite Key ="Bon14"/>.
+ (See also Lemma 4.3 in <Cite Key ="Gec20"/>).
+<P/>
+ (Note that it does not use the prime factorisation of polynomials but
+ only gcd computations.)
+<P/>
+<Example><![CDATA[
+gap> x:=X(Rationals);;
+gap> a:=x^2*(x-1)^3*(x-2)*(x-3);
+x_1^7-8*x_1^6+24*x_1^5-34*x_1^4+23*x_1^3-6*x_1^2
+gap> b:=x^2*(x-1)^2*(x-2)^4*(x-4);
+x_1^9-14*x_1^8+81*x_1^7-252*x_1^6+456*x_1^5-480*x_1^4+272*x_1^3-64*x_1^2
+gap> GcdCoprimeSplit(a,b);
+[ x_1^5-4*x_1^4+5*x_1^3-2*x_1^2, x_1^4-6*x_1^3+12*x_1^2-10*x_1+3, 
+  x_1^7-12*x_1^6+56*x_1^5-128*x_1^4+144*x_1^3-64*x_1^2 ]
+]]></Example>
+
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A,pol,v" Name="PolynomialToMatVec" />
+ <Description>
+ Returns the row vector obtained  by multiplying the row vector <A>v</A>
+ with the matrix <A>pol</A>(<A>A</A>), where p is a polynomial. The actual
+ computation is more efficient than this naive approach.
+<P/>
+<Example><![CDATA[
+gap> A:=[ [ 0, 1, 0, 1 ],
+>         [ 0, 0, 0, 0 ],
+>         [ 0, 1, 0, 1 ],
+>         [ 1, 1, 1, 1 ] ];;
+gap> x:=X(Rationals);;
+gap> pol:=x^6-6*x^5+12*x^4-10*x^3+3*x^2;;
+gap> v:=[ 1, 1, 1, 1 ];;
+gap> PolynomialToMatVec(A,pol,v);
+[ 8, -16, 8, -16 ]
+]]></Example>
+
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A,v1,v2,pol1,pol2" Name="LcmMaximalVectorMat" />
+ <Description>
+  Returns,  given  a matrix  <A>A</A>,  vectors <A>v1</A>,
+  <A>v2</A> with minimal polynomials <A>pol1</A>, <A>pol2</A>,  a new pair [<M>v</M>,<M>pol</M>],
+  where <M>v</M> has minimal polynomial <M>pol</M>, and <M>pol</M> is the least common
+  multiple of <A>pol1</A> and <A>pol2</A>.
+  This crucially relies on <Ref Func="GcdCoprimeSplit"/> to avoid  factorisation of
+  polynomials.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A,v" Name="SpinMatVector" />
+ <Description>
+  Computes  the  smallest subspace containing the vector
+  <A>v</A> that is invariant under the matrix <A>A</A>. The  output is a
+  quadruple, with
+<List>
+<Item>
+1st component = basis of that subspace in row echelon form;
+</Item>
+<Item>
+2nd component = matrix  with  rows <M><A>v</A>, <A>v</A>.<A>A</A>, <A>v</A>.<A>A</A>^2,
+     ..., <A>v</A>.<A>A</A>^{{d-1}}</M> (where <M>d</M> is the degree of the local
+     minimal polynomial of <A>v</A>);
+</Item>
+<Item>
+3rd component = the coefficients <M>a_0</M>, <M>a_1</M>, ...,
+     <M>a_d</M> of the local minimal polynomial; and
+</Item>
+<Item>
+4th component = the positions of the pivots of the first component.
+</Item>
+</List>
+<P/>
+<Example><![CDATA[
+gap> A:=[ [   5,   2,  -4,   2 ],
+>         [  -1,   0,   2,  -1 ],
+>         [  -1,  -1,   3,  -1 ],
+>         [ -13,  -7,  14,  -6 ] ];;
+gap> SpinMatVector(A,[1,0,0,0]);
+[ [ [ 1, 0, 0, 0 ], [ 0, 1, -2, 1 ] ],
+  [ [ 1, 0, 0, 0 ], [ 5, 2, -4, 2 ] ],
+  [ -1, 0, 1 ],
+  [ 1, 2 ] ]
+gap> SpinMatVector(A,[0,1,0,0]);
+[ [ [ 0, 1, 0, 0 ], [ 1, 0, -2, 1 ], [ 0, 0, 1, -1/2 ] ],
+  [ [ 0, 1, 0, 0 ], [ -1, 0, 2, -1 ], [ 6, 3, -4, 2 ] ],
+  [ 1, -1, -1, 1 ],
+  [ 2, 1, 3 ] ]
+gap> SpinMatVector(A,[1,1,0,0]);
+[ [ [ 1, 1, 0, 0 ], [ 0, 1, 1, -1/2 ] ],
+  [ [ 1, 1, 0, 0 ], [ 4, 2, -2, 1 ] ],
+  [ 1, -2, 1 ],
+  [ 1, 2 ] ]
+]]></Example>
+
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A" Name="CyclicChainMat" />
+ <Description>
+  Repeatedly computes the smallest invariant subspaces containing different vectors
+  to compute a chain of cyclic subspaces. The output is a triple
+  <C>[B,C,svec]</C>  where  <M>C</M> is such that  <M>C<A>A</A>C^{-1}</M>  has a block
+  triangular shape with companion matrices along the diagonal), <M>B</M> is the
+  row echelon form of C and svec is the list of indices where the blocks
+  begin.
+<P/>
+<Example><![CDATA[
+gap> A:=[ [ 0, 1, 0, 1 ],
+>         [ 0, 0, 1, 0 ],
+>         [ 0, 1, 0, 1 ],
+>         [ 1, 1, 1, 1 ] ];;
+gap> sp:=CyclicChainMat(A);
+[ [ [ 1, 0, 0, 0 ], [ 0, 1, 0, 1 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ],
+  [ [ 1, 0, 0, 0 ], [ 0, 1, 0, 1 ], [ 1, 1, 2, 1 ], [ 0, 0, 0, 1 ] ],
+  [ 1, 4, 5 ] ]
+gap> PrintArray(sp[2]*A*sp[2]^-1);
+[ [    0,    1,    0,    0 ],
+  [    0,    0,    1,    0 ],
+  [    0,    3,    1,    0 ],
+  [  1/2,  1/2,  1/2,    0 ] ]
+]]></Example>
+
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A" Name="MaximalVectorMat" />
+ <Description>
+  Returns the minimal polynomial and a maximal vector
+  of the matrix <A>A</A>, that is, a vector whose local minimal polynomial
+  is that of <A>A</A>. This is done by repeatedly spinning up vectors until
+  a maximal one is found. The exact algorithm is a combination of
+<List>
+<Item>
+the minimal polynomial algorithm by Neunhoeffer-Praeger; see <Cite Key ="Neu08"/>; and
+</Item>
+<Item>
+the method described by Bongartz
+      (see <Cite Key ="Bon14"/>) for computing
+      maximal vectors.
+</Item>
+</List>
+<P/>
+  See also the article by Geck at <Cite Key ="Gec20"/>.
+<P/>
+<Example><![CDATA[
+gap> A:=[ [  2,  2,  0,  1,  0,  2,  1 ],
+>         [  0,  4,  0,  0,  0,  1,  0 ],
+>         [  0,  1,  1,  0,  0,  1,  1 ],
+>         [  0, -1,  0,  1,  0, -1,  0 ],
+>         [  0, -7,  0,  0,  1, -5,  0 ],
+>         [  0, -2,  0,  0,  0,  1,  0 ],
+>         [  0, -1,  0,  0,  0, -1,  1 ] ];;
+gap> MaximalVectorMat(A);
+[ [ 1, -2, 1, 1, 0, 0, 1 ], x_1^4-7*x_1^3+17*x_1^2-17*x_1+6 ]
+gap> v:=last[1];;
+gap> SpinMatVector(A,v)[3];
+[ 6, -17, 17, -7, 1 ]
+]]></Example>
+
+ In the following example, <M>M_2</M> is the (challenging) test matrix
+ from the paper by Neunhoeffer-Praeger:
+<P/>
+<Log><![CDATA[
+gap> LoadPackage("AtlasRep");; g:=AtlasGroup("B",1); M2:=g.1+g.2+g.1*g.2;
+<matrix group of size 4154781481226426191177580544000000 with 2 generators>
+<an immutable 4370x4370 matrix over GF2>
+gap> SetInfoLevel(Infonofoma,1);
+gap> MaximalVectorMat(M2);;time;
+#I Degree of minimal polynomial is 2097
+6725
+gap> MinimalPolynomial(M2);;time;
+13415
+gap> LoadPackage("cvec");
+gap> MinimalPolynomial(CMat(M2));;time;
+9721
+]]></Log>
+
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="T,d" Name="JacobMatComplement" />
+ <Description>
+ Modifies an already given  complementary subspace
+ to the  complementary subspace defined by  Jacob;  concretely, this is
+ realized by assuming that  <A>T</A>  is a matrix in block triangular shape,
+ where the upper left diagonal block is a companion matrix (as returned
+ by <Ref Func="RatFormStep1"/>; the variable <A>d</A> gives the size of that block.
+ (If <A>T</A> gives a  maximal cyclic subspace,  then  Jacob's complement is
+ also  <A>T</A>-invariant;  but even if not,  it appears  to be  very useful
+ because it produces many zeroes.)
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A,v" Name="RatFormStep1" />
+ <Description>
+ Spins up a vector  <A>v</A> under a  matrix  <A>A</A>,  computes
+ a complementary subspace  (using  Jacob's construction),  and performs
+ the base change. The output is a quadruple  <C>[A1,P,pol,str]</C> where <M>A1</M> is
+ the new matrix, <M>P</M> is the base change,  <M>pol</M> is  the minimal polynomial
+ and <M>str</M> is either 'split' or 'not', according to whether the extension
+ is split or not.
+<P/>
+<Example><![CDATA[
+gap> v:=[ 1, 1, 1, 1 ];;
+gap> A:=[ [ 0, 1, 0, 1 ],
+>         [ 0, 0, 1, 0 ],
+>         [ 0, 1, 0, 1 ],
+>         [ 1, 1, 1, 1 ] ];;
+gap> PrintArray(RatFormStep1(A,v)[1]);
+[ [  0,  1,  0,  0 ],
+  [  0,  0,  1,  0 ],
+  [  0,  3,  1,  0 ],
+  [  1,  0,  0,  0 ] ]
+]]></Example>
+
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

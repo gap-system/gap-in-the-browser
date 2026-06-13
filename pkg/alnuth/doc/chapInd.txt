@@ -1,0 +1,37 @@
+  
+  
+  [1XIndex[101X
+  
+  [2XDefiningPolynomial[102X 2.2-1 
+  [2XDegreeOverPrimeField[102X 2.2-3 
+  [2XEquationOrderBasis[102X 2.2-4 
+  [2XExampleMatField[102X 2.6-1 
+  [2XExponentsOfUnits[102X 2.2-7 
+  [2XFactorsPolynomialAlgExt[102X 2.5-1 
+  [2XFactorsPolynomialAlnuth[102X 2.5-2 
+  [2XFieldByMatrices[102X 2.1-1 
+  [2XFieldByMatricesNC[102X 2.1-1 
+  [2XFieldByMatrixBasis[102X 2.1-2 
+  [2XFieldByMatrixBasisNC[102X 2.1-2 
+  [2XFieldByPolynomial[102X 2.1-3 
+  [2XFieldByPolynomialNC[102X 2.1-3 
+  [2XIntersectionOfUnitSubgroups[102X 2.4-2 
+  [2XIsCyclotomicField[102X 2.2-8 
+  [2XIsIntegerOfNumberField[102X 2.2-4 
+  [2XIsomorphismPcpGroup[102X 2.3-1 
+  [2XIsPrimitiveElementOfNumberField[102X 2.2-2 
+  [2XIsUnitOfNumberField[102X 2.2-6 
+  [2XMaximalOrderBasis[102X 2.2-4 
+  [2XNormCosetsOfNumberField[102X 2.2-9 
+  [2XPariVersion[102X 4.3-1 
+  [2XPcpPresentationOfMultiplicativeSubgroup[102X 2.3-1 
+  [2XPrimitiveElement[102X 2.2-1 
+  [2XRelationLattice[102X 2.3-2 
+  [2XRelationLatticeOfUnits[102X 2.4-1 
+  [2XRestoreAlnuthExternalExecutablePermanently[102X 4.3-4 
+  [2XSetAlnuthExternalExecutable[102X 4.3-2 
+  [2XSetAlnuthExternalExecutablePermanently[102X 4.3-3 
+  [2XUnitGroup[102X 2.2-5 
+  
+  
+  -------------------------------------------------------

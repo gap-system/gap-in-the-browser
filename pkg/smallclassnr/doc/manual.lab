@@ -1,0 +1,40 @@
+\GAPDocLabFile{smallclassnr}
+\makelabel{smallclassnr:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{smallclassnr:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{smallclassnr:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{smallclassnr:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{smallclassnr:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{smallclassnr:The SmallClassNr package}{1}{X7EC4E71A8078695B}
+\makelabel{smallclassnr:Installation}{1.1}{X8360C04082558A12}
+\makelabel{smallclassnr:Loading}{1.2}{X861ED1338181C66D}
+\makelabel{smallclassnr:Citing}{1.3}{X7A178B0587668C3E}
+\makelabel{smallclassnr:Support}{1.4}{X7B689C0284AC4296}
+\makelabel{smallclassnr:Classification}{2}{X8053C9E57C4C5F94}
+\makelabel{smallclassnr:The Small Class Number Library}{3}{X7D2B74F9802686C1}
+\makelabel{smallclassnr:Selecting groups by their ID's}{3.1}{X7F2B2BB683990EC7}
+\makelabel{smallclassnr:Selecting groups by their properties}{3.2}{X840A70BF809216FD}
+\makelabel{smallclassnr:Availability of the library}{3.3}{X7D59559682A4BAC1}
+\makelabel{smallclassnr:Conversion to other group libraries}{4}{X87EC7E9C8792446D}
+\makelabel{smallclassnr:The Small Groups Library}{4.1}{X7C16EA1580AC7586}
+\makelabel{smallclassnr:The Library of Finite Perfect Groups}{4.2}{X8660CD057B7BBD7F}
+\makelabel{smallclassnr:The Primitive Permutation Groups Library}{4.3}{X7FB77CB979750C5D}
+\makelabel{smallclassnr:The Library of Transitive Groups}{4.4}{X7B8DBD3E86B96782}
+\makelabel{smallclassnr:The ATLAS of Group Representations}{4.5}{X7A76DF957E7AF8AE}
+\makelabel{smallclassnr:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{smallclassnr:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{smallclassnr:Index}{Ind}{X83A0356F839C696F}
+\makelabel{smallclassnr:SmallClassNrGroup}{3.1.1}{X7F0BD3117CA1B4FE}
+\makelabel{smallclassnr:SmallClassNrGroup with AsPermGroup}{3.1.1}{X7F0BD3117CA1B4FE}
+\makelabel{smallclassnr:IdClassNr}{3.1.2}{X8651368082BCE413}
+\makelabel{smallclassnr:AllSmallClassNrGroups}{3.2.1}{X87052993834D10C5}
+\makelabel{smallclassnr:AllSmallClassNrGroups with AsPermGroup}{3.2.1}{X87052993834D10C5}
+\makelabel{smallclassnr:OneSmallClassNrGroup}{3.2.2}{X7AD22E3083C09796}
+\makelabel{smallclassnr:OneSmallClassNrGroup with AsPermGroup}{3.2.2}{X7AD22E3083C09796}
+\makelabel{smallclassnr:NrSmallClassNrGroups}{3.2.3}{X84004D087859AF4F}
+\makelabel{smallclassnr:IteratorSmallClassNrGroups}{3.2.4}{X7D2BB4B379563D9A}
+\makelabel{smallclassnr:SmallClassNrGroupsAvailable}{3.3.1}{X79C6FA9D850D3AB1}
+\makelabel{smallclassnr:IdClassNrToIdGroup}{4.1.1}{X7C5BB3197F5351D8}
+\makelabel{smallclassnr:IdClassNrToPerfGrp}{4.2.1}{X7CA882467C69C584}
+\makelabel{smallclassnr:IdClassNrToPrimGrp}{4.3.1}{X8146A37D7F89659B}
+\makelabel{smallclassnr:IdClassNrToTransGrp}{4.4.1}{X7990925C84FD0365}
+\makelabel{smallclassnr:IdClassNrToAtlasName}{4.5.1}{X7FD9F8DC7F7679EE}

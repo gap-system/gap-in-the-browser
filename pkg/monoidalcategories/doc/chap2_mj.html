@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (MonoidalCategories) - Chapter 2: Examples and Tests</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
+<p><a id="X7967FE8E7BBDF485" name="X7967FE8E7BBDF485"></a></p>
+<div class="ChapSects"><a href="chap2_mj.html#X7967FE8E7BBDF485">2 <span class="Heading">Examples and Tests</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7862428B781B1F3D">2.1 <span class="Heading">Test functions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8131040685BBC24E">2.1-1 AdditiveMonoidalCategoriesTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X803EED927C6BFB83">2.1-2 TestBraidingForInvertibility</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X794ADC5E7B9ED6E9">2.1-3 TestBraidingCompatibility</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X85D661D482543648">2.1-4 TestBraidingCompatibilityForAllTriplesInList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7D87D6737E0B485F">2.1-5 BraidedMonoidalCategoriesTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7CDDEF3E87731A54">2.1-6 ClosedMonoidalCategoriesTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EAC790E85CC1D26">2.1-7 ClosedMonoidalCategoriesTestWithGiven</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X83E919E984B367B1">2.1-8 CoclosedMonoidalCategoriesTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7F29A16A810D390D">2.1-9 CoclosedMonoidalCategoriesTestWithGiven</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7B0D72D07AAA7B9B">2.1-10 LeftClosedMonoidalCategoriesTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BCAE7FE7E32B70A">2.1-11 LeftClosedMonoidalCategoriesTestWithGiven</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X865E82AA7FB9B0BE">2.1-12 LeftCoclosedMonoidalCategoriesTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BF584B6805BB8DA">2.1-13 LeftCoclosedMonoidalCategoriesTestWithGiven</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7B05AB7F7BAF2B62">2.1-14 MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7FE8E3E581929705">2.1-15 TestMonoidalUnitorsForInvertibility</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X78A123237F5F81BE">2.1-16 TestAssociatorForInvertibility</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EB6CE877FDBFAE5">2.1-17 TestMonoidalTriangleIdentity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7B0890C57F20717C">2.1-18 TestMonoidalTriangleIdentityForAllPairsInList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8786C1FF7F09F124">2.1-19 TestMonoidalPentagonIdentity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7D45BF317D6237DC">2.1-20 TestMonoidalPentagonIdentityUsingWithGivenOperations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E96BEF17CD1B38B">2.1-21 TestMonoidalPentagonIdentityForAllQuadruplesInList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BCAF88A806E562D">2.1-22 MonoidalCategoriesTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X85AB97E9788D543D">2.1-23 TestZigZagIdentitiesForDual</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X78CAAAE77DC5CF4F">2.1-24 RigidSymmetricClosedMonoidalCategoriesTest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8154BEE7850EFEEA">2.1-25 RigidSymmetricCoclosedMonoidalCategoriesTest</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Examples and Tests</span></h3>
+
+<p><a id="X7862428B781B1F3D" name="X7862428B781B1F3D"></a></p>
+
+<h4>2.1 <span class="Heading">Test functions</span></h4>
+
+<p><a id="X8131040685BBC24E" name="X8131040685BBC24E"></a></p>
+
+<h5>2.1-1 AdditiveMonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AdditiveMonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">L</var>, <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>an object <span class="SimpleMath">\(a\)</span></p>
+
+</li>
+<li><p>a list <span class="SimpleMath">\(L\)</span> of objects</p>
+
+</li>
+<li><p>a list <span class="SimpleMath">\(M\)</span> of integers with <code class="code">Length(L) = Length(M)</code></p>
+
+</li>
+</ul>
+<p>This function checks for every operation declared in AdditiveMonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X803EED927C6BFB83" name="X803EED927C6BFB83"></a></p>
+
+<h5>2.1-2 TestBraidingForInvertibility</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestBraidingForInvertibility</code>( <var class="Arg">cat</var>, <var class="Arg">obj_1</var>, <var class="Arg">obj_2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The arguments are three objects <span class="SimpleMath">\(obj_1, obj_2\)</span> in a braided monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the braiding is invertible, false otherwise.</p>
+
+<p><a id="X794ADC5E7B9ED6E9" name="X794ADC5E7B9ED6E9"></a></p>
+
+<h5>2.1-3 TestBraidingCompatibility</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestBraidingCompatibility</code>( <var class="Arg">cat</var>, <var class="Arg">obj_1</var>, <var class="Arg">obj_2</var>, <var class="Arg">obj_3</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The arguments are three objects <span class="SimpleMath">\(obj_1, obj_2, obj_3\)</span> in a braided monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the braiding compatabilities with the associator hold, false otherwise.</p>
+
+<p><a id="X85D661D482543648" name="X85D661D482543648"></a></p>
+
+<h5>2.1-4 TestBraidingCompatibilityForAllTriplesInList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestBraidingCompatibilityForAllTriplesInList</code>( <var class="Arg">cat</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The argument is a list <span class="SimpleMath">\(L\)</span> of objects in a braided monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the braiding compatabilities with the associator hold for all triples of objects in <span class="SimpleMath">\(L\)</span>, otherwise false.</p>
+
+<p><a id="X7D87D6737E0B485F" name="X7D87D6737E0B485F"></a></p>
+
+<h5>2.1-5 BraidedMonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BraidedMonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every operation declared in BraidedMonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X7CDDEF3E87731A54" name="X7CDDEF3E87731A54"></a></p>
+
+<h5>2.1-6 ClosedMonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClosedMonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var>, <var class="Arg">gamma</var>, <var class="Arg">delta</var>, <var class="Arg">epsilon</var>, <var class="Arg">zeta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\gamma: a \otimes b \rightarrow 1\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\delta: c \otimes d \rightarrow 1\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\epsilon: 1 \rightarrow \mathrm{Hom}(a,b)\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\zeta: 1 \rightarrow \mathrm{Hom}(c,d)\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every operation declared in ClosedMonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X7EAC790E85CC1D26" name="X7EAC790E85CC1D26"></a></p>
+
+<h5>2.1-7 ClosedMonoidalCategoriesTestWithGiven</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClosedMonoidalCategoriesTestWithGiven</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for some *WithGiven operations declared in ClosedMonoidalCategories.gd if they are computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X83E919E984B367B1" name="X83E919E984B367B1"></a></p>
+
+<h5>2.1-8 CoclosedMonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CoclosedMonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var>, <var class="Arg">gamma</var>, <var class="Arg">delta</var>, <var class="Arg">epsilon</var>, <var class="Arg">zeta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\gamma: 1 \rightarrow a \otimes b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\delta: 1 \rightarrow c \otimes d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\epsilon: \mathrm{coHom}(a,b) \rightarrow 1\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\zeta: \mathrm{coHom}(c,d) \rightarrow 1\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every operation declared in CoclosedMonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X7F29A16A810D390D" name="X7F29A16A810D390D"></a></p>
+
+<h5>2.1-9 CoclosedMonoidalCategoriesTestWithGiven</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CoclosedMonoidalCategoriesTestWithGiven</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var>, <var class="Arg">gamma</var>, <var class="Arg">delta</var>, <var class="Arg">epsilon</var>, <var class="Arg">zeta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for some *WithGiven operations declared in CoclosedMonoidalCategories.gd if they are computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X7B0D72D07AAA7B9B" name="X7B0D72D07AAA7B9B"></a></p>
+
+<h5>2.1-10 LeftClosedMonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LeftClosedMonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var>, <var class="Arg">gamma</var>, <var class="Arg">delta</var>, <var class="Arg">epsilon</var>, <var class="Arg">zeta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\gamma: a \otimes b \rightarrow 1\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\delta: c \otimes d \rightarrow 1\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\epsilon: 1 \rightarrow \mathrm{Hom}(a,b)\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\zeta: 1 \rightarrow \mathrm{Hom}(c,d)\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every operation declared in LeftClosedMonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X7BCAE7FE7E32B70A" name="X7BCAE7FE7E32B70A"></a></p>
+
+<h5>2.1-11 LeftClosedMonoidalCategoriesTestWithGiven</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LeftClosedMonoidalCategoriesTestWithGiven</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var>, <var class="Arg">gamma</var>, <var class="Arg">delta</var>, <var class="Arg">epsilon</var>, <var class="Arg">zeta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for some *WithGiven operationS declared in LeftClosedMonoidalCategories.gd if they are computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X865E82AA7FB9B0BE" name="X865E82AA7FB9B0BE"></a></p>
+
+<h5>2.1-12 LeftCoclosedMonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LeftCoclosedMonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var>, <var class="Arg">gamma</var>, <var class="Arg">delta</var>, <var class="Arg">epsilon</var>, <var class="Arg">zeta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\gamma: 1 \rightarrow a \otimes b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\delta: 1 \rightarrow c \otimes d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\epsilon: \mathrm{coHom}(a,b) \rightarrow 1\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\zeta: \mathrm{coHom}(c,d) \rightarrow 1\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every operation declared in LeftCoclosedMonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X7BF584B6805BB8DA" name="X7BF584B6805BB8DA"></a></p>
+
+<h5>2.1-13 LeftCoclosedMonoidalCategoriesTestWithGiven</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LeftCoclosedMonoidalCategoriesTestWithGiven</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var>, <var class="Arg">gamma</var>, <var class="Arg">delta</var>, <var class="Arg">epsilon</var>, <var class="Arg">zeta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for some *WithGiven operations declared in LeftCoclosedMonoidalCategories.gd if they are computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X7B05AB7F7BAF2B62" name="X7B05AB7F7BAF2B62"></a></p>
+
+<h5>2.1-14 MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every operation declared in MonoidalCategoriesTensorProductOnObjectsAndTensorUnit.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X7FE8E3E581929705" name="X7FE8E3E581929705"></a></p>
+
+<h5>2.1-15 TestMonoidalUnitorsForInvertibility</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestMonoidalUnitorsForInvertibility</code>( <var class="Arg">cat</var>, <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The arguments are two objects <span class="SimpleMath">\(obj\)</span> in a monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the left and right unitors are invertible for <span class="SimpleMath">\(obj\)</span>.</p>
+
+<p><a id="X78A123237F5F81BE" name="X78A123237F5F81BE"></a></p>
+
+<h5>2.1-16 TestAssociatorForInvertibility</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestAssociatorForInvertibility</code>( <var class="Arg">cat</var>, <var class="Arg">obj_1</var>, <var class="Arg">obj_2</var>, <var class="Arg">obj_3</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The arguments are two objects <span class="SimpleMath">\(obj_1, obj_2, obj_3\)</span> in a monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the associator are invertible for these 3 objects, false otherwise.</p>
+
+<p><a id="X7EB6CE877FDBFAE5" name="X7EB6CE877FDBFAE5"></a></p>
+
+<h5>2.1-17 TestMonoidalTriangleIdentity</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestMonoidalTriangleIdentity</code>( <var class="Arg">cat</var>, <var class="Arg">obj_1</var>, <var class="Arg">obj_2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The arguments are two objects <span class="SimpleMath">\(obj_1, obj_2\)</span> in a monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the triangle identity holds for these 2 objects, false otherwise.</p>
+
+<p><a id="X7B0890C57F20717C" name="X7B0890C57F20717C"></a></p>
+
+<h5>2.1-18 TestMonoidalTriangleIdentityForAllPairsInList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestMonoidalTriangleIdentityForAllPairsInList</code>( <var class="Arg">cat</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The argument is a list <span class="SimpleMath">\(L\)</span> of objects in a monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the triangle identity holds for all pairs of objects in <span class="SimpleMath">\(L\)</span>, otherwise false.</p>
+
+<p><a id="X8786C1FF7F09F124" name="X8786C1FF7F09F124"></a></p>
+
+<h5>2.1-19 TestMonoidalPentagonIdentity</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestMonoidalPentagonIdentity</code>( <var class="Arg">cat</var>, <var class="Arg">obj_1</var>, <var class="Arg">obj_2</var>, <var class="Arg">obj_3</var>, <var class="Arg">obj_4</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The arguments are 4 objects <span class="SimpleMath">\(obj_1, obj_2, obj_3, obj_4\)</span> in a monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the pentagon identity holds for these 4 objects, false otherwise.</p>
+
+<p><a id="X7D45BF317D6237DC" name="X7D45BF317D6237DC"></a></p>
+
+<h5>2.1-20 TestMonoidalPentagonIdentityUsingWithGivenOperations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestMonoidalPentagonIdentityUsingWithGivenOperations</code>( <var class="Arg">cat</var>, <var class="Arg">obj_1</var>, <var class="Arg">obj_2</var>, <var class="Arg">obj_3</var>, <var class="Arg">obj_4</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The arguments are 4 objects <span class="SimpleMath">\(obj_1, obj_2, obj_3, obj_4\)</span> in a monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the pentagon identity holds for these 4 objects, false otherwise. This test uses the WithGiven-operations.</p>
+
+<p><a id="X7E96BEF17CD1B38B" name="X7E96BEF17CD1B38B"></a></p>
+
+<h5>2.1-21 TestMonoidalPentagonIdentityForAllQuadruplesInList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestMonoidalPentagonIdentityForAllQuadruplesInList</code>( <var class="Arg">cat</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The argument is a list <span class="SimpleMath">\(L\)</span> of objects in a monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the pentagon identity holds for all quadruples of objects in <span class="SimpleMath">\(L\)</span>, otherwise false.</p>
+
+<p><a id="X7BCAF88A806E562D" name="X7BCAF88A806E562D"></a></p>
+
+<h5>2.1-22 MonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\alpha: a \rightarrow b\)</span></p>
+
+</li>
+<li><p>a morphism <span class="SimpleMath">\(\beta: c \rightarrow d\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every operation declared in MonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X85AB97E9788D543D" name="X85AB97E9788D543D"></a></p>
+
+<h5>2.1-23 TestZigZagIdentitiesForDual</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TestZigZagIdentitiesForDual</code>( <var class="Arg">cat</var>, <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>This is a debug operation. The argument is an object <span class="SimpleMath">\(obj\)</span> in a rigid symmetric monoidal category <span class="SimpleMath">\(cat\)</span>. The output is true if the zig zag identity for duals hold, false otherwise.</p>
+
+<p><a id="X78CAAAE77DC5CF4F" name="X78CAAAE77DC5CF4F"></a></p>
+
+<h5>2.1-24 RigidSymmetricClosedMonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RigidSymmetricClosedMonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>an endomorphism <span class="SimpleMath">\(\alpha: a \rightarrow a\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every object and morphism declared in RigidSymmetricClosedMonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+<p><a id="X8154BEE7850EFEEA" name="X8154BEE7850EFEEA"></a></p>
+
+<h5>2.1-25 RigidSymmetricCoclosedMonoidalCategoriesTest</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RigidSymmetricCoclosedMonoidalCategoriesTest</code>( <var class="Arg">cat</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var>, <var class="Arg">d</var>, <var class="Arg">alpha</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The arguments are</p>
+
+
+<ul>
+<li><p>a CAP category <span class="SimpleMath">\(cat\)</span></p>
+
+</li>
+<li><p>objects <span class="SimpleMath">\(a, b, c, d\)</span></p>
+
+</li>
+<li><p>an endomorphism <span class="SimpleMath">\(\alpha: a \rightarrow a\)</span></p>
+
+</li>
+</ul>
+<p>This function checks for every object and morphism declared in RigidSymmetricCoclosedMonoidalCategories.gd if it is computable in the CAP category <span class="SimpleMath">\(cat\)</span>. If yes, then the operation is executed with the parameters given above and compared to the equivalent computation in the opposite category of <span class="SimpleMath">\(cat\)</span>. Pass the options</p>
+
+
+<ul>
+<li><p><code class="code">verbose := true</code> to output more information.</p>
+
+</li>
+<li><p><code class="code">only_primitive_operations := true</code>, which is passed on to Opposite(), to only primitively install dual operations for primitively installed operations in <span class="SimpleMath">\(cat\)</span>. The advantage is, that more derivations might be tested. On the downside, this might test fewer dual_pre/postprocessor_funcs.</p>
+
+</li>
+</ul>
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

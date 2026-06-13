@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[
+    [<#Include SYSTEM "_entities.xml">
+]
+>
+<Book Name="GBNP">
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+<Body>
+<#Include SYSTEM "gbnp_doc.xml">
+<#Include SYSTEM "nmo.xml">
+</Body>
+<#Include SYSTEM "examples.xml">
+<Bibliography Databases="gbnp_doc"/>
+<TheIndex/>
+</Book>

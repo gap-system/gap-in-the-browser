@@ -1,0 +1,1137 @@
+  
+  
+                                     [1X CAP [101X
+  
+  
+                     [1X Categories, Algorithms, Programming [101X
+  
+  
+                                   2026.06-01
+  
+  
+                                  1 June 2026
+  
+  
+                               Sebastian Gutsche
+  
+                                Sebastian Posur
+  
+                            Øystein Skartsæterhagen
+  
+                                Fabian Zickgraf
+  
+  
+  
+  Sebastian Gutsche
+      Email:    [7Xmailto:sebastian.gutsche@gmail.com[107X
+      Homepage: [7Xhttps://sebasguts.github.io/[107X
+      Address:  [33X[0;14YDepartment Mathematik[133X
+                [33X[0;14YUniversität Siegen[133X
+                [33X[0;14YWalter-Flex-Straße 3[133X
+                [33X[0;14Y57068 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Sebastian Posur
+      Email:    [7Xmailto:sebastian.posur@uni-muenster.de[107X
+      Homepage: [7Xhttps://sebastianpos.github.io[107X
+      Address:  [33X[0;14YDepartment Mathematik[133X
+                [33X[0;14YUniversität Siegen[133X
+                [33X[0;14YWalter-Flex-Straße 3[133X
+                [33X[0;14Y57068 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Øystein Skartsæterhagen
+      Email:    [7Xmailto:oysteini@math.ntnu.no[107X
+      Homepage: [7Xhttp://www.math.ntnu.no/~oysteini/[107X
+      Address:  [33X[0;14YNTNU[133X
+                [33X[0;14YInstitutt for matematiske fag[133X
+                [33X[0;14Y7491 Trondheim[133X
+                [33X[0;14YNorway[133X
+  
+  
+  Fabian Zickgraf
+      Email:    [7Xmailto:f.zickgraf@dashdos.com[107X
+      Homepage: [7Xhttps://github.com/zickgraf/[107X
+      Address:  [33X[0;14YWalter-Flex-Str. 3[133X
+                [33X[0;14Y57068 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (CAP)[101X
+  
+  1 [33X[0;0YCAP Categories[133X
+    1.1 [33X[0;0YCategories[133X
+      1.1-1 IsCapCategory
+      1.1-2 IsCapCategoryCell
+      1.1-3 IsCapCategoryObject
+      1.1-4 IsCapCategoryMorphism
+      1.1-5 IsCapCategoryTwoCell
+    1.2 [33X[0;0YCategorical properties[133X
+      1.2-1 AddCategoricalProperty
+      1.2-2 IsObjectFiniteCategory
+      1.2-3 IsFiniteCategory
+      1.2-4 IsFinite
+      1.2-5 IsEquivalentToFiniteCategory
+      1.2-6 IsFinitelyPresentedCategory
+      1.2-7 IsEquippedWithHomomorphismStructure
+      1.2-8 IsCategoryWithDecidableLifts
+      1.2-9 IsCategoryWithDecidableColifts
+      1.2-10 IsCategoryWithInitialObject
+      1.2-11 IsCategoryWithTerminalObject
+      1.2-12 IsCategoryWithZeroObject
+      1.2-13 IsCategoryWithEqualizers
+      1.2-14 IsCategoryWithCoequalizers
+      1.2-15 IsCategoryWithCoequalizersOfIdentityAndAutomorphisms
+      1.2-16 IsCategoryWithEqualizersOfIdentityAndAutomorphisms
+      1.2-17 IsEnrichedOverCommutativeRegularSemigroup
+      1.2-18 IsSkeletalCategory
+      1.2-19 IsAbCategory
+      1.2-20 IsLinearCategoryOverCommutativeSemiring
+      1.2-21 IsLinearCategoryOverCommutativeSemiringWithFinitelyGeneratedFreeExternalHoms
+      1.2-22 IsLinearCategoryOverCommutativeRing
+      1.2-23 IsLinearCategoryOverCommutativeRingWithFinitelyGeneratedFreeExternalHoms
+      1.2-24 IsCategoryWithKernels
+      1.2-25 IsCategoryWithCokernels
+      1.2-26 IsAdditiveCategory
+      1.2-27 IsPreAbelianCategory
+      1.2-28 IsAbelianCategory
+      1.2-29 IsAbelianCategoryWithEnoughProjectives
+      1.2-30 IsAbelianCategoryWithEnoughInjectives
+      1.2-31 IsLocallyOfFiniteProjectiveDimension
+      1.2-32 IsLocallyOfFiniteInjectiveDimension
+      1.2-33 ListOfDefiningOperations
+    1.3 [33X[0;0YConstructor[133X
+      1.3-1 CreateCapCategory
+      1.3-2 CreateCapCategory
+      1.3-3 CreateCapCategory
+      1.3-4 CreateCapCategoryWithDataTypes
+    1.4 [33X[0;0YInternal Attributes[133X
+      1.4-1 Name
+      1.4-2 CategoryFilter
+      1.4-3 ObjectFilter
+      1.4-4 MorphismFilter
+      1.4-5 TwoCellFilter
+      1.4-6 ObjectDatumType
+      1.4-7 MorphismDatumType
+      1.4-8 TwoCellDatumType
+      1.4-9 CommutativeSemiringOfLinearCategory
+      1.4-10 RangeCategoryOfHomomorphismStructure
+      1.4-11 AdditiveGenerators
+      1.4-12 IndecomposableProjectiveObjects
+      1.4-13 IndecomposableInjectiveObjects
+    1.5 [33X[0;0YLogic switcher[133X
+      1.5-1 CapCategorySwitchLogicPropagationForObjectsOn
+      1.5-2 CapCategorySwitchLogicPropagationForObjectsOff
+      1.5-3 CapCategorySwitchLogicPropagationForMorphismsOn
+      1.5-4 CapCategorySwitchLogicPropagationForMorphismsOff
+      1.5-5 CapCategorySwitchLogicPropagationOn
+      1.5-6 CapCategorySwitchLogicPropagationOff
+      1.5-7 CapCategorySwitchLogicOn
+      1.5-8 CapCategorySwitchLogicOff
+    1.6 [33X[0;0YTool functions[133X
+      1.6-1 CanCompute
+      1.6-2 OperationWeight
+      1.6-3 MissingOperationsForConstructivenessOfCategory
+    1.7 [33X[0;0YWell-Definedness of Cells[133X
+      1.7-1 IsWellDefined
+    1.8 [33X[0;0YUnpacking data structures[133X
+      1.8-1 Down
+      1.8-2 DownOnlyMorphismData
+      1.8-3 DownToBottom
+    1.9 [33X[0;0YCaching[133X
+      1.9-1 SetCachingOfCategory
+      1.9-2 SetCachingOfCategoryWeak
+      1.9-3 SetDefaultCaching
+    1.10 [33X[0;0YSanity checks[133X
+      1.10-1 DisableInputSanityChecks
+    1.11 [33X[0;0YTiming statistics[133X
+      1.11-1 EnableTimingStatistics
+    1.12 [33X[0;0YEnable automatic calls of [10XAdd[110X[133X
+      1.12-1 EnableAddForCategoricalOperations
+    1.13 [33X[0;0YPerformance tweaks[133X
+    1.14 [33X[0;0YLaTeX[133X
+      1.14-1 LaTeXOutput
+      1.14-2 LaTeXOutput
+  2 [33X[0;0YObjects[133X
+    2.1 [33X[0;0YAttributes for the Type of Objects[133X
+      2.1-1 CapCategory
+    2.2 [33X[0;0YAdding Objects to a Category[133X
+      2.2-1 Add
+      2.2-2 AddObject
+      2.2-3 CreateCapCategoryObjectWithAttributes
+      2.2-4 AsCapCategoryObject
+      2.2-5 AsPrimitiveValue
+    2.3 [33X[0;0YEqualities for Objects[133X
+      2.3-1 IsEqualForObjects
+      2.3-2 IsIsomorphicForObjects
+      2.3-3 SomeIsomorphismBetweenObjects
+    2.4 [33X[0;0YCategorical Properties of Objects[133X
+      2.4-1 IsBijectiveObject
+      2.4-2 IsProjective
+      2.4-3 IsInjective
+      2.4-4 IsTerminal
+      2.4-5 IsInitial
+      2.4-6 IsZeroForObjects
+      2.4-7 IsZero
+    2.5 [33X[0;0YRandom Objects[133X
+      2.5-1 RandomObjectByInteger
+      2.5-2 RandomObjectByList
+      2.5-3 RandomObject
+      2.5-4 RandomObject
+    2.6 [33X[0;0YTool functions for caches[133X
+      2.6-1 IsEqualForCacheForObjects
+    2.7 [33X[0;0YObject constructors[133X
+      2.7-1 ObjectConstructor
+      2.7-2 /
+      2.7-3 ObjectDatum
+    2.8 [33X[0;0YWell-Definedness of Objects[133X
+      2.8-1 IsWellDefinedForObjects
+    2.9 [33X[0;0YSetOfObjects[133X
+      2.9-1 SetOfObjectsOfCategory
+      2.9-2 SetOfObjects
+    2.10 [33X[0;0YProjectives[133X
+      2.10-1 SomeProjectiveObject
+      2.10-2 EpimorphismFromSomeProjectiveObject
+      2.10-3 EpimorphismFromSomeProjectiveObjectWithGivenSomeProjectiveObject
+      2.10-4 ProjectiveLift
+    2.11 [33X[0;0YInjectives[133X
+      2.11-1 SomeInjectiveObject
+      2.11-2 MonomorphismIntoSomeInjectiveObject
+      2.11-3 MonomorphismIntoSomeInjectiveObjectWithGivenSomeInjectiveObject
+      2.11-4 InjectiveColift
+    2.12 [33X[0;0YSimplified Objects[133X
+      2.12-1 Simplify
+      2.12-2 SimplifyObject
+      2.12-3 SimplifyObject_IsoFromInputObject
+      2.12-4 SimplifyObject_IsoToInputObject
+    2.13 [33X[0;0YDimensions[133X
+      2.13-1 ProjectiveDimension
+      2.13-2 InjectiveDimension
+  3 [33X[0;0YMorphisms[133X
+    3.1 [33X[0;0YAttributes for the Type of Morphisms[133X
+      3.1-1 CapCategory
+      3.1-2 Source
+      3.1-3 Range
+      3.1-4 Target
+    3.2 [33X[0;0YAdding Morphisms to a Category[133X
+      3.2-1 Add
+      3.2-2 AddMorphism
+      3.2-3 CreateCapCategoryMorphismWithAttributes
+      3.2-4 AsCapCategoryMorphism
+      3.2-5 AsPrimitiveValue
+    3.3 [33X[0;0YMorphism constructors[133X
+      3.3-1 MorphismConstructor
+      3.3-2 MorphismDatum
+    3.4 [33X[0;0YCategorical Properties of Morphisms[133X
+      3.4-1 IsMonomorphism
+      3.4-2 IsEpimorphism
+      3.4-3 IsIsomorphism
+      3.4-4 IsSplitMonomorphism
+      3.4-5 IsSplitEpimorphism
+      3.4-6 IsOne
+      3.4-7 IsIdempotent
+    3.5 [33X[0;0YRandom Morphisms[133X
+      3.5-1 RandomMorphismWithFixedSourceByInteger
+      3.5-2 RandomMorphismWithFixedSourceByList
+      3.5-3 RandomMorphismWithFixedRangeByInteger
+      3.5-4 RandomMorphismWithFixedRangeByList
+      3.5-5 RandomMorphismWithFixedSourceAndRangeByInteger
+      3.5-6 RandomMorphismWithFixedSourceAndRangeByList
+      3.5-7 RandomMorphismByInteger
+      3.5-8 RandomMorphismByList
+      3.5-9 RandomMorphismWithFixedSource
+    3.6 [33X[0;0YNon-Categorical Properties of Morphisms[133X
+      3.6-1 IsEqualToIdentityMorphism
+      3.6-2 IsEqualToZeroMorphism
+      3.6-3 IsEndomorphism
+      3.6-4 IsAutomorphism
+    3.7 [33X[0;0YEquality and Congruence for Morphisms[133X
+      3.7-1 IsCongruentForMorphisms
+      3.7-2 IsEqualForMorphisms
+      3.7-3 IsEqualForMorphismsOnMor
+    3.8 [33X[0;0YBasic Operations for Morphisms in Ab-Categories[133X
+      3.8-1 IsZeroForMorphisms
+      3.8-2 AdditionForMorphisms
+      3.8-3 SubtractionForMorphisms
+      3.8-4 AdditiveInverseForMorphisms
+      3.8-5 MultiplyWithElementOfCommutativeSemiringForMorphisms
+      3.8-6 *
+      3.8-7 ZeroMorphism
+    3.9 [33X[0;0YSubobject and Factorobject Operations[133X
+      3.9-1 IsEqualAsSubobjects
+      3.9-2 IsEqualAsFactorobjects
+      3.9-3 IsDominating
+      3.9-4 IsCodominating
+    3.10 [33X[0;0YIdentity Morphism and Composition of Morphisms[133X
+      3.10-1 IdentityMorphism
+      3.10-2 PreCompose
+      3.10-3 PreCompose
+      3.10-4 PreComposeList
+      3.10-5 PostCompose
+      3.10-6 PostCompose
+      3.10-7 PostComposeList
+      3.10-8 SumOfMorphisms
+      3.10-9 LinearCombinationOfMorphisms
+    3.11 [33X[0;0YWell-Definedness of Morphisms[133X
+      3.11-1 IsWellDefinedForMorphisms
+      3.11-2 IsWellDefinedForMorphismsWithGivenSourceAndRange
+    3.12 [33X[0;0YLift/Colift[133X
+      3.12-1 LiftAlongMonomorphism
+      3.12-2 ColiftAlongEpimorphism
+      3.12-3 IsLiftableAlongMonomorphism
+      3.12-4 IsColiftableAlongEpimorphism
+      3.12-5 Lift
+      3.12-6 LiftOrFail
+      3.12-7 IsLiftable
+      3.12-8 Colift
+      3.12-9 ColiftOrFail
+      3.12-10 IsColiftable
+    3.13 [33X[0;0YInverses[133X
+      3.13-1 InverseForMorphisms
+      3.13-2 PreInverseForMorphisms
+      3.13-3 PostInverseForMorphisms
+    3.14 [33X[0;0YTool functions for caches[133X
+      3.14-1 IsEqualForCacheForMorphisms
+    3.15 [33X[0;0YIsHomSetInhabited[133X
+      3.15-1 IsHomSetInhabited
+    3.16 [33X[0;0YSetOfMorphisms[133X
+      3.16-1 SetOfMorphismsOfFiniteCategory
+      3.16-2 SetOfMorphisms
+    3.17 [33X[0;0YSetOfGeneratingMorphisms[133X
+      3.17-1 SetOfGeneratingMorphismsOfCategory
+      3.17-2 SetOfGeneratingMorphisms
+    3.18 [33X[0;0YHomomorphism structures[133X
+      3.18-1 HomomorphismStructureOnObjects
+      3.18-2 HomomorphismStructureOnMorphisms
+      3.18-3 HomomorphismStructureOnMorphismsWithGivenObjects
+      3.18-4 DistinguishedObjectOfHomomorphismStructure
+      3.18-5 InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure
+      3.18-6 InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureWithGivenObjects
+      3.18-7 InterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism
+      3.18-8 SolveLinearSystemInAbCategory
+      3.18-9 SolveLinearSystemInAbCategoryOrFail
+      3.18-10 MereExistenceOfSolutionOfLinearSystemInAbCategory
+      3.18-11 MereExistenceOfUniqueSolutionOfLinearSystemInAbCategory
+      3.18-12 MereExistenceOfUniqueSolutionOfHomogeneousLinearSystemInAbCategory
+      3.18-13 BasisOfSolutionsOfHomogeneousLinearSystemInLinearCategory
+      3.18-14 BasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory
+      3.18-15 BasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory
+      3.18-16 HomStructure
+      3.18-17 HomStructure
+      3.18-18 HomStructure
+      3.18-19 HomStructure
+      3.18-20 HomStructure
+      3.18-21 HomStructure
+      3.18-22 HomStructure
+      3.18-23 ExtendRangeOfHomomorphismStructureByFullEmbedding
+      3.18-24 ExtendRangeOfHomomorphismStructureByIdentityAsFullEmbedding
+      3.18-25 MorphismsOfExternalHom
+      3.18-26 BasisOfExternalHom
+      3.18-27 CoefficientsOfMorphism
+    3.19 [33X[0;0YSimplified Morphisms[133X
+      3.19-1 SimplifyMorphism
+      3.19-2 SimplifySource
+      3.19-3 SimplifySource_IsoToInputObject
+      3.19-4 SimplifySource_IsoFromInputObject
+      3.19-5 SimplifyRange
+      3.19-6 SimplifyRange_IsoToInputObject
+      3.19-7 SimplifyRange_IsoFromInputObject
+      3.19-8 SimplifySourceAndRange
+      3.19-9 SimplifySourceAndRange_IsoToInputRange
+      3.19-10 SimplifySourceAndRange_IsoFromInputRange
+      3.19-11 SimplifySourceAndRange_IsoToInputSource
+      3.19-12 SimplifySourceAndRange_IsoFromInputSource
+      3.19-13 SimplifyEndo
+      3.19-14 SimplifyEndo_IsoToInputObject
+      3.19-15 SimplifyEndo_IsoFromInputObject
+      3.19-16 Simplify
+    3.20 [33X[0;0YReduction by split epi summands[133X
+      3.20-1 SomeReductionBySplitEpiSummand
+      3.20-2 SomeReductionBySplitEpiSummand_MorphismToInputRange
+      3.20-3 SomeReductionBySplitEpiSummand_MorphismFromInputRange
+  4 [33X[0;0YCategory 2-Cells[133X
+    4.1 [33X[0;0YAttributes for the Type of 2-Cells[133X
+      4.1-1 Source
+      4.1-2 Range
+      4.1-3 Target
+    4.2 [33X[0;0YAdding 2-Cells to a Category[133X
+      4.2-1 Add
+      4.2-2 AddTwoCell
+      4.2-3 CreateCapCategoryTwoCellWithAttributes
+    4.3 [33X[0;0YIdentity 2-Cell and Composition of 2-Cells[133X
+      4.3-1 IdentityTwoCell
+      4.3-2 HorizontalPreCompose
+      4.3-3 HorizontalPostCompose
+      4.3-4 VerticalPreCompose
+      4.3-5 VerticalPostCompose
+    4.4 [33X[0;0YWell-Definedness for 2-Cells[133X
+      4.4-1 IsWellDefinedForTwoCells
+  5 [33X[0;0YCategory of Categories[133X
+    5.1 [33X[0;0YThe Category Cat[133X
+      5.1-1 CapCat
+    5.2 [33X[0;0YCategories[133X
+      5.2-1 IsCapCategoryAsCatObject
+      5.2-2 IsCapFunctor
+      5.2-3 IsCapNaturalTransformation
+    5.3 [33X[0;0YConstructors[133X
+      5.3-1 AsCatObject
+      5.3-2 AsCapCategory
+    5.4 [33X[0;0YFunctors[133X
+      5.4-1 CapFunctor
+      5.4-2 CapFunctor
+      5.4-3 SourceOfFunctor
+      5.4-4 RangeOfFunctor
+      5.4-5 AddObjectFunction
+      5.4-6 FunctorObjectOperation
+      5.4-7 AddMorphismFunction
+      5.4-8 FunctorMorphismOperation
+      5.4-9 ApplyFunctor
+      5.4-10 InputSignature
+      5.4-11 InstallFunctor
+      5.4-12 IdentityFunctor
+      5.4-13 FunctorCanonicalizeZeroObjects
+      5.4-14 NaturalIsomorphismFromIdentityToCanonicalizeZeroObjects
+      5.4-15 FunctorCanonicalizeZeroMorphisms
+      5.4-16 NaturalIsomorphismFromIdentityToCanonicalizeZeroMorphisms
+      5.4-17 AdditiveFunctorDataFromValuesOnBasisMorphisms
+    5.5 [33X[0;0YNatural transformations[133X
+      5.5-1 Name
+      5.5-2 NaturalTransformation
+      5.5-3 AddNaturalTransformationFunction
+      5.5-4 ApplyNaturalTransformation
+      5.5-5 InstallNaturalTransformation
+      5.5-6 HorizontalPreComposeNaturalTransformationWithFunctor
+      5.5-7 HorizontalPreComposeFunctorWithNaturalTransformation
+  6 [33X[0;0YUniversal Objects[133X
+    6.1 [33X[0;0YKernel[133X
+      6.1-1 KernelObject
+      6.1-2 KernelEmbedding
+      6.1-3 KernelEmbeddingWithGivenKernelObject
+      6.1-4 MorphismFromKernelObjectToSink
+      6.1-5 MorphismFromKernelObjectToSinkWithGivenKernelObject
+      6.1-6 KernelLift
+      6.1-7 KernelLiftWithGivenKernelObject
+      6.1-8 KernelObjectFunctorial
+      6.1-9 KernelObjectFunctorial
+      6.1-10 KernelObjectFunctorialWithGivenKernelObjects
+      6.1-11 KernelObjectFunctorialWithGivenKernelObjects
+    6.2 [33X[0;0YCokernel[133X
+      6.2-1 CokernelObject
+      6.2-2 CokernelProjection
+      6.2-3 CokernelProjectionWithGivenCokernelObject
+      6.2-4 MorphismFromSourceToCokernelObject
+      6.2-5 MorphismFromSourceToCokernelObjectWithGivenCokernelObject
+      6.2-6 CokernelColift
+      6.2-7 CokernelColiftWithGivenCokernelObject
+      6.2-8 CokernelObjectFunctorial
+      6.2-9 CokernelObjectFunctorial
+      6.2-10 CokernelObjectFunctorialWithGivenCokernelObjects
+      6.2-11 CokernelObjectFunctorialWithGivenCokernelObjects
+    6.3 [33X[0;0YZero Object[133X
+      6.3-1 ZeroObject
+      6.3-2 ZeroObject
+      6.3-3 UniversalMorphismFromZeroObject
+      6.3-4 UniversalMorphismFromZeroObjectWithGivenZeroObject
+      6.3-5 UniversalMorphismIntoZeroObject
+      6.3-6 UniversalMorphismIntoZeroObjectWithGivenZeroObject
+      6.3-7 MorphismFromZeroObject
+      6.3-8 MorphismIntoZeroObject
+      6.3-9 IsomorphismFromZeroObjectToInitialObject
+      6.3-10 IsomorphismFromInitialObjectToZeroObject
+      6.3-11 IsomorphismFromZeroObjectToTerminalObject
+      6.3-12 IsomorphismFromTerminalObjectToZeroObject
+      6.3-13 ZeroObjectFunctorial
+      6.3-14 ZeroObjectFunctorialWithGivenZeroObjects
+    6.4 [33X[0;0YTerminal Object[133X
+      6.4-1 TerminalObject
+      6.4-2 TerminalObject
+      6.4-3 UniversalMorphismIntoTerminalObject
+      6.4-4 UniversalMorphismIntoTerminalObjectWithGivenTerminalObject
+      6.4-5 TerminalObjectFunctorial
+      6.4-6 TerminalObjectFunctorialWithGivenTerminalObjects
+    6.5 [33X[0;0YInitial Object[133X
+      6.5-1 InitialObject
+      6.5-2 InitialObject
+      6.5-3 UniversalMorphismFromInitialObject
+      6.5-4 UniversalMorphismFromInitialObjectWithGivenInitialObject
+      6.5-5 InitialObjectFunctorial
+      6.5-6 InitialObjectFunctorialWithGivenInitialObjects
+    6.6 [33X[0;0YDirect Sum[133X
+      6.6-1 DirectSum
+      6.6-2 DirectSumOp
+      6.6-3 ProjectionInFactorOfDirectSum
+      6.6-4 ProjectionInFactorOfDirectSumWithGivenDirectSum
+      6.6-5 InjectionOfCofactorOfDirectSum
+      6.6-6 InjectionOfCofactorOfDirectSumWithGivenDirectSum
+      6.6-7 UniversalMorphismIntoDirectSum
+      6.6-8 UniversalMorphismIntoDirectSumWithGivenDirectSum
+      6.6-9 UniversalMorphismFromDirectSum
+      6.6-10 UniversalMorphismFromDirectSumWithGivenDirectSum
+      6.6-11 IsomorphismFromDirectSumToDirectProduct
+      6.6-12 IsomorphismFromDirectProductToDirectSum
+      6.6-13 IsomorphismFromDirectSumToCoproduct
+      6.6-14 IsomorphismFromCoproductToDirectSum
+      6.6-15 MorphismBetweenDirectSums
+      6.6-16 MorphismBetweenDirectSums
+      6.6-17 MorphismBetweenDirectSumsWithGivenDirectSums
+      6.6-18 ComponentOfMorphismIntoDirectSum
+      6.6-19 ComponentOfMorphismFromDirectSum
+      6.6-20 DirectSumFunctorial
+      6.6-21 DirectSumFunctorialWithGivenDirectSums
+    6.7 [33X[0;0YCoproduct[133X
+      6.7-1 Coproduct
+      6.7-2 Coproduct
+      6.7-3 Coproduct
+      6.7-4 InjectionOfCofactorOfCoproduct
+      6.7-5 InjectionOfCofactorOfCoproductWithGivenCoproduct
+      6.7-6 UniversalMorphismFromCoproduct
+      6.7-7 UniversalMorphismFromCoproductWithGivenCoproduct
+      6.7-8 CoproductFunctorial
+      6.7-9 CoproductFunctorialWithGivenCoproducts
+      6.7-10 ComponentOfMorphismFromCoproduct
+    6.8 [33X[0;0YDirect Product[133X
+      6.8-1 DirectProduct
+      6.8-2 DirectProductOp
+      6.8-3 ProjectionInFactorOfDirectProduct
+      6.8-4 ProjectionInFactorOfDirectProductWithGivenDirectProduct
+      6.8-5 UniversalMorphismIntoDirectProduct
+      6.8-6 UniversalMorphismIntoDirectProductWithGivenDirectProduct
+      6.8-7 DirectProductFunctorial
+      6.8-8 DirectProductFunctorialWithGivenDirectProducts
+      6.8-9 ComponentOfMorphismIntoDirectProduct
+    6.9 [33X[0;0YEqualizer[133X
+      6.9-1 Equalizer
+      6.9-2 EqualizerOp
+      6.9-3 EmbeddingOfEqualizer
+      6.9-4 EmbeddingOfEqualizerWithGivenEqualizer
+      6.9-5 MorphismFromEqualizerToSink
+      6.9-6 MorphismFromEqualizerToSinkWithGivenEqualizer
+      6.9-7 UniversalMorphismIntoEqualizer
+      6.9-8 UniversalMorphismIntoEqualizerWithGivenEqualizer
+      6.9-9 EqualizerFunctorial
+      6.9-10 EqualizerFunctorialWithGivenEqualizers
+      6.9-11 JointPairwiseDifferencesOfMorphismsIntoDirectProduct
+      6.9-12 IsomorphismFromEqualizerToKernelOfJointPairwiseDifferencesOfMorphismsIntoDirectProduct
+      6.9-13 IsomorphismFromKernelOfJointPairwiseDifferencesOfMorphismsIntoDirectProductToEqualizer
+    6.10 [33X[0;0YCoequalizer[133X
+      6.10-1 Coequalizer
+      6.10-2 CoequalizerOp
+      6.10-3 ProjectionOntoCoequalizer
+      6.10-4 ProjectionOntoCoequalizerWithGivenCoequalizer
+      6.10-5 MorphismFromSourceToCoequalizer
+      6.10-6 MorphismFromSourceToCoequalizerWithGivenCoequalizer
+      6.10-7 UniversalMorphismFromCoequalizer
+      6.10-8 UniversalMorphismFromCoequalizerWithGivenCoequalizer
+      6.10-9 CoequalizerFunctorial
+      6.10-10 CoequalizerFunctorialWithGivenCoequalizers
+      6.10-11 JointPairwiseDifferencesOfMorphismsFromCoproduct
+      6.10-12 IsomorphismFromCoequalizerToCokernelOfJointPairwiseDifferencesOfMorphismsFromCoproduct
+      6.10-13 IsomorphismFromCokernelOfJointPairwiseDifferencesOfMorphismsFromCoproductToCoequalizer
+    6.11 [33X[0;0YCoequalizerOfIdentityAndAutomorphisms[133X
+      6.11-1 CoequalizerOfIdentityAndAutomorphisms
+      6.11-2 CoequalizerOfIdentityAndAutomorphismsOp
+      6.11-3 ProjectionOntoCoequalizerOfIdentityAndAutomorphisms
+      6.11-4 ProjectionOntoCoequalizerOfIdentityAndAutomorphismsWithGivenCoequalizer
+      6.11-5 UniversalMorphismFromCoequalizerOfIdentityAndAutomorphisms
+      6.11-6 UniversalMorphismFromCoequalizerOfIdentityAndAutomorphismsWithGivenCoequalizer
+      6.11-7 CoequalizerOfIdentityAndAutomorphismsFunctorial
+      6.11-8 CoequalizerOfIdentityAndAutomorphismsFunctorialWithGivenCoequalizers
+      6.11-9 IsomorphismFromCoequalizerOfIdentityAndAutomorphismsToCoequalizer
+      6.11-10 IsomorphismFromCoequalizerToCoequalizerOfIdentityAndAutomorphisms
+    6.12 [33X[0;0YFiber Product (= Pullback)[133X
+      6.12-1 IsomorphismFromFiberProductToEqualizerOfDirectProductDiagram
+      6.12-2 IsomorphismFromEqualizerOfDirectProductDiagramToFiberProduct
+      6.12-3 FiberProductEmbeddingInDirectProduct
+      6.12-4 FiberProductEmbeddingInDirectSum
+      6.12-5 FiberProduct
+      6.12-6 FiberProductOp
+      6.12-7 ProjectionInFactorOfFiberProduct
+      6.12-8 ProjectionInFactorOfFiberProductWithGivenFiberProduct
+      6.12-9 MorphismFromFiberProductToSink
+      6.12-10 MorphismFromFiberProductToSinkWithGivenFiberProduct
+      6.12-11 UniversalMorphismIntoFiberProduct
+      6.12-12 UniversalMorphismIntoFiberProductWithGivenFiberProduct
+      6.12-13 FiberProductFunctorial
+      6.12-14 FiberProductFunctorialWithGivenFiberProducts
+    6.13 [33X[0;0YPushout[133X
+      6.13-1 IsomorphismFromPushoutToCoequalizerOfCoproductDiagram
+      6.13-2 IsomorphismFromCoequalizerOfCoproductDiagramToPushout
+      6.13-3 PushoutProjectionFromCoproduct
+      6.13-4 PushoutProjectionFromDirectSum
+      6.13-5 Pushout
+      6.13-6 Pushout
+      6.13-7 InjectionOfCofactorOfPushout
+      6.13-8 InjectionOfCofactorOfPushoutWithGivenPushout
+      6.13-9 MorphismFromSourceToPushout
+      6.13-10 MorphismFromSourceToPushoutWithGivenPushout
+      6.13-11 UniversalMorphismFromPushout
+      6.13-12 UniversalMorphismFromPushoutWithGivenPushout
+      6.13-13 PushoutFunctorial
+      6.13-14 PushoutFunctorialWithGivenPushouts
+    6.14 [33X[0;0YImage[133X
+      6.14-1 IsomorphismFromImageObjectToKernelOfCokernel
+      6.14-2 IsomorphismFromKernelOfCokernelToImageObject
+      6.14-3 ImageObject
+      6.14-4 ImageEmbedding
+      6.14-5 ImageEmbeddingWithGivenImageObject
+      6.14-6 CoastrictionToImage
+      6.14-7 CoastrictionToImageWithGivenImageObject
+      6.14-8 UniversalMorphismFromImage
+      6.14-9 UniversalMorphismFromImageWithGivenImageObject
+      6.14-10 ImageObjectFunctorial
+      6.14-11 ImageObjectFunctorialWithGivenImageObjects
+    6.15 [33X[0;0YCoimage[133X
+      6.15-1 IsomorphismFromCoimageToCokernelOfKernel
+      6.15-2 IsomorphismFromCokernelOfKernelToCoimage
+      6.15-3 CoimageObject
+      6.15-4 CoimageProjection
+      6.15-5 CoimageProjectionWithGivenCoimageObject
+      6.15-6 AstrictionToCoimage
+      6.15-7 AstrictionToCoimageWithGivenCoimageObject
+      6.15-8 UniversalMorphismIntoCoimage
+      6.15-9 UniversalMorphismIntoCoimageWithGivenCoimageObject
+      6.15-10 CoimageObjectFunctorial
+      6.15-11 CoimageObjectFunctorialWithGivenCoimageObjects
+    6.16 [33X[0;0YMorphism between Coimage and Image[133X
+      6.16-1 MorphismFromCoimageToImage
+      6.16-2 MorphismFromCoimageToImageWithGivenObjects
+      6.16-3 InverseOfMorphismFromCoimageToImage
+      6.16-4 InverseOfMorphismFromCoimageToImageWithGivenObjects
+    6.17 [33X[0;0YHomology objects[133X
+      6.17-1 HomologyObject
+      6.17-2 HomologyObjectFunctorial
+      6.17-3 HomologyObjectFunctorialWithGivenHomologyObjects
+      6.17-4 IsomorphismFromHomologyObjectToItsConstructionAsAnImageObject
+      6.17-5 IsomorphismFromItsConstructionAsAnImageObjectToHomologyObject
+    6.18 [33X[0;0YProjective covers and injective envelopes[133X
+      6.18-1 ProjectiveCoverObject
+      6.18-2 EpimorphismFromProjectiveCoverObject
+      6.18-3 EpimorphismFromProjectiveCoverObjectWithGivenProjectiveCoverObject
+      6.18-4 InjectiveEnvelopeObject
+      6.18-5 MonomorphismIntoInjectiveEnvelopeObject
+      6.18-6 MonomorphismIntoInjectiveEnvelopeObjectWithGivenInjectiveEnvelopeObject
+  7 [33X[0;0YAdd Functions[133X
+    7.1 [33X[0;0YFunctions Installed by Add[133X
+    7.2 [33X[0;0YAdd Method[133X
+    7.3 [33X[0;0YMethod name record entries[133X
+    7.4 [33X[0;0YEnhancing the method name record[133X
+    7.5 [33X[0;0YPrepare functions[133X
+      7.5-1 CAPOperationPrepareFunction
+      7.5-2 CAPAddPrepareFunction
+      7.5-3 ListCAPPrepareFunctions
+    7.6 [33X[0;0YAvailable Add functions[133X
+      7.6-1 AddAdditionForMorphisms
+      7.6-2 AddAdditiveGenerators
+      7.6-3 AddAdditiveInverseForMorphisms
+      7.6-4 AddAstrictionToCoimage
+      7.6-5 AddAstrictionToCoimageWithGivenCoimageObject
+      7.6-6 AddBasisOfExternalHom
+      7.6-7 AddBasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory
+      7.6-8 AddBasisOfSolutionsOfHomogeneousLinearSystemInLinearCategory
+      7.6-9 AddCoastrictionToImage
+      7.6-10 AddCoastrictionToImageWithGivenImageObject
+      7.6-11 AddCoefficientsOfMorphism
+      7.6-12 AddCoequalizer
+      7.6-13 AddCoequalizerFunctorial
+      7.6-14 AddCoequalizerFunctorialWithGivenCoequalizers
+      7.6-15 AddCoequalizerOfIdentityAndAutomorphisms
+      7.6-16 AddCoequalizerOfIdentityAndAutomorphismsFunctorial
+      7.6-17 AddCoequalizerOfIdentityAndAutomorphismsFunctorialWithGivenCoequalizers
+      7.6-18 AddCoimageObject
+      7.6-19 AddCoimageObjectFunctorial
+      7.6-20 AddCoimageObjectFunctorialWithGivenCoimageObjects
+      7.6-21 AddCoimageProjection
+      7.6-22 AddCoimageProjectionWithGivenCoimageObject
+      7.6-23 AddCokernelColift
+      7.6-24 AddCokernelColiftWithGivenCokernelObject
+      7.6-25 AddCokernelObject
+      7.6-26 AddCokernelObjectFunctorial
+      7.6-27 AddCokernelObjectFunctorialWithGivenCokernelObjects
+      7.6-28 AddCokernelProjection
+      7.6-29 AddCokernelProjectionWithGivenCokernelObject
+      7.6-30 AddColift
+      7.6-31 AddColiftAlongEpimorphism
+      7.6-32 AddComponentOfMorphismFromCoproduct
+      7.6-33 AddComponentOfMorphismFromDirectSum
+      7.6-34 AddComponentOfMorphismIntoDirectProduct
+      7.6-35 AddComponentOfMorphismIntoDirectSum
+      7.6-36 AddCoproduct
+      7.6-37 AddCoproductFunctorial
+      7.6-38 AddCoproductFunctorialWithGivenCoproducts
+      7.6-39 AddDirectProduct
+      7.6-40 AddDirectProductFunctorial
+      7.6-41 AddDirectProductFunctorialWithGivenDirectProducts
+      7.6-42 AddDirectSum
+      7.6-43 AddDirectSumFunctorial
+      7.6-44 AddDirectSumFunctorialWithGivenDirectSums
+      7.6-45 AddDistinguishedObjectOfHomomorphismStructure
+      7.6-46 AddEmbeddingOfEqualizer
+      7.6-47 AddEmbeddingOfEqualizerWithGivenEqualizer
+      7.6-48 AddEpimorphismFromProjectiveCoverObject
+      7.6-49 AddEpimorphismFromProjectiveCoverObjectWithGivenProjectiveCoverObject
+      7.6-50 AddEpimorphismFromSomeProjectiveObject
+      7.6-51 AddEpimorphismFromSomeProjectiveObjectWithGivenSomeProjectiveObject
+      7.6-52 AddEqualizer
+      7.6-53 AddEqualizerFunctorial
+      7.6-54 AddEqualizerFunctorialWithGivenEqualizers
+      7.6-55 AddFiberProduct
+      7.6-56 AddFiberProductFunctorial
+      7.6-57 AddFiberProductFunctorialWithGivenFiberProducts
+      7.6-58 AddHomologyObject
+      7.6-59 AddHomologyObjectFunctorialWithGivenHomologyObjects
+      7.6-60 AddHomomorphismStructureOnMorphisms
+      7.6-61 AddHomomorphismStructureOnMorphismsWithGivenObjects
+      7.6-62 AddHomomorphismStructureOnObjects
+      7.6-63 AddHorizontalPostCompose
+      7.6-64 AddHorizontalPreCompose
+      7.6-65 AddIdentityMorphism
+      7.6-66 AddIdentityTwoCell
+      7.6-67 AddImageEmbedding
+      7.6-68 AddImageEmbeddingWithGivenImageObject
+      7.6-69 AddImageObject
+      7.6-70 AddImageObjectFunctorial
+      7.6-71 AddImageObjectFunctorialWithGivenImageObjects
+      7.6-72 AddIndecomposableInjectiveObjects
+      7.6-73 AddIndecomposableProjectiveObjects
+      7.6-74 AddInitialObject
+      7.6-75 AddInitialObjectFunctorial
+      7.6-76 AddInitialObjectFunctorialWithGivenInitialObjects
+      7.6-77 AddInjectionOfCofactorOfCoproduct
+      7.6-78 AddInjectionOfCofactorOfCoproductWithGivenCoproduct
+      7.6-79 AddInjectionOfCofactorOfDirectSum
+      7.6-80 AddInjectionOfCofactorOfDirectSumWithGivenDirectSum
+      7.6-81 AddInjectionOfCofactorOfPushout
+      7.6-82 AddInjectionOfCofactorOfPushoutWithGivenPushout
+      7.6-83 AddInjectiveColift
+      7.6-84 AddInjectiveDimension
+      7.6-85 AddInjectiveEnvelopeObject
+      7.6-86 AddInterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure
+      7.6-87 AddInterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureWithGivenObjects
+      7.6-88 AddInterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism
+      7.6-89 AddInverseForMorphisms
+      7.6-90 AddInverseOfMorphismFromCoimageToImage
+      7.6-91 AddInverseOfMorphismFromCoimageToImageWithGivenObjects
+      7.6-92 AddIsAutomorphism
+      7.6-93 AddIsBijectiveObject
+      7.6-94 AddIsCodominating
+      7.6-95 AddIsColiftable
+      7.6-96 AddIsColiftableAlongEpimorphism
+      7.6-97 AddIsCongruentForMorphisms
+      7.6-98 AddIsDominating
+      7.6-99 AddIsEndomorphism
+      7.6-100 AddIsEpimorphism
+      7.6-101 AddIsEqualAsFactorobjects
+      7.6-102 AddIsEqualAsSubobjects
+      7.6-103 AddIsEqualForCacheForMorphisms
+      7.6-104 AddIsEqualForCacheForObjects
+      7.6-105 AddIsEqualForMorphisms
+      7.6-106 AddIsEqualForMorphismsOnMor
+      7.6-107 AddIsEqualForObjects
+      7.6-108 AddIsEqualToIdentityMorphism
+      7.6-109 AddIsEqualToZeroMorphism
+      7.6-110 AddIsHomSetInhabited
+      7.6-111 AddIsIdempotent
+      7.6-112 AddIsInitial
+      7.6-113 AddIsInjective
+      7.6-114 AddIsIsomorphicForObjects
+      7.6-115 AddIsIsomorphism
+      7.6-116 AddIsLiftable
+      7.6-117 AddIsLiftableAlongMonomorphism
+      7.6-118 AddIsMonomorphism
+      7.6-119 AddIsOne
+      7.6-120 AddIsProjective
+      7.6-121 AddIsSplitEpimorphism
+      7.6-122 AddIsSplitMonomorphism
+      7.6-123 AddIsTerminal
+      7.6-124 AddIsWellDefinedForMorphisms
+      7.6-125 AddIsWellDefinedForMorphismsWithGivenSourceAndRange
+      7.6-126 AddIsWellDefinedForObjects
+      7.6-127 AddIsWellDefinedForTwoCells
+      7.6-128 AddIsZeroForMorphisms
+      7.6-129 AddIsZeroForObjects
+      7.6-130 AddIsomorphismFromCoequalizerOfCoproductDiagramToPushout
+      7.6-131 AddIsomorphismFromCoequalizerOfIdentityAndAutomorphismsToCoequalizer
+      7.6-132 AddIsomorphismFromCoequalizerToCoequalizerOfIdentityAndAutomorphisms
+      7.6-133 AddIsomorphismFromCoequalizerToCokernelOfJointPairwiseDifferencesOfMorphismsFromCoproduct
+      7.6-134 AddIsomorphismFromCoimageToCokernelOfKernel
+      7.6-135 AddIsomorphismFromCokernelOfJointPairwiseDifferencesOfMorphismsFromCoproductToCoequalizer
+      7.6-136 AddIsomorphismFromCokernelOfKernelToCoimage
+      7.6-137 AddIsomorphismFromCoproductToDirectSum
+      7.6-138 AddIsomorphismFromDirectProductToDirectSum
+      7.6-139 AddIsomorphismFromDirectSumToCoproduct
+      7.6-140 AddIsomorphismFromDirectSumToDirectProduct
+      7.6-141 AddIsomorphismFromEqualizerOfDirectProductDiagramToFiberProduct
+      7.6-142 AddIsomorphismFromEqualizerToKernelOfJointPairwiseDifferencesOfMorphismsIntoDirectProduct
+      7.6-143 AddIsomorphismFromFiberProductToEqualizerOfDirectProductDiagram
+      7.6-144 AddIsomorphismFromHomologyObjectToItsConstructionAsAnImageObject
+      7.6-145 AddIsomorphismFromImageObjectToKernelOfCokernel
+      7.6-146 AddIsomorphismFromInitialObjectToZeroObject
+      7.6-147 AddIsomorphismFromItsConstructionAsAnImageObjectToHomologyObject
+      7.6-148 AddIsomorphismFromKernelOfCokernelToImageObject
+      7.6-149 AddIsomorphismFromKernelOfJointPairwiseDifferencesOfMorphismsIntoDirectProductToEqualizer
+      7.6-150 AddIsomorphismFromPushoutToCoequalizerOfCoproductDiagram
+      7.6-151 AddIsomorphismFromTerminalObjectToZeroObject
+      7.6-152 AddIsomorphismFromZeroObjectToInitialObject
+      7.6-153 AddIsomorphismFromZeroObjectToTerminalObject
+      7.6-154 AddJointPairwiseDifferencesOfMorphismsFromCoproduct
+      7.6-155 AddJointPairwiseDifferencesOfMorphismsIntoDirectProduct
+      7.6-156 AddKernelEmbedding
+      7.6-157 AddKernelEmbeddingWithGivenKernelObject
+      7.6-158 AddKernelLift
+      7.6-159 AddKernelLiftWithGivenKernelObject
+      7.6-160 AddKernelObject
+      7.6-161 AddKernelObjectFunctorial
+      7.6-162 AddKernelObjectFunctorialWithGivenKernelObjects
+      7.6-163 AddLift
+      7.6-164 AddLiftAlongMonomorphism
+      7.6-165 AddLinearCombinationOfMorphisms
+      7.6-166 AddMereExistenceOfSolutionOfLinearSystemInAbCategory
+      7.6-167 AddMereExistenceOfUniqueSolutionOfHomogeneousLinearSystemInAbCategory
+      7.6-168 AddMereExistenceOfUniqueSolutionOfLinearSystemInAbCategory
+      7.6-169 AddMonomorphismIntoInjectiveEnvelopeObject
+      7.6-170 AddMonomorphismIntoInjectiveEnvelopeObjectWithGivenInjectiveEnvelopeObject
+      7.6-171 AddMonomorphismIntoSomeInjectiveObject
+      7.6-172 AddMonomorphismIntoSomeInjectiveObjectWithGivenSomeInjectiveObject
+      7.6-173 AddMorphismBetweenDirectSums
+      7.6-174 AddMorphismBetweenDirectSumsWithGivenDirectSums
+      7.6-175 AddMorphismConstructor
+      7.6-176 AddMorphismDatum
+      7.6-177 AddMorphismFromCoimageToImage
+      7.6-178 AddMorphismFromCoimageToImageWithGivenObjects
+      7.6-179 AddMorphismFromEqualizerToSink
+      7.6-180 AddMorphismFromEqualizerToSinkWithGivenEqualizer
+      7.6-181 AddMorphismFromFiberProductToSink
+      7.6-182 AddMorphismFromFiberProductToSinkWithGivenFiberProduct
+      7.6-183 AddMorphismFromKernelObjectToSink
+      7.6-184 AddMorphismFromKernelObjectToSinkWithGivenKernelObject
+      7.6-185 AddMorphismFromSourceToCoequalizer
+      7.6-186 AddMorphismFromSourceToCoequalizerWithGivenCoequalizer
+      7.6-187 AddMorphismFromSourceToCokernelObject
+      7.6-188 AddMorphismFromSourceToCokernelObjectWithGivenCokernelObject
+      7.6-189 AddMorphismFromSourceToPushout
+      7.6-190 AddMorphismFromSourceToPushoutWithGivenPushout
+      7.6-191 AddMorphismsOfExternalHom
+      7.6-192 AddMultiplyWithElementOfCommutativeSemiringForMorphisms
+      7.6-193 AddObjectConstructor
+      7.6-194 AddObjectDatum
+      7.6-195 AddPostCompose
+      7.6-196 AddPostComposeList
+      7.6-197 AddPostInverseForMorphisms
+      7.6-198 AddPreCompose
+      7.6-199 AddPreComposeList
+      7.6-200 AddPreInverseForMorphisms
+      7.6-201 AddProjectionInFactorOfDirectProduct
+      7.6-202 AddProjectionInFactorOfDirectProductWithGivenDirectProduct
+      7.6-203 AddProjectionInFactorOfDirectSum
+      7.6-204 AddProjectionInFactorOfDirectSumWithGivenDirectSum
+      7.6-205 AddProjectionInFactorOfFiberProduct
+      7.6-206 AddProjectionInFactorOfFiberProductWithGivenFiberProduct
+      7.6-207 AddProjectionOntoCoequalizer
+      7.6-208 AddProjectionOntoCoequalizerOfIdentityAndAutomorphisms
+      7.6-209 AddProjectionOntoCoequalizerOfIdentityAndAutomorphismsWithGivenCoequalizer
+      7.6-210 AddProjectionOntoCoequalizerWithGivenCoequalizer
+      7.6-211 AddProjectiveCoverObject
+      7.6-212 AddProjectiveDimension
+      7.6-213 AddProjectiveLift
+      7.6-214 AddPushout
+      7.6-215 AddPushoutFunctorial
+      7.6-216 AddPushoutFunctorialWithGivenPushouts
+      7.6-217 AddRandomMorphismByInteger
+      7.6-218 AddRandomMorphismByList
+      7.6-219 AddRandomMorphismWithFixedRangeByInteger
+      7.6-220 AddRandomMorphismWithFixedRangeByList
+      7.6-221 AddRandomMorphismWithFixedSourceAndRangeByInteger
+      7.6-222 AddRandomMorphismWithFixedSourceAndRangeByList
+      7.6-223 AddRandomMorphismWithFixedSourceByInteger
+      7.6-224 AddRandomMorphismWithFixedSourceByList
+      7.6-225 AddRandomObjectByInteger
+      7.6-226 AddRandomObjectByList
+      7.6-227 AddSetOfGeneratingMorphismsOfCategory
+      7.6-228 AddSetOfMorphismsOfFiniteCategory
+      7.6-229 AddSetOfObjectsOfCategory
+      7.6-230 AddSimplifyEndo
+      7.6-231 AddSimplifyEndo_IsoFromInputObject
+      7.6-232 AddSimplifyEndo_IsoToInputObject
+      7.6-233 AddSimplifyMorphism
+      7.6-234 AddSimplifyObject
+      7.6-235 AddSimplifyObject_IsoFromInputObject
+      7.6-236 AddSimplifyObject_IsoToInputObject
+      7.6-237 AddSimplifyRange
+      7.6-238 AddSimplifyRange_IsoFromInputObject
+      7.6-239 AddSimplifyRange_IsoToInputObject
+      7.6-240 AddSimplifySource
+      7.6-241 AddSimplifySourceAndRange
+      7.6-242 AddSimplifySourceAndRange_IsoFromInputRange
+      7.6-243 AddSimplifySourceAndRange_IsoFromInputSource
+      7.6-244 AddSimplifySourceAndRange_IsoToInputRange
+      7.6-245 AddSimplifySourceAndRange_IsoToInputSource
+      7.6-246 AddSimplifySource_IsoFromInputObject
+      7.6-247 AddSimplifySource_IsoToInputObject
+      7.6-248 AddSolveLinearSystemInAbCategory
+      7.6-249 AddSomeInjectiveObject
+      7.6-250 AddSomeIsomorphismBetweenObjects
+      7.6-251 AddSomeProjectiveObject
+      7.6-252 AddSomeReductionBySplitEpiSummand
+      7.6-253 AddSomeReductionBySplitEpiSummand_MorphismFromInputRange
+      7.6-254 AddSomeReductionBySplitEpiSummand_MorphismToInputRange
+      7.6-255 AddSubtractionForMorphisms
+      7.6-256 AddSumOfMorphisms
+      7.6-257 AddTerminalObject
+      7.6-258 AddTerminalObjectFunctorial
+      7.6-259 AddTerminalObjectFunctorialWithGivenTerminalObjects
+      7.6-260 AddUniversalMorphismFromCoequalizer
+      7.6-261 AddUniversalMorphismFromCoequalizerOfIdentityAndAutomorphisms
+      7.6-262 AddUniversalMorphismFromCoequalizerOfIdentityAndAutomorphismsWithGivenCoequalizer
+      7.6-263 AddUniversalMorphismFromCoequalizerWithGivenCoequalizer
+      7.6-264 AddUniversalMorphismFromCoproduct
+      7.6-265 AddUniversalMorphismFromCoproductWithGivenCoproduct
+      7.6-266 AddUniversalMorphismFromDirectSum
+      7.6-267 AddUniversalMorphismFromDirectSumWithGivenDirectSum
+      7.6-268 AddUniversalMorphismFromImage
+      7.6-269 AddUniversalMorphismFromImageWithGivenImageObject
+      7.6-270 AddUniversalMorphismFromInitialObject
+      7.6-271 AddUniversalMorphismFromInitialObjectWithGivenInitialObject
+      7.6-272 AddUniversalMorphismFromPushout
+      7.6-273 AddUniversalMorphismFromPushoutWithGivenPushout
+      7.6-274 AddUniversalMorphismFromZeroObject
+      7.6-275 AddUniversalMorphismFromZeroObjectWithGivenZeroObject
+      7.6-276 AddUniversalMorphismIntoCoimage
+      7.6-277 AddUniversalMorphismIntoCoimageWithGivenCoimageObject
+      7.6-278 AddUniversalMorphismIntoDirectProduct
+      7.6-279 AddUniversalMorphismIntoDirectProductWithGivenDirectProduct
+      7.6-280 AddUniversalMorphismIntoDirectSum
+      7.6-281 AddUniversalMorphismIntoDirectSumWithGivenDirectSum
+      7.6-282 AddUniversalMorphismIntoEqualizer
+      7.6-283 AddUniversalMorphismIntoEqualizerWithGivenEqualizer
+      7.6-284 AddUniversalMorphismIntoFiberProduct
+      7.6-285 AddUniversalMorphismIntoFiberProductWithGivenFiberProduct
+      7.6-286 AddUniversalMorphismIntoTerminalObject
+      7.6-287 AddUniversalMorphismIntoTerminalObjectWithGivenTerminalObject
+      7.6-288 AddUniversalMorphismIntoZeroObject
+      7.6-289 AddUniversalMorphismIntoZeroObjectWithGivenZeroObject
+      7.6-290 AddVerticalPostCompose
+      7.6-291 AddVerticalPreCompose
+      7.6-292 AddZeroMorphism
+      7.6-293 AddZeroObject
+      7.6-294 AddZeroObjectFunctorial
+      7.6-295 AddZeroObjectFunctorialWithGivenZeroObjects
+  8 [33X[0;0YManaging Derived Methods[133X
+    8.1 [33X[0;0YInfo Class[133X
+      8.1-1 DerivationInfo
+      8.1-2 ActivateDerivationInfo
+      8.1-3 DeactivateDerivationInfo
+    8.2 [33X[0;0YDerivation Objects[133X
+      8.2-1 IsDerivedMethod
+      8.2-2 CreateDerivation
+      8.2-3 Description
+      8.2-4 AdditionalWeight
+      8.2-5 DerivationFunction
+      8.2-6 CategoryFilter
+      8.2-7 IsApplicableToCategory
+      8.2-8 TargetOperation
+      8.2-9 UsedOperationsWithMultiplesAndCategoryGetters
+      8.2-10 InstallDerivationForCategory
+      8.2-11 FunctionCalledBeforeInstallation
+    8.3 [33X[0;0YDerivation Graphs[133X
+      8.3-1 IsDerivedMethodGraph
+      8.3-2 MakeDerivationGraph
+      8.3-3 AddOperationsToDerivationGraph
+      8.3-4 AddDerivation
+      8.3-5 AddDerivationToCAP
+      8.3-6 Operations
+      8.3-7 DerivationsUsingOperation
+      8.3-8 DerivationsOfOperation
+    8.4 [33X[0;0YManaging Derivations in a Category[133X
+      8.4-1 IsOperationWeightList
+      8.4-2 MakeOperationWeightList
+      8.4-3 DerivationGraph
+      8.4-4 CategoryOfOperationWeightList
+      8.4-5 CurrentOperationWeight
+      8.4-6 OperationWeightUsingDerivation
+      8.4-7 DerivationOfOperation
+      8.4-8 TriggerDerivationsUsingOperation
+      8.4-9 Reevaluate
+      8.4-10 Saturate
+      8.4-11 AddPrimitiveOperation
+      8.4-12 PrintDerivationTree
+      8.4-13 PrintTree
+  9 [33X[0;0YTechnical Details[133X
+    9.1 [33X[0;0YThe Category Cat[133X
+      9.1-1 ObjectCache
+      9.1-2 MorphismCache
+    9.2 [33X[0;0YTools[133X
+      9.2-1 FunctionWithNamedArguments
+      9.2-2 CAP_INTERNAL_GET_DATA_TYPE_FROM_STRING
+      9.2-3 CAP_INTERNAL_GET_DATA_TYPES_FROM_STRINGS
+      9.2-4 CAP_INTERNAL_REPLACED_STRING_WITH_FILTER
+      9.2-5 CAP_INTERNAL_REPLACED_STRINGS_WITH_FILTERS
+      9.2-6 CAP_INTERNAL_RETURN_OPTION_OR_DEFAULT
+      9.2-7 CAP_INTERNAL_FIND_APPEARANCE_OF_SYMBOL_IN_FUNCTION
+      9.2-8 CAP_INTERNAL_MERGE_PRECONDITIONS_LIST
+      9.2-9 CAP_INTERNAL_ASSERT_VALUE_IS_OF_TYPE_GETTER
+      9.2-10 CAP_INTERNAL_ASSERT_IS_CELL_OF_CATEGORY
+      9.2-11 CAP_INTERNAL_ASSERT_IS_OBJECT_OF_CATEGORY
+      9.2-12 CAP_INTERNAL_ASSERT_IS_MORPHISM_OF_CATEGORY
+      9.2-13 CAP_INTERNAL_ASSERT_IS_TWO_CELL_OF_CATEGORY
+      9.2-14 CachingStatistic
+      9.2-15 BrowseCachingStatistic
+      9.2-16 InstallDeprecatedAlias
+      9.2-17 IsSpecializationOfFilter
+      9.2-18 IsSpecializationOfFilterList
+      9.2-19 InstallMethodForCompilerForCAP
+      9.2-20 InstallOtherMethodForCompilerForCAP
+      9.2-21 CapJitAddKnownMethod
+      9.2-22 CapJitAddTypeSignature
+      9.2-23 CapJitDataTypeOfListOf
+      9.2-24 CapJitDataTypeOfNTupleOf
+      9.2-25 CapJitDataTypeOfGroup
+      9.2-26 CapJitDataTypeOfRing
+      9.2-27 CapJitDataTypeOfCategory
+      9.2-28 CapJitTypedExpression
+      9.2-29 CapFixpoint
+      9.2-30 Iterated
+      9.2-31 Iterated
+      9.2-32 TransitivelyNeededOtherPackages
+      9.2-33 PackageOfCAPOperation
+      9.2-34 SafePosition
+      9.2-35 SafeUniquePosition
+      9.2-36 SafePositionProperty
+      9.2-37 SafeUniquePositionProperty
+      9.2-38 SafeFirst
+      9.2-39 SafeUniqueEntry
+      9.2-40 NTuple
+      9.2-41 Pair
+      9.2-42 Triple
+      9.2-43 TransposedMatWithGivenDimensions
+      9.2-44 HandlePrecompiledTowers
+      9.2-45 CAP_JIT_INCOMPLETE_LOGIC
+      9.2-46 CAP_JIT_EXPR_CASE_WRAPPER
+      9.2-47 ListWithKeys
+      9.2-48 SumWithKeys
+      9.2-49 ProductWithKeys
+      9.2-50 ForAllWithKeys
+      9.2-51 ForAnyWithKeys
+      9.2-52 NumberWithKeys
+      9.2-53 FilteredWithKeys
+      9.2-54 FirstWithKeys
+      9.2-55 LastWithKeys
+      9.2-56 CreateGapObjectWithAttributes
+  10 [33X[0;0YLimits and Colimits[133X
+    10.1 [33X[0;0YSpecification of Limits and Colimits[133X
+    10.2 [33X[0;0YEnhancing Limit Specifications[133X
+    10.3 [33X[0;0YFunctions[133X
+      10.3-1 CAP_INTERNAL_GENERATE_CONVENIENCE_METHODS_FOR_LIMITS
+      10.3-2 CAP_INTERNAL_VALIDATE_LIMITS_IN_NAME_RECORD
+  11 [33X[0;0YThe Category Constructor[133X
+    11.1 [33X[0;0YInfo class[133X
+      11.1-1 InfoCategoryConstructor
+    11.2 [33X[0;0YConstructors[133X
+      11.2-1 CategoryConstructor
+  12 [33X[0;0YReinterpretations of categories[133X
+    12.1 [33X[0;0YIntroduction[133X
+    12.2 [33X[0;0YTutorial[133X
+    12.3 [33X[0;0YImplementation details[133X
+    12.4 [33X[0;0YRelation to [10XCompilerForCAP[110X[133X
+    12.5 [33X[0;0YAttributes[133X
+      12.5-1 ModelingCategory
+    12.6 [33X[0;0YConstructors[133X
+      12.6-1 ReinterpretationOfCategory
+      12.6-2 ReinterpretationFunctor
+      12.6-3 ModelingObject
+      12.6-4 ReinterpretationOfObject
+      12.6-5 ModelingMorphism
+      12.6-6 ReinterpretationOfMorphism
+  13 [33X[0;0YCreate wrapper hulls of a category[133X
+    13.1 [33X[0;0YGAP categories[133X
+      13.1-1 IsWrapperCapCategory
+      13.1-2 IsWrapperCapCategoryObject
+      13.1-3 IsWrapperCapCategoryMorphism
+    13.2 [33X[0;0YAttributes[133X
+      13.2-1 UnderlyingCell
+      13.2-2 UnderlyingCell
+    13.3 [33X[0;0YConstructors[133X
+      13.3-1 AsObjectInWrapperCategory
+      13.3-2 AsMorphismInWrapperCategory
+      13.3-3 AsMorphismInWrapperCategory
+      13.3-4 /
+      13.3-5 WrapperCategory
+      13.3-6 WrappingFunctor
+  14 [33X[0;0YDummy implementations[133X
+    14.1 [33X[0;0YDummy rings[133X
+      14.1-1 IsDummySemiring
+      14.1-2 IsDummySemiringElement
+      14.1-3 IsDummyCommutativeSemiring
+      14.1-4 IsDummyCommutativeSemiringElement
+      14.1-5 IsDummyRing
+      14.1-6 IsDummyRingElement
+      14.1-7 IsDummyCommutativeRing
+      14.1-8 IsDummyCommutativeRingElement
+      14.1-9 IsDummyField
+      14.1-10 IsDummyFieldElement
+      14.1-11 DummySemiring
+      14.1-12 DummyCommutativeSemiring
+      14.1-13 DummyRing
+      14.1-14 DummyCommutativeRing
+      14.1-15 DummyField
+    14.2 [33X[0;0YDummy categories[133X
+      14.2-1 IsDummyCategory
+      14.2-2 IsDummyCategoryObject
+      14.2-3 IsDummyCategoryMorphism
+      14.2-4 DummyCategory
+    14.3 [33X[0;0YDummy homalg rings[133X
+      14.3-1 IsDummyHomalgRing
+      14.3-2 IsDummyHomalgRingElement
+      14.3-3 IsDummyCommutativeHomalgRing
+      14.3-4 IsDummyCommutativeHomalgRingElement
+      14.3-5 IsDummyHomalgField
+      14.3-6 IsDummyHomalgFieldElement
+      14.3-7 DummyHomalgRing
+      14.3-8 DummyCommutativeHomalgRing
+      14.3-9 DummyHomalgField
+  15 [33X[0;0YTerminal category[133X
+    15.1 [33X[0;0Y[5XGAP[105X Categories[133X
+      15.1-1 IsCapTerminalCategoryWithSingleObject
+      15.1-2 IsObjectInCapTerminalCategoryWithSingleObject
+      15.1-3 IsMorphismInCapTerminalCategoryWithSingleObject
+      15.1-4 IsCapTerminalCategoryWithMultipleObjects
+      15.1-5 IsObjectInCapTerminalCategoryWithMultipleObjects
+      15.1-6 IsMorphismInCapTerminalCategoryWithMultipleObjects
+      15.1-7 IsTerminalCategory
+    15.2 [33X[0;0YConstructors[133X
+      15.2-1 TerminalCategoryWithSingleObject
+      15.2-2 TerminalCategoryWithMultipleObjects
+      15.2-3 CAP_INTERNAL_CONSTRUCTOR_FOR_TERMINAL_CATEGORY
+    15.3 [33X[0;0YAttributes[133X
+      15.3-1 TerminalCategoryWithSingleObjectUniqueObject
+      15.3-2 TerminalCategoryWithSingleObjectUniqueMorphism
+      15.3-3 FunctorFromTerminalCategory
+  16 [33X[0;0YFinite skeletal discrete categories[133X
+    16.1 [33X[0;0Y[5XGAP[105X Categories[133X
+      16.1-1 IsFiniteSkeletalDiscreteCategory
+      16.1-2 IsObjectInFiniteSkeletalDiscreteCategory
+      16.1-3 IsMorphismInFiniteSkeletalDiscreteCategory
+    16.2 [33X[0;0YConstructors[133X
+      16.2-1 FiniteSkeletalDiscreteCategory
+    16.3 [33X[0;0YAttributes[133X
+      16.3-1 UnderlyingListOfGapObjects
+      16.3-2 UnderlyingGapObject
+    16.4 [33X[0;0YProperties[133X
+      16.4-1 IsDiscreteCategory
+  17 [33X[0;0YExamples and Tests[133X
+    17.1 [33X[0;0YDummy implementations[133X
+      17.1-1 [33X[0;0YDummy categories[133X
+      17.1-2 [33X[0;0YDummy rings[133X
+      17.1-3 [33X[0;0YDummy semirings[133X
+    17.2 [33X[0;0YFinite skeletal discrete categories[133X
+    17.3 [33X[0;0YFunctors[133X
+    17.4 [33X[0;0YHandlePrecompiledTowers[133X
+    17.5 [33X[0;0YTerminal category[133X
+  
+  
+  [32X

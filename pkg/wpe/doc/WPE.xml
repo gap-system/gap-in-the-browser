@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[
+    [<#Include SYSTEM "_entities.xml">
+]
+>
+<Book Name="WPE">
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+<Body>
+<#Include SYSTEM "intro.xml">
+<#Include SYSTEM "notation.xml">
+<#Include SYSTEM "tutorial.xml">
+<#Include SYSTEM "functions.xml">
+<#Include SYSTEM "operations.xml">
+<#Include SYSTEM "_AutoDocMainFile.xml">
+</Body>
+<Bibliography Databases="wpe"/>
+<TheIndex/>
+</Book>

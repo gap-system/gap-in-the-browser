@@ -1,0 +1,93 @@
+\GAPDocLabFile{yangbaxter}
+\makelabel{yangbaxter:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{yangbaxter:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{yangbaxter:Preliminaries}{1}{X8749E1888244CC3D}
+\makelabel{yangbaxter:Definition and examples}{1.1}{X7BB9D67179296AA0}
+\makelabel{yangbaxter:Algebraic Properties of Braces}{2}{X8237B3628443C3FA}
+\makelabel{yangbaxter:Braces and Radical Rings}{2.1}{X8714568A80DBF0EF}
+\makelabel{yangbaxter:Braces and Yang-Baxter Equation}{2.2}{X80AF1831874915EB}
+\makelabel{yangbaxter:YangBaxter automatic generated documentation}{3}{X81D398D67DC78FB5}
+\makelabel{yangbaxter:YangBaxter automatic generated documentation of properties}{3.1}{X7C287494794C9DD6}
+\makelabel{yangbaxter:Ideals and left ideals}{4}{X7FF13C7684E1122C}
+\makelabel{yangbaxter:Left ideals}{4.1}{X81E965A37A7EA22A}
+\makelabel{yangbaxter:Ideals}{4.2}{X83629803819C4A6F}
+\makelabel{yangbaxter:Sequences (left) ideals}{4.3}{X8079CE3187FE380D}
+\makelabel{yangbaxter:Mutipermutation skew braces}{4.4}{X876342AF7CF51C9B}
+\makelabel{yangbaxter:Prime and semiprime ideals}{4.5}{X7826660686D57FD6}
+\makelabel{yangbaxter:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{yangbaxter:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{yangbaxter:Index}{Ind}{X83A0356F839C696F}
+\makelabel{yangbaxter:IsSkewbrace for IsAttributeStoringRep}{1.1.1}{X7F66BB617A79542D}
+\makelabel{yangbaxter:Skewbrace for IsList}{1.1.2}{X7C2FB9E27C641F49}
+\makelabel{yangbaxter:SmallSkewbrace for IsInt, IsInt}{1.1.3}{X7BBF6AC978DC5CC1}
+\makelabel{yangbaxter:TrivialBrace for IsGroup}{1.1.4}{X7B1AAF517D8D209D}
+\makelabel{yangbaxter:TrivialSkewbrace for IsGroup}{1.1.5}{X82BB1BB37932DF70}
+\makelabel{yangbaxter:SmallBrace for IsInt, IsInt}{1.1.6}{X86AFF9C586B5C2B1}
+\makelabel{yangbaxter:IdSkewbrace for IsSkewbrace}{1.1.7}{X7ED6436A7DC2AB48}
+\makelabel{yangbaxter:AutomorphismGroup for IsSkewbrace}{1.1.8}{X7DF9D5E8817C3564}
+\makelabel{yangbaxter:IdBrace for IsSkewbrace}{1.1.9}{X80F7E6B78327BD5E}
+\makelabel{yangbaxter:IsomorphismSkewbraces}{1.1.10}{X79746AAC863EA794}
+\makelabel{yangbaxter:DirectProductSkewbraces for IsSkewbrace, IsSkewbrace}{1.1.11}{X87A9198C8456D193}
+\makelabel{yangbaxter:DirectProductOp for IsList, IsSkewbrace}{1.1.12}{X879A94807C0A65D2}
+\makelabel{yangbaxter:IsTwoSided for IsSkewbrace}{1.1.13}{X84880C7484699973}
+\makelabel{yangbaxter:IsAutomorphismGroupOfSkewbrace for IsAutomorphismGroup}{1.1.14}{X84CB08C88574F438}
+\makelabel{yangbaxter:IsClassical for IsSkewbrace}{1.1.15}{X7BC5B7CF7877F333}
+\makelabel{yangbaxter:IsOfAbelianType for IsSkewbrace}{1.1.16}{X7B398DBF7B2476B5}
+\makelabel{yangbaxter:IsBiSkewbrace for IsSkewbrace}{1.1.17}{X78A3A59A86F96508}
+\makelabel{yangbaxter:IsOfNilpotentType for IsSkewbrace}{1.1.18}{X797C4B6480DFCDDA}
+\makelabel{yangbaxter:IsTrivialSkewbrace for IsSkewbrace}{1.1.19}{X7F8C6C4B81096AF0}
+\makelabel{yangbaxter:Skewbrace2YB for IsSkewbrace}{1.1.20}{X8426ABE1808B92DC}
+\makelabel{yangbaxter:Brace2YB for IsSkewbrace}{1.1.21}{X7F09E6DE78CC240B}
+\makelabel{yangbaxter:SkewbraceSubset2YB for IsSkewbrace, IsCollection}{1.1.22}{X7E2F64338788EBF9}
+\makelabel{yangbaxter:SemidirectProduct for IsSkewbrace, IsSkewbrace, IsGeneralMapping}{1.1.23}{X8439C2087DD1D9A6}
+\makelabel{yangbaxter:UnderlyingAdditiveGroup for IsSkewbrace}{1.1.24}{X86D6131182AE2DBC}
+\makelabel{yangbaxter:UnderlyingMultiplicativeGroup for IsSkewbrace}{1.1.25}{X840A631685DA79D6}
+\makelabel{yangbaxter:AdditiveGroupOfRing for IsRing}{2.1.1}{X86C2A9257D2D1CAF}
+\makelabel{yangbaxter:IsJacobsonRadical for IsRing}{2.1.2}{X7816FE1786837102}
+\makelabel{yangbaxter:Table2YB for IsList}{2.2.1}{X7AEBEF6F7CFCA074}
+\makelabel{yangbaxter:Evaluate for IsYB, IsList}{2.2.2}{X825856827B8F9B3C}
+\makelabel{yangbaxter:LyubashenkoYB for IsInt, IsPerm, IsPerm}{2.2.3}{X7EB5F8BE80E57D3E}
+\makelabel{yangbaxter:IsIndecomposable for IsYB}{2.2.4}{X7B14202778611DA1}
+\makelabel{yangbaxter:Table for IsYB}{2.2.5}{X83B5B0B678E85958}
+\makelabel{yangbaxter:DehornoyClass for IsYB}{2.2.6}{X815F6E1287725A92}
+\makelabel{yangbaxter:DehornoyRepresentationOfStructureGroup for IsYB, IsObject}{2.2.7}{X86A7FA1E843A438E}
+\makelabel{yangbaxter:IdYB for IsYB}{2.2.8}{X8596E3EA7E4C1067}
+\makelabel{yangbaxter:LinearRepresentationOfStructureGroup for IsYB}{2.2.9}{X829BF82C814E5498}
+\makelabel{yangbaxter:IsIndecomposable for IsCycleSet}{3.1.1}{X84D5AD107FCE1467}
+\makelabel{yangbaxter:LeftIdeals for IsSkewbrace}{4.1.1}{X814FEB578507E81C}
+\makelabel{yangbaxter:StrongLeftIdeals for IsSkewbrace}{4.1.2}{X7AE9FAB479569BF9}
+\makelabel{yangbaxter:IsLeftIdeal for IsSkewbrace, IsCollection}{4.1.3}{X829DFD167A8D0D4A}
+\makelabel{yangbaxter:IsIdeal for IsSkewbrace, IsCollection}{4.2.1}{X879540527DA666C4}
+\makelabel{yangbaxter:Ideals for IsSkewbrace}{4.2.2}{X7EBF92377C5E417D}
+\makelabel{yangbaxter:AsIdeal for IsSkewbrace, IsCollection}{4.2.3}{X809F4B407D4BDE47}
+\makelabel{yangbaxter:IdealGeneratedBy for IsSkewbrace, IsCollection}{4.2.4}{X7F0A2FBA87465560}
+\makelabel{yangbaxter:IntersectionOfTwoIdeals for IsSkewbrace and IsIdealInParent, IsSkewbrace and IsIdealInParent}{4.2.5}{X8721D11884A2CDAD}
+\makelabel{yangbaxter:SumOfTwoIdeals for IsSkewbrace and IsIdealInParent, IsSkewbrace and IsIdealInParent}{4.2.6}{X85A4F7FE7B627615}
+\makelabel{yangbaxter:LeftSeries for IsSkewbrace}{4.3.1}{X845E09BF86C4DD2E}
+\makelabel{yangbaxter:RightSeries for IsSkewbrace}{4.3.2}{X7B9ED49481948B91}
+\makelabel{yangbaxter:IsLeftNilpotent for IsSkewbrace}{4.3.3}{X84C0A78F7B2845FD}
+\makelabel{yangbaxter:IsSimpleSkewbrace for IsSkewbrace}{4.3.4}{X79EA70287B245D65}
+\makelabel{yangbaxter:IsRightNilpotent for IsSkewbrace}{4.3.5}{X7D930A7679D97788}
+\makelabel{yangbaxter:LeftNilpotentIdeals for IsSkewbrace}{4.3.6}{X81593E537B94350B}
+\makelabel{yangbaxter:RightNilpotentIdeals for IsSkewbrace}{4.3.7}{X7B6EB5A37EBFFB7D}
+\makelabel{yangbaxter:SmoktunowiczSeries for IsSkewbrace, IsInt}{4.3.8}{X7E9665EB79226E96}
+\makelabel{yangbaxter:Socle for IsSkewbrace}{4.3.9}{X7D503F497CB34B9D}
+\makelabel{yangbaxter:Annihilator for IsSkewbrace}{4.3.10}{X7FF15DAA78E08F0A}
+\makelabel{yangbaxter:SocleSeries for IsSkewbrace}{4.4.1}{X7E0053787EDFEAFB}
+\makelabel{yangbaxter:MultipermutationLevel for IsSkewbrace}{4.4.2}{X85AA85F57FF7BD73}
+\makelabel{yangbaxter:IsMultipermutation for IsSkewbrace}{4.4.3}{X824956137F4CEF3C}
+\makelabel{yangbaxter:Fix for IsSkewbrace}{4.4.4}{X8616F73781699DC3}
+\makelabel{yangbaxter:KernelOfLambda for IsSkewbrace}{4.4.5}{X7CE04CC57E82FD02}
+\makelabel{yangbaxter:Quotient for IsSkewbrace, IsSkewbrace}{4.4.6}{X7CE55DAF7CB85B89}
+\makelabel{yangbaxter:IsPrimeBrace for IsSkewbrace}{4.5.1}{X82CDAD02845051FA}
+\makelabel{yangbaxter:IsPrimeIdeal for IsSkewbrace and IsIdealInParent}{4.5.2}{X834AED5184F2B9AC}
+\makelabel{yangbaxter:PrimeIdeals for IsSkewbrace}{4.5.3}{X80D35A2880B39EB0}
+\makelabel{yangbaxter:IsSemiprime for IsSkewbrace}{4.5.4}{X820951168658A704}
+\makelabel{yangbaxter:IsSemiprimeIdeal for IsSkewbrace and IsIdealInParent}{4.5.5}{X80961A4F7CBFBA0B}
+\makelabel{yangbaxter:SemiprimeIdeals for IsSkewbrace}{4.5.6}{X7A8C53838192CEC3}
+\makelabel{yangbaxter:BaerRadical for IsSkewbrace}{4.5.7}{X7D6E642D817352AF}
+\makelabel{yangbaxter:IsBaer for IsSkewbrace}{4.5.8}{X8571BC2F80364341}
+\makelabel{yangbaxter:WedderburnRadical for IsSkewbrace}{4.5.9}{X856E8ABD7BCA81D5}
+\makelabel{yangbaxter:SolvableSeries for IsSkewbrace}{4.5.10}{X85F4D83079E1013A}
+\makelabel{yangbaxter:IsMinimalIdeal for IsSkewbrace and IsIdealInParent}{4.5.11}{X86623B417F4F07FE}
+\makelabel{yangbaxter:MinimalIdeals for IsSkewbrace}{4.5.12}{X837D770278330FE0}

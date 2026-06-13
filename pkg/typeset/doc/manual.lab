@@ -1,0 +1,42 @@
+\GAPDocLabFile{typeset}
+\makelabel{typeset:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{typeset:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{typeset:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{typeset:Core Framework Functions}{1.1}{X7F60CF8C7C27BFFF}
+\makelabel{typeset:Core Operations}{1.2}{X79FAE10A87238E4C}
+\makelabel{typeset:Constants and Utility Functions}{1.3}{X7F753FFF815225A2}
+\makelabel{typeset:LaTeX Generation}{2}{X877F82D67F8A4C37}
+\makelabel{typeset:LaTeX Generation Functions for GAP Objects}{2.1}{X87F6833C7F252C79}
+\makelabel{typeset:Rendering LaTeX Strings}{2.2}{X783EC1DF7944F979}
+\makelabel{typeset:Digraphs Integration}{2.3}{X7EF74AB68325E735}
+\makelabel{typeset:Structure Descriptions}{3}{X87BF1B887C91CA2E}
+\makelabel{typeset:Typesetting Structure Descriptions of Groups}{3.1}{X7DC1724784ACBEF0}
+\makelabel{typeset:MathML Example Generation}{4}{X80E5E58082AB0716}
+\makelabel{typeset:MathML Generation Functions for GAP Objects}{4.1}{X781F62C37D928E4C}
+\makelabel{typeset:Index}{Ind}{X83A0356F839C696F}
+\makelabel{typeset:InfoTypeset}{1.1.1}{X7A7D88777B9A0588}
+\makelabel{typeset:Typeset}{1.1.2}{X8739447F7A4111CC}
+\makelabel{typeset:TypesetInternal}{1.1.3}{X860735DF791563F0}
+\makelabel{typeset:GenArgs for IsObject}{1.2.1}{X860806A279FED206}
+\makelabel{typeset:MergeSubOptions}{1.3.1}{X8588DF877EC7F955}
+\makelabel{typeset:DEFAULTTYPESETOPTIONS}{1.3.2}{X83056BB487424F07}
+\makelabel{typeset:GenLatexTmpl for IsObject}{2.1.1}{X817F73037F401EBE}
+\makelabel{typeset:CtblEntryLatex}{2.1.2}{X793E144084AFEBCB}
+\makelabel{typeset:CtblLegendLatex}{2.1.3}{X79D99604858275AF}
+\makelabel{typeset:GenNameAssocLetterLatex}{2.1.4}{X7FF6C91E798C3B3F}
+\makelabel{typeset:FactoriseAssocWordLatex}{2.1.5}{X7A735F5A7A3BABC9}
+\makelabel{typeset:RenderLatex}{2.2.1}{X7B9B85188742BD7A}
+\makelabel{typeset:PDFLatex}{2.2.2}{X87D8B6E98449F0F0}
+\makelabel{typeset:MathJax}{2.2.3}{X8179071D786C381C}
+\makelabel{typeset:Overleaf}{2.2.4}{X800F87247AE87FE5}
+\makelabel{typeset:URIEncodeComponent}{2.2.5}{X824C38568286ECBB}
+\makelabel{typeset:NeedsLatexMathMode}{2.2.6}{X8628E043862C318A}
+\makelabel{typeset:DEFAULTLATEXPREAMBLE}{2.2.7}{X853D2C5F85183D3C}
+\makelabel{typeset:DEFAULTMATHJAXTAGS}{2.2.8}{X83CE796886A570A5}
+\makelabel{typeset:ALWAYSUNESCAPEDCHARS}{2.2.9}{X789A6A708289DE47}
+\makelabel{typeset:DEFAULTDOT2TEXOPTIONS}{2.3.1}{X7AD116C5832E82C1}
+\makelabel{typeset:Dot2Tex}{2.3.2}{X86E66F1C7816D90D}
+\makelabel{typeset:TypesetStructureDescription}{3.1.1}{X807F54B97A98F647}
+\makelabel{typeset:LatexStructureDescription}{3.1.2}{X7A6316BB879E51FD}
+\makelabel{typeset:ConcatStructDescOperands}{3.1.3}{X86362669792C2F28}
+\makelabel{typeset:GenMathmlTmpl for IsObject}{4.1.1}{X7E9CF77579FA1393}

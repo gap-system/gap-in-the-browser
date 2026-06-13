@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_homomorphisms">
+<Heading>Group homomorphisms</Heading>
+
+<P/>
+<Section Label="Chapter_homomorphisms_Section_homreps">
+<Heading>Representatives of homomorphisms between groups</Heading>
+
+<P/>
+Please note that the functions below are only implemented for finite groups.
+<P/>
+<ManSection>
+  <Func Arg="G" Name="RepresentativesAutomorphismClasses" />
+ <Returns>a list of the automorphisms of <A>G</A> up to composition with  inner automorphisms.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="G" Name="RepresentativesEndomorphismClasses" />
+ <Returns>a list of the endomorphisms of <A>G</A> up to composition with  inner automorphisms.
+</Returns>
+ <Description>
+ This does the same as calling
+ <C>AllHomomorphismClasses(<A>G</A>,<A>G</A>)</C>, but should be faster for
+ abelian and non-2-generated groups.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="H, G" Name="RepresentativesHomomorphismClasses" />
+ <Returns>a list of the homomorphisms from <A>H</A> to <A>G</A>, up to  composition with inner automorphisms of <A>G</A>.
+</Returns>
+ <Description>
+ Similar to the previous function, this function does the same as calling
+ <C>AllHomomorphismClasses(<A>H</A>,<A>G</A>)</C>, but should be faster for
+ abelian and non-2-generated groups.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> G := PcGroupCode( 1018013, 28 );;
+gap> Auts := RepresentativesAutomorphismClasses( G );;
+gap> Size( Auts );
+6
+gap> Ends := RepresentativesEndomorphismClasses( G );;
+gap> Size( Ends );
+10
+gap> H := PcGroupCode( 36293, 28 );;
+gap> Homs := RepresentativesHomomorphismClasses( H, G );;
+gap> Size( Homs );
+4
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_homomorphisms_Section_coincidence">
+<Heading>Coincidence and fixed point groups</Heading>
+
+<P/>
+<ManSection>
+  <Func Arg="endo" Name="FixedPointGroup" />
+ <Returns>the subgroup of <C>Source(<A>endo</A>)</C> consisting of the  elements fixed under the endomorphism <A>endo</A>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="hom1, hom2[, ...]" Name="CoincidenceGroup" />
+ <Returns>the subgroup of <C>Source(<A>hom1</A>)</C> consisting of the  elements <C>h</C> for which <C>h^<A>hom1</A></C> = <C>h^<A>hom2</A></C> =
+  ...
+</Returns>
+ <Description>
+ For infinite non-abelian groups, this function relies on a mixture of the
+ algorithms described in <Cite Key='roma16-a' Where='Thm. 2'/>,
+ <Cite Key='bkl20-a' Where='Sec. 5.4'/> and
+ <Cite Key='roma21-a' Where='Sec. 7'/>.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> phi := GroupHomomorphismByImages( G, G, [ G.1, G.3 ],
+>  [ G.1 * G.2, G.3 ^ 3 ] );;
+gap> Set( FixedPointGroup( phi ) );
+[ <identity> of ..., f2 ]
+gap> psi := GroupHomomorphismByImages( H, G, [ H.1, H.2, H.3 ],
+>  [ One( G ), G.2, One( G ) ] );;
+gap> khi := GroupHomomorphismByImages( H, G, [ H.1, H.2, H.3 ],
+>  [ G.2, G.2, One( G ) ] );;
+gap> CoincidenceGroup( psi, khi );
+Group([ f2, f3 ])
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_homomorphisms_Section_inducerestrict">
+<Heading>Induced and restricted group homomorphisms</Heading>
+
+<ManSection>
+  <Func Arg="epi1, epi2, hom" Name="InducedHomomorphism" />
+ <Returns>the homomorphism induced by <A>hom</A> between the images of  <A>epi1</A> and <A>epi2</A>.
+</Returns>
+ <Description>
+ Let <A>hom</A> be a group homomorphism from a group <C>H</C> to a group
+ <C>G</C>, let <A>epi1</A> be an epimorphism from <C>H</C> to a group
+ <C>Q</C> and let <A>epi2</A> be an epimorphism from <C>G</C> to a group
+ <C>P</C> such that the kernel of <A>epi1</A> is mapped into the kernel of
+ <A>epi2</A> by <A>hom</A>.
+ This command returns the homomorphism from <C>Q</C> to <C>P</C> that maps
+ <C>h^<A>epi1</A></C> to <C>(h^<A>hom</A>)^<A>epi2</A></C>, for any element
+ <C>h</C> of <C>H</C>.
+ This function generalises
+ <Ref Func="InducedAutomorphism" BookName="ref" Style="Number"/> to
+ homomorphisms.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="hom, N, M" Name="RestrictedHomomorphism" />
+ <Returns>the homomorphism <A>hom</A>, but restricted as a map from <A>N</A>  to <A>M</A>.
+</Returns>
+ <Description>
+ Let <A>hom</A> be a group homomorphism from a group <C>H</C> to a group
+ <C>G</C>, and let <A>N</A> be subgroup of <C>H</C> such that its image under
+ <A>hom</A> is a subgroup of <A>M</A>.
+ This command returns the homomorphism from <A>N</A> to <A>M</A> that maps
+ <C>n</C> to <C>n^<A>hom</A></C> for any element <C>n</C> of <A>N</A>.
+ No checks are made to verify that <A>hom</A> maps <A>N</A> into <A>M</A>.
+ This function is similar to
+ <Ref Func="RestrictedMapping" BookName="ref" Style="Number"/>, but its range
+ is explicitly set to <A>M</A>.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> N := DerivedSubgroup( G );;
+gap> p := NaturalHomomorphismByNormalSubgroup( G, N );
+[ f1, f2, f3 ] -> [ f1, f2, <identity> of ... ]
+gap> ind := InducedHomomorphism( p, p, phi );
+[ f1 ] -> [ f1*f2 ]
+gap> res := RestrictedHomomorphism( phi, N, N );
+[ f3 ] -> [ f3^3 ]
+]]></Example>
+
+</Section>
+
+</Chapter>
+

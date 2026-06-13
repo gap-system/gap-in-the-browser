@@ -1,0 +1,285 @@
+TestZeroVector := function(filt, ring, len)
+  local i, vec, vec2;
+  vec := ZeroVector(filt, ring, len);
+  Assert(0, filt(vec) = true);
+  Assert(0, BaseDomain(vec) = ring);
+  Assert(0, Length(vec) = len);
+  for i in [1..len] do
+    if not IsZero(vec[i]) then Error("entry ", i," is ", vec[i], " and not zero"); fi;
+  od;
+  vec2 := ZeroVector(len, vec);
+  if vec <> vec2 then Error("ZeroVector(len, vec) differs"); fi;
+  vec2 := NewZeroVector(filt, ring, len);
+  if vec <> vec2 then Error("NewZeroVector(filt, ring, len) differs"); fi;
+  return vec;
+end;
+
+TestZeroMatrix := function(filt, ring, rows, cols)
+  local i, j, mat, mat2;
+  mat := ZeroMatrix(filt, ring, rows, cols);
+  Assert(0, filt(mat) = true);
+  Assert(0, BaseDomain(mat) = ring);
+  Assert(0, NrRows(mat) = rows);
+  Assert(0, NrCols(mat) = cols);
+  Assert(0, IsZero(mat));
+  for i in [1..rows] do
+    for j in [1..cols] do
+      if not IsZero(mat[i,j]) then Error("entry ", i,",",j," is ", mat[i,j], " and not zero"); fi;
+    od;
+  od;
+  mat2 := ZeroMatrix(rows, cols, mat);
+  if mat <> mat2 then Error("ZeroMatrix(rows, cols, mat) differs"); fi;
+  mat2 := NewZeroMatrix(filt, ring, rows, cols);
+  if mat <> mat2 then Error("NewZeroMatrix(filt, ring, rows, cols) differs"); fi;
+  return mat;
+end;
+
+TestIdentityMatrix := function(filt, ring, degree)
+  local i, j, mat, mat2;
+  mat := IdentityMatrix(filt, ring, degree);
+  Assert(0, filt(mat) = true);
+  Assert(0, BaseDomain(mat) = ring);
+  Assert(0, NrRows(mat) = degree);
+  Assert(0, NrCols(mat) = degree);
+  Assert(0, IsOne(mat));
+  for i in [1..degree] do
+    for j in [1..degree] do
+      if i<>j and not IsZero(mat[i,j]) then
+        Error("entry ", i,",",j," is not zero");
+      elif i=j and not IsOne(mat[i,j]) then
+        Error("diagonal entry ", i,",",j," is not one");
+      fi;
+    od;
+  od;
+  mat2 := IdentityMatrix(degree, mat);
+  if mat <> mat2 then Error("IdentityMatrix(degree, mat) differs"); fi;
+  mat2 := NewIdentityMatrix(filt, ring, degree);
+  if mat <> mat2 then Error("NewIdentityMatrix(filt, ring, degree) differs"); fi;
+  return mat;
+end;
+
+TestCompanionMatrix := function(filt, pol, ring)
+  local degree, mat, i, j, mat2;
+
+  degree:= Degree(pol);
+  mat:= CompanionMatrix(filt, pol, ring);
+  Assert(0, filt(mat) = true);
+  Assert(0, BaseDomain(mat) = ring);
+  Assert(0, NrRows(mat) = degree);
+  Assert(0, NrCols(mat) = degree);
+  for i in [1..degree] do
+    for j in [1..degree-1] do
+      if i <> j+1 and not IsZero(mat[i,j]) then
+        Error("entry ", i,",",j," is not zero");
+      elif i = j+1 and not IsOne(mat[i,j]) then
+        Error("entry ", i,",",j," is not one");
+      fi;
+    od;
+  od;
+  mat2 := CompanionMatrix(pol, mat);
+  if mat <> mat2 then Error("CompanionMatrix(pol, mat) differs"); fi;
+  mat2 := NewCompanionMatrix(filt, pol, ring);
+  if mat <> mat2 then Error("NewCompanionMatrix(filt, pol, ring) differs"); fi;
+  return mat;
+end;
+
+TestElementaryTransforms := function(mat, scalar)
+    local i, j, copy, eq;
+    Assert(0, NrRows(mat) >= 2);
+    Assert(0, NrCols(mat) >= 2);
+
+    # make an old-fashioned entry-wise copy of this matrix so we can compare
+    # all changes made there independent of any special properties of the
+    # matrix representation
+    copy := [];
+    for i in [1..NrRows(mat)] do
+        copy[i] := [];
+        for j in [1..NrCols(mat)] do
+            copy[i,j] := mat[i,j];
+        od;
+    od;
+
+    eq := function()
+        local i, j;
+        for i in [1..NrRows(mat)] do
+            for j in [1..NrCols(mat)] do
+                if copy[i,j] <> mat[i,j] then
+                    return false;
+                fi;
+            od;
+        od;
+        return true;
+    end;
+
+    #
+    #
+    #
+    for i in [1..NrRows(mat)] do
+        MultMatrixRowLeft(mat,i,scalar);
+        MultMatrixRowLeft(copy,i,scalar);
+        if not eq() then Error("MultMatrixRowLeft(",i,",",scalar,") failure"); fi;
+    od;
+
+    for i in [1..NrRows(mat)] do
+        MultMatrixRowRight(mat,i,scalar);
+        MultMatrixRowRight(copy,i,scalar);
+        if not eq() then Error("MultMatrixRowRight(",i,",",scalar,") failure"); fi;
+    od;
+
+    for i in [1..NrCols(mat)] do
+        MultMatrixColumnLeft(mat,i,scalar);
+        MultMatrixColumnLeft(copy,i,scalar);
+        if not eq() then Error("MultMatrixColumnLeft(",i,",",scalar,") failure"); fi;
+    od;
+
+    for i in [1..NrCols(mat)] do
+        MultMatrixColumnRight(mat,i,scalar);
+        MultMatrixColumnRight(copy,i,scalar);
+        if not eq() then Error("MultMatrixColumnRight(",i,",",scalar,") failure"); fi;
+    od;
+
+    #
+    #
+    #
+    for i in [1..NrRows(mat)] do
+        for j in [1..NrRows(mat)] do
+            AddMatrixRowsLeft(mat,i,j,scalar);
+            AddMatrixRowsLeft(copy,i,j,scalar);
+            if not eq() then Error("AddMatrixRowsLeft(",i,",",j,",",scalar,") failure"); fi;
+        od;
+    od;
+
+    for i in [1..NrRows(mat)] do
+        for j in [1..NrRows(mat)] do
+            AddMatrixRowsRight(mat,i,j,scalar);
+            AddMatrixRowsRight(copy,i,j,scalar);
+            if not eq() then Error("AddMatrixRowsRight(",i,",",j,",",scalar,") failure"); fi;
+        od;
+    od;
+
+    for i in [1..NrCols(mat)] do
+        for j in [1..NrCols(mat)] do
+            AddMatrixColumnsLeft(mat,i,j,scalar);
+            AddMatrixColumnsLeft(copy,i,j,scalar);
+            if not eq() then Error("AddMatrixColumnsLeft(",i,",",j,",",scalar,") failure"); fi;
+        od;
+    od;
+
+    for i in [1..NrCols(mat)] do
+        for j in [1..NrCols(mat)] do
+            AddMatrixColumnsRight(mat,i,j,scalar);
+            AddMatrixColumnsRight(copy,i,j,scalar);
+            if not eq() then Error("AddMatrixColumnsRight(",i,",",j,",",scalar,") failure"); fi;
+        od;
+    od;
+
+    #
+    #
+    #
+    for i in [1..NrRows(mat)] do
+        for j in [1..NrRows(mat)] do
+            SwapMatrixRows(mat,i,j);
+            SwapMatrixRows(copy,i,j);
+            if not eq() then Error("SwapMatrixRows(",i,",",j,") failure"); fi;
+        od;
+    od;
+
+    for i in [1..NrCols(mat)] do
+        for j in [1..NrCols(mat)] do
+            SwapMatrixColumns(mat,i,j);
+            SwapMatrixColumns(copy,i,j);
+            if not eq() then Error("SwapMatrixColumns(",i,",",j,") failure"); fi;
+        od;
+    od;
+end;
+
+TestWholeMatrixTransforms := function(mat, scalar)
+    local i, j, src, srcbefore, copy, srccopy, basedomain, same_entries;
+    Assert(0, NrRows(mat) >= 1);
+    Assert(0, NrCols(mat) >= 1);
+
+    copy := [];
+    src := [];
+    for i in [1..NrRows(mat)] do
+        copy[i] := [];
+        src[i] := [];
+        for j in [1..NrCols(mat)] do
+            copy[i,j] := mat[i,j];
+            src[i,j] := mat[(i mod NrRows(mat)) + 1, (j mod NrCols(mat)) + 1];
+        od;
+    od;
+    basedomain := BaseDomain(mat);
+    if IsPlistMatrixRep(mat) then
+        src := NewMatrix(IsPlistMatrixRep, basedomain, NrCols(mat), src);
+    elif IsGenericMatrixRep(mat) then
+        src := NewMatrix(IsGenericMatrixRep, basedomain, NrCols(mat), src);
+    elif Is8BitMatrixRep(mat) then
+        ConvertToMatrixRep(src, basedomain);
+    fi;
+    srcbefore := StructuralCopy(src);
+    srccopy := StructuralCopy(src);
+
+    # Compare entrywise because these tests mix plain list snapshots with
+    # matrix objects in specialized representations.
+    same_entries := function(a, b)
+        local i, j;
+        for i in [1..NrRows(a)] do
+            for j in [1..NrCols(a)] do
+                if a[i,j] <> b[i,j] then
+                    return false;
+                fi;
+            od;
+        od;
+        return true;
+    end;
+
+    AddMatrix(mat, src);
+    AddMatrix(copy, srccopy);
+    if not same_entries(mat, copy) then Error("AddMatrix(_,_) failure"); fi;
+    if not same_entries(src, srcbefore) then Error("AddMatrix(_,_) source modified"); fi;
+
+    AddMatrix(mat, src, scalar);
+    AddMatrix(copy, srccopy, scalar);
+    if not same_entries(mat, copy) then Error("AddMatrix(_,_,", scalar, ") failure"); fi;
+    if not same_entries(src, srcbefore) then Error("AddMatrix(_,_,scalar) source modified"); fi;
+
+    MultMatrixLeft(mat, scalar);
+    MultMatrixLeft(copy, scalar);
+    if not same_entries(mat, copy) then Error("MultMatrixLeft(", scalar, ") failure"); fi;
+
+    MultMatrixRight(mat, scalar);
+    MultMatrixRight(copy, scalar);
+    if not same_entries(mat, copy) then Error("MultMatrixRight(", scalar, ") failure"); fi;
+
+    MultMatrix(mat, scalar);
+    MultMatrix(copy, scalar);
+    if not same_entries(mat, copy) then Error("MultMatrix(", scalar, ") failure"); fi;
+end;
+
+TestPositionNonZeroInRow := function(mat)
+    local ncols;
+
+    # Make a matrix with specific pattern of the same kind as mat
+    mat := Matrix([ [ 0, 1, 0, 1 ], [ 0, 0, 0, 0 ], [ 0, 0, 1, 0 ] ]
+                  * One( BaseDomain( mat ) ), mat);
+
+    ncols := NrCols(mat);
+    if PositionNonZeroInRow(mat, 1) <> 2 then
+        Error("PositionNonZeroInRow(_,1) failure");
+    fi;
+    if PositionNonZeroInRow(mat, 1, 2) <> 4 then
+        Error("PositionNonZeroInRow(_,1,2) failure");
+    fi;
+    if PositionNonZeroInRow(mat, 1, 4) <> ncols + 1 then
+        Error("PositionNonZeroInRow(_,1,4) failure");
+    fi;
+    if PositionNonZeroInRow(mat, 2) <> ncols + 1 then
+        Error("PositionNonZeroInRow(_,2) zero-row failure");
+    fi;
+    if PositionNonZeroInRow(mat, 3) <> 3 then
+        Error("PositionNonZeroInRow(_,3) failure");
+    fi;
+    if PositionNonZeroInRow(mat, 3, 3) <> ncols + 1 then
+        Error("PositionNonZeroInRow(_,3,3) failure");
+    fi;
+end;

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<#Include SYSTEM "_Chapter_Introduction.xml">
+<#Include SYSTEM "_Chapter_LaTeX_Generation.xml">
+<#Include SYSTEM "_Chapter_Structure_Descriptions.xml">
+<#Include SYSTEM "_Chapter_MathML_Example_Generation.xml">

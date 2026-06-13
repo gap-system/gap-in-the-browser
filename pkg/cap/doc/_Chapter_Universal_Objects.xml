@@ -1,0 +1,3223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Universal_Objects">
+<Heading>Universal Objects</Heading>
+
+<P/>
+<Section Label="Chapter_Universal_Objects_Section_Kernel">
+<Heading>Kernel</Heading>
+
+ For a given morphism <Math>\alpha: A \rightarrow B</Math>, a kernel of <Math>\alpha</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>K</Math>, 
+</Item>
+<Item>
+a morphism <Math>\iota: K \rightarrow A</Math> such that <Math>\alpha \circ \iota \sim_{K,B} 0</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each morphism <Math>\tau: T \rightarrow A</Math> satisfying <Math>\alpha \circ \tau \sim_{T,B} 0</Math> to a morphism <Math>u(\tau): T \rightarrow K</Math> such that <Math>\iota \circ u( \tau ) \sim_{T,A} \tau</Math>. 
+</Item>
+</List>
+ The triple <Math>( K, \iota, u )</Math> is called a <Emph>kernel</Emph> of <Math>\alpha</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>K</Math> of such a triple by <Math>\mathrm{KernelObject}(\alpha)</Math>.
+ We say that the morphism <Math>u(\tau)</Math> is induced by the
+ <Emph>universal property of the kernel</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{KernelObject}</Math> is a functorial operation. This means:
+ for <Math>\mu: A \rightarrow A'</Math>, <Math>\nu: B \rightarrow B'</Math>,
+ <Math>\alpha: A \rightarrow B</Math>, <Math>\alpha': A' \rightarrow B'</Math> such that <Math>\nu \circ \alpha \sim_{A,B'} \alpha' \circ \mu</Math>,
+ we obtain a morphism <Math>\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' )</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (K) at (-\w,0) {$K$};
+ \node (T) at (-\w,\w) {$T$};
+ \node (A) at (0,0) {$A$};
+ \node (B) at (\w,0) {$B$};
+ \draw[-latex] (A) to node[pos=0.45, above] {$\alpha$} (B);
+ \draw[-latex] (K) to node[pos=0.45, above] {$\iota$} (A);
+ \draw[-latex] (T) to node[pos=0.45, above right] {$\tau$} (A);
+ \draw[dashed, -latex] (T) to node[pos=0.45, left] {$\exists ! u( \tau )$} (K);
+ \draw[-latex, dotted] (T) to [out = 0, in = 90] node[pos=0.45, above right] {$\alpha \circ \tau \sim_{T,B} 0$} (B);
+ \draw[-latex, dotted] (K) to [out = -45, in = -135] node[pos=0.45, below] {$\alpha \circ \iota \sim_{K,B} 0$} (B);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Attr Arg="alpha" Name="KernelObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is the kernel <Math>K</Math> of <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="KernelEmbedding" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{KernelObject}(\alpha),A)</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the kernel embedding <Math>\iota: \mathrm{KernelObject}(\alpha) \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, K" Name="KernelEmbeddingWithGivenKernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(K,A)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+ and an object <Math>K = \mathrm{KernelObject}(\alpha)</Math>.
+ The output is the kernel embedding <Math>\iota: K \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha" Name="MorphismFromKernelObjectToSink" Label="for IsCapCategoryMorphism"/>
+ <Returns>the zero morphism in <Math>\mathrm{Hom}( \mathrm{KernelObject}(\alpha), B )</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the zero morphism <Math>0: \mathrm{KernelObject}(\alpha) \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, K" Name="MorphismFromKernelObjectToSinkWithGivenKernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>the zero morphism in <Math>\mathrm{Hom}( K, B )</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+ and an object <Math>K = \mathrm{KernelObject}(\alpha)</Math>.
+ The output is the zero morphism <Math>0: K \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, T, tau" Name="KernelLift" Label="for IsCapCategoryMorphism, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T,\mathrm{KernelObject}(\alpha))</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>, a test object <Math>T</Math>,
+ and a test morphism <Math>\tau: T \rightarrow A</Math> satisfying <Math>\alpha \circ \tau \sim_{T,B} 0</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism <Math>u(\tau): T \rightarrow \mathrm{KernelObject}(\alpha)</Math>
+ given by the universal property of the kernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, T, tau, K" Name="KernelLiftWithGivenKernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T,K)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>, a test object <Math>T</Math>,
+ a test morphism <Math>\tau: T \rightarrow A</Math> satisfying <Math>\alpha \circ \tau \sim_{T,B} 0</Math>,
+ and an object <Math>K = \mathrm{KernelObject}(\alpha)</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism <Math>u(\tau): T \rightarrow K</Math>
+ given by the universal property of the kernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L" Name="KernelObjectFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{KernelObject}( \alpha ), \mathrm{KernelObject}( \alpha' ) )</Math>
+</Returns>
+ <Description>
+ The argument is a list <Math>L = [ \alpha: A \rightarrow B, [ \mu: A \rightarrow A', \nu: B \rightarrow B' ], \alpha': A' \rightarrow B' ]</Math> of morphisms.
+ The output is the morphism
+ <Math>\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' )</Math>
+ given by the functoriality of the kernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, mu, alpha_prime" Name="KernelObjectFunctorial" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{KernelObject}( \alpha ), \mathrm{KernelObject}( \alpha' ) )</Math>
+</Returns>
+ <Description>
+ The arguments are three morphisms
+ <Math>\alpha: A \rightarrow B</Math>, <Math>\mu: A \rightarrow A'</Math>, <Math>\alpha': A' \rightarrow B'</Math>.
+ The output is the morphism
+ <Math>\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' )</Math>
+ given by the functoriality of the kernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, alpha, mu, alpha_prime, r" Name="KernelObjectFunctorialWithGivenKernelObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism,IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( s, r )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{KernelObject}( \alpha )</Math>,
+ three morphisms
+ <Math>\alpha: A \rightarrow B</Math>, <Math>\mu: A \rightarrow A'</Math>, <Math>\alpha': A' \rightarrow B'</Math>,
+ and an object <Math>r = \mathrm{KernelObject}( \alpha' )</Math>.
+ The output is the morphism
+ <Math>\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' )</Math>
+ given by the functoriality of the kernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, alpha, mu, nu, alpha_prime, r" Name="KernelObjectFunctorialWithGivenKernelObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism,IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( s, r )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{KernelObject}( \alpha )</Math>,
+ four morphisms
+ <Math>\alpha: A \rightarrow B</Math>, <Math>\mu: A \rightarrow A'</Math>, <Math>\nu: B \rightarrow B'</Math>, <Math>\alpha': A' \rightarrow B'</Math>,
+ and an object <Math>r = \mathrm{KernelObject}( \alpha' )</Math>.
+ The output is the morphism
+ <Math>\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' )</Math>
+ given by the functoriality of the kernel.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Cokernel">
+<Heading>Cokernel</Heading>
+
+ For a given morphism <Math>\alpha: A \rightarrow B</Math>, a cokernel of <Math>\alpha</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>K</Math>,
+</Item>
+<Item>
+a morphism <Math>\epsilon: B \rightarrow K</Math> such that <Math>\epsilon \circ \alpha \sim_{A,K} 0</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each <Math>\tau: B \rightarrow T</Math> satisfying <Math>\tau \circ \alpha \sim_{A, T} 0</Math> to a morphism <Math>u(\tau):K \rightarrow T</Math> such that <Math>u(\tau) \circ \epsilon \sim_{B,T} \tau</Math>.
+</Item>
+</List>
+ The triple <Math>( K, \epsilon, u )</Math> is called a <Emph>cokernel</Emph> of <Math>\alpha</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>K</Math> of such a triple by <Math>\mathrm{CokernelObject}(\alpha)</Math>.
+ We say that the morphism <Math>u(\tau)</Math> is induced by the
+ <Emph>universal property of the cokernel</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{CokernelObject}</Math> is a functorial operation. This means:
+ for <Math>\mu: A \rightarrow A'</Math>, <Math>\nu: B \rightarrow B'</Math>,
+ <Math>\alpha: A \rightarrow B</Math>, <Math>\alpha': A' \rightarrow B'</Math> such that <Math>\nu \circ \alpha \sim_{A,B'} \alpha' \circ \mu</Math>,
+ we obtain a morphism <Math>\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' )</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (A) at (0,0) {$A$};
+ \node (B) at (\w,0) {$B$};
+ \node (K) at (2*\w,0) {$K$};
+ \node (T) at (2*\w,\w) {$T$};
+ \draw[-latex] (A) to node[pos=0.45, above] {$\alpha$} (B);
+ \draw[-latex] (B) to node[pos=0.45, above] {$\epsilon$} (K);
+ \draw[-latex] (B) to node[pos=0.45, above left] {$\tau$} (T);
+ \draw[dashed, -latex] (K) to node[pos=0.45, right] {$\exists ! u( \tau )$} (T);
+ \draw[-latex, dotted] (A) to [out = 90, in = 180] node[pos=0.45, above left] {$\tau \circ \alpha \sim_{A, T} 0$} (T);
+ \draw[-latex, dotted] (A) to [out = -45, in = -135] node[pos=0.45, below] {$\epsilon \circ \alpha \sim_{A,K} 0$} (K);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Attr Arg="alpha" Name="CokernelObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the cokernel <Math>K</Math> of <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="CokernelProjection" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B, \mathrm{CokernelObject}( \alpha ))</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the cokernel projection <Math>\epsilon: B \rightarrow \mathrm{CokernelObject}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, K" Name="CokernelProjectionWithGivenCokernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B, K)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+ and an object <Math>K = \mathrm{CokernelObject}(\alpha)</Math>.
+ The output is the cokernel projection <Math>\epsilon: B \rightarrow \mathrm{CokernelObject}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha" Name="MorphismFromSourceToCokernelObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>the zero morphism in <Math>\mathrm{Hom}( A, \mathrm{CokernelObject}( \alpha ) )</Math>.
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the zero morphism <Math>0: A \rightarrow \mathrm{CokernelObject}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, K" Name="MorphismFromSourceToCokernelObjectWithGivenCokernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>the zero morphism in <Math>\mathrm{Hom}( A, K )</Math>.
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>
+ and an object <Math>K = \mathrm{CokernelObject}(\alpha)</Math>.
+ The output is the zero morphism <Math>0: A \rightarrow K</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, T, tau" Name="CokernelColift" Label="for IsCapCategoryMorphism, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{CokernelObject}(\alpha),T)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>, a test object <Math>T</Math>,
+ and a test morphism <Math>\tau: B \rightarrow T</Math> satisfying <Math>\tau \circ \alpha \sim_{A, T} 0</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism <Math>u(\tau): \mathrm{CokernelObject}(\alpha) \rightarrow T</Math>
+ given by the universal property of the cokernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, T, tau, K" Name="CokernelColiftWithGivenCokernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(K,T)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>, a test object <Math>T</Math>,
+ a test morphism <Math>\tau: B \rightarrow T</Math> satisfying <Math>\tau \circ \alpha \sim_{A, T} 0</Math>,
+ and an object <Math>K = \mathrm{CokernelObject}(\alpha)</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism <Math>u(\tau): K \rightarrow T</Math>
+ given by the universal property of the cokernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L" Name="CokernelObjectFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{CokernelObject}( \alpha ), \mathrm{CokernelObject}( \alpha' ))</Math>
+</Returns>
+ <Description>
+ The argument is a list <Math>L = [ \alpha: A \rightarrow B, [ \mu:A \rightarrow A', \nu: B \rightarrow B' ], \alpha': A' \rightarrow B' ]</Math>.
+ The output is the morphism
+ <Math>\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' )</Math>
+ given by the functoriality of the cokernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, nu, alpha_prime" Name="CokernelObjectFunctorial" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{CokernelObject}( \alpha ), \mathrm{CokernelObject}( \alpha' ))</Math>
+</Returns>
+ <Description>
+ The arguments are three morphisms
+ <Math>\alpha: A \rightarrow B, \nu: B \rightarrow B', \alpha': A' \rightarrow B'</Math>.
+ The output is the morphism
+ <Math>\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' )</Math>
+ given by the functoriality of the cokernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, alpha, nu, alpha_prime, r" Name="CokernelObjectFunctorialWithGivenCokernelObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism,IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{CokernelObject}( \alpha )</Math>,
+ three morphisms
+ <Math>\alpha: A \rightarrow B, \nu: B \rightarrow B', \alpha': A' \rightarrow B'</Math>,
+ and an object <Math>r = \mathrm{CokernelObject}( \alpha' )</Math>.
+ The output is the morphism
+ <Math>\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' )</Math>
+ given by the functoriality of the cokernel.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, alpha, mu, nu, alpha_prime, r" Name="CokernelObjectFunctorialWithGivenCokernelObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism,IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{CokernelObject}( \alpha )</Math>,
+ four morphisms
+ <Math>\alpha: A \rightarrow B, \mu: A \rightarrow A', \nu: B \rightarrow B', \alpha': A' \rightarrow B'</Math>,
+ and an object <Math>r = \mathrm{CokernelObject}( \alpha' )</Math>.
+ The output is the morphism
+ <Math>\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' )</Math>
+ given by the functoriality of the cokernel.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Zero_Object">
+<Heading>Zero Object</Heading>
+
+ A zero object consists of three parts:
+<List>
+<Item>
+an object <Math>Z</Math>,
+</Item>
+<Item>
+a function <Math>u_{\mathrm{in}}</Math> mapping each object <Math>A</Math> to a morphism <Math>u_{\mathrm{in}}(A): A \rightarrow Z</Math>,
+</Item>
+<Item>
+a function <Math>u_{\mathrm{out}}</Math> mapping each object <Math>A</Math> to a morphism <Math>u_{\mathrm{out}}(A): Z \rightarrow A</Math>.
+</Item>
+</List>
+ The triple <Math>(Z, u_{\mathrm{in}}, u_{\mathrm{out}})</Math> is called a <Emph>zero object</Emph> if the morphisms 
+ <Math>u_{\mathrm{in}}(A)</Math>, <Math>u_{\mathrm{out}}(A)</Math> are uniquely determined up to congruence of morphisms.
+ We denote the object <Math>Z</Math> of such a triple by <Math>\mathrm{ZeroObject}</Math>.
+ We say that the morphisms <Math>u_{\mathrm{in}}(A)</Math> and <Math>u_{\mathrm{out}}(A)</Math> are induced by the
+ <Emph>universal property of the zero object</Emph>.
+<ManSection>
+  <Attr Arg="C" Name="ZeroObject" Label="for IsCapCategory"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is a zero object <Math>Z</Math> of <Math>C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="c" Name="ZeroObject" Label="for IsCapCategoryCell"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a cell <Math>c</Math>.
+ The output is a zero object <Math>Z</Math> of the
+ category <Math>C</Math> for which <Math>c \in C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="UniversalMorphismFromZeroObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, A)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is the universal morphism <Math>u_{\mathrm{out}}: \mathrm{ZeroObject} \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, Z" Name="UniversalMorphismFromZeroObjectWithGivenZeroObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(Z, A)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>,
+ and a zero object <Math>Z = \mathrm{ZeroObject}</Math>.
+ The output is the universal morphism <Math>u_{\mathrm{out}}: Z \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="UniversalMorphismIntoZeroObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, \mathrm{ZeroObject})</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is the universal morphism <Math>u_{\mathrm{in}}: A \rightarrow \mathrm{ZeroObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, Z" Name="UniversalMorphismIntoZeroObjectWithGivenZeroObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, Z)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>,
+ and a zero object <Math>Z = \mathrm{ZeroObject}</Math>.
+ The output is the universal morphism <Math>u_{\mathrm{in}}: A \rightarrow Z</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="MorphismFromZeroObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, A)</Math>
+</Returns>
+ <Description>
+ This is a synonym for <Code>UniversalMorphismFromZeroObject</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="MorphismIntoZeroObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, \mathrm{ZeroObject})</Math>
+</Returns>
+ <Description>
+ This is a synonym for <Code>UniversalMorphismIntoZeroObject</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="IsomorphismFromZeroObjectToInitialObject" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, \mathrm{InitialObject})</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the unique isomorphism <Math>\mathrm{ZeroObject} \rightarrow \mathrm{InitialObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="IsomorphismFromInitialObjectToZeroObject" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{InitialObject}, \mathrm{ZeroObject})</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the unique isomorphism <Math>\mathrm{InitialObject} \rightarrow \mathrm{ZeroObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="IsomorphismFromZeroObjectToTerminalObject" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, \mathrm{TerminalObject})</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the unique isomorphism <Math>\mathrm{ZeroObject} \rightarrow \mathrm{TerminalObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="IsomorphismFromTerminalObjectToZeroObject" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{TerminalObject}, \mathrm{ZeroObject})</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the unique isomorphism <Math>\mathrm{TerminalObject} \rightarrow \mathrm{ZeroObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="ZeroObjectFunctorial" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, \mathrm{ZeroObject} )</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the unique morphism <Math>\mathrm{ZeroObject} \rightarrow \mathrm{ZeroObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, zero_object1, zero_object2" Name="ZeroObjectFunctorialWithGivenZeroObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(zero_object1, zero_object2)</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math> and a zero object <Math>\mathrm{ZeroObject}(C)</Math> twice (for compatibility with other functorials).
+ The output is the unique morphism <Math>zero_object1 \rightarrow zero_object2</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Terminal_Object">
+<Heading>Terminal Object</Heading>
+
+ A terminal object consists of two parts:
+<List>
+<Item>
+an object <Math>T</Math>,
+</Item>
+<Item>
+a function <Math>u</Math> mapping each object <Math>A</Math> to a morphism <Math>u( A ): A \rightarrow T</Math>.
+</Item>
+</List>
+ The pair <Math>( T, u )</Math> is called a <Emph>terminal object</Emph> if the morphisms <Math>u( A )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>T</Math> of such a pair by <Math>\mathrm{TerminalObject}</Math>.
+ We say that the morphism <Math>u( A )</Math> is induced by the
+ <Emph>universal property of the terminal object</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{TerminalObject}</Math> is a functorial operation. This just means:
+ There exists a unique morphism <Math>T \rightarrow T</Math>.
+<ManSection>
+  <Attr Arg="C" Name="TerminalObject" Label="for IsCapCategory"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is a terminal object <Math>T</Math> of <Math>C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="c" Name="TerminalObject" Label="for IsCapCategoryCell"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a cell <Math>c</Math>.
+ The output is a terminal object <Math>T</Math> of the
+ category <Math>C</Math> for which <Math>c \in C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="UniversalMorphismIntoTerminalObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, \mathrm{TerminalObject} )</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is the universal morphism <Math>u(A): A \rightarrow \mathrm{TerminalObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, T" Name="UniversalMorphismIntoTerminalObjectWithGivenTerminalObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, T )</Math>
+</Returns>
+ <Description>
+ The argument are an object <Math>A</Math>,
+ and an object <Math>T = \mathrm{TerminalObject}</Math>.
+ The output is the universal morphism <Math>u(A): A \rightarrow T</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="TerminalObjectFunctorial" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{TerminalObject}, \mathrm{TerminalObject} )</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the unique morphism <Math>\mathrm{TerminalObject} \rightarrow \mathrm{TerminalObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, terminal_object1, terminal_object2" Name="TerminalObjectFunctorialWithGivenTerminalObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(terminal_object1, terminal_object2)</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math> and a terminal object <Math>\mathrm{TerminalObject}(C)</Math> twice (for compatibility with other functorials).
+ The output is the unique morphism <Math>terminal_object1 \rightarrow terminal_object2</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Initial_Object">
+<Heading>Initial Object</Heading>
+
+ An initial object consists of two parts:
+<List>
+<Item>
+an object <Math>I</Math>,
+</Item>
+<Item>
+a function <Math>u</Math> mapping each object <Math>A</Math> to a morphism <Math>u( A ): I \rightarrow A</Math>.
+</Item>
+</List>
+ The pair <Math>(I,u)</Math> is called a <Emph>initial object</Emph> if the morphisms <Math>u(A)</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>I</Math> of such a triple by <Math>\mathrm{InitialObject}</Math>.
+ We say that the morphism <Math>u( A )</Math> is induced by the
+ <Emph>universal property of the initial object</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{InitialObject}</Math> is a functorial operation. This just means:
+ There exists a unique morphisms <Math>I \rightarrow I</Math>.
+<ManSection>
+  <Attr Arg="C" Name="InitialObject" Label="for IsCapCategory"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is an initial object <Math>I</Math> of <Math>C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="c" Name="InitialObject" Label="for IsCapCategoryCell"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a cell <Math>c</Math>.
+ The output is an initial object <Math>I</Math> of the category <Math>C</Math>
+ for which <Math>c \in C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="UniversalMorphismFromInitialObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{InitialObject}, A)</Math>.
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math>.
+ The output is the universal morphism <Math>u(A): \mathrm{InitialObject} \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, I" Name="UniversalMorphismFromInitialObjectWithGivenInitialObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I, A)</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>,
+ and an object <Math>I = \mathrm{InitialObject}</Math>.
+ The output is the universal morphism <Math>u(A): \mathrm{InitialObject} \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="InitialObjectFunctorial" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{InitialObject}, \mathrm{InitialObject} )</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the unique morphism <Math>\mathrm{InitialObject} \rightarrow \mathrm{InitialObject}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, initial_object1, initial_object2" Name="InitialObjectFunctorialWithGivenInitialObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(initial_object1, initial_object2)</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math> and an initial object <Math>\mathrm{InitialObject}(C)</Math> twice (for compatibility with other functorials).
+ The output is the unique morphism <Math>initial_object1 \rightarrow initial_object2</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Direct_Sum">
+<Heading>Direct Sum</Heading>
+
+ For an integer <Math>n \geq 1</Math> and a given list <Math>D = (S_1, \dots, S_n)</Math> in an Ab-category, a direct sum consists of five parts:
+<List>
+<Item>
+an object <Math>S</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\pi = (\pi_i: S \rightarrow S_i)_{i = 1 \dots n}</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\iota = (\iota_i: S_i \rightarrow S)_{i = 1 \dots n}</Math>,
+</Item>
+<Item>
+a dependent function <Math>u_{\mathrm{in}}</Math> mapping every list <Math>\tau = ( \tau_i: T \rightarrow S_i )_{i = 1 \dots n}</Math>
+  to a morphism <Math>u_{\mathrm{in}}(\tau): T \rightarrow S</Math> such that
+  <Math>\pi_i \circ u_{\mathrm{in}}(\tau) \sim_{T,S_i} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+<Item>
+a dependent function <Math>u_{\mathrm{out}}</Math> mapping every list <Math>\tau = ( \tau_i: S_i \rightarrow T )_{i = 1 \dots n}</Math>
+  to a morphism <Math>u_{\mathrm{out}}(\tau): S \rightarrow T</Math> such that
+   <Math>u_{\mathrm{out}}(\tau) \circ \iota_i \sim_{S_i, T} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>,
+</Item>
+</List>
+ such that
+<List>
+<Item>
+<Math>\sum_{i=1}^{n} \iota_i \circ \pi_i \sim_{S,S} \mathrm{id}_S</Math>,
+</Item>
+<Item>
+<Math>\pi_j \circ \iota_i \sim_{S_i, S_j} \delta_{i,j}</Math>,
+</Item>
+</List>
+ where <Math>\delta_{i,j} \in \mathrm{Hom}( S_i, S_j )</Math> is the identity if <Math>i=j</Math>, and <Math>0</Math> otherwise.
+ The <Math>5</Math>-tuple <Math>(S, \pi, \iota, u_{\mathrm{in}}, u_{\mathrm{out}})</Math> is called a <Emph>direct sum</Emph> of <Math>D</Math>.
+ We denote the object <Math>S</Math> of such a <Math>5</Math>-tuple by <Math>\bigoplus_{i=1}^n S_i</Math>.
+ We say that the morphisms <Math>u_{\mathrm{in}}(\tau), u_{\mathrm{out}}(\tau)</Math> are induced by the
+ <Emph>universal property of the direct sum</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{DirectSum}</Math> is a functorial operation. This means:
+ For <Math>(\mu_i: S_i \rightarrow S'_i)_{i=1\dots n}</Math>,
+ we obtain a morphism <Math>\bigoplus_{i=1}^n S_i \rightarrow \bigoplus_{i=1}^n S_i'</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \def\a{20}
+ \node (S) at (0,0) {$S$};
+ \node (S1) at (-\w,0) {$S_1$};
+ \node (S2) at (\w,0) {$S_2$};
+ \node (T) at (0,\w) {$T$};
+ \draw[-latex] (S) to [out = 180-\a, in = \a] node[pos=0.45, above] {$\pi_1$} (S1);
+ \draw[-latex] (S) to [out = \a, in = 180-\a] node[pos=0.45, above] {$\pi_2$} (S2);
+ \draw[-latex] (S1) to [out = -\a, in = -180+\a] node[pos=0.45, below] {$\iota_1$} (S);
+ \draw[-latex] (S2) to [out = -180+\a, in = -\a] node[pos=0.45, below] {$\iota_2$} (S);
+ \draw[-latex] (T) to [out = -180, in = 90] node[pos=0.45, above left] {$\tau_1$} (S1);
+ \draw[-latex] (T) to [out = 0, in = 90] node[pos=0.45, above right] {$\tau_2$} (S2);
+ \draw[dashed, -latex] (T) to node[pos=0.45, left] {$\exists u_{in} ( \tau )$} (S);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \def\a{20}
+ \node (S) at (0,0) {$S$};
+ \node (S1) at (-\w,0) {$S_1$};
+ \node (S2) at (\w,0) {$S_2$};
+ \node (T) at (0,\w) {$T$};
+ \draw[-latex] (S) to [out = 180-\a, in = \a] node[pos=0.45, above] {$\pi_1$} (S1);
+ \draw[-latex] (S) to [out = \a, in = 180-\a] node[pos=0.45, above] {$\pi_2$} (S2);
+ \draw[-latex] (S1) to [out = -\a, in = -180+\a] node[pos=0.45, below] {$\iota_1$} (S);
+ \draw[-latex] (S2) to [out = -180+\a, in = -\a] node[pos=0.45, below] {$\iota_2$} (S);
+ \draw[-latex] (S1) to [out = 90, in = -180] node[pos=0.45, above left] {$\tau_1$} (T);
+ \draw[-latex] (S2) to [out = 90, in = 0] node[pos=0.45, above right] {$\tau_2$} (T);
+ \draw[dashed, -latex] (S) to node[pos=0.45, left] {$\exists u_{out} ( \tau )$} (T);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Func Arg="arg" Name="DirectSum" />
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ There are two different ways to use this method:
+<List>
+<Item>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+</Item>
+<Item>
+The arguments are objects <Math>S_1, \dots, S_n</Math>.
+</Item>
+</List>
+ The output is the direct sum <Math>\bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="DirectSumOp" Label="for IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+ The output is the direct sum <Math>\bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k" Name="ProjectionInFactorOfDirectSum" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, S_k )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+ and an integer <Math>k</Math>.
+ The output is the <Math>k</Math>-th projection
+ <Math>\pi_k: \bigoplus_{i=1}^n S_i \rightarrow S_k</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k,S" Name="ProjectionInFactorOfDirectSumWithGivenDirectSum" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( S, S_k )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+ an integer <Math>k</Math>,
+ and an object <Math>S = \bigoplus_{i=1}^n S_i</Math>.
+ The output is the <Math>k</Math>-th projection
+ <Math>\pi_k: S \rightarrow S_k</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k" Name="InjectionOfCofactorOfDirectSum" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( S_k, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+ and an integer <Math>k</Math>.
+ The output  is the <Math>k</Math>-th injection
+ <Math>\iota_k: S_k \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k,S" Name="InjectionOfCofactorOfDirectSumWithGivenDirectSum" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( S_k, S )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+ an integer <Math>k</Math>,
+ and an object <Math>S = \bigoplus_{i=1}^n S_i</Math>.
+ The output  is the <Math>k</Math>-th injection
+ <Math>\iota_k: S_k \rightarrow S</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau" Name="UniversalMorphismIntoDirectSum" Label="for IsList, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \bigoplus_{i=1}^n S_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>, a test object <Math>T</Math>,
+ and a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow S_i )_{i = 1 \dots n}</Math>.
+ For convenience, the diagram <A>D</A> and/or the test object <A>T</A> can be omitted
+ and are automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u_{\mathrm{in}}(\tau): T \rightarrow \bigoplus_{i=1}^n S_i</Math>
+ given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau, S" Name="UniversalMorphismIntoDirectSumWithGivenDirectSum" Label="for IsList, IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, S)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>, a test object <Math>T</Math>,
+ a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow S_i )_{i = 1 \dots n}</Math>,
+ and an object <Math>S = \bigoplus_{i=1}^n S_i</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u_{\mathrm{in}}(\tau): T \rightarrow S</Math>
+ given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau" Name="UniversalMorphismFromDirectSum" Label="for IsList, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigoplus_{i=1}^n S_i, T)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>, a test object <Math>T</Math>,
+ and a list of morphisms <Math>\tau = ( \tau_i: S_i \rightarrow T )_{i = 1 \dots n}</Math>.
+ For convenience, the diagram <A>D</A> and/or the test object <A>T</A> can be omitted
+ and are automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u_{\mathrm{out}}(\tau): \bigoplus_{i=1}^n S_i \rightarrow T</Math>
+ given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau, S" Name="UniversalMorphismFromDirectSumWithGivenDirectSum" Label="for IsList, IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(S, T)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>, a test object <Math>T</Math>,
+ a list of morphisms <Math>\tau = ( \tau_i: S_i \rightarrow T )_{i = 1 \dots n}</Math>,
+ and an object <Math>S = \bigoplus_{i=1}^n S_i</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u_{\mathrm{out}}(\tau): S \rightarrow T</Math>
+ given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromDirectSumToDirectProduct" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \prod_{i=1}^{n}S_i )</Math>
+</Returns>
+ <Description>
+ The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+ The output is the canonical isomorphism
+ <Math>\bigoplus_{i=1}^n S_i \rightarrow \prod_{i=1}^{n}S_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromDirectProductToDirectSum" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \prod_{i=1}^{n}S_i, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+ The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+ The output is the canonical isomorphism
+ <Math>\prod_{i=1}^{n}S_i \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromDirectSumToCoproduct" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \bigsqcup_{i=1}^{n}S_i )</Math>
+</Returns>
+ <Description>
+ The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+ The output is the canonical isomorphism
+ <Math>\bigoplus_{i=1}^n S_i \rightarrow \bigsqcup_{i=1}^{n}S_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromCoproductToDirectSum" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigsqcup_{i=1}^{n}S_i, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+ The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+ The output is the canonical isomorphism
+ <Math>\bigsqcup_{i=1}^{n}S_i \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="diagram_S, M, diagram_T" Name="MorphismBetweenDirectSums" Label="for IsList, IsList, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigoplus_{i=1}^{m}A_i, \bigoplus_{j=1}^n B_j)</Math>
+</Returns>
+ <Description>
+ The arguments are given as follows:
+<List>
+<Item>
+<A>diagram_S</A> is a list of objects <Math>(A_i)_{i = 1 \dots m}</Math>,
+</Item>
+<Item>
+<A>diagram_T</A> is a list of objects <Math>(B_j)_{j = 1 \dots n}</Math>,
+</Item>
+<Item>
+<A>M</A> is a list of lists of morphisms <Math>( ( \phi_{i,j}: A_i \rightarrow B_j )_{j = 1 \dots n} )_{i = 1 \dots m}</Math>.
+</Item>
+</List>
+ The output is the morphism
+ <Math>\bigoplus_{i=1}^{m}A_i \rightarrow \bigoplus_{j=1}^n B_j</Math>
+ defined by the matrix <Math>M</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="M" Name="MorphismBetweenDirectSums" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigoplus_{i=1}^{m}A_i, \bigoplus_{j=1}^n B_j)</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument <Math>M = ( ( \phi_{i,j}: A_i \rightarrow B_j )_{j = 1 \dots n} )_{i = 1 \dots m}</Math>
+ is a (non-empty) list of (non-empty) lists of morphisms.
+ The output is the morphism
+ <Math>\bigoplus_{i=1}^{m}A_i \rightarrow \bigoplus_{j=1}^n B_j</Math>
+ defined by the matrix <Math>M</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S, diagram_S, M, diagram_T, T" Name="MorphismBetweenDirectSumsWithGivenDirectSums" Label="for IsCapCategoryObject, IsList, IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigoplus_{i=1}^{m}A_i, \bigoplus_{j=1}^n B_j)</Math>
+</Returns>
+ <Description>
+ The arguments are given as follows:
+<List>
+<Item>
+<A>diagram_S</A> is a list of objects <Math>(A_i)_{i = 1 \dots m}</Math>,
+</Item>
+<Item>
+<A>diagram_T</A> is a list of objects <Math>(B_j)_{j = 1 \dots n}</Math>,
+</Item>
+<Item>
+<A>S</A> is the direct sum <Math>\bigoplus_{i=1}^{m}A_i</Math>,
+</Item>
+<Item>
+<A>T</A> is the direct sum <Math>\bigoplus_{j=1}^{n}B_j</Math>,
+</Item>
+<Item>
+<A>M</A> is a list of lists of morphisms <Math>( ( \phi_{i,j}: A_i \rightarrow B_j )_{j = 1 \dots n} )_{i = 1 \dots m}</Math>.
+</Item>
+</List>
+ The output is the morphism
+ <Math>\bigoplus_{i=1}^{m}A_i \rightarrow \bigoplus_{j=1}^n B_j</Math>
+ defined by the matrix <Math>M</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, D, k" Name="ComponentOfMorphismIntoDirectSum" Label="for IsCapCategoryMorphism, IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, S_k)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow S</Math>,
+ a list <Math>D = (S_1, \dots, S_n)</Math> of objects with <Math>S = \bigoplus_{j=1}^n S_j</Math>,
+ and an integer <Math>k</Math>.
+ The output is the component morphism
+ <Math>A \rightarrow S_k</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, D, k" Name="ComponentOfMorphismFromDirectSum" Label="for IsCapCategoryMorphism, IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(S_k, A)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: S \rightarrow A</Math>,
+ a list <Math>D = (S_1, \dots, S_n)</Math> of objects with <Math>S = \bigoplus_{j=1}^n S_j</Math>,
+ and an integer <Math>k</Math>.
+ The output is the component morphism
+ <Math>S_k \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="source_diagram, L, range_diagram" Name="DirectSumFunctorial" Label="for IsList, IsList, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \bigoplus_{i=1}^n S_i' )</Math>
+</Returns>
+ <Description>
+ The arguments are
+ a list of objects <Math>(S_i)_{i = 1 \dots n}</Math>,
+ a list of morphisms <Math>L = ( \mu_1: S_1 \rightarrow S_1', \dots, \mu_n: S_n \rightarrow S_n' )</Math>,
+ and a list of objects <Math>(S_i')_{i = 1 \dots n}</Math>.
+ For convenience, <A>source_diagram</A> and <A>range_diagram</A> can be omitted
+ and are automatically derived from <A>L</A> in that case.
+ The output is a morphism
+ <Math>\bigoplus_{i=1}^n S_i \rightarrow \bigoplus_{i=1}^n S_i'</Math>
+ given by the functoriality of the direct sum.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="d_1, source_diagram, L, range_diagram, d_2" Name="DirectSumFunctorialWithGivenDirectSums" Label="for IsCapCategoryObject, IsList, IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( d_1, d_2 )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>d_1 = \bigoplus_{i=1}^n S_i</Math>,
+ a list of objects <Math>(S_i)_{i = 1 \dots n}</Math>,
+ a list of morphisms <Math>L = ( \mu_1: S_1 \rightarrow S_1', \dots, \mu_n: S_n \rightarrow S_n' )</Math>,
+ a list of objects <Math>(S_i')_{i = 1 \dots n}</Math>,
+ and an object <Math>d_2 = \bigoplus_{i=1}^n S_i'</Math>.
+ For convenience, <A>source_diagram</A> and <A>range_diagram</A> can be omitted
+ and are automatically derived from <A>L</A> in that case.
+ The output is a morphism
+ <Math>d_1 \rightarrow d_2</Math>
+ given by the functoriality of the direct sum.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Coproduct">
+<Heading>Coproduct</Heading>
+
+ For an integer <Math>n \geq 1</Math> and a given list of objects <Math>D = ( I_1, \dots, I_n )</Math>, a coproduct of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>I</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\iota = ( \iota_i: I_i \rightarrow I )_{i = 1 \dots n}</Math>
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )</Math>
+  to a morphism <Math>u( \tau ): I \rightarrow T</Math> such that <Math>u( \tau ) \circ \iota_i \sim_{I_i, T} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+</List>
+ The triple <Math>( I, \iota, u )</Math> is called a <Emph>coproduct</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>I</Math> of such a triple by <Math>\bigsqcup_{i=1}^n I_i</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the coproduct</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{Coproduct}</Math> is a functorial operation. This means:
+ For <Math>(\mu_i: I_i \rightarrow I'_i)_{i=1\dots n}</Math>,
+ we obtain a morphism <Math>\bigsqcup_{i=1}^n I_i \rightarrow \bigsqcup_{i=1}^n I_i'</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (I) at (0,0) {$I$};
+ \node (I1) at (-\w,0) {$I_1$};
+ \node (I2) at (\w,0) {$I_2$};
+ \node (T) at (0,\w) {$T$};
+ \draw[-latex] (S1) to node[pos=0.45, below] {$\iota_1$} (S);
+ \draw[-latex] (S2) to node[pos=0.45, below] {$\iota_2$} (S);
+ \draw[-latex] (S1) to [out = 90, in = -180] node[pos=0.45, above left] {$\tau_1$} (T);
+ \draw[-latex] (S2) to [out = 90, in = 0] node[pos=0.45, above right] {$\tau_2$} (T);
+ \draw[dashed, -latex] (S) to node[pos=0.45, left] {$\exists ! u ( \tau )$} (T);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Oper Arg="D" Name="Coproduct" Label="for IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a list of objects <Math>D = ( I_1, \dots, I_n )</Math>.
+ The output is the coproduct <Math>\bigsqcup_{i=1}^n I_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="I1, I2" Name="Coproduct" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ The arguments are two objects <Math>I_1, I_2</Math>.
+ The output is the coproduct <Math>I_1 \bigsqcup I_2</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="I1, I2" Name="Coproduct" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ The arguments are three objects <Math>I_1, I_2, I_3</Math>.
+ The output is the coproduct <Math>I_1 \bigsqcup I_2 \bigsqcup I_3</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k" Name="InjectionOfCofactorOfCoproduct" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I_k, \bigsqcup_{i=1}^n I_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>
+ and an integer <Math>k</Math>.
+ The output is the <Math>k</Math>-th injection
+ <Math>\iota_k: I_k \rightarrow \bigsqcup_{i=1}^n I_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k,I" Name="InjectionOfCofactorOfCoproductWithGivenCoproduct" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I_k, I)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>,
+ an integer <Math>k</Math>,
+ and an object <Math>I = \bigsqcup_{i=1}^n I_i</Math>.
+ The output is the <Math>k</Math>-th injection
+ <Math>\iota_k: I_k \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau" Name="UniversalMorphismFromCoproduct" Label="for IsList, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigsqcup_{i=1}^n I_i, T)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>, a test object <Math>T</Math>,
+ and a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )</Math>.
+ For convenience, the diagram <A>D</A> and/or the test object <A>T</A> can be omitted
+ and are automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): \bigsqcup_{i=1}^n I_i \rightarrow T</Math>
+ given by the universal property of the coproduct.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau, I" Name="UniversalMorphismFromCoproductWithGivenCoproduct" Label="for IsList, IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I, T)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>, a test object <Math>T</Math>,
+ a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )</Math>,
+ and an object <Math>I = \bigsqcup_{i=1}^n I_i</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): I \rightarrow T</Math>
+ given by the universal property of the coproduct.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="source_diagram, L, range_diagram" Name="CoproductFunctorial" Label="for IsList, IsList, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigsqcup_{i=1}^n I_i, \bigsqcup_{i=1}^n I_i')</Math>
+</Returns>
+ <Description>
+ The arguments are
+ a list of objects <Math>(I_i)_{i = 1 \dots n}</Math>,
+ a list <Math>L = ( \mu_1: I_1 \rightarrow I_1', \dots, \mu_n: I_n \rightarrow I_n' )</Math>,
+ and a list of objects <Math>(I_i')_{i = 1 \dots n}</Math>.
+ For convenience, <A>source_diagram</A> and <A>range_diagram</A> can be omitted
+ and are automatically derived from <A>L</A> in that case.
+ The output is a morphism
+ <Math>\bigsqcup_{i=1}^n I_i \rightarrow \bigsqcup_{i=1}^n I_i'</Math>
+ given by the functoriality of the coproduct.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, source_diagram, L, range_diagram, r" Name="CoproductFunctorialWithGivenCoproducts" Label="for IsCapCategoryObject, IsList, IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \bigsqcup_{i=1}^n I_i</Math>, 
+ a list of objects <Math>(I_i)_{i = 1 \dots n}</Math>,
+ a list <Math>L = ( \mu_1: I_1 \rightarrow I_1', \dots, \mu_n: I_n \rightarrow I_n' )</Math>,
+ a list of objects <Math>(I_i')_{i = 1 \dots n}</Math>,
+ and an object <Math>r = \bigsqcup_{i=1}^n I_i'</Math>.
+ For convenience, <A>source_diagram</A> and <A>range_diagram</A> can be omitted
+ and are automatically derived from <A>L</A> in that case.
+ The output is a morphism
+ <Math>\bigsqcup_{i=1}^n I_i \rightarrow \bigsqcup_{i=1}^n I_i'</Math>
+ given by the functoriality of the coproduct.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, D, k" Name="ComponentOfMorphismFromCoproduct" Label="for IsCapCategoryMorphism, IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I_k, A)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: I \rightarrow A</Math>,
+ a list <Math>D = (I_1, \dots, I_n)</Math> of objects with <Math>I = \bigsqcup_{j=1}^n I_j</Math>,
+ and an integer <Math>k</Math>.
+ The output is the component morphism
+ <Math>I_k \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Direct_Product">
+<Heading>Direct Product</Heading>
+
+ For an integer <Math>n \geq 1</Math> and a given list of objects <Math>D = ( P_1, \dots, P_n )</Math>, a direct product of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>P</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\pi = ( \pi_i: P \rightarrow P_i )_{i = 1 \dots n}</Math> 
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )_{i = 1, \dots, n}</Math> 
+  to a morphism <Math>u(\tau): T \rightarrow P</Math> such that <Math>\pi_i \circ u( \tau ) \sim_{T,P_i} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+</List>
+ The triple <Math>( P, \pi, u )</Math> is called a <Emph>direct product</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>P</Math> of such a triple by <Math>\prod_{i=1}^n P_i</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the direct product</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{DirectProduct}</Math> is a functorial operation. This means:
+ For <Math>(\mu_i: P_i \rightarrow P'_i)_{i=1\dots n}</Math>,
+ we obtain a morphism <Math>\prod_{i=1}^n P_i \rightarrow \prod_{i=1}^n P_i'</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (P) at (0,0) {$P$};
+ \node (P1) at (-\w,0) {$P_1$};
+ \node (P2) at (\w,0) {$P_2$};
+ \node (T) at (0,\w) {$T$};
+ \draw[-latex] (P) to node[pos=0.45, above] {$\pi_1$} (P1);
+ \draw[-latex] (P) to node[pos=0.45, above] {$\pi_2$} (P2);
+ \draw[-latex] (T) to [out = -180, in = 90] node[pos=0.45, above left] {$\tau_1$} (P1);
+ \draw[-latex] (T) to [out = 0, in = 90] node[pos=0.45, above right] {$\tau_2$} (P2);
+ \draw[dashed, -latex] (T) to node[pos=0.45, left] {$\exists ! u ( \tau )$} (P);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Func Arg="arg" Name="DirectProduct" />
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ There are two different ways to use this method:
+<List>
+<Item>
+The argument is a list of objects <Math>D = ( P_1, \dots, P_n )</Math>.
+</Item>
+<Item>
+The arguments are objects <Math>P_1, \dots, P_n</Math>.
+</Item>
+</List>
+ The output is the direct product <Math>\prod_{i=1}^n P_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="DirectProductOp" Label="for IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a list of objects <Math>D = ( P_1, \dots, P_n )</Math>.
+ The output is the direct product <Math>\prod_{i=1}^n P_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k" Name="ProjectionInFactorOfDirectProduct" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\prod_{i=1}^n P_i, P_k)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>
+ and an integer <Math>k</Math>.
+ The output is the <Math>k</Math>-th projection
+ <Math>\pi_k: \prod_{i=1}^n P_i \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k,P" Name="ProjectionInFactorOfDirectProductWithGivenDirectProduct" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(P, P_k)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>,
+ an integer <Math>k</Math>,
+ and an object <Math>P = \prod_{i=1}^n P_i</Math>.
+ The output is the <Math>k</Math>-th projection
+ <Math>\pi_k: P \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau" Name="UniversalMorphismIntoDirectProduct" Label="for IsList, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \prod_{i=1}^n P_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>, a test object <Math>T</Math>,
+ and a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )_{i = 1, \dots, n}</Math>.
+ For convenience, the diagram <A>D</A> and/or the test object <A>T</A> can be omitted
+ and are automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u(\tau): T \rightarrow \prod_{i=1}^n P_i</Math>
+ given by the universal property of the direct product.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau, P" Name="UniversalMorphismIntoDirectProductWithGivenDirectProduct" Label="for IsList, IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \prod_{i=1}^n P_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>, a test object <Math>T</Math>,
+ a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )_{i = 1, \dots, n}</Math>,
+ and an object <Math>P = \prod_{i=1}^n P_i</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u(\tau): T \rightarrow \prod_{i=1}^n P_i</Math>
+ given by the universal property of the direct product.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="source_diagram, L, range_diagram" Name="DirectProductFunctorial" Label="for IsList, IsList, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \prod_{i=1}^n P_i, \prod_{i=1}^n P_i' )</Math>
+</Returns>
+ <Description>
+ The arguments are
+ a list of objects <Math>(P_i)_{i = 1 \dots n}</Math>,
+ a list of morphisms <Math>L = (\mu_i: P_i \rightarrow P'_i)_{i=1\dots n}</Math>,
+ and a list of objects <Math>(P_i')_{i = 1 \dots n}</Math>.
+ For convenience, <A>source_diagram</A> and <A>range_diagram</A> can be omitted
+ and are automatically derived from <A>L</A> in that case.
+ The output is a morphism
+ <Math>\prod_{i=1}^n P_i \rightarrow \prod_{i=1}^n P_i'</Math>
+ given by the functoriality of the direct product.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, source_diagram, L, range_diagram r" Name="DirectProductFunctorialWithGivenDirectProducts" Label="for IsCapCategoryObject, IsList, IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( s, r )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \prod_{i=1}^n P_i</Math>,
+ a list of objects <Math>(P_i)_{i = 1 \dots n}</Math>,
+ a list of morphisms <Math>L = (\mu_i: P_i \rightarrow P'_i)_{i=1\dots n}</Math>,
+ a list of objects <Math>(P_i')_{i = 1 \dots n}</Math>,
+ and an object <Math>r = \prod_{i=1}^n P_i'</Math>.
+ For convenience, <A>source_diagram</A> and <A>range_diagram</A> can be omitted
+ and are automatically derived from <A>L</A> in that case.
+ The output is a morphism
+ <Math>\prod_{i=1}^n P_i \rightarrow \prod_{i=1}^n P_i'</Math>
+ given by the functoriality of the direct product.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, D, k" Name="ComponentOfMorphismIntoDirectProduct" Label="for IsCapCategoryMorphism, IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, P_k)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow P</Math>,
+ a list <Math>D = (P_1, \dots, P_n)</Math> of objects with <Math>P = \prod_{j=1}^n P_j</Math>,
+ and an integer <Math>k</Math>.
+ The output is the component morphism
+ <Math>A \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Equalizer">
+<Heading>Equalizer</Heading>
+
+ For an integer <Math>n \geq 0</Math> and a given list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>,
+ an equalizer of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>E</Math>,
+</Item>
+<Item>
+a morphism <Math>\iota: E \rightarrow A </Math> such that
+  <Math>\beta_i \circ \iota  \sim_{E, B} \beta_j \circ \iota</Math> for all pairs <Math>i,j</Math>.
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each morphism
+  <Math>\tau = ( \tau: T \rightarrow A )</Math> such that
+  <Math>\beta_i \circ \tau  \sim_{T, B} \beta_j \circ \tau</Math> for all pairs <Math>i,j</Math>
+  to a morphism <Math>u( \tau ): T \rightarrow E</Math> such that
+  <Math>\iota \circ u( \tau ) \sim_{T, A} \tau</Math>.
+</Item>
+</List>
+ The triple <Math>( E, \iota, u )</Math> is called an <Emph>equalizer</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>E</Math> of such a triple by <Math>\mathrm{Equalizer}(D)</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the equalizer</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{Equalizer}</Math> is a functorial operation. This means:
+ For a second diagram <Math>D' = (\beta_i': A' \rightarrow B')_{i = 1 \dots n}</Math> and a natural morphism
+ between equalizer diagrams (i.e., a collection of morphisms
+ <Math>\mu: A \rightarrow A'</Math> and <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \mu \sim_{A,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>)
+ we obtain a morphism <Math>\mathrm{Equalizer}( D ) \rightarrow \mathrm{Equalizer}( D' )</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (E) at (-\w,0) {$E$};
+ \node (T) at (-\w,\w) {$T$};
+ \node (A) at (0,0) {$A$};
+ \node (B) at (\w,0) {$B$};
+ \draw[-latex] (A) to [out = 20, in = 180-20] node[pos=0.45, above] {$\beta_1$} (B);
+ \draw[-latex] (A) to [out = -20, in = -180+20] node[pos=0.45, below] {$\beta_2$} (B);
+ \draw[-latex] (E) to node[pos=0.45, above] {$\iota$} (A);
+ \draw[-latex] (T) to node[pos=0.45, above right] {$\tau$} (A);
+ \draw[dashed, -latex] (T) to node[pos=0.45, left] {$\exists ! u( \tau )$} (E);
+ \draw[-latex, dotted] (T) to [out = 0, in = 90] node[pos=0.45, above right] {$\beta_2 \circ \tau \sim_{T,B} \beta_1 \circ \tau$} (B);
+ \draw[-latex, dotted] (E) to [out = -45, in = -135] node[pos=0.45, below] {$\beta_2 \circ \iota \sim_{E,B} \beta_1 \circ \iota$} (B);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Func Arg="arg" Name="Equalizer" />
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ There are three different ways to use this method:
+<List>
+<Item>
+The arguments are an object <Math>A</Math> and a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The argument is a nonempty list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>\beta_1: A \rightarrow B, \dots, \beta_n: A \rightarrow B</Math> with <Math>n \geq 1</Math>.
+</Item>
+</List>
+ The output is the equalizer <Math>\mathrm{Equalizer}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="EqualizerOp" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the equalizer <Math>\mathrm{Equalizer}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="EmbeddingOfEqualizer" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Equalizer}(D), A )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the equalizer embedding
+ <Math>\iota: \mathrm{Equalizer}(D) \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, E" Name="EmbeddingOfEqualizerWithGivenEqualizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( E, A )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>,
+ and an object <Math>E = \mathrm{Equalizer}(D)</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the equalizer embedding
+ <Math>\iota: E \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="MorphismFromEqualizerToSink" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Equalizer}(D), B )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the composition <Math>\mu: \mathrm{Equalizer}(D) \rightarrow B</Math>
+ of the embedding <Math>\iota: \mathrm{Equalizer}(D) \rightarrow A</Math> and <Math>\beta_1</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, E" Name="MorphismFromEqualizerToSinkWithGivenEqualizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( E, B )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>
+ and an object <Math>E = \mathrm{Equalizer}(D)</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the composition <Math>\mu: E \rightarrow B</Math>
+ of the embedding <Math>\iota: E \rightarrow A</Math> and <Math>\beta_1</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, T, tau" Name="UniversalMorphismIntoEqualizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( T, \mathrm{Equalizer}(D) )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ and a morphism <Math> \tau: T \rightarrow A </Math>
+ such that <Math>\beta_i \circ \tau  \sim_{T, B} \beta_j \circ \tau</Math> for all pairs <Math>i,j</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): T \rightarrow \mathrm{Equalizer}(D)</Math>
+ given by the universal property of the equalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, T, tau, E" Name="UniversalMorphismIntoEqualizerWithGivenEqualizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( T, E )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ a morphism <Math>\tau: T \rightarrow A )</Math>
+ such that <Math>\beta_i \circ \tau  \sim_{T, B} \beta_j \circ \tau</Math> for all pairs <Math>i,j</Math>,
+ and an object <Math>E = \mathrm{Equalizer}(D)</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): T \rightarrow E</Math>
+ given by the universal property of the equalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="Ls, mu, Lr" Name="EqualizerFunctorial" Label="for IsList, IsCapCategoryMorphism, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{Equalizer}( ( \beta_i )_{i=1 \dots n} ), \mathrm{Equalizer}( ( \beta_i' )_{i=1 \dots n} ))</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms
+ <Math>L_s = (\beta_i: A \rightarrow B)_{i = 1 \dots n}</Math>,
+ a morphism
+ <Math>\mu: A \rightarrow A'</Math>,
+ and a list of morphisms
+ <Math>L_r = (\beta_i': A' \rightarrow B')_{i = 1 \dots n}</Math>
+ such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \mu \sim_{A,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>.
+ The output is the morphism
+ <Math>\mathrm{Equalizer}( ( \beta_i )_{i=1 \dots n} ) \rightarrow \mathrm{Equalizer}( ( \beta_i' )_{i=1 \dots n} )</Math>
+ given by the functorality of the equalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, Ls, mu, Lr, r" Name="EqualizerFunctorialWithGivenEqualizers" Label="for IsCapCategoryObject, IsList, IsCapCategoryMorphism, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{Equalizer}( ( \beta_i )_{i=1 \dots n} )</Math>,
+ a list of morphisms
+ <Math>L_s = (\beta_i: A \rightarrow B)_{i = 1 \dots n}</Math>,
+ a morphism
+ <Math>\mu: A \rightarrow A'</Math>,
+ and a list of morphisms
+ <Math>L_r = (\beta_i': A' \rightarrow B')_{i = 1 \dots n}</Math>
+ such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \mu \sim_{A,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>,
+ and an object <Math>r = \mathrm{Equalizer}( ( \beta_i' )_{i=1 \dots n} )</Math>.
+ The output is the morphism
+ <Math>s \rightarrow r</Math>
+ given by the functorality of the equalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="JointPairwiseDifferencesOfMorphismsIntoDirectProduct" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, \prod_{i=1}^{n-1} B )</Math>
+</Returns>
+ <Description>
+ The arguments are an object A and a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>A \rightarrow \prod_{i=1}^{n-1} B</Math>
+ such that its kernel equalizes the <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="IsomorphismFromEqualizerToKernelOfJointPairwiseDifferencesOfMorphismsIntoDirectProduct" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{Equalizer}(D), \Delta)</Math>
+</Returns>
+ <Description>
+ The arguments are an object A and a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\mathrm{Equalizer}(D) \rightarrow \Delta</Math>,
+ where <Math>\Delta</Math> denotes the kernel object equalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="IsomorphismFromKernelOfJointPairwiseDifferencesOfMorphismsIntoDirectProductToEqualizer" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\Delta, \mathrm{Equalizer}(D))</Math>
+</Returns>
+ <Description>
+ The arguments are an object A and a list of morphisms <Math>D = ( \beta_i: A \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\Delta \rightarrow \mathrm{Equalizer}(D)</Math>,
+ where <Math>\Delta</Math> denotes the kernel object equalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Coequalizer">
+<Heading>Coequalizer</Heading>
+
+ For an integer <Math>n \geq 0</Math> and a given list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>,
+ a coequalizer of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>C</Math>,
+</Item>
+<Item>
+a morphism <Math>\pi: A \rightarrow C </Math> such that
+  <Math>\pi \circ \beta_i \sim_{B,C} \pi \circ \beta_j</Math> for all pairs <Math>i,j</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping the morphism
+  <Math>\tau: A \rightarrow T </Math> such that
+  <Math>\tau \circ \beta_i \sim_{B,T} \tau \circ \beta_j</Math>
+  to a morphism <Math>u( \tau ): C \rightarrow T</Math> such that
+  <Math>u( \tau ) \circ \pi \sim_{A, T} \tau</Math>.
+</Item>
+</List>
+ The triple <Math>( C, \pi, u )</Math> is called a <Emph>coequalizer</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>C</Math> of such a triple by <Math>\mathrm{Coequalizer}(D)</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the coequalizer</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{Coequalizer}</Math> is a functorial operation. This means:
+ For a second diagram <Math>D' = (\beta_i': B' \rightarrow A')_{i = 1 \dots n}</Math> and a natural morphism
+ between coequalizer diagrams (i.e., a collection of morphisms
+ <Math>\mu: A \rightarrow A'</Math> and <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \beta \sim_{B, A'} \mu \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>)
+ we obtain a morphism <Math>\mathrm{Coequalizer}( D ) \rightarrow \mathrm{Coequalizer}( D' )</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (B) at (0,0) {$B$};
+ \node (A) at (\w,0) {$A$};
+ \node (C) at (2*\w,0) {$C$};
+ \node (T) at (2*\w,\w) {$T$};
+ \draw[-latex] (B) to [out = 20, in = 180-20] node[pos=0.45, above] {$\beta_1$} (A);
+ \draw[-latex] (B) to [out = -20, in = -180+20] node[pos=0.45, below] {$\beta_2$} (A);
+ \draw[-latex] (A) to node[pos=0.45, above] {$\pi$} (C);
+ \draw[-latex] (A) to node[pos=0.45, above left] {$\tau$} (T);
+ \draw[dashed, -latex] (C) to node[pos=0.45, right] {$\exists ! u( \tau )$} (T);
+ \draw[-latex, dotted] (B) to [out = 90, in = 180] node[pos=0.45, above left] {$\tau \circ \beta_1 \sim_{B,T} \tau \circ \beta_2$} (T);
+ \draw[-latex, dotted] (B) to [out = -45, in = -135] node[pos=0.45, below] {$\pi \circ \beta_1 \sim_{B,C} \pi \circ \beta_2$} (C);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Func Arg="arg" Name="Coequalizer" />
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ There are three different ways to use this method:
+<List>
+<Item>
+The arguments are an object <Math>A</Math> and a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The argument is a nonempty list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>\beta_1: B \rightarrow A, \dots, \beta_n: B \rightarrow A</Math> with <Math>n \geq 1</Math>.
+</Item>
+</List>
+ The output is the coequalizer <Math>\mathrm{Coequalizer}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="CoequalizerOp" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the coequalizer <Math>\mathrm{Coequalizer}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="ProjectionOntoCoequalizer" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, \mathrm{Coequalizer}( D ) )</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the projection
+ <Math>\pi: A \rightarrow \mathrm{Coequalizer}( D )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, C" Name="ProjectionOntoCoequalizerWithGivenCoequalizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, C )</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>,
+ and an object <Math>C = \mathrm{Coequalizer}(D)</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the projection
+ <Math>\pi: A \rightarrow C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="MorphismFromSourceToCoequalizer" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( B, \mathrm{Coequalizer}( D ) )</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the composition <Math>\mu: B \rightarrow \mathrm{Coequalizer}(D)</Math>
+ of <Math>\beta_1</Math> and the projection <Math>\pi: A \rightarrow \mathrm{Coequalizer}( D )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, C" Name="MorphismFromSourceToCoequalizerWithGivenCoequalizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( B, C )</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>
+ and an object <Math>C = \mathrm{Coequalizer}(D)</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the composition <Math>\mu: B \rightarrow C</Math>
+ of <Math>\beta_1</Math> and the projection <Math>\pi: A \rightarrow C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, T, tau" Name="UniversalMorphismFromCoequalizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Coequalizer}(D), T )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ and a morphism <Math>\tau: A \rightarrow T </Math> such that
+ <Math>\tau \circ \beta_i \sim_{B,T} \tau \circ \beta_j</Math> for all pairs <Math>i,j</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): \mathrm{Coequalizer}(D) \rightarrow T</Math>
+ given by the universal property of the coequalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, T, tau, C" Name="UniversalMorphismFromCoequalizerWithGivenCoequalizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( C, T )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ a morphism <Math>\tau: A \rightarrow T </Math> such that
+ <Math>\tau \circ \beta_i \sim_{B,T} \tau \circ \beta_j</Math>,
+ and an object <Math>C = \mathrm{Coequalizer}(D)</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): C \rightarrow T</Math>
+ given by the universal property of the coequalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="Ls, mu, Lr" Name="CoequalizerFunctorial" Label="for IsList, IsCapCategoryMorphism, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{Coequalizer}( ( \beta_i )_{i=1 \dots n} ), \mathrm{Coequalizer}( ( \beta_i' )_{i=1 \dots n} ))</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms
+ <Math>L_s = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>,
+ a morphism
+ <Math>\mu: A \rightarrow A'</Math>,
+ and a list of morphisms
+ <Math>L_r = ( \beta_i': B' \rightarrow A' )_{i = 1 \dots n}</Math>
+ such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \beta \sim_{B, A'} \mu \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>.
+ The output is the morphism
+ <Math>\mathrm{Coequalizer}( ( \beta_i )_{i=1}^n ) \rightarrow \mathrm{Coequalizer}( ( \beta_i' )_{i=1}^n )</Math>
+ given by the functorality of the coequalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, Ls, mu, Lr, r" Name="CoequalizerFunctorialWithGivenCoequalizers" Label="for IsCapCategoryObject, IsList, IsCapCategoryMorphism, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{Coequalizer}( ( \beta_i )_{i=1}^n )</Math>,
+ a list of morphisms
+ <Math>L_s = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>,
+ a morphism
+ <Math>\mu: A \rightarrow A'</Math>,
+ and a list of morphisms
+ <Math>L_r = ( \beta_i': B' \rightarrow A' )_{i = 1 \dots n}</Math>
+ such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \beta \sim_{B, A'} \mu \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>,
+ and an object <Math>r = \mathrm{Coequalizer}( ( \beta_i' )_{i=1}^n )</Math>.
+ The output is the morphism
+ <Math>s \rightarrow r</Math>
+ given by the functorality of the coequalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="JointPairwiseDifferencesOfMorphismsFromCoproduct" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigsqcup_{i=1}^{n-1} B, A)</Math>
+</Returns>
+ <Description>
+ The arguments are an object A and a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\bigsqcup_{i=1}^{n-1} B \rightarrow A</Math>
+ such that its cokernel coequalizes the <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="IsomorphismFromCoequalizerToCokernelOfJointPairwiseDifferencesOfMorphismsFromCoproduct" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{Coequalizer}(D), \Delta)</Math>
+</Returns>
+ <Description>
+ The arguments are an object A and a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\mathrm{Coequalizer}(D) \rightarrow \Delta</Math>,
+ where <Math>\Delta</Math> denotes the cokernel object coequalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="IsomorphismFromCokernelOfJointPairwiseDifferencesOfMorphismsFromCoproductToCoequalizer" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\Delta, \mathrm{Coequalizer}(D))</Math>
+</Returns>
+ <Description>
+ The arguments are an object A and a list of morphisms <Math>D = ( \beta_i: B \rightarrow A )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\Delta \rightarrow \mathrm{Coequalizer}(D)</Math>,
+ where <Math>\Delta</Math> denotes the cokernel object coequalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_CoequalizerOfIdentityAndAutomorphisms">
+<Heading>CoequalizerOfIdentityAndAutomorphisms</Heading>
+
+ For an integer <Math>n \geq 0</Math> and a given list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>,
+ a coequalizer of the identity morphism on <Math>A</Math> and <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>C</Math>,
+</Item>
+<Item>
+a morphism <Math>\pi: A \rightarrow C </Math> such that
+  <Math>\pi \circ \alpha_i \sim_{A,C} \pi \circ \alpha_j</Math> for all pairs <Math>i,j</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping the morphism
+  <Math>\tau: A \rightarrow T </Math> such that
+  <Math>\tau \circ \alpha_i \sim_{A,T} \tau \circ \alpha_j</Math>
+  to a morphism <Math>u( \tau ): C \rightarrow T</Math> such that
+  <Math>u( \tau ) \circ \pi \sim_{A, T} \tau</Math>.
+</Item>
+</List>
+ The triple <Math>( C, \pi, u )</Math> is called a <Emph>coequalizer</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>C</Math> of such a triple by <Math>\mathrm{CoequalizerOfIdentityAndAutomorphisms}(D)</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the coequalizer</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{CoequalizerOfIdentityAndAutomorphisms}</Math> is a functorial operation. This means:
+ For a second diagram <Math>D' = (\alpha_i': A' \rightarrow A')_{i = 1 \dots n}</Math> and a natural morphism
+ between coequalizer diagrams (i.e., a collection of morphisms
+ <Math>\mu: A \rightarrow A'</Math> and <Math>\alpha: A \rightarrow A'</Math>
+ such that <Math>\alpha_i' \circ \alpha \sim_{A, A'} \mu \circ \alpha_i</Math> for <Math>i = 1, \dots n</Math>)
+ we obtain a morphism <Math>\mathrm{CoequalizerOfIdentityAndAutomorphisms}( D ) \rightarrow \mathrm{CoequalizerOfIdentityAndAutomorphisms}( D' )</Math>.
+<P/>
+ Given a category <Math>\mathbf{C}</Math> and a functor <Math>F: G \to \mathbf{C}</Math> from a group <Math>G</Math> (viewed as a groupoid on one object).
+ The operation <Math>\mathrm{CoequalizerOfIdentityAndAutomorphisms}</Math> is needed in <Math>\mathbf{C}</Math> to lift <Math>F</Math> to a functor
+ <Math>\widetilde{F}: \mathrm{T}(G) \to \mathbf{C}</Math>, where <Math>\mathrm{T}(G)</Math> is the coequalizer completion of <Math>G</Math>,
+ namely the category of transitive (left) <Math>G</Math>-sets.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (B) at (0,0) {$A$};
+ \node (A) at (\w,0) {$A$};
+ \node (C) at (2*\w,0) {$C$};
+ \node (T) at (2*\w,\w) {$T$};
+ \draw[-latex] (B) to [out = 20, in = 180-20] node[pos=0.45, above] {$\alpha_1$} (A);
+ \draw[-latex] (B) to [out = -20, in = -180+20] node[pos=0.45, below] {$\alpha_2$} (A);
+ \draw[-latex] (A) to node[pos=0.45, above] {$\pi$} (C);
+ \draw[-latex] (A) to node[pos=0.45, above left] {$\tau$} (T);
+ \draw[dashed, -latex] (C) to node[pos=0.45, right] {$\exists ! u( \tau )$} (T);
+ \draw[-latex, dotted] (B) to [out = 90, in = 180] node[pos=0.45, above left] {$\tau \circ \alpha_1 \sim_{A,T} \tau \circ \alpha_2$} (T);
+ \draw[-latex, dotted] (B) to [out = -45, in = -135] node[pos=0.45, below] {$\pi \circ \alpha_1 \sim_{A,C} \pi \circ \alpha_2$} (C);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Func Arg="arg" Name="CoequalizerOfIdentityAndAutomorphisms" />
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ There are three different ways to use this method:
+<List>
+<Item>
+The arguments are an object <Math>A</Math> and a list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The argument is a nonempty list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>\alpha_1: A \rightarrow A, \dots, \alpha_n: A \rightarrow A</Math> with <Math>n \geq 1</Math>.
+</Item>
+</List>
+ The output is the coequalizer <Math>\mathrm{CoequalizerOfIdentityAndAutomorphisms}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="CoequalizerOfIdentityAndAutomorphismsOp" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the coequalizer <Math>\mathrm{CoequalizerOfIdentityAndAutomorphisms}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="ProjectionOntoCoequalizerOfIdentityAndAutomorphisms" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, \mathrm{CoequalizerOfIdentityAndAutomorphisms}( D ) )</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the projection
+ <Math>\pi: A \rightarrow \mathrm{CoequalizerOfIdentityAndAutomorphisms}( D )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, C" Name="ProjectionOntoCoequalizerOfIdentityAndAutomorphismsWithGivenCoequalizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, C )</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>,
+ and an object <Math>C = \mathrm{CoequalizerOfIdentityAndAutomorphisms}(D)</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ The output is the projection
+ <Math>\pi: A \rightarrow C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, T, tau" Name="UniversalMorphismFromCoequalizerOfIdentityAndAutomorphisms" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{CoequalizerOfIdentityAndAutomorphisms}(D), T )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ and a morphism <Math>\tau: A \rightarrow T </Math> such that
+ <Math>\tau \circ \alpha_i \sim_{A,T} \tau \circ \alpha_j</Math> for all pairs <Math>i,j</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): \mathrm{CoequalizerOfIdentityAndAutomorphisms}(D) \rightarrow T</Math>
+ given by the universal property of the coequalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D, T, tau, C" Name="UniversalMorphismFromCoequalizerOfIdentityAndAutomorphismsWithGivenCoequalizer" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( C, T )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ a morphism <Math>\tau: A \rightarrow T </Math> such that
+ <Math>\tau \circ \alpha_i \sim_{A,T} \tau \circ \alpha_j</Math>,
+ and an object <Math>C = \mathrm{CoequalizerOfIdentityAndAutomorphisms}(D)</Math>.
+ For convenience, the object <Math>A</Math> can be omitted and is automatically derived from <Math>D</Math>, which has to be nonempty.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): C \rightarrow T</Math>
+ given by the universal property of the coequalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="Ls, mu, Lr" Name="CoequalizerOfIdentityAndAutomorphismsFunctorial" Label="for IsList, IsCapCategoryMorphism, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{CoequalizerOfIdentityAndAutomorphisms}( ( \alpha_i )_{i=1 \dots n} ), \mathrm{CoequalizerOfIdentityAndAutomorphisms}( ( \alpha_i' )_{i=1 \dots n} ))</Math>
+</Returns>
+ <Description>
+ The arguments are a list of automorphisms
+ <Math>L_s = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>,
+ a morphism
+ <Math>\mu: A \rightarrow A'</Math>,
+ and a list of automorphisms
+ <Math>L_r = ( \alpha_i': A' \rightarrow A' )_{i = 1 \dots n}</Math>
+ such that there exists a morphism <Math>\alpha: A \rightarrow A'</Math>
+ such that <Math>\alpha_i' \circ \alpha \sim_{A, A'} \mu \circ \alpha_i</Math> for <Math>i = 1, \dots n</Math>.
+ The output is the morphism
+ <Math>\mathrm{CoequalizerOfIdentityAndAutomorphisms}( ( \alpha_i )_{i=1}^n ) \rightarrow \mathrm{CoequalizerOfIdentityAndAutomorphisms}( ( \alpha_i' )_{i=1}^n )</Math>
+ given by the functorality of the coequalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, Ls, mu, Lr, r" Name="CoequalizerOfIdentityAndAutomorphismsFunctorialWithGivenCoequalizers" Label="for IsCapCategoryObject, IsList, IsCapCategoryMorphism, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{CoequalizerOfIdentityAndAutomorphisms}( ( \alpha_i )_{i=1}^n )</Math>,
+ a list of automorphisms
+ <Math>L_s = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>,
+ a morphism
+ <Math>\mu: A \rightarrow A'</Math>,
+ and a list of automorphisms
+ <Math>L_r = ( \alpha_i': A' \rightarrow A' )_{i = 1 \dots n}</Math>
+ such that there exists a morphism <Math>\alpha: A \rightarrow A'</Math>
+ such that <Math>\alpha_i' \circ \alpha \sim_{A, A'} \mu \circ \alpha_i</Math> for <Math>i = 1, \dots n</Math>,
+ and an object <Math>r = \mathrm{CoequalizerOfIdentityAndAutomorphisms}( ( \alpha_i' )_{i=1}^n )</Math>.
+ The output is the morphism
+ <Math>s \rightarrow r</Math>
+ given by the functorality of the coequalizer.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="IsomorphismFromCoequalizerOfIdentityAndAutomorphismsToCoequalizer" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{CoequalizerOfIdentityAndAutomorphisms}( D ), \mathrm{Coequalizer}( D ) )</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>.
+ The output is the isomorphism
+ <Math>\mathrm{CoequalizerOfIdentityAndAutomorphisms}( D ) \rightarrow \mathrm{Coequalizer}( D )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, D" Name="IsomorphismFromCoequalizerToCoequalizerOfIdentityAndAutomorphisms" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Coequalizer}( D ), \mathrm{CoequalizerOfIdentityAndAutomorphisms}( D ) )</Math>.
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math> and a list of automorphisms <Math>D = ( \alpha_i: A \rightarrow A )_{i = 1 \dots n}</Math>.
+ The output is the isomorphism
+ <Math>\mathrm{Coequalizer}( D ) \rightarrow \mathrm{CoequalizerOfIdentityAndAutomorphisms}( D )</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Fiber_Product_(=_Pullback)">
+<Heading>Fiber Product (= Pullback)</Heading>
+
+ For an integer <Math>n \geq 1</Math> and a given list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>,
+ a fiber product of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>P</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\pi = ( \pi_i: P \rightarrow P_i )_{i = 1 \dots n}</Math> such that
+  <Math>\beta_i \circ \pi_i  \sim_{P, B} \beta_j \circ \pi_j</Math> for all pairs <Math>i,j</Math>.
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each list of morphisms
+  <Math>\tau = ( \tau_i: T \rightarrow P_i )</Math> such that
+  <Math>\beta_i \circ \tau_i  \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>
+  to a morphism <Math>u( \tau ): T \rightarrow P</Math> such that
+  <Math>\pi_i \circ u( \tau ) \sim_{T, P_i} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+</List>
+ The triple <Math>( P, \pi, u )</Math> is called a <Emph>fiber product</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>P</Math> of such a triple by <Math>\mathrm{FiberProduct}(D)</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the fiber product</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{FiberProduct}</Math> is a functorial operation. This means:
+ For a second diagram <Math>D' = (\beta_i': P_i' \rightarrow B')_{i = 1 \dots n}</Math> and a natural morphism
+ between pullback diagrams (i.e., a collection of morphisms
+ <Math>(\mu_i: P_i \rightarrow P'_i)_{i=1\dots n}</Math> and <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \mu_i \sim_{P_i,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>)
+ we obtain a morphism <Math>\mathrm{FiberProduct}( D ) \rightarrow \mathrm{FiberProduct}( D' )</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (T) at (-\w,2*\w) {$T$};
+ \node (P) at (0,\w) {$P$};
+ \node (P1) at (0,0) {$P_1$};
+ \node (B) at (\w,0) {$B$};
+ \node (P2) at (\w,\w) {$P_2$};
+ \draw[-latex] (P) to node[pos=0.45, left] {$\pi_1$} (P1);
+ \draw[-latex] (P) to node[pos=0.45, above] {$\pi_2$} (P2);
+ \draw[-latex] (P1) to node[pos=0.45, below] {$\beta_1$} (B);
+ \draw[-latex] (P2) to node[pos=0.45, right] {$\beta_2$} (B);
+ \draw[-latex] (T) to [out = -90, in = 180] node[pos=0.45, left] {$\tau_1$} (P1);
+ \draw[-latex] (T) to [out = 0, in = 90] node[pos=0.45, above] {$\tau_2$} (P2);
+ \draw[-latex, dashed] (T) to node[pos=0.45, above right] {$\exists ! u ( \tau )$} (P);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromFiberProductToEqualizerOfDirectProductDiagram" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{FiberProduct}(D), \Delta)</Math>
+</Returns>
+ <Description>
+ The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\mathrm{FiberProduct}(D) \rightarrow \Delta</Math>,
+ where <Math>\Delta</Math> denotes the equalizer of the product diagram of the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromEqualizerOfDirectProductDiagramToFiberProduct" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\Delta, \mathrm{FiberProduct}(D))</Math>
+</Returns>
+ <Description>
+ The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\Delta \rightarrow \mathrm{FiberProduct}(D)</Math>,
+ where <Math>\Delta</Math> denotes the equalizer of the product diagram of the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="FiberProductEmbeddingInDirectProduct" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{FiberProduct}(D), \prod_{i=1}^n P_i )</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is the natural embedding
+ <Math>\mathrm{FiberProduct}(D) \rightarrow \prod_{i=1}^n P_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="FiberProductEmbeddingInDirectSum" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{FiberProduct}(D), \bigoplus_{i=1}^n P_i )</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is the natural embedding
+ <Math>\mathrm{FiberProduct}(D) \rightarrow \bigoplus_{i=1}^n P_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="FiberProduct" />
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ There are two different ways to use this method:
+<List>
+<Item>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>\beta_1: P_1 \rightarrow B, \dots, \beta_n: P_n \rightarrow B</Math>.
+</Item>
+</List>
+ The output is the fiber product <Math>\mathrm{FiberProduct}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="FiberProductOp" Label="for IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is the fiber product <Math>\mathrm{FiberProduct}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k" Name="ProjectionInFactorOfFiberProduct" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{FiberProduct}(D), P_k )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+ and an integer <Math>k</Math>.
+ The output is the <Math>k</Math>-th projection
+ <Math>\pi_{k}: \mathrm{FiberProduct}(D) \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D,k,P" Name="ProjectionInFactorOfFiberProductWithGivenFiberProduct" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( P, P_k )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>,
+ an integer <Math>k</Math>,
+ and an object <Math>P = \mathrm{FiberProduct}(D)</Math>.
+ The output is the <Math>k</Math>-th projection
+ <Math>\pi_{k}: P \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="MorphismFromFiberProductToSink" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{FiberProduct}(D), B )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+ The output is the composition <Math>\mu: \mathrm{FiberProduct}(D) \rightarrow B</Math>
+ of the <Math>1</Math>-st projection <Math>\pi_1: \mathrm{FiberProduct}(D) \rightarrow P_1</Math> and <Math>\beta_1</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, P" Name="MorphismFromFiberProductToSinkWithGivenFiberProduct" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( P, B )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+ and an object <Math>P = \mathrm{FiberProduct}(D)</Math>.
+ The output is the composition <Math>\mu: P \rightarrow B</Math>
+ of the <Math>1</Math>-st projection <Math>\pi_1: P \rightarrow P_1</Math> and <Math>\beta_1</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau" Name="UniversalMorphismIntoFiberProduct" Label="for IsList, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( T, \mathrm{FiberProduct}(D) )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ and a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )</Math>
+ such that <Math>\beta_i \circ \tau_i  \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): T \rightarrow \mathrm{FiberProduct}(D)</Math>
+ given by the universal property of the fiber product.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau, P" Name="UniversalMorphismIntoFiberProductWithGivenFiberProduct" Label="for IsList, IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( T, P )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )</Math>
+ such that <Math>\beta_i \circ \tau_i  \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>,
+ and an object <Math>P = \mathrm{FiberProduct}(D)</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): T \rightarrow P</Math>
+ given by the universal property of the fiber product.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="Ls, Lm, Lr" Name="FiberProductFunctorial" Label="for IsList, IsList, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{FiberProduct}( ( \beta_i )_{i=1 \dots n} ), \mathrm{FiberProduct}( ( \beta_i' )_{i=1 \dots n} ))</Math>
+</Returns>
+ <Description>
+ The arguments are three lists of morphisms
+ <Math>L_s = ( \beta_i: P_i \rightarrow B)_{i = 1 \dots n}</Math>,
+ <Math>L_m = ( \mu_i: P_i \rightarrow P_i' )_{i = 1 \dots n}</Math>,
+ <Math>L_r = ( \beta_i': P_i' \rightarrow B')_{i = 1 \dots n}</Math>
+ having the same length <Math>n</Math>
+ such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \mu_i \sim_{P_i,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>.
+ The output is the morphism
+ <Math>\mathrm{FiberProduct}( ( \beta_i )_{i=1 \dots n} ) \rightarrow \mathrm{FiberProduct}( ( \beta_i' )_{i=1 \dots n} )</Math>
+ given by the functoriality of the fiber product.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, Ls, Lm, Lr, r" Name="FiberProductFunctorialWithGivenFiberProducts" Label="for IsCapCategoryObject, IsList, IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{FiberProduct}( ( \beta_i )_{i=1 \dots n} )</Math>,
+ three lists of morphisms
+ <Math>L_s = ( \beta_i: P_i \rightarrow B)_{i = 1 \dots n}</Math>,
+ <Math>L_m = ( \mu_i: P_i \rightarrow P_i' )_{i = 1 \dots n}</Math>,
+ <Math>L_r = ( \beta_i': P_i' \rightarrow B')_{i = 1 \dots n}</Math>
+ having the same length <Math>n</Math>
+ such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \mu_i \sim_{P_i,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>,
+ and an object <Math>r = \mathrm{FiberProduct}( ( \beta_i' )_{i=1 \dots n} )</Math>.
+ The output is the morphism
+ <Math>s \rightarrow r</Math>
+ given by the functoriality of the fiber product.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Pushout">
+<Heading>Pushout</Heading>
+
+ For an integer <Math>n \geq 1</Math> and a given list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+ a pushout of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>I</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\iota = ( \iota_i: I_i \rightarrow I )_{i = 1 \dots n}</Math> such that
+  <Math>\iota_i \circ \beta_i \sim_{B,I} \iota_j \circ \beta_j</Math> for all pairs <Math>i,j</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each list of morphisms
+  <Math>\tau = ( \tau_i: I_i \rightarrow T )_{i = 1 \dots n}</Math> such that
+  <Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>
+  to a morphism <Math>u( \tau ): I \rightarrow T</Math> such that
+  <Math>u( \tau ) \circ \iota_i \sim_{I_i, T} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+</List>
+ The triple <Math>( I, \iota, u )</Math> is called a <Emph>pushout</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>I</Math> of such a triple by <Math>\mathrm{Pushout}(D)</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the pushout</Emph>.
+ <Math>\\ </Math>
+ <Math>\mathrm{Pushout}</Math> is a functorial operation. This means:
+ For a second diagram <Math>D' = (\beta_i': B' \rightarrow I_i')_{i = 1 \dots n}</Math> and a natural morphism
+ between pushout diagrams (i.e., a collection of morphisms
+ <Math>(\mu_i: I_i \rightarrow I'_i)_{i=1\dots n}</Math> and <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \beta \sim_{B, I_i'} \mu_i \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>)
+ we obtain a morphism <Math>\mathrm{Pushout}( D ) \rightarrow \mathrm{Pushout}( D' )</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (B) at (0,0) {$B$};
+ \node (I1) at (\w,0) {$I_1$};
+ \node (I2) at (0,\w) {$I_2$};
+ \node (I) at (\w,\w) {$I$};
+ \node (T) at (2*\w,2*\w) {$T$};
+ \draw[-latex] (B) to node[pos=0.45, below] {$\beta_1$} (I1);
+ \draw[-latex] (B) to node[pos=0.45, left] {$\beta_2$} (I2);
+ \draw[-latex] (I1) to node[pos=0.45, left] {$\iota_1$} (I);
+ \draw[-latex] (I2) to node[pos=0.45, above] {$\iota_2$} (I);
+ \draw[-latex] (I1) to [out = 0, in = -90] node[pos=0.45, right] {$\tau_1$} (T);
+ \draw[-latex] (I2) to [out = 90, in = 180] node[pos=0.45, above] {$\tau_2$} (T);
+ \draw[-latex, dashed] (I) to node[pos=0.45, above left] {$\exists ! u ( \tau )$} (T);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromPushoutToCoequalizerOfCoproductDiagram" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Pushout}(D), \Delta)</Math>
+</Returns>
+ <Description>
+ The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\mathrm{Pushout}(D) \rightarrow \Delta</Math>,
+ where <Math>\Delta</Math> denotes the coequalizer of the coproduct diagram of the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromCoequalizerOfCoproductDiagramToPushout" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \Delta, \mathrm{Pushout}(D))</Math>
+</Returns>
+ <Description>
+ The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+ The output is a morphism
+ <Math>\Delta \rightarrow \mathrm{Pushout}(D)</Math>,
+ where <Math>\Delta</Math> denotes the coequalizer of the coproduct diagram of the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="PushoutProjectionFromCoproduct" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigsqcup {i=1}^n I_i, \mathrm{Pushout}(D) )</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+ The output is the natural projection
+ <Math>\bigsqcup_{i=1}^n I_i \rightarrow \mathrm{Pushout}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="PushoutProjectionFromDirectSum" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n I_i, \mathrm{Pushout}(D) )</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+ The output is the natural projection
+ <Math>\bigoplus_{i=1}^n I_i \rightarrow \mathrm{Pushout}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="Pushout" Label="for IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+ The output is the pushout <Math>\mathrm{Pushout}(D)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="Pushout" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ The arguments are a morphism <Math>\alpha</Math> and a morphism <Math>\beta</Math>.
+ The output is the pushout <Math>\mathrm{Pushout}(\alpha, \beta)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, k" Name="InjectionOfCofactorOfPushout" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( I_k, \mathrm{Pushout}( D ) )</Math>.
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+ and an integer <Math>k</Math>.
+ The output is the <Math>k</Math>-th injection
+ <Math>\iota_k: I_k \rightarrow \mathrm{Pushout}( D )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, k, I" Name="InjectionOfCofactorOfPushoutWithGivenPushout" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( I_k, I )</Math>.
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+ an integer <Math>k</Math>,
+ and an object <Math>I = \mathrm{Pushout}(D)</Math>.
+ The output is the <Math>k</Math>-th injection
+ <Math>\iota_k: I_k \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D" Name="MorphismFromSourceToPushout" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( B, \mathrm{Pushout}( D ) )</Math>.
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+ The output is the composition <Math>\mu: B \rightarrow \mathrm{Pushout}(D)</Math>
+ of <Math>\beta_1</Math> and the <Math>1</Math>-st injection <Math>\iota_1: I_1 \rightarrow \mathrm{Pushout}( D )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, I" Name="MorphismFromSourceToPushoutWithGivenPushout" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( B, I )</Math>.
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+ and an object <Math>I = \mathrm{Pushout}(D)</Math>.
+ The output is the composition <Math>\mu: B \rightarrow I</Math>
+ of <Math>\beta_1</Math> and the <Math>1</Math>-st injection <Math>\iota_1: I_1 \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau" Name="UniversalMorphismFromPushout" Label="for IsList, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Pushout}(D), T )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ and a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )_{i = 1 \dots n}</Math> such that
+ <Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): \mathrm{Pushout}(D) \rightarrow T</Math>
+ given by the universal property of the pushout.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="D, T, tau, I" Name="UniversalMorphismFromPushoutWithGivenPushout" Label="for IsList, IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( I, T )</Math>
+</Returns>
+ <Description>
+ The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>, a test object <Math>T</Math>,
+ a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )_{i = 1 \dots n}</Math> such that
+ <Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>,
+ and an object <Math>I = \mathrm{Pushout}(D)</Math>.
+ For convenience, the test object <A>T</A> can be omitted and is automatically derived from <A>tau</A> in that case.
+ The output is the morphism
+ <Math>u( \tau ): I \rightarrow T</Math>
+ given by the universal property of the pushout.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="Ls, Lm, Lr" Name="PushoutFunctorial" Label="for IsList, IsList, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{Pushout}( ( \beta_i )_{i=1}^n ), \mathrm{Pushout}( ( \beta_i' )_{i=1}^n ))</Math>
+</Returns>
+ <Description>
+ The arguments are three lists of morphisms
+ <Math>L_s = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+ <Math>L_m = ( \mu_i: I_i \rightarrow I_i' )_{i = 1 \dots n}</Math>,
+ <Math>L_r = (  \beta_i': B' \rightarrow I_i' )_{i = 1 \dots n}</Math>
+ having the same length <Math>n</Math>
+ such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \beta \sim_{B, I_i'} \mu_i \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>.
+ The output is the morphism
+ <Math>\mathrm{Pushout}( ( \beta_i )_{i=1}^n ) \rightarrow \mathrm{Pushout}( ( \beta_i' )_{i=1}^n )</Math>
+ given by the functoriality of the pushout.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, Ls, Lm, Lr, r" Name="PushoutFunctorialWithGivenPushouts" Label="for IsCapCategoryObject, IsList, IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{Pushout}( ( \beta_i )_{i=1}^n )</Math>,
+ three lists of morphisms
+ <Math>L_s = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+ <Math>L_m = ( \mu_i: I_i \rightarrow I_i' )_{i = 1 \dots n}</Math>,
+ <Math>L_r = ( \beta_i': B' \rightarrow I_i' )_{i = 1 \dots n}</Math>
+ having the same length <Math>n</Math>
+ such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+ such that <Math>\beta_i' \circ \beta \sim_{B, I_i'} \mu_i \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>,
+ and an object <Math>r = \mathrm{Pushout}( ( \beta_i' )_{i=1}^n )</Math>.
+ The output is the morphism
+ <Math>s \rightarrow r</Math>
+ given by the functoriality of the pushout.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Image">
+<Heading>Image</Heading>
+
+ For a given morphism <Math>\alpha: A \rightarrow B</Math>, an image of <Math>\alpha</Math> consists of four parts:
+<List>
+<Item>
+an object <Math>I</Math>,
+</Item>
+<Item>
+a morphism <Math>c: A \rightarrow I</Math>,
+</Item>
+<Item>
+a monomorphism <Math>\iota: I \hookrightarrow B</Math> such that <Math>\iota \circ c \sim_{A,B} \alpha</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each pair of morphisms <Math>\tau = ( \tau_1: A \rightarrow T, \tau_2: T \hookrightarrow B )</Math>
+  where <Math>\tau_2</Math> is a monomorphism
+  such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math> to a morphism
+  <Math>u(\tau): I \rightarrow T</Math> such that
+  <Math>\tau_2 \circ u(\tau) \sim_{I,B} \iota</Math> and <Math>u(\tau) \circ c \sim_{A,T} \tau_1</Math>.
+</Item>
+</List>
+ The <Math>4</Math>-tuple <Math>( I, c, \iota, u )</Math> is called an <Emph>image</Emph> of <Math>\alpha</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>I</Math> of such a <Math>4</Math>-tuple by <Math>\mathrm{im}(\alpha)</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the image</Emph>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (A) at (-\w,0) {$A$};
+ \node (B) at (\w,0) {$B$};
+ \node (I) at (0,-\w) {$I$};
+ \node (T) at (0,-2*\w) {$T$};
+ \draw[-latex] (A) to node[pos=0.45, above] {$\alpha$} (B);
+ \draw[-latex] (A) to node[pos=0.45, above right] {$c$} (I);
+ \draw[right hook-latex] (I) to node[pos=0.45, above left] {$\iota$} (B);
+ \draw[-latex] (A) to [out = -90, in = 180] node[pos=0.45, below left] {$\tau_1$} (T);
+ \draw[right hook-latex] (T) to [out = 0, in = -90] node[pos=0.45, right] {$\tau_2$} (B);
+ \draw[-latex, dashed] (I) to node[pos=0.45, right] {$u( \tau )$} (T);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Attr Arg="alpha" Name="IsomorphismFromImageObjectToKernelOfCokernel" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{im}(\alpha), \mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) ) )</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is the canonical morphism
+ <Math>\mathrm{im}(\alpha) \rightarrow \mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="IsomorphismFromKernelOfCokernelToImageObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) ), \mathrm{im}(\alpha) )</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is the canonical morphism
+ <Math>\mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) ) \rightarrow \mathrm{im}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="ImageObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is the image <Math>\mathrm{im}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="ImageEmbedding" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{im}(\alpha), B)</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the image embedding
+ <Math>\iota: \mathrm{im}(\alpha) \hookrightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, I" Name="ImageEmbeddingWithGivenImageObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I, B)</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>
+ and an object <Math>I = \mathrm{im}( \alpha )</Math>.
+ The output is the image embedding
+ <Math>\iota: I \hookrightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="CoastrictionToImage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, \mathrm{im}( \alpha ))</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the coastriction to image
+ <Math>c: A \rightarrow \mathrm{im}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, I" Name="CoastrictionToImageWithGivenImageObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, I)</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>
+ and an object <Math>I = \mathrm{im}( \alpha )</Math>.
+ The output is the coastriction to image
+ <Math>c: A \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, tau" Name="UniversalMorphismFromImage" Label="for IsCapCategoryMorphism, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{im}(\alpha), T)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+ and a pair of morphisms 
+ <Math>\tau = ( \tau_1: A \rightarrow T, \tau_2: T \hookrightarrow B )</Math>
+ where <Math>\tau_2</Math> is a monomorphism
+ such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math>.
+ The output is the morphism
+ <Math>u(\tau): \mathrm{im}(\alpha) \rightarrow T</Math>
+ given by the universal property of the image.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, tau, I" Name="UniversalMorphismFromImageWithGivenImageObject" Label="for IsCapCategoryMorphism, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I, T)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>,
+ a pair of morphisms 
+ <Math>\tau = ( \tau_1: A \rightarrow T, \tau_2: T \hookrightarrow B )</Math>
+ where <Math>\tau_2</Math> is a monomorphism
+ such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math>,
+ and an object <Math>I = \mathrm{im}( \alpha )</Math>.
+ The output is the morphism
+ <Math>u(\tau): \mathrm{im}(\alpha) \rightarrow T</Math>
+ given by the universal property of the image.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, nu, alpha_prime" Name="ImageObjectFunctorial" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{ImageObject}( \alpha ), \mathrm{ImageObject}( \alpha' ) )</Math>
+</Returns>
+ <Description>
+ The arguments are three morphisms
+ <Math>\alpha: A \rightarrow B</Math>, <Math>\nu: B \rightarrow B'</Math>, <Math>\alpha': A' \rightarrow B'</Math>.
+ The output is the morphism
+ <Math>\mathrm{ImageObject}( \alpha ) \rightarrow \mathrm{ImageObject}( \alpha' )</Math>
+ given by the functoriality of the image.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, alpha, nu, alpha_prime, r" Name="ImageObjectFunctorialWithGivenImageObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( s, r )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{ImageObject}( \alpha )</Math>,
+ three morphisms
+ <Math>\alpha: A \rightarrow B</Math>, <Math>\nu: B \rightarrow B'</Math>, <Math>\alpha': A' \rightarrow B'</Math>,
+ and an object <Math>r = \mathrm{ImageObject}( \alpha' )</Math>.
+ The output is the morphism
+ <Math>\mathrm{ImageObject}( \alpha ) \rightarrow \mathrm{ImageObject}( \alpha' )</Math>
+ given by the functoriality of the image.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Coimage">
+<Heading>Coimage</Heading>
+
+ For a given morphism <Math>\alpha: A \rightarrow B</Math>, a coimage of <Math>\alpha</Math> consists of four parts:
+<List>
+<Item>
+an object <Math>C</Math>,
+</Item>
+<Item>
+an epimorphism <Math>\pi: A \twoheadrightarrow C</Math>,
+</Item>
+<Item>
+a morphism <Math>a: C \rightarrow B</Math> such that <Math>a \circ \pi \sim_{A,B} \alpha</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each pair of morphisms <Math>\tau = ( \tau_1: A \twoheadrightarrow T, \tau_2: T \rightarrow B )</Math>
+  where <Math>\tau_1</Math> is an epimorphism
+  such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math> to a morphism
+  <Math>u(\tau): T \rightarrow C</Math> such that
+  <Math>u( \tau ) \circ \tau_1 \sim_{A,C} \pi</Math> and <Math>a \circ u( \tau ) \sim_{T,B} \tau_2</Math>.
+</Item>
+</List>
+ The <Math>4</Math>-tuple <Math>( C, \pi, a, u )</Math> is called a <Emph>coimage</Emph> of <Math>\alpha</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+ congruence of morphisms.
+ We denote the object <Math>C</Math> of such a <Math>4</Math>-tuple by <Math>\mathrm{coim}(\alpha)</Math>.
+ We say that the morphism <Math>u( \tau )</Math> is induced by the
+ <Emph>universal property of the coimage</Emph>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \node (A) at (-\w,0) {$A$};
+ \node (B) at (\w,0) {$B$};
+ \node (C) at (0,-\w) {$C$};
+ \node (T) at (0,-2*\w) {$T$};
+ \draw[-latex] (A) to node[pos=0.45, above] {$\alpha$} (B);
+ \draw[-twohead] (A) to node[pos=0.45, above right] {$\pi$} (C);
+ \draw[-latex] (C) to node[pos=0.45, above left] {$a$} (B);
+ \draw[-twohead] (A) to [out = -90, in = 180] node[pos=0.45, below left] {$\tau_1$} (T);
+ \draw[-latex] (T) to [out = 0, in = -90] node[pos=0.45, right] {$\tau_2$} (B);
+ \draw[-latex, dashed] (T) to node[pos=0.45, right] {$u( \tau )$} (C);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Attr Arg="alpha" Name="IsomorphismFromCoimageToCokernelOfKernel" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{coim}( \alpha ), \mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) ) )</Math>.
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the canonical morphism
+ <Math>\mathrm{coim}( \alpha ) \rightarrow \mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="IsomorphismFromCokernelOfKernelToCoimage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) ), \mathrm{coim}( \alpha ) )</Math>.
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the canonical morphism
+ <Math>\mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) ) \rightarrow \mathrm{coim}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="CoimageObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is the coimage <Math>\mathrm{coim}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="CoimageProjection" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, \mathrm{coim}( \alpha ))</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the coimage projection
+ <Math>\pi: A \twoheadrightarrow \mathrm{coim}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, C" Name="CoimageProjectionWithGivenCoimageObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, C)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+ and an object <Math>C = \mathrm{coim}(\alpha)</Math>.
+ The output is the coimage projection
+ <Math>\pi: A \twoheadrightarrow C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="AstrictionToCoimage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{coim}( \alpha ),B)</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the astriction to coimage
+ <Math>a: \mathrm{coim}( \alpha ) \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, C" Name="AstrictionToCoimageWithGivenCoimageObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(C,B)</Math>
+</Returns>
+ <Description>
+ The argument are a morphism <Math>\alpha: A \rightarrow B</Math>
+ and an object <Math>C = \mathrm{coim}( \alpha )</Math>.
+ The output is the astriction to coimage
+ <Math>a: C \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, tau" Name="UniversalMorphismIntoCoimage" Label="for IsCapCategoryMorphism, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \mathrm{coim}( \alpha ))</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+ and a pair of morphisms
+ <Math>\tau = ( \tau_1: A \twoheadrightarrow T, \tau_2: T \rightarrow B )</Math>
+ where <Math>\tau_1</Math> is an epimorphism
+ such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math>.
+ The output is the morphism
+ <Math>u(\tau): T \rightarrow \mathrm{coim}( \alpha )</Math>
+ given by the universal property of the coimage.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, tau, C" Name="UniversalMorphismIntoCoimageWithGivenCoimageObject" Label="for IsCapCategoryMorphism, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, C)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>,
+ a pair of morphisms
+ <Math>\tau = ( \tau_1: A \twoheadrightarrow T, \tau_2: T \rightarrow B )</Math>
+ where <Math>\tau_1</Math> is an epimorphism
+ such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math>,
+ and an object <Math>C = \mathrm{coim}( \alpha )</Math>.
+ The output is the morphism
+ <Math>u(\tau): T \rightarrow C</Math>
+ given by the universal property of the coimage.
+ </Description>
+</ManSection>
+
+ Whenever the <C>CoastrictionToImage</C> is an epi,
+ or the <C>AstrictionToCoimage</C> is a mono,
+ there is a canonical morphism from the image to the coimage.
+ If this canonical morphism is an isomorphism, we call it
+ the <Emph>canonical identification</Emph> (between image and coimage).
+<ManSection>
+  <Oper Arg="alpha, mu, alpha_prime" Name="CoimageObjectFunctorial" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{CoimageObject}( \alpha ), \mathrm{CoimageObject}( \alpha' ))</Math>
+</Returns>
+ <Description>
+ The arguments are three morphisms
+ <Math>\alpha: A \rightarrow B, \mu: A \rightarrow A', \alpha': A' \rightarrow B'</Math>.
+ The output is the morphism
+ <Math>\mathrm{CoimageObject}( \alpha ) \rightarrow \mathrm{CoimageObject}( \alpha' )</Math>
+ given by the functoriality of the coimage.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, alpha, mu, alpha_prime, r" Name="CoimageObjectFunctorialWithGivenCoimageObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = \mathrm{CoimageObject}( \alpha )</Math>,
+ three morphisms
+ <Math>\alpha: A \rightarrow B, \mu: A \rightarrow A', \alpha': A' \rightarrow B'</Math>,
+ and an object <Math>r = \mathrm{CoimageObject}( \alpha' )</Math>.
+ The output is the morphism
+ <Math>\mathrm{CoimageObject}( \alpha ) \rightarrow \mathrm{CoimageObject}( \alpha' )</Math>
+ given by the functoriality of the coimage.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Morphism_between_Coimage_and_Image">
+<Heading>Morphism between Coimage and Image</Heading>
+
+<ManSection>
+  <Attr Arg="alpha" Name="MorphismFromCoimageToImage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{coim}(\alpha), \mathrm{im}(\alpha))</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the canonical morphism (in a preabelian category)
+ <Math>\mathrm{coim}(\alpha) \rightarrow \mathrm{im}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, alpha, I" Name="MorphismFromCoimageToImageWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(C,I)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>C = \mathrm{coim}(\alpha)</Math>,
+ a morphism <Math>\alpha: A \rightarrow B</Math>,
+ and an object <Math>I = \mathrm{im}(\alpha)</Math>.
+ The output is the canonical morphism (in a preabelian category)
+ <Math>C \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="InverseOfMorphismFromCoimageToImage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{im}(\alpha), \mathrm{coim}(\alpha))</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the inverse of the canonical morphism (in an abelian category)
+ <Math>\mathrm{im}(\alpha) \rightarrow \mathrm{coim}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="I, alpha, C" Name="InverseOfMorphismFromCoimageToImageWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I,C)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>C = \mathrm{coim}(\alpha)</Math>,
+ a morphism <Math>\alpha: A \rightarrow B</Math>,
+ and an object <Math>I = \mathrm{im}(\alpha)</Math>.
+ The output is the inverse of the canonical morphism (in an abelian category)
+ <Math>I \rightarrow C</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Homology_objects">
+<Heading>Homology objects</Heading>
+
+ In an abelian category, we can define the operation
+ that takes as an input a pair of morphisms <Math>\alpha: A \rightarrow B</Math>, <Math>\beta: B \rightarrow C</Math>
+ and outputs the subquotient of <Math>B</Math> given by
+<List>
+<Item>
+<Math>H := \mathrm{KernelObject}( \beta )/ (\mathrm{KernelObject}( \beta ) \cap \mathrm{ImageObject( \alpha )}</Math>).
+</Item>
+</List>
+ This object is called a <Emph>homology object</Emph> of the pair <Math>\alpha, \beta</Math>.
+ Note that we do not need the precomposition of <Math>\alpha</Math> and <Math>\beta</Math> to be zero
+ in order to make sense of this notion.
+ Moreover, given a second pair <Math>\gamma: D \rightarrow E</Math>, <Math>\delta: E \rightarrow F</Math> of morphisms,
+ and a morphism <Math>\epsilon: B \rightarrow E</Math> such that
+ there exists <Math>\omega_1: A \rightarrow D</Math>, <Math>\omega_2: C \rightarrow F</Math>
+ with <Math>\epsilon \circ \alpha \sim_{A,E} \gamma \circ \omega_1</Math>
+ and <Math>\omega_2 \circ \beta \sim_{B,F} \delta \circ \epsilon</Math>
+ there is a functorial way to obtain from these data a morphism between the two corresponding homology objects.
+<ManSection>
+  <Oper Arg="alpha, beta" Name="HomologyObject" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: A \rightarrow B, \beta: B \rightarrow C</Math>.
+ The output is the homology object <Math>H</Math> of this pair.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta, epsilon, gamma, delta" Name="HomologyObjectFunctorial" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( H_1, H_2 )</Math>
+</Returns>
+ <Description>
+ The argument are five morphisms <Math>\alpha: A \rightarrow B</Math>, <Math>\beta: B \rightarrow C</Math>,
+ <Math>\epsilon: B \rightarrow E</Math>,
+ <Math>\gamma: D \rightarrow E, \delta: E \rightarrow F</Math>
+ such that
+ there exists <Math>\omega_1: A \rightarrow D</Math>, <Math>\omega_2: C \rightarrow F</Math>
+ with <Math>\epsilon \circ \alpha \sim_{A,E} \gamma \circ \omega_1</Math>
+ and <Math>\omega_2 \circ \beta \sim_{B,F} \delta \circ \epsilon</Math>.
+ The output is the functorial morphism induced by <Math>\epsilon</Math> between the corresponding homology objects <Math>H_1</Math> and <Math>H_2</Math>,
+ where <Math>H_1</Math> denotes the homology object of the pair <Math>\alpha, \beta</Math>,
+ and <Math>H_2</Math> denotes the homology object of the pair <Math>\gamma, \delta</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="H_1, L, H_2" Name="HomologyObjectFunctorialWithGivenHomologyObjects" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( H_1, H_2 )</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>H_1</Math>, a list <Math>L</Math> consisting of five morphisms <Math>\alpha: A \rightarrow B</Math>, <Math>\beta: B \rightarrow C</Math>,
+ <Math>\epsilon: B \rightarrow E</Math>,
+ <Math>\gamma: D \rightarrow E, \delta: E \rightarrow F</Math>,
+ and an object <Math>H_2</Math>, such that
+ <Math>H_1 = \mathrm{HomologyObject}( \alpha, \beta )</Math>
+ and <Math>H_2 = \mathrm{HomologyObject}( \gamma, \delta )</Math>,
+ and such that there exists <Math>\omega_1: A \rightarrow D</Math>, <Math>\omega_2: C \rightarrow F</Math>
+ with <Math>\epsilon \circ \alpha \sim_{A,E} \gamma \circ \omega_1</Math>
+ and <Math>\omega_2 \circ \beta \sim_{B,F} \delta \circ \epsilon</Math>.
+ The output is the functorial morphism induced by <Math>\epsilon</Math> between the corresponding homology objects <Math>H_1</Math> and <Math>H_2</Math>,
+ where <Math>H_1</Math> denotes the homology object of the pair <Math>\alpha, \beta</Math>,
+ and <Math>H_2</Math> denotes the homology object of the pair <Math>\gamma, \delta</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsomorphismFromHomologyObjectToItsConstructionAsAnImageObject" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{HomologyObject}( \alpha, \beta ), I )</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: A \rightarrow B, \beta: B \rightarrow C</Math>.
+ The output is the natural isomorphism from the homology object <Math>H</Math> of <Math>\alpha</Math> and <Math>\beta</Math>
+ to the construction of the homology object as
+ <Math>\mathrm{ImageObject}( \mathrm{PreCompose}( \mathrm{KernelEmbedding}( \beta ), \mathrm{CokernelProjection}( \alpha ) ) )</Math>,
+ denoted by <Math>I</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsomorphismFromItsConstructionAsAnImageObjectToHomologyObject" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( I, \mathrm{HomologyObject}( \alpha, \beta ) )</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: A \rightarrow B, \beta: B \rightarrow C</Math>.
+ The output is the natural isomorphism from the construction of the homology object as
+ <Math>\mathrm{ImageObject}( \mathrm{PreCompose}( \mathrm{KernelEmbedding}( \beta ), \mathrm{CokernelProjection}( \alpha ) ) )</Math>,
+ denoted by <Math>I</Math>,
+ to the homology object <Math>H</Math> of <Math>\alpha</Math> and <Math>\beta</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Universal_Objects_Section_Projective_covers_and_injective_envelopes">
+<Heading>Projective covers and injective envelopes</Heading>
+
+<ManSection>
+  <Attr Arg="A" Name="ProjectiveCoverObject" Label="for IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+  The argument is an object <Math>A</Math>.
+  The output is a projective cover of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="EpimorphismFromProjectiveCoverObject" Label="for IsCapCategoryObject"/>
+ <Returns>an epimorphism
+</Returns>
+ <Description>
+  The argument is an object <Math>A</Math>.
+  The output is an epimorphism from a projective cover of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, P" Name="EpimorphismFromProjectiveCoverObjectWithGivenProjectiveCoverObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an epimorphism
+</Returns>
+ <Description>
+  The argument is an object <Math>A</Math>.
+  The output is the epimorphism from the projective cover <Math>P</Math> of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="InjectiveEnvelopeObject" Label="for IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+  The argument is an object <Math>A</Math>.
+  The output is an injective envelope of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="MonomorphismIntoInjectiveEnvelopeObject" Label="for IsCapCategoryObject"/>
+ <Returns>a monomorphism
+</Returns>
+ <Description>
+  The argument is an object <Math>A</Math>.
+  The output is a monomorphism into an injective envelope of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="A, I" Name="MonomorphismIntoInjectiveEnvelopeObjectWithGivenInjectiveEnvelopeObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a monomorphism
+</Returns>
+ <Description>
+  The argument is an object <Math>A</Math>.
+  The output is a monomorphism into an injective envelope <Math>I</Math> of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

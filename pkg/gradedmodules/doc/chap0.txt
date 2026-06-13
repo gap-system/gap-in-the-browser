@@ -1,0 +1,146 @@
+  
+  
+                                [1X GradedModules [101X
+  
+  
+     [1X A homalg based package for the Abelian category of finitely presented
+                  graded modules over computable graded rings [101X
+  
+  
+                                   2026.04-01
+  
+  
+                                 10 April 2026
+  
+  
+                                Mohamed Barakat
+  
+                               Sebastian Gutsche
+  
+                                Sebastian Jambor
+  
+                             Markus Lange-Hegermann
+  
+                                  Arne Lorenz
+  
+                                Oleksandr Motsak
+  
+  
+  
+  Mohamed Barakat
+      Email:    [7Xmailto:mohamed.barakat@uni-siegen.de[107X
+      Homepage: [7Xhttps://mohamed-barakat.github.io[107X
+      Address:  [33X[0;14YWalter-Flex-Str. 3[133X
+                [33X[0;14Y57072 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Sebastian Gutsche
+      Email:    [7Xmailto:gutsche@mathematik.uni-siegen.de[107X
+      Homepage: [7Xhttps://sebasguts.github.io[107X
+      Address:  [33X[0;14YDepartment Mathematik[133X
+                [33X[0;14YUniversität Siegen[133X
+                [33X[0;14YWalter-Flex-Straße 3[133X
+                [33X[0;14Y57072 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Sebastian Jambor
+      Email:    [7Xmailto:sebastian.jambor@rwth-aachen.de[107X
+      Homepage: [7Xhttp://wwwb.math.rwth-aachen.de/~sebastian/[107X
+      Address:  [33X[0;14YSebastian Jambor[133X
+                [33X[0;14YLehrstuhl B fuer Mathematik, RWTH Aachen[133X
+                [33X[0;14YTemplergraben 64[133X
+                [33X[0;14Y52062 Aachen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Markus Lange-Hegermann
+      Email:    [7Xmailto:markus.lange-hegermann@hs-owl.de[107X
+      Homepage: [7Xhttps://www.th-owl.de/eecs/fachbereich/team/markus-lange-hegermann/[107X
+      Address:  [33X[0;14YMarkus Lange-Hegermann[133X
+                [33X[0;14YHochschule Ostwestfalen-Lippe[133X
+                [33X[0;14YLiebigstraße 87[133X
+                [33X[0;14Y32657 Lemgo[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Arne Lorenz
+      Email:    [7Xmailto:arne.lorenz@rwth-aachen.de[107X
+      Homepage: [7Xhttp://wwwb.math.rwth-aachen.de/~arne/[107X
+      Address:  [33X[0;14YArne Lorenz[133X
+                [33X[0;14YLehrstuhl B fuer Mathematik, RWTH Aachen[133X
+                [33X[0;14YTemplergraben 64[133X
+                [33X[0;14Y52062 Aachen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Oleksandr Motsak
+      Email:    [7Xmailto:motsak@mathematik.uni-kl.de[107X
+      Homepage: [7Xhttp://www.mathematik.uni-kl.de/~motsak/[107X
+      Address:  [33X[0;14YDepartment of Mathematics[133X
+                [33X[0;14YUniversity of Kaiserslautern[133X
+                [33X[0;14Y67653 Kaiserslautern[133X
+                [33X[0;14YGermany[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y©   2008-2015   by   Mohamed   Barakat,   Sebastian   Gutsche,   and  Markus
+  Lange-Hegermann  This  package  may  be  distributed  under  the  terms  and
+  conditions of the GNU Public License Version 2 or (at your option) any later
+  version.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (GradedModules)[101X
+  
+  1 [33X[0;0YInstallation of the [5XGradedModules[105X Package[133X
+  2 [33X[0;0YRing Maps[133X
+    2.1 [33X[0;0YRing Maps: Attributes[133X
+      2.1-1 KernelSubobject
+    2.2 [33X[0;0YRing Maps: Operations and Functions[133X
+      2.2-1 SegreMap
+      2.2-2 PlueckerMap
+      2.2-3 VeroneseMap
+  3 [33X[0;0YGradedModules[133X
+    3.1 [33X[0;0YGradedModules: Category and Representations[133X
+    3.2 [33X[0;0YGradedModules: Constructors[133X
+    3.3 [33X[0;0YGradedModules: Properties[133X
+    3.4 [33X[0;0YGradedModules: Attributes[133X
+      3.4-1 BettiTable
+      3.4-2 CastelnuovoMumfordRegularity
+      3.4-3 CastelnuovoMumfordRegularityOfSheafification
+    3.5 [33X[0;0Y[5XLISHV[105X: Logical Implications for GradedModules[133X
+    3.6 [33X[0;0YGradedModules: Operations and Functions[133X
+      3.6-1 MonomialMap
+      3.6-2 RandomMatrix
+      3.6-3 GeneratorsOfHomogeneousPart
+      3.6-4 SubmoduleGeneratedByHomogeneousPart
+      3.6-5 RepresentationMapOfRingElement
+      3.6-6 RepresentationMatrixOfKoszulId
+      3.6-7 RepresentationMapOfKoszulId
+      3.6-8 KoszulRightAdjoint
+      3.6-9 HomogeneousPartOverCoefficientsRing
+  4 [33X[0;0YThe Tate Resolution[133X
+    4.1 [33X[0;0YThe Tate Resolution: Operations and Functions[133X
+      4.1-1 TateResolution
+  5 [33X[0;0YExamples[133X
+    5.1 [33X[0;0YBetti Diagrams[133X
+      5.1-1 [33X[0;0YDE-2.2[133X
+      5.1-2 [33X[0;0YDE-Code[133X
+      5.1-3 [33X[0;0YSchenck-3.2[133X
+      5.1-4 [33X[0;0YSchenck-8.3[133X
+      5.1-5 [33X[0;0YSchenck-8.3.3[133X
+    5.2 [33X[0;0YCommutative Algebra[133X
+      5.2-1 [33X[0;0YSaturate[133X
+    5.3 [33X[0;0YGlobal Section Modules of the Induced Sheaves[133X
+      5.3-1 [33X[0;0YExamples of the ModuleOfGlobalSections Functor and Purity
+      Filtrations[133X
+      5.3-2 [33X[0;0YHorrocks Mumford bundle[133X
+  
+  
+  [32X

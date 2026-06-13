@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Irreducible numerical semigroups
+                </Heading>
+
+                In this section we provide membership tests to the two families that conform the set of irreducible numerical semigroups. We also give a procedure to compute the set of all irreducible numerical semigroups with fixed Frobenius number (or equivalently genus, since for irreducible numerical semigroups once the Frobenius number is fixed, so is the genus). Also we give a function to compute the decomposition of a numerical semigroup as an intersection of irreducible numerical semigroups.
+
+                <ManSection>
+                    <Prop Arg="s" Name="IsIrreducible" Label="for numerical semigroups"></Prop>
+                    <Prop Arg="s" Name="IsIrreducibleNumericalSemigroup"></Prop>
+
+                    <Description>
+                        <A>s</A> is a numerical semigroup. The output is <C>true</C> if <A>s</A> is irreducible,
+                        <C>false</C> otherwise.
+
+
+                        <P/>
+                        This filter implies <Ref Func="IsAlmostSymmetricNumericalSemigroup"/> and <Ref Func="IsAcuteNumericalSemigroup"/>.
+                        
+                        <Example><![CDATA[
+gap> IsIrreducible(NumericalSemigroup(4,6,9));
+true
+gap> IsIrreducibleNumericalSemigroup(NumericalSemigroup(4,6,7,9));
+false
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <!--<Prop Arg="s" Name="IsSymmetric"></Prop>-->
+                    <Attr Arg="s" Name="IsSymmetric" Label="for numerical semigroups"></Attr>
+                    <Attr Arg="s" Name="IsSymmetricNumericalSemigroup"></Attr>
+
+                    <Description>
+                        <A>s</A> is a numerical semigroup. The output is <C>true</C> if <A>s</A> is symmetric,
+                        <C>false</C> otherwise.
+
+
+                        <P/>
+                        This filter implies <Ref Func="IsIrreducibleNumericalSemigroup"/>.
+
+                        <Example><![CDATA[
+gap> IsSymmetric(NumericalSemigroup(10,23));
+true
+gap> IsSymmetricNumericalSemigroup(NumericalSemigroup(10,11,23));
+false
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                  <Prop Arg="s" Name="IsPseudoSymmetric" Label="for numerical semigroups"></Prop>
+                    <Prop Arg="s" Name="IsPseudoSymmetricNumericalSemigroup"></Prop>
+                    <Description>
+                        <A>s</A> is a numerical semigroup. The output is <C>true</C> if <A>s</A> is pseudo-symmetric,
+                        <C>false</C> otherwise.
+
+                        <P/>
+                        This filter implies <Ref Func="IsIrreducibleNumericalSemigroup"/>.
+
+                        <Example><![CDATA[
+gap> IsPseudoSymmetric(NumericalSemigroup(6,7,8,9,11));
+true
+gap> IsPseudoSymmetricNumericalSemigroup(NumericalSemigroup(4,6,9));
+false
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Func Arg="f" Name="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer. When <M>f=0</M> or <M>f\le -2</M>, the output is <C>fail</C>. Otherwise, the output is an irreducible
+                        numerical semigroup with Frobenius number <A>f</A>. From the way the procedure is
+                        implemented, the resulting semigroup has at most four generators (see <Cite Key="RGS04"></Cite>).
+                        <Example><![CDATA[
+gap> s := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);
+<Numerical semigroup with 3 generators>
+gap> MinimalGenerators(s);
+[ 3, 17, 31 ]
+gap> FrobeniusNumber(s);
+28
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Func Arg="f" Name="IrreducibleNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer. The output is the set of all
+                        irreducible numerical semigroups with Frobenius number <A>f</A>. The algorithm is inspired in <Cite Key="BR13"></Cite>.
+                        <Example><![CDATA[
+gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(19));
+20
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="f, m" Name="IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity"></Func>
+                    <Description>
+                        <A>f</A> and <A>m</A> are integers. The output is the set of all
+                        irreducible numerical semigroups with Frobenius number <A>f</A> and multiplicity <A>m</A>. The implementation appears in <Cite Key="BOR19"></Cite>.
+                        <Example><![CDATA[
+gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity(31,11));
+16
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Func Arg="s" Name="DecomposeIntoIrreducibles" Label="for numerical semigroup"></Func>
+                    <Description>
+                        <A>s</A> is a numerical semigroup. The output is a set of irreducible
+                        numerical semigroups containing it. These elements appear in a minimal
+                        decomposition of <A>s</A> as intersection into irreducibles.
+                        <Example><![CDATA[
+gap> DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));
+[ <Numerical semigroup with 3 generators>,
+  <Numerical semigroup with 4 generators> ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+            </Section>

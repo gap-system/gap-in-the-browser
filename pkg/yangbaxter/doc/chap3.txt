@@ -1,0 +1,14 @@
+  
+  [1X3 [33X[0;0YYangBaxter automatic generated documentation[133X[101X
+  
+  
+  [1X3.1 [33X[0;0YYangBaxter automatic generated documentation of properties[133X[101X
+  
+  [1X3.1-1 IsIndecomposable[101X
+  
+  [33X[1;0Y[29X[2XIsIndecomposable[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ytrue if the cycle set is indecomposable[133X
+  
+  [33X[0;0YLet  [23XX[123X  be  a  cycle  set.  We  say  that  [23XX[123X  is indecomposable if the group
+  [23X\mathcal{G}(X)=\langle\varphi_x:x\in X\rangle[123X acts transitively on [23XX[123X.[133X
+  

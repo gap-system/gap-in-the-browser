@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    HomalgToCAS
+  </Title>
+  <Subtitle>
+    A window to the outer world
+  </Subtitle>
+  <Version>
+    2026.04-01
+  </Version>
+  <Author>
+    Thomas Bächler
+<Address>
+Thomas Bächler<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>thomas@momo.math.rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~thomas/</Homepage>
+  </Author>
+  <Author>
+    Mohamed Barakat
+<Address>
+Walter-Flex-Str. 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>mohamed.barakat@uni-siegen.de</Email>
+<Homepage>https://mohamed-barakat.github.io</Homepage>
+  </Author>
+  <Author>
+    Simon Görtzen
+<Address>
+Simon Görtzen<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>simon.goertzen@rwth-aachen.de</Email>
+<Homepage>https://www.linkedin.com/in/simongoertzen/</Homepage>
+  </Author>
+  <Author>
+    Sebastian Gutsche
+<Address>
+Department Mathematik<Br/>
+Universität Siegen<Br/>
+Walter-Flex-Straße 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>gutsche@mathematik.uni-siegen.de</Email>
+<Homepage>https://sebasguts.github.io</Homepage>
+  </Author>
+  <Author>
+    Vinay Wagh
+<Address>
+E-102, Department of Mathematics,<Br/>
+Indian Institute of Technology Guwahati,<Br/>
+Guwahati, Assam, India.<Br/>
+PIN: 781 039.<Br/>
+India<Br/>
+</Address>
+<Email>waghoba@gmail.com</Email>
+<Homepage>http://www.iitg.ernet.in/vinay.wagh/</Homepage>
+  </Author>
+  <Date>
+    10 April 2026
+  </Date>
+  <Copyright>
+    &copyright; 2007-2015 by Mohamed Barakat, Thomas Breuer, Simon Görtzen, and Frank Lübeck.
+
+This package may be distributed under the terms and conditions of the GNU Public License Version 2 or (at your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+                 We are very much indebted to Max Neunhöffer who provided the first
+             piece of code around which the package &IO_ForHomalg; was built. The
+             package &HomalgToCAS; provides a further abstraction layer preparing
+             the communication.
+                    
+  </Acknowledgements>
+  </TitlePage>

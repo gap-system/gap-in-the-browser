@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Reinterpretations_of_categories">
+<Heading>Reinterpretations of categories</Heading>
+
+<P/>
+<Section Label="Chapter_Reinterpretations_of_categories_Section_Introduction">
+<Heading>Introduction</Heading>
+
+<P/>
+ The support for building towers of category constructors is one
+ of the main design features of CAP. Many categories that
+ appear in the various applications can be modeled by towers
+ of multiple category constructors.
+ The category constructor <Ref Oper="ReinterpretationOfCategory" Label="for IsCapCategory, IsRecord" />
+ allows adding one last layer on top which allows expressing
+ the desired (re)interpretation of such a modeling tower.
+ In particular, this category constructor allows specifying
+ the name of the category together with customized methods for the operations
+<List>
+<Item>
+ObjectConstructor
+</Item>
+<Item>
+MorphismConstructor
+</Item>
+<Item>
+ObjectDatum
+</Item>
+<Item>
+MorphismDatum
+</Item>
+</List>
+ in order to reflect the desired (re)interpretation with
+ a user-interface that is independent of the modeling tower (see below for details).
+ Note that the same tower might have multiple interpretations.
+<P/>
+ <Table Align="|c|">
+ <Caption>A tower of categories modeling the category <Code>R</Code></Caption>
+ <HorLine/>
+ <Row>
+   <Item><Code>R := ReinterpretationOfCategory( cat_n )</Code></Item>
+ </Row>
+ <HorLine/>
+ <Row>
+   <Item><Code>cat_n := CategoryConstructor_n( cat_{n-1} )</Code></Item>
+ </Row>
+ <HorLine/>
+ <Row>
+   <Item>...</Item>
+ </Row>
+ <HorLine/>
+ <Row>
+   <Item><Code>cat_1 := CategoryConstructor_1( non_categorical_input )</Code></Item>
+ </Row>
+ <HorLine/>
+ </Table>
+ The reinterpretation <Code>R</Code> is isomorphic to the top category <Code>cat_n</Code> in the tower.
+ In practice, the word <Q>tower</Q> stands more generally for a finite poset
+ with a greatest element.
+<P/>
+</Section>
+
+<Section Label="Chapter_Reinterpretations_of_categories_Section_Tutorial">
+<Heading>Tutorial</Heading>
+
+<P/>
+ We will show how one can reinterpret a category with the following guiding example:
+ We reinterpret <Code>Opposite( CategoryOfRows( R ) )</Code> as <Code>CategoryOfColumns( R )</Code> using
+ <Ref Oper="ReinterpretationOfCategory" Label="for IsCapCategory, IsRecord" />
+ with the options described in the following (see <Code>CategoryOfColumns_as_Opposite_CategoryOfRows.gi</Code> in
+ <Code>AdditiveClosuresForCAP</Code> for a full implementation).
+ <Enum>
+ <Item>
+     Set the options <Code>category_filter</Code>, <Code>category_object_filter</Code>, and <Code>category_morphism_filter</Code>
+     to the filters corresponding to the data structure of the desired reinterpretation,
+     e.g. <Code>IsCategoryOfColumns</Code>, <Code>IsCategoryOfColumsObject</Code>, and <Code>IsCategoryOfColumsMorphism</Code>.
+ </Item>
+ <Item>
+     Set <Code>object_constructor</Code>, <Code>object_datum</Code>, <Code>morphism_constructor</Code>, and <Code>morphism_datum</Code>
+     to the functions one would write for <Code>ObjectConstructor</Code> and so on for a primitive implementation
+     of the desired reinterpretation.
+     In our example, <Code>object_constructor</Code> takes the reinterpretation <Code>R</Code> (which lies in <Code>IsCategoryOfColumns</Code> due
+     to the filter set in the first step) and an integer, and returns a CAP object
+     in the category with attribute <Code>RankOfObject</Code> set to the integer, just like a primitive
+     implementation of <Code>CategoryOfColumns</Code> would do.
+ </Item>
+ <Item>
+    Set <Code>modeling_tower_object_constructor</Code>, <Code>modeling_tower_object_datum</Code>,
+    <Code>modeling_tower_morphism_constructor</Code>, and <Code>modeling_tower_morphism_datum</Code>:
+    <Code>modeling_tower_object_constructor</Code> gets the same input as <Code>object_constructor</Code> but must return
+    the corresponding object in the tower <Code>cat_n</Code>. <Code>modeling_tower_object_datum</Code> has the same output as <Code>object_datum</Code>
+    but gets the reinterpretation <Code>R</Code> and an object in the tower <Code>cat_n</Code> as an input.
+    In our example, <Code>modeling_tower_object_constructor</Code> gets the reinterpretation <Code>R</Code> and an integer
+    as in step 2 and wraps the integer as a <Code>CategoryOfRowsObject</Code> and the result as an object in the opposite
+    category. <Code>modeling_tower_object_datum</Code> gets the reinterpretation <Code>R</Code> and an object in
+    <Code>Opposite( CategoryOfRows( R ) )</Code> (that is, an integer boxed as a category of rows object
+    boxed as an object in the opposite category) and returns the underlying integer.
+    <Code>modeling_tower_morphism_constructor</Code> and <Code>modeling_tower_morphism_datum</Code> are given analogously.
+ </Item>
+ </Enum>
+ By composing <Code>modeling_tower_object_datum</Code> with <Code>object_constructor</Code> and <Code>modeling_tower_morphism_datum</Code> with <Code>morphism_constructor</Code>
+ (with suitable source and range), <Code>ReinterpretationOfCategory</Code> defines a functor "Reinterpretation" from <Code>cat_n</Code> to <Code>R</Code>.
+ Similarly, it defines a functor "Model" from <Code>R</Code> to <Code>cat_n</Code> by composing <Code>object_datum</Code> with
+ <Code>modeling_tower_object_constructor</Code> and <Code>morphism_datum</Code> with <Code>modeling_tower_morphism_constructor</Code> (with suitable source and range).
+ "Reinterpretation" should be an isomorphism of categories with inverse "Model".
+ More precisely, one has to take care of the following things:
+<List>
+<Item>
+Since <Code>R</Code> should just be a reinterpretation of <Code>cat_n</Code> with a nicer data structure, we certainly
+     want "Reinterpretation" to be an equivalence of categories with pseudo-inverse "Model".
+</Item>
+<Item>
+<Code>ReinterpretationOfCategory</Code> copies all properties from <Code>cat_n</Code> to <Code>R</Code>,
+     including properties like <Code>IsSkeletalCategory</Code> which are not necessarily preserved by mere equivalences.
+</Item>
+<Item>
+To fulfill the specification of WithGiven operations, reinterpreting a WithGiven object <Code>A</Code> in <Code>cat_n</Code>
+     as an object in <Code>R</Code> and taking its model again must give an object equal to <Code>A</Code>. So we require applying
+     "Reinterpretation" and then "Model" to give the identity. Conversely, let <Code>B_1</Code> be an object in <Code>R</Code>.
+     We take its model and reinterpret this again to form an object <Code>B_2</Code>. By construction of <Code>R</Code>, <Code>B_1</Code> and <Code>B_2</Code> are equal
+     if and only if their models are equal. But since applying "Reinterpretation" and then "Model" gives the identity,
+     taking the model of <Code>B_2</Code> simply gives an object equal to the model of <Code>B_1</Code>. Thus, also <Code>B_1</Code> and <Code>B_2</Code> are equal.
+     Hence, "Reinterpretation" has to be an equivalence which is a bijection on objects, and hence an isomorphism (although
+     "Model" is not necessarily its inverse).
+     Note: Alternatively, one can make sure that WithGiven operations in <Code>cat_n</Code> are only called
+     via the corresponding non-WithGiven operation in <Code>cat_n</Code>. This can be achieved by reinterpreting
+     all operations of <Code>cat_n</Code> (i.e. creating <Code>R</Code> with <Code>only_primitive_operations := false</Code>), disabling redirect functions
+     (i.e. creating <Code>R</Code> with the option <Code>overhead := false</Code>) and not calling WithGiven operations
+     of <Code>R</Code> manually.
+</Item>
+</List>
+<P/>
+</Section>
+
+<Section Label="Chapter_Reinterpretations_of_categories_Section_Implementation_details">
+<Heading>Implementation details</Heading>
+
+<P/>
+ Operations in <Code>ReinterpretationOfCategory</Code> are implemented as follows:
+ <Enum>
+ <Item>
+     Apply <Code>object_datum</Code> and <Code>morphism_datum</Code> to the input to get the underlying data.
+ </Item>
+ <Item>
+     Apply <Code>modeling_tower_object_constructor</Code> and <Code>modeling_tower_morphism_constructor</Code>
+     to the underlying data to get objects and morphisms in the tower <Code>cat_n</Code>.
+ </Item>
+ <Item>
+     Apply the operation of the tower <Code>cat_n</Code>.
+ </Item>
+ <Item>
+     Apply <Code>modeling_tower_object_datum</Code> or <Code>modeling_tower_morphism_datum</Code> to the result
+     to get the underlying data.
+ </Item>
+ <Item>
+     Apply <Code>object_constructor</Code> or <Code>morphism_constructor</Code> to the underlying data to get an
+     object or a morphism in the reinterpretation <Code>R</Code>.
+ </Item>
+ </Enum>
+ The first two steps define the functor "Model" and the last two steps define the functor "Reinterpretation".
+ "Reinterpretation" on objects and morphisms is called <Code>ReinterpretationOfObject</Code> and <Code>ReinterpretationOfMorphism</Code> in the code.
+ "Model" on objects and morphisms is called <Code>ModelingObject</Code> and <Code>ModelingMorphism</Code> in the code.
+<P/>
+</Section>
+
+<Section Label="Chapter_Reinterpretations_of_categories_Section_Relation_to_CCompilerForCAPC">
+<Heading>Relation to <C>CompilerForCAP</C></Heading>
+
+<P/>
+ The operation of the tower <Code>cat_n</Code> (step 3 above) usually unboxes objects and morphisms,
+ operates on the underlying data, and boxes the result. The unboxing usually
+ cancels with step 2 above, and boxing the result usually cancels with step 4 above.
+ If one now compiles the operations of the reinterpretation <Code>R</Code>, only the following steps remain:
+ <Enum>
+ <Item>
+     Apply <Code>object_datum</Code> and <Code>morphism_datum</Code> to the input to get the underlying data.
+ </Item>
+ <Item>
+     Operate on the underlying data. (previously part of step 3)
+ </Item>
+ <Item>
+     Apply <Code>object_constructor</Code> or <Code>morphism_constructor</Code> to the underlying data to get an
+     object or a morphism in the reinterpretation <Code>R</Code>. (previously step 5)
+ </Item>
+ </Enum>
+ This is exactly what a primitive implementation would look like. Thus, in many cases
+ compiling a reinterpretation immediately gives a primitive implementation with no remaining
+ references to the tower <Code>cat_n</Code>.
+</Section>
+
+<Section Label="Chapter_Reinterpretations_of_categories_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="R" Name="ModelingCategory" Label="for IsCapCategory"/>
+ <Returns>a category
+</Returns>
+ <Description>
+  The tower <Code>cat_n</Code> modeling the reinterpretation <A>R</A>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Reinterpretations_of_categories_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Oper Arg="category, options" Name="ReinterpretationOfCategory" Label="for IsCapCategory, IsRecord"/>
+ <Returns>a category
+</Returns>
+ <Description>
+  Reinterprets a category <A>category</A> (the "modeling category") to form a new category <Code>R</Code> (the "reinterpretation") subject to the options given via <A>options</A>,
+  which is a record with the following keys:
+<List>
+<Item>
+<Code>name</Code>: the name of the reinterpretation <Code>R</Code>,
+</Item>
+<Item>
+<Code>category_filter</Code>, <Code>category_object_filter</Code>, <Code>category_morphism_filter</Code>, <Code>object_datum_type</Code>, <Code>morphism_datum_type</Code>, <Code>object_constructor</Code>, <Code>object_datum</Code>, <Code>morphism_constructor</Code>, <Code>morphism_datum</Code>: same meaning as for <Ref Oper="CategoryConstructor" Label="for IsRecord" />, which is used to create the reinterpretation <Code>R</Code>,
+</Item>
+<Item>
+<Code>modeling_tower_object_constructor</Code>: a function which gets the reinterpretation <Code>R</Code> and an object datum (in the sense of <Code>object_datum</Code>) and returns the corresponding modeling object in the modeling category,
+</Item>
+<Item>
+<Code>modeling_tower_object_datum</Code>: a function which gets the reinterpretation <Code>R</Code> and an object in the modeling category and returns the corresponding object datum (in the sense of <Code>object_datum</Code>),
+</Item>
+<Item>
+<Code>modeling_tower_morphism_constructor</Code>: a function which gets the reinterpretation <Code>R</Code>, a source in the modeling category, a morphism datum (in the sense of <Code>morphism_datum</Code>), and a range in the modeling category and returns the corresponding modeling morphism in the modeling category,
+</Item>
+<Item>
+<Code>modeling_tower_morphism_datum</Code>: a function which gets the reinterpretation <Code>R</Code> and a morphism in the modeling category and returns the corresponding morphism datum (in the sense of <Code>morphism_datum</Code>),
+</Item>
+<Item>
+<Code>only_primitive_operations</Code> (optional, default <Keyword>false</Keyword>): whether to only reinterpret primitive operations or all operations.
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="ReinterpretationFunctor" Label="for IsCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+  Returns the functor from the modeling category <Code>ModelingCategory</Code>(<A>R</A>) to the reinterpretation <A>R</A>
+  which maps each object/morphism to its reinterpretation.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R, obj" Name="ModelingObject" Label="for IsCapCategory, IsCapCategoryObject"/>
+ <Returns>a CAP category object
+</Returns>
+ <Description>
+  Returns the object in <Code>ModelingCategory</Code>(<A>R</A>) modeling the object <A>obj</A> in the reinterpretation <A>R</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R, obj" Name="ReinterpretationOfObject" Label="for IsCapCategory, IsCapCategoryObject"/>
+ <Returns>a CAP category object
+</Returns>
+ <Description>
+  Returns the reinterpretation in <Code>R</Code> of an object <A>obj</A> in <Code>ModelingCategory</Code>(<A>R</A>).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R, mor" Name="ModelingMorphism" Label="for IsCapCategory, IsCapCategoryMorphism"/>
+ <Returns>a CAP category morphism
+</Returns>
+ <Description>
+  Returns the morphism in <Code>ModelingCategory</Code>(<A>R</A>) modeling the morphism <A>mor</A> in the reinterpretation <A>R</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R, source, mor, range" Name="ReinterpretationOfMorphism" Label="for IsCapCategory, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a CAP category morphism
+</Returns>
+ <Description>
+  Returns the reinterpretation in <Code>R</Code> with given source and range in <Code>R</Code> of a morphism <A>mor</A> in <Code>ModelingCategory</Code>(<A>R</A>).
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

@@ -1,0 +1,104 @@
+  
+  
+                                    [1X Thelma [101X
+  
+  
+                [1X THreshold ELements, Modeling and Applications [101X
+  
+  
+                                      1.3
+  
+  
+                                  3 March 2022
+  
+  
+                                  Victor Bovdi
+  
+                                  Vasyl Laver
+  
+  
+  
+  Victor Bovdi
+      Email:    [7Xmailto:vbovdi@gmail.com[107X
+      Address:  [33X[0;14YDepartment of Mathematical Sciences[133X
+                [33X[0;14YUAEU[133X
+                [33X[0;14YAl Ain, United Arab Emirates[133X
+  
+  
+  Vasyl Laver
+      Email:    [7Xmailto:vasyl.laver@uzhnu.edu.ua[107X
+      Address:  [33X[0;14YDepartment of Mathematical Sciences[133X
+                [33X[0;14YUAEU[133X
+                [33X[0;14YAl Ain, United Arab Emirates[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2018 by the authors[133X
+  
+  [33X[0;0YThis  package  may  be distributed under the terms and conditions of the GNU
+  Public License Version 2 or higher.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (Thelma)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YOverview over this manual[133X
+    1.2 [33X[0;0YInstallation[133X
+    1.3 [33X[0;0YFeedback[133X
+  2 [33X[0;0YBoolean Functions[133X
+    2.1 [33X[0;0YBasic Operations[133X
+      2.1-1 LogicFunction
+      2.1-2 IsLogicFunction
+      2.1-3 PolynomialToBooleanFunction
+      2.1-4 IsUnateInVariable
+      2.1-5 IsUnateBooleanFunction
+      2.1-6 InfluenceOfVariable
+      2.1-7 SelfDualExtensionOfBooleanFunction
+      2.1-8 SplitBooleanFunction
+      2.1-9 KernelOfBooleanFunction
+      2.1-10 ReducedKernelOfBooleanFunction
+  3 [33X[0;0YThreshold Elements[133X
+    3.1 [33X[0;0YBasic Operations[133X
+      3.1-1 ThresholdElement
+      3.1-2 IsThresholdElement
+      3.1-3 OutputOfThresholdElement
+      3.1-4 StructureOfThresholdElement
+      3.1-5 RandomThresholdElement
+      3.1-6 Comparison of Threshold Elements
+    3.2 [33X[0;0YSingle Threshold Element Realizability[133X
+      3.2-1 CharacteristicVectorOfFunction
+      3.2-2 IsCharacteristicVectorOfSTE
+      3.2-3 IsInverseInKernel
+      3.2-4 IsKernelContainingPrecedingVectors
+      3.2-5 IsRKernelBiggerOfCombSum
+      3.2-6 BooleanFunctionBySTE
+      3.2-7 PDBooleanFunctionBySTE
+    3.3 [33X[0;0YIterative Training Methods[133X
+      3.3-1 ThresholdElementTraining
+      3.3-2 ThresholdElementBatchTraining
+      3.3-3 WinnowAlgorithm
+      3.3-4 Winnow2Algorithm
+      3.3-5 STESynthesis
+  4 [33X[0;0YNetworks of Threshold Elements[133X
+    4.1 [33X[0;0YBasic Operations[133X
+      4.1-1 NeuralNetwork
+      4.1-2 IsNeuralNetwork
+      4.1-3 OutputOfNeuralNetwork
+    4.2 [33X[0;0YNetworks of Threshold Elements[133X
+      4.2-1 BooleanFunctionByNeuralNetwork
+      4.2-2 BooleanFunctionByNeuralNetworkDASG
+  5 [33X[0;0YMulti-Valued Threshold Elements[133X
+    5.1 [33X[0;0YThreshold Elements over [22XGF(p^k)[122X[133X
+      5.1-1 MVThresholdElement
+      5.1-2 IsMVThresholdElement
+      5.1-3 OutputOfMVThresholdElement
+      5.1-4 StructureOfMVThresholdElement
+      5.1-5 MVBooleanFunctionBySTE
+  
+  
+  [32X

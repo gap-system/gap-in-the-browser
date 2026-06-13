@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Finite_skeletal_discrete_categories">
+<Heading>Finite skeletal discrete categories</Heading>
+
+<P/>
+<Section Label="Chapter_Finite_skeletal_discrete_categories_Section_GAP_Categories">
+<Heading>&GAP; Categories</Heading>
+
+<ManSection>
+  <Filt Arg="C" Type="Category" Name="IsFiniteSkeletalDiscreteCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of a finite skeletal discrete category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="O" Type="Category" Name="IsObjectInFiniteSkeletalDiscreteCategory" Label="for IsCapCategoryObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of an object in a finite skeletal discrete category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="M" Type="Category" Name="IsMorphismInFiniteSkeletalDiscreteCategory" Label="for IsCapCategoryMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of a morphism in a finite skeletal discrete category.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Finite_skeletal_discrete_categories_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Func Arg="arg" Name="FiniteSkeletalDiscreteCategory" />
+ <Returns>a &CAP; category
+</Returns>
+ <Description>
+  Construct a finite skeletal discrete category.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Finite_skeletal_discrete_categories_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="arg" Name="UnderlyingListOfGapObjects" Label="for IsFiniteSkeletalDiscreteCategory"/>
+ <Returns>a list of &CAP; objects
+</Returns>
+ <Description>
+  The underlying &GAP; objects of a finite skeletal discrete category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="arg" Name="UnderlyingGapObject" Label="for IsObjectInFiniteSkeletalDiscreteCategory"/>
+ <Returns>a &CAP; object
+</Returns>
+ <Description>
+  The underlying &GAP; object of an object in a finite skeletal discrete category.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Finite_skeletal_discrete_categories_Section_Properties">
+<Heading>Properties</Heading>
+
+<ManSection>
+  <Prop Arg="C" Name="IsDiscreteCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of <A>C</A> being a discrete &CAP; category,
+  i.e., equivalent to a category in which any morphism is an identity.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

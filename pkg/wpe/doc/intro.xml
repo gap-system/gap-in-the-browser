@@ -1,0 +1,254 @@
+<Chapter Label="Intro">
+<Heading>Introduction</Heading>
+
+This chapter serves as an introduction and showcases some highlights of the package &WPE;.
+
+<Section Label="Intro Overview">
+<Heading>Overview</Heading>
+
+The package &WPE;
+<Alt Only="HTML"><![CDATA[
+(<b><u>W</u></b>reath <b><u>P</b></u>roduct <b><u>E</b></u>lements)
+]]>
+</Alt><Alt Not="HTML">
+(<E>W</E>reath <E>P</E>roduct <E>E</E>lements).
+</Alt>
+provides methods to work with elements of finite groups which are wreath products.
+It contributes to
+<Alt Only="HTML"><![CDATA[
+<center>
+<b>intuitive research</b> and <b>efficient computing</b> <p/>
+</center>
+]]>
+</Alt><Alt Not="HTML">
+<E>intuitive research</E> and <E>efficient computing</E>
+</Alt>
+in wreath products of groups.
+<P/>
+
+It allows access to a representation of wreath products,
+which we refer to as the <E>generic representation</E>,
+that is more intuitive to the User when working with wreath products of groups.
+Access is as straight-forward as using the provided command <C>IsomorphismWreathProduct</C>
+on a wreath product created by the native &GAP; command <C>WreathProduct</C>,
+see <Ref Sect="Intro Representation"/> for an example. <P/>
+
+Additionally, this representation may have computational benefits over other representations.
+Note, that just by loading the package &WPE; and without any additional setup,
+all optimizations are applied to computations
+in wreath products created by the native &GAP; command <C>WreathProduct</C>,
+by exploiting the generic representation under the hood when appropiate.
+See <Ref Sect="Intro Computations"/> for a highlight showcase of such computational problems. <P/>
+
+In particular, this package provides efficient methods for
+finding
+<Alt Only="HTML"><![CDATA[
+<b>conjugating elements</b>, <b>conjugacy classes</b>, and <b>centralizers</b>
+]]>
+</Alt><Alt Not="HTML">
+<E>conjugating elements</E>, <E>conjugacy classes</E>, and <E>centralisers</E> 
+</Alt>
+in wreath products.
+The implementations are based on an accompanying publication <Cite Key="WPE"/>,
+that generalizes results from <Cite Key="Specht"/> and <Cite Key="Ore"/> on monomial groups,
+wreath products whose top group is the full symmetric group. <P/>
+
+For example, the computation of all <M>886\,640</M> conjugacy classses of elements of the wreath product <M>W = \textrm{M}_{22} \wr \textrm{A}_9</M>
+takes about 12 seconds with &WPE;. With native &GAP; this computation is not feasible. <P/>
+<Example><![CDATA[
+gap> LoadPackage("WPE");;
+gap> K := MathieuGroup(22);;
+gap> H := AlternatingGroup(9);;
+gap> G := WreathProduct(K, H);;
+gap> C := ConjugacyClasses(G);;
+gap> Size(C);
+886640
+]]></Example>
+</Section>
+
+<Section Label="Intro Representation">
+<Heading>Intuitive Research</Heading>
+
+One of the two main goals of the package is to provide the User with tools to conduct
+<Alt Only="HTML"><![CDATA[
+<b>intuitive research</b>
+]]>
+</Alt><Alt Not="HTML">
+<E>intuitive research</E>
+</Alt>
+in wreath products of groups on the computer. <P/>
+
+In this section we present an example session which demonstrates
+how we can access the generic representation of a wreath product.
+As noted in the introduction,
+no additional setup is required
+if one wants to benefit from the optimizations for computations in wreath products (see <Ref Sect="Intro Computations"/> for examples on this). <P/>
+
+First we construct the wreath product <M>G = \textrm{Alt}(5) \wr \textrm{Sym}(7)</M> (see <Ref Sect="Wreath Product"/>).
+For this we use the native &GAP; command <Ref BookName="Reference" Oper="WreathProduct"/>.
+The resulting group is embedded into a symmetric group on <M>5 \cdot 7 = 35</M> points
+via the imprimitive action of the wreath product.
+The size of the group is
+<Display Mode="M">
+\vert G \vert = \vert\textrm{Alt}(5)\vert^7 \cdot \vert\textrm{Sym}(7)\vert = 60^7 \cdot 5\,040 = 14\,108\,774\,400\,000\,000\;.
+</Display><P/>
+<Example><![CDATA[
+gap> K := AlternatingGroup(5);;
+gap> H := SymmetricGroup(7);;
+gap> G := WreathProduct(K, H);
+<permutation group of size 14108774400000000 with 4 generators>
+]]></Example>
+
+Now we construct an isomorphism to a wreath product given in generic representation
+that is provided in &WPE;. For this, we need to load the package &WPE;.<P/>
+<Example><![CDATA[
+gap> LoadPackage("WPE");;
+gap> iso := IsomorphismWreathProduct(G);;
+gap> W := Image(iso);
+<group of size 14108774400000000 with 4 generators>
+]]></Example>
+
+Let us compare how &GAP; displays elements of <M>G</M> and <M>W</M> respectively.
+Elements of <M>G</M> are represented as permutations.
+In this representation it is hard to identify the base and top components of this element (see <Ref Sect="Wreath Product"/>). <P/>
+<Example><![CDATA[
+gap> g := (1,13,3,14,4,12,2,15,5,11)
+>         (6,31,21,7,35,25,9,33,23,8,34,24,10,32,22)
+>         (18,19,20);;
+gap> g in G;
+true
+]]></Example>
+
+Elements of <M>W</M> however are represented as generic wreath product elements (see <Ref Sect="Wreath Product"/>).
+This allows us to read off the base and top component of the element easily
+by either printing or displaying the element.
+Otherwise, by default the element is viewed in compressed form (see <Ref Sect="Display Functions"/>).
+This printing behaviour is similar to the behaviour of matrices in &GAP;. <P/>
+<Example><![CDATA[
+gap> w := g ^ iso;
+< wreath product element with 7 base components >
+gap> Print(w);
+[ (1,3,4,2,5), (2,5)(3,4), (), (3,4,5), (1,2)(4,5), (), (), (1,3)(2,7,5) ]
+gap> Display(w);
+       1           2       3      4         5       6   7       top     
+( (1,3,4,2,5), (2,5)(3,4), (), (3,4,5), (1,2)(4,5), (), (); (1,3)(2,7,5) )
+]]></Example>
+
+Furthermore, we can display and access each component easily with the provided commands. <P/>
+<Example><![CDATA[
+gap> BaseComponentOfWreathProductElement(w, 2);
+(2,5)(3,4)
+gap> TopComponentOfWreathProductElement(w);
+(1,3)(2,7,5)
+]]></Example>
+
+<Subsection>
+<Heading>The Power of Component-wise Representation</Heading>
+
+This component-wise representation is often exactly the one that we encounter in research on wreath products.
+Thus having it available on the computer greatly sharpens our intuition.
+We can make very non-trivial statements by looking at the components of such an element,
+and for the case of the element <M>w</M> even without a computer. <P/>
+
+Let us start off with an easy observation.
+Just by looking at the top component of <M>w</M>, i.e. <M>(1,3)(2,7,5)</M>,
+we can see that the smallest power
+of <M>w</M> that lies in the base group of <M>W</M> has exponent <M>6</M>,
+since it has to be equal to the order of the top component.
+<Example><![CDATA[
+gap> m := Order(w);
+30
+gap> First( [1 .. m], k -> IsOne(TopComponentOfWreathProductElement(w ^ k)) );
+6
+gap> Display(w ^ 6);
+       1            2            3       4        5       6        7       top
+( (1,2,3,5,4), (1,4,5,2,3), (1,2,3,5,4), (), (1,3,2,5,4), (), (1,3,2,5,4); () )
+]]></Example>
+
+Now let us be more advanced.
+Just by looking at the element <M>w</M>,
+we can deduce structural information on the conjugacy class <M>w^W</M>.
+All elements conjugate to <M>w</M> in <M>W = K \wr H</M> must have at least one trivial base component,
+since the territory of <M>w</M> (see <Ref Sect="Wreath Cycle"/>) contains exactly six elements, whereas the top group acts on seven points.
+<Example><![CDATA[
+gap> Length(Territory(w));
+6
+gap> NrMovedPoints(H);
+7
+]]></Example>
+
+On the other hand, all such elements must have at least three non-trivial base components,
+since the wreath cycle decomposition of <M>w</M> (see <Ref Sect="Wreath Cycle"/>) contains exactly three wreath cycles
+with non-trivial yades (see <Ref Sect="Sparse Wreath Cycle"/>).
+<Example><![CDATA[
+gap> Number(WreathCycleDecomposition(w), c -> not IsOne(Yade(c)));
+3
+]]></Example>
+
+Moreover, for each integer <M>k</M> with <M>3 \leq k \leq 6</M>
+there exists at least one conjugate element with exactly <M>k</M> non-trivial base components.
+
+</Subsection>
+</Section>
+
+<Section Label="Intro Computations">
+<Heading>Efficient Computing</Heading>
+
+One of the two main goals of the package is to empower the User to carry out
+<Alt Only="HTML"><![CDATA[
+<b>efficient computations</b>
+]]>
+</Alt><Alt Not="HTML">
+<E>efficient computations</E>
+</Alt>
+in wreath products of groups on the computer. <P/>
+
+In this section we present a highlight showcase of computational problems
+that benefit from the generic representation.
+As noted in the introduction,
+no additional setup is required
+if one wants to benefit from the optimizations for computations in wreath products.
+We simply create the wreath products via the native &GAP; command <Ref BookName="Reference" Oper="WreathProduct"/>,
+and the generic representation provided by &WPE; is used under the hood whenever appropiate. <P/>
+
+We only give a summary of some computational problems that now become approachable on the computer,
+and include examples for such computations in Chapter <Ref Chap="Tutorial"/>
+containing extensive &GAP; sessions that can be followed like a tutorial. <P/>
+
+In the following let <M>G = K \wr H</M> be a wreath product of finite groups, where <M>H \leq \textrm{Sym}(m)</M>.
+Further let <M>x, y \in P = K \wr \textrm{Sym}(m)</M>
+be elements of the parent wreath product <M>P</M>
+which is given in the same representation as <M>G</M>. <P/>
+
+<List>
+<Mark> Conjugacy Problem </Mark>
+<Item>
+Solve the conjugacy problem for <M>x</M> and <M>y</M> over <M>G</M>,
+i.e. decide whether there exists <M>c \in G</M> with <M>x^c = y</M>
+and if it does, explicitly compute such a conjugating element <M>c</M>.
+</Item>
+
+<Mark> Conjugacy Classes </Mark>
+<Item>
+Enumerate representatives of all conjugacy classes of elements of <M>G</M>,
+i.e. return elements <M>g_1, \dots, g_\ell</M> such that <M>g_1^G, \dots, g_\ell^G</M>
+are the conjugacy classes of <M>G</M>.
+</Item>
+
+<Mark> Centralizer </Mark>
+<Item>
+Compute the centralizer of <M>x</M> in <M>G</M>,
+i.e. compute a generating set of <M>C_G(x)</M>.
+</Item>
+
+<Mark> Cycle Index Polynomial</Mark>
+<Item>
+Compute the cycle index polynomial of <M>G</M> either for the imprimitive action or the product action.
+</Item>
+</List>
+
+</Section>
+
+<!-- ############################################################ -->
+
+</Chapter>

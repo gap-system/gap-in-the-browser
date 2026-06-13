@@ -1,0 +1,39 @@
+\GAPDocLabFile{lins}
+\makelabel{lins:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{lins:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{lins:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{lins:Overview}{1.1}{X8389AD927B74BA4A}
+\makelabel{lins:Examples}{1.2}{X7A489A5D79DA9E5C}
+\makelabel{lins:Example : all normal subgroups up to index n}{1.2.1}{X7F618D0D83DAB8E8}
+\makelabel{lins:Example : all normal subgroups of index n}{1.2.2}{X7C64EE208379E474}
+\makelabel{lins:Main Functions}{1.3}{X8240F18D7AFA30F4}
+\makelabel{lins:LINS Interface}{2}{X785A18B58132442A}
+\makelabel{lins:LINS Graph}{2.1}{X7FE2171385FFDCFA}
+\makelabel{lins:LINS Node}{2.2}{X78C3620F7CD6CBA1}
+\makelabel{lins:LINS Search Functions}{2.3}{X7C993B5A7C54E27B}
+\makelabel{lins:Examples}{2.4}{X7A489A5D79DA9E5C}
+\makelabel{lins:Revised Example : all normal subgroups up to index n}{2.4.1}{X8710B1687E0AFB86}
+\makelabel{lins:Revised Example : all normal subgroups of index n}{2.4.2}{X78E0C77181121AB2}
+\makelabel{lins:Example : a normal subgroup of index n}{2.4.3}{X82F9F3B67D438032}
+\makelabel{lins:LINS Search}{3}{X7B66546A7F17A46A}
+\makelabel{lins:LINS Search Options}{3.1}{X7E1489817AF4CDDB}
+\makelabel{lins:License}{4}{X861E5DF986F89AE2}
+\makelabel{lins:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{lins:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{lins:Index}{Ind}{X83A0356F839C696F}
+\makelabel{lins:LowIndexNormalSubs}{1.3.1}{X7BDB05377BFE069C}
+\makelabel{lins:List for a lins graph}{2.1.1}{X805D91168165F914}
+\makelabel{lins:ComputedNormalSubgroups}{2.1.2}{X7C5BDEAA86131918}
+\makelabel{lins:LinsRoot}{2.1.3}{X7982DB9485ED76E7}
+\makelabel{lins:IndexBound}{2.1.4}{X7A5319077C05B8E7}
+\makelabel{lins:LinsOptions}{2.1.5}{X831B320C79AA71A4}
+\makelabel{lins:IsomorphismFpGroup for a lins graph}{2.1.6}{X828E91E67C410968}
+\makelabel{lins:Grp for a lins node}{2.2.1}{X7BEE08B378362A2B}
+\makelabel{lins:Index for a lins node}{2.2.2}{X7B06D640788992F7}
+\makelabel{lins:LinsNodeMinimalSupergroups}{2.2.3}{X81D3F0917ED3C8D2}
+\makelabel{lins:LinsNodeMinimalSubgroups}{2.2.4}{X848673C8803B8DE3}
+\makelabel{lins:LinsNodeSupergroups}{2.2.5}{X7BE4DCA080C54191}
+\makelabel{lins:LinsNodeSubgroups}{2.2.6}{X7EAE7C1F87B8F113}
+\makelabel{lins:LowIndexNormalSubgroupsSearch}{2.3.1}{X8064963E80A5D83F}
+\makelabel{lins:LowIndexNormalSubgroupsSearchForAll}{2.3.2}{X87176F3085F306FF}
+\makelabel{lins:LowIndexNormalSubgroupsSearchForIndex}{2.3.3}{X871127A07C12AD32}

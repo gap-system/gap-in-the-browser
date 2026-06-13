@@ -1,0 +1,110 @@
+  
+  [1X1 [33X[0;0YIntroduction[133X[101X
+  
+  [33X[0;0YThe  [5XIBNP[105X  package  provides  methods  for computing an involutive (Gröbner)
+  basis  [22XB[122X for an ideal [22XJ[122X over a polynomial ring [22XR[122X in both the commutative and
+  noncommutative  cases. Secondly, methods are provided to involutively reduce
+  a given polynomial to its normal form in [22XR/J[122X.[133X
+  
+  [33X[0;0YThis  package  was  started  using  [5XGAP[105X  4.13.1  and first released with [5XGAP[105X
+  4.15.0.[133X
+  
+  [33X[0;0YThe package is loaded with the command[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XLoadPackage( "ibnp" ); [127X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  package may be obtained as a compressed [10X.tar[110X file [11XIBNP-0.16.tar.gz[111X from
+  the                   GitHub                  release                  site:
+  [7Xhttps://github.com/gap-packages/ibnp/releases/tag/v0.16[107X.  The  package  also
+  has a GitHub repository at: [7Xhttps://github.com/gap-packages/ibnp[107X.[133X
+  
+  [33X[0;0YOnce  the  package  is loaded, the manual [10Xdoc/manual.pdf[110X can be found in the
+  documentation  folder.  The  [10Xhtml[110X  versions, with or without MathJax, may be
+  rebuilt as follows:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XReadPackage( "ibnp", "makedoc.g" ); [127X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIt  is  possible  to  check that the package has been installed correctly by
+  running the test files (this terminates the [5XGAP[105X session):[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XTestPackage( "ibnp" );[127X[104X
+    [4X[28XArchitecture: . . . . . [128X[104X
+    [4X[28Xtesting: . . . . . [128X[104X
+    [4X[28X. . . [128X[104X
+    [4X[28X#I  No errors detected while testing[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X1.1 [33X[0;0YHistory[133X[101X
+  
+  [33X[0;0YThe   theoretical   basis   behind   this   package   is  the  Ph.D.  thesis
+  "Noncommutative Involutive Bases" of Gareth Evans in 2005 [Eva05]. (The main
+  concepts and results may also be found in the papers [Eva70] and [EW07].) We
+  quote here the summary from that thesis.[133X
+  
+  [33X[0;0Y[13XThe theory of Gröbner Bases originated in the work of Buchberger [Buc98] and
+  is  now  considered  to  be  one  of  the most important and useful areas of
+  symbolic  computation.  A  great  deal of effort has been put into improving
+  Buchberger's  algorithm for computing a Gröbner Basis, and indeed in finding
+  alternative methods of computing Gröbner Bases. Two of these methods include
+  the  Gröbner  Walk  method  [AGK97]  and the computation of Involutive Bases
+  [ZB96].[113X[133X
+  
+  [33X[0;0Y[13XBy the mid 1980's, Buchberger's work had been generalised for noncommutative
+  polynomial  rings  by Bergman [Ber78] and Mora [Mor86]. This thesis provides
+  the  corresponding  generalisation  for  Involutive  Bases  and (to a lesser
+  extent) the Gröbner Walk, with the main results being as follows. [113X[133X
+  
+  [30X    [33X[0;6Y[13XAlgorithms  for  several  new  noncommutative involutive divisions are
+        given, including strong; weak; global and local divisions.[113X[133X
+  
+  [30X    [33X[0;6Y[13XAn algorithm for computing a noncommutative Involutive Basis is given.
+        When  used  with one of the aforementioned involutive divisions, it is
+        shown  that  this  algorithm returns a noncommutative Gröbner Basis on
+        termination.[113X[133X
+  
+  [30X    [33X[0;6Y[13XAn  algorithm  for a noncommutative Gröbner Walk is given, in the case
+        of  conversion  between two harmonious monomial orderings. It is shown
+        that  this algorithm generalises to give an algorithm for performing a
+        noncommutative  Involutive  Walk,  again  in  the  case  of conversion
+        between two harmonious monomial orderings.[113X[133X
+  
+  [30X    [33X[0;6Y[13XTwo  new properties of commutative involutive divisions are introduced
+        (stability  and  extendibility), respectively ensuring the termination
+        of the Involutive Basis algorithm and the applicability (under certain
+        conditions) of homogeneous methods of computing Involutive Bases.[113X[133X
+  
+  [33X[0;0Y[13XSource  code  for  an  initial  implementation  of  an  algorithm to compute
+  noncommutative Involutive Bases is provided in Appendix B. This source code,
+  written  using  ANSI  C and a series of libraries (AlgLib) provided by MSSRC
+  forms  part  of  a larger collection of programs providing examples for this
+  thesis,  including  implementations  of  the  commutative and noncommutative
+  Gröbner  Basis algorithms [Buc98], [Mor86]; the commutative Involutive Basis
+  algorithm  for  the  Pommaret and Janet involutive divisions [ZB96]; and the
+  Knuth-Bendix  critical pairs completion algorithm for monoid rewrite systems
+  [KB04].[113X[133X
+  
+  [33X[0;0YThe  implementations  described  in  the  last  paragraph  formed  a package
+  [13XInvolutive[113X   in   2005.  This  was  based  on  libraries  developed  by  the
+  [13XMultidisciplinary   Software  Systems  Research  Corporation[113X  (MSSRC)  which
+  apparently  no longer exists. This software was provided for the research by
+  Larry  Lambe  who was an Honorary Professor in the Mathematics Department at
+  Bangor at that time. (For an example of his work, see [LR97].)[133X
+  
+  [33X[0;0YIt  has  long  been  our intention to make these algorithms available to the
+  wider  symbolic  computation  community, and this [5XGAP[105X package is the result.
+  Involutive  Bases are constructed, but Gröbner Walks will have to wait until
+  a  later  version.  In  place  of  the  AlgLib  library functions we use the
+  noncommutative polynomial operations provided by the [5XGBNP[105X [CK24] package.[133X
+  

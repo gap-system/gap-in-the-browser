@@ -1,0 +1,21 @@
+<!ENTITY ABBREV 'SCN'>
+<!ENTITY ARCHIVEURL 'https://github.com/stertooy/SmallClassNr/releases/download/v1.5.1/SmallClassNr-1.5.1'>
+<!ENTITY AUTHOR 'Sam Tertooy'>
+<!ENTITY AUTHORREVERSED 'Tertooy, Sam'>
+<!ENTITY AtlasRep '<Package>AtlasRep</Package>'>
+<!ENTITY AutoDoc '<Package>AutoDoc</Package>'>
+<!ENTITY BibLaTeX 'Bib&LaTeX;'>
+<!ENTITY HOMEURL 'https://stertooy.github.io/SmallClassNr'>
+<!ENTITY ISSUEURL 'https://github.com/stertooy/SmallClassNr/issues'>
+<!ENTITY PACKAGENAME '<Package>SmallClassNr</Package>'>
+<!ENTITY PackageManager '<Package>PackageManager</Package>'>
+<!ENTITY PackageName 'SmallClassNr'>
+<!ENTITY PrimGrp '<Package>PrimGrp</Package>'>
+<!ENTITY RELEASEDATE '11 May 2026'>
+<!ENTITY RELEASEYEAR '2026'>
+<!ENTITY SUBTITLE 'Library of finite groups with small class number'>
+<!ENTITY SUPPORTEMAIL 'sam.tertooy@kuleuven.be'>
+<!ENTITY SmallClassNr '<Package>SmallClassNr</Package>'>
+<!ENTITY SmallGrp '<Package>SmallGrp</Package>'>
+<!ENTITY TransGrp '<Package>TransGrp</Package>'>
+<!ENTITY VERSION '1.5.1'>

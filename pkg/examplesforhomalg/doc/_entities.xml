@@ -1,0 +1,6 @@
+<!ENTITY homalg 'homalg'>
+<!ENTITY VERSION '2025.12-01'>
+<!ENTITY RELEASEDATE '23 December 2025'>
+<!ENTITY RELEASEYEAR '2025'>
+<!ENTITY CAP 'CAP'>
+<!ENTITY ExamplesForHomalg '<Package>ExamplesForHomalg</Package>'>

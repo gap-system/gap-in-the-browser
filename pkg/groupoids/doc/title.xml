@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    groupoids
+  </Title>
+  <Subtitle>
+    Calculations with finite groupoids and their homomorphisms
+  </Subtitle>
+  <Version>
+    1.81
+  </Version>
+  <Author>
+    Emma J. Moore<Alt Only="LaTeX"><Br/></Alt>
+
+  </Author>
+  <Author>
+    Chris Wensley<Alt Only="LaTeX"><Br/></Alt>
+<Email>cdwensley.maths@btinternet.com</Email>
+<Homepage>https://github.com/cdwensley</Homepage>
+
+  </Author>
+  <Date>
+    26 November 2025
+  </Date>
+  <Abstract>
+    The &groupoids; package provides functions for computation with groupoids (categories with every arrow invertible) and their morphisms; for graphs of groups, and graphs of groupoids.
+The most basic structure introduced is that of <E>magma with objects</E>; followed by <E>semigroup with objects</E>; then <E>monoid with objects</E>; and finally <E>groupoid</E>, which is a <E>group with objects</E>.
+ <P/>It provides normal forms for Free Products with Amalgamation and for HNN-extensions when the initial groups have rewrite systems and the subgroups have finite index. <P/>The &groupoids; package was originally implemented in 2000 (as <Package>GraphGpd</Package>) when the first author was studying for a Ph.D. in Bangor.
+ <P/>The package was then renamed <Package>Gpd</Package> and version 1.07 was released in July 2011, ready for &GAP; 4.5.
+ <P/><Package>Gpd</Package> became an accepted &GAP; package in May 2015.
+ <P/>In April 2017 the package was renamed again, as <Package>groupoids</Package>.
+ <P/>Later versions implement many of the constructions described in the paper <Cite Key='AlWe' /> for automorphisms of groupoids.
+ <P/>Bug reports, comments, suggestions for additional features, and offers to implement some of these, will all be very welcome.
+ <P/>Please submit any issues at <URL>https://github.com/gap-packages/groupoids/issues/</URL> or send an email to the second author at <Email>cdwensley.maths@btinternet.com</Email>.
+ <P/>
+  </Abstract>
+  <Copyright>
+    © 2000-2025, Emma Moore and Chris Wensley.<P/>
+The &groupoids; package is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+    This documentation was prepared using the &GAPDoc; <Cite Key='GAPDoc'/> and &AutoDoc; <Cite Key='AutoDoc'/> packages.<P/>
+The procedure used to produce new releases uses the package <Package>GitHubPagesForGAP</Package> <Cite Key='GitHubPagesForGAP' /> and the package <Package>ReleaseTools</Package>.<P/>
+  </Acknowledgements>
+  </TitlePage>

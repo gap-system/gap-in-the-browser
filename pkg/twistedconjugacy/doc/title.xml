@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    TwistedConjugacy
+  </Title>
+  <Subtitle>
+    Computation with twisted conjugacy classes
+  </Subtitle>
+  <Version>
+    3.3.2
+  </Version>
+  <Author>
+    Sam Tertooy
+<Address>
+            Wiskunde<Br/>
+            KU Leuven, Kulak Kortrijk Campus<Br/>
+            Etienne Sabbelaan 53<Br/>
+            8500 Kortrijk<Br/>
+            Belgium<Br/>
+        <Br/>
+</Address>
+<Email>sam.tertooy@kuleuven.be</Email>
+<Homepage>https://stertooy.github.io/</Homepage>
+  </Author>
+  <Date>
+    11 May 2026
+  </Date>
+  <Abstract>
+    
+    The &PACKAGENAME; package provides methods for solving the twisted
+    conjugacy problem (including the "search" and "multiple" variants) and for
+    computing Reidemeister classes, numbers, spectra, and zeta functions. It
+    also includes utility functions for working with (double) cosets, group
+    homomorphisms, and group derivations.
+    <P/>
+    These methods are primarily designed for use with finite groups and with
+    PcpGroups (finite or infinite) provided by the &Polycyclic; package.
+  </Abstract>
+  <Copyright>
+    
+    &copyright; 2020&ndash;&RELEASEYEAR; &AUTHOR;
+    <P/>
+    The &PACKAGENAME; package is free software, it may be redistributed
+    and/or modified under the terms and conditions of the
+    <URL Text="GNU Public License Version 2">
+    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html</URL> or
+    (at your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+    
+    This documentation was created using the &GAPDoc; and &AutoDoc; packages.
+  </Acknowledgements>
+  </TitlePage>

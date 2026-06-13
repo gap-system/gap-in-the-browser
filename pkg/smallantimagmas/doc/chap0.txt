@@ -1,0 +1,91 @@
+  
+  
+                               [1X smallantimagmas [101X
+  
+  
+              [1X A library of antiassociative magmas of small order [101X
+  
+  
+                                     0.5.1
+  
+  
+                               26 September 2025
+  
+  
+                                Kamil Zabielski
+  
+                                Ryszard Mazurek
+  
+  
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2024 by Kamil Zabielski[133X
+  
+  [33X[0;0Y[5Xsmallantimagmas[105X  package  is  free  software; you can redistribute it and/or
+  modify   it   under   the   terms   of   the   GNU  General  Public  License
+  ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
+  Foundation;  either  version 2 of the License, or (at your option) any later
+  version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YWe  appreciate  very  much  all  past  and  future comments, suggestions and
+  contributions  to  this  package and its documentation provided by [5XGAP[105X users
+  and developers.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (smallantimagmas)[101X
+  
+  1 [33X[0;0Ysmallantimagmas automatic generated documentation[133X
+    1.1 [33X[0;0Ysmallantimagmas automatic generated documentation of properties[133X
+      1.1-1 IsAntiassociative
+      1.1-2 IsLeftCyclic
+      1.1-3 IsRightCyclic
+      1.1-4 IsLeftDistributive
+      1.1-5 IsRightDistributive
+      1.1-6 IsLeftCancellative
+      1.1-7 IsRightCancellative
+      1.1-8 IsCancellative
+      1.1-9 IsLeftFPFInducted
+      1.1-10 IsRightFPFInducted
+      1.1-11 IsLeftDerangementInducted
+      1.1-12 IsRightDerangementInducted
+      1.1-13 IsLeftAlternative
+      1.1-14 IsRightAlternative
+    1.2 [33X[0;0Ysmallantimagmas automatic generated documentation of attributes[133X
+      1.2-1 AssociativityIndex
+      1.2-2 DiagonalOfMultiplicationTable
+      1.2-3 CommutativityIndex
+      1.2-4 AnticommutativityIndex
+      1.2-5 SquaresIndex
+      1.2-6 IdSmallAntimagma
+      1.2-7 LeftOrder
+      1.2-8 RightOrder
+      1.2-9 LeftOrdersOfElements
+      1.2-10 RightOrdersOfElements
+    1.3 [33X[0;0Ysmallantimagmas automatic generated documentation of global functions[133X
+      1.3-1 AllSubmagmas
+      1.3-2 MagmaIsomorphismInvariantsMatch
+      1.3-3 IsMagmaIsomorphic
+      1.3-4 IsMagmaAntiisomorphic
+      1.3-5 TransposedMagma
+      1.3-6 LeftPower
+      1.3-7 RightPower
+      1.3-8 AllSmallAntimagmas
+      1.3-9 NrSmallAntimagmas
+      1.3-10 SmallAntimagma
+      1.3-11 OneSmallAntimagma
+      1.3-12 ReallyAllSmallAntimagmas
+      1.3-13 ReallyNrSmallAntimagmas
+    1.4 [33X[0;0Ysmallantimagmas automatic generated documentation of methods[133X
+      1.4-1 MagmaIsomorphism
+      1.4-2 MagmaAntiisomorphism
+  
+  
+  [32X

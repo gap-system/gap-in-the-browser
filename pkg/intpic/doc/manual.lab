@@ -1,0 +1,51 @@
+\GAPDocLabFile{intpic}
+\makelabel{intpic:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{intpic:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{intpic:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{intpic:Colophon}{}{X7982162280BC7A61}
+\makelabel{intpic:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{intpic:The IntPic package}{1}{X79BA16537ECA4E8C}
+\makelabel{intpic:Overview and Introduction}{1.1}{X87F9EA0A83C0DC65}
+\makelabel{intpic:Installing IntPic}{1.2}{X7E6FBD357AC754D6}
+\makelabel{intpic:Loading IntPic}{1.3}{X838AC2C87F7E21C2}
+\makelabel{intpic:The IntPic package main function}{2}{X83A243C47B056636}
+\makelabel{intpic:The main function}{2.1}{X80ABA2918548E108}
+\makelabel{intpic:Tikz code for arrays of integers}{2.1.1}{X858D6CD18272C90F}
+\makelabel{intpic:Tikz code for arrays, in a simplified way}{2.1.2}{X7D3BCADE7903D62D}
+\makelabel{intpic:Producing tables}{2.2}{X7EF12D7787D2A886}
+\makelabel{intpic:The colors in the IntPic package}{3}{X84CF24A9842321F1}
+\makelabel{intpic:Colors by tones}{3.1}{X85FF17E579A5481F}
+\makelabel{intpic:Lists of colors}{3.2}{X835CFDFB7C27CC26}
+\makelabel{intpic:The IntPic default list of colors}{3.3}{X8398FC50810C46E9}
+\makelabel{intpic:Functions to deal with colors}{3.4}{X7BD48BC279D8FDF4}
+\makelabel{intpic:Shuffle colors from lists of colors}{3.4.1}{X795C4D9A7B1A2600}
+\makelabel{intpic:Visualization of the pictures created}{4}{X79BE6CBC7AA29804}
+\makelabel{intpic:Viewing using Viz}{4.1}{X814F5C4A8192D756}
+\makelabel{intpic:Viewing without using Viz}{4.2}{X84C1E5D278E701CC}
+\makelabel{intpic:A complete example}{4.2.1}{X7B47AFA881BFC9DC}
+\makelabel{intpic:Other examples of use of the IntPic package}{4.3}{X80799C0678DFAA4D}
+\makelabel{intpic:Varia}{4.3.1}{X850A57EF80CDB124}
+\makelabel{intpic:The banner}{4.3.2}{X784E0A5A7DB88332}
+\makelabel{intpic:The IntPic package options.}{5}{X7DE2DA167A0098E7}
+\makelabel{intpic:Available options}{5.1}{X83F97BF484ED50E5}
+\makelabel{intpic:Default options}{5.2}{X7B1EC49C7F448906}
+\makelabel{intpic:Ilustrating the use of options}{5.3}{X7F3BBC377ECE5463}
+\makelabel{intpic:Usage of IntPic in connection with the numericalsgps package}{6}{X7E08032186064BAD}
+\makelabel{intpic:Tikz code for drawing numerical semigroups}{6.1}{X7B3048667C19F30D}
+\makelabel{intpic:Tikz code for drawing numerical semigroups}{6.1.1}{X7B3048667C19F30D}
+\makelabel{intpic:Drawing a numerical semigroup}{6.1.2}{X84B40345825B0B0E}
+\makelabel{intpic:Drawing sets of numerical semigroups}{6.2}{X7BF14BF082E52625}
+\makelabel{intpic:Set of numerical semigroups}{6.2.1}{X78B4B1D0810D457B}
+\makelabel{intpic:Draw a set of numerical semigroups}{6.2.2}{X7D735F977FDCA8A0}
+\makelabel{intpic:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{intpic:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{intpic:Index}{Ind}{X83A0356F839C696F}
+\makelabel{intpic:License}{}{X81488B807F2A1CF1}
+\makelabel{intpic:IPTikzArrayOfIntegers}{2.1.1}{X858D6CD18272C90F}
+\makelabel{intpic:IPSimpleTikzArrayOfIntegers}{2.1.2}{X7D3BCADE7903D62D}
+\makelabel{intpic:IPTableWithModularOrder}{2.2.1}{X816D055F845B0D71}
+\makelabel{intpic:ShuffleIPColors}{3.4.1}{X795C4D9A7B1A2600}
+\makelabel{intpic:TikzCodeForNumericalSemigroup}{6.1.1}{X7B3048667C19F30D}
+\makelabel{intpic:DrawNumericalSemigroup}{6.1.2}{X84B40345825B0B0E}
+\makelabel{intpic:SetOfNumericalSemigroups}{6.2.1}{X78B4B1D0810D457B}
+\makelabel{intpic:DrawSetOfNumericalSemigroups}{6.2.2}{X7D735F977FDCA8A0}

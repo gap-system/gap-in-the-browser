@@ -1,0 +1,188 @@
+  
+  [1X10 [33X[0;0YAffine actions[133X[101X
+  
+  [33X[0;0YLet [23XG[123X and [23XH[123X be groups, let [23XH[123X act on [23XG[123X (via automorphisms) by[133X
+  
+  
+  [24X[33X[0;6Y\alpha \colon H \to \operatorname{Aut}(G) \colon h \mapsto \alpha_h[133X
+  
+  [124X
+  
+  [33X[0;0Yand  let  [23X\delta  \colon  H \to G[123X be a group derivation with respect to this
+  action.  Then  we  can  construct  a  new  action,  called the [13Xaffine action[113X
+  associated to [23X\delta[123X, by[133X
+  
+  
+  [24X[33X[0;6YG \times H \to G \colon g^h = \alpha_h(g) \delta(h).[133X
+  
+  [124X
+  
+  [33X[0;0YIf [23XK[123X is a subgroup of [23XH[123X, then the restriction of the affine action of [23XH[123X on [23XG[123X
+  to  [23XK[123X  coincides  with  the  affine  action  of  [23XK[123X  on  [23XG[123X  associated to the
+  restriction of [23X\delta[123X to [23XK[123X.[133X
+  
+  [33X[0;0YAlgorithms  designed  for  computing  with  twisted conjugacy classes can be
+  leveraged  to do computations involving affine actions, see [Ter26, Sec. 10]
+  for a description on this.[133X
+  
+  [33X[0;0YPlease  note  that  the  functions in this chapter require [23XG[123X and [23XH[123X to either
+  both be finite, or both be PcpGroups.[133X
+  
+  
+  [1X10.1 [33X[0;0YCreating an affine action[133X[101X
+  
+  [1X10.1-1 AffineActionByGroupDerivation[101X
+  
+  [33X[1;0Y[29X[2XAffineActionByGroupDerivation[102X( [3XK[103X, [3Xder[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ythe affine action of [3XK[103X associated to the derivation [3Xder[103X.[133X
+  
+  [33X[0;0YThe group [3XK[103X must be a subgroup of [10XSource([3Xder[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xaff := AffineActionByGroupDerivation( H, der );[127X[104X
+    [4X[28Xfunction( g, k ) ... end[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X10.2 [33X[0;0YOperations for affine actions[133X[101X
+  
+  [33X[0;0YThese functions are analogues of existing [5XGAP[105X functions for group actions.[133X
+  
+  
+  [1X10.2-1 [33X[0;0YOrbitAffineAction[133X[101X
+  
+  [33X[1;0Y[29X[2XOrbitAffineAction[102X( [3XK[103X, [3Xg[103X, [3Xder[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ythe orbit of [3Xg[103X under the affine action of [3XK[103X associated to [3Xder[103X.[133X
+  
+  [33X[0;0YThe group [3XK[103X must be a subgroup of [10XSource([3Xder[103X[10X)[110X.[133X
+  
+  
+  [1X10.2-2 [33X[0;0YOrbitsAffineAction[133X[101X
+  
+  [33X[1;0Y[29X[2XOrbitsAffineAction[102X( [3XK[103X, [3Xder[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya  list  containing  the  orbits  under  the  affine  action  of [3XK[103X
+            associated to [3Xder[103X if there are finitely many, or [9Xfail[109X if there are
+            infinitely many.[133X
+  
+  [33X[0;0YThe group [3XK[103X must be a subgroup of [10XSource([3Xder[103X[10X)[110X.[133X
+  
+  
+  [1X10.2-3 [33X[0;0YNrOrbitsAffineAction[133X[101X
+  
+  [33X[1;0Y[29X[2XNrOrbitsAffineAction[102X( [3XK[103X, [3Xder[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ythe  number  of  orbits under the affine action of [3XK[103X associated to
+            [3Xder[103X.[133X
+  
+  
+  [1X10.2-4 [33X[0;0YStabiliserAffineAction[133X[101X
+  
+  [33X[1;0Y[29X[2XStabiliserAffineAction[102X( [3XK[103X, [3Xg[103X, [3Xder[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XStabilizerAffineAction[102X( [3XK[103X, [3Xg[103X, [3Xder[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ythe  stabiliser  of  [3Xg[103X  under the affine action of [3XK[103X associated to
+            [3Xder[103X.[133X
+  
+  [33X[0;0YThe group [3XK[103X must be a subgroup of [10XSource([3Xder[103X[10X)[110X.[133X
+  
+  
+  [1X10.2-5 [33X[0;0YRepresentativeAffineAction[133X[101X
+  
+  [33X[1;0Y[29X[2XRepresentativeAffineAction[102X( [3XK[103X, [3Xg1[103X, [3Xg2[103X, [3Xder[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Yan  element  of  [3XK[103X that maps [3Xg1[103X to [3Xg2[103X under the affine action of [3XK[103X
+            associated to [3Xder[103X, or [9Xfail[109X if no such element exists.[133X
+  
+  [33X[0;0YThe group [3XK[103X must be a subgroup of [10XSource([3Xder[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg1 := G.1;;[127X[104X
+    [4X[25Xgap>[125X [27Xorb := OrbitAffineAction( H, g1, der );[127X[104X
+    [4X[28Xf1^G[128X[104X
+    [4X[25Xgap>[125X [27XNrOrbitsAffineAction( H, der );[127X[104X
+    [4X[28X10[128X[104X
+    [4X[25Xgap>[125X [27Xstab := StabiliserAffineAction( H, g1, der );;[127X[104X
+    [4X[25Xgap>[125X [27XSet( stab );[127X[104X
+    [4X[28X[ <identity> of ..., f3, f3^2, f2^2*f5, f2*f4*f5,[128X[104X
+    [4X[28X  f2^2*f3*f5, f2*f3*f4*f5, f2^2*f3^2*f5, f2*f3^2*f4*f5 ][128X[104X
+    [4X[25Xgap>[125X [27Xg2 := G.1 * G.4 * G.5;;[127X[104X
+    [4X[25Xgap>[125X [27Xh := RepresentativeAffineAction( H, g1, g2, der );;[127X[104X
+    [4X[25Xgap>[125X [27Xaff( g1, h ) = g2;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X10.3 [33X[0;0YOperations on orbits of affine actions[133X[101X
+  
+  
+  [1X10.3-1 [33X[0;0YRepresentative[133X[101X
+  
+  [33X[1;0Y[29X[2XRepresentative[102X( [3Xorb[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ythe group element that was used to construct [3Xorb[103X.[133X
+  
+  
+  [1X10.3-2 [33X[0;0YActingDomain[133X[101X
+  
+  [33X[1;0Y[29X[2XActingDomain[102X( [3Xorb[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ythe group whose affine action [3Xorb[103X is an orbit of.[133X
+  
+  
+  [1X10.3-3 [33X[0;0YFunctionAction[133X[101X
+  
+  [33X[1;0Y[29X[2XFunctionAction[102X( [3Xorb[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ythe affine action that [3Xorb[103X is an orbit of.[133X
+  
+  
+  [1X10.3-4 [33X[0;0Y\in[133X[101X
+  
+  [33X[1;0Y[29X[2X\in[102X( [3Xelm[103X, [3Xorb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X if [3Xelm[103X is an element of [3Xorb[103X, otherwise [9Xfalse[109X.[133X
+  
+  
+  [1X10.3-5 [33X[0;0YIsFinite[133X[101X
+  
+  [33X[1;0Y[29X[2XIsFinite[102X( [3Xorb[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X if [3Xorb[103X is finite, otherwise [9Xfalse[109X.[133X
+  
+  
+  [1X10.3-6 [33X[0;0YSize[133X[101X
+  
+  [33X[1;0Y[29X[2XSize[102X( [3Xorb[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ythe number of elements in [3Xorb[103X.[133X
+  
+  
+  [1X10.3-7 [33X[0;0YStabiliserOfExternalSet[133X[101X
+  
+  [33X[1;0Y[29X[2XStabiliserOfExternalSet[102X( [3Xorb[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XStabilizerOfExternalSet[102X( [3Xorb[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ythe   stabiliser   of   [10XRepresentative([3Xorb[103X[10X)[110X   under   the   action
+            [10XFunctionAction([3Xorb[103X[10X)[110X.[133X
+  
+  
+  [1X10.3-8 [33X[0;0YList[133X[101X
+  
+  [33X[1;0Y[29X[2XList[102X( [3Xorb[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAsList[102X( [3Xorb[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya list containing the elements of [3Xorb[103X.[133X
+  
+  [33X[0;0YIf  [3Xorb[103X  is  infinite,  this  will  run  forever  or  cause  an error. It is
+  recommended to first test the finiteness of [3Xorb[103X using [2XIsFinite[102X ([14X10.3-5[114X).[133X
+  
+  
+  [1X10.3-9 [33X[0;0YRandom[133X[101X
+  
+  [33X[1;0Y[29X[2XRandom[102X( [3Xorb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya random element in [3Xorb[103X.[133X
+  
+  
+  [1X10.3-10 [33X[0;0Y\=[133X[101X
+  
+  [33X[1;0Y[29X[2X\=[102X( [3Xorb1[103X, [3Xorb2[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X if [3Xorb1[103X is equal to [3Xorb2[103X, otherwise [9Xfalse[109X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg2 in orb;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XG.2 in orb;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XSize( orb );[127X[104X
+    [4X[28X8[128X[104X
+  [4X[32X[104X
+  

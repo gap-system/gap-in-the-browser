@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Local_nearrings">
+<Heading>Local nearrings</Heading>
+
+<P/>
+ A set <Math>R</Math> with two binary operations <Math>+</Math> and <Math>\cdot</Math> is called
+ a <Emph>(left) nearring</Emph> if the following statements hold:
+<P/>
+ <Enum>
+ <Item>
+ <Math>(R,+)=R^+</Math> is a (not necessarily abelian) group with neutral element <Math>0</Math>;
+ </Item>
+ <Item>
+ <Math>(R,\cdot)</Math> is a semigroup;
+ </Item>
+ <Item>
+ <Math>x(y+z)=xy+xz</Math> for all <Math>x</Math>, <Math>y</Math>, <Math>z\in R</Math>.
+ </Item>
+ </Enum>
+<P/>
+ If <Math>R</Math> is a nearring, then the group <Math>R^+</Math>  is called
+ the <Emph>additive group</Emph> of <Math>R</Math>.
+ If in addition <Math>0\cdot x=0</Math>, then the nearring <Math>R</Math> is
+ called <Emph>zero-symmetric</Emph>, and if the
+ semigroup <Math>(R,\cdot)</Math> is a monoid, i.e. it has
+ an identity element <Math>i</Math>, then  <Math>R</Math> is
+ a <Emph>nearring with identity</Emph> <Math>i</Math>. In the
+ latter case the group <Math>R^*</Math> of all invertible elements of  
+ the monoid <Math>(R,\cdot)</Math> is called the <Emph>multiplicative group</Emph> of <Math>R</Math>.  
+<P/>
+ The concepts of a subnearring and a nearring homomorphism are defined
+ by the same way as for rings. In particular,
+ if <Math>\lambda</Math> is a nearring homomorphism of <Math>(R,+, \cdot)</Math>,
+ then its kernel <Math>Ker \lambda</Math> is a subnearring of <Math>(R,+, \cdot)</Math>
+ whose additive subgroup is normal in <Math>R^+</Math>.
+<P/>
+ A subnearring <Math>I</Math> of <Math>(R,+, \cdot)</Math> is an ideal
+ of <Math>(R,+, \cdot)</Math> if <Math>I = Ker \lambda</Math>  for some <Math>\lambda</Math>.
+<P/>
+ It can simply be verified that <Math>I</Math> is an ideal of <Math>R</Math>
+ if and only if its additive group <Math>I^+</Math> is a normal subgroup
+ of <Math>R^+</Math> and for any elements <Math>r</Math>, <Math>s\in R</Math> and <Math>a\in I</Math>
+ the inclusions <Math>ra\in I</Math> and
+ <Math>(r + a)s − rs\in I</Math> hold.
+ Main results accumulated for local nearrings
+ can be found in the surveys
+  <Cite Key="MR2799412"/> and <Cite Key="MR4943879"/>. 
+<P/>
+ A nearring <Math>R</Math> with identity is said to be
+ <Emph>local</Emph> if the set <Math>L=R\setminus R^*</Math> of all
+ non-invertible elements of <Math>R</Math> is a subgroup of <Math>R^+</Math>.
+<P/>
+ It is clear that if <Math>L</Math> is an
+ ideal of <Math>R</Math>, then the factor nearring <Math>R/L</Math> is a <Emph>nearfield</Emph>. For example,
+ every local ring <Math>R</Math> is a zero-symmetric local nearring whose
+ subgroup <Math>L</Math> coincides
+ with the Jacobson radical of <Math>R</Math>. Reference: 
+  <Cite Key="MR230773"/>. 
+<Section Label="Chapter_Local_nearrings_Section_The_local_nearrings_library">
+<Heading>The local nearrings library</Heading>
+
+<ManSection>
+  <Func Arg="n" Name="AdditiveGroupsOfLibraryOfLNRsOfOrder" />
+ <Returns>a list
+</Returns>
+ <Description>
+ The argument is <Math>n</Math>.
+ The output is a list of additive groups of local nearrings in the
+ library of this package of order <Math>n</Math>.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> List(AdditiveGroupsOfLibraryOfLNRsOfOrder(81),IdGroup);
+[ [ 81, 1 ], [ 81, 2 ], [ 81, 3 ], [ 81, 5 ], [ 81, 6 ], [ 81, 11 ], 
+  [ 81, 12 ], [ 81, 13 ], [ 81, 15 ] ]
+]]></Example>
+
+<ManSection>
+  <Func Arg="G" Name="LibraryOfLNRsOnGroup" />
+ <Returns>a list
+</Returns>
+ <Description>
+ The argument is a group <Math>G</Math>.
+ The output is a list of catalogue entries for the local nearrings in
+ the library of this package whose additive group is isomorphic to <Math>G</Math>.
+ </Description>
+</ManSection>
+
+ The local nearrings are sorted by their multiplicative groups.
+<Example><![CDATA[
+gap> G:=SmallGroup(81,2);
+<pc group of size 81 with 4 generators>
+gap> LibraryOfLNRsOnGroup(G);
+[ "AllLocalNearRings(81,2,54,3)", "AllLocalNearRings(81,2,54,6)", 
+  "AllLocalNearRings(81,2,54,9)", "AllLocalNearRings(81,2,54,10)", 
+  "AllLocalNearRings(81,2,54,11)", "AllLocalNearRings(81,2,54,15)", 
+  "AllLocalNearRings(81,2,72,14)", "AllLocalNearRings(81,2,72,19)", 
+  "AllLocalNearRings(81,2,72,24)", "AllLocalNearRings(81,2,72,26)" ]
+]]></Example>
+
+<ManSection>
+  <Oper Arg="k,l,m,n,w" Name="LocalNearRing" />
+ <Returns>a nearring
+</Returns>
+ <Description>
+ The arguments are <Math>k</Math>, <Math>l</Math>, <Math>m</Math>, <Math>n</Math>, <Math>w</Math>.
+ The output is the <Math>w</Math>-th local nearring from the library of this
+ package whose additive group has <C>IdGroup</C> value <C>[k,l]</C>
+ and whose multiplicative group has <C>IdGroup</C> value <C>[m,n]</C>.
+ No validation of the arguments is performed.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> L:=LocalNearRing(81,12,54,8,3);
+ExplicitMultiplicationNearRing ( <pc group of size 81 with 
+4 generators> , multiplication )
+]]></Example>
+
+<ManSection>
+  <Oper Arg="k,l,m,n" Name="AllLocalNearRings" />
+ <Returns>a list
+</Returns>
+ <Description>
+ The arguments are <Math>k</Math>, <Math>l</Math>, <Math>m</Math>, <Math>n</Math>.
+ The output is the list of all local nearrings from the library of this
+ package whose additive group has <C>IdGroup</C> value <C>[k,l]</C>
+ and whose multiplicative group has <C>IdGroup</C> value <C>[m,n]</C>.
+ No validation of the arguments is performed.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> L:=AllLocalNearRings(81,12,54,8);;
+gap> Size(L);
+30
+]]></Example>
+
+<ManSection>
+  <Oper Arg="k,l,m,n" Name="NumberLocalNearRings" />
+ <Returns>a number
+</Returns>
+ <Description>
+ The arguments are <Math>k</Math>, <Math>l</Math>, <Math>m</Math>, <Math>n</Math>.
+ The output is the number of local nearrings in the library of this
+ package whose additive group has <C>IdGroup</C> value <C>[k,l]</C>
+ and whose multiplicative group has <C>IdGroup</C> value <C>[m,n]</C>.
+ No validation of the arguments is performed.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> NumberLocalNearRings(81,15,54,8);
+10
+]]></Example>
+
+<ManSection>
+  <Func Arg="G" Name="IsAdditiveGroupOfLibraryOfLNRs" />
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a group <Math>G</Math>.
+ The output is <C>true</C> if the library of this package contains a
+ local nearring whose additive group is isomorphic to <Math>G</Math>, and
+ <C>false</C> otherwise.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> G:=SmallGroup(25,2);
+<pc group of size 25 with 2 generators>
+gap> IsAdditiveGroupOfLibraryOfLNRs(G);
+true
+gap> IsAdditiveGroupOfLibraryOfLNRs(SmallGroup(81,14));
+false
+]]></Example>
+
+</Section>
+
+</Chapter>
+

@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Preliminaries">
+<Heading>Preliminaries</Heading>
+
+<P/>
+ In this section we define skew braces and list some of their
+ main properties
+ <Cite Key="MR3647970"/>.
+<Section Label="Chapter_Preliminaries_Section_Definition_and_examples">
+<Heading>Definition and examples</Heading>
+
+ A skew brace is a triple <Math>(A,+,\circ)</Math>, where <Math>(A,+)</Math> and <Math>(A,\circ)</Math>
+ are two (not necessarily abelian) groups such that
+ the compatibility <Math>a\circ (b+c)=a\circ b-a+a\circ c</Math> holds
+ for all <Math>a,b,c\in A</Math>.
+ Ones proves that the map <Math>\lambda\colon (A,\circ)\to\mathrm{Aut}(A,+)</Math>, <Math>a\mapsto\lambda_a(b)</Math>, 
+ <Math>\lambda_a(b)=-a+a\circ b</Math>, is a group homomorphism.
+ Notation: For <Math>a,b\in A</Math>, we write <Math>a*b=\lambda_a(b)-b</Math>.
+<ManSection>
+  <Filt Arg="arg" Name="IsSkewbrace" Label="for IsAttributeStoringRep"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="list" Name="Skewbrace" Label="for IsList"/>
+ <Returns>a skew brace
+</Returns>
+ <Description>
+ The argument <A>list</A> is a list of pairs of elements in a group. By Proposition 5.11 of 
+ <Cite Key="MR3647970"/>, 
+ skew braces over an abelian group <Math>A</Math>
+ are equivalent to pairs <Math>(G,\pi)</Math>, where <Math>G</Math> is a group and <Math>\pi\colon G\to A</Math> is a bijective <Math>1</Math>-cocycle,
+ a finite skew brace can be constructed from the set <Math>\{(a_j,g_j):1\leq j\leq n\}</Math>, where <Math>G=\{g_1,\dots,g_n\}</Math> and
+ <Math>A=\{a_1,\dots,a_n\}</Math> are permutation groups. This function is used to construct
+ skew braces. 
+<Example><![CDATA[
+gap> Skewbrace([[(),()]]);
+<brace of size 1>
+gap> Skewbrace([[(),()],[(1,2),(1,2)]]);
+<brace of size 2>
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="n,k" Name="SmallSkewbrace" Label="for IsInt, IsInt"/>
+ <Returns>a skew brace
+</Returns>
+ <Description>
+ The function returns the <A>k</A>-th skew brace from the database of skew braces of order <A>n</A>.
+<Example><![CDATA[
+gap> SmallSkewbrace(8,3);
+<brace of size 8>
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="abelian_group" Name="TrivialBrace" Label="for IsGroup"/>
+ <Returns>a brace
+</Returns>
+ <Description>
+ This function returns the trivial brace over the abelian group <A>abelian_group</A>. Here <A>abelian_group</A> 
+ should be an abelian group!
+<Example><![CDATA[
+gap> TrivialBrace(CyclicGroup(IsPermGroup, 5));
+<brace of size 5>
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="group" Name="TrivialSkewbrace" Label="for IsGroup"/>
+ <Returns>a skew brace
+</Returns>
+ <Description>
+ This function returns the trivial skew brace over <A>group</A>.
+<Example><![CDATA[
+gap> TrivialSkewbrace(DihedralGroup(10));
+<skew brace of size 10>
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="n,k" Name="SmallBrace" Label="for IsInt, IsInt"/>
+ <Returns>a brace of abelian type
+</Returns>
+ <Description>
+ The function returns the <A>k</A>-th brace (of abelian type) from the database of braces of order <A>n</A>.
+<Example><![CDATA[
+gap> SmallBrace(8,3);
+<brace of size 8>
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="obj" Name="IdSkewbrace" Label="for IsSkewbrace"/>
+ <Returns>a list
+</Returns>
+ <Description>
+ The function returns <A>[ n, k ]</A> if the skew brace <A>obj</A> is isomorphic to <A>SmallSkewbrace(n,k)</A>.
+<Example><![CDATA[
+gap> IdSkewbrace(SmallSkewbrace(8,5));
+[ 8, 5 ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="obj" Name="AutomorphismGroup" Label="for IsSkewbrace"/>
+ <Returns>a list
+</Returns>
+ <Description>
+ The function computes the automorphism group of a skew brace. 
+<Example><![CDATA[
+gap> br := SmallSkewbrace(8,20);;
+gap> AutomorphismGroup(br);
+<group with 8 generators>
+gap> StructureDescription(last);
+"D8"
+]]></Example>
+
+
+<Example><![CDATA[
+gap> br := SmallSkewbrace(8,25);;
+gap> aut := AutomorphismGroup(br);;
+gap> f := Random(aut);;
+gap> x := Random(br);;
+gap> ImageElm(f, x) in br;
+true
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="obj" Name="IdBrace" Label="for IsSkewbrace"/>
+ <Returns>a list
+</Returns>
+ <Description>
+ The function returns <A>[ n, k ]</A> if the brace of abelian type <A>obj</A> is isomorphic to <A>SmallBrace(n,k)</A>.
+<Example><![CDATA[
+gap> IdBrace(SmallBrace(8,5));
+[ 8, 5 ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="obj1,obj2" Name="IsomorphismSkewbraces" />
+ <Returns>an isomorphism of skew braces if <A>obj1</A> and <A>obj2</A> are isomorphic and <A>fail</A> otherwise.
+</Returns>
+ <Description>
+ If <Math>A</Math> and <Math>B</Math> are skew braces, a skew brace homomorphism is a map 
+ <Math>f\colon A\to B</Math> such that 
+ <Display>f(a+b)=f(a)+f(b)\quad 
+ f(a\circ b)=f(a)\circ f(b)</Display> hold for all <Math>a,b\in A</Math>. A skew brace isomorphism is a bijective 
+ skew brace homomorphism. <A>IsomorphismSkewbraces</A> first computes all injective homomorphisms 
+ from <Math>(A,+)</Math> to <Math>(B,+)</Math> and then tries to find one <Math>f</Math> such that 
+ <Math>f(a\circ b)=f(a)\circ f(b)</Math> for all <Math>a,b\in A</Math>. 
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="obj1,obj2" Name="DirectProductSkewbraces" Label="for IsSkewbrace, IsSkewbrace"/>
+ <Returns>the direct product of <A>obj1</A> and <A>obj2</A>
+</Returns>
+ <Description>
+<Example><![CDATA[
+gap> br1 := SmallBrace(8,18);;
+gap> br2 := SmallBrace(12,2);;
+gap> br := DirectProductSkewbraces(br1,br2);;
+gap> IsLeftNilpotent(br);
+false
+gap> IsRightNilpotent(br);
+false
+gap> IsSolvable(br);
+true
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2" Name="DirectProductOp" Label="for IsList, IsSkewbrace"/>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="obj" Name="IsTwoSided" Label="for IsSkewbrace"/>
+ <Returns><A>true</A> if the skew brace is two sided, <A>false</A> otherwise
+</Returns>
+ <Description>
+ A skew brace <Math>A</Math> is said to be <Emph>two-sided</Emph> if <Math>(a+b)\circ c=a\circ c-c+b\circ c</Math> holds for all <Math>a,b,c\in A</Math>.
+<Example><![CDATA[
+gap> IsTwoSided(SmallSkewbrace(8,2));
+false
+gap> IsTwoSided(SmallSkewbrace(8,4));
+true
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="obj" Name="IsAutomorphismGroupOfSkewbrace" Label="for IsAutomorphismGroup"/>
+ <Returns><A>true</A> if the group is the automorphism group of a skew braces, <A>false</A> otherwise
+</Returns>
+ <Description>
+<P/>
+<Example><![CDATA[
+gap> br := SmallSkewbrace(8,25);;
+gap> aut := AutomorphismGroup(br);;
+gap> Order(aut);
+4
+gap> IsAutomorphismGroupOfSkewbrace(aut);
+true
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="obj" Name="IsClassical" Label="for IsSkewbrace"/>
+ <Returns><A>true</A> if the skew brace is of abelian type, <A>false</A> otherwise
+</Returns>
+ <Description>
+ Let <Math>\mathcal{X}</Math> be a property of groups. A skew brace <Math>A</Math> is said to be of <Math>\mathcal{X}</Math>-type if its additive
+ group belongs to <Math>\mathcal{X}</Math>. In particular, skew braces of abelian type are those skew braces with
+ abelian additive group. Such skew braces were introduced by Rump in <Cite Key="MR2278047"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="arg" Name="IsOfAbelianType" Label="for IsSkewbrace"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="obj" Name="IsBiSkewbrace" Label="for IsSkewbrace"/>
+ <Returns><A>true</A> if the skew brace is a bi-skew brace, <A>false</A> otherwise
+</Returns>
+ <Description>
+ A skew brace <Math>(A,+,\circ)</Math> is said to be a bi-skew brace if <Math>(A,\circ,+)</Math> 
+ is a skew brace 
+<Example><![CDATA[
+gap> Number([1..NrSmallSkewbraces(8)], k->IsBiSkewbrace(SmallSkewbrace(8,k)));
+39
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="obj" Name="IsOfNilpotentType" Label="for IsSkewbrace"/>
+ <Returns><A>true</A> if the skew brace is of nilpotent type, <A>false</A> otherwise
+</Returns>
+ <Description>
+ Let <Math>\mathcal{X}</Math> be a property of groups. A skew brace <Math>A</Math> is said to be of <Math>\mathcal{X}</Math>-type if its additive
+ group belongs to <Math>\mathcal{X}</Math>. In particular, skew braces of nilpotent type are those skew braces with
+ nilpotent additive group. 
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="obj" Name="IsTrivialSkewbrace" Label="for IsSkewbrace"/>
+ <Returns><A>true</A> if the skew brace is trivial, <A>false</A> otherwise
+</Returns>
+ <Description>
+ The function returns <A>true</A> if the skew brace <Math>A</Math> is trivial, i.e., <Math>a\circ b=a+b</Math> for all <Math>a,b\in A</Math>.
+ WARNING: The property IsTrivial applied to a skew brace will return
+ true if and only if the skew brace has only one element. 
+<Example><![CDATA[
+gap> br := SmallSkewbrace(9,1);;
+gap> IsTrivialSkewbrace(br);
+true
+gap> IsTrivial(br);
+false
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="obj" Name="Skewbrace2YB" Label="for IsSkewbrace"/>
+ <Returns>the set-theoretic solution associated with the skew brace <A>obj</A>
+</Returns>
+ <Description>
+ If <Math>A</Math> is a skew brace, the map <Math>r_A\colon A\times A\to A\times A</Math>
+ <Display>r_A(a,b)=(\lambda_a(b),\lambda_a(b)'\circ a\circ b)</Display>
+ is a non-degenerate
+ set-theoretic solution of the Yang--Baxter equation. Furthermore, <Math>r_A</Math> is involutive
+ if and only if <Math>A</Math> is of abelian type (i.e., the additive group of <Math>A</Math> is abelian).
+<Example><![CDATA[
+gap> Skewbrace2YB(TrivialBrace(CyclicGroup(6)));
+<A set-theoretical solution of size 6>
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="arg" Name="Brace2YB" Label="for IsSkewbrace"/>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="obj" Name="SkewbraceSubset2YB" Label="for IsSkewbrace, IsCollection"/>
+ <Returns>the set-theoretic solution associated with a given subset of a skew brace
+</Returns>
+ <Description>
+<Example><![CDATA[
+gap> br := TrivialSkewbrace(SymmetricGroup(3));;
+gap> AsList(br);
+[ <()>, <(2,3)>, <(1,2)>, <(1,2,3)>, <(1,3,2)>, <(1,3)> ]
+gap> SkewbraceSubset2YB(br, last{[4,5]});
+<A set-theoretical solution of size 2>
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A, B, s" Name="SemidirectProduct" Label="for IsSkewbrace, IsSkewbrace, IsGeneralMapping"/>
+ <Returns>the semidirect product of skew braces
+</Returns>
+ <Description>
+ Let <Math>A</Math> and <Math>B</Math> be two skew braces and <Math>\sigma</Math> be a skew brace 
+ action of <Math>B</Math> on <Math>A</Math>, this is a group homomorphism 
+ <Math>\sigma\colon (B,\circ)\to Aut_{\mathrm{Br}}(A)</Math> 
+ from the multiplicative group of <Math>B</Math> to the skew brace
+ automorphism of <Math>A</Math>. The semidirect product of <Math>A</Math> and <Math>B</Math> with
+ with respect to <Math>\sigma</Math> is the skew brace <Math>A\rtimes_{\sigma}B</Math> with
+ operations 
+ <Display>
+ (a_1,b_1)+(a_2,b_2)=(a_1+a_2,b_1+b_2),
+ \quad
+ (a_1,b_1)\circ (b_2,b_2)=(a_1\circ\sigma(b_1)(a_2),b_1\circ b_2)
+ </Display>
+<Example><![CDATA[
+gap> A := SmallSkewbrace(4,2);;
+gap> B := SmallSkewbrace(3,1);;
+gap> s := SkewbraceActions(B,A);;
+gap> Size(s);
+1
+gap> IdSkewbrace(SemidirectProduct(A,B,s[1]));
+[ 12, 11 ]
+gap> IdSkewbrace(DirectProduct(A,B));
+[ 12, 11 ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="UnderlyingAdditiveGroup" Label="for IsSkewbrace"/>
+ <Returns>the underlying multiplicative group of the skew brace
+</Returns>
+ <Description>
+<Example><![CDATA[
+gap> br := SmallBrace(4,2);;
+gap> G:=UnderlyingMultiplicativeGroup(br);;
+gap> StructureDescription(G);
+"C2 x C2"
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="UnderlyingMultiplicativeGroup" Label="for IsSkewbrace"/>
+ <Returns>the underlying additive group of the skew brace
+</Returns>
+ <Description>
+<Example><![CDATA[
+gap> br := SmallSkewbrace(6,2);;
+gap> G:=UnderlyingAdditiveGroup(br);;
+gap> IsAbelian(G);
+false
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

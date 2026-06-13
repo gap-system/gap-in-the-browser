@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<#Include SYSTEM "_Chapter_Preliminaries.xml">
+<#Include SYSTEM "_Chapter_Algebraic_Properties_of_Braces.xml">
+<#Include SYSTEM "_Chapter_YangBaxter_automatic_generated_documentation.xml">
+<#Include SYSTEM "_Chapter_Ideals_and_left_ideals.xml">

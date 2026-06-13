@@ -1,0 +1,6 @@
+<!ENTITY CAP 'CAP'>
+<!ENTITY LinearAlgebraForCAP '<Package>LinearAlgebraForCAP</Package>'>
+<!ENTITY RELEASEDATE '2 June 2026'>
+<!ENTITY RELEASEYEAR '2026'>
+<!ENTITY VERSION '2026.06-01'>
+<!ENTITY homalg 'homalg'>

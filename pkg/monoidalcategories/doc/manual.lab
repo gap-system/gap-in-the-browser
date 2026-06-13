@@ -1,0 +1,810 @@
+\GAPDocLabFile{monoidalcategories}
+\makelabel{monoidalcategories:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{monoidalcategories:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{monoidalcategories:Monoidal Categories}{1}{X808DC49C7ED99B52}
+\makelabel{monoidalcategories:Monoidal Categories}{1.1}{X808DC49C7ED99B52}
+\makelabel{monoidalcategories:Additive Monoidal Categories}{1.2}{X7FB8551A815BEC53}
+\makelabel{monoidalcategories:Braided Monoidal Categories}{1.3}{X7D94AD967E6D60F1}
+\makelabel{monoidalcategories:Symmetric Monoidal Categories}{1.4}{X85ED71067F7CEA82}
+\makelabel{monoidalcategories:Left Closed Monoidal Categories}{1.5}{X85035E9683B050D0}
+\makelabel{monoidalcategories:Closed Monoidal Categories}{1.6}{X7BC682067A30E580}
+\makelabel{monoidalcategories:Left Coclosed Monoidal Categories}{1.7}{X86546D277A535EB1}
+\makelabel{monoidalcategories:Coclosed Monoidal Categories}{1.8}{X8197D69B805349AC}
+\makelabel{monoidalcategories:Symmetric Closed Monoidal Categories}{1.9}{X849F4CB58466EAEB}
+\makelabel{monoidalcategories:Symmetric Coclosed Monoidal Categories}{1.10}{X86F60BCA79C63F20}
+\makelabel{monoidalcategories:Rigid Symmetric Closed Monoidal Categories}{1.11}{X805AEF9784062A31}
+\makelabel{monoidalcategories:Rigid Symmetric Coclosed Monoidal Categories}{1.12}{X79E86CAD853AB883}
+\makelabel{monoidalcategories:Convenience Methods}{1.13}{X7B40ED8B78D067A5}
+\makelabel{monoidalcategories:Add-methods}{1.14}{X85C8C80F785AEB5E}
+\makelabel{monoidalcategories:Examples and Tests}{2}{X7967FE8E7BBDF485}
+\makelabel{monoidalcategories:Test functions}{2.1}{X7862428B781B1F3D}
+\makelabel{monoidalcategories:Code Generation for Monodial Categories}{3}{X7C2E370A85B0A5CB}
+\makelabel{monoidalcategories:Monoidal Categories}{3.1}{X808DC49C7ED99B52}
+\makelabel{monoidalcategories:Closed Monoidal Categories}{3.2}{X7BC682067A30E580}
+\makelabel{monoidalcategories:Coclosed Monoidal Categories}{3.3}{X8197D69B805349AC}
+\makelabel{monoidalcategories:The terminal category with multiple objects}{4}{X84B4C3E17FDDFC55}
+\makelabel{monoidalcategories:Constructors}{4.1}{X86EC0F0A78ECBC10}
+\makelabel{monoidalcategories:GAP Categories}{4.2}{X7D03633A7D98026B}
+\makelabel{monoidalcategories:Legacy Operations and Synonyms}{5}{X84EF85257973461A}
+\makelabel{monoidalcategories:Legacy operations}{5.1}{X7F2BBEE67CC67F03}
+\makelabel{monoidalcategories:Synonyms for legacy operations}{5.2}{X85F14B247ED4A698}
+\makelabel{monoidalcategories:MonoidalCategories automatic generated documentation}{6}{X806DBCCC82BE4D32}
+\makelabel{monoidalcategories:MonoidalCategories automatic generated documentation of properties}{6.1}{X86BA4B7E7B19456B}
+\makelabel{monoidalcategories:Index}{Ind}{X83A0356F839C696F}
+\makelabel{monoidalcategories:TensorProductOnMorphisms for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.1.1}{X84997A1E8188D6BE}
+\makelabel{monoidalcategories:TensorProductOnMorphismsWithGivenTensorProducts for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject}{1.1.2}{X85008BF07C2C0386}
+\makelabel{monoidalcategories:TensorProductOnMorphismAndObject for IsCapCategoryMorphism, IsCapCategoryObject}{1.1.3}{X7A44C47C7B3F6448}
+\makelabel{monoidalcategories:TensorProductOnMorphismAndObjectWithGivenTensorProducts for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject, IsCapCategoryObject}{1.1.4}{X875FBA2A83A3F84A}
+\makelabel{monoidalcategories:TensorProductOnObjectAndMorphism for IsCapCategoryObject, IsCapCategoryMorphism}{1.1.5}{X8585C3DA800417A6}
+\makelabel{monoidalcategories:TensorProductOnObjectAndMorphismWithGivenTensorProducts for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.1.6}{X7DFF958683EDFE4A}
+\makelabel{monoidalcategories:AssociatorRightToLeft for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.1.7}{X84C2FAEA7B9678AA}
+\makelabel{monoidalcategories:AssociatorRightToLeftWithGivenTensorProducts for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.1.8}{X85645C4D86060ED2}
+\makelabel{monoidalcategories:AssociatorLeftToRight for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.1.9}{X7C5A064C7E1995F1}
+\makelabel{monoidalcategories:AssociatorLeftToRightWithGivenTensorProducts for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.1.10}{X7C59D73F8389E389}
+\makelabel{monoidalcategories:LeftUnitor for IsCapCategoryObject}{1.1.11}{X7EBCAFDD81BDB655}
+\makelabel{monoidalcategories:LeftUnitorWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject}{1.1.12}{X7ED284DF7BA21774}
+\makelabel{monoidalcategories:LeftUnitorInverse for IsCapCategoryObject}{1.1.13}{X79A274078147A9F7}
+\makelabel{monoidalcategories:LeftUnitorInverseWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject}{1.1.14}{X849609447CAE996B}
+\makelabel{monoidalcategories:RightUnitor for IsCapCategoryObject}{1.1.15}{X82F758CB7A23468A}
+\makelabel{monoidalcategories:RightUnitorWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject}{1.1.16}{X84C8F97F7BF2282D}
+\makelabel{monoidalcategories:RightUnitorInverse for IsCapCategoryObject}{1.1.17}{X82DC825480E87301}
+\makelabel{monoidalcategories:RightUnitorInverseWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject}{1.1.18}{X85A8A87C87B33008}
+\makelabel{monoidalcategories:TensorProductOnObjects for IsCapCategoryObject, IsCapCategoryObject}{1.1.19}{X797034F17AA47EE0}
+\makelabel{monoidalcategories:TensorUnit for IsCapCategory}{1.1.20}{X7BF7FFDF8789474A}
+\makelabel{monoidalcategories:LeftDistributivityExpanding for IsCapCategoryObject, IsList}{1.2.1}{X7ACF268E7D82B0C9}
+\makelabel{monoidalcategories:LeftDistributivityExpandingWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsList, IsCapCategoryObject}{1.2.2}{X7CA18968862D2285}
+\makelabel{monoidalcategories:LeftDistributivityExpandingUsingMultiplicities for IsCapCategoryObject, IsList, IsList}{1.2.3}{X781EA8E586B91F13}
+\makelabel{monoidalcategories:LeftDistributivityExpandingUsingMultiplicitiesWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsList, IsList, IsCapCategoryObject}{1.2.4}{X860416F7832C48C7}
+\makelabel{monoidalcategories:LeftDistributivityFactoring for IsCapCategoryObject, IsList}{1.2.5}{X780322FE7E5A626D}
+\makelabel{monoidalcategories:LeftDistributivityFactoringWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsList, IsCapCategoryObject}{1.2.6}{X784D8CD685F5F021}
+\makelabel{monoidalcategories:LeftDistributivityFactoringUsingMultiplicities for IsCapCategoryObject, IsList, IsList}{1.2.7}{X7A22CD548561CDB7}
+\makelabel{monoidalcategories:LeftDistributivityFactoringUsingMultiplicitiesWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsList, IsList, IsCapCategoryObject}{1.2.8}{X7B2BF45080F49A63}
+\makelabel{monoidalcategories:RightDistributivityExpanding for IsList, IsCapCategoryObject}{1.2.9}{X8409C74778A4313A}
+\makelabel{monoidalcategories:RightDistributivityExpandingWithGivenObjects for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryObject}{1.2.10}{X7DBE629F811DEADC}
+\makelabel{monoidalcategories:RightDistributivityExpandingUsingMultiplicities for IsList, IsList, IsCapCategoryObject}{1.2.11}{X873109A37DA0C993}
+\makelabel{monoidalcategories:RightDistributivityExpandingUsingMultiplicitiesWithGivenObjects for IsCapCategoryObject, IsList, IsList, IsCapCategoryObject, IsCapCategoryObject}{1.2.12}{X819592DA783E85E9}
+\makelabel{monoidalcategories:RightDistributivityFactoring for IsList, IsCapCategoryObject}{1.2.13}{X86C5C33786C1DC28}
+\makelabel{monoidalcategories:RightDistributivityFactoringWithGivenObjects for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryObject}{1.2.14}{X795267217F7807CE}
+\makelabel{monoidalcategories:RightDistributivityFactoringUsingMultiplicities for IsList, IsList, IsCapCategoryObject}{1.2.15}{X850D6C1283C52481}
+\makelabel{monoidalcategories:RightDistributivityFactoringUsingMultiplicitiesWithGivenObjects for IsCapCategoryObject, IsList, IsList, IsCapCategoryObject, IsCapCategoryObject}{1.2.16}{X7CBA707D865B68FB}
+\makelabel{monoidalcategories:Braiding for IsCapCategoryObject, IsCapCategoryObject}{1.3.1}{X7C6ADBFE7A8DD1E3}
+\makelabel{monoidalcategories:BraidingWithGivenTensorProducts for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.3.2}{X7F4B09A87B2500C0}
+\makelabel{monoidalcategories:BraidingInverse for IsCapCategoryObject, IsCapCategoryObject}{1.3.3}{X8195EC5279D3E8D0}
+\makelabel{monoidalcategories:BraidingInverseWithGivenTensorProducts for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.3.4}{X854AFBC67C836769}
+\makelabel{monoidalcategories:LeftInternalHomOnObjects for IsCapCategoryObject, IsCapCategoryObject}{1.5.1}{X87A4C0637EB8A18E}
+\makelabel{monoidalcategories:LeftInternalHomOnMorphisms for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.5.2}{X8439FF407D2C9C6E}
+\makelabel{monoidalcategories:LeftInternalHomOnMorphismsWithGivenLeftInternalHoms for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject}{1.5.3}{X7861C2AD82F62C77}
+\makelabel{monoidalcategories:LeftClosedMonoidalEvaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.5.4}{X82C4FACF83C3611D}
+\makelabel{monoidalcategories:LeftClosedMonoidalEvaluationMorphismWithGivenSource for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.5}{X8575A3748713EACF}
+\makelabel{monoidalcategories:LeftClosedMonoidalCoevaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.5.6}{X7A526C59812F2A59}
+\makelabel{monoidalcategories:LeftClosedMonoidalCoevaluationMorphismWithGivenRange for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.7}{X7BC7F1497A00E87A}
+\makelabel{monoidalcategories:TensorProductToLeftInternalHomAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.5.8}{X83A5A47979C9B92D}
+\makelabel{monoidalcategories:TensorProductToLeftInternalHomAdjunctMorphismWithGivenLeftInternalHom for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.5.9}{X7BB734AA7F213B47}
+\makelabel{monoidalcategories:LeftInternalHomToTensorProductAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.5.10}{X7C7D769879A7DA90}
+\makelabel{monoidalcategories:LeftInternalHomToTensorProductAdjunctMorphismWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.5.11}{X80431C73861AEC43}
+\makelabel{monoidalcategories:LeftClosedMonoidalPreComposeMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.12}{X79AC308B847F5177}
+\makelabel{monoidalcategories:LeftClosedMonoidalPreComposeMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.13}{X78E3E67480AC81F4}
+\makelabel{monoidalcategories:LeftClosedMonoidalPostComposeMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.14}{X7CFBE32D7F8F16CD}
+\makelabel{monoidalcategories:LeftClosedMonoidalPostComposeMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.15}{X7D5E05257D908A56}
+\makelabel{monoidalcategories:LeftDualOnObjects for IsCapCategoryObject}{1.5.16}{X859959ED7F2CFDCC}
+\makelabel{monoidalcategories:LeftDualOnMorphisms for IsCapCategoryMorphism}{1.5.17}{X7B697FFC7B23A48B}
+\makelabel{monoidalcategories:LeftDualOnMorphismsWithGivenLeftDuals for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.5.18}{X8282E454874316D8}
+\makelabel{monoidalcategories:LeftClosedMonoidalEvaluationForLeftDual for IsCapCategoryObject}{1.5.19}{X7FF3227087ABDA8E}
+\makelabel{monoidalcategories:LeftClosedMonoidalEvaluationForLeftDualWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.20}{X86995E4D7A63E68F}
+\makelabel{monoidalcategories:MorphismToLeftBidual for IsCapCategoryObject}{1.5.21}{X85D2B94A85E3DBD5}
+\makelabel{monoidalcategories:MorphismToLeftBidualWithGivenLeftBidual for IsCapCategoryObject, IsCapCategoryObject}{1.5.22}{X868774B68189D7E9}
+\makelabel{monoidalcategories:TensorProductLeftInternalHomCompatibilityMorphism for IsList}{1.5.23}{X7939CEE8854017D2}
+\makelabel{monoidalcategories:TensorProductLeftInternalHomCompatibilityMorphismWithGivenObjects for IsCapCategoryObject, IsList, IsCapCategoryObject}{1.5.24}{X798C160A84CA5623}
+\makelabel{monoidalcategories:TensorProductLeftDualityCompatibilityMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.5.25}{X8635D47E7835C8AA}
+\makelabel{monoidalcategories:TensorProductLeftDualityCompatibilityMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.26}{X8435799E83221130}
+\makelabel{monoidalcategories:MorphismFromTensorProductToLeftInternalHom for IsCapCategoryObject, IsCapCategoryObject}{1.5.27}{X80FE157E81B02827}
+\makelabel{monoidalcategories:MorphismFromTensorProductToLeftInternalHomWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.5.28}{X78FDDC2986E50825}
+\makelabel{monoidalcategories:IsomorphismFromLeftDualObjectToLeftInternalHomIntoTensorUnit for IsCapCategoryObject}{1.5.29}{X7EA425DA848670D9}
+\makelabel{monoidalcategories:IsomorphismFromLeftInternalHomIntoTensorUnitToLeftDualObject for IsCapCategoryObject}{1.5.30}{X781A2D417A8BC8DF}
+\makelabel{monoidalcategories:UniversalPropertyOfLeftDual for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.5.31}{X82D9D78C7A8DA61A}
+\makelabel{monoidalcategories:LeftClosedMonoidalLambdaIntroduction for IsCapCategoryMorphism}{1.5.32}{X7C7A252A78484873}
+\makelabel{monoidalcategories:LeftClosedMonoidalLambdaElimination for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.5.33}{X83B3A8FA8363F620}
+\makelabel{monoidalcategories:IsomorphismFromObjectToLeftInternalHom for IsCapCategoryObject}{1.5.34}{X7ECAB43778388C41}
+\makelabel{monoidalcategories:IsomorphismFromObjectToLeftInternalHomWithGivenLeftInternalHom for IsCapCategoryObject, IsCapCategoryObject}{1.5.35}{X874D7D8E81A6AFF1}
+\makelabel{monoidalcategories:IsomorphismFromLeftInternalHomToObject for IsCapCategoryObject}{1.5.36}{X7908CF267DDAA38C}
+\makelabel{monoidalcategories:IsomorphismFromLeftInternalHomToObjectWithGivenLeftInternalHom for IsCapCategoryObject, IsCapCategoryObject}{1.5.37}{X7B2F235C8444803C}
+\makelabel{monoidalcategories:InternalHomOnObjects for IsCapCategoryObject, IsCapCategoryObject}{1.6.1}{X78AA83E77B380D68}
+\makelabel{monoidalcategories:InternalHomOnMorphisms for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.6.2}{X7C0191A483A72F98}
+\makelabel{monoidalcategories:InternalHomOnMorphismsWithGivenInternalHoms for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject}{1.6.3}{X861226B47B5CB713}
+\makelabel{monoidalcategories:ClosedMonoidalRightEvaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.6.4}{X844F05DF7DE23F99}
+\makelabel{monoidalcategories:ClosedMonoidalRightEvaluationMorphismWithGivenSource for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.5}{X83E6461280B0EB0C}
+\makelabel{monoidalcategories:ClosedMonoidalRightCoevaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.6.6}{X7A745E5A836B5E91}
+\makelabel{monoidalcategories:ClosedMonoidalRightCoevaluationMorphismWithGivenRange for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.7}{X868AD1A278EBAB03}
+\makelabel{monoidalcategories:TensorProductToInternalHomRightAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.6.8}{X7BA9C4A184346304}
+\makelabel{monoidalcategories:TensorProductToInternalHomRightAdjunctMorphismWithGivenInternalHom for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.6.9}{X8218B01287CD44E5}
+\makelabel{monoidalcategories:TensorProductToInternalHomRightAdjunctionIsomorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.10}{X78A16762823E5F1C}
+\makelabel{monoidalcategories:TensorProductToInternalHomRightAdjunctionIsomorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.11}{X81D37FA282FC8F11}
+\makelabel{monoidalcategories:InternalHomToTensorProductRightAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.6.12}{X8271B2767A2DFE76}
+\makelabel{monoidalcategories:InternalHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.6.13}{X7ACBB0CE7FA4C781}
+\makelabel{monoidalcategories:InternalHomToTensorProductRightAdjunctionIsomorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.14}{X79EEE4757C27C26E}
+\makelabel{monoidalcategories:InternalHomToTensorProductRightAdjunctionIsomorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.15}{X7B4CD74A7CE51263}
+\makelabel{monoidalcategories:ClosedMonoidalLeftEvaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.6.16}{X80B3C53A854B515B}
+\makelabel{monoidalcategories:ClosedMonoidalLeftEvaluationMorphismWithGivenSource for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.17}{X84E1E136819BDA89}
+\makelabel{monoidalcategories:ClosedMonoidalLeftCoevaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.6.18}{X7E35DEB787A71A1F}
+\makelabel{monoidalcategories:ClosedMonoidalLeftCoevaluationMorphismWithGivenRange for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.19}{X8196CE5D7C88D83C}
+\makelabel{monoidalcategories:TensorProductToInternalHomLeftAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.6.20}{X80A58B1F80A186BD}
+\makelabel{monoidalcategories:TensorProductToInternalHomLeftAdjunctMorphismWithGivenInternalHom for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.6.21}{X7CCE373482D60A57}
+\makelabel{monoidalcategories:TensorProductToInternalHomLeftAdjunctionIsomorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.22}{X793BAA50819573E4}
+\makelabel{monoidalcategories:TensorProductToInternalHomLeftAdjunctionIsomorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.23}{X791276987824CDF8}
+\makelabel{monoidalcategories:InternalHomToTensorProductLeftAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.6.24}{X85F426677EB81BCF}
+\makelabel{monoidalcategories:InternalHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.6.25}{X859B738881052D1C}
+\makelabel{monoidalcategories:InternalHomToTensorProductLeftAdjunctionIsomorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.26}{X86AD79F17F8CEE96}
+\makelabel{monoidalcategories:InternalHomToTensorProductLeftAdjunctionIsomorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.27}{X7D707B26863D508A}
+\makelabel{monoidalcategories:MonoidalPreComposeMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.28}{X86E4E97C82BFB45C}
+\makelabel{monoidalcategories:MonoidalPreComposeMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.29}{X7FE4A52284060F20}
+\makelabel{monoidalcategories:MonoidalPostComposeMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.30}{X79F4FCE781385829}
+\makelabel{monoidalcategories:MonoidalPostComposeMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.31}{X7E6933B8816EE4E3}
+\makelabel{monoidalcategories:DualOnObjects for IsCapCategoryObject}{1.6.32}{X80FFC71D7E57DD53}
+\makelabel{monoidalcategories:DualOnMorphisms for IsCapCategoryMorphism}{1.6.33}{X815C0BC47D000819}
+\makelabel{monoidalcategories:DualOnMorphismsWithGivenDuals for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.6.34}{X7DCC0F468386AA46}
+\makelabel{monoidalcategories:EvaluationForDual for IsCapCategoryObject}{1.6.35}{X86D42C7587F03A68}
+\makelabel{monoidalcategories:EvaluationForDualWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.36}{X7B588B1B8472834E}
+\makelabel{monoidalcategories:MorphismToBidual for IsCapCategoryObject}{1.6.37}{X7F68B55781C1DFB1}
+\makelabel{monoidalcategories:MorphismToBidualWithGivenBidual for IsCapCategoryObject, IsCapCategoryObject}{1.6.38}{X79260E5680F1E741}
+\makelabel{monoidalcategories:TensorProductInternalHomCompatibilityMorphism for IsList}{1.6.39}{X80CDA0CB821E08EE}
+\makelabel{monoidalcategories:TensorProductInternalHomCompatibilityMorphismWithGivenObjects for IsCapCategoryObject, IsList, IsCapCategoryObject}{1.6.40}{X7B0194A07AB73486}
+\makelabel{monoidalcategories:TensorProductDualityCompatibilityMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.6.41}{X7D173DB08132E40A}
+\makelabel{monoidalcategories:TensorProductDualityCompatibilityMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.42}{X794ED97782B8DF76}
+\makelabel{monoidalcategories:MorphismFromTensorProductToInternalHom for IsCapCategoryObject, IsCapCategoryObject}{1.6.43}{X8439BFF57BFE390F}
+\makelabel{monoidalcategories:MorphismFromTensorProductToInternalHomWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.6.44}{X8473D28B7F3A5E20}
+\makelabel{monoidalcategories:IsomorphismFromDualObjectToInternalHomIntoTensorUnit for IsCapCategoryObject}{1.6.45}{X8430726C82D6CFF7}
+\makelabel{monoidalcategories:IsomorphismFromInternalHomIntoTensorUnitToDualObject for IsCapCategoryObject}{1.6.46}{X7A015736812A97C6}
+\makelabel{monoidalcategories:UniversalPropertyOfDual for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.6.47}{X7AF8F68887146C20}
+\makelabel{monoidalcategories:LambdaIntroduction for IsCapCategoryMorphism}{1.6.48}{X80F3F2287B9E55E3}
+\makelabel{monoidalcategories:LambdaElimination for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.6.49}{X79EC44077F661E80}
+\makelabel{monoidalcategories:IsomorphismFromObjectToInternalHom for IsCapCategoryObject}{1.6.50}{X8726BA888787D53D}
+\makelabel{monoidalcategories:IsomorphismFromObjectToInternalHomWithGivenInternalHom for IsCapCategoryObject, IsCapCategoryObject}{1.6.51}{X87F91EF37C76A7F7}
+\makelabel{monoidalcategories:IsomorphismFromInternalHomToObject for IsCapCategoryObject}{1.6.52}{X831CF4E1824FA178}
+\makelabel{monoidalcategories:IsomorphismFromInternalHomToObjectWithGivenInternalHom for IsCapCategoryObject, IsCapCategoryObject}{1.6.53}{X7988DC7C79BED3B2}
+\makelabel{monoidalcategories:LeftInternalCoHomOnObjects for IsCapCategoryObject, IsCapCategoryObject}{1.7.1}{X7CE5D10B7F10E9CC}
+\makelabel{monoidalcategories:LeftInternalCoHomOnMorphisms for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.7.2}{X853213767BB48099}
+\makelabel{monoidalcategories:LeftInternalCoHomOnMorphismsWithGivenLeftInternalCoHoms for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject}{1.7.3}{X7F302E3880752A2F}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalEvaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.7.4}{X819A762D83B1C294}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalEvaluationMorphismWithGivenRange for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.5}{X7E5607B1789E00B7}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalCoevaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.7.6}{X81A249CE84828A9D}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalCoevaluationMorphismWithGivenSource for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.7}{X7D1018A284F21140}
+\makelabel{monoidalcategories:TensorProductToLeftInternalCoHomAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.7.8}{X851216B2807B3900}
+\makelabel{monoidalcategories:TensorProductToLeftInternalCoHomAdjunctMorphismWithGivenLeftInternalCoHom for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.7.9}{X87BFA0FA7AFF2868}
+\makelabel{monoidalcategories:LeftInternalCoHomToTensorProductAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.7.10}{X7DDDACD58454C3A4}
+\makelabel{monoidalcategories:LeftInternalCoHomToTensorProductAdjunctMorphismWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.7.11}{X821AC96981CA794C}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalPreCoComposeMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.12}{X8416357982DCBEE4}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalPreCoComposeMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.13}{X7EECDE4583E14A59}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalPostCoComposeMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.14}{X80A270E982F5BC2D}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalPostCoComposeMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.15}{X867C6F087D72AB3F}
+\makelabel{monoidalcategories:LeftCoDualOnObjects for IsCapCategoryObject}{1.7.16}{X85A63AA57F0678EE}
+\makelabel{monoidalcategories:LeftCoDualOnMorphisms for IsCapCategoryMorphism}{1.7.17}{X7949DE307D2D5083}
+\makelabel{monoidalcategories:LeftCoDualOnMorphismsWithGivenLeftCoDuals for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.7.18}{X84C835CB7E708596}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalEvaluationForLeftCoDual for IsCapCategoryObject}{1.7.19}{X7A20AC6A837F79BA}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalEvaluationForLeftCoDualWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.20}{X87B15AC678955783}
+\makelabel{monoidalcategories:MorphismFromLeftCoBidual for IsCapCategoryObject}{1.7.21}{X7F67676A85A47BDB}
+\makelabel{monoidalcategories:MorphismFromLeftCoBidualWithGivenLeftCoBidual for IsCapCategoryObject, IsCapCategoryObject}{1.7.22}{X7AF5F77180E09AAE}
+\makelabel{monoidalcategories:LeftInternalCoHomTensorProductCompatibilityMorphism for IsList}{1.7.23}{X84331A1B7F62782F}
+\makelabel{monoidalcategories:LeftInternalCoHomTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategoryObject, IsList, IsCapCategoryObject}{1.7.24}{X808BEB0879D58CAF}
+\makelabel{monoidalcategories:LeftCoDualityTensorProductCompatibilityMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.7.25}{X7B4A66A8803C99BA}
+\makelabel{monoidalcategories:LeftCoDualityTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.26}{X86E72092788A8F2D}
+\makelabel{monoidalcategories:MorphismFromLeftInternalCoHomToTensorProduct for IsCapCategoryObject, IsCapCategoryObject}{1.7.27}{X7A5FDE4B83C5F328}
+\makelabel{monoidalcategories:MorphismFromLeftInternalCoHomToTensorProductWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.7.28}{X7BD2A33F84A2FBAB}
+\makelabel{monoidalcategories:IsomorphismFromLeftCoDualObjectToLeftInternalCoHomFromTensorUnit for IsCapCategoryObject}{1.7.29}{X7CC10C9E7EA7EED4}
+\makelabel{monoidalcategories:IsomorphismFromLeftInternalCoHomFromTensorUnitToLeftCoDualObject for IsCapCategoryObject}{1.7.30}{X87F96B047F320A17}
+\makelabel{monoidalcategories:UniversalPropertyOfLeftCoDual for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.7.31}{X7A0DE1667FF28457}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalLambdaIntroduction for IsCapCategoryMorphism}{1.7.32}{X85960F7479FFA8DA}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalLambdaElimination for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.7.33}{X8721DDEC7DF9D89D}
+\makelabel{monoidalcategories:IsomorphismFromObjectToLeftInternalCoHom for IsCapCategoryObject}{1.7.34}{X853342457CC3B489}
+\makelabel{monoidalcategories:IsomorphismFromObjectToLeftInternalCoHomWithGivenLeftInternalCoHom for IsCapCategoryObject, IsCapCategoryObject}{1.7.35}{X82709BED807CB6FC}
+\makelabel{monoidalcategories:IsomorphismFromLeftInternalCoHomToObject for IsCapCategoryObject}{1.7.36}{X806C843B82108148}
+\makelabel{monoidalcategories:IsomorphismFromLeftInternalCoHomToObjectWithGivenLeftInternalCoHom for IsCapCategoryObject, IsCapCategoryObject}{1.7.37}{X8370164B7EAF833D}
+\makelabel{monoidalcategories:InternalCoHomOnObjects for IsCapCategoryObject, IsCapCategoryObject}{1.8.1}{X791BE0B0847A430D}
+\makelabel{monoidalcategories:InternalCoHomOnMorphisms for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.8.2}{X7FDF105D7F56EB53}
+\makelabel{monoidalcategories:InternalCoHomOnMorphismsWithGivenInternalCoHoms for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject}{1.8.3}{X84DDA3DD878162B9}
+\makelabel{monoidalcategories:CoclosedMonoidalRightEvaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.8.4}{X83CEC88D79AE5684}
+\makelabel{monoidalcategories:CoclosedMonoidalRightEvaluationMorphismWithGivenRange for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.5}{X79333EC9822EA316}
+\makelabel{monoidalcategories:CoclosedMonoidalRightCoevaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.8.6}{X80CA11547F3909E3}
+\makelabel{monoidalcategories:CoclosedMonoidalRightCoevaluationMorphismWithGivenSource for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.7}{X7F1C10897EC4D14E}
+\makelabel{monoidalcategories:TensorProductToInternalCoHomRightAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.8.8}{X82B0937678F04730}
+\makelabel{monoidalcategories:TensorProductToInternalCoHomRightAdjunctMorphismWithGivenInternalCoHom for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.8.9}{X833D7B567810D7F3}
+\makelabel{monoidalcategories:InternalCoHomToTensorProductRightAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.8.10}{X8623CC567D687FFD}
+\makelabel{monoidalcategories:InternalCoHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.8.11}{X821B5212835BD1F6}
+\makelabel{monoidalcategories:CoclosedMonoidalLeftEvaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.8.12}{X81020D9E85C3280A}
+\makelabel{monoidalcategories:CoclosedMonoidalLeftEvaluationMorphismWithGivenRange for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.13}{X7A1801D77EECEA29}
+\makelabel{monoidalcategories:CoclosedMonoidalLeftCoevaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.8.14}{X7D6905F582F06003}
+\makelabel{monoidalcategories:CoclosedMonoidalLeftCoevaluationMorphismWithGivenSource for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.15}{X802A3FC48280FBDE}
+\makelabel{monoidalcategories:TensorProductToInternalCoHomLeftAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.8.16}{X7FB4953B7F813D0B}
+\makelabel{monoidalcategories:TensorProductToInternalCoHomLeftAdjunctMorphismWithGivenInternalCoHom for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.8.17}{X8312DB0A82A97D4B}
+\makelabel{monoidalcategories:InternalCoHomToTensorProductLeftAdjunctMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.8.18}{X7A7FC1957A1905C6}
+\makelabel{monoidalcategories:InternalCoHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.8.19}{X85F970897F87BF2E}
+\makelabel{monoidalcategories:MonoidalPreCoComposeMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.20}{X8337DE6B7D61EAC2}
+\makelabel{monoidalcategories:MonoidalPreCoComposeMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.21}{X82A183B0807A0A01}
+\makelabel{monoidalcategories:MonoidalPostCoComposeMorphism for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.22}{X83FE0B8D853A76C1}
+\makelabel{monoidalcategories:MonoidalPostCoComposeMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.23}{X805DF38880B1E9E0}
+\makelabel{monoidalcategories:CoDualOnObjects for IsCapCategoryObject}{1.8.24}{X817A1F7986256461}
+\makelabel{monoidalcategories:CoDualOnMorphisms for IsCapCategoryMorphism}{1.8.25}{X840CBC837926138E}
+\makelabel{monoidalcategories:CoDualOnMorphismsWithGivenCoDuals for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject}{1.8.26}{X79750BFD824D2AAF}
+\makelabel{monoidalcategories:CoclosedEvaluationForCoDual for IsCapCategoryObject}{1.8.27}{X7C65C05A788415E4}
+\makelabel{monoidalcategories:CoclosedEvaluationForCoDualWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.28}{X7CAB615C86D97CE8}
+\makelabel{monoidalcategories:MorphismFromCoBidual for IsCapCategoryObject}{1.8.29}{X7841B6757A510799}
+\makelabel{monoidalcategories:MorphismFromCoBidualWithGivenCoBidual for IsCapCategoryObject, IsCapCategoryObject}{1.8.30}{X7B2B002979E1CBF6}
+\makelabel{monoidalcategories:InternalCoHomTensorProductCompatibilityMorphism for IsList}{1.8.31}{X7D9E57197C820E0E}
+\makelabel{monoidalcategories:InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategoryObject, IsList, IsCapCategoryObject}{1.8.32}{X81E9DC8D7FCD361F}
+\makelabel{monoidalcategories:CoDualityTensorProductCompatibilityMorphism for IsCapCategoryObject, IsCapCategoryObject}{1.8.33}{X7B817BC97C1F1DF8}
+\makelabel{monoidalcategories:CoDualityTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.34}{X82119ED686D3874C}
+\makelabel{monoidalcategories:MorphismFromInternalCoHomToTensorProduct for IsCapCategoryObject, IsCapCategoryObject}{1.8.35}{X7A4971267B80B14F}
+\makelabel{monoidalcategories:MorphismFromInternalCoHomToTensorProductWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.8.36}{X7B60FB927C37E125}
+\makelabel{monoidalcategories:IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit for IsCapCategoryObject}{1.8.37}{X86C7E40C85318EFA}
+\makelabel{monoidalcategories:IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject for IsCapCategoryObject}{1.8.38}{X84C86E29800BB8BC}
+\makelabel{monoidalcategories:UniversalPropertyOfCoDual for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.8.39}{X7AEE412D80799D09}
+\makelabel{monoidalcategories:CoLambdaIntroduction for IsCapCategoryMorphism}{1.8.40}{X784CBFB984E66E7A}
+\makelabel{monoidalcategories:CoLambdaElimination for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism}{1.8.41}{X83520B098068CF62}
+\makelabel{monoidalcategories:IsomorphismFromObjectToInternalCoHom for IsCapCategoryObject}{1.8.42}{X83F11F6184DBD507}
+\makelabel{monoidalcategories:IsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom for IsCapCategoryObject, IsCapCategoryObject}{1.8.43}{X8233C995828387E9}
+\makelabel{monoidalcategories:IsomorphismFromInternalCoHomToObject for IsCapCategoryObject}{1.8.44}{X875A349280E2095C}
+\makelabel{monoidalcategories:IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom for IsCapCategoryObject, IsCapCategoryObject}{1.8.45}{X858AD1F986BA5BB2}
+\makelabel{monoidalcategories:IsomorphismFromTensorProductWithDualObjectToInternalHom for IsCapCategoryObject, IsCapCategoryObject}{1.11.1}{X782B629D7E7835C9}
+\makelabel{monoidalcategories:IsomorphismFromInternalHomToTensorProductWithDualObject for IsCapCategoryObject, IsCapCategoryObject}{1.11.2}{X84D0668C7CA0B63D}
+\makelabel{monoidalcategories:MorphismFromInternalHomToTensorProduct for IsCapCategoryObject, IsCapCategoryObject}{1.11.3}{X7D189B8280CECBA2}
+\makelabel{monoidalcategories:MorphismFromInternalHomToTensorProductWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.11.4}{X7D10805D840AAC8D}
+\makelabel{monoidalcategories:TensorProductInternalHomCompatibilityMorphismInverse for IsList}{1.11.5}{X85BA8C10817296F7}
+\makelabel{monoidalcategories:TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects for IsCapCategoryObject, IsList, IsCapCategoryObject}{1.11.6}{X7CCE67B281EF45C1}
+\makelabel{monoidalcategories:CoevaluationForDual for IsCapCategoryObject}{1.11.7}{X83849B327C8074E9}
+\makelabel{monoidalcategories:CoevaluationForDualWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.11.8}{X7C65E6A97AAE0DE3}
+\makelabel{monoidalcategories:TraceMap for IsCapCategoryMorphism}{1.11.9}{X85D0C9487A22AFFE}
+\makelabel{monoidalcategories:RankMorphism for IsCapCategoryObject}{1.11.10}{X82F0DBD485D93793}
+\makelabel{monoidalcategories:MorphismFromBidual for IsCapCategoryObject}{1.11.11}{X7E02E8197EA201EA}
+\makelabel{monoidalcategories:MorphismFromBidualWithGivenBidual for IsCapCategoryObject, IsCapCategoryObject}{1.11.12}{X785CF0BB7BC0AC0D}
+\makelabel{monoidalcategories:IsomorphismFromInternalCoHomToTensorProductWithCoDualObject for IsCapCategoryObject, IsCapCategoryObject}{1.12.1}{X82D4EF587F1C194C}
+\makelabel{monoidalcategories:IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom for IsCapCategoryObject, IsCapCategoryObject}{1.12.2}{X7FE736BA834D228A}
+\makelabel{monoidalcategories:MorphismFromTensorProductToInternalCoHom for IsCapCategoryObject, IsCapCategoryObject}{1.12.3}{X7DCA54857A6B45DF}
+\makelabel{monoidalcategories:MorphismFromTensorProductToInternalCoHomWithGivenObjects for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.12.4}{X7888F9947DDC15B5}
+\makelabel{monoidalcategories:InternalCoHomTensorProductCompatibilityMorphismInverse for IsList}{1.12.5}{X7E71AF0985C5AEC5}
+\makelabel{monoidalcategories:InternalCoHomTensorProductCompatibilityMorphismInverseWithGivenObjects for IsCapCategoryObject, IsList, IsCapCategoryObject}{1.12.6}{X87BF8BE67AD5ABCF}
+\makelabel{monoidalcategories:CoclosedCoevaluationForCoDual for IsCapCategoryObject}{1.12.7}{X8695F9D97A8C6C61}
+\makelabel{monoidalcategories:CoclosedCoevaluationForCoDualWithGivenTensorProduct for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{1.12.8}{X78B2703A7B81E340}
+\makelabel{monoidalcategories:CoTraceMap for IsCapCategoryMorphism}{1.12.9}{X829BE5F97A656200}
+\makelabel{monoidalcategories:CoRankMorphism for IsCapCategoryObject}{1.12.10}{X7C5CC8F97D95AD43}
+\makelabel{monoidalcategories:MorphismToCoBidual for IsCapCategoryObject}{1.12.11}{X85BDB94D85C67725}
+\makelabel{monoidalcategories:MorphismToCoBidualWithGivenCoBidual for IsCapCategoryObject, IsCapCategoryObject}{1.12.12}{X800035BF867418D0}
+\makelabel{monoidalcategories:InternalHom for IsCapCategoryCell, IsCapCategoryCell}{1.13.1}{X8055FF847AC2102A}
+\makelabel{monoidalcategories:InternalCoHom for IsCapCategoryCell, IsCapCategoryCell}{1.13.2}{X7CB6A9497A971F59}
+\makelabel{monoidalcategories:LeftInternalHom for IsCapCategoryCell, IsCapCategoryCell}{1.13.3}{X82DE5FDA794914A0}
+\makelabel{monoidalcategories:LeftInternalCoHom for IsCapCategoryCell, IsCapCategoryCell}{1.13.4}{X862E6A787C9E1F92}
+\makelabel{monoidalcategories:AddLeftDistributivityExpanding for IsCapCategory, IsFunction}{1.14.1}{X78DA7EC37A1E0CCC}
+\makelabel{monoidalcategories:AddLeftDistributivityExpanding for IsCapCategory, IsFunction, IsInt}{1.14.1}{X78DA7EC37A1E0CCC}
+\makelabel{monoidalcategories:AddLeftDistributivityExpandingUsingMultiplicities for IsCapCategory, IsFunction}{1.14.2}{X7CA618E37918B1AD}
+\makelabel{monoidalcategories:AddLeftDistributivityExpandingUsingMultiplicities for IsCapCategory, IsFunction, IsInt}{1.14.2}{X7CA618E37918B1AD}
+\makelabel{monoidalcategories:AddLeftDistributivityExpandingUsingMultiplicitiesWithGivenObjects for IsCapCategory, IsFunction}{1.14.3}{X877E78F68389965C}
+\makelabel{monoidalcategories:AddLeftDistributivityExpandingUsingMultiplicitiesWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.3}{X877E78F68389965C}
+\makelabel{monoidalcategories:AddLeftDistributivityExpandingWithGivenObjects for IsCapCategory, IsFunction}{1.14.4}{X814BA200802D26E4}
+\makelabel{monoidalcategories:AddLeftDistributivityExpandingWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.4}{X814BA200802D26E4}
+\makelabel{monoidalcategories:AddLeftDistributivityFactoring for IsCapCategory, IsFunction}{1.14.5}{X8381C23A8264435B}
+\makelabel{monoidalcategories:AddLeftDistributivityFactoring for IsCapCategory, IsFunction, IsInt}{1.14.5}{X8381C23A8264435B}
+\makelabel{monoidalcategories:AddLeftDistributivityFactoringUsingMultiplicities for IsCapCategory, IsFunction}{1.14.6}{X7DD3F5588162FE3A}
+\makelabel{monoidalcategories:AddLeftDistributivityFactoringUsingMultiplicities for IsCapCategory, IsFunction, IsInt}{1.14.6}{X7DD3F5588162FE3A}
+\makelabel{monoidalcategories:AddLeftDistributivityFactoringUsingMultiplicitiesWithGivenObjects for IsCapCategory, IsFunction}{1.14.7}{X8353DE717BF3D9CB}
+\makelabel{monoidalcategories:AddLeftDistributivityFactoringUsingMultiplicitiesWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.7}{X8353DE717BF3D9CB}
+\makelabel{monoidalcategories:AddLeftDistributivityFactoringWithGivenObjects for IsCapCategory, IsFunction}{1.14.8}{X7F0A439478576973}
+\makelabel{monoidalcategories:AddLeftDistributivityFactoringWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.8}{X7F0A439478576973}
+\makelabel{monoidalcategories:AddRightDistributivityExpanding for IsCapCategory, IsFunction}{1.14.9}{X82E93F8E79CB7338}
+\makelabel{monoidalcategories:AddRightDistributivityExpanding for IsCapCategory, IsFunction, IsInt}{1.14.9}{X82E93F8E79CB7338}
+\makelabel{monoidalcategories:AddRightDistributivityExpandingUsingMultiplicities for IsCapCategory, IsFunction}{1.14.10}{X87ED4BF178130483}
+\makelabel{monoidalcategories:AddRightDistributivityExpandingUsingMultiplicities for IsCapCategory, IsFunction, IsInt}{1.14.10}{X87ED4BF178130483}
+\makelabel{monoidalcategories:AddRightDistributivityExpandingUsingMultiplicitiesWithGivenObjects for IsCapCategory, IsFunction}{1.14.11}{X784F3C20872202B0}
+\makelabel{monoidalcategories:AddRightDistributivityExpandingUsingMultiplicitiesWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.11}{X784F3C20872202B0}
+\makelabel{monoidalcategories:AddRightDistributivityExpandingWithGivenObjects for IsCapCategory, IsFunction}{1.14.12}{X7A6178C17EFC817A}
+\makelabel{monoidalcategories:AddRightDistributivityExpandingWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.12}{X7A6178C17EFC817A}
+\makelabel{monoidalcategories:AddRightDistributivityFactoring for IsCapCategory, IsFunction}{1.14.13}{X79B283777BC5F12C}
+\makelabel{monoidalcategories:AddRightDistributivityFactoring for IsCapCategory, IsFunction, IsInt}{1.14.13}{X79B283777BC5F12C}
+\makelabel{monoidalcategories:AddRightDistributivityFactoringUsingMultiplicities for IsCapCategory, IsFunction}{1.14.14}{X8698A64A7A1D8697}
+\makelabel{monoidalcategories:AddRightDistributivityFactoringUsingMultiplicities for IsCapCategory, IsFunction, IsInt}{1.14.14}{X8698A64A7A1D8697}
+\makelabel{monoidalcategories:AddRightDistributivityFactoringUsingMultiplicitiesWithGivenObjects for IsCapCategory, IsFunction}{1.14.15}{X7C629AA7852C80A4}
+\makelabel{monoidalcategories:AddRightDistributivityFactoringUsingMultiplicitiesWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.15}{X7C629AA7852C80A4}
+\makelabel{monoidalcategories:AddRightDistributivityFactoringWithGivenObjects for IsCapCategory, IsFunction}{1.14.16}{X842099557CF2036E}
+\makelabel{monoidalcategories:AddRightDistributivityFactoringWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.16}{X842099557CF2036E}
+\makelabel{monoidalcategories:AddBraiding for IsCapCategory, IsFunction}{1.14.17}{X7F9C3FD38397D9D4}
+\makelabel{monoidalcategories:AddBraiding for IsCapCategory, IsFunction, IsInt}{1.14.17}{X7F9C3FD38397D9D4}
+\makelabel{monoidalcategories:AddBraidingInverse for IsCapCategory, IsFunction}{1.14.18}{X8423AA1A862E9780}
+\makelabel{monoidalcategories:AddBraidingInverse for IsCapCategory, IsFunction, IsInt}{1.14.18}{X8423AA1A862E9780}
+\makelabel{monoidalcategories:AddBraidingInverseWithGivenTensorProducts for IsCapCategory, IsFunction}{1.14.19}{X85C7E40583A5955F}
+\makelabel{monoidalcategories:AddBraidingInverseWithGivenTensorProducts for IsCapCategory, IsFunction, IsInt}{1.14.19}{X85C7E40583A5955F}
+\makelabel{monoidalcategories:AddBraidingWithGivenTensorProducts for IsCapCategory, IsFunction}{1.14.20}{X7A52CBE8801D6B28}
+\makelabel{monoidalcategories:AddBraidingWithGivenTensorProducts for IsCapCategory, IsFunction, IsInt}{1.14.20}{X7A52CBE8801D6B28}
+\makelabel{monoidalcategories:AddClosedMonoidalLeftCoevaluationMorphism for IsCapCategory, IsFunction}{1.14.21}{X7996A3A980BD5783}
+\makelabel{monoidalcategories:AddClosedMonoidalLeftCoevaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.21}{X7996A3A980BD5783}
+\makelabel{monoidalcategories:AddClosedMonoidalLeftCoevaluationMorphismWithGivenRange for IsCapCategory, IsFunction}{1.14.22}{X7FD9DC1D870FB3D2}
+\makelabel{monoidalcategories:AddClosedMonoidalLeftCoevaluationMorphismWithGivenRange for IsCapCategory, IsFunction, IsInt}{1.14.22}{X7FD9DC1D870FB3D2}
+\makelabel{monoidalcategories:AddClosedMonoidalLeftEvaluationMorphism for IsCapCategory, IsFunction}{1.14.23}{X82E0E46E7B374DA9}
+\makelabel{monoidalcategories:AddClosedMonoidalLeftEvaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.23}{X82E0E46E7B374DA9}
+\makelabel{monoidalcategories:AddClosedMonoidalLeftEvaluationMorphismWithGivenSource for IsCapCategory, IsFunction}{1.14.24}{X8742C27B7D30E543}
+\makelabel{monoidalcategories:AddClosedMonoidalLeftEvaluationMorphismWithGivenSource for IsCapCategory, IsFunction, IsInt}{1.14.24}{X8742C27B7D30E543}
+\makelabel{monoidalcategories:AddClosedMonoidalRightCoevaluationMorphism for IsCapCategory, IsFunction}{1.14.25}{X870332B286200F2A}
+\makelabel{monoidalcategories:AddClosedMonoidalRightCoevaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.25}{X870332B286200F2A}
+\makelabel{monoidalcategories:AddClosedMonoidalRightCoevaluationMorphismWithGivenRange for IsCapCategory, IsFunction}{1.14.26}{X7A06D2CC79874E18}
+\makelabel{monoidalcategories:AddClosedMonoidalRightCoevaluationMorphismWithGivenRange for IsCapCategory, IsFunction, IsInt}{1.14.26}{X7A06D2CC79874E18}
+\makelabel{monoidalcategories:AddClosedMonoidalRightEvaluationMorphism for IsCapCategory, IsFunction}{1.14.27}{X82FD88E87B30334F}
+\makelabel{monoidalcategories:AddClosedMonoidalRightEvaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.27}{X82FD88E87B30334F}
+\makelabel{monoidalcategories:AddClosedMonoidalRightEvaluationMorphismWithGivenSource for IsCapCategory, IsFunction}{1.14.28}{X7ECDA3E47F267341}
+\makelabel{monoidalcategories:AddClosedMonoidalRightEvaluationMorphismWithGivenSource for IsCapCategory, IsFunction, IsInt}{1.14.28}{X7ECDA3E47F267341}
+\makelabel{monoidalcategories:AddDualOnMorphisms for IsCapCategory, IsFunction}{1.14.29}{X800DFCF37CC10CCC}
+\makelabel{monoidalcategories:AddDualOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.29}{X800DFCF37CC10CCC}
+\makelabel{monoidalcategories:AddDualOnMorphismsWithGivenDuals for IsCapCategory, IsFunction}{1.14.30}{X85DA12C581E673DE}
+\makelabel{monoidalcategories:AddDualOnMorphismsWithGivenDuals for IsCapCategory, IsFunction, IsInt}{1.14.30}{X85DA12C581E673DE}
+\makelabel{monoidalcategories:AddDualOnObjects for IsCapCategory, IsFunction}{1.14.31}{X7BB4DD5381EBF082}
+\makelabel{monoidalcategories:AddDualOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.31}{X7BB4DD5381EBF082}
+\makelabel{monoidalcategories:AddEvaluationForDual for IsCapCategory, IsFunction}{1.14.32}{X7FF9C96186646B7C}
+\makelabel{monoidalcategories:AddEvaluationForDual for IsCapCategory, IsFunction, IsInt}{1.14.32}{X7FF9C96186646B7C}
+\makelabel{monoidalcategories:AddEvaluationForDualWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.33}{X7CB63A4E7E905CD4}
+\makelabel{monoidalcategories:AddEvaluationForDualWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.33}{X7CB63A4E7E905CD4}
+\makelabel{monoidalcategories:AddInternalHomOnMorphisms for IsCapCategory, IsFunction}{1.14.34}{X79A5E1EF7F091948}
+\makelabel{monoidalcategories:AddInternalHomOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.34}{X79A5E1EF7F091948}
+\makelabel{monoidalcategories:AddInternalHomOnMorphismsWithGivenInternalHoms for IsCapCategory, IsFunction}{1.14.35}{X8070203E80388349}
+\makelabel{monoidalcategories:AddInternalHomOnMorphismsWithGivenInternalHoms for IsCapCategory, IsFunction, IsInt}{1.14.35}{X8070203E80388349}
+\makelabel{monoidalcategories:AddInternalHomOnObjects for IsCapCategory, IsFunction}{1.14.36}{X7B74F8FD8348D590}
+\makelabel{monoidalcategories:AddInternalHomOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.36}{X7B74F8FD8348D590}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductLeftAdjunctMorphism for IsCapCategory, IsFunction}{1.14.37}{X87D40CEF8247DF33}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductLeftAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.37}{X87D40CEF8247DF33}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.38}{X82D3E7BD7DD67116}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.38}{X82D3E7BD7DD67116}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductLeftAdjunctionIsomorphism for IsCapCategory, IsFunction}{1.14.39}{X7BBC91088476613F}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductLeftAdjunctionIsomorphism for IsCapCategory, IsFunction, IsInt}{1.14.39}{X7BBC91088476613F}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductLeftAdjunctionIsomorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.40}{X789D0ED680E7D176}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductLeftAdjunctionIsomorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.40}{X789D0ED680E7D176}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductRightAdjunctMorphism for IsCapCategory, IsFunction}{1.14.41}{X84B3BDBF8294E790}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductRightAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.41}{X84B3BDBF8294E790}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.42}{X807104E57D50EEB9}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.42}{X807104E57D50EEB9}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductRightAdjunctionIsomorphism for IsCapCategory, IsFunction}{1.14.43}{X8634234A855F18D5}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductRightAdjunctionIsomorphism for IsCapCategory, IsFunction, IsInt}{1.14.43}{X8634234A855F18D5}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductRightAdjunctionIsomorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.44}{X7A3FED8E84CD4A02}
+\makelabel{monoidalcategories:AddInternalHomToTensorProductRightAdjunctionIsomorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.44}{X7A3FED8E84CD4A02}
+\makelabel{monoidalcategories:AddIsomorphismFromDualObjectToInternalHomIntoTensorUnit for IsCapCategory, IsFunction}{1.14.45}{X7983CB57783E6813}
+\makelabel{monoidalcategories:AddIsomorphismFromDualObjectToInternalHomIntoTensorUnit for IsCapCategory, IsFunction, IsInt}{1.14.45}{X7983CB57783E6813}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalHomIntoTensorUnitToDualObject for IsCapCategory, IsFunction}{1.14.46}{X84E4949886CB84C9}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalHomIntoTensorUnitToDualObject for IsCapCategory, IsFunction, IsInt}{1.14.46}{X84E4949886CB84C9}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalHomToObject for IsCapCategory, IsFunction}{1.14.47}{X7FA9FE2B85CE866D}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalHomToObject for IsCapCategory, IsFunction, IsInt}{1.14.47}{X7FA9FE2B85CE866D}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalHomToObjectWithGivenInternalHom for IsCapCategory, IsFunction}{1.14.48}{X7D6421147BF6651B}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalHomToObjectWithGivenInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.48}{X7D6421147BF6651B}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToInternalHom for IsCapCategory, IsFunction}{1.14.49}{X82538F687DE872DD}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.49}{X82538F687DE872DD}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToInternalHomWithGivenInternalHom for IsCapCategory, IsFunction}{1.14.50}{X78ED7FCC83D091AB}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToInternalHomWithGivenInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.50}{X78ED7FCC83D091AB}
+\makelabel{monoidalcategories:AddLambdaElimination for IsCapCategory, IsFunction}{1.14.51}{X8406FBCD7EE968FF}
+\makelabel{monoidalcategories:AddLambdaElimination for IsCapCategory, IsFunction, IsInt}{1.14.51}{X8406FBCD7EE968FF}
+\makelabel{monoidalcategories:AddLambdaIntroduction for IsCapCategory, IsFunction}{1.14.52}{X84944B6283F2802A}
+\makelabel{monoidalcategories:AddLambdaIntroduction for IsCapCategory, IsFunction, IsInt}{1.14.52}{X84944B6283F2802A}
+\makelabel{monoidalcategories:AddMonoidalPostComposeMorphism for IsCapCategory, IsFunction}{1.14.53}{X843DC64486CB2ED1}
+\makelabel{monoidalcategories:AddMonoidalPostComposeMorphism for IsCapCategory, IsFunction, IsInt}{1.14.53}{X843DC64486CB2ED1}
+\makelabel{monoidalcategories:AddMonoidalPostComposeMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.54}{X7FC3725A7CF804F9}
+\makelabel{monoidalcategories:AddMonoidalPostComposeMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.54}{X7FC3725A7CF804F9}
+\makelabel{monoidalcategories:AddMonoidalPreComposeMorphism for IsCapCategory, IsFunction}{1.14.55}{X7B0C198782C01CBA}
+\makelabel{monoidalcategories:AddMonoidalPreComposeMorphism for IsCapCategory, IsFunction, IsInt}{1.14.55}{X7B0C198782C01CBA}
+\makelabel{monoidalcategories:AddMonoidalPreComposeMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.56}{X7A22CD657A2A338C}
+\makelabel{monoidalcategories:AddMonoidalPreComposeMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.56}{X7A22CD657A2A338C}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToInternalHom for IsCapCategory, IsFunction}{1.14.57}{X7CF664D87D8D5CA1}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.57}{X7CF664D87D8D5CA1}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToInternalHomWithGivenObjects for IsCapCategory, IsFunction}{1.14.58}{X86D3AF4A80FA738D}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToInternalHomWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.58}{X86D3AF4A80FA738D}
+\makelabel{monoidalcategories:AddMorphismToBidual for IsCapCategory, IsFunction}{1.14.59}{X864B98B08041EE6C}
+\makelabel{monoidalcategories:AddMorphismToBidual for IsCapCategory, IsFunction, IsInt}{1.14.59}{X864B98B08041EE6C}
+\makelabel{monoidalcategories:AddMorphismToBidualWithGivenBidual for IsCapCategory, IsFunction}{1.14.60}{X84C05B087EFCE599}
+\makelabel{monoidalcategories:AddMorphismToBidualWithGivenBidual for IsCapCategory, IsFunction, IsInt}{1.14.60}{X84C05B087EFCE599}
+\makelabel{monoidalcategories:AddTensorProductDualityCompatibilityMorphism for IsCapCategory, IsFunction}{1.14.61}{X7A020DBF860317F5}
+\makelabel{monoidalcategories:AddTensorProductDualityCompatibilityMorphism for IsCapCategory, IsFunction, IsInt}{1.14.61}{X7A020DBF860317F5}
+\makelabel{monoidalcategories:AddTensorProductDualityCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.62}{X78D1B6AF8654A950}
+\makelabel{monoidalcategories:AddTensorProductDualityCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.62}{X78D1B6AF8654A950}
+\makelabel{monoidalcategories:AddTensorProductInternalHomCompatibilityMorphism for IsCapCategory, IsFunction}{1.14.63}{X83A6EF0B7ED71EED}
+\makelabel{monoidalcategories:AddTensorProductInternalHomCompatibilityMorphism for IsCapCategory, IsFunction, IsInt}{1.14.63}{X83A6EF0B7ED71EED}
+\makelabel{monoidalcategories:AddTensorProductInternalHomCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.64}{X871C6B55843A0AF3}
+\makelabel{monoidalcategories:AddTensorProductInternalHomCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.64}{X871C6B55843A0AF3}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomLeftAdjunctMorphism for IsCapCategory, IsFunction}{1.14.65}{X817EAD878544BF68}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomLeftAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.65}{X817EAD878544BF68}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomLeftAdjunctMorphismWithGivenInternalHom for IsCapCategory, IsFunction}{1.14.66}{X7B2FEF0985C2FACE}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomLeftAdjunctMorphismWithGivenInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.66}{X7B2FEF0985C2FACE}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomLeftAdjunctionIsomorphism for IsCapCategory, IsFunction}{1.14.67}{X85A8D11983750164}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomLeftAdjunctionIsomorphism for IsCapCategory, IsFunction, IsInt}{1.14.67}{X85A8D11983750164}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomLeftAdjunctionIsomorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.68}{X7AE873FD87E4B12D}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomLeftAdjunctionIsomorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.68}{X7AE873FD87E4B12D}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomRightAdjunctMorphism for IsCapCategory, IsFunction}{1.14.69}{X7AF5FBEE859787CB}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomRightAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.69}{X7AF5FBEE859787CB}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomRightAdjunctMorphismWithGivenInternalHom for IsCapCategory, IsFunction}{1.14.70}{X86B3F2BF813AFBDA}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomRightAdjunctMorphismWithGivenInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.70}{X86B3F2BF813AFBDA}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomRightAdjunctionIsomorphism for IsCapCategory, IsFunction}{1.14.71}{X79777C5F825C788E}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomRightAdjunctionIsomorphism for IsCapCategory, IsFunction, IsInt}{1.14.71}{X79777C5F825C788E}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomRightAdjunctionIsomorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.72}{X86FD5F8A83CE2A59}
+\makelabel{monoidalcategories:AddTensorProductToInternalHomRightAdjunctionIsomorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.72}{X86FD5F8A83CE2A59}
+\makelabel{monoidalcategories:AddUniversalPropertyOfDual for IsCapCategory, IsFunction}{1.14.73}{X7FCEDB3B7DF69A1E}
+\makelabel{monoidalcategories:AddUniversalPropertyOfDual for IsCapCategory, IsFunction, IsInt}{1.14.73}{X7FCEDB3B7DF69A1E}
+\makelabel{monoidalcategories:AddCoDualOnMorphisms for IsCapCategory, IsFunction}{1.14.74}{X7D23088385F021AA}
+\makelabel{monoidalcategories:AddCoDualOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.74}{X7D23088385F021AA}
+\makelabel{monoidalcategories:AddCoDualOnMorphismsWithGivenCoDuals for IsCapCategory, IsFunction}{1.14.75}{X7C2568FD82259231}
+\makelabel{monoidalcategories:AddCoDualOnMorphismsWithGivenCoDuals for IsCapCategory, IsFunction, IsInt}{1.14.75}{X7C2568FD82259231}
+\makelabel{monoidalcategories:AddCoDualOnObjects for IsCapCategory, IsFunction}{1.14.76}{X7C1CDE7F855ACB74}
+\makelabel{monoidalcategories:AddCoDualOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.76}{X7C1CDE7F855ACB74}
+\makelabel{monoidalcategories:AddCoDualityTensorProductCompatibilityMorphism for IsCapCategory, IsFunction}{1.14.77}{X7D9B355D8261CB17}
+\makelabel{monoidalcategories:AddCoDualityTensorProductCompatibilityMorphism for IsCapCategory, IsFunction, IsInt}{1.14.77}{X7D9B355D8261CB17}
+\makelabel{monoidalcategories:AddCoDualityTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.78}{X7CE8010980DBA597}
+\makelabel{monoidalcategories:AddCoDualityTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.78}{X7CE8010980DBA597}
+\makelabel{monoidalcategories:AddCoLambdaElimination for IsCapCategory, IsFunction}{1.14.79}{X7E7962CC7E809023}
+\makelabel{monoidalcategories:AddCoLambdaElimination for IsCapCategory, IsFunction, IsInt}{1.14.79}{X7E7962CC7E809023}
+\makelabel{monoidalcategories:AddCoLambdaIntroduction for IsCapCategory, IsFunction}{1.14.80}{X7C3868657D8A0400}
+\makelabel{monoidalcategories:AddCoLambdaIntroduction for IsCapCategory, IsFunction, IsInt}{1.14.80}{X7C3868657D8A0400}
+\makelabel{monoidalcategories:AddCoclosedEvaluationForCoDual for IsCapCategory, IsFunction}{1.14.81}{X839204FD79F2968D}
+\makelabel{monoidalcategories:AddCoclosedEvaluationForCoDual for IsCapCategory, IsFunction, IsInt}{1.14.81}{X839204FD79F2968D}
+\makelabel{monoidalcategories:AddCoclosedEvaluationForCoDualWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.82}{X803976DB7C8F307C}
+\makelabel{monoidalcategories:AddCoclosedEvaluationForCoDualWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.82}{X803976DB7C8F307C}
+\makelabel{monoidalcategories:AddCoclosedMonoidalLeftCoevaluationMorphism for IsCapCategory, IsFunction}{1.14.83}{X829CAF887FAC5BF0}
+\makelabel{monoidalcategories:AddCoclosedMonoidalLeftCoevaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.83}{X829CAF887FAC5BF0}
+\makelabel{monoidalcategories:AddCoclosedMonoidalLeftCoevaluationMorphismWithGivenSource for IsCapCategory, IsFunction}{1.14.84}{X7E7EBA4381366E7A}
+\makelabel{monoidalcategories:AddCoclosedMonoidalLeftCoevaluationMorphismWithGivenSource for IsCapCategory, IsFunction, IsInt}{1.14.84}{X7E7EBA4381366E7A}
+\makelabel{monoidalcategories:AddCoclosedMonoidalLeftEvaluationMorphism for IsCapCategory, IsFunction}{1.14.85}{X81EC6B3E80876BC8}
+\makelabel{monoidalcategories:AddCoclosedMonoidalLeftEvaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.85}{X81EC6B3E80876BC8}
+\makelabel{monoidalcategories:AddCoclosedMonoidalLeftEvaluationMorphismWithGivenRange for IsCapCategory, IsFunction}{1.14.86}{X839DE15C87358F99}
+\makelabel{monoidalcategories:AddCoclosedMonoidalLeftEvaluationMorphismWithGivenRange for IsCapCategory, IsFunction, IsInt}{1.14.86}{X839DE15C87358F99}
+\makelabel{monoidalcategories:AddCoclosedMonoidalRightCoevaluationMorphism for IsCapCategory, IsFunction}{1.14.87}{X78A8CB687ADC4653}
+\makelabel{monoidalcategories:AddCoclosedMonoidalRightCoevaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.87}{X78A8CB687ADC4653}
+\makelabel{monoidalcategories:AddCoclosedMonoidalRightCoevaluationMorphismWithGivenSource for IsCapCategory, IsFunction}{1.14.88}{X783C75CD79B2E8C9}
+\makelabel{monoidalcategories:AddCoclosedMonoidalRightCoevaluationMorphismWithGivenSource for IsCapCategory, IsFunction, IsInt}{1.14.88}{X783C75CD79B2E8C9}
+\makelabel{monoidalcategories:AddCoclosedMonoidalRightEvaluationMorphism for IsCapCategory, IsFunction}{1.14.89}{X85F82B2F84E55DD2}
+\makelabel{monoidalcategories:AddCoclosedMonoidalRightEvaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.89}{X85F82B2F84E55DD2}
+\makelabel{monoidalcategories:AddCoclosedMonoidalRightEvaluationMorphismWithGivenRange for IsCapCategory, IsFunction}{1.14.90}{X86DC2EF07B421CE0}
+\makelabel{monoidalcategories:AddCoclosedMonoidalRightEvaluationMorphismWithGivenRange for IsCapCategory, IsFunction, IsInt}{1.14.90}{X86DC2EF07B421CE0}
+\makelabel{monoidalcategories:AddInternalCoHomOnMorphisms for IsCapCategory, IsFunction}{1.14.91}{X7D63C4A57A467DAA}
+\makelabel{monoidalcategories:AddInternalCoHomOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.91}{X7D63C4A57A467DAA}
+\makelabel{monoidalcategories:AddInternalCoHomOnMorphismsWithGivenInternalCoHoms for IsCapCategory, IsFunction}{1.14.92}{X87A67CDD86E0CE05}
+\makelabel{monoidalcategories:AddInternalCoHomOnMorphismsWithGivenInternalCoHoms for IsCapCategory, IsFunction, IsInt}{1.14.92}{X87A67CDD86E0CE05}
+\makelabel{monoidalcategories:AddInternalCoHomOnObjects for IsCapCategory, IsFunction}{1.14.93}{X828648F183570AE3}
+\makelabel{monoidalcategories:AddInternalCoHomOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.93}{X828648F183570AE3}
+\makelabel{monoidalcategories:AddInternalCoHomTensorProductCompatibilityMorphism for IsCapCategory, IsFunction}{1.14.94}{X78278696834ACA53}
+\makelabel{monoidalcategories:AddInternalCoHomTensorProductCompatibilityMorphism for IsCapCategory, IsFunction, IsInt}{1.14.94}{X78278696834ACA53}
+\makelabel{monoidalcategories:AddInternalCoHomTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.95}{X82EA4C857C7BCC60}
+\makelabel{monoidalcategories:AddInternalCoHomTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.95}{X82EA4C857C7BCC60}
+\makelabel{monoidalcategories:AddInternalCoHomToTensorProductLeftAdjunctMorphism for IsCapCategory, IsFunction}{1.14.96}{X7C7256EE79374540}
+\makelabel{monoidalcategories:AddInternalCoHomToTensorProductLeftAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.96}{X7C7256EE79374540}
+\makelabel{monoidalcategories:AddInternalCoHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.97}{X84EBD01D7843FAAD}
+\makelabel{monoidalcategories:AddInternalCoHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.97}{X84EBD01D7843FAAD}
+\makelabel{monoidalcategories:AddInternalCoHomToTensorProductRightAdjunctMorphism for IsCapCategory, IsFunction}{1.14.98}{X858ED26087369677}
+\makelabel{monoidalcategories:AddInternalCoHomToTensorProductRightAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.98}{X858ED26087369677}
+\makelabel{monoidalcategories:AddInternalCoHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.99}{X7E97DAC0782AACEC}
+\makelabel{monoidalcategories:AddInternalCoHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.99}{X7E97DAC0782AACEC}
+\makelabel{monoidalcategories:AddIsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit for IsCapCategory, IsFunction}{1.14.100}{X7A2B14497B4924A7}
+\makelabel{monoidalcategories:AddIsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit for IsCapCategory, IsFunction, IsInt}{1.14.100}{X7A2B14497B4924A7}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalCoHomFromTensorUnitToCoDualObject for IsCapCategory, IsFunction}{1.14.101}{X8143326C7BE5E321}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalCoHomFromTensorUnitToCoDualObject for IsCapCategory, IsFunction, IsInt}{1.14.101}{X8143326C7BE5E321}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalCoHomToObject for IsCapCategory, IsFunction}{1.14.102}{X7C9F35A779395B26}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalCoHomToObject for IsCapCategory, IsFunction, IsInt}{1.14.102}{X7C9F35A779395B26}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom for IsCapCategory, IsFunction}{1.14.103}{X7D0E88AC7C0304D3}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.103}{X7D0E88AC7C0304D3}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToInternalCoHom for IsCapCategory, IsFunction}{1.14.104}{X7E18F31C86620139}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.104}{X7E18F31C86620139}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom for IsCapCategory, IsFunction}{1.14.105}{X8304276383585ECC}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.105}{X8304276383585ECC}
+\makelabel{monoidalcategories:AddMonoidalPostCoComposeMorphism for IsCapCategory, IsFunction}{1.14.106}{X7DE479077F155716}
+\makelabel{monoidalcategories:AddMonoidalPostCoComposeMorphism for IsCapCategory, IsFunction, IsInt}{1.14.106}{X7DE479077F155716}
+\makelabel{monoidalcategories:AddMonoidalPostCoComposeMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.107}{X79858B577BD4F1E1}
+\makelabel{monoidalcategories:AddMonoidalPostCoComposeMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.107}{X79858B577BD4F1E1}
+\makelabel{monoidalcategories:AddMonoidalPreCoComposeMorphism for IsCapCategory, IsFunction}{1.14.108}{X7D1662EA819EA1A2}
+\makelabel{monoidalcategories:AddMonoidalPreCoComposeMorphism for IsCapCategory, IsFunction, IsInt}{1.14.108}{X7D1662EA819EA1A2}
+\makelabel{monoidalcategories:AddMonoidalPreCoComposeMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.109}{X81DFED7386A953E0}
+\makelabel{monoidalcategories:AddMonoidalPreCoComposeMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.109}{X81DFED7386A953E0}
+\makelabel{monoidalcategories:AddMorphismFromCoBidual for IsCapCategory, IsFunction}{1.14.110}{X7D1615257BAA311F}
+\makelabel{monoidalcategories:AddMorphismFromCoBidual for IsCapCategory, IsFunction, IsInt}{1.14.110}{X7D1615257BAA311F}
+\makelabel{monoidalcategories:AddMorphismFromCoBidualWithGivenCoBidual for IsCapCategory, IsFunction}{1.14.111}{X84D1F74D8118B2A0}
+\makelabel{monoidalcategories:AddMorphismFromCoBidualWithGivenCoBidual for IsCapCategory, IsFunction, IsInt}{1.14.111}{X84D1F74D8118B2A0}
+\makelabel{monoidalcategories:AddMorphismFromInternalCoHomToTensorProduct for IsCapCategory, IsFunction}{1.14.112}{X7C3C01F1834A4B9B}
+\makelabel{monoidalcategories:AddMorphismFromInternalCoHomToTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.112}{X7C3C01F1834A4B9B}
+\makelabel{monoidalcategories:AddMorphismFromInternalCoHomToTensorProductWithGivenObjects for IsCapCategory, IsFunction}{1.14.113}{X87AB2C4D84F19F37}
+\makelabel{monoidalcategories:AddMorphismFromInternalCoHomToTensorProductWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.113}{X87AB2C4D84F19F37}
+\makelabel{monoidalcategories:AddTensorProductToInternalCoHomLeftAdjunctMorphism for IsCapCategory, IsFunction}{1.14.114}{X7C0E0CF87FEFEB0D}
+\makelabel{monoidalcategories:AddTensorProductToInternalCoHomLeftAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.114}{X7C0E0CF87FEFEB0D}
+\makelabel{monoidalcategories:AddTensorProductToInternalCoHomLeftAdjunctMorphismWithGivenInternalCoHom for IsCapCategory, IsFunction}{1.14.115}{X7A838651781657DA}
+\makelabel{monoidalcategories:AddTensorProductToInternalCoHomLeftAdjunctMorphismWithGivenInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.115}{X7A838651781657DA}
+\makelabel{monoidalcategories:AddTensorProductToInternalCoHomRightAdjunctMorphism for IsCapCategory, IsFunction}{1.14.116}{X8123546E81EE383A}
+\makelabel{monoidalcategories:AddTensorProductToInternalCoHomRightAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.116}{X8123546E81EE383A}
+\makelabel{monoidalcategories:AddTensorProductToInternalCoHomRightAdjunctMorphismWithGivenInternalCoHom for IsCapCategory, IsFunction}{1.14.117}{X8698898584E99695}
+\makelabel{monoidalcategories:AddTensorProductToInternalCoHomRightAdjunctMorphismWithGivenInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.117}{X8698898584E99695}
+\makelabel{monoidalcategories:AddUniversalPropertyOfCoDual for IsCapCategory, IsFunction}{1.14.118}{X8519ECF17EC07916}
+\makelabel{monoidalcategories:AddUniversalPropertyOfCoDual for IsCapCategory, IsFunction, IsInt}{1.14.118}{X8519ECF17EC07916}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftDualObjectToLeftInternalHomIntoTensorUnit for IsCapCategory, IsFunction}{1.14.119}{X7F868E597F1C1AD7}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftDualObjectToLeftInternalHomIntoTensorUnit for IsCapCategory, IsFunction, IsInt}{1.14.119}{X7F868E597F1C1AD7}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalHomIntoTensorUnitToLeftDualObject for IsCapCategory, IsFunction}{1.14.120}{X810B50C27901021C}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalHomIntoTensorUnitToLeftDualObject for IsCapCategory, IsFunction, IsInt}{1.14.120}{X810B50C27901021C}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalHomToObject for IsCapCategory, IsFunction}{1.14.121}{X87415032853E8340}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalHomToObject for IsCapCategory, IsFunction, IsInt}{1.14.121}{X87415032853E8340}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalHomToObjectWithGivenLeftInternalHom for IsCapCategory, IsFunction}{1.14.122}{X83DAADEE8139DACA}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalHomToObjectWithGivenLeftInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.122}{X83DAADEE8139DACA}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToLeftInternalHom for IsCapCategory, IsFunction}{1.14.123}{X7FA337D07BCD9D5B}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToLeftInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.123}{X7FA337D07BCD9D5B}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToLeftInternalHomWithGivenLeftInternalHom for IsCapCategory, IsFunction}{1.14.124}{X7EA7B1777FCAC4D1}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToLeftInternalHomWithGivenLeftInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.124}{X7EA7B1777FCAC4D1}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalCoevaluationMorphism for IsCapCategory, IsFunction}{1.14.125}{X7D1E4F66851991AB}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalCoevaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.125}{X7D1E4F66851991AB}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalCoevaluationMorphismWithGivenRange for IsCapCategory, IsFunction}{1.14.126}{X7EF0D5B782AB75FA}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalCoevaluationMorphismWithGivenRange for IsCapCategory, IsFunction, IsInt}{1.14.126}{X7EF0D5B782AB75FA}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalEvaluationForLeftDual for IsCapCategory, IsFunction}{1.14.127}{X7FD8142C7CBF7FB1}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalEvaluationForLeftDual for IsCapCategory, IsFunction, IsInt}{1.14.127}{X7FD8142C7CBF7FB1}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalEvaluationForLeftDualWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.128}{X7A89130185CCF31D}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalEvaluationForLeftDualWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.128}{X7A89130185CCF31D}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalEvaluationMorphism for IsCapCategory, IsFunction}{1.14.129}{X7D75530C7E938B81}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalEvaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.129}{X7D75530C7E938B81}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalEvaluationMorphismWithGivenSource for IsCapCategory, IsFunction}{1.14.130}{X8535FD8E7894236B}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalEvaluationMorphismWithGivenSource for IsCapCategory, IsFunction, IsInt}{1.14.130}{X8535FD8E7894236B}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalLambdaElimination for IsCapCategory, IsFunction}{1.14.131}{X869B3FD87FC09E21}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalLambdaElimination for IsCapCategory, IsFunction, IsInt}{1.14.131}{X869B3FD87FC09E21}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalLambdaIntroduction for IsCapCategory, IsFunction}{1.14.132}{X7CC085AB7DBC581A}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalLambdaIntroduction for IsCapCategory, IsFunction, IsInt}{1.14.132}{X7CC085AB7DBC581A}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalPostComposeMorphism for IsCapCategory, IsFunction}{1.14.133}{X7BE971CB7E989544}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalPostComposeMorphism for IsCapCategory, IsFunction, IsInt}{1.14.133}{X7BE971CB7E989544}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalPostComposeMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.134}{X7B6DBF17796A971A}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalPostComposeMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.134}{X7B6DBF17796A971A}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalPreComposeMorphism for IsCapCategory, IsFunction}{1.14.135}{X799401467830D201}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalPreComposeMorphism for IsCapCategory, IsFunction, IsInt}{1.14.135}{X799401467830D201}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalPreComposeMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.136}{X7915D4437C9257A5}
+\makelabel{monoidalcategories:AddLeftClosedMonoidalPreComposeMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.136}{X7915D4437C9257A5}
+\makelabel{monoidalcategories:AddLeftDualOnMorphisms for IsCapCategory, IsFunction}{1.14.137}{X79D85C017917C1D4}
+\makelabel{monoidalcategories:AddLeftDualOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.137}{X79D85C017917C1D4}
+\makelabel{monoidalcategories:AddLeftDualOnMorphismsWithGivenLeftDuals for IsCapCategory, IsFunction}{1.14.138}{X816C625A82BCDDE3}
+\makelabel{monoidalcategories:AddLeftDualOnMorphismsWithGivenLeftDuals for IsCapCategory, IsFunction, IsInt}{1.14.138}{X816C625A82BCDDE3}
+\makelabel{monoidalcategories:AddLeftDualOnObjects for IsCapCategory, IsFunction}{1.14.139}{X7CB93B6E8555359D}
+\makelabel{monoidalcategories:AddLeftDualOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.139}{X7CB93B6E8555359D}
+\makelabel{monoidalcategories:AddLeftInternalHomOnMorphisms for IsCapCategory, IsFunction}{1.14.140}{X79B3B2F586530EFF}
+\makelabel{monoidalcategories:AddLeftInternalHomOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.140}{X79B3B2F586530EFF}
+\makelabel{monoidalcategories:AddLeftInternalHomOnMorphismsWithGivenLeftInternalHoms for IsCapCategory, IsFunction}{1.14.141}{X7DDC722B78B659A2}
+\makelabel{monoidalcategories:AddLeftInternalHomOnMorphismsWithGivenLeftInternalHoms for IsCapCategory, IsFunction, IsInt}{1.14.141}{X7DDC722B78B659A2}
+\makelabel{monoidalcategories:AddLeftInternalHomOnObjects for IsCapCategory, IsFunction}{1.14.142}{X7FCF9DEA7F6B73F9}
+\makelabel{monoidalcategories:AddLeftInternalHomOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.142}{X7FCF9DEA7F6B73F9}
+\makelabel{monoidalcategories:AddLeftInternalHomToTensorProductAdjunctMorphism for IsCapCategory, IsFunction}{1.14.143}{X7F5EAC1E8104166E}
+\makelabel{monoidalcategories:AddLeftInternalHomToTensorProductAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.143}{X7F5EAC1E8104166E}
+\makelabel{monoidalcategories:AddLeftInternalHomToTensorProductAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.144}{X7C437ED77E95B84B}
+\makelabel{monoidalcategories:AddLeftInternalHomToTensorProductAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.144}{X7C437ED77E95B84B}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToLeftInternalHom for IsCapCategory, IsFunction}{1.14.145}{X7CA082FF7B01D8FB}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToLeftInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.145}{X7CA082FF7B01D8FB}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToLeftInternalHomWithGivenObjects for IsCapCategory, IsFunction}{1.14.146}{X8028DDA77A2AF1D0}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToLeftInternalHomWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.146}{X8028DDA77A2AF1D0}
+\makelabel{monoidalcategories:AddMorphismToLeftBidual for IsCapCategory, IsFunction}{1.14.147}{X80EC71197C2C11D1}
+\makelabel{monoidalcategories:AddMorphismToLeftBidual for IsCapCategory, IsFunction, IsInt}{1.14.147}{X80EC71197C2C11D1}
+\makelabel{monoidalcategories:AddMorphismToLeftBidualWithGivenLeftBidual for IsCapCategory, IsFunction}{1.14.148}{X869265BC78942371}
+\makelabel{monoidalcategories:AddMorphismToLeftBidualWithGivenLeftBidual for IsCapCategory, IsFunction, IsInt}{1.14.148}{X869265BC78942371}
+\makelabel{monoidalcategories:AddTensorProductLeftDualityCompatibilityMorphism for IsCapCategory, IsFunction}{1.14.149}{X7953DC1F805D8C1A}
+\makelabel{monoidalcategories:AddTensorProductLeftDualityCompatibilityMorphism for IsCapCategory, IsFunction, IsInt}{1.14.149}{X7953DC1F805D8C1A}
+\makelabel{monoidalcategories:AddTensorProductLeftDualityCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.150}{X836F9F347AB09804}
+\makelabel{monoidalcategories:AddTensorProductLeftDualityCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.150}{X836F9F347AB09804}
+\makelabel{monoidalcategories:AddTensorProductLeftInternalHomCompatibilityMorphism for IsCapCategory, IsFunction}{1.14.151}{X7A76B21F7DD29DD4}
+\makelabel{monoidalcategories:AddTensorProductLeftInternalHomCompatibilityMorphism for IsCapCategory, IsFunction, IsInt}{1.14.151}{X7A76B21F7DD29DD4}
+\makelabel{monoidalcategories:AddTensorProductLeftInternalHomCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.152}{X78BE6DC079995BE8}
+\makelabel{monoidalcategories:AddTensorProductLeftInternalHomCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.152}{X78BE6DC079995BE8}
+\makelabel{monoidalcategories:AddTensorProductToLeftInternalHomAdjunctMorphism for IsCapCategory, IsFunction}{1.14.153}{X7A7B64B17E0CB68F}
+\makelabel{monoidalcategories:AddTensorProductToLeftInternalHomAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.153}{X7A7B64B17E0CB68F}
+\makelabel{monoidalcategories:AddTensorProductToLeftInternalHomAdjunctMorphismWithGivenLeftInternalHom for IsCapCategory, IsFunction}{1.14.154}{X852D330679DA479F}
+\makelabel{monoidalcategories:AddTensorProductToLeftInternalHomAdjunctMorphismWithGivenLeftInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.154}{X852D330679DA479F}
+\makelabel{monoidalcategories:AddUniversalPropertyOfLeftDual for IsCapCategory, IsFunction}{1.14.155}{X814F44BD7ED47029}
+\makelabel{monoidalcategories:AddUniversalPropertyOfLeftDual for IsCapCategory, IsFunction, IsInt}{1.14.155}{X814F44BD7ED47029}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftCoDualObjectToLeftInternalCoHomFromTensorUnit for IsCapCategory, IsFunction}{1.14.156}{X7DF0FCAF7EF18F8F}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftCoDualObjectToLeftInternalCoHomFromTensorUnit for IsCapCategory, IsFunction, IsInt}{1.14.156}{X7DF0FCAF7EF18F8F}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalCoHomFromTensorUnitToLeftCoDualObject for IsCapCategory, IsFunction}{1.14.157}{X85BAFAF48192ADFD}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalCoHomFromTensorUnitToLeftCoDualObject for IsCapCategory, IsFunction, IsInt}{1.14.157}{X85BAFAF48192ADFD}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalCoHomToObject for IsCapCategory, IsFunction}{1.14.158}{X7F13CA18790E4170}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalCoHomToObject for IsCapCategory, IsFunction, IsInt}{1.14.158}{X7F13CA18790E4170}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalCoHomToObjectWithGivenLeftInternalCoHom for IsCapCategory, IsFunction}{1.14.159}{X8695E6B0854AC59F}
+\makelabel{monoidalcategories:AddIsomorphismFromLeftInternalCoHomToObjectWithGivenLeftInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.159}{X8695E6B0854AC59F}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToLeftInternalCoHom for IsCapCategory, IsFunction}{1.14.160}{X78B4B7FE82DC4548}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToLeftInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.160}{X78B4B7FE82DC4548}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToLeftInternalCoHomWithGivenLeftInternalCoHom for IsCapCategory, IsFunction}{1.14.161}{X8569A8107E98C1A7}
+\makelabel{monoidalcategories:AddIsomorphismFromObjectToLeftInternalCoHomWithGivenLeftInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.161}{X8569A8107E98C1A7}
+\makelabel{monoidalcategories:AddLeftCoDualOnMorphisms for IsCapCategory, IsFunction}{1.14.162}{X834FFF597E5AD96E}
+\makelabel{monoidalcategories:AddLeftCoDualOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.162}{X834FFF597E5AD96E}
+\makelabel{monoidalcategories:AddLeftCoDualOnMorphismsWithGivenLeftCoDuals for IsCapCategory, IsFunction}{1.14.163}{X7EFAFD687AE8B744}
+\makelabel{monoidalcategories:AddLeftCoDualOnMorphismsWithGivenLeftCoDuals for IsCapCategory, IsFunction, IsInt}{1.14.163}{X7EFAFD687AE8B744}
+\makelabel{monoidalcategories:AddLeftCoDualOnObjects for IsCapCategory, IsFunction}{1.14.164}{X85C97E8D7982AA91}
+\makelabel{monoidalcategories:AddLeftCoDualOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.164}{X85C97E8D7982AA91}
+\makelabel{monoidalcategories:AddLeftCoDualityTensorProductCompatibilityMorphism for IsCapCategory, IsFunction}{1.14.165}{X859C18CA80B931C8}
+\makelabel{monoidalcategories:AddLeftCoDualityTensorProductCompatibilityMorphism for IsCapCategory, IsFunction, IsInt}{1.14.165}{X859C18CA80B931C8}
+\makelabel{monoidalcategories:AddLeftCoDualityTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.166}{X7D8D0BE17F8837FB}
+\makelabel{monoidalcategories:AddLeftCoDualityTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.166}{X7D8D0BE17F8837FB}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalCoevaluationMorphism for IsCapCategory, IsFunction}{1.14.167}{X788B63417F1F60F9}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalCoevaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.167}{X788B63417F1F60F9}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalCoevaluationMorphismWithGivenSource for IsCapCategory, IsFunction}{1.14.168}{X82B5F67881855573}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalCoevaluationMorphismWithGivenSource for IsCapCategory, IsFunction, IsInt}{1.14.168}{X82B5F67881855573}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalEvaluationForLeftCoDual for IsCapCategory, IsFunction}{1.14.169}{X7825101881671E7F}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalEvaluationForLeftCoDual for IsCapCategory, IsFunction, IsInt}{1.14.169}{X7825101881671E7F}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalEvaluationForLeftCoDualWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.170}{X846EE69A797450F9}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalEvaluationForLeftCoDualWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.170}{X846EE69A797450F9}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalEvaluationMorphism for IsCapCategory, IsFunction}{1.14.171}{X826AE548803450C1}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalEvaluationMorphism for IsCapCategory, IsFunction, IsInt}{1.14.171}{X826AE548803450C1}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalEvaluationMorphismWithGivenRange for IsCapCategory, IsFunction}{1.14.172}{X8082909C8786B490}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalEvaluationMorphismWithGivenRange for IsCapCategory, IsFunction, IsInt}{1.14.172}{X8082909C8786B490}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalLambdaElimination for IsCapCategory, IsFunction}{1.14.173}{X84635F4580F63BD0}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalLambdaElimination for IsCapCategory, IsFunction, IsInt}{1.14.173}{X84635F4580F63BD0}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalLambdaIntroduction for IsCapCategory, IsFunction}{1.14.174}{X83DF33EF7A19E291}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalLambdaIntroduction for IsCapCategory, IsFunction, IsInt}{1.14.174}{X83DF33EF7A19E291}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalPostCoComposeMorphism for IsCapCategory, IsFunction}{1.14.175}{X7954E35E784BCB8B}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalPostCoComposeMorphism for IsCapCategory, IsFunction, IsInt}{1.14.175}{X7954E35E784BCB8B}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalPostCoComposeMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.176}{X7FE2EC92781C752E}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalPostCoComposeMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.176}{X7FE2EC92781C752E}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalPreCoComposeMorphism for IsCapCategory, IsFunction}{1.14.177}{X7DC17F0884BAD720}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalPreCoComposeMorphism for IsCapCategory, IsFunction, IsInt}{1.14.177}{X7DC17F0884BAD720}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalPreCoComposeMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.178}{X86DB94FE8301038C}
+\makelabel{monoidalcategories:AddLeftCoclosedMonoidalPreCoComposeMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.178}{X86DB94FE8301038C}
+\makelabel{monoidalcategories:AddLeftInternalCoHomOnMorphisms for IsCapCategory, IsFunction}{1.14.179}{X829E5F7E783539C3}
+\makelabel{monoidalcategories:AddLeftInternalCoHomOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.179}{X829E5F7E783539C3}
+\makelabel{monoidalcategories:AddLeftInternalCoHomOnMorphismsWithGivenLeftInternalCoHoms for IsCapCategory, IsFunction}{1.14.180}{X78538C8E78635666}
+\makelabel{monoidalcategories:AddLeftInternalCoHomOnMorphismsWithGivenLeftInternalCoHoms for IsCapCategory, IsFunction, IsInt}{1.14.180}{X78538C8E78635666}
+\makelabel{monoidalcategories:AddLeftInternalCoHomOnObjects for IsCapCategory, IsFunction}{1.14.181}{X82901BEB81D0A428}
+\makelabel{monoidalcategories:AddLeftInternalCoHomOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.181}{X82901BEB81D0A428}
+\makelabel{monoidalcategories:AddLeftInternalCoHomTensorProductCompatibilityMorphism for IsCapCategory, IsFunction}{1.14.182}{X814CCC847F369708}
+\makelabel{monoidalcategories:AddLeftInternalCoHomTensorProductCompatibilityMorphism for IsCapCategory, IsFunction, IsInt}{1.14.182}{X814CCC847F369708}
+\makelabel{monoidalcategories:AddLeftInternalCoHomTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction}{1.14.183}{X7C3A3DEB7BA72741}
+\makelabel{monoidalcategories:AddLeftInternalCoHomTensorProductCompatibilityMorphismWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.183}{X7C3A3DEB7BA72741}
+\makelabel{monoidalcategories:AddLeftInternalCoHomToTensorProductAdjunctMorphism for IsCapCategory, IsFunction}{1.14.184}{X80C1A62B812B4565}
+\makelabel{monoidalcategories:AddLeftInternalCoHomToTensorProductAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.184}{X80C1A62B812B4565}
+\makelabel{monoidalcategories:AddLeftInternalCoHomToTensorProductAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.185}{X83DDE598805FFA88}
+\makelabel{monoidalcategories:AddLeftInternalCoHomToTensorProductAdjunctMorphismWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.185}{X83DDE598805FFA88}
+\makelabel{monoidalcategories:AddMorphismFromLeftCoBidual for IsCapCategory, IsFunction}{1.14.186}{X8104426A8327EF5E}
+\makelabel{monoidalcategories:AddMorphismFromLeftCoBidual for IsCapCategory, IsFunction, IsInt}{1.14.186}{X8104426A8327EF5E}
+\makelabel{monoidalcategories:AddMorphismFromLeftCoBidualWithGivenLeftCoBidual for IsCapCategory, IsFunction}{1.14.187}{X849C36147F09B8A0}
+\makelabel{monoidalcategories:AddMorphismFromLeftCoBidualWithGivenLeftCoBidual for IsCapCategory, IsFunction, IsInt}{1.14.187}{X849C36147F09B8A0}
+\makelabel{monoidalcategories:AddMorphismFromLeftInternalCoHomToTensorProduct for IsCapCategory, IsFunction}{1.14.188}{X86168FF07A697A15}
+\makelabel{monoidalcategories:AddMorphismFromLeftInternalCoHomToTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.188}{X86168FF07A697A15}
+\makelabel{monoidalcategories:AddMorphismFromLeftInternalCoHomToTensorProductWithGivenObjects for IsCapCategory, IsFunction}{1.14.189}{X830428C27A6BC07B}
+\makelabel{monoidalcategories:AddMorphismFromLeftInternalCoHomToTensorProductWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.189}{X830428C27A6BC07B}
+\makelabel{monoidalcategories:AddTensorProductToLeftInternalCoHomAdjunctMorphism for IsCapCategory, IsFunction}{1.14.190}{X7AA7EDE881098270}
+\makelabel{monoidalcategories:AddTensorProductToLeftInternalCoHomAdjunctMorphism for IsCapCategory, IsFunction, IsInt}{1.14.190}{X7AA7EDE881098270}
+\makelabel{monoidalcategories:AddTensorProductToLeftInternalCoHomAdjunctMorphismWithGivenLeftInternalCoHom for IsCapCategory, IsFunction}{1.14.191}{X7CDB23877B3C8292}
+\makelabel{monoidalcategories:AddTensorProductToLeftInternalCoHomAdjunctMorphismWithGivenLeftInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.191}{X7CDB23877B3C8292}
+\makelabel{monoidalcategories:AddUniversalPropertyOfLeftCoDual for IsCapCategory, IsFunction}{1.14.192}{X864F1EF47CAD2BE8}
+\makelabel{monoidalcategories:AddUniversalPropertyOfLeftCoDual for IsCapCategory, IsFunction, IsInt}{1.14.192}{X864F1EF47CAD2BE8}
+\makelabel{monoidalcategories:AddAssociatorLeftToRight for IsCapCategory, IsFunction}{1.14.193}{X79CDE3B87D14EF9A}
+\makelabel{monoidalcategories:AddAssociatorLeftToRight for IsCapCategory, IsFunction, IsInt}{1.14.193}{X79CDE3B87D14EF9A}
+\makelabel{monoidalcategories:AddAssociatorLeftToRightWithGivenTensorProducts for IsCapCategory, IsFunction}{1.14.194}{X850B5B357F592FAE}
+\makelabel{monoidalcategories:AddAssociatorLeftToRightWithGivenTensorProducts for IsCapCategory, IsFunction, IsInt}{1.14.194}{X850B5B357F592FAE}
+\makelabel{monoidalcategories:AddAssociatorRightToLeft for IsCapCategory, IsFunction}{1.14.195}{X8045C4FC7B4912B4}
+\makelabel{monoidalcategories:AddAssociatorRightToLeft for IsCapCategory, IsFunction, IsInt}{1.14.195}{X8045C4FC7B4912B4}
+\makelabel{monoidalcategories:AddAssociatorRightToLeftWithGivenTensorProducts for IsCapCategory, IsFunction}{1.14.196}{X7CF105217904D280}
+\makelabel{monoidalcategories:AddAssociatorRightToLeftWithGivenTensorProducts for IsCapCategory, IsFunction, IsInt}{1.14.196}{X7CF105217904D280}
+\makelabel{monoidalcategories:AddLeftUnitor for IsCapCategory, IsFunction}{1.14.197}{X7986052487D3CDBB}
+\makelabel{monoidalcategories:AddLeftUnitor for IsCapCategory, IsFunction, IsInt}{1.14.197}{X7986052487D3CDBB}
+\makelabel{monoidalcategories:AddLeftUnitorInverse for IsCapCategory, IsFunction}{1.14.198}{X793D2C657F19096D}
+\makelabel{monoidalcategories:AddLeftUnitorInverse for IsCapCategory, IsFunction, IsInt}{1.14.198}{X793D2C657F19096D}
+\makelabel{monoidalcategories:AddLeftUnitorInverseWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.199}{X87CB487587ED3EC5}
+\makelabel{monoidalcategories:AddLeftUnitorInverseWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.199}{X87CB487587ED3EC5}
+\makelabel{monoidalcategories:AddLeftUnitorWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.200}{X8614FD9C78812C98}
+\makelabel{monoidalcategories:AddLeftUnitorWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.200}{X8614FD9C78812C98}
+\makelabel{monoidalcategories:AddRightUnitor for IsCapCategory, IsFunction}{1.14.201}{X8568708E7C5D8D28}
+\makelabel{monoidalcategories:AddRightUnitor for IsCapCategory, IsFunction, IsInt}{1.14.201}{X8568708E7C5D8D28}
+\makelabel{monoidalcategories:AddRightUnitorInverse for IsCapCategory, IsFunction}{1.14.202}{X7B2AAD6286833F68}
+\makelabel{monoidalcategories:AddRightUnitorInverse for IsCapCategory, IsFunction, IsInt}{1.14.202}{X7B2AAD6286833F68}
+\makelabel{monoidalcategories:AddRightUnitorInverseWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.203}{X8682171F86C6793E}
+\makelabel{monoidalcategories:AddRightUnitorInverseWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.203}{X8682171F86C6793E}
+\makelabel{monoidalcategories:AddRightUnitorWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.204}{X7DB39DC9794F3FCA}
+\makelabel{monoidalcategories:AddRightUnitorWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.204}{X7DB39DC9794F3FCA}
+\makelabel{monoidalcategories:AddTensorProductOnMorphismAndObject for IsCapCategory, IsFunction}{1.14.205}{X80BDFD548006B71D}
+\makelabel{monoidalcategories:AddTensorProductOnMorphismAndObject for IsCapCategory, IsFunction, IsInt}{1.14.205}{X80BDFD548006B71D}
+\makelabel{monoidalcategories:AddTensorProductOnMorphismAndObjectWithGivenTensorProducts for IsCapCategory, IsFunction}{1.14.206}{X780BFEB17C34CA1F}
+\makelabel{monoidalcategories:AddTensorProductOnMorphismAndObjectWithGivenTensorProducts for IsCapCategory, IsFunction, IsInt}{1.14.206}{X780BFEB17C34CA1F}
+\makelabel{monoidalcategories:AddTensorProductOnMorphisms for IsCapCategory, IsFunction}{1.14.207}{X83DEDFA3803035BC}
+\makelabel{monoidalcategories:AddTensorProductOnMorphisms for IsCapCategory, IsFunction, IsInt}{1.14.207}{X83DEDFA3803035BC}
+\makelabel{monoidalcategories:AddTensorProductOnMorphismsWithGivenTensorProducts for IsCapCategory, IsFunction}{1.14.208}{X879659397D11AD9F}
+\makelabel{monoidalcategories:AddTensorProductOnMorphismsWithGivenTensorProducts for IsCapCategory, IsFunction, IsInt}{1.14.208}{X879659397D11AD9F}
+\makelabel{monoidalcategories:AddTensorProductOnObjectAndMorphism for IsCapCategory, IsFunction}{1.14.209}{X78E0A7C67D7AB15E}
+\makelabel{monoidalcategories:AddTensorProductOnObjectAndMorphism for IsCapCategory, IsFunction, IsInt}{1.14.209}{X78E0A7C67D7AB15E}
+\makelabel{monoidalcategories:AddTensorProductOnObjectAndMorphismWithGivenTensorProducts for IsCapCategory, IsFunction}{1.14.210}{X7ABADA3E8148CC5C}
+\makelabel{monoidalcategories:AddTensorProductOnObjectAndMorphismWithGivenTensorProducts for IsCapCategory, IsFunction, IsInt}{1.14.210}{X7ABADA3E8148CC5C}
+\makelabel{monoidalcategories:AddTensorProductOnObjects for IsCapCategory, IsFunction}{1.14.211}{X7CED389B792142F5}
+\makelabel{monoidalcategories:AddTensorProductOnObjects for IsCapCategory, IsFunction, IsInt}{1.14.211}{X7CED389B792142F5}
+\makelabel{monoidalcategories:AddTensorUnit for IsCapCategory, IsFunction}{1.14.212}{X7BC4B940858F903B}
+\makelabel{monoidalcategories:AddTensorUnit for IsCapCategory, IsFunction, IsInt}{1.14.212}{X7BC4B940858F903B}
+\makelabel{monoidalcategories:AddCoevaluationForDual for IsCapCategory, IsFunction}{1.14.213}{X8586506084917A30}
+\makelabel{monoidalcategories:AddCoevaluationForDual for IsCapCategory, IsFunction, IsInt}{1.14.213}{X8586506084917A30}
+\makelabel{monoidalcategories:AddCoevaluationForDualWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.214}{X831DC3947941E8BA}
+\makelabel{monoidalcategories:AddCoevaluationForDualWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.214}{X831DC3947941E8BA}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalHomToTensorProductWithDualObject for IsCapCategory, IsFunction}{1.14.215}{X817D08298188F2BC}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalHomToTensorProductWithDualObject for IsCapCategory, IsFunction, IsInt}{1.14.215}{X817D08298188F2BC}
+\makelabel{monoidalcategories:AddIsomorphismFromTensorProductWithDualObjectToInternalHom for IsCapCategory, IsFunction}{1.14.216}{X840BC8AB7DFFD68E}
+\makelabel{monoidalcategories:AddIsomorphismFromTensorProductWithDualObjectToInternalHom for IsCapCategory, IsFunction, IsInt}{1.14.216}{X840BC8AB7DFFD68E}
+\makelabel{monoidalcategories:AddMorphismFromBidual for IsCapCategory, IsFunction}{1.14.217}{X7D2FDE687E0CB66A}
+\makelabel{monoidalcategories:AddMorphismFromBidual for IsCapCategory, IsFunction, IsInt}{1.14.217}{X7D2FDE687E0CB66A}
+\makelabel{monoidalcategories:AddMorphismFromBidualWithGivenBidual for IsCapCategory, IsFunction}{1.14.218}{X877C409E865C2BB3}
+\makelabel{monoidalcategories:AddMorphismFromBidualWithGivenBidual for IsCapCategory, IsFunction, IsInt}{1.14.218}{X877C409E865C2BB3}
+\makelabel{monoidalcategories:AddMorphismFromInternalHomToTensorProduct for IsCapCategory, IsFunction}{1.14.219}{X82FDEF277A71FABF}
+\makelabel{monoidalcategories:AddMorphismFromInternalHomToTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.219}{X82FDEF277A71FABF}
+\makelabel{monoidalcategories:AddMorphismFromInternalHomToTensorProductWithGivenObjects for IsCapCategory, IsFunction}{1.14.220}{X7A4A4C668706D593}
+\makelabel{monoidalcategories:AddMorphismFromInternalHomToTensorProductWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.220}{X7A4A4C668706D593}
+\makelabel{monoidalcategories:AddRankMorphism for IsCapCategory, IsFunction}{1.14.221}{X849B17E08679450A}
+\makelabel{monoidalcategories:AddRankMorphism for IsCapCategory, IsFunction, IsInt}{1.14.221}{X849B17E08679450A}
+\makelabel{monoidalcategories:AddTensorProductInternalHomCompatibilityMorphismInverse for IsCapCategory, IsFunction}{1.14.222}{X798FA16B818559DB}
+\makelabel{monoidalcategories:AddTensorProductInternalHomCompatibilityMorphismInverse for IsCapCategory, IsFunction, IsInt}{1.14.222}{X798FA16B818559DB}
+\makelabel{monoidalcategories:AddTensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects for IsCapCategory, IsFunction}{1.14.223}{X7D9EA11980170B0C}
+\makelabel{monoidalcategories:AddTensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.223}{X7D9EA11980170B0C}
+\makelabel{monoidalcategories:AddTraceMap for IsCapCategory, IsFunction}{1.14.224}{X8446431880FFF111}
+\makelabel{monoidalcategories:AddTraceMap for IsCapCategory, IsFunction, IsInt}{1.14.224}{X8446431880FFF111}
+\makelabel{monoidalcategories:AddCoRankMorphism for IsCapCategory, IsFunction}{1.14.225}{X7A3D91F87F170676}
+\makelabel{monoidalcategories:AddCoRankMorphism for IsCapCategory, IsFunction, IsInt}{1.14.225}{X7A3D91F87F170676}
+\makelabel{monoidalcategories:AddCoTraceMap for IsCapCategory, IsFunction}{1.14.226}{X7AA8757780D75E1F}
+\makelabel{monoidalcategories:AddCoTraceMap for IsCapCategory, IsFunction, IsInt}{1.14.226}{X7AA8757780D75E1F}
+\makelabel{monoidalcategories:AddCoclosedCoevaluationForCoDual for IsCapCategory, IsFunction}{1.14.227}{X82087A8C7E5EBAA8}
+\makelabel{monoidalcategories:AddCoclosedCoevaluationForCoDual for IsCapCategory, IsFunction, IsInt}{1.14.227}{X82087A8C7E5EBAA8}
+\makelabel{monoidalcategories:AddCoclosedCoevaluationForCoDualWithGivenTensorProduct for IsCapCategory, IsFunction}{1.14.228}{X813CF5C07BAFD19C}
+\makelabel{monoidalcategories:AddCoclosedCoevaluationForCoDualWithGivenTensorProduct for IsCapCategory, IsFunction, IsInt}{1.14.228}{X813CF5C07BAFD19C}
+\makelabel{monoidalcategories:AddInternalCoHomTensorProductCompatibilityMorphismInverse for IsCapCategory, IsFunction}{1.14.229}{X7CA7972381FC507F}
+\makelabel{monoidalcategories:AddInternalCoHomTensorProductCompatibilityMorphismInverse for IsCapCategory, IsFunction, IsInt}{1.14.229}{X7CA7972381FC507F}
+\makelabel{monoidalcategories:AddInternalCoHomTensorProductCompatibilityMorphismInverseWithGivenObjects for IsCapCategory, IsFunction}{1.14.230}{X82F222EC80852CF1}
+\makelabel{monoidalcategories:AddInternalCoHomTensorProductCompatibilityMorphismInverseWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.230}{X82F222EC80852CF1}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalCoHomToTensorProductWithCoDualObject for IsCapCategory, IsFunction}{1.14.231}{X84E2048279A169A6}
+\makelabel{monoidalcategories:AddIsomorphismFromInternalCoHomToTensorProductWithCoDualObject for IsCapCategory, IsFunction, IsInt}{1.14.231}{X84E2048279A169A6}
+\makelabel{monoidalcategories:AddIsomorphismFromTensorProductWithCoDualObjectToInternalCoHom for IsCapCategory, IsFunction}{1.14.232}{X7DFE79B48125A1E0}
+\makelabel{monoidalcategories:AddIsomorphismFromTensorProductWithCoDualObjectToInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.232}{X7DFE79B48125A1E0}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToInternalCoHom for IsCapCategory, IsFunction}{1.14.233}{X7F27D275849C84B2}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToInternalCoHom for IsCapCategory, IsFunction, IsInt}{1.14.233}{X7F27D275849C84B2}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToInternalCoHomWithGivenObjects for IsCapCategory, IsFunction}{1.14.234}{X7B5706318327501E}
+\makelabel{monoidalcategories:AddMorphismFromTensorProductToInternalCoHomWithGivenObjects for IsCapCategory, IsFunction, IsInt}{1.14.234}{X7B5706318327501E}
+\makelabel{monoidalcategories:AddMorphismToCoBidual for IsCapCategory, IsFunction}{1.14.235}{X7EBD7033871B0F3D}
+\makelabel{monoidalcategories:AddMorphismToCoBidual for IsCapCategory, IsFunction, IsInt}{1.14.235}{X7EBD7033871B0F3D}
+\makelabel{monoidalcategories:AddMorphismToCoBidualWithGivenCoBidual for IsCapCategory, IsFunction}{1.14.236}{X867E02E07CEC5B34}
+\makelabel{monoidalcategories:AddMorphismToCoBidualWithGivenCoBidual for IsCapCategory, IsFunction, IsInt}{1.14.236}{X867E02E07CEC5B34}
+\makelabel{monoidalcategories:AdditiveMonoidalCategoriesTest}{2.1.1}{X8131040685BBC24E}
+\makelabel{monoidalcategories:TestBraidingForInvertibility for IsCapCategory, IsCapCategoryObject, IsCapCategoryObject}{2.1.2}{X803EED927C6BFB83}
+\makelabel{monoidalcategories:TestBraidingCompatibility for IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{2.1.3}{X794ADC5E7B9ED6E9}
+\makelabel{monoidalcategories:TestBraidingCompatibilityForAllTriplesInList for IsCapCategory, IsList}{2.1.4}{X85D661D482543648}
+\makelabel{monoidalcategories:BraidedMonoidalCategoriesTest}{2.1.5}{X7D87D6737E0B485F}
+\makelabel{monoidalcategories:ClosedMonoidalCategoriesTest}{2.1.6}{X7CDDEF3E87731A54}
+\makelabel{monoidalcategories:ClosedMonoidalCategoriesTestWithGiven}{2.1.7}{X7EAC790E85CC1D26}
+\makelabel{monoidalcategories:CoclosedMonoidalCategoriesTest}{2.1.8}{X83E919E984B367B1}
+\makelabel{monoidalcategories:CoclosedMonoidalCategoriesTestWithGiven}{2.1.9}{X7F29A16A810D390D}
+\makelabel{monoidalcategories:LeftClosedMonoidalCategoriesTest}{2.1.10}{X7B0D72D07AAA7B9B}
+\makelabel{monoidalcategories:LeftClosedMonoidalCategoriesTestWithGiven}{2.1.11}{X7BCAE7FE7E32B70A}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalCategoriesTest}{2.1.12}{X865E82AA7FB9B0BE}
+\makelabel{monoidalcategories:LeftCoclosedMonoidalCategoriesTestWithGiven}{2.1.13}{X7BF584B6805BB8DA}
+\makelabel{monoidalcategories:MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest}{2.1.14}{X7B05AB7F7BAF2B62}
+\makelabel{monoidalcategories:TestMonoidalUnitorsForInvertibility for IsCapCategory, IsCapCategoryObject}{2.1.15}{X7FE8E3E581929705}
+\makelabel{monoidalcategories:TestAssociatorForInvertibility for IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{2.1.16}{X78A123237F5F81BE}
+\makelabel{monoidalcategories:TestMonoidalTriangleIdentity for IsCapCategory, IsCapCategoryObject, IsCapCategoryObject}{2.1.17}{X7EB6CE877FDBFAE5}
+\makelabel{monoidalcategories:TestMonoidalTriangleIdentityForAllPairsInList for IsCapCategory, IsList}{2.1.18}{X7B0890C57F20717C}
+\makelabel{monoidalcategories:TestMonoidalPentagonIdentity for IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{2.1.19}{X8786C1FF7F09F124}
+\makelabel{monoidalcategories:TestMonoidalPentagonIdentityUsingWithGivenOperations for IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{2.1.20}{X7D45BF317D6237DC}
+\makelabel{monoidalcategories:TestMonoidalPentagonIdentityForAllQuadruplesInList for IsCapCategory, IsList}{2.1.21}{X7E96BEF17CD1B38B}
+\makelabel{monoidalcategories:MonoidalCategoriesTest}{2.1.22}{X7BCAF88A806E562D}
+\makelabel{monoidalcategories:TestZigZagIdentitiesForDual for IsCapCategory, IsCapCategoryObject}{2.1.23}{X85AB97E9788D543D}
+\makelabel{monoidalcategories:RigidSymmetricClosedMonoidalCategoriesTest}{2.1.24}{X78CAAAE77DC5CF4F}
+\makelabel{monoidalcategories:RigidSymmetricCoclosedMonoidalCategoriesTest}{2.1.25}{X8154BEE7850EFEEA}
+\makelabel{monoidalcategories:WriteFileForMonoidalStructure}{3.1.1}{X85C82D6A878B25DD}
+\makelabel{monoidalcategories:WriteFileForClosedMonoidalStructure}{3.2.1}{X7EF7CDED85FB1CA1}
+\makelabel{monoidalcategories:WriteFileForLeftClosedMonoidalStructure}{3.2.2}{X7B1E6E95839A2EB7}
+\makelabel{monoidalcategories:WriteFileForCoclosedMonoidalStructure}{3.3.1}{X83DBF79278AD1D37}
+\makelabel{monoidalcategories:WriteFileForLeftCoclosedMonoidalStructure}{3.3.2}{X7DAEDDFF84783E19}
+\makelabel{monoidalcategories:CoclosedCoevaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{5.1.1}{X87648A1B86BC12CD}
+\makelabel{monoidalcategories:CoclosedCoevaluationMorphismWithGivenSource for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{5.1.2}{X78E1EE0879D7E094}
+\makelabel{monoidalcategories:CoclosedEvaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{5.1.3}{X8013AC4C837F9828}
+\makelabel{monoidalcategories:CoclosedEvaluationMorphismWithGivenRange for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{5.1.4}{X84FE6ABB879495DE}
+\makelabel{monoidalcategories:CoevaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{5.1.5}{X79E277047AB3E909}
+\makelabel{monoidalcategories:CoevaluationMorphismWithGivenRange for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{5.1.6}{X7E8123AD8567A5C0}
+\makelabel{monoidalcategories:EvaluationMorphism for IsCapCategoryObject, IsCapCategoryObject}{5.2.1}{X809226D2878DD662}
+\makelabel{monoidalcategories:EvaluationMorphismWithGivenSource for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject}{5.2.2}{X7E42359B7A888F61}
+\makelabel{monoidalcategories:InternalCoHomToTensorProductAdjunctionMap for IsObject}{5.2.3}{X78B6BE768607496E}
+\makelabel{monoidalcategories:InternalCoHomToTensorProductAdjunctionMapWithGivenTensorProduct for IsObject}{5.2.4}{X7BBB6AD87A056F37}
+\makelabel{monoidalcategories:InternalHomToTensorProductAdjunctionMap for IsObject}{5.2.5}{X7E415A5E859935AA}
+\makelabel{monoidalcategories:InternalHomToTensorProductAdjunctionMapWithGivenTensorProduct for IsObject}{5.2.6}{X7E89D6DA7828F99E}
+\makelabel{monoidalcategories:TensorProductToInternalCoHomAdjunctionMap for IsObject}{5.2.7}{X86CB055F839F71A3}
+\makelabel{monoidalcategories:TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom for IsObject}{5.2.8}{X7E1C1567803E7C91}
+\makelabel{monoidalcategories:TensorProductToInternalHomAdjunctionMap for IsObject}{5.2.9}{X8534C5AB7B80A8D8}
+\makelabel{monoidalcategories:TensorProductToInternalHomAdjunctionMapWithGivenInternalHom for IsObject}{5.2.10}{X875D98EF835CC34C}
+\makelabel{monoidalcategories:InternalCoHomToTensorProductLeftAdjunctionMap for IsObject}{5.2.11}{X7A68E9AF856E8EC5}
+\makelabel{monoidalcategories:InternalHomToTensorProductLeftAdjunctionMap for IsObject}{5.2.12}{X7A6128507D63055E}
+\makelabel{monoidalcategories:TensorProductToInternalCoHomLeftAdjunctionMap for IsObject}{5.2.13}{X7D9D52A780F6B608}
+\makelabel{monoidalcategories:TensorProductToInternalCoHomLeftAdjunctionMapWithGivenInternalCoHom for IsObject}{5.2.14}{X814AE2D67D150C0B}
+\makelabel{monoidalcategories:TensorProductToInternalHomLeftAdjunctionMap for IsObject}{5.2.15}{X782469E1837A982C}
+\makelabel{monoidalcategories:TensorProductToInternalHomLeftAdjunctionMapWithGivenInternalHom for IsObject}{5.2.16}{X846E5D587AD2FB8D}
+\makelabel{monoidalcategories:IsAdditiveMonoidalCategory for IsCapCategory}{6.1.1}{X845F43E584BE51F3}
+\makelabel{monoidalcategories:IsBraidedMonoidalCategory for IsCapCategory}{6.1.2}{X7EB424EE81E0290D}
+\makelabel{monoidalcategories:IsClosedMonoidalCategory for IsCapCategory}{6.1.3}{X78F907177D3C4BF8}
+\makelabel{monoidalcategories:IsCoclosedMonoidalCategory for IsCapCategory}{6.1.4}{X8262914378FA0F1A}
+\makelabel{monoidalcategories:IsLeftClosedMonoidalCategory for IsCapCategory}{6.1.5}{X861056EA7B4BFD70}
+\makelabel{monoidalcategories:IsLeftCoclosedMonoidalCategory for IsCapCategory}{6.1.6}{X7D0F6DAC862788BE}
+\makelabel{monoidalcategories:IsMonoidalCategory for IsCapCategory}{6.1.7}{X877C15BA81C14016}
+\makelabel{monoidalcategories:IsStrictMonoidalCategory for IsCapCategory}{6.1.8}{X867C0E9487F19155}
+\makelabel{monoidalcategories:IsRigidSymmetricClosedMonoidalCategory for IsCapCategory}{6.1.9}{X7B5F85DB8497D183}
+\makelabel{monoidalcategories:IsRigidSymmetricCoclosedMonoidalCategory for IsCapCategory}{6.1.10}{X7C610A4B848B53FF}
+\makelabel{monoidalcategories:IsSymmetricClosedMonoidalCategory for IsCapCategory}{6.1.11}{X7BE3F4D085AA0055}
+\makelabel{monoidalcategories:IsSymmetricCoclosedMonoidalCategory for IsCapCategory}{6.1.12}{X84215E5E875DD7DC}
+\makelabel{monoidalcategories:IsSymmetricMonoidalCategory for IsCapCategory}{6.1.13}{X8296E9838534F4D1}

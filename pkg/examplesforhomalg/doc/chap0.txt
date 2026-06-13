@@ -1,0 +1,79 @@
+  
+  
+                              [1X ExamplesForHomalg [101X
+  
+  
+                     [1X Examples for the [5XGAP[105X Package homalg [101X
+  
+  
+                                   2025.12-01
+  
+  
+                                23 December 2025
+  
+  
+                                Mohamed Barakat
+  
+                                 Simon Görtzen
+  
+                             Markus Lange-Hegermann
+  
+  
+  
+  Mohamed Barakat
+      Email:    [7Xmailto:mohamed.barakat@uni-siegen.de[107X
+      Homepage: [7Xhttps://mohamed-barakat.github.io[107X
+      Address:  [33X[0;14YWalter-Flex-Str. 3[133X
+                [33X[0;14Y57072 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Simon Görtzen
+      Email:    [7Xmailto:simon.goertzen@rwth-aachen.de[107X
+      Homepage: [7Xhttps://www.linkedin.com/in/simongoertzen/[107X
+      Address:  [33X[0;14YSimon Görtzen[133X
+                [33X[0;14YLehrstuhl B fuer Mathematik, RWTH Aachen[133X
+                [33X[0;14YTemplergraben 64[133X
+                [33X[0;14Y52062 Aachen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Markus Lange-Hegermann
+      Email:    [7Xmailto:markus.lange-hegermann@hs-owl.de[107X
+      Homepage: [7Xhttps://www.th-owl.de/eecs/fachbereich/team/markus-lange-hegermann/[107X
+      Address:  [33X[0;14YMarkus Lange-Hegermann[133X
+                [33X[0;14YHochschule Ostwestfalen-Lippe[133X
+                [33X[0;14YLiebigstraße 87[133X
+                [33X[0;14Y32657 Lemgo[133X
+                [33X[0;14YGermany[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y©  2008-2015 by Mohamed Barakat, Simon Goertzen, Markus Lange-Hegermann This
+  package  may be distributed under the terms and conditions of the GNU Public
+  License Version 2 or (at your option) any later version.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (ExamplesForHomalg)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+  2 [33X[0;0YInstallation of the [5XExamplesForHomalg[105X Package[133X
+  3 [33X[0;0YExamples[133X
+    3.1 [33X[0;0YSpectral Filtrations[133X
+      3.1-1 [33X[0;0YExtExt[133X
+      3.1-2 [33X[0;0YPurity[133X
+      3.1-3 [33X[0;0YA3_Purity[133X
+      3.1-4 [33X[0;0YTorExt-Grothendieck[133X
+      3.1-5 [33X[0;0YTorExt[133X
+      3.1-6 [33X[0;0YCodegreeOfPurity[133X
+      3.1-7 [33X[0;0YHomHom[133X
+    3.2 [33X[0;0YCommutative Algebra[133X
+      3.2-1 [33X[0;0YEliminate[133X
+  
+  
+  [32X

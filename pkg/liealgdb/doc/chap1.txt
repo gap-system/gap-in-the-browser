@@ -1,0 +1,41 @@
+  
+  [1X1 [33X[0;0YIntroduction[133X[101X
+  
+  [33X[0;0YThis  is  the manual for the [5XGAP[105X package [5XLieAlgDB[105X, for accessing and working
+  with several classifications of Lie algebras.[133X
+  
+  [33X[0;0YIn  the  mathematical  literature  many  classifications  of Lie algebras of
+  various  types  have  been published (we refer to the bibliography for a few
+  examples).  However,  working  with  these classifications from paper is not
+  always   easy.  This  package  aims  at  making  a  few  classifications  of
+  small-dimensional  Lie  algebras  that  have  appeared  in recent years more
+  accessible.  For  each  classification  that  is  contained  in the package,
+  functions  are provided that construct Lie algebras from that classification
+  inside  [5XGAP[105X.  This allows the user to obtain easy access to the often rather
+  complicated  data  contained  in a classification, and to directly interface
+  the  Lie  algebras  to  the  functionality for Lie algebras which is already
+  contained in the system.[133X
+  
+  [33X[0;0YThe package contains the following classifications:[133X
+  
+  [30X    [33X[0;6Ynon-solvable  Lie  algebras over finite fields up to dimension 6 (from
+        [Str]);[133X
+  
+  [30X    [33X[0;6Ynilpotent  Lie  algebras of dimension up to 9 over [3XGF(2)[103X, of dimension
+        up to 7 over [3XGF(3)[103X or [3XGF(5)[103X (from [Sch05]);[133X
+  
+  [30X    [33X[0;6Ysimple  Lie  algebras  of  dimensions between 7 and 9 over [3XGF(2)[103X (from
+        [Vau06]);[133X
+  
+  [30X    [33X[0;6Ythe  classification  of  solvable  Lie algebras of dimension at most 4
+        (from [dG05]);[133X
+  
+  [30X    [33X[0;6Ythe  classification  of  nilpotent Lie algebras of dimension at most 6
+        (from [dG07] and [CdGS11]).[133X
+  
+  [33X[0;0YThis   manual  is  structured  as  follows.  The  next  chapter  contains  a
+  description of the main functions of the package. The third chapter contains
+  descriptions  of  the classifications used in the package. Most of these are
+  contained in published papers, but for the convenience of the user they have
+  been added here.[133X
+  

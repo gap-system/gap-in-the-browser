@@ -1,0 +1,400 @@
+\GAPDocLabFile{simpcomp}
+\makelabel{simpcomp:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{simpcomp:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{simpcomp:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{simpcomp:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{simpcomp:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{simpcomp:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{simpcomp:What is new}{1.1}{X7A1272437CD1F7AD}
+\makelabel{simpcomp:simpcomp benefits}{1.2}{X7AA5F8168379C5E8}
+\makelabel{simpcomp:How to save time reading this document}{1.3}{X78BBA61C83276770}
+\makelabel{simpcomp:Organization of this document}{1.4}{X8336AF737AFAA468}
+\makelabel{simpcomp:How to assure simpcomp works correctly}{1.5}{X86F613867AA3A382}
+\makelabel{simpcomp:Controlling simpcomp log messages}{1.6}{X85A6577886459361}
+\makelabel{simpcomp:How to cite simpcomp}{1.7}{X80002B357CE9B674}
+\makelabel{simpcomp:Theoretical foundations}{2}{X7E15BCD07F132C67}
+\makelabel{simpcomp:Polytopes and polytopal complexes}{2.1}{X7D819D6180502D18}
+\makelabel{simpcomp:Simplices and simplicial complexes}{2.2}{X7AA9180F7CF65B41}
+\makelabel{simpcomp:From geometry to combinatorics}{2.3}{X84B178117BE7DD1C}
+\makelabel{simpcomp:Discrete Normal surfaces}{2.4}{X7BE7221B7C38B27D}
+\makelabel{simpcomp:Polyhedral Morse theory and slicings}{2.5}{X86275D5979B4B531}
+\makelabel{simpcomp:Discrete Morse theory}{2.6}{X84451D2C879613E6}
+\makelabel{simpcomp:Tightness and tight triangulations}{2.7}{X842354467CE73393}
+\makelabel{simpcomp:Simplicial blowups}{2.8}{X7E1BE673859191F0}
+\makelabel{simpcomp:The new GAP object types of simpcomp}{3}{X83DEEDF8835622AD}
+\makelabel{simpcomp:Accessing properties of a SCPolyhedralComplex object}{3.1}{X82FAB51B7C625240}
+\makelabel{simpcomp:Functions and operations for the GAP object type SCPolyhedralComplex}{4}{X840691C285AB3AAD}
+\makelabel{simpcomp:Computing properties of objects of type SCPolyhedralComplex}{4.1}{X7D35F510803714A8}
+\makelabel{simpcomp:Vertex labelings and label operations}{4.2}{X7B69B61E867E748E}
+\makelabel{simpcomp:Operations on objects of type SCPolyhedralComplex}{4.3}{X8188E7BE7E9BEF7E}
+\makelabel{simpcomp:The GAP object types SCSimplicialComplex and SCNormalSurface}{5}{X78B454D3799549A9}
+\makelabel{simpcomp:The object type SCSimplicialComplex}{5.1}{X7E7034FC82152AE6}
+\makelabel{simpcomp:Overloaded operators of SCSimplicialComplex}{5.2}{X790E779979A985FF}
+\makelabel{simpcomp:SCSimplicialComplex as a subtype of Set}{5.3}{X7CB571C97C426BE2}
+\makelabel{simpcomp:The object type SCNormalSurface}{5.4}{X80F19FA07C71EDDC}
+\makelabel{simpcomp:Overloaded operators of SCNormalSurface}{5.5}{X874D22B47BCD48D4}
+\makelabel{simpcomp:SCNormalSurface as a subtype of Set}{5.6}{X84C01E097C009E76}
+\makelabel{simpcomp:Functions and operations for SCSimplicialComplex}{6}{X82BDBFFC81D080D1}
+\makelabel{simpcomp:Creating an SCSimplicialComplex object from a facet list}{6.1}{X7A93E4B08536E2C8}
+\makelabel{simpcomp:Isomorphism signatures}{6.2}{X867E1FF580230E20}
+\makelabel{simpcomp:Generating some standard triangulations}{6.3}{X79072405786FEA0B}
+\makelabel{simpcomp:Generating infinite series of transitive triangulations}{6.4}{X814FE0267D7C54A9}
+\makelabel{simpcomp:A census of regular and chiral maps}{6.5}{X7899878881EA47F8}
+\makelabel{simpcomp:Generating new complexes from old}{6.6}{X7F4308DB7C3699D1}
+\makelabel{simpcomp:Simplicial complexes from transitive permutation groups}{6.7}{X87C1C49987E75A9C}
+\makelabel{simpcomp:The classification of cyclic combinatorial 3-manifolds}{6.8}{X81FDA1407B1E96C9}
+\makelabel{simpcomp:Computing properties of simplicial complexes}{6.9}{X81CE90127800B91A}
+\makelabel{simpcomp:Operations on simplicial complexes}{6.10}{X8284003382F863A0}
+\makelabel{simpcomp:Functions and operations for SCNormalSurface}{7}{X8071FAE8806ACAA2}
+\makelabel{simpcomp:Creating an SCNormalSurface object}{7.1}{X7C63CE8578FBB0C7}
+\makelabel{simpcomp:Generating new objects from discrete normal surfaces}{7.2}{X7E853EF97A3D0220}
+\makelabel{simpcomp:Properties of SCNormalSurface objects}{7.3}{X83A1885E876D7483}
+\makelabel{simpcomp:(Co-)Homology of simplicial complexes}{8}{X7B0C706A848A2542}
+\makelabel{simpcomp:Homology computation}{8.1}{X7DCD23807E4DD2B2}
+\makelabel{simpcomp:Cohomology computation}{8.2}{X86A940277A35331B}
+\makelabel{simpcomp:Bistellar flips}{9}{X82F1CE7A79A3CA47}
+\makelabel{simpcomp:Theory}{9.1}{X8729B87B848E3F89}
+\makelabel{simpcomp:Functions for bistellar flips}{9.2}{X7A441E547D1CE96E}
+\makelabel{simpcomp:Simplicial blowups}{10}{X7E1BE673859191F0}
+\makelabel{simpcomp:Theory}{10.1}{X8729B87B848E3F89}
+\makelabel{simpcomp:Functions related to simplicial blowups}{10.2}{X83227BC7841E0899}
+\makelabel{simpcomp:Polyhedral Morse theory}{11}{X78438FF584D18B8A}
+\makelabel{simpcomp:Polyhedral Morse theory related functions}{11.1}{X7B2E2B3C846500E4}
+\makelabel{simpcomp:Forman's discrete Morse theory}{12}{X7E9FD84F822A58D6}
+\makelabel{simpcomp:Functions using discrete Morse theory}{12.1}{X7B06C0577CF83F43}
+\makelabel{simpcomp:Simplicial complex library}{13.1}{X7F84F1AD7AFB97CF}
+\makelabel{simpcomp:Interfaces to other software packages}{14}{X7D09DEB478A09E55}
+\makelabel{simpcomp:Interface to the GAP-package homalg}{14.1}{X79FC20A5832313F5}
+\makelabel{simpcomp:Miscellaneous functions}{15}{X8308D685809A4E2F}
+\makelabel{simpcomp:simpcomp logging}{15.1}{X7C3D35DF7BD07C5A}
+\makelabel{simpcomp:Email notification system}{15.2}{X856126D583C70E76}
+\makelabel{simpcomp:Testing the functionality of simpcomp}{15.3}{X7BA8676B7FF308FD}
+\makelabel{simpcomp:Property handlers}{16}{X79E5133F86718164}
+\makelabel{simpcomp:Property handlers of SCPolyhedralComplex}{16.1}{X786A3A8E7C461BEB}
+\makelabel{simpcomp:Property handlers of SCSimplicialComplex}{16.2}{X7A2C3F6A87C9918B}
+\makelabel{simpcomp:Property handlers of SCNormalSurface}{16.3}{X7FEE3E9384330D24}
+\makelabel{simpcomp:Property handlers of SCLibRepository}{16.4}{X7A968EC287D82D17}
+\makelabel{simpcomp:A demo session with simpcomp}{17}{X78CC1D0D809E5D2E}
+\makelabel{simpcomp:Creating a SCSimplicialComplex object}{17.1}{X802AC56478332D59}
+\makelabel{simpcomp:Working with a SCSimplicialComplex object}{17.2}{X7F2BA767781B3216}
+\makelabel{simpcomp:Calculating properties of a SCSimplicialComplex object}{17.3}{X81109FCF7A2BAD69}
+\makelabel{simpcomp:Creating new complexes from a SCSimplicialComplex object}{17.4}{X833CFE367E7591A0}
+\makelabel{simpcomp:Homology related calculations}{17.5}{X7F91D2307D7CE8C8}
+\makelabel{simpcomp:Bistellar flips}{17.6}{X82F1CE7A79A3CA47}
+\makelabel{simpcomp:Simplicial blowups}{17.7}{X7E1BE673859191F0}
+\makelabel{simpcomp:Discrete normal surfaces and slicings}{17.8}{X7B5C29557E8E92EA}
+\makelabel{simpcomp:simpcomp internals}{18}{X8478539A7A292D1A}
+\makelabel{simpcomp:The GAP object type SCPropertyObject}{18.1}{X8724C47486F7CC1E}
+\makelabel{simpcomp:Example of a common attribute}{18.2}{X862DE7827D3D9F95}
+\makelabel{simpcomp:Writing a method for an attribute}{18.3}{X7888C5D97F4E8F85}
+\makelabel{simpcomp:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{simpcomp:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{simpcomp:Index}{Ind}{X83A0356F839C696F}
+\makelabel{simpcomp:SCFacets}{4.1.1}{X7BDD568184E3419D}
+\makelabel{simpcomp:SCFacetsEx}{4.1.2}{X87DC942881235E25}
+\makelabel{simpcomp:SCVertices}{4.1.3}{X849B0CD0796298EA}
+\makelabel{simpcomp:SCVerticesEx}{4.1.4}{X83D02BCD7D19FC6F}
+\makelabel{simpcomp:SCLabelMax}{4.2.1}{X7C02CB9E8422EEE8}
+\makelabel{simpcomp:SCLabelMin}{4.2.2}{X7FC2186B7D346BD3}
+\makelabel{simpcomp:SCLabels}{4.2.3}{X826E9B4482AF2671}
+\makelabel{simpcomp:SCName}{4.2.4}{X81C8A7EC84F5DEE9}
+\makelabel{simpcomp:SCReference}{4.2.5}{X7A812340843BCED3}
+\makelabel{simpcomp:SCRelabel}{4.2.6}{X7B6011907B74EDDA}
+\makelabel{simpcomp:SCRelabelStandard}{4.2.7}{X78E22E3B787DDE90}
+\makelabel{simpcomp:SCRelabelTransposition}{4.2.8}{X83276FCB844628EC}
+\makelabel{simpcomp:SCRename}{4.2.9}{X84AA5E217F1EAE23}
+\makelabel{simpcomp:SCSetReference}{4.2.10}{X87184048876229F3}
+\makelabel{simpcomp:SCUnlabelFace}{4.2.11}{X80A64720826EA264}
+\makelabel{simpcomp:SCAntiStar}{4.3.1}{X84646E6786FB7993}
+\makelabel{simpcomp:SCLink}{4.3.2}{X874059937F4C709B}
+\makelabel{simpcomp:SCLinks}{4.3.3}{X7EFA115B7B26F9AD}
+\makelabel{simpcomp:SCStar}{4.3.4}{X78B725AD7E747A63}
+\makelabel{simpcomp:SCStars}{4.3.5}{X83F3E7487A1EF355}
+\makelabel{simpcomp:SCIsSimplicialComplex}{5.1.1}{X82E3D6D97951997D}
+\makelabel{simpcomp:SCDetails}{5.1.2}{X7B20035E791441C5}
+\makelabel{simpcomp:SCCopy}{5.1.3}{X80F13BB484B3E9B2}
+\makelabel{simpcomp:ShallowCopy (SCSimplicialComplex)}{5.1.4}{X7AAEB857865D9B4A}
+\makelabel{simpcomp:SCPropertiesDropped}{5.1.5}{X8155B18D7EEF06DE}
+\makelabel{simpcomp:Operation - (SCSimplicialComplex, Integer)}{5.2.2}{X84853235810E68E7}
+\makelabel{simpcomp:Operation mod (SCSimplicialComplex, Integer)}{5.2.3}{X78329E8F7999F2F3}
+\makelabel{simpcomp:Operation  (SCSimplicialComplex, Integer)}{5.2.4}{X7CBC2E7A87726BA8}
+\makelabel{simpcomp:Operation - (SCSimplicialComplex, SCSimplicialComplex)}{5.2.6}{X7F9794A381478434}
+\makelabel{simpcomp:Operation Union (SCSimplicialComplex, SCSimplicialComplex)}{5.3.1}{X82C94EE47E339DD8}
+\makelabel{simpcomp:Operation Difference (SCSimplicialComplex, SCSimplicialComplex)}{5.3.2}{X80CFABE083100541}
+\makelabel{simpcomp:Operation Intersection (SCSimplicialComplex, SCSimplicialComplex)}{5.3.3}{X851CE49F7F7437C3}
+\makelabel{simpcomp:Size (SCSimplicialComplex)}{5.3.4}{X7B3E2F12853D4303}
+\makelabel{simpcomp:Length (SCSimplicialComplex)}{5.3.5}{X86F0D20F8529E0DB}
+\makelabel{simpcomp:Operation [] (SCSimplicialComplex)}{5.3.6}{X85B5C18F7EFB94A4}
+\makelabel{simpcomp:Iterator (SCSimplicialComplex)}{5.3.7}{X7F8511457D591474}
+\makelabel{simpcomp:Operation - (SCNormalSurface, Integer)}{5.5.2}{X8428D7E5857EEAB5}
+\makelabel{simpcomp:Operation mod (SCNormalSurface, Integer)}{5.5.3}{X8596775A7EBAAD7D}
+\makelabel{simpcomp:Operation Union (SCNormalSurface, SCNormalSurface)}{5.6.1}{X8462E960847F8B83}
+\makelabel{simpcomp:SCFromFacets}{6.1.1}{X7B5A874584FF34A7}
+\makelabel{simpcomp:SC}{6.1.2}{X7B5470FD7E2320DE}
+\makelabel{simpcomp:SCFromDifferenceCycles}{6.1.3}{X827D29DD79A82CFA}
+\makelabel{simpcomp:SCFromGenerators}{6.1.4}{X804A0B1F85B333C2}
+\makelabel{simpcomp:SCExportToString}{6.2.1}{X7E95E36680C188C4}
+\makelabel{simpcomp:SCExportIsoSig}{6.2.2}{X80098C5F7B80A621}
+\makelabel{simpcomp:SCFromIsoSig}{6.2.3}{X7E915DA7821DD513}
+\makelabel{simpcomp:SCBdCyclicPolytope}{6.3.1}{X7E04DD807AF33B78}
+\makelabel{simpcomp:SCBdSimplex}{6.3.2}{X839F3BD37DBA3F3C}
+\makelabel{simpcomp:SCEmpty}{6.3.3}{X856E48967BBFCF0E}
+\makelabel{simpcomp:SCSimplex}{6.3.4}{X7A23532F7A8A3988}
+\makelabel{simpcomp:SCSeriesTorus}{6.3.5}{X8664A90879248282}
+\makelabel{simpcomp:SCSurface}{6.3.6}{X87C67A0087F645C1}
+\makelabel{simpcomp:SCFVectorBdCrossPolytope}{6.3.7}{X831315CD80BA3654}
+\makelabel{simpcomp:SCFVectorBdCyclicPolytope}{6.3.8}{X7C010361858F0214}
+\makelabel{simpcomp:SCFVectorBdSimplex}{6.3.9}{X7C3E0F7687AC966E}
+\makelabel{simpcomp:SCSeriesAGL}{6.4.1}{X7EA6421A8156EBDF}
+\makelabel{simpcomp:SCSeriesBrehmKuehnelTorus}{6.4.2}{X85E6FD6D84FF762B}
+\makelabel{simpcomp:SCSeriesBdHandleBody}{6.4.3}{X786AD599875BD006}
+\makelabel{simpcomp:SCSeriesBid}{6.4.4}{X8787A3A4788E950C}
+\makelabel{simpcomp:SCSeriesC2n}{6.4.5}{X7C0223DF83CC961B}
+\makelabel{simpcomp:SCSeriesConnectedSum}{6.4.6}{X7E2927DA7F60D957}
+\makelabel{simpcomp:SCSeriesCSTSurface}{6.4.7}{X7D1CEF9F86D3AE66}
+\makelabel{simpcomp:SCSeriesD2n}{6.4.8}{X7C56D2B7858A80C7}
+\makelabel{simpcomp:SCSeriesHandleBody}{6.4.9}{X7CCBF8F487036415}
+\makelabel{simpcomp:SCSeriesHomologySphere}{6.4.10}{X8519C1B678C101BF}
+\makelabel{simpcomp:SCSeriesK}{6.4.11}{X78DA125479E1D77F}
+\makelabel{simpcomp:SCSeriesKu}{6.4.12}{X7B8300428516DAD8}
+\makelabel{simpcomp:SCSeriesL}{6.4.13}{X813C5B0E7FA7C1A3}
+\makelabel{simpcomp:SCSeriesLe}{6.4.14}{X7EAC6828812A241A}
+\makelabel{simpcomp:SCSeriesLensSpace}{6.4.15}{X8280ED8280FF9218}
+\makelabel{simpcomp:SCSeriesPrimeTorus}{6.4.16}{X7DDC1B127F21CFA4}
+\makelabel{simpcomp:SCSeriesSeifertFibredSpace}{6.4.17}{X7CC3944D7E2F6458}
+\makelabel{simpcomp:SCSeriesS2xS2}{6.4.18}{X7B71BC8B7D74AFD5}
+\makelabel{simpcomp:SCChiralMap}{6.5.1}{X867D2AFC79B11405}
+\makelabel{simpcomp:SCChiralMaps}{6.5.2}{X85BB97CB8240E59B}
+\makelabel{simpcomp:SCChiralTori}{6.5.3}{X7B362D25784E7217}
+\makelabel{simpcomp:SCNrChiralTori}{6.5.4}{X7AB15983833FCA6B}
+\makelabel{simpcomp:SCNrRegularTorus}{6.5.5}{X87180AD07F799C5A}
+\makelabel{simpcomp:SCRegularMap}{6.5.6}{X83D0946E7E2C4163}
+\makelabel{simpcomp:SCRegularMaps}{6.5.7}{X7F75F5E183CC097E}
+\makelabel{simpcomp:SCRegularTorus}{6.5.8}{X79B6F47187668CDF}
+\makelabel{simpcomp:SCSeriesSymmetricTorus}{6.5.9}{X87CE08247BE77E44}
+\makelabel{simpcomp:SCCartesianPower}{6.6.1}{X8255A2F97A7432F9}
+\makelabel{simpcomp:SCCartesianProduct}{6.6.2}{X859DA29B83BDE35E}
+\makelabel{simpcomp:SCConnectedComponents}{6.6.3}{X82C9F57780C0B7F8}
+\makelabel{simpcomp:SCConnectedProduct}{6.6.4}{X7C63CDF28162C755}
+\makelabel{simpcomp:SCConnectedSum}{6.6.5}{X81338CE18195607C}
+\makelabel{simpcomp:SCConnectedSumMinus}{6.6.6}{X78B843417D63B408}
+\makelabel{simpcomp:SCDifferenceCycleCompress}{6.6.7}{X84F3487182AB102A}
+\makelabel{simpcomp:SCDifferenceCycleExpand}{6.6.8}{X8510B6CF85070A28}
+\makelabel{simpcomp:SCStronglyConnectedComponents}{6.6.9}{X8278E1157A318C32}
+\makelabel{simpcomp:SCsFromGroupExt}{6.7.1}{X7C1592677A76A3E5}
+\makelabel{simpcomp:SCsFromGroupByTransitivity}{6.7.2}{X7A04D77085D9BE4E}
+\makelabel{simpcomp:SCNrCyclic3Mflds}{6.8.1}{X805BBDF58568614F}
+\makelabel{simpcomp:SCCyclic3MfldTopTypes}{6.8.2}{X84477B9E7CAEED7B}
+\makelabel{simpcomp:SCCyclic3Mfld}{6.8.3}{X781256E37DA1B69F}
+\makelabel{simpcomp:SCCyclic3MfldByType}{6.8.4}{X8490744E81DA45BF}
+\makelabel{simpcomp:SCCyclic3MfldListOfGivenType}{6.8.5}{X86F8AED6843FCD65}
+\makelabel{simpcomp:SCAltshulerSteinberg}{6.9.1}{X7B69B327809F67A0}
+\makelabel{simpcomp:SCAutomorphismGroup}{6.9.2}{X7B88925386E197AC}
+\makelabel{simpcomp:SCAutomorphismGroupInternal}{6.9.3}{X7A33B8177A7ACD3A}
+\makelabel{simpcomp:SCAutomorphismGroupSize}{6.9.4}{X78F6EF808047772C}
+\makelabel{simpcomp:SCAutomorphismGroupStructure}{6.9.5}{X7EAC3A5D7A3339BB}
+\makelabel{simpcomp:SCAutomorphismGroupTransitivity}{6.9.6}{X7E9D5C257F88E5E0}
+\makelabel{simpcomp:SCBoundary}{6.9.7}{X836DC73380EA7414}
+\makelabel{simpcomp:SCDehnSommervilleCheck}{6.9.8}{X812AE7397B4FC88E}
+\makelabel{simpcomp:SCDehnSommervilleMatrix}{6.9.9}{X859C3981831B4B81}
+\makelabel{simpcomp:SCDifferenceCycles}{6.9.10}{X80B33CAF7B5476C0}
+\makelabel{simpcomp:SCDim}{6.9.11}{X82351AAE793DCB68}
+\makelabel{simpcomp:SCDualGraph}{6.9.12}{X798175C58050DDBD}
+\makelabel{simpcomp:SCEulerCharacteristic}{6.9.13}{X788BAE187D584103}
+\makelabel{simpcomp:SCFVector}{6.9.14}{X81F8071385FD9C1D}
+\makelabel{simpcomp:SCFaceLattice}{6.9.15}{X7F8B561C823DDDBA}
+\makelabel{simpcomp:SCFaceLatticeEx}{6.9.16}{X7AE0029985BD0775}
+\makelabel{simpcomp:SCFaces}{6.9.17}{X7F6FE9B27B8D6922}
+\makelabel{simpcomp:SCFacesEx}{6.9.18}{X7B40DFE780A47109}
+\makelabel{simpcomp:SCFacets}{6.9.19}{X7BDD568184E3419D}
+\makelabel{simpcomp:SCFacetsEx}{6.9.20}{X87DC942881235E25}
+\makelabel{simpcomp:SCFpBettiNumbers}{6.9.21}{X79F60850875BB683}
+\makelabel{simpcomp:SCFundamentalGroup}{6.9.22}{X875963367A7745FB}
+\makelabel{simpcomp:SCGVector}{6.9.23}{X7B9F77A885E1BABE}
+\makelabel{simpcomp:SCGenerators}{6.9.24}{X863CA73D7F66B295}
+\makelabel{simpcomp:SCGeneratorsEx}{6.9.25}{X789F8FC77FC0E701}
+\makelabel{simpcomp:SCHVector}{6.9.26}{X84FBF0A685547ECD}
+\makelabel{simpcomp:SCHasBoundary}{6.9.27}{X796EBADE7803C622}
+\makelabel{simpcomp:SCHasInterior}{6.9.28}{X7C2A5B4D7E77E444}
+\makelabel{simpcomp:SCHeegaardSplittingSmallGenus}{6.9.29}{X7A0547F67BBB6546}
+\makelabel{simpcomp:SCHeegaardSplitting}{6.9.30}{X7C7335667C162AFA}
+\makelabel{simpcomp:SCHomologyClassic}{6.9.31}{X864978877E7D4DA0}
+\makelabel{simpcomp:SCIncidences}{6.9.32}{X7B0C12F5780FDD9B}
+\makelabel{simpcomp:SCIncidencesEx}{6.9.33}{X7B4CA6FE78A9880F}
+\makelabel{simpcomp:SCInterior}{6.9.34}{X862926A079F6DFC2}
+\makelabel{simpcomp:SCIsCentrallySymmetric}{6.9.35}{X8123A6E282CD0174}
+\makelabel{simpcomp:SCIsConnected}{6.9.36}{X81AF20DC814B51A6}
+\makelabel{simpcomp:SCIsEmpty}{6.9.37}{X860375D980E9A801}
+\makelabel{simpcomp:SCIsEulerianManifold}{6.9.38}{X83E01C957D2F2458}
+\makelabel{simpcomp:SCIsFlag}{6.9.39}{X843C3E7F79D8093F}
+\makelabel{simpcomp:SCIsHeegaardSplitting}{6.9.40}{X83F0246384A766F2}
+\makelabel{simpcomp:SCIsHomologySphere}{6.9.41}{X7E66FE0C83A3D371}
+\makelabel{simpcomp:SCIsInKd}{6.9.42}{X87BC29AF878E7FD8}
+\makelabel{simpcomp:SCIsKNeighborly}{6.9.43}{X7F4BECCA7E67B1B2}
+\makelabel{simpcomp:SCIsOrientable}{6.9.44}{X78C860DC851167F7}
+\makelabel{simpcomp:SCIsPseudoManifold}{6.9.45}{X79DFCA08808665B7}
+\makelabel{simpcomp:SCIsPure}{6.9.46}{X7AAA757F842EA23A}
+\makelabel{simpcomp:SCIsShellable}{6.9.47}{X7EA4F4DB78758652}
+\makelabel{simpcomp:SCIsStronglyConnected}{6.9.48}{X7A2BD5657BBE1CC7}
+\makelabel{simpcomp:SCMinimalNonFaces}{6.9.49}{X7B935899849C8E40}
+\makelabel{simpcomp:SCMinimalNonFacesEx}{6.9.50}{X7DE069A0823BD56E}
+\makelabel{simpcomp:SCNeighborliness}{6.9.51}{X82A224DF787A97BE}
+\makelabel{simpcomp:SCNumFaces}{6.9.52}{X7AC2427184B44C65}
+\makelabel{simpcomp:SCOrientation}{6.9.53}{X78DACE3478340DB8}
+\makelabel{simpcomp:SCSkel}{6.9.54}{X8026B46F8236124D}
+\makelabel{simpcomp:SCSkelEx}{6.9.55}{X84ACF7D580FE8B76}
+\makelabel{simpcomp:SCSpanningTree}{6.9.56}{X7E770DE27938B140}
+\makelabel{simpcomp:SCAlexanderDual}{6.10.1}{X818757A17DA5CFFC}
+\makelabel{simpcomp:SCClose}{6.10.2}{X82D22356858062D6}
+\makelabel{simpcomp:SCCone}{6.10.3}{X7CF53D8D7E0FA702}
+\makelabel{simpcomp:SCDeletedJoin}{6.10.4}{X800BDDD878DFCBDB}
+\makelabel{simpcomp:SCDifference}{6.10.5}{X7FB3D29178076EB4}
+\makelabel{simpcomp:SCFillSphere}{6.10.6}{X7C8D11C684825ADC}
+\makelabel{simpcomp:SCHandleAddition}{6.10.7}{X7DCB16857D49EC37}
+\makelabel{simpcomp:SCIntersection}{6.10.8}{X7B4BE2C783E6D0BF}
+\makelabel{simpcomp:SCIsIsomorphic}{6.10.9}{X85659EC77DFF8183}
+\makelabel{simpcomp:SCIsSubcomplex}{6.10.10}{X81D9CC438313F589}
+\makelabel{simpcomp:SCIsomorphism}{6.10.11}{X8623B92580E8B4E4}
+\makelabel{simpcomp:SCIsomorphismEx}{6.10.12}{X86576B7287686E2B}
+\makelabel{simpcomp:SCJoin}{6.10.13}{X86AC8D81837CC677}
+\makelabel{simpcomp:SCNeighbors}{6.10.14}{X8482E1F67C927BB7}
+\makelabel{simpcomp:SCNeighborsEx}{6.10.15}{X7F8FBEF17ACD0D4F}
+\makelabel{simpcomp:SCShelling}{6.10.16}{X7EDA334983025D3D}
+\makelabel{simpcomp:SCShellingExt}{6.10.17}{X7F967A717D4E41C0}
+\makelabel{simpcomp:SCShellings}{6.10.18}{X8373598C7FF5D28E}
+\makelabel{simpcomp:SCSpan}{6.10.19}{X7987AAE481C31F38}
+\makelabel{simpcomp:SCSuspension}{6.10.20}{X7AAA4669793C57DC}
+\makelabel{simpcomp:SCUnion}{6.10.21}{X81DA367A813F7599}
+\makelabel{simpcomp:SCVertexIdentification}{6.10.22}{X7D5639CB87A0D3F1}
+\makelabel{simpcomp:SCWedge}{6.10.23}{X7E7B17317D1B618D}
+\makelabel{simpcomp:SCNSEmpty}{7.1.1}{X7A59063180BD5969}
+\makelabel{simpcomp:SCNSFromFacets}{7.1.2}{X86C51E1F7CFA39F9}
+\makelabel{simpcomp:SCNS}{7.1.3}{X78F4044683236A97}
+\makelabel{simpcomp:SCNSSlicing}{7.1.4}{X8266FAFC7C6B8685}
+\makelabel{simpcomp:SCCopy}{7.2.1}{X80F13BB484B3E9B2}
+\makelabel{simpcomp:SCNSTriangulation}{7.2.2}{X7A180D487B8941C5}
+\makelabel{simpcomp:SCConnectedComponents}{7.3.1}{X82C9F57780C0B7F8}
+\makelabel{simpcomp:SCDim}{7.3.2}{X82351AAE793DCB68}
+\makelabel{simpcomp:SCEulerCharacteristic}{7.3.3}{X788BAE187D584103}
+\makelabel{simpcomp:SCFVector}{7.3.4}{X81F8071385FD9C1D}
+\makelabel{simpcomp:SCFaceLattice}{7.3.5}{X7F8B561C823DDDBA}
+\makelabel{simpcomp:SCFaceLatticeEx}{7.3.6}{X7AE0029985BD0775}
+\makelabel{simpcomp:SCFpBettiNumbers}{7.3.7}{X79F60850875BB683}
+\makelabel{simpcomp:SCGenus}{7.3.8}{X806E6A4C7CD30A96}
+\makelabel{simpcomp:SCHomology}{7.3.9}{X78D66254858CE901}
+\makelabel{simpcomp:SCIsConnected}{7.3.10}{X81AF20DC814B51A6}
+\makelabel{simpcomp:SCIsEmpty}{7.3.11}{X860375D980E9A801}
+\makelabel{simpcomp:SCIsOrientable}{7.3.12}{X78C860DC851167F7}
+\makelabel{simpcomp:SCSkel}{7.3.13}{X8026B46F8236124D}
+\makelabel{simpcomp:SCSkelEx}{7.3.14}{X84ACF7D580FE8B76}
+\makelabel{simpcomp:SCTopologicalType}{7.3.15}{X84CBD2F780A1F63C}
+\makelabel{simpcomp:SCUnion}{7.3.16}{X81DA367A813F7599}
+\makelabel{simpcomp:SCBoundaryOperatorMatrix}{8.1.1}{X8762B952823BDEF3}
+\makelabel{simpcomp:SCBoundarySimplex}{8.1.2}{X7E5983748742026D}
+\makelabel{simpcomp:SCHomologyBasis}{8.1.3}{X7F9B47A97F5FA005}
+\makelabel{simpcomp:SCHomologyBasisAsSimplices}{8.1.4}{X7C569D9A7868C697}
+\makelabel{simpcomp:SCHomologyInternal}{8.1.5}{X858989CE797A8366}
+\makelabel{simpcomp:SCCoboundaryOperatorMatrix}{8.2.1}{X8527CC347F606648}
+\makelabel{simpcomp:SCCohomology}{8.2.2}{X7926D71A8169629B}
+\makelabel{simpcomp:SCCohomologyBasis}{8.2.3}{X85910A6B824D63A4}
+\makelabel{simpcomp:SCCohomologyBasisAsSimplices}{8.2.4}{X7A5047E57E150716}
+\makelabel{simpcomp:SCCupProduct}{8.2.5}{X7A9137847BF96DF3}
+\makelabel{simpcomp:SCIntersectionForm}{8.2.6}{X835E7016826D14A8}
+\makelabel{simpcomp:SCIntersectionFormParity}{8.2.7}{X791C2B45872A71CA}
+\makelabel{simpcomp:SCIntersectionFormDimensionality}{8.2.8}{X7B5F948B84F5E316}
+\makelabel{simpcomp:SCIntersectionFormSignature}{8.2.9}{X87375A6978F3C8CD}
+\makelabel{simpcomp:SCBistellarOptions}{9.2.1}{X85678B4D7A378F1C}
+\makelabel{simpcomp:SCEquivalent}{9.2.2}{X80BDA87D86E67B02}
+\makelabel{simpcomp:SCExamineComplexBistellar}{9.2.3}{X7AE1CB2C81028966}
+\makelabel{simpcomp:SCIntFunc.SCChooseMove}{9.2.4}{X7AEB9242837CCE5D}
+\makelabel{simpcomp:SCIsKStackedSphere}{9.2.5}{X79FBFD6A7F2CC7E7}
+\makelabel{simpcomp:SCBistellarIsManifold}{9.2.6}{X7E81340E8469C8EB}
+\makelabel{simpcomp:SCIsMovableComplex}{9.2.7}{X7FB6219B85C96C66}
+\makelabel{simpcomp:SCMove}{9.2.8}{X7AD9737B7BAF4816}
+\makelabel{simpcomp:SCMoves}{9.2.9}{X87B1CBC97FC5C120}
+\makelabel{simpcomp:SCRMoves}{9.2.10}{X7E70D44179ED6A78}
+\makelabel{simpcomp:SCRandomize}{9.2.11}{X8176063785DC4C35}
+\makelabel{simpcomp:SCReduceAsSubcomplex}{9.2.12}{X85D69E4F84E8E7D9}
+\makelabel{simpcomp:SCReduceComplex}{9.2.13}{X7FF4BBEC8574C58F}
+\makelabel{simpcomp:SCReduceComplexEx}{9.2.14}{X814D9AE287F64F74}
+\makelabel{simpcomp:SCReduceComplexFast}{9.2.15}{X8714A0A578A281C0}
+\makelabel{simpcomp:SCBlowup}{10.2.1}{X80BB246E818412B1}
+\makelabel{simpcomp:SCMappingCylinder}{10.2.2}{X7EC03E0C7EA8AA00}
+\makelabel{simpcomp:SCIsTight}{11.1.1}{X8337AE0E7B0A91D4}
+\makelabel{simpcomp:SCMorseIsPerfect}{11.1.2}{X7E5B488D7F2C61C2}
+\makelabel{simpcomp:SCSlicing}{11.1.3}{X82DE3EB279394001}
+\makelabel{simpcomp:SCMorseMultiplicityVector}{11.1.4}{X8365313E7CE6DCFC}
+\makelabel{simpcomp:SCMorseNumberOfCriticalPoints}{11.1.5}{X8396E28E79618B05}
+\makelabel{simpcomp:SCCollapseGreedy}{12.1.1}{X7A4EBD017F4D9747}
+\makelabel{simpcomp:SCCollapseLex}{12.1.2}{X797927C68701CB00}
+\makelabel{simpcomp:SCCollapseRevLex}{12.1.3}{X80651CA87E3F067A}
+\makelabel{simpcomp:SCHasseDiagram}{12.1.4}{X80DB575E7FABC370}
+\makelabel{simpcomp:SCMorseEngstroem}{12.1.5}{X7FC55A3082BC56FD}
+\makelabel{simpcomp:SCMorseRandom}{12.1.6}{X7E9FA762862B2AA2}
+\makelabel{simpcomp:SCMorseRandomLex}{12.1.7}{X8164E5207F7389EF}
+\makelabel{simpcomp:SCMorseRandomRevLex}{12.1.8}{X7C1B8D1C8484754B}
+\makelabel{simpcomp:SCMorseSpec}{12.1.9}{X802863327E29080D}
+\makelabel{simpcomp:SCMorseUST}{12.1.10}{X7AEB02327B49060B}
+\makelabel{simpcomp:SCSpanningTreeRandom}{12.1.11}{X84C07E9787EDF772}
+\makelabel{simpcomp:SCHomology}{12.1.12}{X78D66254858CE901}
+\makelabel{simpcomp:SCHomologyEx}{12.1.13}{X863AA5D481F78D84}
+\makelabel{simpcomp:SCIsSimplyConnected}{12.1.14}{X8067B00B7C959E2D}
+\makelabel{simpcomp:SCIsSimplyConnectedEx}{12.1.15}{X7A291CE27AB5398A}
+\makelabel{simpcomp:SCIsSphere}{12.1.16}{X79B9F1807D0D9D52}
+\makelabel{simpcomp:SCIsManifold}{12.1.17}{X831FFF748201B589}
+\makelabel{simpcomp:SCIsManifoldEx}{12.1.18}{X86F1B97282A7E01D}
+\makelabel{simpcomp:SCIsLibRepository}{13.1.1}{X7CBF051F7A1CC321}
+\makelabel{simpcomp:SCLib}{13.1.2}{X7BDFDE6C81F9F70E}
+\makelabel{simpcomp:SCLibAdd}{13.1.3}{X85A9A589831467BB}
+\makelabel{simpcomp:SCLibAllComplexes}{13.1.4}{X7C0F9B7E868800C7}
+\makelabel{simpcomp:SCLibDelete}{13.1.5}{X802B22077DB1F14B}
+\makelabel{simpcomp:SCLibDetermineTopologicalType}{13.1.6}{X8320F68178796D4D}
+\makelabel{simpcomp:SCLibFlush}{13.1.7}{X7C3151F280BC8754}
+\makelabel{simpcomp:SCLibInit}{13.1.8}{X83A6586583F544F3}
+\makelabel{simpcomp:SCLibIsLoaded}{13.1.9}{X83D638237BDE2C1C}
+\makelabel{simpcomp:SCLibSearchByAttribute}{13.1.10}{X7AEF58507E5AB88E}
+\makelabel{simpcomp:SCLibSearchByName}{13.1.11}{X80EA086A80F86814}
+\makelabel{simpcomp:SCLibSize}{13.1.12}{X80BD14648113130B}
+\makelabel{simpcomp:SCLibUpdate}{13.1.13}{X7A0856987A87A3C5}
+\makelabel{simpcomp:SCLibStatus}{13.1.14}{X843A039E78D5A97B}
+\makelabel{simpcomp:SCLoad}{13.2.1}{X867AFE4D7A2AA736}
+\makelabel{simpcomp:SCLoadXML}{13.2.2}{X8365D45D8765D3E8}
+\makelabel{simpcomp:SCSave}{13.2.3}{X817CF3A184C93782}
+\makelabel{simpcomp:SCSaveXML}{13.2.4}{X7F7BDE477986435C}
+\makelabel{simpcomp:SCExportMacaulay2}{13.2.5}{X819FBFED81090969}
+\makelabel{simpcomp:SCExportPolymake}{13.2.6}{X7F214CF77E65C1A9}
+\makelabel{simpcomp:SCImportPolymake}{13.2.7}{X871C94B978881445}
+\makelabel{simpcomp:SCExportLatexTable}{13.2.8}{X790C0AD9807A5D82}
+\makelabel{simpcomp:SCExportJavaView}{13.2.9}{X859BCB9986B55E14}
+\makelabel{simpcomp:SCExportRecognizer}{13.2.10}{X87B05F177D4C2F27}
+\makelabel{simpcomp:SCExportSnapPy}{13.2.11}{X7B933EA27E8E79C8}
+\makelabel{simpcomp:SCHomalgBoundaryMatrices}{14.1.1}{X817196DF78B17B12}
+\makelabel{simpcomp:SCHomalgCoboundaryMatrices}{14.1.2}{X7C9CF8ED8348489F}
+\makelabel{simpcomp:SCHomalgHomology}{14.1.3}{X86145D56863ABBAF}
+\makelabel{simpcomp:SCHomalgHomologyBasis}{14.1.4}{X83C631FC85ED4974}
+\makelabel{simpcomp:SCHomalgCohomology}{14.1.5}{X840BBA3B7D881955}
+\makelabel{simpcomp:SCHomalgCohomologyBasis}{14.1.6}{X83D8772284BAD386}
+\makelabel{simpcomp:SCInfoLevel}{15.1.1}{X79815139873FF4CF}
+\makelabel{simpcomp:SCMailClearPending}{15.2.1}{X85A5282378E8303E}
+\makelabel{simpcomp:SCMailIsEnabled}{15.2.2}{X7D3826B887ACF1E5}
+\makelabel{simpcomp:SCMailIsPending}{15.2.3}{X857AEAAB85BD7513}
+\makelabel{simpcomp:SCMailSend}{15.2.4}{X7FEA17D37B36BBD4}
+\makelabel{simpcomp:SCMailSendPending}{15.2.5}{X82DA7B2682F5F117}
+\makelabel{simpcomp:SCMailSetAddress}{15.2.6}{X8771F97F7E78B7AC}
+\makelabel{simpcomp:SCMailSetEnabled}{15.2.7}{X82AA843F7F37B21E}
+\makelabel{simpcomp:SCMailSetMinInterval}{15.2.8}{X87DA54EA7950D4BB}
+\makelabel{simpcomp:SCRunTest}{15.3.1}{X7A26BD457A6E7AC3}
+\makelabel{simpcomp:SCProperties}{18.1.1}{X7AFC8525796297C9}
+\makelabel{simpcomp:SCPropertiesFlush}{18.1.2}{X868776A48419FA88}
+\makelabel{simpcomp:SCPropertiesManaged}{18.1.3}{X7C92D8187B5C1EF6}
+\makelabel{simpcomp:SCPropertiesNames}{18.1.4}{X82EA577A830E0826}
+\makelabel{simpcomp:SCPropertiesTmp}{18.1.5}{X7A52957C7B183855}
+\makelabel{simpcomp:SCPropertiesTmpNames}{18.1.6}{X797A290E8665E6D0}
+\makelabel{simpcomp:SCPropertyByName}{18.1.7}{X8211194D85D30B32}
+\makelabel{simpcomp:SCPropertyDrop}{18.1.8}{X8304C9BC7E8CF4F8}
+\makelabel{simpcomp:SCPropertyHandlersSet}{18.1.9}{X7FC306B28335BFDC}
+\makelabel{simpcomp:SCPropertySet}{18.1.10}{X86FEBD517B7963C6}
+\makelabel{simpcomp:SCPropertySetMutable}{18.1.11}{X798E9C9C7895C9F0}
+\makelabel{simpcomp:SCPropertyTmpByName}{18.1.12}{X78D646707A17AC62}
+\makelabel{simpcomp:SCPropertyTmpDrop}{18.1.13}{X836F936B7E09E5F1}
+\makelabel{simpcomp:SCPropertyTmpSet}{18.1.14}{X86CF3B9585A965A0}

@@ -1,0 +1,8 @@
+gap> Read(InputTextString("quit;")); # trigger GAP_THROW in EvalOrExecCall
+gap> 1+1;
+2
+gap> 
+gap> READ(InputTextString("quit;")); # trigger GAP_THROW in IntrFuncCallEnd
+gap> 1+1;
+2
+gap> QUIT;

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Test">
+<Heading>Test</Heading>
+
+Does AutoDoc have a way to allow that header block not to appear in
+the documentation generated from a <F>.autodoc</F> file like this?
+<Section Label="Chapter_Test_Section_First_Section">
+<Heading>First Section</Heading>
+
+<Subsection Label="Chapter_Test_Section_First_Section_Subsection_First_Subsection">
+<Heading>First Subsection</Heading>
+
+<Example><![CDATA[
+gap> S5 := SymmetricGroup(5);
+Sym( [ 1 .. 5 ] )
+gap> Size(S5);
+120
+]]></Example>
+
+Some text between two examples
+<Index Key="Worksheet Autoplain">Plain worksheet index entry with <Keyword>true</Keyword></Index>
+<Index Key="WorksheetAutoplainKeyOnly"></Index>
+<Index Key="A&amp;B">ampersand key</Index>
+<Index Key="A&lt;B">less-than key</Index>
+<Index Key="Indented Autoplain">indented command parsing works</Index>
+<Example><![CDATA[
+gap> A5 := AlternatingGroup(5);
+Alt( [ 1 .. 5 ] )
+gap> Size(A5);
+60
+]]></Example>
+
+<Example><![CDATA[
+gap> plain_mode_value := 6 *
+>   9;
+54
+]]></Example>
+
+A plain-text line mentioning @Section InlineMention should stay plain text.
+And an unfenced .autodoc line beginning with #! should stay literal:
+#! PlainAutodocLiteral
+And fenced listings in .autodoc files should also keep would-be comments literal:
+<Listing><![CDATA[
+@Section PlainTextFenceLiteral
+#! PlainFenceLiteral
+]]></Listing>
+Also, markdown-like inline <Keyword>true</Keyword> should become a keyword tag.
+And XML comments should pass through verbatim:
+<!--
+#  <#GAPDoc Label="ToricVarietyConst">
+#  <ManSection>
+#  <#/GAPDoc>
+-->
+And we wrap up with some dummy text
+</Subsection>
+
+</Section>
+
+</Chapter>
+

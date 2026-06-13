@@ -1,0 +1,93 @@
+  
+  [1X1 [33X[0;0YThe SmallClassNr package[133X[101X
+  
+  [33X[0;0YThis  is  the  manual  for  the  [5XGAP[105X  4  package [5XSmallClassNr[105X version 1.5.1,
+  developed by Sam Tertooy.[133X
+  
+  
+  [1X1.1 [33X[0;0YInstallation[133X[101X
+  
+  [33X[0;0YIf  you  are  using [5XGAP[105X version 4.15.0 or newer, then [5XSmallClassNr[105X should be
+  installed by default.[133X
+  
+  [33X[0;0YIf  this  is  not  the case, but the [5XPackageManager[105X package is installed and
+  loaded,  you  can  install  [5XSmallClassNr[105X  from  within  a  [5XGAP[105X session using
+  [2XInstallPackage[102X ([14XPackageManager: InstallPackage[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XInstallPackage( "SmallClassNr" );[127X[104X
+    [4X[28X...[128X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YAlternatively,  you  can  download  [5XSmallClassNr[105X  as  a .tar.gz archive here
+  ([7Xhttps://github.com/stertooy/SmallClassNr/releases/download/v1.5.1/SmallClassNr-1.5.1.tar.gz[107X).
+  After extracting, you should place it in a suitable [11Xpkg[111X folder. For example,
+  on  a  Debian-based Linux distribution (e.g. Ubuntu, Mint), you can place it
+  in  [11X$HOME/.gap/pkg[111X (recommended) which makes it available for just yourself,
+  or  in  the  [5XGAP[105X  installation  directory  ([11Xgap-X.Y.Z/pkg[111X)  which  makes  it
+  available for all users.[133X
+  
+  [33X[0;0YYou  can  use  the  following command to efficiently install the package for
+  yourself:[133X
+  
+  [4X[32X  Command  [32X[104X
+    [4Xwget -qO - https://[...].tar.gz | tar xzf - --one-top-level=$HOME/.gap/pkg[104X
+  [4X[32X[104X
+  
+  
+  [1X1.2 [33X[0;0YLoading[133X[101X
+  
+  [33X[0;0YOnce  installed,  loading  [5XSmallClassNr[105X  can  be  done  by using [2XLoadPackage[102X
+  ([14XReference: LoadPackage[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage( "SmallClassNr" );[127X[104X
+    [4X[28X...[128X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X1.3 [33X[0;0YCiting[133X[101X
+  
+  [33X[0;0YIf  you use the [5XSmallClassNr[105X package in your research, we would love to hear
+  about  your work via an email to the address [7Xmailto:sam.tertooy@kuleuven.be[107X.
+  If  you have used the [5XSmallClassNr[105X package in the preparation of a paper and
+  wish to refer to it, please cite it as described below.[133X
+  
+  [33X[0;0YIn BibTeX:[133X
+  
+  [4X[32X  BibTeX  [32X[104X
+    [4X@misc{SCN1.5.1,[104X
+    [4X    author =       {Tertooy, Sam},[104X
+    [4X    title =        {{SmallClassNr,[104X
+    [4X                     Library of finite groups with small class number,[104X
+    [4X                     Version 1.5.1}},[104X
+    [4X    note =         {GAP package},[104X
+    [4X    year =         {2026},[104X
+    [4X    howpublished = {\url{https://stertooy.github.io/SmallClassNr}}[104X
+    [4X}[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIn BibLaTeX:[133X
+  
+  [4X[32X  BibLaTeX  [32X[104X
+    [4X@software{SCN1.5.1,[104X
+    [4X    author =   {Tertooy, Sam},[104X
+    [4X    title =    {SmallClassNr},[104X
+    [4X    subtitle = {Library of finite groups with small class number},[104X
+    [4X    version =  {1.5.1},[104X
+    [4X    note =     {GAP package},[104X
+    [4X    year =     {2026},[104X
+    [4X    url =      {https://stertooy.github.io/SmallClassNr}[104X
+    [4X}[104X
+  [4X[32X[104X
+  
+  
+  [1X1.4 [33X[0;0YSupport[133X[101X
+  
+  [33X[0;0YIf  you  encounter  any  problems,  please  submit them to the issue tracker
+  ([7Xhttps://github.com/stertooy/SmallClassNr/issues[107X). If you have any questions
+  on  the usage or functionality of [5XSmallClassNr[105X, you may contact me via email
+  at [7Xmailto:sam.tertooy@kuleuven.be[107X.[133X
+  

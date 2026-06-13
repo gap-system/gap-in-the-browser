@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    SLA
+  </Title>
+  <Subtitle>
+    Computing with simple Lie algebras
+  </Subtitle>
+  <Version>
+    Version 1.6.2
+  </Version>
+  <Author>
+    Willem Adriaan de Graaf<Alt Only="LaTeX"><Br/></Alt>
+<Email>degraaf@science.unitn.it</Email>
+<Homepage>http://www.science.unitn.it/~degraaf</Homepage>
+
+  </Author>
+  <Date>
+    12 July 2024
+  </Date>
+  <Abstract>
+                This package provides functions for computing with various
+            aspects of the theory of simple Lie algebras in characteristic
+            zero.
+            
+  </Abstract>
+  <Copyright>
+    &copyright; 2013-2018 Willem de Graaf
+  </Copyright>
+  </TitlePage>

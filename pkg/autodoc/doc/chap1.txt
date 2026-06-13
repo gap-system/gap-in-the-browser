@@ -1,0 +1,63 @@
+  
+  [1X1 [33X[0;0YWhat [5XAutoDoc[105X[101X[1X offers[133X[101X
+  
+  [33X[0;0Y[5XAutoDoc[105X  helps  you create and maintain package manuals for [5XGAP[105X. It is built
+  on  top  of  [5XGAPDoc[105X  and  generates  the  XML input that [5XGAPDoc[105X consumes. So
+  [5XAutoDoc[105X complements [5XGAPDoc[105X instead of replacing it.[133X
+  
+  [33X[0;0YThe package is designed for a [21Xmix and match[121X workflow: you can adopt only the
+  parts that help you today, and add more over time.[133X
+  
+  
+  [1X1.1 [33X[0;0YCore features[133X[101X
+  
+  [30X    [33X[0;6YBuild  package  manuals  via  one  reproducible  command,  usually [10Xgap
+        makedoc.g[110X.[133X
+  
+  [30X    [33X[0;6YGenerate and maintain a title page from metadata in [11XPackageInfo.g[111X.[133X
+  
+  [30X    [33X[0;6YGenerate and maintain a main XML file that includes your chapters.[133X
+  
+  [30X    [33X[0;6YExtract manual examples into [11X.tst[111X files via [10Xextract_examples := true[110X.[133X
+  
+  [30X    [33X[0;6YDocument  declarations  directly  in source files via [5XAutoDoc[105X comments
+        beginning with [10X#![110X.[133X
+  
+  [30X    [33X[0;6YOrganize  chapter  and  section  text  either in source comments or in
+        standalone [11X.autodoc[111X files.[133X
+  
+  [30X    [33X[0;6YCombine   [5XAutoDoc[105X   comments,  classic  [5XGAPDoc[105X  source  comments,  and
+        hand-written XML chapters in one manual.[133X
+  
+  
+  [1X1.2 [33X[0;0YAdopting [5XAutoDoc[105X[101X[1X incrementally[133X[101X
+  
+  [33X[0;0YYou  do  not  have  to  switch  everything  at  once. Typical adoption paths
+  include:[133X
+  
+  [30X    [33X[0;6YUse only [2XAutoDoc[102X ([14X4.2-1[114X) to rebuild an existing [5XGAPDoc[105X manual.[133X
+  
+  [30X    [33X[0;6YEnable only title-page generation, while keeping your custom main XML.[133X
+  
+  [30X    [33X[0;6YKeep  your  existing  title  page  but  use generated entities such as
+        [10X&VERSION;[110X, [10X&RELEASEYEAR;[110X, and [10X&RELEASEDATE;[110X.[133X
+  
+  [30X    [33X[0;6YAdd  [5XAutoDoc[105X  comments  only for new code, and leave old documentation
+        as-is.[133X
+  
+  [30X    [33X[0;6YKeep  existing  XML  chapters,  or  gradually  add source comments and
+        [11X.autodoc[111X files where they fit your preferred workflow.[133X
+  
+  [30X    [33X[0;6YLater,  gradually  move  chapters  or  source  documentation  to  your
+        preferred style.[133X
+  
+  [33X[0;0YThis  flexibility is central: [5XAutoDoc[105X should make your current setup better,
+  without forcing a full rewrite first.[133X
+  
+  
+  [1X1.3 [33X[0;0YWhere to continue[133X[101X
+  
+  [33X[0;0YFor  practical  setup  and migration workflows, continue with chapter [14X2[114X. For
+  the  command  reference  of  documentation  comments,  including  standalone
+  [11X.autodoc[111X files, see chapter [14X3[114X.[133X
+  

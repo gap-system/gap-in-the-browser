@@ -1,0 +1,135 @@
+  
+  
+                                     [1X IBNP [101X
+  
+  
+               [1X Involutive Bases for Noncommutative Polynomials [101X
+  
+  
+                                      0.18
+  
+  
+                                4 November 2025
+  
+  
+                                Gareth A. Evans
+  
+                             Christopher D. Wensley
+  
+  
+  
+  Gareth A. Evans
+      Email:    [7Xmailto:gareth@mathemateg.com[107X
+      Address:  [33X[0;14YYsgol y Creuddyn[133X
+                [33X[0;14YFfordd Derwen, Bae Penrhyn[133X
+                [33X[0;14YLlandudno, LL30 3LB[133X
+                [33X[0;14YU.K.[133X
+  
+  
+  Christopher D. Wensley
+      Email:    [7Xmailto:cdwensley.maths@btinternet.com[107X
+      Homepage: [7Xhttps://github.com/cdwensley[107X
+  
+  -------------------------------------------------------
+  [1XAbstract[101X
+  [33X[0;0YThe  [5XIBNP[105X  package  provides  methods  for computing an involutive (Gröbner)
+  basis  [22XB[122X for an ideal [22XJ[122X over a polynomial ring [22XR[122X in both the commutative and
+  noncommutative cases.[133X
+  
+  [33X[0;0YSecondly,  methods are provided to involutively reduce a given polynomial to
+  its normal form in [22XR/J[122X.[133X
+  
+  [33X[0;0YBug  reports,  comments,  suggestions for additional features, and offers to
+  implement some of these, will all be very welcome.[133X
+  
+  [33X[0;0YPlease  submit any issues at [7Xhttps://github.com/gap-packages/ibnp/issues/[107X or
+  send an email to the second author at [7Xmailto:cdwensley.maths@btinternet.com[107X.[133X
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2024-2025, Gareth Evans and Chris Wensley.[133X
+  
+  [33X[0;0YThe  [5XIBNP[105X package is free software; you can redistribute it and/or modify it
+  under  the  terms of the GNU General Public License as published by the Free
+  Software  Foundation;  either  version 2 of the License, or (at your option)
+  any later version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YThis  documentation  was  prepared with the [5XGAPDoc[105X [LN17] and [5XAutoDoc[105X [GH23]
+  packages.[133X
+  
+  [33X[0;0YThe   procedure   used   to   produce   new   releases   uses   the  package
+  [5XGitHubPagesForGAP[105X [Hor19] and the package [5XReleaseTools[105X.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (IBNP)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YHistory[133X
+  2 [33X[0;0YUsing the packages [5XGBNP[105X and [5XNMO[105X[133X
+    2.1 [33X[0;0YNoncommutative polynomials (NPs)[133X
+    2.2 [33X[0;0YGröbner Bases[133X
+    2.3 [33X[0;0YOrderings for monomials[133X
+  3 [33X[0;0YCommutative Involutive Bases[133X
+    3.1 [33X[0;0YReduction Paths[133X
+      3.1-1 [33X[0;0YAn Example[133X
+    3.2 [33X[0;0YCommutative Involutive Divisions[133X
+      3.2-1 [33X[0;0YExample[133X
+      3.2-2 [33X[0;0YSelecting a Division[133X
+      3.2-3 [33X[0;0YSelecting an Ordering[133X
+      3.2-4 PommaretDivision
+      3.2-5 ThomasDivision
+      3.2-6 JanetDivision
+      3.2-7 DivisionRecord
+      3.2-8 IPolyReduce
+      3.2-9 LoggedIPolyReduce
+      3.2-10 IAutoreduce
+    3.3 [33X[0;0YComputing a Commutative Involutive Basis[133X
+      3.3-1 [33X[0;0YProlongations and Autoreduction[133X
+      3.3-2 InvolutiveBasis
+      3.3-3 [33X[0;0YThe process may abort[133X
+      3.3-4 [33X[0;0YA more detailed example[133X
+      3.3-5 [33X[0;0YUsing homogeneous polynomials[133X
+  4 [33X[0;0YFunctions for Noncommutative Monomials[133X
+    4.1 [33X[0;0YBasic functions for monomials[133X
+      4.1-1 [33X[0;0YPredefined algebras[133X
+      4.1-2 PrintNM
+      4.1-3 NM2GM
+      4.1-4 GM2NM
+      4.1-5 PrefixNM
+      4.1-6 SuffixPrefixPosNM
+      4.1-7 SubwordPosNM
+      4.1-8 LeadVarNM
+      4.1-9 DivNM
+  5 [33X[0;0YFunctions for Noncommutative Polynomials[133X
+    5.1 [33X[0;0YBasic functions for polynomials[133X
+      5.1-1 MaxDegreeNP
+      5.1-2 ScalarMulNP
+      5.1-3 LtNPoly
+      5.1-4 LowestLeadMonomialPosNP
+  6 [33X[0;0YNoncommutative Involutive Bases[133X
+    6.1 [33X[0;0YNoncommutative Involutive Divisions[133X
+      6.1-1 LeftDivision
+      6.1-2 RightDivision
+      6.1-3 LeftOverlapDivision
+      6.1-4 RightOverlapDivision
+      6.1-5 [33X[0;0YSelecting a Division[133X
+      6.1-6 DivisionRecordNP
+      6.1-7 IPolyReduceNP
+      6.1-8 LoggedIPolyReduceNP
+      6.1-9 VerifyLoggedRecordNP
+      6.1-10 IAutoreduceNP
+    6.2 [33X[0;0YComputing a Noncommutative Involutive Basis[133X
+      6.2-1 InvolutiveBasisNP
+    6.3 [33X[0;0YThe Disjoint Cones Conditions[133X
+      6.3-1 StrongLeftOverlapDivision
+      6.3-2 StrongRightOverlapDivision
+  
+  
+  [32X

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    YangBaxter
+  </Title>
+  <Subtitle>
+    Combinatorial Solutions for the Yang-Baxter equation
+  </Subtitle>
+  <Version>
+    0.10.7
+  </Version>
+  <Author>
+    Leandro Vendramin<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Vrije Universiteit Brussel<Br/>
+Faculty of Sciences<Br/>
+Department of Mathematics and Data Science<Br/>
+Pleinlaan 2, B-1050<Br/>
+Brussel, Belgium<Br/>
+</Address>
+<Email>Leandro.Vendramin@vub.be</Email>
+<Homepage>https://vendramin.github.io/</Homepage>
+
+  </Author>
+  <Author>
+    Olexandr Konovalov<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+School of Computer Science<Br/>
+University of St Andrews<Br/>
+Jack Cole Building, North Haugh,<Br/>
+St Andrews, Fife, KY16 9SX, Scotland<Br/>
+</Address>
+<Email>obk1@st-andrews.ac.uk</Email>
+<Homepage>https://olexandr-konovalov.github.io/</Homepage>
+
+  </Author>
+  <Date>
+    14 July 2025
+  </Date>
+  </TitlePage>

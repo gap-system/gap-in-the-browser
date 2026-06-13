@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Lazy_homogeneous_lists">
+<Heading>Lazy homogeneous lists</Heading>
+
+<Section Label="Chapter_Lazy_homogeneous_lists_Section_GAP_categories">
+<Heading>GAP categories</Heading>
+
+<ManSection>
+  <Filt Arg="L" Type="Category" Name="IsLazyHList" Label="for IsComponentObjectRep and IsList"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of lazy homogeneous lists.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Lazy_homogeneous_lists_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Func Arg="L, func" Name="LazyHList" />
+ <Description>
+  Construct a lazy list
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

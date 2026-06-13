@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    typeset
+  </Title>
+  <Subtitle>
+    Automatic typesetting framework for common &GAP; objects, with LaTeX generation
+  </Subtitle>
+  <Version>
+    1.2.4
+  </Version>
+  <Author>
+    Zachariah Newbery<Alt Only="LaTeX"><Br/></Alt>
+<Email>me@zachnewbery.com</Email>
+<Homepage>https://zachnewbery.com</Homepage>
+
+  </Author>
+  <Date>
+    28 April 2026
+  </Date>
+  </TitlePage>

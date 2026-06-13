@@ -1,0 +1,112 @@
+  
+  
+                                 [1X HomalgToCAS [101X
+  
+  
+                         [1X A window to the outer world [101X
+  
+  
+                                   2026.04-01
+  
+  
+                                 10 April 2026
+  
+  
+                                 Thomas Bächler
+  
+                                Mohamed Barakat
+  
+                                 Simon Görtzen
+  
+                               Sebastian Gutsche
+  
+                                   Vinay Wagh
+  
+  
+  
+  Thomas Bächler
+      Email:    [7Xmailto:thomas@momo.math.rwth-aachen.de[107X
+      Homepage: [7Xhttp://wwwb.math.rwth-aachen.de/~thomas/[107X
+      Address:  [33X[0;14YThomas Bächler[133X
+                [33X[0;14YLehrstuhl B fuer Mathematik, RWTH Aachen[133X
+                [33X[0;14YTemplergraben 64[133X
+                [33X[0;14Y52062 Aachen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Mohamed Barakat
+      Email:    [7Xmailto:mohamed.barakat@uni-siegen.de[107X
+      Homepage: [7Xhttps://mohamed-barakat.github.io[107X
+      Address:  [33X[0;14YWalter-Flex-Str. 3[133X
+                [33X[0;14Y57072 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Simon Görtzen
+      Email:    [7Xmailto:simon.goertzen@rwth-aachen.de[107X
+      Homepage: [7Xhttps://www.linkedin.com/in/simongoertzen/[107X
+      Address:  [33X[0;14YSimon Görtzen[133X
+                [33X[0;14YLehrstuhl B fuer Mathematik, RWTH Aachen[133X
+                [33X[0;14YTemplergraben 64[133X
+                [33X[0;14Y52062 Aachen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Sebastian Gutsche
+      Email:    [7Xmailto:gutsche@mathematik.uni-siegen.de[107X
+      Homepage: [7Xhttps://sebasguts.github.io[107X
+      Address:  [33X[0;14YDepartment Mathematik[133X
+                [33X[0;14YUniversität Siegen[133X
+                [33X[0;14YWalter-Flex-Straße 3[133X
+                [33X[0;14Y57072 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Vinay Wagh
+      Email:    [7Xmailto:waghoba@gmail.com[107X
+      Homepage: [7Xhttp://www.iitg.ernet.in/vinay.wagh/[107X
+      Address:  [33X[0;14YE-102, Department of Mathematics,[133X
+                [33X[0;14YIndian Institute of Technology Guwahati,[133X
+                [33X[0;14YGuwahati, Assam, India.[133X
+                [33X[0;14YPIN: 781 039.[133X
+                [33X[0;14YIndia[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y©  2007-2015  by  Mohamed  Barakat,  Thomas Breuer, Simon Görtzen, and Frank
+  Lübeck.  This  package  may be distributed under the terms and conditions of
+  the GNU Public License Version 2 or (at your option) any later version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YWe  are very much indebted to Max Neunhöffer who provided the first piece of
+  code   around   which  the  package  [5XIO_ForHomalg[105X  was  built.  The  package
+  [5XHomalgToCAS[105X   provides   a   further   abstraction   layer   preparing   the
+  communication.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (HomalgToCAS)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0Y[5XHomalgToCAS[105X provides ...[133X
+  2 [33X[0;0YInstallation of the [5XHomalgToCAS[105X Package[133X
+  3 [33X[0;0YWatch and Influence the Communication[133X
+    3.1 [33X[0;0YFunctions[133X
+      3.1-1 homalgIOMode
+    3.2 [33X[0;0YThe Pictograms[133X
+      3.2-1 HOMALG_IO.Pictograms
+  4 [33X[0;0YExternal Rings[133X
+    4.1 [33X[0;0YExternal Rings: Representation[133X
+      4.1-1 IsHomalgExternalRingRep
+    4.2 [33X[0;0YRings: Constructors[133X
+    4.3 [33X[0;0YExternal Rings: Operations and Functions[133X
+  A [33X[0;0YOverview of the [5Xhomalg[105X Package Source Code[133X
+  
+  
+  [32X

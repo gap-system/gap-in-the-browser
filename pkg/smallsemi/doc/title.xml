@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    Smallsemi
+  </Title>
+  <Subtitle>
+    A library of small semigroups
+  </Subtitle>
+  <Version>
+    Version 0.7.2
+  </Version>
+  <Author>
+    Andreas Distler<Alt Only="LaTeX"><Br/></Alt>
+<Email>a.distler@tu-bs.de</Email>
+
+  </Author>
+  <Author>
+    James Mitchell<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Mathematical Institute<Br/>
+North Haugh<Br/>
+St Andrews<Br/>
+Fife<Br/>
+KY16 9SS<Br/>
+Scotland<Br/>
+</Address>
+<Email>jdm3@st-andrews.ac.uk</Email>
+<Homepage>https://jdbm.me</Homepage>
+
+  </Author>
+  <Date>
+    25 February 2025
+  </Date>
+  <Copyright>
+                &copyright; 2008-24 A. Distler &amp; J. D. Mitchell.<P/>
+
+            <Package>Smallsemi</Package> is free software: you can
+            redistribute it and/or modify it under the terms of the GNU
+            General Public License as published by the Free Software
+            Foundation, either version 3 of the license, or (at your option)
+            any later version.<P/>
+
+            <Package>Smallsemi</Package> is distributed in the hope that it
+            will be useful, but WITHOUT ANY WARRANTY; without even the
+            implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+            PURPOSE. See the GNU General Public License for more details.<P/>
+
+            A copy of the GNU General Public License is available in the file
+            'LICENSE'; for the latest version
+            see <URL>https://www.gnu.org/licenses/#GPL</URL>.<P/>
+
+            This file is part of <Package>Smallsemi</Package>, though as
+            documentation it is released under the GNU Free Documentation
+            License (see <URL>https://www.gnu.org/licenses/#FDL</URL>).
+            
+  </Copyright>
+  <Acknowledgements>
+                We would like to thank Tom Kelsey for making this library
+            possible by running all the initial computations in Minion <Cite
+            Key="minion"/>. <Br/>
+
+            The first author acknowledges financial support of the University
+            of St Andrews. The second author acknowledges support of EPSRC
+            grant number GR/S/56085/01.
+            
+  </Acknowledgements>
+  <Colophon>
+                If you find any bugs or have any suggestions or comments, we would
+            very much appreciate it if you would let us know via our
+            issue tracker (see
+            <URL>https://github.com/gap-packages/smallsemi/issues</URL>).
+            
+  </Colophon>
+  </TitlePage>

@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Examples_and_Tests">
+<Heading>Examples and Tests</Heading>
+
+<Section Label="Chapter_Examples_and_Tests_Section_Dummy_implementations">
+<Heading>Dummy implementations</Heading>
+
+<Subsection Label="Chapter_Examples_and_Tests_Section_Dummy_implementations_Subsection_Dummy_categories">
+<Heading>Dummy categories</Heading>
+
+<Example><![CDATA[
+gap> LoadPackage( "CAP", false );
+true
+gap> list_of_operations_to_install := [
+>     "ObjectConstructor",
+>     "MorphismConstructor",
+>     "ObjectDatum",
+>     "MorphismDatum",
+>     "IsCongruentForMorphisms",
+>     "PreCompose",
+>     "IdentityMorphism",
+>     "DirectSum",
+> ];;
+gap> dummy := DummyCategory( rec(
+>     list_of_operations_to_install := list_of_operations_to_install,
+>     properties := [ "IsAdditiveCategory" ],
+> ) );;
+gap> ForAll( list_of_operations_to_install, o -> CanCompute( dummy, o ) );
+true
+gap> IsAdditiveCategory( dummy );
+true
+]]></Example>
+
+</Subsection>
+
+<Subsection Label="Chapter_Examples_and_Tests_Section_Dummy_implementations_Subsection_Dummy_rings">
+<Heading>Dummy rings</Heading>
+
+<Example><![CDATA[
+gap> LoadPackage( "CAP", false );
+true
+gap> DummyRing( );
+Dummy ring 1
+gap> DummyRing( );
+Dummy ring 2
+gap> IsRing( DummyRing( ) );
+true
+gap> DummyCommutativeRing( );
+Dummy commutative ring 1
+gap> DummyCommutativeRing( );
+Dummy commutative ring 2
+gap> IsRing( DummyCommutativeRing( ) );
+true
+gap> IsCommutative( DummyCommutativeRing( ) );
+true
+gap> DummyField( );
+Dummy field 1
+gap> DummyField( );
+Dummy field 2
+gap> IsSemiring( DummyField( ) );
+true
+gap> IsRing( DummyField( ) );
+true
+gap> IsField( DummyField( ) );
+true
+gap> IsCommutative( DummyField( ) );
+true
+]]></Example>
+
+</Subsection>
+
+<Subsection Label="Chapter_Examples_and_Tests_Section_Dummy_implementations_Subsection_Dummy_semirings">
+<Heading>Dummy semirings</Heading>
+
+<Example><![CDATA[
+gap> LoadPackage( "CAP", false );
+true
+gap> DummyCommutativeSemiring( );
+Dummy commutative semiring 1
+gap> DummyCommutativeSemiring( );
+Dummy commutative semiring 2
+gap> IsSemiring( DummyCommutativeSemiring( ) );
+true
+gap> IsCommutative( DummyCommutativeSemiring( ) );
+true
+]]></Example>
+
+</Subsection>
+
+</Section>
+
+<Section Label="Chapter_Examples_and_Tests_Section_Finite_skeletal_discrete_categories">
+<Heading>Finite skeletal discrete categories</Heading>
+
+<Example><![CDATA[
+gap> LoadPackage( "CAP", false );
+true
+gap> D := FiniteSkeletalDiscreteCategory( [ 1 .. 5 ] );
+FiniteSkeletalDiscreteCategory( [ 1 .. 5 ] )
+gap> one := ObjectConstructor( D, 1 );
+<An object in FiniteSkeletalDiscreteCategory( [ 1 .. 5 ] )>
+gap> IsWellDefinedForObjects( one );
+true
+gap> ObjectDatum( one ) = 1;
+true
+gap> Display( one );
+1
+gap> IsEqualForObjects( one, D[1] );
+true
+gap> id_one := IdentityMorphism( D, one );
+<An identity morphism in FiniteSkeletalDiscreteCategory( [ 1 .. 5 ] )>
+gap> IsWellDefinedForMorphisms( id_one );
+true
+gap> MorphismDatum( id_one ) = fail;
+true
+gap> Display( id_one );
+1
+|
+| A morphism in FiniteSkeletalDiscreteCategory( [ 1 .. 5 ] )
+v
+1
+gap> IsEqualForMorphisms( PreCompose( id_one, id_one ), id_one );
+true
+gap> Length( SetOfObjectsOfCategory( D ) );
+5
+gap> Length( SetOfMorphismsOfFiniteCategory( D ) );
+5
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_Examples_and_Tests_Section_Functors">
+<Heading>Functors</Heading>
+
+ We create a binary functor <Math>F</Math> with one covariant and one contravariant component in two ways.
+ Here is the first way to model a binary functor:
+<Example><![CDATA[
+gap> ring := HomalgRingOfIntegers( );;
+gap> vec := LeftPresentations( ring );;
+gap> F := CapFunctor( "CohomForVec", [ vec, [ vec, true ] ], vec );;
+gap> obj_func := function( A, B ) return TensorProductOnObjects( A, DualOnObjects( B ) ); end;;
+gap> mor_func := function( source, alpha, beta, range ) return TensorProductOnMorphismsWithGivenTensorProducts( source, alpha, DualOnMorphisms( beta ), range ); end;;
+gap> AddObjectFunction( F, obj_func );;
+gap> AddMorphismFunction( F, mor_func );;
+]]></Example>
+
+ CAP regards <Math>F</Math> as a binary functor on a technical level,
+ as we can see by looking at its input signature:
+<Example><![CDATA[
+gap> InputSignature( F );
+[ [ Category of left presentations of Z, false ], [ Category of left presentations of Z, true ] ]
+]]></Example>
+
+ We can see that <C>ApplyFunctor</C> works both on two arguments and on one argument (in the product category).
+<Example><![CDATA[
+gap> V1 := TensorUnit( vec );;
+gap> V3 := DirectSum( V1, V1, V1 );;
+gap> pi1 := ProjectionInFactorOfDirectSum( [ V1, V1 ], 1 );;
+gap> pi2 := ProjectionInFactorOfDirectSum( [ V3, V1 ], 1 );;
+gap> value1 := ApplyFunctor( F, pi1, pi2 );;
+gap> input := Product( pi1, Opposite( pi2 ) );;
+gap> value2 := ApplyFunctor( F, input );;
+gap> IsCongruentForMorphisms( value1, value2 );
+true
+]]></Example>
+
+ Here is the second way to model a binary functor:
+<Example><![CDATA[
+gap> F2 := CapFunctor( "CohomForVec2", Product( vec, Opposite( vec ) ), vec );;
+gap> AddObjectFunction( F2, a -> obj_func( a[1], Opposite( a[2] ) ) );;
+gap> AddMorphismFunction( F2, function( source, datum, range ) return mor_func( source, datum[1], Opposite( datum[2] ), range ); end );;
+gap> value3 := ApplyFunctor( F2,input );;
+gap> IsCongruentForMorphisms( value1, value3 );
+true
+]]></Example>
+
+ CAP regards <Math>F2</Math> as a unary functor on a technical level,
+ as we can see by looking at its input signature:
+<Example><![CDATA[
+gap> InputSignature( F2 );
+[ [ Product of: Category of left presentations of Z, Opposite( Category of left presentations of Z ), false ] ]
+]]></Example>
+
+ Installation of the first functor as a GAP-operation.
+ It will be installed both as a unary and binary version.
+<Example><![CDATA[
+gap> InstallFunctor( F, "F_installation" );;
+gap> F_installation( pi1, pi2 );;
+gap> F_installation( input );;
+gap> F_installationOnObjects( V1, V1 );;
+gap> F_installationOnObjects( Product( V1, Opposite( V1 ) ) );;
+gap> F_installationOnMorphisms( pi1, pi2 );;
+gap> F_installationOnMorphisms( input );;
+]]></Example>
+
+ Installation of the second functor as a GAP-operation.
+ It will be installed only as a unary version.
+<Example><![CDATA[
+gap> InstallFunctor( F2, "F_installation2" );;
+gap> F_installation2( input );;
+gap> F_installation2OnObjects( Product( V1, Opposite( V1 ) ) );;
+gap> F_installation2OnMorphisms( input );;
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_Examples_and_Tests_Section_HandlePrecompiledTowers">
+<Heading>HandlePrecompiledTowers</Heading>
+
+<Example><![CDATA[
+gap> LoadPackage( "CAP", false );
+true
+gap> dummy1 := CreateCapCategory( );;
+gap> dummy2 := CreateCapCategory( );;
+gap> dummy3 := CreateCapCategory( );;
+gap> PrintAndReturn := function ( string )
+>     Print( string, "\n" ); return string; end;;
+gap> dummy1!.compiler_hints := rec( );;
+gap> dummy1!.compiler_hints.precompiled_towers := [
+>   rec(
+>     remaining_constructors_in_tower := [ "Constructor1" ],
+>     precompiled_functions_adder := cat ->
+>       PrintAndReturn( "Adding precompiled operations for Constructor1" ),
+>   ),
+>   rec(
+>     remaining_constructors_in_tower := [ "Constructor1", "Constructor2" ],
+>     precompiled_functions_adder := cat ->
+>       PrintAndReturn( "Adding precompiled operations for Constructor2" ),
+>   ),
+> ];;
+gap> HandlePrecompiledTowers( dummy2, dummy1, "Constructor1" );
+Adding precompiled operations for Constructor1
+gap> HandlePrecompiledTowers( dummy3, dummy2, "Constructor2" );
+Adding precompiled operations for Constructor2
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_Examples_and_Tests_Section_Terminal_category">
+<Heading>Terminal category</Heading>
+
+<Example><![CDATA[
+gap> LoadPackage( "CAP", false );
+true
+gap> T := TerminalCategoryWithMultipleObjects( );
+TerminalCategoryWithMultipleObjects( )
+gap> i := InitialObject( T );
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> t := TerminalObject( T );
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> z := ZeroObject( T );
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> Display( i );
+InitialObject(  )
+gap> Display( t );
+TerminalObject(  )
+gap> Display( z );
+ZeroObject(  )
+gap> IsIdenticalObj( i, z );
+false
+gap> IsIdenticalObj( t, z );
+false
+gap> id_z := IdentityMorphism( z );
+<A zero, identity morphism in TerminalCategoryWithMultipleObjects( )>
+gap> fn_z := ZeroObjectFunctorial( T );
+<A zero, isomorphism in TerminalCategoryWithMultipleObjects( )>
+gap> IsEqualForMorphisms( id_z, fn_z );
+false
+gap> IsCongruentForMorphisms( id_z, fn_z );
+true
+gap> a := "a" / T;
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> Display( a );
+a
+gap> IsWellDefined( a );
+true
+gap> aa := ObjectConstructor( T, "a" );
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> Display( aa );
+a
+gap> IsEqualForObjects( a, aa );
+true
+gap> IsIsomorphicForObjects( a, aa );
+true
+gap> IsIsomorphism( SomeIsomorphismBetweenObjects( a, aa ) );
+true
+gap> b := "b" / T;
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> Display( b );
+b
+gap> IsEqualForObjects( a, b );
+false
+gap> IsIsomorphicForObjects( a, b );
+true
+gap> mor_ab := SomeIsomorphismBetweenObjects( a, b );
+<A zero, isomorphism in TerminalCategoryWithMultipleObjects( )>
+gap> IsIsomorphism( mor_ab );
+true
+gap> Display( mor_ab );
+a
+|
+| SomeIsomorphismBetweenObjects
+v
+b
+gap> Hom_ab := MorphismsOfExternalHom( a, b );;
+gap> Length( Hom_ab );
+1
+gap> Hom_ab[1];
+<A zero, isomorphism in TerminalCategoryWithMultipleObjects( )>
+gap> Display( Hom_ab[1] );
+a
+|
+| InterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism
+v
+b
+gap> Hom_ab[1] = mor_ab;
+true
+gap> HomStructure( mor_ab );
+<A zero, identity morphism in TerminalCategoryWithSingleObject( )>
+gap> m := MorphismConstructor( a, "m", b );
+<A zero, isomorphism in TerminalCategoryWithMultipleObjects( )>
+gap> Display( m );
+a
+|
+| m
+v
+b
+gap> IsWellDefined( m );
+true
+gap> n := MorphismConstructor( a, "n", b );
+<A zero, isomorphism in TerminalCategoryWithMultipleObjects( )>
+gap> Display( n );
+a
+|
+| n
+v
+b
+gap> IsEqualForMorphisms( m, n );
+false
+gap> IsCongruentForMorphisms( m, n );
+true
+gap> m = n;
+true
+gap> hom_mn := HomStructure( m, n );
+<A zero, identity morphism in TerminalCategoryWithSingleObject( )>
+gap> id := IdentityMorphism( a );
+<A zero, identity morphism in TerminalCategoryWithMultipleObjects( )>
+gap> Display( id );
+a
+|
+| IdentityMorphism( a )
+v
+a
+gap> m = id;
+false
+gap> id = MorphismConstructor( a, "xyz", a );
+true
+gap> zero := ZeroMorphism( a, a );
+<A zero, isomorphism in TerminalCategoryWithMultipleObjects( )>
+gap> Display( zero );
+a
+|
+| ZeroMorphism( a, a )
+v
+a
+gap> id = zero;
+true
+gap> IsLiftable( m, n );
+true
+gap> lift := Lift( m, n );
+<A zero, isomorphism in TerminalCategoryWithMultipleObjects( )>
+gap> Display( lift );
+a
+|
+| Lift( m, n )
+v
+a
+gap> IsColiftable( m, n );
+true
+gap> colift := Colift( m, n );
+<A zero, isomorphism in TerminalCategoryWithMultipleObjects( )>
+gap> Display( colift );
+b
+|
+| Colift( m, n )
+v
+b
+gap> DirectProduct( T, [ ] );
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> Equalizer( T, z, [ ] );
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> Coproduct( T, [ ] );
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+gap> Coequalizer( T, z, [ ] );
+<A zero object in TerminalCategoryWithMultipleObjects( )>
+]]></Example>
+
+<Example><![CDATA[
+gap> LoadPackage( "CAP", false );
+true
+gap> T := TerminalCategoryWithSingleObject( );
+TerminalCategoryWithSingleObject( )
+gap> i := InitialObject( T );
+<A zero object in TerminalCategoryWithSingleObject( )>
+gap> t := TerminalObject( T );
+<A zero object in TerminalCategoryWithSingleObject( )>
+gap> z := ZeroObject( T );
+<A zero object in TerminalCategoryWithSingleObject( )>
+gap> Display( i );
+A zero object in TerminalCategoryWithSingleObject( ).
+gap> Display( t );
+A zero object in TerminalCategoryWithSingleObject( ).
+gap> Display( z );
+A zero object in TerminalCategoryWithSingleObject( ).
+gap> IsIdenticalObj( i, z );
+false
+gap> IsIdenticalObj( t, z );
+false
+gap> IsWellDefined( z );
+true
+gap> Length( SetOfObjects( T ) );
+1
+gap> id_z := IdentityMorphism( z );
+<A zero, identity morphism in TerminalCategoryWithSingleObject( )>
+gap> fn_z := ZeroObjectFunctorial( T );
+<A zero, identity morphism in TerminalCategoryWithSingleObject( )>
+gap> IsWellDefined( fn_z );
+true
+gap> IsEqualForMorphisms( id_z, fn_z );
+true
+gap> IsCongruentForMorphisms( id_z, fn_z );
+true
+gap> Length( SetOfMorphisms( T ) );
+1
+gap> IsLiftable( id_z, fn_z );
+true
+gap> Lift( id_z, fn_z );
+<A zero, identity morphism in TerminalCategoryWithSingleObject( )>
+gap> IsColiftable( id_z, fn_z );
+true
+gap> Colift( id_z, fn_z );
+<A zero, identity morphism in TerminalCategoryWithSingleObject( )>
+gap> DirectProduct( T, [ ] );
+<A zero object in TerminalCategoryWithSingleObject( )>
+gap> Equalizer( T, z, [ ] );
+<A zero object in TerminalCategoryWithSingleObject( )>
+gap> Coproduct( T, [ ] );
+<A zero object in TerminalCategoryWithSingleObject( )>
+gap> Coequalizer( T, z, [ ] );
+<A zero object in TerminalCategoryWithSingleObject( )>
+]]></Example>
+
+</Section>
+
+</Chapter>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_The_terminal_category_with_multiple_objects">
+<Heading>The terminal category with multiple objects</Heading>
+
+<P/>
+This is an example of a category which is created using <C>CategoryConstructor</C>
+out of no input.
+<P/>
+This category <Q>lies</Q> in all doctrines and can hence
+be used (in conjunction with <C>LazyCategory</C>)
+in order to check the type-correctness of the various derived methods
+provided by &CAP; or any &CAP;-based package.
+<P/>
+<Section Label="Chapter_The_terminal_category_with_multiple_objects_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<P/>
+</Section>
+
+<Section Label="Chapter_The_terminal_category_with_multiple_objects_Section_GAP_Categories">
+<Heading>&GAP; Categories</Heading>
+
+<P/>
+</Section>
+
+</Chapter>
+

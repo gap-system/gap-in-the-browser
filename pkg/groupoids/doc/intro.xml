@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-intro">
+<Heading>Introduction</Heading>
+
+Groupoids are mathematical categories in which every arrow is invertible. 
+The &groupoids; package provides functions for the computation with
+groupoids and their morphisms; 
+for graphs of groups and graphs of groupoids. 
+The package is far from complete, and development continues. 
+<P/>
+It was used by Emma Moore in her thesis <Cite Key="emma-thesis" /> 
+to calculate normal forms for <E>free products with amalgamation</E>, 
+and for <E>HNN-extensions</E> 
+when the initial groups have rewriting systems.
+<P/>
+
+The package may be obtained as a compressed tar file 
+<File>groupoids-version.number.tar.gz</File>
+by ftp from one of the following sites: 
+<List>
+<Item>
+the &groupoids; GitHub site: 
+<URL>https://github.com/gap-packages.github.io/groupoids/</URL>. 
+</Item>
+<Item>
+any &GAP; archive, e.g. 
+<URL>https://www.gap-system.org/Packages/packages.html</URL>; 
+</Item>
+</List>
+The package also has a GitHub repository at: 
+<URL>https://github.com/gap-packages/groupoids/</URL>.
+<P/>
+
+The information parameter <C>InfoGroupoids</C> takes default value <C>1</C> 
+which, for the benefit of new users, causes more messages 
+to be printed out when operations fail.
+When raised to a higher value, additional information is printed out. 
+<P/>
+Help is available in the usual way.
+<P/>
+<Example>
+<![CDATA[
+gap> LoadPackage( "groupoids" );
+]]>
+</Example>
+
+For version 1.05 the package was completely restructured, 
+starting with <E>magmas with objects</E> and their mappings, 
+and building up to groupoids via semigroups with objects 
+and monoids with objects. 
+From version 1.07 the package includes some functions to implement 
+constructions for automorphisms and homotopies, as described in 
+<Cite Key="AlWe" />. 
+More functions will be released when time permits.
+<P/>
+Once the package is loaded, it is possible to check the installation
+has proceeded correctly by running the test suite of the package with 
+the command  <C> ReadPackage("groupoids","tst/testing.g"); </C>. 
+Additional tests may be run using 
+<C> ReadPackage("groupoids","tst/testextra.g");.</C> 
+(The file <C>"tst/testall.g"</C> is used for automated testing.)  
+<P/>
+You may reference this package by mentioning <Cite Key="BrMoPoWe" />, 
+<Cite Key="emma-thesis" /> and <Cite Key="AlWe" />. 
+
+<P/>
+Additional information on <E>Computational Higher Dimensional Algebra</E> 
+can be found in the notes on crossed modules at: 
+<URL>https://github.com/cdwensley/xmod-notes</URL>. 
+
+</Chapter>

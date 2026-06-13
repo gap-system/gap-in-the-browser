@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    The LOOPS Package
+  </Title>
+  <Subtitle>
+    Computing with quasigroups and loops in &GAP;
+  </Subtitle>
+  <Version>
+    3.4.4
+  </Version>
+  <Author>
+    Gábor Péter Nagy<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Bolyai Institute, University of Szeged<Br/>
+6725 Szeged, Aradi vertanuk tere 1<Br/>
+Hungary<Br/>
+</Address>
+<Email>nagyg@math.u-szeged.hu</Email>
+<Homepage>http://www.math.u-szeged.hu/~nagyg/</Homepage>
+
+  </Author>
+  <Author>
+    Petr Vojtěchovský<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Mathematics, University of Denver<Br/>
+2280 S. Vine Street<Br/>
+Denver, CO 80208<Br/>
+USA<Br/>
+</Address>
+<Email>petr@math.du.edu</Email>
+<Homepage>http://www.math.du.edu/~petr/</Homepage>
+
+  </Author>
+  <Date>
+    29 August 2024
+  </Date>
+  <Abstract>
+    The LOOPS package provides researchers in nonassociative algebra with a computational tool that integrates standard notions of loop theory with libraries of loops and group-theoretical algorithms of GAP. The package also expands GAP toward nonassociative structures.
+  </Abstract>
+  <Copyright>
+    <Index>License</Index>
+&copyright; 2005-2017 Gábor P. Nagy and Petr Vojtěchovský.<P/>
+The &LOOPS; package is free software;
+you can redistribute it and/or modify it under the terms of the
+<URL Text="GNU General Public License">https://www.fsf.org/licenses/gpl.html</URL>
+as published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+    We thank the following people for sending us remarks and comments, and
+for suggesting new functionality of the package: Muniru Asiru, Bjoern
+Assmann, Andreas Distler, Ale&#353; Dr&#225;pal, Graham Ellis, Steve
+Flammia, Kenneth W. Johnson, Michael K. Kinyon, Olexandr Konovalov,
+Frank L&#252;beck, Jonathan D.H. Smith, David Stanovsk&#253; and Glen
+Whitney.
+
+<P/>The library of Moufang loops of order 243 was generated from data
+provided by Michael C. Slattery and Ashley L. Zenisek. The library of
+right conjugacy closed loops of order less than 28 was generated from
+data provided by Katharina Artic. The library of right Bruck loops of
+order 27, 81 was obtained jointly with Izabella Stuhl.
+
+<P/>Gábor P. Nagy was supported by OTKA grants F042959 and T043758, and
+Petr Vojtěchovský was supported by the 2006 and 2016 University of
+Denver PROF grants and the Simons Foundation Collaboration Grant 210176.
+  </Acknowledgements>
+  </TitlePage>

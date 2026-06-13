@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Module_Presentations">
+<Heading>Module Presentations</Heading>
+
+<Section Label="Chapter_Module_Presentations_Section_Functors">
+<Heading>Functors</Heading>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorStandardModuleLeft" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is a functor which takes
+ a left presentation as input and computes
+ its standard presentation.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorStandardModuleRight" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is a functor which takes
+ a right presentation as input and computes
+ its standard presentation.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorGetRidOfZeroGeneratorsLeft" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is a functor which takes
+ a left presentation as input and gets
+ rid of the zero generators.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorGetRidOfZeroGeneratorsRight" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is a functor which takes
+ a right presentation as input and gets
+ rid of the zero generators.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorLessGeneratorsLeft" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is functor which takes
+ a left presentation as input and computes
+ a presentation having less generators.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorLessGeneratorsRight" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is functor which takes
+ a right presentation as input and computes
+ a presentation having less generators.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorDualLeft" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math> that has an involution function.
+ The output is functor which takes
+ a left presentation <A>M</A> as input and computes
+ its Hom(M, R) as a left presentation.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorDualRight" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math> that has an involution function.
+ The output is functor which takes
+ a right presentation <A>M</A> as input and computes
+ its Hom(M, R) as a right presentation.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorDoubleDualLeft" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math> that has an involution function.
+ The output is functor which takes
+ a left presentation <A>M</A> as input and computes
+ its <A>Hom( Hom(M, R), R )</A> as a left presentation.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="FunctorDoubleDualRight" Label="for IsHomalgRing"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math> that has an involution function.
+ The output is functor which takes
+ a right presentation <A>M</A> as input and computes
+ its <A>Hom( Hom(M, R), R )</A> as a right presentation.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Module_Presentations_Section_GAP_Categories">
+<Heading>GAP Categories</Heading>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsLeftOrRightPresentationMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of morphisms in the category
+ of left or right presentations.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsLeftPresentationMorphism" Label="for IsLeftOrRightPresentationMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of morphisms in the category
+ of left presentations.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsRightPresentationMorphism" Label="for IsLeftOrRightPresentationMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of morphisms in the category
+ of right presentations.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsLeftOrRightPresentation" Label="for IsCapCategoryObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of objects in the category
+ of left presentations or right presentations.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsLeftPresentation" Label="for IsLeftOrRightPresentation"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of objects in the category
+ of left presentations.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsRightPresentation" Label="for IsLeftOrRightPresentation"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of objects in the category
+ of right presentations.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Module_Presentations_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Oper Arg="A, M, B" Name="PresentationMorphism" Label="for IsLeftOrRightPresentation, IsHomalgMatrix, IsLeftOrRightPresentation"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A,B)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>A</Math>, a homalg matrix <Math>M</Math>,
+ and another object <Math>B</Math>.
+ <Math>A</Math> and <Math>B</Math> shall either both be objects in the category
+ of left presentations or both be objects in the category
+ of right presentations.
+ The output is a morphism <Math>A \rightarrow B</Math> in the
+ the category of left or right presentations whose
+ underlying matrix is given by <Math>M</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="m" Name="AsMorphismBetweenFreeLeftPresentations" Label="for IsHomalgMatrix"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(F^r,F^c)</Math>
+</Returns>
+ <Description>
+ The argument is a homalg matrix <Math>m</Math>.
+ The output is a morphism <Math>F^r \rightarrow F^c</Math> in the
+ the category of left presentations whose
+ underlying matrix is given by <Math>m</Math>,
+ where <Math>F^r</Math> and <Math>F^c</Math> are free left presentations of
+ ranks given by the number of rows and columns of <Math>m</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="m" Name="AsMorphismBetweenFreeRightPresentations" Label="for IsHomalgMatrix"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(F^c,F^r)</Math>
+</Returns>
+ <Description>
+ The argument is a homalg matrix <Math>m</Math>.
+ The output is a morphism <Math>F^c \rightarrow F^r</Math> in the
+ the category of right presentations whose
+ underlying matrix is given by <Math>m</Math>,
+ where <Math>F^r</Math> and <Math>F^c</Math> are free right presentations of
+ ranks given by the number of rows and columns of <Math>m</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="M" Name="AsLeftPresentation" Label="for IsHomalgMatrix"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a homalg matrix <Math>M</Math> over a ring <Math>R</Math>.
+ The output is an object in the category of left presentations
+ over <Math>R</Math>. This object has <Math>M</Math> as its underlying matrix.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="M" Name="AsRightPresentation" Label="for IsHomalgMatrix"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a homalg matrix <Math>M</Math> over a ring <Math>R</Math>.
+ The output is an object in the category of right presentations
+ over <Math>R</Math>. This object has <Math>M</Math> as its underlying matrix.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="r, R" Name="FreeLeftPresentation" Label="for IsInt, IsHomalgRing"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The arguments are a non-negative integer <Math>r</Math>
+ and a homalg ring <Math>R</Math>.
+ The output is an object in the category of left presentations
+ over <Math>R</Math>. It is represented by the <Math>0 \times r</Math> matrix and
+ thus it is free of rank <Math>r</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="r, R" Name="FreeRightPresentation" Label="for IsInt, IsHomalgRing"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The arguments are a non-negative integer <Math>r</Math>
+ and a homalg ring <Math>R</Math>.
+ The output is an object in the category of right presentations
+ over <Math>R</Math>. It is represented by the <Math>r \times 0</Math> matrix and
+ thus it is free of rank <Math>r</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="UnderlyingMatrix" Label="for IsLeftOrRightPresentation"/>
+ <Returns>a homalg matrix
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math> in the category of left or right presentations
+ over a homalg ring <Math>R</Math>.
+ The output is the underlying matrix which presents <Math>A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="UnderlyingHomalgRing" Label="for IsLeftOrRightPresentation"/>
+ <Returns>a homalg ring
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math> in the category of left or right presentations
+ over a homalg ring <Math>R</Math>.
+ The output is <Math>R</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="Annihilator" Label="for IsLeftOrRightPresentation"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I, F)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math> in the category of left or right presentations.
+ The output is the embedding of the annihilator <Math>I</Math> of <Math>A</Math>
+ into the free module <Math>F</Math> of rank <Math>1</Math>.
+ In particular, the annihilator itself is seen as a left or right presentation.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="LeftPresentations" Label="for IsHomalgRing"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the category of left presentations
+ over <Math>R</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="RightPresentations" Label="for IsHomalgRing"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the category of right presentations
+ over <Math>R</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R" Name="LeftPresentations_as_FreydCategory_CategoryOfRows" Label="for IsHomalgRing"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the category of left presentations
+ over <Math>R</Math>, constructed internally as the <Code>FreydCategory</Code>
+ of the <Code>CategoryOfRows</Code> of <A>R</A>.
+ Only available if the package <Code>FreydCategoriesForCAP</Code> is available.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R" Name="RightPresentations_as_FreydCategory_CategoryOfColumns" Label="for IsHomalgRing"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the category of right presentations
+ over <Math>R</Math>, constructed internally as the <Code>FreydCategory</Code>
+ of the <Code>CategoryOfColumns</Code> of <A>R</A>.
+ Only available if the package <Code>FreydCategoriesForCAP</Code> is available.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Module_Presentations_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="R" Name="UnderlyingHomalgRing" Label="for IsLeftOrRightPresentationMorphism"/>
+ <Returns>a homalg ring
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math> in the category
+ of left or right presentations over a homalg ring <Math>R</Math>.
+ The output is <Math>R</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="UnderlyingMatrix" Label="for IsLeftOrRightPresentationMorphism"/>
+ <Returns>a homalg matrix
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math> in the category
+ of left or right presentations.
+ The output is its underlying homalg matrix.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Module_Presentations_Section_Non-Categorical_Operations">
+<Heading>Non-Categorical Operations</Heading>
+
+<ManSection>
+  <Oper Arg="A, i" Name="StandardGeneratorMorphism" Label="for IsLeftOrRightPresentation, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(F, A)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math> in the category of
+ left or right presentations over a homalg ring <Math>R</Math>
+ with underlying matrix <Math>M</Math>
+ and an integer <Math>i</Math>.
+ The output is a morphism <Math>F \rightarrow A</Math> given
+ by the <Math>i</Math>-th row or column of <Math>M</Math>, where <Math>F</Math>
+ is a free left or right presentation of rank <Math>1</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="A" Name="CoverByFreeModule" Label="for IsLeftOrRightPresentation"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(F,A)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>A</Math> in the category of
+ left or right presentations.
+ The output is a morphism from a free module <Math>F</Math>
+ to <Math>A</Math>, which maps the standard generators of
+ the free module to the generators of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Module_Presentations_Section_Natural_Transformations">
+<Heading>Natural Transformations</Heading>
+
+<ManSection>
+  <Attr Arg="R" Name="NaturalIsomorphismFromIdentityToStandardModuleLeft" Label="for IsHomalgRing"/>
+ <Returns>a natural transformation <Math>\mathrm{Id} \rightarrow \mathrm{StandardModuleLeft}</Math>
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the natural isomorphism from the identity functor
+ to the left standard module functor.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="NaturalIsomorphismFromIdentityToStandardModuleRight" Label="for IsHomalgRing"/>
+ <Returns>a natural transformation <Math>\mathrm{Id} \rightarrow \mathrm{StandardModuleRight}</Math>
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the natural isomorphism from the identity functor
+ to the right standard module functor.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="NaturalIsomorphismFromIdentityToGetRidOfZeroGeneratorsLeft" Label="for IsHomalgRing"/>
+ <Returns>a natural transformation <Math>\mathrm{Id} \rightarrow \mathrm{GetRidOfZeroGeneratorsLeft}</Math>
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the natural isomorphism from the identity functor
+ to the functor that gets rid of zero generators of left modules.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="NaturalIsomorphismFromIdentityToGetRidOfZeroGeneratorsRight" Label="for IsHomalgRing"/>
+ <Returns>a natural transformation <Math>\mathrm{Id} \rightarrow \mathrm{GetRidOfZeroGeneratorsRight}</Math>
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the natural isomorphism from the identity functor
+ to the functor that gets rid of zero generators of right modules.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="NaturalIsomorphismFromIdentityToLessGeneratorsLeft" Label="for IsHomalgRing"/>
+ <Returns>a natural transformation <Math>\mathrm{Id} \rightarrow \mathrm{LessGeneratorsLeft}</Math>
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the natural morphism from the identity functor
+ to the left less generators functor.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="NaturalIsomorphismFromIdentityToLessGeneratorsRight" Label="for IsHomalgRing"/>
+ <Returns>a natural transformation <Math>\mathrm{Id} \rightarrow \mathrm{LessGeneratorsRight}</Math>
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the natural morphism from the identity functor
+ to the right less generator functor.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="NaturalTransformationFromIdentityToDoubleDualLeft" Label="for IsHomalgRing"/>
+ <Returns>a natural transformation <Math>\mathrm{Id} \rightarrow \mathrm{FunctorDoubleDualLeft}</Math>
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the natural morphism from the identity functor
+ to the double dual functor in left Presentations category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="R" Name="NaturalTransformationFromIdentityToDoubleDualRight" Label="for IsHomalgRing"/>
+ <Returns>a natural transformation <Math>\mathrm{Id} \rightarrow \mathrm{FunctorDoubleDualRight}</Math>
+</Returns>
+ <Description>
+ The argument is a homalg ring <Math>R</Math>.
+ The output is the natural morphism from the identity functor
+ to the double dual functor in right Presentations category.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

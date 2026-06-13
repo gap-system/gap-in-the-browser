@@ -1,0 +1,145 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "WPE",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Table of Contents", "0.0-1", [ 0, 0, 1 ], 23, 2, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 3, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ "\033[1X\033[33X\033[0;-2YOverview\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 7, 3, "overview", "X8389AD927B74BA4A" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntuitive Research\033[133X\033[101X", "1.2", 
+      [ 1, 2, 0 ], 47, 4, "intuitive research", "X7950ED88879EE36F" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Power of Component-wise Representation\033[13\
+3X\033[101X", "1.2-1", [ 1, 2, 1 ], 123, 5, 
+      "the power of component-wise representation", "X83C9D5E6846B299E" ], 
+  [ "\033[1X\033[33X\033[0;-2YEfficient Computing\033[133X\033[101X", "1.3", 
+      [ 1, 3, 0 ], 172, 5, "efficient computing", "X7D96C25680814773" ], 
+  [ "\033[1X\033[33X\033[0;-2YNotation\033[133X\033[101X", "2", [ 2, 0, 0 ], 
+      1, 7, "notation", "X7DD31B407B9402A3" ], 
+  [ "\033[1X\033[33X\033[0;-2YWreath Products\033[133X\033[101X", "2.1", 
+      [ 2, 1, 0 ], 7, 7, "wreath products", "X7DF2AEBC8518FFA4" ], 
+  [ "\033[1X\033[33X\033[0;-2YWreath Cycles\033[133X\033[101X", "2.2", 
+      [ 2, 2, 0 ], 39, 7, "wreath cycles", "X83A8F3308644ACFA" ], 
+  [ "\033[1X\033[33X\033[0;-2YSparse Wreath Cycles\033[133X\033[101X", "2.3", 
+      [ 2, 3, 0 ], 86, 8, "sparse wreath cycles", "X872BE72F7B2BBD6B" ], 
+  [ "\033[1X\033[33X\033[0;-2YTutorial\033[133X\033[101X", "3", [ 3, 0, 0 ], 
+      1, 10, "tutorial", "X81932F777898AD72" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCreating Wreath Product Elements\033[133X\033[101\
+X", "3.1", [ 3, 1, 0 ], 7, 10, "creating wreath product elements", 
+      "X820D3CEF8368DB04" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YDisplaying Wreath Product Elements\033[133X\033[1\
+01X", "3.2", [ 3, 2, 0 ], 89, 11, "displaying wreath product elements", 
+      "X7C85A3718343D842" ], 
+  [ "\033[1X\033[33X\033[0;-2YComputing in Wreath Products\033[133X\033[101X",
+      "3.3", [ 3, 3, 0 ], 197, 13, "computing in wreath products", 
+      "X8345CC25855C9406" ], 
+  [ "\033[1X\033[33X\033[0;-2YConjugacy Problem\033[133X\033[101X", "3.4", 
+      [ 3, 4, 0 ], 241, 14, "conjugacy problem", "X8017E4AF7EBB72D2" ], 
+  [ "\033[1X\033[33X\033[0;-2YConjugacy Classes\033[133X\033[101X", "3.5", 
+      [ 3, 5, 0 ], 274, 14, "conjugacy classes", "X7D474F8F87E4E5D9" ], 
+  [ "\033[1X\033[33X\033[0;-2YCentralizer\033[133X\033[101X", "3.6", 
+      [ 3, 6, 0 ], 322, 15, "centralizer", "X7A2BF4527E08803C" ], 
+  [ "\033[1X\033[33X\033[0;-2YCycle Index Polynomial\033[133X\033[101X", 
+      "3.7", [ 3, 7, 0 ], 365, 16, "cycle index polynomial", 
+      "X87A59E867A83A798" ], 
+  [ "\033[1X\033[33X\033[0;-2YFunctions\033[133X\033[101X", "4", [ 4, 0, 0 ], 
+      1, 18, "functions", "X86FA580F8055B274" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGeneric Wreath Product Representation\033[133X\\
+033[101X", "4.1", [ 4, 1, 0 ], 11, 18, "generic wreath product representation"
+        , "X794F3F697C476F75" ], 
+  [ "\033[1X\033[33X\033[0;-2YAccessing Components\033[133X\033[101X", "4.2", 
+      [ 4, 2, 0 ], 47, 19, "accessing components", "X7C29594383022EDB" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YProperties of Wreath Product Elements\033[133X\\
+033[101X", "4.3", [ 4, 3, 0 ], 91, 19, "properties of wreath product elements"
+        , "X7BD2554F7FE49C2E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YPrinting, Viewing and Displaying\033[133X\033[101\
+X", "4.4", [ 4, 4, 0 ], 136, 20, "printing viewing and displaying", 
+      "X8227AD6B7FC637DE" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCycle Index of Wreath Products\033[133X\033[101X"
+        , "4.5", [ 4, 5, 0 ], 208, 21, "cycle index of wreath products", 
+      "X82513F74863B77AE" ], 
+  [ "\033[1X\033[33X\033[0;-2YOperations\033[133X\033[101X", "5", 
+      [ 5, 0, 0 ], 1, 23, "operations", "X7DE8E16C7C2D387B" ], 
+  [ "\033[1X\033[33X\033[0;-2YOperations List\033[133X\033[101X", "5.1", 
+      [ 5, 1, 0 ], 12, 23, "operations list", "X8730A88E7DEB09F2" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWreath Product Representations\033[133X\033[101X"
+        , "5.1-1", [ 5, 1, 1 ], 25, 23, "wreath product representations", 
+      "X787C52A28302EB30" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YOperations for all Representations\033[133X\033[1\
+01X", "5.1-2", [ 5, 1, 2 ], 41, 23, "operations for all representations", 
+      "X80E9B35E7B9B7D98" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YOperations for Permutation Representations\033[13\
+3X\033[101X", "5.1-3", [ 5, 1, 3 ], 56, 24, 
+      "operations for permutation representations", "X803D92AC7A29E51F" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YOperations for Generic Representation\033[133X\\
+033[101X", "5.1-4", [ 5, 1, 4 ], 66, 24, 
+      "operations for generic representation", "X802ECAC97D3DA99E" ], 
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 25, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 25, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 26, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XIsomorphismWreathProduct\033[102X", "4.1-1", [ 4, 1, 1 ], 18, 18, 
+      "isomorphismwreathproduct", "X7DBA9EFB82F64741" ], 
+  [ "\033[2XComponentsOfWreathProduct\033[102X", "4.2-1", [ 4, 2, 1 ], 53, 
+      19, "componentsofwreathproduct", "X7A13B6B47BA67183" ], 
+  [ "\033[2XTopGroupOfWreathProduct\033[102X", "4.2-2", [ 4, 2, 2 ], 60, 19, 
+      "topgroupofwreathproduct", "X84D9A60E8614F35E" ], 
+  [ "\033[2XBaseGroupOfWreathProduct\033[102X", "4.2-3", [ 4, 2, 3 ], 67, 19, 
+      "basegroupofwreathproduct", "X7E1A2F01848423EA" ], 
+  [ "\033[2XTopComponentOfWreathProductElement\033[102X", "4.2-4", 
+      [ 4, 2, 4 ], 75, 19, "topcomponentofwreathproductelement", 
+      "X7F1EB294829E86E5" ], 
+  [ "\033[2XBaseComponentOfWreathProductElement\033[102X", "4.2-5", 
+      [ 4, 2, 5 ], 82, 19, "basecomponentofwreathproductelement", 
+      "X86B4BB78813D437E" ], 
+  [ "\033[2XTerritory\033[102X", "4.3-1", [ 4, 3, 1 ], 97, 19, "territory", 
+      "X7C57D9497D8BBC23" ], 
+  [ "\033[2XIsWreathCycle\033[102X", "4.3-2", [ 4, 3, 2 ], 104, 20, 
+      "iswreathcycle", "X7F7DF936839FE1C7" ], 
+  [ "\033[2XIsSparseWreathCycle\033[102X", "4.3-3", [ 4, 3, 3 ], 111, 20, 
+      "issparsewreathcycle", "X85C1618F78451F65" ], 
+  [ "\033[2XWreathCycleDecomposition\033[102X", "4.3-4", [ 4, 3, 4 ], 118, 
+      20, "wreathcycledecomposition", "X82BDC56A7B4298CE" ], 
+  [ "\033[2XYade\033[102X", "4.3-5", [ 4, 3, 5 ], 126, 20, "yade", 
+      "X7ED422DB79830AF7" ], 
+  [ "\033[2XViewObj\033[102X for a wreath product element", "4.4-1", 
+      [ 4, 4, 1 ], 139, 20, "viewobj for a wreath product element", 
+      "X7CA684548407A756" ], 
+  [ "\033[2XPrintObj\033[102X for a wreath product element", "4.4-1", 
+      [ 4, 4, 1 ], 139, 20, "printobj for a wreath product element", 
+      "X7CA684548407A756" ], 
+  [ "\033[2XDisplay\033[102X for a wreath product element", "4.4-1", 
+      [ 4, 4, 1 ], 139, 20, "display for a wreath product element", 
+      "X7CA684548407A756" ], 
+  [ "\033[2XDisplayOptionsForWreathProductElements\033[102X", "4.4-2", 
+      [ 4, 4, 2 ], 185, 21, "displayoptionsforwreathproductelements", 
+      "X827699E287C25991" ], 
+  [ "\033[2XSetDisplayOptionsForWreathProductElements\033[102X", "4.4-3", 
+      [ 4, 4, 3 ], 191, 21, "setdisplayoptionsforwreathproductelements", 
+      "X7F900588870902F7" ], 
+  [ "\033[2XResetDisplayOptionsForWreathProductElements\033[102X", "4.4-4", 
+      [ 4, 4, 4 ], 201, 21, "resetdisplayoptionsforwreathproductelements", 
+      "X7D1989B185F184F8" ], 
+  [ "\033[2XCycleIndexWreathProductImprimitiveAction\033[102X", "4.5-1", 
+      [ 4, 5, 1 ], 214, 22, "cycleindexwreathproductimprimitiveaction", 
+      "X871F79767C6BC7C0" ], 
+  [ "\033[2XCycleIndexWreathProductProductAction\033[102X", "4.5-2", 
+      [ 4, 5, 2 ], 223, 22, "cycleindexwreathproductproductaction", 
+      "X799B029E79EACCC3" ] ]
+);

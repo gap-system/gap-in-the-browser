@@ -1,0 +1,18 @@
+gap> f := function()
+>     return 1 - "abc";
+> end;
+function(  ) ... end
+gap> f();
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `AdditiveInverseMutable' on 1 arguments
+Stack trace:
+*[1] AdditiveInverseMutable( elm )
+   @ GAPROOT/lib/arith.gi:LINE
+ [2] AdditiveInverseImmutable( elm )
+   @ GAPROOT/lib/arith.gi:LINE
+ [3] 1 - "abc"
+   @ *stdin*:3
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:5
+you can enter 'quit;' to quit to outer loop
+brk> QUIT;

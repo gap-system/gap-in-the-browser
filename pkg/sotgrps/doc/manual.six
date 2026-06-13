@@ -1,0 +1,35 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "SOTGrps",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Table of Contents", "0.0-1", [ 0, 0, 1 ], 29, 2, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe \033[5XSOTGrps\033[105X\033[101X\027\033[1X\\
+027 package\033[133X\033[101X", "1", [ 1, 0, 0 ], 1, 3, "the sotgrps package",
+      "X7F9BCE2183A4960C" ], 
+  [ "\033[1X\033[33X\033[0;-2YMain functions\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 15, 3, "main functions", "X8240F18D7AFA30F4" ], 
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 7, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 7, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 8, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XAllSOTGroups\033[102X", "1.1-1", [ 1, 1, 1 ], 27, 3, 
+      "allsotgroups", "X7EAEC49578F20AA1" ], 
+  [ "\033[2XNumberOfSOTGroups\033[102X", "1.1-2", [ 1, 1, 2 ], 51, 4, 
+      "numberofsotgroups", "X7C103E0E7ABCACF0" ], 
+  [ "\033[2XSOTGroup\033[102X", "1.1-3", [ 1, 1, 3 ], 67, 4, "sotgroup", 
+      "X7DE0B81880CABEF1" ], 
+  [ "\033[2XIdSOTGroup\033[102X for IsGroup", "1.1-4", [ 1, 1, 4 ], 85, 4, 
+      "idsotgroup for isgroup", "X789746217C0FF100" ], 
+  [ "\033[2XIsIsomorphicSOTGroups\033[102X", "1.1-5", [ 1, 1, 5 ], 95, 4, 
+      "isisomorphicsotgroups", "X800E5220831C8057" ], 
+  [ "\033[2XIsSOTAvailable\033[102X", "1.1-6", [ 1, 1, 6 ], 109, 5, 
+      "issotavailable", "X79885F1B83A7EC27" ], 
+  [ "\033[2XSOTGroupsInformation\033[102X", "1.1-7", [ 1, 1, 7 ], 116, 5, 
+      "sotgroupsinformation", "X8780252E7A06E2A4" ] ]
+);

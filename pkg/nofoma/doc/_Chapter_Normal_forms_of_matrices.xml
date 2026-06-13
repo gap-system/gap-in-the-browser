@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Normal_forms_of_matrices">
+<Heading>Normal forms of matrices</Heading>
+
+<Section Label="Chapter_Normal_forms_of_matrices_Section_The_Frobenius_normal_form">
+<Heading>The Frobenius normal form</Heading>
+
+ Given a field <M>K</M> and an <M>n\times n</M>-matrix <M>A</M> 
+ over <M>K</M>, the <E>Frobenius normal form</E> of <M>A</M> is a block diagonal
+ matrix, where the diagonal blocks are companion matrices 
+ corresponding to the invariant factors of <M>A</M>. It reflects the minimal
+ decomposition of the vector space <M>K^n</M> into cyclic subspaces 
+ under the action of <M>A</M>.
+ The Frobenius normal form is also called the rational canonical form.
+<ManSection>
+  <Func Arg="A" Name="FrobeniusNormalForm" />
+ <Description>
+  Returns the invariant factors of a matrix <A>A</A>
+  and an invertible matrix <M>P</M> such that <M>PAP^{-1}</M> is the 
+  Frobenius normal form of <A>A</A>. The algorithm first computes a maximal 
+  vector and an <A>A</A>-invariant complement following Jacob's construction
+  (as described in matrix language in <Cite Key ="Gec20"/>); then the 
+  algorithm continues recursively. It works for matrices over any field 
+  that is available in &GAP;. The output is a triple with
+<List>
+<Item>
+1st component  = list of invariant factors; 
+</Item>
+<Item>
+2nd component = base change matrix <M>P</M>; and 
+</Item>
+<Item>
+3rd component = indices where the various blocks in the normal form 
+       begin.
+</Item>
+</List>
+<P/>
+<Example><![CDATA[
+gap> A:=[ [  2,  2,  0,  1,  0,  2,  1 ],
+>         [  0,  4,  0,  0,  0,  1,  0 ],
+>         [  0,  1,  1,  0,  0,  1,  1 ],
+>         [  0, -1,  0,  1,  0, -1,  0 ],
+>         [  0, -7,  0,  0,  1, -5,  0 ],
+>         [  0, -2,  0,  0,  0,  1,  0 ],
+>         [  0, -1,  0,  0,  0, -1,  1 ] ];;
+gap> f:=FrobeniusNormalForm(A);
+[ [ x_1^4-7*x_1^3+17*x_1^2-17*x_1+6, x_1^2-3*x_1+2, x_1-1 ], 
+  [ [    1,   -2,    1,    1,    0,    0,    1 ],
+    [    2,   -7,    1,    2,    0,   -1,    3 ],
+    [    4,  -26,    1,    4,    0,   -8,    6 ],
+    [    8,  -89,    1,    8,    0,  -35,   11 ],
+    [ -1/2,   -2,    0,  1/2,    0,   -2, -3/2 ],
+    [   -1,   -4,    0,    0,    0,   -4,   -2 ],
+    [    0,  9/4,    0,   -3,    1,  5/4,  1/4 ] ],
+  [ 1, 5, 7 ]  ]                 
+gap> PrintArray(f[2]*A*f[2]^-1);
+[ [   0,   1,   0,   0,   0,   0,   0 ], 
+  [   0,   0,   1,   0,   0,   0,   0 ],
+  [   0,   0,   0,   1,   0,   0,   0 ],
+  [  -6,  17, -17,   7,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   1,   0 ],
+  [   0,   0,   0,   0,  -2,   3,   0 ],
+  [   0,   0,   0,   0,   0,   0,   1 ] ]
+]]></Example>
+
+ Note that the Frobenius normal form is unique up to the choice of the companion matrices
+ and the permutation of the blocks corresponding to the invariant factors. 
+ So while this function is significantly more efficient than the existing 'RationalCanonicalFormTransform',
+ the two functions yield slightly different results. 
+ In 'RationalCanonicalFormTransform', the companion matrices are consistent with the output of 'CompanionMat'. 
+ However, given an <M>n\times n</M> cyclic matrix <M>A</M>, along with a corresponding cyclic vector <M>v</M>, 
+ one can compute a change of basis matrix from A to a companion matrix of its minimal polynomial by computing 
+ <M>v</M> multiplied with powers of <M>A</M> (i.e., <M>v</M>, <M>vA</M>, ...., <M>vA^{n-1}</M>). This approach
+ follows GAP’s convention of right multiplication and yields a companion matrix in the form used by <Ref Func="FrobeniusNormalForm"/>.
+ Furthermore 'RationalCanonicalFormTransform' sorts the invariant factors in ascending order, while <Ref Func="FrobeniusNormalForm"/>
+ sorts them in descending order. 
+<Example><![CDATA[
+gap> A := [ [ 0*Z(5), Z(5)^3, 0*Z(5), Z(5)^0, Z(5)^3 ], 
+>   [ Z(5)^0, 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^2 ], 
+>   [ Z(5), Z(5), 0*Z(5), Z(5)^0, Z(5)^3 ], 
+>   [ 0*Z(5), Z(5), Z(5)^2, Z(5)^2, Z(5) ], 
+>   [ Z(5)^3, Z(5)^3, Z(5)^0, Z(5)^3, Z(5)^0 ] ];;
+gap> T:=RationalCanonicalFormTransform(A);;
+gap> S:=TransposedMat(FrobeniusNormalForm(TransposedMat(A))[2]);;
+gap> Display(A^T);
+ . . . . 3
+ 1 . . . 2
+ . 1 . . 3
+ . . 1 . 4
+ . . . 1 .
+gap> Display(A^S);
+ . . . . 3
+ 1 . . . 2
+ . 1 . . 3
+ . . 1 . 4
+ . . . 1 .
+]]></Example>
+
+<P/>
+ Additionally, <C>RationalCanonicalFormTransform</C> sorts
+ the invariant factors in ascending order, whereas the 
+ <Ref Func="FrobeniusNormalForm"/> sorts them in 
+ descending order. Consequently, the outputs of the two functions 
+ agree up to a permutation of blocks and transposition.
+ To get a drop in replacement for 'RationalCanonicalFormTransform', see <Ref Func="FrobeniusNormalFormLikeRCFT"/>.
+<Example><![CDATA[
+gap> aa:=[[  0, -8, 12, 40,-36,  4,  0, 59, 15, -9],
+>         [ -2, -2, -2,  6,-11,  1, -1, 10,  1,  0],
+>         [  1,  5,  0, -6, 12, -2,  0,-12, -4,  2],
+>         [  0,  0,  0,  2,  0,  0,  0,  7,  0,  0],
+>         [  0,  2, -3, -7,  8, -1,  0, -7, -3,  2],
+>         [ -5, -4, -6, 18,-30,  2, -2, 35,  5, -1],
+>         [ -1, -6,  6, 20,-28,  3,  0, 24, 10, -6],
+>         [  0,  0,  0, -1,  0,  0,  0, -3,  0,  0],
+>         [  0,  0, -1, -2, -2,  0, -1, -7,  0,  0],
+>         [  0, -8,  9, 21,-36,  4, -2, 12, 12, -8]];;
+gap> t:=RationalCanonicalFormTransform(aa);;
+gap> Display(aa^t);
+[ [   0,   0,   0,   1,   0,   0,   0,   0,   0,   0 ],
+  [   1,   0,   0,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   1,   0,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   1,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,   0,   1,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,   0,   0,   1,   0,   0,   0,   1 ],
+  [   0,   0,   0,   0,   0,   0,   1,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   1,   0,  -1 ],
+  [   0,   0,   0,   0,   0,   0,   0,   0,   1,  -1 ] ]
+gap> res:=FrobeniusNormalForm(aa);;
+gap> Display(aa^(res[2]^-1));
+[ [   0,   1,   0,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   1,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   0,   1,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   0,   0,   1,   0,   0,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   1,   0,   0,   0,   0 ],
+  [   1,   1,   1,   0,  -1,  -1,   0,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   1,   0,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   0,   1,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,   0,   0,   0,   1,   0,   0,   0 ] ]
+]]></Example>
+
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A" Name="FrobeniusNormalFormLikeRCFT" />
+ <Description>
+ This function returns the same result as <Ref Func="FrobeniusNormalForm"/>, except that the invariant factors 
+ are sorted in descending order and the companion matrices on the diagonal are transposed. Furthermore, if <M>P</M> is the 
+ computed base change matrix, the Frobenius normal form is obtained by <M>P^{-1}AP</M> (instead of <M>PAP^{-1}</M>).
+ This means that <M>P</M> can be used as a direct drop-in replacement for RationalCanonicalFormTransform. 
+<P/>
+ Note that this function works by calling <Ref Func="FrobeniusNormalForm"/> and then modifying the computed 
+ transformation matrix and is thus potentially less efficient than using
+ the original function. 
+<Example><![CDATA[
+gap> A := [ [ 0*Z(5), Z(5)^2, Z(5)^2, 0*Z(5), Z(5)^3, Z(5)^3, 0*Z(5), Z(5)^3, 
+>       0*Z(5), Z(5) ], 
+>   [ Z(5)^0, Z(5)^0, Z(5)^0, Z(5), Z(5)^3, Z(5), Z(5)^3, 0*Z(5), Z(5), 
+>       0*Z(5) ], 
+>   [ Z(5), 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^2, Z(5)^0, 0*Z(5), Z(5)^0, 
+>       Z(5), Z(5)^2 ], 
+>   [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, 
+>       0*Z(5), 0*Z(5) ], 
+>   [ 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^0, Z(5)^0, Z(5)^3, 0*Z(5), Z(5)^0, 
+>       Z(5)^2, Z(5)^2 ], 
+>   [ 0*Z(5), Z(5), Z(5)^3, Z(5)^0, 0*Z(5), Z(5)^2, Z(5)^0, 0*Z(5), 
+>       0*Z(5), Z(5)^3 ], 
+>   [ Z(5)^3, Z(5)^3, Z(5), 0*Z(5), Z(5)^2, Z(5)^0, 0*Z(5), Z(5)^3, 
+>       0*Z(5), Z(5)^3 ], 
+>   [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, 
+>       0*Z(5), 0*Z(5) ], 
+>   [ 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^0, Z(5)^0, 0*Z(5), Z(5)^3, Z(5)^0, 
+>       0*Z(5), 0*Z(5) ], 
+>   [ 0*Z(5), Z(5)^2, Z(5)^3, Z(5), Z(5)^3, Z(5)^3, Z(5)^0, Z(5)^2, 
+>       Z(5)^2, Z(5)^2 ] ];;
+gap> frob := FrobeniusNormalFormLikeRCFT(A)[2];;
+gap> rat := RationalCanonicalFormTransform(A);;
+gap> Display(A^rat);
+ . . . 1 . . . . . .
+ 1 . . . . . . . . .
+ . 1 . . . . . . . .
+ . . 1 . . . . . . .
+ . . . . . . . . . 4
+ . . . . 1 . . . . 2
+ . . . . . 1 . . . 1
+ . . . . . . 1 . . .
+ . . . . . . . 1 . 1
+ . . . . . . . . 1 3
+gap> Display(A^frob);
+ . . . 1 . . . . . .
+ 1 . . . . . . . . .
+ . 1 . . . . . . . .
+ . . 1 . . . . . . .
+ . . . . . . . . . 4
+ . . . . 1 . . . . 2
+ . . . . . 1 . . . 1
+ . . . . . . 1 . . .
+ . . . . . . . 1 . 1
+ . . . . . . . . 1 3
+]]></Example>
+
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A" Name="InvariantFactorsMat" />
+ <Description>
+  Returns the invariant factors of the matrix <A>A</A>,
+  i.e.,  the minimal polynomials of the  diagonal blocks in the Frobenius
+  normal form  of <A>A</A>. Thus, 'InvariantFactorsMat' also specifies the
+  rational canonical form of <A>A</A>, but without computing the base change.
+<P/>
+<Example><![CDATA[
+gap> A := [ [ 2,  2, 0, 1, 0,  2, 1 ],
+>           [ 0,  4, 0, 0, 0,  1, 0 ],
+>           [ 0,  1, 1, 0, 0,  1, 1 ],
+>           [ 0, -1, 0, 1, 0, -1, 0 ],
+>           [ 0, -7, 0, 0, 1, -5, 0 ],
+>           [ 0, -2, 0, 0, 0,  1, 0 ],
+>           [ 0, -1, 0, 0, 0, -1, 1 ] ];;
+gap> InvariantFactorsMat(A);
+  [ x_1^4-7*x_1^3+17*x_1^2-17*x_1+6, x_1^2-3*x_1+2, x_1-1 ]
+]]></Example>
+
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Normal_forms_of_matrices_Section_The_Jordan_normal_form">
+<Heading>The Jordan normal form</Heading>
+
+ The Jordan normal form of a matrix <M>A</M> is a block diagonal matrix, 
+ where the diagonal blocks are Jordan blocks corresponding to the 
+ elementary divisors of <M>A</M>. It reflects the maximal decomposition of 
+ the vector space <M>K^n</M> into cyclic subspaces under the action of
+ <M>A</M>. For a more thorough definition of the Jordan normal form
+ and details about the algorithms used, see <Cite Key ="Bon26"/>. 
+<ManSection>
+  <Func Arg="A" Name="JordanNormalForm" />
+ <Description>
+  Returns a list containing two entries. The first is a base change matrix
+  <M>B</M> such that <M>B</M><A>A</A><M>B^{-1}</M> is the Jordan 
+  normal form of <A>A</A>, i.e. a block diagonal matrix where the diagonal blocks
+  are Jordan blocks corresponding to the elementary divisors of <A>A</A> in 
+  descending order. The second entry is a list of the elementary divisors of <A>A</A>, also
+  in descending order.
+  The algorithm first computes a primary decomposition
+  of <A>A</A> and then 
+  computes a cyclic decomposition of the primary components. Finally it computes 
+  Jordan block form for each of the cyclic components. The blocks are ordered in the 
+  same order as in the list containing the elementary divisors. It works for matrices 
+  over finite fields. 
+<P/>
+  Since all of the blocks on the resulting transformed matrix are cyclic, one 
+  can retrieve their size by the degrees of the respective elementary divisor. 
+<P/>
+<Example><![CDATA[
+gap> A := [ [ 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^3, Z(5)^3, Z(5)^0 ], 
+>    [ 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^0, Z(5)^3, Z(5)^3 ], 
+>    [ Z(5)^0, Z(5)^0, Z(5)^3, Z(5)^2, Z(5)^0, Z(5) ], 
+>    [ 0*Z(5), Z(5)^3, Z(5), Z(5), 0*Z(5), Z(5)^2 ], 
+>    [ Z(5)^2, Z(5)^0, Z(5)^0, 0*Z(5), Z(5), Z(5) ], 
+>    [ 0*Z(5), Z(5)^0, Z(5)^2, Z(5), Z(5), Z(5) ] ];;
+gap> B := JordanNormalForm(A);;
+gap> Display(A^Inverse(B[1]));
+3 . . . . .
+. 1 . . . .
+. . . 1 . .
+. . 2 . . .
+. . . . . 1
+. . . . 3 4
+]]></Example>
+
+ This function computes the Jordan normal form of <M>A</M> 
+ significantly faster if <M>A</M> is either cyclic or has irreducible 
+ minimal polynomial. 
+<Example><![CDATA[
+gap> B:= [ [ Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+> [ Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+> [ 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+> [ 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+> [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+> [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+> [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5) ], 
+> [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5) ], 
+> [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3 ], 
+> [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5) ] ];;
+gap> Factors(MinimalPolynomial(B));
+[ x_1^2+x_1+Z(5)^0 ]
+gap> Display(B^Inverse(JordanNormalForm(B)[1]));
+. 1 . . . . . . . .
+4 4 . . . . . . . .
+. . . 1 . . . . . .
+. . 4 4 . . . . . .
+. . . . . 1 . . . .
+. . . . 4 4 . . . .
+. . . . . . . 1 . .
+. . . . . . 4 4 . .
+. . . . . . . . . 1
+. . . . . . . . 4 4
+]]></Example>
+
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

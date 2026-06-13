@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    CRIME
+  </Title>
+  <Subtitle>
+    A &GAP; Package to Calculate Group Cohomology and Massey Products
+  </Subtitle>
+  <Version>
+    1.6
+  </Version>
+  <Author>
+    Marcus Bishop<Alt Only="LaTeX"><Br/></Alt>
+<Email>marcus.bishop@gmail.com</Email>
+<Homepage>http://math.uic.edu/~marcus</Homepage>
+
+  </Author>
+  <Date>
+    17 March 2022
+  </Date>
+  <Copyright>
+    &copyright; 2006, 2007 Marcus Bishop <P/>
+<Package>CRIME</Package> is free software which is distributed under
+the GNU Public Licence, version 2, and may be
+redistributed under the GNU Public Licence, version 2
+or later (at your preference).
+See the file COPYING for detailed information
+  </Copyright>
+  <Acknowledgements>
+    This project would not have been possible without Jon Carlson.
+Jon devised the algorithms used by <K>ProjectiveResolution</K>,
+<K>CohomologyGenerators</K>, and <K>CohomologyRelators</K>,
+having already implemented them in <Package>Magma</Package>,
+and shared these programs with me.
+  </Acknowledgements>
+  </TitlePage>

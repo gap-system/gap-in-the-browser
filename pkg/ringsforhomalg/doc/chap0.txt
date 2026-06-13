@@ -1,0 +1,174 @@
+  
+  
+                                [1X RingsForHomalg [101X
+  
+  
+                        [1X Dictionaries of external rings [101X
+  
+  
+                                   2026.05-01
+  
+  
+                                  27 May 2026
+  
+  
+                                Mohamed Barakat
+  
+                                 Simon Görtzen
+  
+                                Markus Kirschmer
+  
+                             Markus Lange-Hegermann
+  
+                                Oleksandr Motsak
+  
+                                 Daniel Robertz
+  
+                                Hans Schönemann
+  
+                                Andreas Steenpaß
+  
+                                   Vinay Wagh
+  
+  
+  
+  Mohamed Barakat
+      Email:    [7Xmailto:mohamed.barakat@uni-siegen.de[107X
+      Homepage: [7Xhttps://mohamed-barakat.github.io[107X
+      Address:  [33X[0;14YWalter-Flex-Str. 3[133X
+                [33X[0;14Y57072 Siegen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Simon Görtzen
+      Email:    [7Xmailto:simon.goertzen@rwth-aachen.de[107X
+      Homepage: [7Xhttps://www.linkedin.com/in/simongoertzen/[107X
+      Address:  [33X[0;14YSimon Görtzen[133X
+                [33X[0;14YLehrstuhl B fuer Mathematik, RWTH Aachen[133X
+                [33X[0;14YTemplergraben 64[133X
+                [33X[0;14Y52062 Aachen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Markus Kirschmer
+      Email:    [7Xmailto:markus.kirschmer@math.rwth-aachen.de[107X
+      Homepage: [7Xhttp://www.math.rwth-aachen.de/~Markus.Kirschmer/[107X
+      Address:  [33X[0;14YMarkus Kirschmer[133X
+                [33X[0;14YLehrstuhl D fuer Mathematik, RWTH Aachen[133X
+                [33X[0;14YTemplergraben 64[133X
+                [33X[0;14Y52062 Aachen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Markus Lange-Hegermann
+      Email:    [7Xmailto:markus.lange-hegermann@hs-owl.de[107X
+      Homepage: [7Xhttps://www.th-owl.de/eecs/fachbereich/team/markus-lange-hegermann/[107X
+      Address:  [33X[0;14YMarkus Lange-Hegermann[133X
+                [33X[0;14YHochschule Ostwestfalen-Lippe[133X
+                [33X[0;14YLiebigstraße 87[133X
+                [33X[0;14Y32657 Lemgo[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Oleksandr Motsak
+      Email:    [7Xmailto:motsak@mathematik.uni-kl.de[107X
+      Homepage: [7Xhttp://www.mathematik.uni-kl.de/~motsak/[107X
+      Address:  [33X[0;14YDepartment of Mathematics[133X
+                [33X[0;14YUniversity of Kaiserslautern[133X
+                [33X[0;14Y67653 Kaiserslautern[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Daniel Robertz
+      Email:    [7Xmailto:daniel@momo.math.rwth-aachen.de[107X
+      Homepage: [7Xhttp://wwwb.math.rwth-aachen.de/~daniel/[107X
+      Address:  [33X[0;14YDaniel Robertz[133X
+                [33X[0;14YLehrstuhl B fuer Mathematik, RWTH Aachen[133X
+                [33X[0;14YTemplergraben 64[133X
+                [33X[0;14Y52062 Aachen[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Hans Schönemann
+      Email:    [7Xmailto:hannes@mathematik.uni-kl.de[107X
+      Homepage: [7Xhttp://www.mathematik.uni-kl.de/~hannes/[107X
+      Address:  [33X[0;14YDepartment of Mathematics[133X
+                [33X[0;14YUniversity of Kaiserslautern[133X
+                [33X[0;14Y67653 Kaiserslautern[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Andreas Steenpaß
+      Email:    [7Xmailto:steenpass@mathematik.uni-kl.de[107X
+      Address:  [33X[0;14YDepartment of Mathematics[133X
+                [33X[0;14YUniversity of Kaiserslautern[133X
+                [33X[0;14Y67653 Kaiserslautern[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Vinay Wagh
+      Email:    [7Xmailto:waghoba@gmail.com[107X
+      Homepage: [7Xhttp://www.iitg.ernet.in/vinay.wagh/[107X
+      Address:  [33X[0;14YE-102, Department of Mathematics,[133X
+                [33X[0;14YIndian Institute of Technology Guwahati,[133X
+                [33X[0;14YGuwahati, Assam, India.[133X
+                [33X[0;14YPIN: 781 039.[133X
+                [33X[0;14YIndia[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y©  2007-2015  by  Mohamed  Barakat,  Simon Görtzen, Markus Kirschmer, Markus
+  Lange-Hegermann,  Oleksandr Motsak, Max Neunhöffer, Daniel Robertz, and Hans
+  Schönemann.  This  package may be distributed under the terms and conditions
+  of the GNU Public License Version 2 or (at your option) any later version.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (RingsForHomalg)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YRing Constructions for Supported External Computer Algebra Systems[133X
+      1.1-1 [33X[0;0Yexternal [5XGAP[105X[133X
+      1.1-2 [33X[0;0Y[5XSingular[105X[133X
+      1.1-3 [33X[0;0Y[5XMAGMA[105X[133X
+      1.1-4 [33X[0;0Y[5XMacaulay2[105X[133X
+      1.1-5 [33X[0;0Y[5XSage[105X[133X
+      1.1-6 [33X[0;0Y[5XMaple[105X[133X
+  2 [33X[0;0YInstallation of the [5XRingsForHomalg[105X Package[133X
+  3 [33X[0;0YThe Ring Table[133X
+    3.1 [33X[0;0YAn Example for a Ring Table - Singular[133X
+      3.1-1 BasisOfRowModule
+      3.1-2 BasisOfRowModule
+      3.1-3 BasisOfColumnModule
+      3.1-4 BasisOfColumnModule
+      3.1-5 DecideZeroRows
+      3.1-6 DecideZeroRows
+      3.1-7 DecideZeroColumns
+      3.1-8 DecideZeroColumns
+      3.1-9 SyzygiesGeneratorsOfRows
+      3.1-10 SyzygiesGeneratorsOfRows
+      3.1-11 SyzygiesGeneratorsOfColumns
+      3.1-12 SyzygiesGeneratorsOfColumns
+      3.1-13 BasisOfRowsCoeff
+      3.1-14 BasisOfRowsCoeff
+      3.1-15 BasisOfColumnsCoeff
+      3.1-16 BasisOfColumnsCoeff
+      3.1-17 DecideZeroRowsEffectively
+      3.1-18 DecideZeroRowsEffectively
+      3.1-19 DecideZeroColumnsEffectively
+      3.1-20 DecideZeroColumnsEffectively
+      3.1-21 RelativeSyzygiesGeneratorsOfRows
+      3.1-22 RelativeSyzygiesGeneratorsOfRows
+      3.1-23 RelativeSyzygiesGeneratorsOfColumns
+      3.1-24 RelativeSyzygiesGeneratorsOfColumns
+      3.1-25 ReducedSyzygiesGeneratorsOfRows
+      3.1-26 ReducedSyzygiesGeneratorsOfRows
+      3.1-27 ReducedSyzygiesGeneratorsOfColumns
+      3.1-28 ReducedSyzygiesGeneratorsOfColumns
+  
+  
+  [32X

@@ -1,0 +1,165 @@
+\GAPDocLabFile{gbnp}
+\makelabel{gbnp:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{gbnp:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{gbnp:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{gbnp:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{gbnp:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{gbnp:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{gbnp:Installation}{1.1}{X8360C04082558A12}
+\makelabel{gbnp:Using the package}{1.2}{X78629CD778BE8C5D}
+\makelabel{gbnp:Further documentation}{1.3}{X7DDEF24284C861D8}
+\makelabel{gbnp:Description}{2}{X7BBCB13F82ACC213}
+\makelabel{gbnp:Non-commutative Polynomials (NPs)}{2.1}{X7FDF3E5E7F33D3A2}
+\makelabel{gbnp:Non-commutative Polynomials for Modules (NPMs)}{2.2}{X7B27E2D1784538DE}
+\makelabel{gbnp:Core functions}{2.3}{X84BD98F5811EAC45}
+\makelabel{gbnp:About the implementation}{2.4}{X7EEE260680A64013}
+\makelabel{gbnp:Tracing variant}{2.5}{X8739B6547BC89505}
+\makelabel{gbnp:Truncation variant}{2.6}{X78CF5C44879D34B6}
+\makelabel{gbnp:Module variant}{2.7}{X86F1F4EE7D4D06B7}
+\makelabel{gbnp:Gröbner basis records}{2.8}{X80DAE0A97CFC95DD}
+\makelabel{gbnp:Quotient algebras}{2.9}{X85A91A467FF1DE45}
+\makelabel{gbnp:Functions}{3}{X86FA580F8055B274}
+\makelabel{gbnp:Converting polynomials into different formats}{3.1}{X81ABB91B79E00229}
+\makelabel{gbnp:Printing polynomials in NP format}{3.2}{X78F44B01851B1020}
+\makelabel{gbnp:Calculating with polynomials in NP format}{3.3}{X83DE3F817EA74727}
+\makelabel{gbnp:Gröbner functions, standard variant}{3.4}{X81381B2D83D2B9A9}
+\makelabel{gbnp:Finite-dimensional quotient algebras}{3.5}{X7F387F7780425B9A}
+\makelabel{gbnp:Finiteness and Hilbert series}{3.6}{X79FE4A3983E2329F}
+\makelabel{gbnp:Functions of the trace variant}{3.7}{X7BA5CAA07890F7AA}
+\makelabel{gbnp:Functions of the truncated variant}{3.8}{X7E4E3AD07B2465F9}
+\makelabel{gbnp:Examples}{3.8.1}{X7A489A5D79DA9E5C}
+\makelabel{gbnp:Functions of the module variant}{3.9}{X8706DD3287E82019}
+\makelabel{gbnp:Info Level}{4}{X79C5DF3782576D98}
+\makelabel{gbnp:Introduction}{4.1}{X7DFB63A97E67C0A1}
+\makelabel{gbnp:InfoGBNP}{4.2}{X82D40B0E84383BBC}
+\makelabel{gbnp:What will be printed at level 0}{4.2.2}{X8222A2F67E4CC62B}
+\makelabel{gbnp:What will be printed at level 1}{4.2.3}{X8552D1FF7EA2B8A6}
+\makelabel{gbnp:What will be printed at level 2}{4.2.4}{X7CC244E47F903B31}
+\makelabel{gbnp:InfoGBNPTime}{4.3}{X7FAE244E80397B9A}
+\makelabel{gbnp:What will be printed at level 0}{4.3.2}{X8222A2F67E4CC62B}
+\makelabel{gbnp:What will be printed at level 1}{4.3.3}{X8552D1FF7EA2B8A6}
+\makelabel{gbnp:What will be printed at level 2}{4.3.4}{X7CC244E47F903B31}
+\makelabel{gbnp:NMO Manual}{5}{X8107DEB279100E13}
+\makelabel{gbnp:Introduction}{5.1}{X7DFB63A97E67C0A1}
+\makelabel{gbnp:NMO Files within GBNP}{5.2}{X8282EFF97FA1752A}
+\makelabel{gbnp:Quickstart}{5.3}{X7F83DF528480AEA3}
+\makelabel{gbnp:NMO Example 1}{5.3.1}{X7B44E73581910347}
+\makelabel{gbnp:NMO Example 2}{5.3.2}{X82D4722E7A4DA58B}
+\makelabel{gbnp:NMO Example 3}{5.3.3}{X85A401278794C813}
+\makelabel{gbnp:NMO Example 4}{5.3.4}{X7C42487D8043F876}
+\makelabel{gbnp:Orderings - Internals}{5.4}{X86BAEB0C80A24491}
+\makelabel{gbnp:Provided Orderings}{5.5}{X7CDF05BD85AA0EE6}
+\makelabel{gbnp:Orderings - Externals}{5.6}{X8374E7B780EEE873}
+\makelabel{gbnp:Flexibility vs. Efficiency}{5.6.5}{X8528D2528613E9A2}
+\makelabel{gbnp:Utility Routines}{5.7}{X79B90CCE7A05DEEB}
+\makelabel{gbnp:GBNP Patching Routines}{5.7.1}{X7B758C747AD2344B}
+\makelabel{gbnp:Examples}{A}{X7A489A5D79DA9E5C}
+\makelabel{gbnp:Introduction}{A.1}{X7DFB63A97E67C0A1}
+\makelabel{gbnp:A simple commutative Gröbner basis computation}{A.2}{X784586E47E2739E3}
+\makelabel{gbnp:A truncated Gröbner basis for Leonard pairs}{A.3}{X7E1B57AA85C2BA70}
+\makelabel{gbnp:The truncated variant on two weighted homogeneous polynomials}{A.4}{X79AC59C482A2E4C1}
+\makelabel{gbnp:The order of the Weyl group of type E6}{A.5}{X7C7742957CEC6E7B}
+\makelabel{gbnp:The gcd of some univariate polynomials}{A.6}{X7E39C9738509A036}
+\makelabel{gbnp:From the Tapas book}{A.7}{X7F5A6ABA85CDB6E2}
+\makelabel{gbnp:The Birman-Murakami-Wenzl algebra of type A3}{A.8}{X7C2CD4FA838EEE64}
+\makelabel{gbnp:The Birman-Murakami-Wenzl algebra of type A2}{A.9}{X7B5CA7F379B78CE0}
+\makelabel{gbnp:A commutative example by Mora}{A.10}{X83C81C987A4DE15F}
+\makelabel{gbnp:Tracing an example by Mora}{A.11}{X7CAB94A37D580C4A}
+\makelabel{gbnp:Finiteness of the Weyl group of type E6}{A.12}{X8599AE8F7E9E0368}
+\makelabel{gbnp:Preprocessing for Weyl group computations}{A.13}{X7B1822C67CF83041}
+\makelabel{gbnp:A quotient algebra with exponential growth}{A.14}{X7BE4A97886B0930E}
+\makelabel{gbnp:A commutative quotient algebra of polynomial growth}{A.15}{X78679D7D80CD8822}
+\makelabel{gbnp:An algebra over a finite field}{A.16}{X7CE3005580EF632D}
+\makelabel{gbnp:The dihedral group of order 8}{A.17}{X7E4CEC577A18C8ED}
+\makelabel{gbnp:The dihedral group of order 8 on another module}{A.18}{X83328C357FB33D17}
+\makelabel{gbnp:The dihedral group on a non-cyclic module}{A.19}{X85DBF3967C4DF5FE}
+\makelabel{gbnp:The icosahedral group}{A.20}{X78FCAC347D9D607E}
+\makelabel{gbnp:The symmetric inverse monoid for a set of size four}{A.21}{X780C4B777FEA9080}
+\makelabel{gbnp:A module of the Hecke algebra of type A3 over GF(3)}{A.22}{X84C07DC479FBBCD5}
+\makelabel{gbnp:Generalized Temperley-Lieb algebras}{A.23}{X78C01D1987FEF3FE}
+\makelabel{gbnp:The universal enveloping algebra of a Lie algebra}{A.24}{X85A9CEF087F3936B}
+\makelabel{gbnp:Serre's exercise}{A.25}{X8498D69D8160E5FF}
+\makelabel{gbnp:Baur and Draisma's transformations}{A.26}{X8116448A84D69022}
+\makelabel{gbnp:The cola gene puzzle}{A.27}{X7912E411867E5F8B}
+\makelabel{gbnp:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{gbnp:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{gbnp:Index}{Ind}{X83A0356F839C696F}
+\makelabel{gbnp:GP2NP}{3.1.1}{X7B0EBCBC7857F1AE}
+\makelabel{gbnp:GP2NPList}{3.1.2}{X7CF0ED937DDA5A7E}
+\makelabel{gbnp:NP2GP}{3.1.3}{X86C3912F781ABEDC}
+\makelabel{gbnp:NP2GPList}{3.1.4}{X844A23EA7D97150C}
+\makelabel{gbnp:PrintNP}{3.2.1}{X7B63BEA87A8D6162}
+\makelabel{gbnp:GBNP.ConfigPrint}{3.2.2}{X7F7510A878045D3A}
+\makelabel{gbnp:PrintNPList}{3.2.3}{X832103DC79A9E9D0}
+\makelabel{gbnp:NumAlgGensNP}{3.3.1}{X7DB3792385AAA805}
+\makelabel{gbnp:NumAlgGensNPList}{3.3.2}{X865548F07C74AB0A}
+\makelabel{gbnp:NumModGensNP}{3.3.3}{X782647C57D148379}
+\makelabel{gbnp:NumModGensNPList}{3.3.4}{X8119282084CA8076}
+\makelabel{gbnp:AddNP}{3.3.5}{X788E1ACA82A833A8}
+\makelabel{gbnp:BimulNP}{3.3.6}{X84FC611A822D808F}
+\makelabel{gbnp:CleanNP}{3.3.7}{X855F3D4C783000E3}
+\makelabel{gbnp:GtNP}{3.3.8}{X7D05B60E83FDA567}
+\makelabel{gbnp:LtNP}{3.3.9}{X8075AE7E7A8088FF}
+\makelabel{gbnp:LMonNP}{3.3.10}{X7A42AE79811CC5D7}
+\makelabel{gbnp:LMonsNP}{3.3.10}{X7A42AE79811CC5D7}
+\makelabel{gbnp:LTermNP}{3.3.11}{X80CD462F794A8095}
+\makelabel{gbnp:LTermsNP}{3.3.11}{X80CD462F794A8095}
+\makelabel{gbnp:MkMonicNP}{3.3.12}{X878A8C027DA25196}
+\makelabel{gbnp:FactorOutGcdNP}{3.3.13}{X818147CD841BD490}
+\makelabel{gbnp:MulNP}{3.3.14}{X7ABA720E87EFF040}
+\makelabel{gbnp:Grobner}{3.4.1}{X7CD9F9C97B2563E2}
+\makelabel{gbnp:SGrobner}{3.4.2}{X7FEDA29E78B0CEED}
+\makelabel{gbnp:IsGrobnerBasis}{3.4.3}{X80D4D22C7E643C7B}
+\makelabel{gbnp:IsStrongGrobnerBasis}{3.4.4}{X7D17F9027F08CF0B}
+\makelabel{gbnp:IsGrobnerPair}{3.4.5}{X7E0105ED7FF4210F}
+\makelabel{gbnp:MakeGrobnerPair}{3.4.6}{X8752DA1A7CAF77D3}
+\makelabel{gbnp:BaseQA}{3.5.1}{X7EAA04247B2C6330}
+\makelabel{gbnp:DimQA}{3.5.2}{X81A50EEE7B56C723}
+\makelabel{gbnp:MatrixQA}{3.5.3}{X7DFA841A8425DD94}
+\makelabel{gbnp:MatricesQA}{3.5.4}{X78E4BF2F7F0D5E74}
+\makelabel{gbnp:MulQA}{3.5.5}{X80C4D0E882B05FDF}
+\makelabel{gbnp:StrongNormalFormNP}{3.5.6}{X8563683E7FA604F8}
+\makelabel{gbnp:DetermineGrowthQA}{3.6.1}{X83C57C3A7DCF0471}
+\makelabel{gbnp:FinCheckQA}{3.6.2}{X792E39A98717D779}
+\makelabel{gbnp:HilbertSeriesQA}{3.6.3}{X7CFD47367CF309EB}
+\makelabel{gbnp:PreprocessAnalysisQA}{3.6.4}{X863124677B933CEE}
+\makelabel{gbnp:EvalTrace}{3.7.1}{X813454F6799B1D57}
+\makelabel{gbnp:PrintTraceList}{3.7.2}{X83D1560C7F2A04BA}
+\makelabel{gbnp:PrintTracePol}{3.7.3}{X8039BEE77C070FB1}
+\makelabel{gbnp:PrintNPListTrace}{3.7.4}{X7DD0B56D7BD6CD98}
+\makelabel{gbnp:SGrobnerTrace}{3.7.5}{X78AE6EED83B97595}
+\makelabel{gbnp:StrongNormalFormTraceDiff}{3.7.6}{X8219059A86A54130}
+\makelabel{gbnp:SGrobnerTrunc}{3.8.2}{X7CD043E081BF2302}
+\makelabel{gbnp:CheckHomogeneousNPs}{3.8.3}{X83C9E598798D5809}
+\makelabel{gbnp:BaseQATrunc}{3.8.4}{X7E33C064875D95CA}
+\makelabel{gbnp:DimsQATrunc}{3.8.5}{X7C6882DB837A9F5A}
+\makelabel{gbnp:FreqsQATrunc}{3.8.6}{X7FBA7F1D79DA883F}
+\makelabel{gbnp:SGrobnerModule}{3.9.1}{X860966487ED88A43}
+\makelabel{gbnp:BaseQM}{3.9.2}{X7E3160E67C504F37}
+\makelabel{gbnp:DimQM}{3.9.3}{X813E6A2C8709C9F3}
+\makelabel{gbnp:MulQM}{3.9.4}{X805FB42A7EEF510F}
+\makelabel{gbnp:StrongNormalFormNPM}{3.9.5}{X87D51A8379C50A80}
+\makelabel{gbnp:InfoGBNP}{4.2.1}{X82D40B0E84383BBC}
+\makelabel{gbnp:InfoGBNPTime}{4.3.1}{X7FAE244E80397B9A}
+\makelabel{gbnp:InstallNoncommutativeMonomialOrdering}{5.4.1}{X867E06688761CB24}
+\makelabel{gbnp:IsNoncommutativeMonomialOrdering}{5.4.2}{X804F724282FBA063}
+\makelabel{gbnp:LtFunctionListRep}{5.4.3}{X7939A8DF8662C60C}
+\makelabel{gbnp:NextOrdering}{5.4.4}{X7E74196084AE9036}
+\makelabel{gbnp:ParentAlgebra}{5.4.5}{X7B593F517FF63CDD}
+\makelabel{gbnp:LexicographicTable}{5.4.6}{X850E1F2583F6E2A4}
+\makelabel{gbnp:LexicographicIndexTable}{5.4.7}{X82F2AD2583B3CD48}
+\makelabel{gbnp:LexicographicPermutation}{5.4.8}{X7E1C8F05791E283E}
+\makelabel{gbnp:AuxilliaryTable}{5.4.9}{X7EBBF4A07F46E0DD}
+\makelabel{gbnp:OrderingLtFunctionListRep}{5.4.10}{X8228458B86A85279}
+\makelabel{gbnp:OrderingGtFunctionListRep}{5.4.10}{X8228458B86A85279}
+\makelabel{gbnp:NCMonomialLeftLengthLexicographicOrdering}{5.5.1}{X784587377CC4D41F}
+\makelabel{gbnp:NCMonomialLengthOrdering}{5.5.2}{X7996C01681EC5585}
+\makelabel{gbnp:NCMonomialLeftLexicographicOrdering}{5.5.3}{X7BD70B9C7998C0A7}
+\makelabel{gbnp:NCMonomialCommutativeLexicographicOrdering}{5.5.4}{X7E06DFFA7C4E50C1}
+\makelabel{gbnp:NCMonomialWeightOrdering}{5.5.5}{X7B3183F67AEF3C67}
+\makelabel{gbnp:NCLessThanByOrdering}{5.6.1}{X7C81894D7A9E9E92}
+\makelabel{gbnp:NCGreaterThanByOrdering}{5.6.2}{X84BC0A8478272486}
+\makelabel{gbnp:NCEquivalentByOrdering}{5.6.3}{X817144A57BF6865A}
+\makelabel{gbnp:NCSortNP}{5.6.4}{X86A2533780F2BC8C}
+\makelabel{gbnp:PatchGBNP}{5.7.1}{X7B758C747AD2344B}
+\makelabel{gbnp:UnpatchGBNP}{5.7.1}{X7B758C747AD2344B}

@@ -1,0 +1,135 @@
+\GAPDocLabFile{smallsemi}
+\makelabel{smallsemi:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{smallsemi:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{smallsemi:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{smallsemi:Colophon}{}{X7982162280BC7A61}
+\makelabel{smallsemi:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{smallsemi:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{smallsemi:Requirements}{1.1}{X85A08CF187A6D986}
+\makelabel{smallsemi:Operating System}{1.1.1}{X82C5588B7E8B2725}
+\makelabel{smallsemi:RAM}{1.1.2}{X78F27CCA81555251}
+\makelabel{smallsemi:Disk Space}{1.1.3}{X87E4E0377BF1EAC6}
+\makelabel{smallsemi:Installation and Setup}{1.2}{X796A04C37CB7AC04}
+\makelabel{smallsemi:Download and Extract Smallsemi}{1.2.1}{X7C87C34C79B9D28D}
+\makelabel{smallsemi:Contents}{1.2.2}{X86BA319E87365B5C}
+\makelabel{smallsemi:Loading}{1.2.3}{X861ED1338181C66D}
+\makelabel{smallsemi:Memory Issues}{1.2.4}{X803939AE7C3565DA}
+\makelabel{smallsemi:Testing}{1.2.5}{X7DE7E7187BE24368}
+\makelabel{smallsemi:Customizing}{1.2.6}{X7B3500B984306465}
+\makelabel{smallsemi:The Data in the Library}{2}{X7E933CC381DA3D7C}
+\makelabel{smallsemi:Creation of the Semigroups}{2.1}{X7A8F62A38080168D}
+\makelabel{smallsemi:Storing the Semigroups}{2.2}{X79038EE8873A1B4B}
+\makelabel{smallsemi:Extended Examples}{3}{X7CDC63A27F7790AA}
+\makelabel{smallsemi:Lists, Enumerators and Iterators of Semigroups}{3.1}{X80DFE0117B7A7C24}
+\makelabel{smallsemi:Precomputed properties}{3.1.1}{X790CB8D686E0A336}
+\makelabel{smallsemi:User functions}{3.1.2}{X804593297D7EEF68}
+\makelabel{smallsemi:Semigroups of order 8}{3.1.3}{X7E4F0756878EB958}
+\makelabel{smallsemi:Identifying Semigroups}{3.2}{X8772952F7B2CFDE1}
+\makelabel{smallsemi:Functionality}{4}{X87F1120883F5B4D0}
+\makelabel{smallsemi:Individual Semigroups}{4.1}{X83F5AF81859D6CBF}
+\makelabel{smallsemi:Properties of Semigroups}{4.2}{X78274024827F306D}
+\makelabel{smallsemi:IsIdempotentGenerated}{4.2.12}{X835484C481CF3DDD}
+\makelabel{smallsemi:IsNilpotentSemigroup}{4.2.20}{X780ADE31828F0848}
+\makelabel{smallsemi:IsSimpleSemigroup}{4.2.28}{X836F4692839F4874}
+\makelabel{smallsemi:Nilpotent semigroups by coclass}{4.3}{X866B154E7F54AE62}
+\makelabel{smallsemi:Starred Green's relations}{4.4}{X7D6E81E37E3AAED8}
+\makelabel{smallsemi:Families of Semigroups}{4.5}{X82F9C36C86006857}
+\makelabel{smallsemi:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{smallsemi:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{smallsemi:Index}{Ind}{X83A0356F839C696F}
+\makelabel{smallsemi:SmallSemigroup}{4.1.1}{X8538248D78185960}
+\makelabel{smallsemi:SmallSemigroupNC}{4.1.1}{X8538248D78185960}
+\makelabel{smallsemi:IsSmallSemigroup}{4.1.2}{X857428A57D3FFACB}
+\makelabel{smallsemi:IsSmallSemigroupElt}{4.1.3}{X7EC241FB7985775E}
+\makelabel{smallsemi:RecoverMultiplicationTable}{4.1.4}{X793FF84E80B334D1}
+\makelabel{smallsemi:RecoverMultiplicationTableNC}{4.1.4}{X793FF84E80B334D1}
+\makelabel{smallsemi:SemigroupByMultiplicationTableNC}{4.1.5}{X813727FD851302B7}
+\makelabel{smallsemi:IdSmallSemigroup}{4.1.6}{X788211A07D67C282}
+\makelabel{smallsemi:EquivalenceSmallSemigroup}{4.1.7}{X79D38A3886C7431D}
+\makelabel{smallsemi:InfoSmallsemi}{4.1.8}{X8078FC78871FA496}
+\makelabel{smallsemi:UnloadSmallsemiData}{4.1.9}{X841BB74986A73272}
+\makelabel{smallsemi:Annihilators}{4.2.1}{X86A4F95783A18702}
+\makelabel{smallsemi:DiagonalOfMultiplicationTable}{4.2.2}{X7E1195927C454C8A}
+\makelabel{smallsemi:DisplaySmallSemigroup}{4.2.3}{X7DCF7C368665E94D}
+\makelabel{smallsemi:IndexPeriod}{4.2.4}{X86B662117F4C4C7F}
+\makelabel{smallsemi:IsBand}{4.2.5}{X7C8DB14587D1B55A}
+\makelabel{smallsemi:IsBrandtSemigroup}{4.2.6}{X7EFDBA687DCDA6FA}
+\makelabel{smallsemi:IsCliffordSemigroup}{4.2.7}{X81DE11987BB81017}
+\makelabel{smallsemi:IsCommutativeSemigroup}{4.2.8}{X843EFDA4807FDC31}
+\makelabel{smallsemi:IsCommutative}{4.2.8}{X843EFDA4807FDC31}
+\makelabel{smallsemi:IsCompletelyRegularSemigroup}{4.2.9}{X7AFA23AF819FBF3D}
+\makelabel{smallsemi:IsFullTransformationSemigroupCopy}{4.2.10}{X7D51FD2B7AA3E8DF}
+\makelabel{smallsemi:IsGroupAsSemigroup}{4.2.11}{X852F29E8795FA489}
+\makelabel{smallsemi:IsIdempotentGenerated}{4.2.12}{X835484C481CF3DDD}
+\makelabel{smallsemi:IsSemiband}{4.2.12}{X835484C481CF3DDD}
+\makelabel{smallsemi:IsInverseSemigroup}{4.2.13}{X83F1529479D56665}
+\makelabel{smallsemi:IsLeftZeroSemigroup}{4.2.14}{X7E9261367C8C52C0}
+\makelabel{smallsemi:IsMonogenicSemigroup}{4.2.15}{X79D46BAB7E327AD1}
+\makelabel{smallsemi:IsMonoidAsSemigroup}{4.2.16}{X7E4DEECD7CD9886D}
+\makelabel{smallsemi:IsMultSemigroupOfNearRing}{4.2.17}{X79FF88207AFC8330}
+\makelabel{smallsemi:IsNGeneratedSemigroup}{4.2.18}{X83D4ED237BB929AF}
+\makelabel{smallsemi:IsNIdempotentSemigroup}{4.2.19}{X87BF19367BA2B9ED}
+\makelabel{smallsemi:IsNilpotentSemigroup}{4.2.20}{X780ADE31828F0848}
+\makelabel{smallsemi:IsNilpotent}{4.2.20}{X780ADE31828F0848}
+\makelabel{smallsemi:IsOrthodoxSemigroup}{4.2.21}{X7935C476808C8773}
+\makelabel{smallsemi:IsRectangularBand}{4.2.22}{X7E9B674D781B072C}
+\makelabel{smallsemi:IsRegularSemigroup}{4.2.23}{X7C4663827C5ACEF1}
+\makelabel{smallsemi:IsRightZeroSemigroup}{4.2.24}{X7CB099958658F979}
+\makelabel{smallsemi:IsSelfDualSemigroup}{4.2.25}{X846FC6247EE31607}
+\makelabel{smallsemi:IsSemigroupWithClosedIdempotents}{4.2.26}{X7D3ACD8A7C0AB34C}
+\makelabel{smallsemi:IsSemigroupWithZero}{4.2.27}{X82D229727C6278EC}
+\makelabel{smallsemi:IsSimpleSemigroup}{4.2.28}{X836F4692839F4874}
+\makelabel{smallsemi:IsCompletelySimpleSemigroup}{4.2.28}{X836F4692839F4874}
+\makelabel{smallsemi:IsSingularSemigroupCopy}{4.2.29}{X85A3F78C864507EB}
+\makelabel{smallsemi:IsZeroGroup}{4.2.30}{X85F7E5CD86F0643B}
+\makelabel{smallsemi:IsZeroSemigroup}{4.2.31}{X81A1882181B75CC9}
+\makelabel{smallsemi:IsZeroSimpleSemigroup}{4.2.32}{X8193A60F839C064E}
+\makelabel{smallsemi:MinimalGeneratingSet}{4.2.33}{X81D15723804771E2}
+\makelabel{smallsemi:NilpotencyDegree}{4.2.34}{X7D1C336E7B0A059C}
+\makelabel{smallsemi:NilpotentSemigroupsByCoclass}{4.3.1}{X819BD88C78976AFD}
+\makelabel{smallsemi:IsStarRelation}{4.4.1}{X84EAD3BC80389059}
+\makelabel{smallsemi:IsRStarRelation}{4.4.1}{X84EAD3BC80389059}
+\makelabel{smallsemi:IsLStarRelation}{4.4.1}{X84EAD3BC80389059}
+\makelabel{smallsemi:IsJStarRelation}{4.4.1}{X84EAD3BC80389059}
+\makelabel{smallsemi:IsHStarRelation}{4.4.1}{X84EAD3BC80389059}
+\makelabel{smallsemi:IsDStarRelation}{4.4.1}{X84EAD3BC80389059}
+\makelabel{smallsemi:RStarRelation}{4.4.2}{X7A8059EC848E0A77}
+\makelabel{smallsemi:LStarRelation}{4.4.2}{X7A8059EC848E0A77}
+\makelabel{smallsemi:JStarRelation}{4.4.2}{X7A8059EC848E0A77}
+\makelabel{smallsemi:DStarRelation}{4.4.2}{X7A8059EC848E0A77}
+\makelabel{smallsemi:HStarRelation}{4.4.2}{X7A8059EC848E0A77}
+\makelabel{smallsemi:RStarClass for a semigroup and element}{4.4.3}{X7D30CDC386C8816A}
+\makelabel{smallsemi:LStarClass for a semigroup and element}{4.4.3}{X7D30CDC386C8816A}
+\makelabel{smallsemi:DStarClass for a semigroup and element}{4.4.3}{X7D30CDC386C8816A}
+\makelabel{smallsemi:JStarClass for a semigroup and element}{4.4.3}{X7D30CDC386C8816A}
+\makelabel{smallsemi:HStarClass for a semigroup and element}{4.4.3}{X7D30CDC386C8816A}
+\makelabel{smallsemi:IsStarClass}{4.4.5}{X82A391177D13A7E0}
+\makelabel{smallsemi:IsRStarClass}{4.4.5}{X82A391177D13A7E0}
+\makelabel{smallsemi:IsLStarClass}{4.4.5}{X82A391177D13A7E0}
+\makelabel{smallsemi:IsJStarClass}{4.4.5}{X82A391177D13A7E0}
+\makelabel{smallsemi:IsHStarClass}{4.4.5}{X82A391177D13A7E0}
+\makelabel{smallsemi:IsDStarClass}{4.4.5}{X82A391177D13A7E0}
+\makelabel{smallsemi:RStarClasses}{4.4.6}{X83B9C0417C03A220}
+\makelabel{smallsemi:LStarClasses}{4.4.6}{X83B9C0417C03A220}
+\makelabel{smallsemi:JStarClasses}{4.4.6}{X83B9C0417C03A220}
+\makelabel{smallsemi:DStarClasses}{4.4.6}{X83B9C0417C03A220}
+\makelabel{smallsemi:HStarClasses}{4.4.6}{X83B9C0417C03A220}
+\makelabel{smallsemi:AllSmallSemigroups}{4.5.1}{X81DC0FE28043C9B0}
+\makelabel{smallsemi:EnumeratorOfSmallSemigroups}{4.5.2}{X831E543E83DDFDEA}
+\makelabel{smallsemi:EnumeratorOfSmallSemigroupsByIds}{4.5.3}{X7F8EF88E7EB417A8}
+\makelabel{smallsemi:EnumeratorOfSmallSemigroupsByIdsNC}{4.5.3}{X7F8EF88E7EB417A8}
+\makelabel{smallsemi:ArgumentsUsedToCreate}{4.5.4}{X7A14F5A58020DCFF}
+\makelabel{smallsemi:IdsOfSmallSemigroups}{4.5.5}{X814BA9F778B06D47}
+\makelabel{smallsemi:IsEnumeratorOfSmallSemigroups}{4.5.6}{X7BF0DCA5853A5C22}
+\makelabel{smallsemi:IsIdSmallSemigroup}{4.5.7}{X83C27CD97895698A}
+\makelabel{smallsemi:IsIteratorOfSmallSemigroups}{4.5.8}{X803366027F328BC9}
+\makelabel{smallsemi:IteratorOfSmallSemigroups}{4.5.9}{X7D6BFDE17A9BEEC3}
+\makelabel{smallsemi:Nr3NilpotentSemigroups}{4.5.10}{X867F3E967CF3AFE9}
+\makelabel{smallsemi:NrSmallSemigroups}{4.5.11}{X8257C9207DDF2451}
+\makelabel{smallsemi:OneSmallSemigroup}{4.5.12}{X7C71885F7DF31EC4}
+\makelabel{smallsemi:PositionsOfSmallSemigroupsIn}{4.5.13}{X7EACCD1F7DF9DD3C}
+\makelabel{smallsemi:PositionsOfSmallSemigroups}{4.5.14}{X7FAF09BF7CC1C265}
+\makelabel{smallsemi:PrecomputedSmallSemisInfo}{4.5.15}{X79AFE7FC81C0DF37}
+\makelabel{smallsemi:RandomSmallSemigroup}{4.5.16}{X7A63356C85E45F6F}
+\makelabel{smallsemi:SizesOfSmallSemigroupsIn}{4.5.17}{X83C6631B7D53AE02}
+\makelabel{smallsemi:UpToIsomorphism}{4.5.18}{X87C50557821D4786}

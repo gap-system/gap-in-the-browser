@@ -1,0 +1,865 @@
+<Chapter Label="SL2Z">
+<Heading>Subgroups of <M>{\rm SL}_2(&ZZ;)</M></Heading>
+
+For representing finite-index subgroups of <M>{\rm SL}_2(&ZZ;)</M>, this package
+introduces the new object <C>ModularSubgroup</C>. As stated in the introduction,
+a <C>ModularSubgroup</C> essentially consists of the two permutations
+<M>\sigma_S</M> and <M>\sigma_T</M> describing the coset graph with respect
+to the generators <M>S</M> and <M>T</M> (with the convention that <M>1</M>
+corresponds to the identity coset). So explicitly specifying these permutations
+is the canonical way to construct a <C>ModularSubgroup</C>. <Br/>
+Though you might not always have a coset graph of your subgroup at hand, but
+rather a list of generating matrices. Therefore we implement multiple
+constructors for <C>ModularSubgroup</C>: three that take as input two permutations
+describing the coset graph with respect to different pairs of generators of
+<M>{\rm SL}_2(&ZZ;)</M>, and one that takes a list of <M>{\rm SL}_2(&ZZ;)</M> matrices as
+generators.
+
+<Section Label="ModularSubgroupConstr">
+<Heading>Construction of modular subgroups</Heading>
+
+<ManSection>
+  <Heading>ModularSubgroup</Heading>
+  <Oper Name="ModularSubgroupViaRightAction" Arg="s, t" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Constructs a <C>ModularSubgroup</C> object corresponding to the finite-index
+    subgroup of <M>{\rm SL}_2(&ZZ;)</M> described by the permutations <A>s</A> and
+    <A>t</A>. <Br/>
+    This constructor tests if the given permutations actually describe the
+    coset action of the matrices
+    <Alt Only="Text, HTML noMathJax"><Verb><![CDATA[
+                 [ 0 -1 ]            [ 1  1 ]
+             S = [ 1  0 ],       T = [ 0  1 ]
+]]></Verb></Alt>
+<Alt Not="Text, HTML noMathJax">
+<Display>
+  <![CDATA[
+        S =
+        \left(
+           \begin{array}{rr}
+              0 & -1 \\
+              1 & 0
+           \end{array}
+        \right)
+        \quad
+        T =
+        \left(
+           \begin{array}{rr}
+              1 & 1 \\
+              0 & 1
+           \end{array}
+        \right)
+  ]]>
+</Display>
+</Alt>
+    by checking that they act transitively and satisfy the relations
+    <Display>s^4 = (s^3 t)^3 = s^2 t s^{-2} t^{-1} = 1</Display>
+
+    Upon creation, the cosets are renamed in a <URL Text="standardized way">https://www.gap-system.org/Manuals/doc/ref/chap47.html#X85B882F782D7AFD0</URL>
+    to make the internal interaction with existing &GAP; methods easier. (The fact
+    that <M>1</M> corresponds to the identity coset is not changed by this)
+
+    
+<Example><![CDATA[
+gap> G := ModularSubgroupViaRightAction(
+> (1,2)(3,4)(5,6)(7,8)(9,10),
+> (1,4)(2,5,9,10,8)(3,7,6));
+<modular subgroup of index 10>
+]]></Example>
+  </Description>
+  
+    <Oper Name="ModularSubgroupViaLeftAction" Arg="s, t" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Analogous to <Ref Attr="ModularSubgroupViaRightAction"/>, but with left coset actions.
+  </Description>
+</ManSection>
+  
+<ManSection>
+  <Heading>ModularSubgroupST</Heading>
+  <Oper Name="ModularSubgroupSTViaRightAction" Arg="s, t" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Synonymous for <Ref Attr="ModularSubgroupViaRightAction"/> (see above).
+  </Description>
+  <Oper Name="ModularSubgroupSTViaLeftAction" Arg="s, t" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Synonymous for <Ref Attr="ModularSubgroupViaLeftAction"/> (see above).
+  </Description>
+</ManSection>
+  
+<ManSection>
+  <Heading>ModularSubgroupRT</Heading>
+  <Oper Name="ModularSubgroupRTViaRightAction" Arg="r, t" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Constructs a <C>ModularSubgroup</C> object corresponding to the finite-index
+    subgroup of <M>{\rm SL}_2(&ZZ;)</M> determined by the permutations <A>r</A> and
+    <A>t</A> which describe the action of the matrices
+    <Alt Only="Text, HTML noMathJax"><Verb><![CDATA[
+                     [ 1  0 ]           [ 1  1 ]
+                 R = [ 1  1 ]       T = [ 0  1 ]
+]]></Verb></Alt>
+<Alt Not="Text, HTML noMathJax">
+<Display>
+      <![CDATA[
+            R =
+            \left(
+               \begin{array}{rr}
+                  1 & 0 \\
+                  1 & 1
+               \end{array}
+            \right)
+            \quad
+            T =
+            \left(
+               \begin{array}{rr}
+                  1 & 1 \\
+                  0 & 1
+               \end{array}
+            \right)
+      ]]>
+</Display>
+</Alt>
+    on the right cosets. <Br/>
+    A check is performed if the permutations actually describe such an action
+    on the cosets of some subgroup. <Br/>
+
+    Upon creation, the cosets are renamed in a <URL Text="standardized way">https://www.gap-system.org/Manuals/doc/ref/chap47.html#X85B882F782D7AFD0</URL>
+    to make the internal interaction with existing &GAP; methods easier. (The fact
+    that <M>1</M> corresponds to the identity coset is not changed by this)
+
+<Example><![CDATA[
+gap> G := ModularSubgroupRTViaRightAction(
+> (1,9,8,10,7)(2,6)(3,4,5),
+> (1,3)(2,4,8,10,5)(6,9,7));
+<modular subgroup of index 10>
+]]></Example>
+  </Description>
+  <Oper Name="ModularSubgroupRTViaLeftAction" Arg="r, t" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Analogous to <Ref Attr="ModularSubgroupRTViaRightAction"/>, but with left coset actions.
+  </Description>
+</ManSection>
+  
+<ManSection>
+  <Heading>ModularSubgroupSJ</Heading>
+  <Oper Name="ModularSubgroupSJViaRightAction" Arg="s, j" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Constructs a <C>ModularSubgroup</C> object corresponding to the finite-index
+    subgroup of <M>{\rm SL}_2(&ZZ;)</M> determined by the permutations <A>s</A> and
+    <A>j</A> which describe the action of the matrices
+    <Alt Not="Text, HTML noMathJax">
+    <Display>
+      <![CDATA[
+            S =
+            \left(
+               \begin{array}{rr}
+                  0 & -1 \\
+                  1 &  0
+               \end{array}
+            \right)
+            \quad
+            J =
+            \left(
+               \begin{array}{rr}
+                  0  & 1 \\
+                  -1 & 1
+               \end{array}
+            \right)
+      ]]>
+    </Display>
+    </Alt>
+    <Alt Only="Text, HTML noMathJax"><Verb><![CDATA[
+                     [ 0 -1 ]           [  0  1 ]
+                 S = [ 1  0 ]       J = [ -1  1 ]
+    ]]></Verb></Alt>
+    on the right cosets. <Br/>
+    A check is performed if the permutations actually describe such an action
+    on the cosets of some subgroup. <Br/>
+
+    Upon creation, the cosets are renamed in a <URL Text="standardized way">https://www.gap-system.org/Manuals/doc/ref/chap47.html#X85B882F782D7AFD0</URL>
+    to make the internal interaction with existing &GAP; methods easier. (The fact
+    that <M>1</M> corresponds to the identity coset is not changed by this)
+
+<Example><![CDATA[
+gap> G := ModularSubgroupSJViaRightAction(
+> (1,2)(3,6)(4,7)(5,9)(8,10),
+> (1,5,6)(2,3,7)(4,9,10));
+<modular subgroup of index 10>
+]]></Example>
+  </Description>
+  <Oper Name="ModularSubgrouSJViaLeftAction" Arg="s, j" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Analogous to <Ref Attr="ModularSubgroupSJViaRightAction"/>, but with left coset actions.
+  </Description>
+</ManSection>
+  
+<ManSection>
+  <Oper Name="ModularSubgroup" Label="ModularSubgroupGens" Arg="gens" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Constructs a <C>ModularSubgroup</C> object corresponding to the finite-index
+    subgroup of <M>{\rm SL}_2(&ZZ;)</M> generated by the matrices in <A>gens</A>. <Br/>
+    No test is performed to check if the generated subgroup actually has finite
+    index! <Br/>
+    This constructor implicitly computes a coset table of the subgroup. Hence it
+    might be slow for very large index subgroups.
+
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2], [0,1]],
+> [[1,0], [2,1]],
+> [[-1,0], [0,-1]]
+> ]);
+<modular subgroup of index 6>
+]]></Example>
+  </Description>
+</ManSection>
+</Section>
+
+<Section>
+  <Heading>Getters for the coset action</Heading>
+
+<ManSection>
+  <Heading>SAction</Heading>
+  <Oper Name="SRightAction" Arg="G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Returns the permutation <M>\sigma_S</M> describing the action of the matrix
+    <M>S</M> on the right cosets of <A>G</A>.
+  </Description>
+  <Oper Name="SLeftAction" Arg="G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Analogous to <Ref Attr="SRightAction"/>, but with left coset actions.
+  </Description>
+</ManSection>
+  
+<ManSection>
+  <Heading>TAction</Heading>
+  <Oper Name="TRightAction" Arg="G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Returns the permutation <M>\sigma_T</M> describing the action of the matrix
+    <M>T</M> on the right cosets of <A>G</A>.
+  </Description>
+  <Oper Name="TLeftAction" Arg="G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Analogous to <Ref Attr="TRightAction"/>, but with left coset actions.
+  </Description>
+</ManSection>
+  
+<ManSection>
+  <Heading>RAction</Heading>
+  <Oper Name="RRightAction" Arg="G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Returns the permutation <M>\sigma_R</M> describing the action of the matrix
+    <M>R</M> on the right cosets of <A>G</A>.
+  </Description>
+  <Oper Name="RLeftAction" Arg="G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Analogous to <Ref Attr="RRightAction"/>, but with left coset actions.
+  </Description>
+</ManSection>
+  
+<ManSection>
+  <Heading>JAction</Heading>
+  <Oper Name="JRightAction" Arg="G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Returns the permutation <M>\sigma_J</M> describing the action of the matrix
+    <M>J</M> on the right cosets of <A>G</A>.
+  </Description>
+  <Oper Name="JLeftAction" Arg="G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Analogous to <Ref Attr="JRightAction"/>, but with left coset actions.
+  </Description>
+</ManSection>
+  
+<ManSection>
+  <Heading>CosetActionOf</Heading>
+  <Oper Name="CosetRightActionOf" Arg="A, G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Returns the permutation <M>\sigma_A</M> describing the action of the matrix
+    <M>A \in {\rm SL}_2(&ZZ;)</M> on the right cosets of <A>G</A>.
+  </Description>
+  <Oper Name="CosetLeftActionOf" Arg="A, G" />
+  <Returns>A permutation.</Returns>
+  <Description>
+    Analogous to <Ref Attr="CosetRightActionOf"/>, but with left coset actions.
+  </Description>
+</ManSection>
+</Section>
+
+<Section Label="ModularSubgroupAlgs">
+<Heading>Computing with modular subgroups</Heading>
+
+<ManSection>
+  <Attr Name="Index"  Label="IndexSL2Z" Arg="G" />
+  <Returns>A natural number.</Returns>
+  <Description>
+    For a given modular subgroup <A>G</A> this method returns its index in
+    <M>{\rm SL}_2(&ZZ;)</M>. As <A>G</A> is internally stored as permutations
+    <M>(s,t)</M> this is just <C>LargestMovedPoint([s,t])</C>
+    (or <M>1</M> if the permutations are trivial).
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup((1,2)(3,5)(4,6), (1,3)(2,4)(5,6));
+<modular subgroup of index 6>
+gap> Index(G);
+6
+]]></Example>
+
+<ManSection>
+  <Attr Name="GeneralizedLevel" Label="GeneralizedLevelSL2Z" Arg="G" />
+  <Returns>A natural number.</Returns>
+  <Description>
+    This method calculates the general Wohlfahrt level (i.e. the lowest common
+    multiple of all cusp widths) of <A>G</A> as defined in <Cite Key="wohlfahrt1964"/>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup((1,2)(3,5)(4,6), (1,3)(2,4)(5,6));
+<modular subgroup of index 6>
+gap> GeneralizedLevel(G);
+2
+]]></Example>
+
+<ManSection>
+  <Heading>CosetRepresentatives</Heading>
+  <Attr Name="RightCosetRepresentatives" Label="RightCosetRepresentativesSL2Z" Arg="G" />
+  <Returns>A list of words.</Returns>
+  <Description>
+    This function returns a list of representatives of the (right) cosets of
+    <A>G</A> as words in <M>S</M> and <M>T</M>.
+<Example><![CDATA[
+gap> G := ModularSubgroup((1,2),(2,3));
+<modular subgroup of index 3>
+gap> RightCosetRepresentatives(G);
+[ <identity ...>, S, S*T ]
+]]></Example>
+</Description>
+  <Attr Name="LeftCosetRepresentatives" Label="LeftCosetRepresentativesSL2Z" Arg="G" />
+  <Returns>A list of words.</Returns>
+  <Description>
+    This function returns a list of representatives of the (left) cosets of
+    <A>G</A> as words in <M>S</M> and <M>T</M>.
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Name="WordGeneratorsOfGroup" Label="GeneratorsOfGroupSL2Z" Arg="G" />
+  <Returns>A list of words.</Returns>
+  <Description>
+    Calculates a list of generators (as words in <M>S</M> and <M>T</M>) of <A>G</A>.
+    This list might include redundant generators (or even duplicates).
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup((1,2)(3,5)(4,6), (1,3)(2,4)(5,6));
+<modular subgroup of index 6>
+gap> WordGeneratorsOfGroup(G);
+[ S^-2, T^-2, S*T^-2*S^-1 ]
+]]></Example>
+
+<ManSection>
+  <Attr Name="GeneratorsOfGroup" Arg="G" />
+  <Returns>A list of matrices.</Returns>
+  <Description>
+    Calculates a list of generator matrices of <A>G</A>.
+    This list might include redundant generators (or even duplicates).
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup((1,2)(3,5)(4,6), (1,3)(2,4)(5,6));
+<modular subgroup of index 6>
+gap> GeneratorsOfGroup(G);
+[ [ [ -1, 0 ], [ 0, -1 ] ], [ [ 1, -2 ], [ 0, 1 ] ], [ [ 1, 0 ], [ 2, 1 ] ] ]
+]]></Example>
+
+<ManSection>
+  <Attr Name="IsCongruence" Label="IsCongruenceSL2Z" Arg="G" />
+  <Returns>True or false.</Returns>
+  <Description>
+    This method test whether a given modular subgroup <A>G</A> is a congruence
+    subgroup. It is essentially an implementation of an algorithm described in
+    <Cite Key="hamilton_loeffler_2014"/>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> IsCongruence(G);
+true
+]]></Example>
+
+<ManSection>
+  <Attr Name="Cusps" Label="CuspsSL2Z" Arg="G" />
+  <Returns>A list of rational numbers and infinity.</Returns>
+  <Description>
+    This method computes a list of inequivalent cusp representatives with respect
+    to <A>G</A>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup(
+> (1,2)(3,6)(4,8)(5,9)(7,11)(10,13)(12,15)(14,17)(16,19)(18,21)(20,23)(22,24),
+> (1,3,7,4)(2,5)(6,9,8,12,14,10)(11,13,16,20,18,15)(17,21,22,19)(23,24)
+> );
+<modular subgroup of index 24>
+gap> Cusps(G);
+[ infinity, 0, 1, 2, 3/2, 5/3 ]
+]]></Example>
+
+<ManSection>
+  <Oper Name="CuspWidth" Label="CuspWidthSL2Z" Arg="c, G" />
+  <Returns>A natural number.</Returns>
+  <Description>
+    This method takes as input a cusp <A>c</A> (a rational number or infinity)
+    and a modular group <A>G</A> and calculates the width of this cusp with
+    respect to <A>G</A>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup(
+> (1,2,6,3)(4,11,15,12)(5,13,16,14)(7,17,9,18)(8,19,10,20)(21,24,22,23),
+> (1,4,5)(2,7,8)(3,9,10)(6,15,16)(11,20,21)(12,19,22)(13,23,17)(14,24,18)
+> );
+<modular subgroup of index 24>
+gap> CuspWidth(-1, G);
+3
+gap> CuspWidth(infinity, G);
+3
+]]></Example>
+
+<ManSection>
+  <Oper Name="CuspsEquivalent" Label="CuspsEquivalentSL2Z" Arg="p, q, G" />
+  <Returns>True or false.</Returns>
+  <Description>
+    Takes two cusps <A>p</A> and <A>q</A> and a modular subgroup <A>G</A> and
+    checks if they are equivalent modulo <A>G</A>, i.e. if there exists a matrix
+    <M>A \in G</M> with <M>Ap = q</M>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup(
+> (1,2,6,3)(4,11,15,12)(5,13,16,14)(7,17,9,18)(8,19,10,20)(21,24,22,23),
+> (1,4,5)(2,7,8)(3,9,10)(6,15,16)(11,20,21)(12,19,22)(13,23,17)(14,24,18)
+> );
+<modular subgroup of index 24>
+gap> CuspsEquivalent(infinity, 1, G);
+false
+gap> CuspsEquivalent(-1, 1/2, G);
+true
+]]></Example>
+
+<ManSection>
+  <Oper Name="CosetRepresentativeOfCusp" Label="CosetRepresentativeOfCuspSL2Z" Arg="c, G" />
+  <Returns>A word in S and T.</Returns>
+  <Description>
+    For a cusp <A>c</A> this function returns a right coset representative <M>A</M>
+    of <A>G</A> such that <M>A \infty </M> and <A>c</A> are equivalent with
+    respect to <A>G</A>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup(
+> (1,2,6,3)(4,11,15,12)(5,13,16,14)(7,17,9,18)(8,19,10,20)(21,24,22,23),
+> (1,4,5)(2,7,8)(3,9,10)(6,15,16)(11,20,21)(12,19,22)(13,23,17)(14,24,18)
+> );
+<modular subgroup of index 24>
+gap> CosetRepresentativeOfCusp(4, G);
+T*S
+]]></Example>
+
+<ManSection>
+  <Oper Name="IndexModN" Label="IndexModNSL2Z" Arg="G, N" />
+  <Returns>A natural number.</Returns>
+  <Description>
+    For a modular subgroup <A>G</A> and a natural number <A>N</A> this method
+    calculates the index of the projection <M>\bar{G}</M> of <M>G</M> in
+    <M>{\rm SL}_2(&ZZ;/N&ZZ;)</M>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup((1,2)(3,5)(4,6), (1,3)(2,4)(5,6));
+<modular subgroup of index 6>
+gap> IndexModN(G, 2);
+6
+]]></Example>
+
+<ManSection>
+  <Oper Name="Deficiency" Label="DeficiencySL2Z" Arg="G, N" />
+  <Returns>A natural number.</Returns>
+  <Description>
+    For a modular subgroup <A>G</A> and a natural number <A>N</A> this method
+    calculates the so-called <Emph>deficiency</Emph> of <A>G</A> from being a
+    congruence subgroup of level <A>N</A>. <Br/>
+    The deficiency of a finite-index subgroup <M>\Gamma</M> of <M>{\rm SL}_2(&ZZ;)</M>
+    was introduced in <Cite Key="weitze_schmithuesen_deficiency" />. It is defined
+    as the index <M>[\Gamma(N) \colon \Gamma(N) \cap \Gamma]</M> where <M>\Gamma(N)</M>
+    is the principal congruence subgroup of level <M>N</M>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> Deficiency(G, 2);
+2
+gap> Deficiency(G, 4);
+1
+]]></Example>
+
+<ManSection>
+  <Attr Name="Deficiency" Label="DeficiencySL2ZAttr" Arg="G" />
+  <Returns>A natural number.</Returns>
+  <Description>
+    Shorthand for <C>Deficiency(G, GeneralizedLevel(G))</C>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> Deficiency(G);
+1
+gap> Deficiency(G, GeneralizedLevel(G));
+1
+]]></Example>
+
+<ManSection>
+  <Oper Name="Projectivization" Arg="G" />
+  <Returns>A projective modular subgroup.</Returns>
+  <Description>
+    For a given modular subgroup <A>G</A> this function calculates its image
+    <M>\bar{<A>G</A>}</M> under the projection <M>\pi \colon {\rm SL}_2(&ZZ;) \rightarrow {\rm PSL}_2(&ZZ;)</M>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> Projectivization(G);
+<projective modular subgroup of index 6>
+]]></Example>
+
+
+<ManSection>
+  <Oper Name="ConjugateGroup" Label="ConjugateGroupSL2Z" Arg="G, A" />
+  <Returns>A ModularSubgroup.</Returns>
+  <Description>
+    Conjugates the group <A>G</A> by the <M>{\rm SL}_2(&ZZ;)</M> matrix <A>A</A>
+    and returns the group <M>A^{-1}*G*A</M>.
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Name="NormalCore" Label="NormalCoreSL2Z" Arg="G" />
+  <Returns>A modular subgroup.</Returns>
+  <Description>
+    Calculates the normal core of <A>G</A> in <M>{\rm SL}_2(&ZZ;)</M>, i.e. the maximal
+    subgroup of <A>G</A> that is normal in <M>{\rm SL}_2(&ZZ;)</M>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> NormalCore(G);
+<modular subgroup of index 48>
+]]></Example>
+
+<ManSection>
+  <Attr Name="QuotientByNormalCore" Label="QuotientByNormalCoreSL2Z" Arg="G" />
+  <Returns>A finite group.</Returns>
+  <Description>
+    Calculates the quotient of <M>{\rm SL}_2(&ZZ;)</M> by the normal core of <A>G</A>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> QuotientByNormalCore(G);
+<permutation group with 2 generators>
+]]></Example>
+
+
+<ManSection>
+  <Attr Name="AssociatedCharacterTable" Label="AssociatedCharacterTableSL2Z" Arg="G" />
+  <Returns>A character table.</Returns>
+  <Description>
+    Returns the character table of <M>{\rm SL}_2(&ZZ;)/N</M> where <M>N</M> is the normal core
+    of <A>G</A>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> AssociatedCharacterTable(G);
+CharacterTable( <permutation group of size 48 with 2 generators> )
+]]></Example>
+
+
+<ManSection>
+  <Oper Name="IsElementOf" Label="IsElementOfSL2Z" Arg="A, G" />
+  <Returns>True or false.</Returns>
+  <Description>
+    This function checks if a given matrix <A>A</A> is an element of the modular
+    subgroup <A>G</A>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> IsElementOf([[-1,0],[0,-1]], G);
+false
+gap> IsElementOf([[1,4],[0,1]], G);
+true
+]]></Example>
+
+
+<ManSection>
+  <Oper Name="IsWordElementOf" Label="IsWordElementOfSL2ZString" Arg="s, G" />
+  <Returns>True or false.</Returns>
+  <Description>
+    This function checks if a given string <A>s</A> represents an element of the modular
+    subgroup <A>G</A>, written in the generators <A>S</A> and <A>T</A>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> IsWordElementOf("S^4 * T^2", G);
+true
+]]></Example>
+
+
+<ManSection>
+  <Oper Name="IsWordElementOf" Label="IsWordElementOfSL2Z" Arg="w, G" />
+  <Returns>True or false.</Returns>
+  <Description>
+    This function checks if a given word <A>w</A> in the generators <A>S</A> and <A>T</A>
+    represents an element of the modular subgroup <A>G</A>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+<modular subgroup of index 12>
+gap> F := FreeGroup("S", "T");
+<free group on the generators [ S, T ]>
+gap> S := F.1;
+S
+gap> T := F.2;
+T
+gap> SL2Z := F / ParseRelators([S, T], "S^4, (S^3*T)^3, S^2*T*S^-2*T^-1");
+<fp group on the generators [ S, T ]>
+gap> S := GeneratorsOfGroup(SL2Z)[1];
+S
+gap> T := GeneratorsOfGroup(SL2Z)[2];
+T
+gap> IsWordElementOf(S^4 * T^2, G);
+true
+]]></Example>
+
+
+<ManSection>
+  <Attr Name="Genus" Label="GenusSL2Z" Arg="G" />
+  <Returns>A non-negative integer.</Returns>
+  <Description>
+    Computes the genus of the quotient <M>G \setminus &HH;</M> via an algorithm
+    described in <Cite Key="schmithuesen_alg"/>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> G := ModularSubgroup((1,2),(2,3));
+<modular subgroup of index 3>
+gap> Genus(G);
+0
+]]></Example>
+
+</Section>
+
+<Section Label="ModularSubgroupMisc">
+<Heading>Miscellaneous</Heading>
+
+The following functions are mostly helper functions used internally and are only
+documented for sake of completeness.
+
+<ManSection>
+  <Oper Name="DefinesCosetActionST" Arg="s, t" />
+  <Returns>True or false.</Returns>
+  <Description>
+    Checks if two given permutations <A>s</A> and <A>t</A> describe
+    the action of the generator matrices <M>S</M> and <M>T</M> on the cosets of
+    some subgroup. This is the case if they satisfy the relations
+    <Display>s^4 = (s^3 t)^3 = s^2 t s^{-2} t^{-1} = 1</Display>
+    and act transitively.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> s := (1,2)(3,4)(5,6)(7,8)(9,10);;
+gap> t := (1,4)(2,5,9,10,8)(3,7,6);;
+gap> DefinesCosetActionST(s,t);
+true
+]]></Example>
+
+<ManSection>
+  <Oper Name="DefinesCosetActionRT" Arg="r, t" />
+  <Returns>True or false.</Returns>
+  <Description>
+    Checks if two given permutations <A>r</A> and <A>t</A> describe
+    the action of the generator matrices <M>R</M> and <M>T</M> on the cosets of
+    some subgroup. This is the case if they satisfy the relations
+    <Display>(r t^{-1} r)^4 = ((r t^{-1} r)^3 t)^3 = (r t^{-1} r)^2 t (r t^{-1} r)^{-2} t^{-1} = 1</Display>
+    and act transitively.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> r := (1,9,8,10,7)(2,6)(3,4,5);;
+gap> t := (1,3)(2,4,8,10,5)(6,9,7);;
+gap> DefinesCosetActionRT(r,t);
+true
+]]></Example>
+
+<ManSection>
+  <Oper Name="DefinesCosetActionSJ" Arg="s, j" />
+  <Returns>True or false.</Returns>
+  <Description>
+    Checks if two given permutations <A>s</A> and <A>j</A> describe
+    the action of the generator matrices <M>S</M> and <M>J</M> on the cosets of
+    some subgroup. This is the case if they satisfy the relations
+    <Display>s^4 = (s^3 j^{-1} s^{-1})^3 = s^2 j^{-1} s^{-2} j = 1</Display>
+    and act transitively.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> s := (1,2)(3,4)(5,6)(7,8)(9,10);;
+gap> j := (1,5,6)(2,3,7)(4,9,10);;
+gap> DefinesCosetActionSJ(s,j);
+true
+]]></Example>
+
+<ManSection>
+  <Heading>CosetActionFromGenerators</Heading>
+  <Oper Name="RightCosetActionFromGenerators" Arg="gens" />
+  <Returns>A tuple of permutations.</Returns>
+  <Description>
+    Takes a list of generator matrices and calculates the right coset graph (as two
+    permutations <M>\sigma_S</M> and <M>\sigma_T</M>) of the generated subgroup
+    of <M>{\rm SL}_2(&ZZ;)</M>.
+<Example><![CDATA[
+gap> RightCosetActionFromGenerators([
+> [[1,2],[0,1]],
+> [[1,0],[2,1]]
+> ]);
+[ (1,2,5,3)(4,8,10,9)(6,11,7,12), (1,4)(2,6)(3,7)(5,10)(8,12,9,11) ]
+]]></Example>
+  </Description>
+  <Oper Name="LeftCosetActionFromGenerators" Arg="gens" />
+  <Returns>A tuple of permutations.</Returns>
+  <Description>
+    Analogous to <Ref Attr="RightCosetActionFromGenerators"/>, but with left coset actions.
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Name="STDecomposition" Arg="A" />
+  <Returns>A word in <M>S</M> and <M>T</M>.</Returns>
+  <Description>
+    Takes a matrix <M><A>A</A> \in {\rm SL}_2(&ZZ;)</M> and decomposes it into a word
+    in the generator matrices <M>S</M> and <M>T</M>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> M := [ [ 4, 3 ], [ -3, -2 ] ];;
+gap> STDecomposition(M);
+S^2*T^-1*S^-1*T^2*S^-1*T^-1*S^-1
+]]></Example>
+
+<ManSection>
+  <Oper Name="RTDecomposition" Arg="A" />
+  <Returns>A word in <M>R</M> and <M>T</M>.</Returns>
+  <Description>
+    Takes a matrix <M><A>A</A> \in {\rm SL}_2(&ZZ;)</M> and decomposes it into a word
+    in the generator matrices <M>R</M> and <M>T</M>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> M := [ [ 4, 3 ], [ -3, -2 ] ];;
+gap> RTDecomposition(M);
+(R*T^-1*R)^2*T^-1*R^-1*(T*R^-1*T)^2*R^-1*T^-1*R^-1*T*R^-1
+]]></Example>
+
+<ManSection>
+  <Oper Name="SJDecomposition" Arg="A" />
+  <Returns>A word in <M>S</M> and <M>J</M>.</Returns>
+  <Description>
+    Takes a matrix <M><A>A</A> \in {\rm SL}_2(&ZZ;)</M> and decomposes it into a word
+    in the generator matrices <M>S</M> and <M>J</M>.
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> M := [ [ 4, 3 ], [ -3, -2 ] ];;
+gap> SJDecomposition(M);
+S^3*J*(S^-1*J^-1)^2*S^-1*J*S^-1
+]]></Example>
+
+<ManSection>
+  <Oper Name="STDecompositionAsList" Arg="A" />
+  <Returns>A list representing a word in <M>S</M> and <M>T</M>.</Returns>
+  <Description>
+    Takes a matrix <M><A>A</A> \in {\rm SL}_2(&ZZ;)</M> and decomposes it into a word
+    in the generator matrices <M>S</M> and <M>T</M>. The word is represented
+    as a list in the format [[generator, exponent], ... ]
+  </Description>
+</ManSection>
+<Example><![CDATA[
+gap> M := [ [ 4, 3 ], [ -3, -2 ] ];;
+gap> STDecompositionAsList(M);
+[ [ "S", 2 ], [ "T", -1 ], [ "S", -1 ], [ "T", 2 ], [ "S", -1 ], [ "T", -1 ],
+  [ "S", -1 ], [ "T", 0 ] ]
+]]></Example>
+
+
+</Section>
+
+</Chapter>

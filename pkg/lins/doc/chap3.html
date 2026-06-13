@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (LINS) - Chapter 3: LINS Search</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap3"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap3_mj.html">[MathJax on]</a></p>
+<p><a id="X7B66546A7F17A46A" name="X7B66546A7F17A46A"></a></p>
+<div class="ChapSects"><a href="chap3.html#X7B66546A7F17A46A">3 <span class="Heading">LINS Search</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7E1489817AF4CDDB">3.1 <span class="Heading">LINS Search Options</span></a>
+</span>
+</div>
+</div>
+
+<h3>3 <span class="Heading">LINS Search</span></h3>
+
+<p>This chapter is for advanced users and those interested in a brief introduction to the mathematical background of <strong class="pkg">LINS</strong>.</p>
+
+<p><strong class="button">(NOTE: The internal options below might change during further development!)</strong></p>
+
+<p><a id="X7E1489817AF4CDDB" name="X7E1489817AF4CDDB"></a></p>
+
+<h4>3.1 <span class="Heading">LINS Search Options</span></h4>
+
+<p>The method <code class="code">LowIndexNormalSubgroupsSearch</code> allows an optional argument <var class="Arg">opts</var> which must be a record and modifies the search for the execution of only this single command.</p>
+
+<p>The following components of <var class="Arg">opts</var> are supported.</p>
+
+
+<dl>
+<dt><strong class="Mark"><code class="code">DoSetParent</code></strong></dt>
+<dd><p><code class="keyw">true</code> to set parent of every subgroup to the group <var class="Arg">G</var> that is contained in the root of the search graph. It also sets the property <code class="code">IsNormalInParent</code> to <code class="keyw">true</code> for every subgroup.</p>
+
+<p>This should be only disabled for debugging or testing purposes.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">InitGraph</code></strong></dt>
+<dd><p>a function that takes as an argument a <code class="keyw">LinsGraph</code> <var class="Arg">gr</var>. It can popullate the record object <var class="Arg">gr</var> via calls like <code class="code">gr!.NAME = VALUE</code> in order to initialize certain components that might be needed by other functions later on (see option <code class="code">DoTerminate</code>).</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">DoCut</code></strong></dt>
+<dd><p>a function that takes as arguments a <code class="keyw">LinsGraph</code> <var class="Arg">gr</var> and a <code class="keyw">LinsNode</code> <var class="Arg">rH</var>.</p>
+
+<p>Returns <code class="keyw">true</code> if subgroups under <var class="Arg">rH</var> should not be computed, i.e. the branch will be cut under the node <var class="Arg">rH</var>.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">DoTerminate</code></strong></dt>
+<dd><p>a function that takes as arguments a <code class="keyw">LinsGraph</code> <var class="Arg">gr</var> and two <code class="keyw">LinsNodes</code> <var class="Arg">rH</var> and <var class="Arg">rK</var>. We are currently computing the subgroups under <var class="Arg">rH</var> and found the normal subgroup <var class="Arg">rK</var>.</p>
+
+<p>This function may write data to <code class="code">gr!.ComputedNormalSubgroups`</code>. Make sure to initalize this via the option <code class="code">InitGraph</code> (for example to an empty list), since it is not bound by default.</p>
+
+<p>Returns <code class="keyw">true</code> if the search can be terminated.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">UseLIS</code></strong></dt>
+<dd><p><code class="keyw">false</code> to use the new procedure with <code class="code">GQuotient</code> calls in <code class="code">LINS_FindTQuotients</code>.</p>
+
+<p><code class="keyw">true</code> to use the old procedure with a <code class="code">LowIndexSubgroupsFpGroup</code> call in <code class="code">LINS_FindTQuotients</code>.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">FilterTQuotients</code></strong></dt>
+<dd><p>a function that takes as an argument a <code class="keyw">LinsGraph</code> <var class="Arg">gr</var> and a list of <var class="Arg">targets</var> following the specifications of <code class="code">LINS_FindTQuotients</code>.</p>
+
+<p>The value of <code class="code">targets</code> in a call via <code class="code">LowIndexNormalSubgroupsSearch</code> depends on the value of the option <code class="code">UseLIS</code>.</p>
+
+<p>If <code class="code">UseLIS</code> is false, we have <code class="code">targets = LINS_TargetsQuotient</code>.</p>
+
+<p>If <code class="code">UseLIS</code> is true, we have <code class="code">targets = LINS_TargetsQuotientUseLIS</code>.</p>
+
+<p>Returns a sublist from <var class="Arg">targets</var>, that will be used by <code class="code">LINS_FindTQuotients</code>.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">DoIntersection</code></strong></dt>
+<dd><p>a function that takes as an argument a <code class="keyw">LinsGraph</code> <var class="Arg">gr</var>, two <code class="keyw">LinsNodes</code> <var class="Arg">rH</var> and <var class="Arg">rK</var>, and a positive integer <var class="Arg">i</var>. Let <span class="SimpleMath">G</span> be the group that is contained in the root of the search graph.</p>
+
+<p>Returns <code class="keyw">true</code> if the intersection <span class="SimpleMath">U</span> of the groups in <var class="Arg">rH</var> and <var class="Arg">rK</var> with index <span class="SimpleMath">[G : U] = i</span> should be computed.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">DoPQuotient</code></strong></dt>
+<dd><p>a function that takes as an argument a <code class="keyw">LinsGraph</code> <var class="Arg">gr</var>, a <code class="keyw">LinsNode</code> <var class="Arg">rH</var> and a prime <var class="Arg">p</var>.</p>
+
+<p>Returns <code class="keyw">true</code> if <var class="Arg">p</var>-quotients under <var class="Arg">rH</var> should be computed for the prime <var class="Arg">p</var>.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">DoPModule</code></strong></dt>
+<dd><p>a function that takes as an argument a <code class="keyw">LinsGraph</code> <var class="Arg">gr</var>, a <code class="keyw">LinsNode</code> <var class="Arg">rH</var>, a prime <var class="Arg">p</var> and a positive integer <var class="Arg">i</var>. Let <span class="SimpleMath">G</span> be the group that is contained in the root of the search graph.</p>
+
+<p>Returns <code class="keyw">true</code> if the normal subgroup <span class="SimpleMath">K</span> of index <span class="SimpleMath">[G : K] = i</span> with elementary abelian <var class="Arg">p</var>-quotient in <var class="Arg">rH</var> should be computed.</p>
+
+</dd>
+</dl>
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

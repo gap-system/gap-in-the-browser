@@ -1,0 +1,72 @@
+set timeout 10
+
+# from https://serverfault.com/a/981762
+expect_before {
+    timeout { puts " TIMEOUT "; exit 2 }
+    eof     { puts " EOF ";     exit 1 }
+}
+
+expect "gap> "
+send -- "var := rec(member := true, data1 := 1, data2 := 2);;\r"
+sleep 0.1
+
+# test tab completing "v" to "var"
+expect "gap> "
+send -- "v\t"
+expect "ar"
+send -- "\t"
+expect "var"
+send -- ";\r"
+expect "rec"
+sleep 0.1
+
+# test tab completing "var.d" to "var.data" to "var.data1" or "var.data2"
+expect "gap> "
+send -- "var.d\t"
+expect "ata"
+send -- "\t"
+expect "data1  data2"
+send -- "1;\r"
+expect "1"
+sleep 0.1
+
+# the same, but now with some code right before "var.d"
+expect "gap> "
+send -- "ReturnTrue(var.d"
+send -- "\t"
+expect "ata"
+send -- "\t"
+expect "data1  data2"
+send -- "1);\r"
+expect "true"
+
+# test tab completion for a non-record component object
+expect "gap> "
+send -- "g:=SmallGroup(6,1);;\r"
+expect "gap> "
+send -- "g.\t"
+send -- "1;;\r"
+expect "gap> "
+send -- "g!.S\t"
+expect "ize"
+send -- ";;\r"
+
+# issue 5241
+expect "gap> "
+# this used to trigger an error
+send -- "g.x.\t"
+# ctrl-u to clear the input given so far
+send -- "\025"
+# just start a new line to verify we are not in a break loop
+send -- "\r"
+expect "gap> "
+# this also used to trigger an error
+send -- "g!.x.\t"
+# ctrl-u to clear the input given so far
+send -- "\025"
+# just start a new line to verify we are not in a break loop
+send -- "\r"
+expect "gap> "
+
+exit
+

@@ -1,0 +1,88 @@
+  
+  
+                                    [1X nofoma [101X
+  
+  
+                           [1X Normal forms of matrices [101X
+  
+  
+                                     1.0.1
+  
+  
+                                  17 May 2026
+  
+  
+                                  Meinolf Geck
+  
+                                  Alia Bonnet
+  
+  
+  
+  Meinolf Geck
+      Email:    [7Xmailto:meinolf.geck@mathematik.uni-stuttgart.de[107X
+      Homepage: [7Xhttps://pnp.mathematik.uni-stuttgart.de/idsr/idsr1/geckmf/[107X
+      Address:  [33X[0;14YFachbereich  Mathematik,  Pfaffenwaldring 57, 70569 Stuttgart,
+                Germany[133X
+  
+  
+  Alia Bonnet
+      Email:    [7Xmailto:alia.bonnet@rwth.aachen.de[107X
+  
+  -------------------------------------------------------
+  [1XAbstract[101X
+  [33X[0;0YThis  package  computes  the  Frobenius normal form and the Jordan-Chevalley
+  decomposition  of a (square) matrix over any field that is available in GAP.
+  It also computes the Jordan normal form of matrices over finite fields.[133X
+  
+  [33X[0;0YBug  reports,  suggestions  and comments are, welcome. Please submit them to
+  our issue tracker [7Xhttps://github.com/gap-packages/nofoma/issues[107X.[133X
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y©  2026  by  Meinolf  Geck.  The  [5Xnofoma[105X  package  is free software; you can
+  redistribute  it  and/or modify it under the terms of the GNU General Public
+  License  as  published  by the Free Software Foundation; either version 2 of
+  the License, or (at your option) any later version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YThe  original  code  by  Meinolf  Geck  was  cleaned  up  and made ready for
+  inclusion  in  the  [5XGAP[105X  package distribution Alia Bonnet in 2025, with some
+  assistance by Max Horn.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (nofoma)[101X
+  
+  1 [33X[0;0YThe nofoma package[133X
+    1.1 [33X[0;0YInstallation of the [5Xnofoma[105X package[133X
+  2 [33X[0;0YNormal forms of matrices[133X
+    2.1 [33X[0;0YThe Frobenius normal form[133X
+      2.1-1 FrobeniusNormalForm
+      2.1-2 FrobeniusNormalFormLikeRCFT
+      2.1-3 InvariantFactorsMat
+    2.2 [33X[0;0YThe Jordan normal form[133X
+      2.2-1 JordanNormalForm
+  3 [33X[0;0YOther functionality[133X
+    3.1 [33X[0;0YThe Jordan-Chevalley decomposition[133X
+      3.1-1 JordanChevalleyDecMat
+      3.1-2 JordanChevalleyDecMatF
+    3.2 [33X[0;0YThe primary decomposition[133X
+      3.2-1 PrimaryDecomposition
+  4 [33X[0;0YAuxiliary functions[133X
+    4.1 [33X[0;0YVectors and matrices and their associated polynomials[133X
+      4.1-1 GcdCoprimeSplit
+      4.1-2 PolynomialToMatVec
+      4.1-3 LcmMaximalVectorMat
+      4.1-4 SpinMatVector
+      4.1-5 CyclicChainMat
+      4.1-6 MaximalVectorMat
+      4.1-7 JacobMatComplement
+      4.1-8 RatFormStep1
+  
+  
+  [32X

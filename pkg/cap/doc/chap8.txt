@@ -1,0 +1,296 @@
+  
+  [1X8 [33X[0;0YManaging Derived Methods[133X[101X
+  
+  
+  [1X8.1 [33X[0;0YInfo Class[133X[101X
+  
+  [1X8.1-1 DerivationInfo[101X
+  
+  [33X[1;0Y[29X[2XDerivationInfo[102X [32X info class[133X
+  
+  [33X[0;0YInfo class for derivations.[133X
+  
+  [1X8.1-2 ActivateDerivationInfo[101X
+  
+  [33X[1;0Y[29X[2XActivateDerivationInfo[102X( [3Xarg[103X ) [32X function[133X
+  
+  [1X8.1-3 DeactivateDerivationInfo[101X
+  
+  [33X[1;0Y[29X[2XDeactivateDerivationInfo[102X( [3Xarg[103X ) [32X function[133X
+  
+  
+  [1X8.2 [33X[0;0YDerivation Objects[133X[101X
+  
+  [1X8.2-1 IsDerivedMethod[101X
+  
+  [33X[1;0Y[29X[2XIsDerivedMethod[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YA  derivation  object  describes  a  derived method. It contains information
+  about  which  operation  the  derived  method  implements,  and  which other
+  operations it relies on.[133X
+  
+  [1X8.2-2 CreateDerivation[101X
+  
+  [33X[1;0Y[29X[2XCreateDerivation[102X( [3Xtarget_op_name[103X, [3Xdescription[103X, [3Xused_ops_with_multiples[103X, [3Xfunc[103X, [3Xweight[103X, [3Xcategory_filter[103X, [3Xloop_multiplier[103X, [3Xcategory_getters[103X ) [32X function[133X
+  
+  [33X[0;0YCreates  a new derivation object. The argument [3Xtarget_op_name[103X is the name of
+  the  operation which the derived method implements. The argument [3Xdescription[103X
+  should   describe   the  derivation.  The  argument  [3Xused_ops_with_multiples[103X
+  contains[133X
+  
+  [30X    [33X[0;6Ythe name of each operation used by the derived method,[133X
+  
+  [30X    [33X[0;6Ytogether  with  a  positive  integer  specifying  how  many times that
+        operation is used and[133X
+  
+  [30X    [33X[0;6Yeither a category getter or [10Xfail[110X.[133X
+  
+  [33X[0;0YThis  is given as a list of lists, where each sublist has as first entry the
+  name of an operation, as second entry an integer and as third entry either a
+  function  or  [10Xfail[110X.  This function should accept the category for which this
+  derivation  will be installed, and return a category for which the operation
+  in  the  first  entry  must be installed for the derivation to be considered
+  applicable.  The  argument  [3Xfunc[103X  contains  the actual implementation of the
+  derived  method.  The  argument  [3Xweight[103X  is an additional number to add when
+  calculating  the  resulting  weight  of  the  target  operation  using  this
+  derivation.  Unless  there is any particular reason to regard the derivation
+  as   exceedingly   expensive,   this   number  should  be  [10X1[110X.  The  argument
+  [3Xcategory_filter[103X  is  a  filter (or function) describing which categories the
+  derivation  is  valid  for.  If  it  is  valid for all categories, then this
+  argument  should have the value [10XIsCapCategory[110X. The output of [3Xcategory_filter[103X
+  must  not  change  during  the installation of operations. In particular, it
+  must not rely on [10XCanCompute[110X to check conditions.[133X
+  
+  [1X8.2-3 Description[101X
+  
+  [33X[1;0Y[29X[2XDescription[102X( [3Xd[103X ) [32X attribute[133X
+  
+  [33X[0;0YA description of the derivation.[133X
+  
+  [1X8.2-4 AdditionalWeight[101X
+  
+  [33X[1;0Y[29X[2XAdditionalWeight[102X( [3Xd[103X ) [32X attribute[133X
+  
+  [33X[0;0YAdditional weight for the derivation.[133X
+  
+  [1X8.2-5 DerivationFunction[101X
+  
+  [33X[1;0Y[29X[2XDerivationFunction[102X( [3Xd[103X ) [32X attribute[133X
+  
+  [33X[0;0YThe implementation of the derivation.[133X
+  
+  [1X8.2-6 CategoryFilter[101X
+  
+  [33X[1;0Y[29X[2XCategoryFilter[102X( [3Xd[103X ) [32X attribute[133X
+  
+  [33X[0;0YFilter describing which categories the derivation is valid for.[133X
+  
+  [1X8.2-7 IsApplicableToCategory[101X
+  
+  [33X[1;0Y[29X[2XIsApplicableToCategory[102X( [3Xd[103X, [3XC[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X  if the category [3XC[103X is known to satisfy the category filter of
+            the derivation [3Xd[103X.[133X
+  
+  [33X[0;0YChecks if the derivation is known to be valid for a given category.[133X
+  
+  [1X8.2-8 TargetOperation[101X
+  
+  [33X[1;0Y[29X[2XTargetOperation[102X( [3Xd[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YThe  name  (as  a  string)  of  the  operation  implemented by the
+            derivation [3Xd[103X[133X
+  
+  [1X8.2-9 UsedOperationsWithMultiplesAndCategoryGetters[101X
+  
+  [33X[1;0Y[29X[2XUsedOperationsWithMultiplesAndCategoryGetters[102X( [3Xd[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YThe  names  of  the  operations used by the derivation [3Xd[103X, together
+            with  their  multiplicities  and category getters. The result is a
+            list  consisting  of  lists  of  the form [10X[op_name, mult, getter][110X,
+            where [10Xop_name[110X is a string, [10Xmult[110X a positive integer and [10Xgetter[110X is a
+            function or [10Xfail[110X.[133X
+  
+  [1X8.2-10 InstallDerivationForCategory[101X
+  
+  [33X[1;0Y[29X[2XInstallDerivationForCategory[102X( [3Xd[103X, [3Xweight[103X, [3XC[103X ) [32X operation[133X
+  
+  [33X[0;0YInstall  the  derived method [3Xd[103X for the category [3XC[103X. The integer [3Xweight[103X is the
+  computed weight of the operation implemented by this derivation.[133X
+  
+  [1X8.2-11 FunctionCalledBeforeInstallation[101X
+  
+  [33X[1;0Y[29X[2XFunctionCalledBeforeInstallation[102X( [3Xd[103X ) [32X attribute[133X
+  
+  [33X[0;0YInput is a derived method. Output is a unary function that takes as an input
+  a  category  and  does  not  output anything. This function is always called
+  before  the  installation of the derived method for a concrete instance of a
+  category.[133X
+  
+  
+  [1X8.3 [33X[0;0YDerivation Graphs[133X[101X
+  
+  [1X8.3-1 IsDerivedMethodGraph[101X
+  
+  [33X[1;0Y[29X[2XIsDerivedMethodGraph[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YA  derivation graph consists of a set of operations and a set of derivations
+  specifying  how  some  operations  can  be  implemented  in  terms  of other
+  operations.[133X
+  
+  [1X8.3-2 MakeDerivationGraph[101X
+  
+  [33X[1;0Y[29X[2XMakeDerivationGraph[102X( [3Xoperations[103X ) [32X operation[133X
+  
+  [33X[0;0YMake  a  derivation  graph  containing  the  given  set of operations and no
+  derivations.  The argument [3Xoperations[103X should be a list of strings, the names
+  of the operations. The set of operations is fixed once the graph is created.
+  Derivations can be added to the graph by calling [10XAddDerivation[110X.[133X
+  
+  [1X8.3-3 AddOperationsToDerivationGraph[101X
+  
+  [33X[1;0Y[29X[2XAddOperationsToDerivationGraph[102X( [3Xgraph[103X, [3Xoperations[103X ) [32X operation[133X
+  
+  [33X[0;0YAdds a list of operation names [3Xoperations[103X to a given derivation graph [3Xgraph[103X.
+  This  is  used  in  extensions  of  CAP  which  want to have their own basic
+  operations,  but  do not want to pollute the CAP kernel any more. Please use
+  it with caution. If a weight list/category was created before it will not be
+  aware of the operations.[133X
+  
+  [1X8.3-4 AddDerivation[101X
+  
+  [33X[1;0Y[29X[2XAddDerivation[102X( [3Xgraph[103X, [3Xtarget_op[103X, [3Xdescription[103X, [3Xused_ops_with_multiples_and_category_getters[103X, [3Xfunc[103X, [3Xweight[103X, [3Xcategory_filter[103X, [3Xloop_multiplier[103X, [3Xcategory_getters[103X, [3Xfunction_called_before_installation[103X ) [32X function[133X
+  
+  [33X[0;0YAdd a derivation to a derivation graph.[133X
+  
+  [1X8.3-5 AddDerivationToCAP[101X
+  
+  [33X[1;0Y[29X[2XAddDerivationToCAP[102X( [3Xarg[103X ) [32X function[133X
+  
+  [1X8.3-6 Operations[101X
+  
+  [33X[1;0Y[29X[2XOperations[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0YGives the operations in the graph [3XG[103X, as a list of strings.[133X
+  
+  [1X8.3-7 DerivationsUsingOperation[101X
+  
+  [33X[1;0Y[29X[2XDerivationsUsingOperation[102X( [3XG[103X, [3Xop_name[103X ) [32X operation[133X
+  
+  [33X[0;0YFinds  all  the  derivations  in  the  graph  [3XG[103X that use the operation named
+  [3Xop_name[103X, and returns them as a list.[133X
+  
+  [1X8.3-8 DerivationsOfOperation[101X
+  
+  [33X[1;0Y[29X[2XDerivationsOfOperation[102X( [3XG[103X, [3Xop_name[103X ) [32X operation[133X
+  
+  [33X[0;0YFinds  all  the  derivations  in  the  graph [3XG[103X targeting the operation named
+  [3Xop_name[103X  (that  is,  the  derivations  that  provide implementations of this
+  operation), and returns them as a list.[133X
+  
+  
+  [1X8.4 [33X[0;0YManaging Derivations in a Category[133X[101X
+  
+  [1X8.4-1 IsOperationWeightList[101X
+  
+  [33X[1;0Y[29X[2XIsOperationWeightList[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YAn operation weight list manages the use of derivations in a single category
+  [23XC[123X.  For  every operation, it keeps a weight value which indicates how costly
+  it  is to perform that operation in the category [23XC[123X. Whenever a new operation
+  is implemented in [23XC[123X, the operation weight list should be notified about this
+  and  given  a weight to assign to this operation. It will then automatically
+  install  all  possible  derived  methods  for  [23XC[123X  in  such  a way that every
+  operation  has  the smallest possible weight (the weight of a derived method
+  is computed by using the weights of the operations it uses).[133X
+  
+  [1X8.4-2 MakeOperationWeightList[101X
+  
+  [33X[1;0Y[29X[2XMakeOperationWeightList[102X( [3XC[103X, [3XG[103X ) [32X operation[133X
+  
+  [33X[0;0YCreate  the  operation  weight list for a category. This should only be done
+  once  for  every  category,  and the category should afterwards remember the
+  returned  object.  The  argument [3XC[103X is the CAP category this operation weight
+  list  is  associated to, and the argument [3XG[103X is a derivation graph containing
+  operation names and derivations.[133X
+  
+  [1X8.4-3 DerivationGraph[101X
+  
+  [33X[1;0Y[29X[2XDerivationGraph[102X( [3Xowl[103X ) [32X attribute[133X
+  
+  [33X[0;0YReturns the derivation graph used by the operation weight list [3Xowl[103X.[133X
+  
+  [1X8.4-4 CategoryOfOperationWeightList[101X
+  
+  [33X[1;0Y[29X[2XCategoryOfOperationWeightList[102X( [3Xowl[103X ) [32X attribute[133X
+  
+  [33X[0;0YReturns the CAP category associated to the operation weight list [3Xowl[103X.[133X
+  
+  [1X8.4-5 CurrentOperationWeight[101X
+  
+  [33X[1;0Y[29X[2XCurrentOperationWeight[102X( [3Xowl[103X, [3Xop_name[103X ) [32X operation[133X
+  
+  [33X[0;0YReturns the current weight of the operation named [3Xop_name[103X.[133X
+  
+  [1X8.4-6 OperationWeightUsingDerivation[101X
+  
+  [33X[1;0Y[29X[2XOperationWeightUsingDerivation[102X( [3Xowl[103X, [3Xd[103X ) [32X operation[133X
+  
+  [33X[0;0YFinds  out  what the weight of the operation implemented by the derivation [3Xd[103X
+  would be if we had used that derivation.[133X
+  
+  [1X8.4-7 DerivationOfOperation[101X
+  
+  [33X[1;0Y[29X[2XDerivationOfOperation[102X( [3Xowl[103X, [3Xop_name[103X ) [32X operation[133X
+  
+  [33X[0;0YReturns  the  derivation  which is currently used to implement the operation
+  named [3Xop_name[103X. If the operation is not implemented by a derivation (that is,
+  either  implemented  directly  or  not  implemented  at  all),  then [10Xfail[110X is
+  returned.[133X
+  
+  [1X8.4-8 TriggerDerivationsUsingOperation[101X
+  
+  [33X[1;0Y[29X[2XTriggerDerivationsUsingOperation[102X( [3Xowl[103X, [3Xop_name[103X ) [32X operation[133X
+  
+  [33X[0;0YPerforms  a  search from the operation [3Xop_name[103X, and triggers all derivations
+  that  give  improvements  over the current state. This is used internally by
+  [10XInstallDerivations[110X  and  [10XReevaluate[110X.  It should normally not be necessary to
+  call this function directly.[133X
+  
+  [1X8.4-9 Reevaluate[101X
+  
+  [33X[1;0Y[29X[2XReevaluate[102X( [3Xowl[103X ) [32X operation[133X
+  
+  [33X[0;0YReevaluate  the  installed  derivations,  installing  better  derivations if
+  possible.  This should be called if new derivations become available for the
+  category,  either  because  the  category  has acquired more knowledge about
+  itself  (e.g. it is told that it is abelian) or because new derivations have
+  been added to the graph.[133X
+  
+  [1X8.4-10 Saturate[101X
+  
+  [33X[1;0Y[29X[2XSaturate[102X( [3Xowl[103X ) [32X operation[133X
+  
+  [33X[0;0YSaturates the derivation graph, i.e., calls reevaluate until no more changes
+  in the derivation graph occur.[133X
+  
+  [1X8.4-11 AddPrimitiveOperation[101X
+  
+  [33X[1;0Y[29X[2XAddPrimitiveOperation[102X( [3Xowl[103X, [3Xop_name[103X, [3Xweight[103X ) [32X operation[133X
+  
+  [33X[0;0YAdd the operation named [3Xop_name[103X to the operation weight list [3Xowl[103X with weight
+  [3Xweight[103X.[133X
+  
+  [1X8.4-12 PrintDerivationTree[101X
+  
+  [33X[1;0Y[29X[2XPrintDerivationTree[102X( [3Xowl[103X, [3Xop_name[103X ) [32X operation[133X
+  
+  [33X[0;0YPrint  a  tree  representation  of  the  way  the operation named [3Xop_name[103X is
+  implemented in the category of the operation weight list [3Xowl[103X.[133X
+  
+  [1X8.4-13 PrintTree[101X
+  
+  [33X[1;0Y[29X[2XPrintTree[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X ) [32X operation[133X
+  
+  [33X[0;0YPrints a tree structure.[133X
+  

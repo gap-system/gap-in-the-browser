@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (CAP) - Chapter 14: Dummy implementations</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap14"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chap11_mj.html">11</a>  <a href="chap12_mj.html">12</a>  <a href="chap13_mj.html">13</a>  <a href="chap14_mj.html">14</a>  <a href="chap15_mj.html">15</a>  <a href="chap16_mj.html">16</a>  <a href="chap17_mj.html">17</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap13_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap15_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap14.html">[MathJax off]</a></p>
+<p><a id="X7CA5B46383A5CE09" name="X7CA5B46383A5CE09"></a></p>
+<div class="ChapSects"><a href="chap14_mj.html#X7CA5B46383A5CE09">14 <span class="Heading">Dummy implementations</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap14_mj.html#X7B19E3AE7AB1B31B">14.1 <span class="Heading">Dummy rings</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X877C617785A41B2A">14.1-1 IsDummySemiring</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7DDFAD3285A5E9AC">14.1-2 IsDummySemiringElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7CE5FB417ED29971">14.1-3 IsDummyCommutativeSemiring</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X875A8B8F798145D6">14.1-4 IsDummyCommutativeSemiringElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X86A21A2379AA70E4">14.1-5 IsDummyRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7D89EFE77FC37A85">14.1-6 IsDummyRingElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X87E7CFFB81611DED">14.1-7 IsDummyCommutativeRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X79CB0F12853487F4">14.1-8 IsDummyCommutativeRingElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7F1159E287E0850B">14.1-9 IsDummyField</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7A227A6D7F366CDE">14.1-10 IsDummyFieldElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X86C2288F8699FE41">14.1-11 DummySemiring</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X827A0653870547E3">14.1-12 DummyCommutativeSemiring</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X82B6E6F780AB19FA">14.1-13 DummyRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X823C63568160007F">14.1-14 DummyCommutativeRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X8675D79684AD56D0">14.1-15 DummyField</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap14_mj.html#X82A623E78640E822">14.2 <span class="Heading">Dummy categories</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X872B304F85971287">14.2-1 IsDummyCategory</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7FB7ED298101C4C5">14.2-2 IsDummyCategoryObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X86ED2D2D84900225">14.2-3 IsDummyCategoryMorphism</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X85EFD8FA7CA98ECB">14.2-4 DummyCategory</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap14_mj.html#X7D79D0478599BC12">14.3 <span class="Heading">Dummy homalg rings</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X83D2C38E849A65DC">14.3-1 IsDummyHomalgRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7A64A51C7B55BD18">14.3-2 IsDummyHomalgRingElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X8170E18881CE3C03">14.3-3 IsDummyCommutativeHomalgRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7997E4157AB993E9">14.3-4 IsDummyCommutativeHomalgRingElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X87E270D481736842">14.3-5 IsDummyHomalgField</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X78E80ECF786AE153">14.3-6 IsDummyHomalgFieldElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X830459217A01C164">14.3-7 DummyHomalgRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X841685517C4CDC7A">14.3-8 DummyCommutativeHomalgRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap14_mj.html#X7CA21DAD784763AA">14.3-9 DummyHomalgField</a></span>
+</div></div>
+</div>
+
+<h3>14 <span class="Heading">Dummy implementations</span></h3>
+
+<p>A dummy implementation of a concept seems to provide an interface for the concept, but calling any operation in this interface will simply signal an error. Hence, when using a dummy implementation, we can be sure that we only rely on the abstract interface but not on any implementation details, for the simple reason that there is no actual implementation. This is useful for testing or compilation against a generic implementation of a concept.</p>
+
+<p><a id="X7B19E3AE7AB1B31B" name="X7B19E3AE7AB1B31B"></a></p>
+
+<h4>14.1 <span class="Heading">Dummy rings</span></h4>
+
+<p><a id="X877C617785A41B2A" name="X877C617785A41B2A"></a></p>
+
+<h5>14.1-1 IsDummySemiring</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummySemiring</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of dummy semirings.</p>
+
+<p><a id="X7DDFAD3285A5E9AC" name="X7DDFAD3285A5E9AC"></a></p>
+
+<h5>14.1-2 IsDummySemiringElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummySemiringElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of elements of a dummy semiring.</p>
+
+<p><a id="X7CE5FB417ED29971" name="X7CE5FB417ED29971"></a></p>
+
+<h5>14.1-3 IsDummyCommutativeSemiring</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCommutativeSemiring</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of dummy commutative semirings.</p>
+
+<p><a id="X875A8B8F798145D6" name="X875A8B8F798145D6"></a></p>
+
+<h5>14.1-4 IsDummyCommutativeSemiringElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCommutativeSemiringElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of elements of a dummy commutative semiring.</p>
+
+<p><a id="X86A21A2379AA70E4" name="X86A21A2379AA70E4"></a></p>
+
+<h5>14.1-5 IsDummyRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyRing</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of dummy rings.</p>
+
+<p><a id="X7D89EFE77FC37A85" name="X7D89EFE77FC37A85"></a></p>
+
+<h5>14.1-6 IsDummyRingElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyRingElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of elements of a dummy ring.</p>
+
+<p><a id="X87E7CFFB81611DED" name="X87E7CFFB81611DED"></a></p>
+
+<h5>14.1-7 IsDummyCommutativeRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCommutativeRing</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of dummy commutative rings.</p>
+
+<p><a id="X79CB0F12853487F4" name="X79CB0F12853487F4"></a></p>
+
+<h5>14.1-8 IsDummyCommutativeRingElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCommutativeRingElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of elements of a dummy commutative ring.</p>
+
+<p><a id="X7F1159E287E0850B" name="X7F1159E287E0850B"></a></p>
+
+<h5>14.1-9 IsDummyField</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyField</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of dummy fields.</p>
+
+<p><a id="X7A227A6D7F366CDE" name="X7A227A6D7F366CDE"></a></p>
+
+<h5>14.1-10 IsDummyFieldElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyFieldElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of elements of a dummy field.</p>
+
+<p><a id="X86C2288F8699FE41" name="X86C2288F8699FE41"></a></p>
+
+<h5>14.1-11 DummySemiring</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummySemiring</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a dummy semiring</p>
+
+<p><a id="X827A0653870547E3" name="X827A0653870547E3"></a></p>
+
+<h5>14.1-12 DummyCommutativeSemiring</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummyCommutativeSemiring</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a dummy commutative semiring</p>
+
+<p><a id="X82B6E6F780AB19FA" name="X82B6E6F780AB19FA"></a></p>
+
+<h5>14.1-13 DummyRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummyRing</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a dummy ring</p>
+
+<p><a id="X823C63568160007F" name="X823C63568160007F"></a></p>
+
+<h5>14.1-14 DummyCommutativeRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummyCommutativeRing</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a dummy commutative ring</p>
+
+<p><a id="X8675D79684AD56D0" name="X8675D79684AD56D0"></a></p>
+
+<h5>14.1-15 DummyField</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummyField</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a dummy field</p>
+
+<p><a id="X82A623E78640E822" name="X82A623E78640E822"></a></p>
+
+<h4>14.2 <span class="Heading">Dummy categories</span></h4>
+
+<p><a id="X872B304F85971287" name="X872B304F85971287"></a></p>
+
+<h5>14.2-1 IsDummyCategory</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCategory</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> category of a dummy CAP category.</p>
+
+<p><a id="X7FB7ED298101C4C5" name="X7FB7ED298101C4C5"></a></p>
+
+<h5>14.2-2 IsDummyCategoryObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCategoryObject</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> category of objects in a dummy CAP category.</p>
+
+<p><a id="X86ED2D2D84900225" name="X86ED2D2D84900225"></a></p>
+
+<h5>14.2-3 IsDummyCategoryMorphism</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCategoryMorphism</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> category of morphisms in a dummy CAP category.</p>
+
+<p><a id="X85EFD8FA7CA98ECB" name="X85EFD8FA7CA98ECB"></a></p>
+
+<h5>14.2-4 DummyCategory</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummyCategory</code>( <var class="Arg">options</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a category</p>
+
+<p>Creates a dummy category subject to the options given via <var class="Arg">options</var>, which is a record passed on to <code class="func">CategoryConstructor</code> (<a href="chap11_mj.html#X8070F8B48111E8A7"><span class="RefLink">11.2-1</span></a>). Note that the options <code class="code">{category,object,morphism}_filter</code> will be set to <code class="code">IsDummyCategory{,Object,Morphism}</code> and the options <code class="code">{object,morphism}_{constructor,datum}</code> and <code class="code">create_func_*</code> will be set to dummy implementations (throwing errors when actually called). The dummy category will pretend to support empty limits by default.</p>
+
+<p><a id="X7D79D0478599BC12" name="X7D79D0478599BC12"></a></p>
+
+<h4>14.3 <span class="Heading">Dummy homalg rings</span></h4>
+
+<p>The operations in this section require <code class="code">MatricesForHomalg</code> to be loaded.</p>
+
+<p><a id="X83D2C38E849A65DC" name="X83D2C38E849A65DC"></a></p>
+
+<h5>14.3-1 IsDummyHomalgRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyHomalgRing</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of dummy homalg rings.</p>
+
+<p><a id="X7A64A51C7B55BD18" name="X7A64A51C7B55BD18"></a></p>
+
+<h5>14.3-2 IsDummyHomalgRingElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyHomalgRingElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of elements of a dummy homalg ring.</p>
+
+<p><a id="X8170E18881CE3C03" name="X8170E18881CE3C03"></a></p>
+
+<h5>14.3-3 IsDummyCommutativeHomalgRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCommutativeHomalgRing</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of dummy commutative homalg rings.</p>
+
+<p><a id="X7997E4157AB993E9" name="X7997E4157AB993E9"></a></p>
+
+<h5>14.3-4 IsDummyCommutativeHomalgRingElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyCommutativeHomalgRingElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of elements of a dummy commutative homalg ring.</p>
+
+<p><a id="X87E270D481736842" name="X87E270D481736842"></a></p>
+
+<h5>14.3-5 IsDummyHomalgField</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyHomalgField</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of dummy homalg fields.</p>
+
+<p><a id="X78E80ECF786AE153" name="X78E80ECF786AE153"></a></p>
+
+<h5>14.3-6 IsDummyHomalgFieldElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDummyHomalgFieldElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>The <strong class="pkg">GAP</strong> filter of elements of a dummy homalg field.</p>
+
+<p><a id="X830459217A01C164" name="X830459217A01C164"></a></p>
+
+<h5>14.3-7 DummyHomalgRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummyHomalgRing</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a dummy homalg ring</p>
+
+<p><a id="X841685517C4CDC7A" name="X841685517C4CDC7A"></a></p>
+
+<h5>14.3-8 DummyCommutativeHomalgRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummyCommutativeHomalgRing</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a dummy commutative homalg ring</p>
+
+<p><a id="X7CA21DAD784763AA" name="X7CA21DAD784763AA"></a></p>
+
+<h5>14.3-9 DummyHomalgField</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DummyHomalgField</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a dummy homalg field</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap13_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap15_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chap11_mj.html">11</a>  <a href="chap12_mj.html">12</a>  <a href="chap13_mj.html">13</a>  <a href="chap14_mj.html">14</a>  <a href="chap15_mj.html">15</a>  <a href="chap16_mj.html">16</a>  <a href="chap17_mj.html">17</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

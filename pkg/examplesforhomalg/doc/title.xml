@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    ExamplesForHomalg
+  </Title>
+  <Subtitle>
+    Examples for the &GAP; Package homalg
+  </Subtitle>
+  <Version>
+    2025.12-01
+  </Version>
+  <Author>
+    Mohamed Barakat<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Walter-Flex-Str. 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>mohamed.barakat@uni-siegen.de</Email>
+<Homepage>https://mohamed-barakat.github.io</Homepage>
+
+  </Author>
+  <Author>
+    Simon Görtzen<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Simon Görtzen<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>simon.goertzen@rwth-aachen.de</Email>
+<Homepage>https://www.linkedin.com/in/simongoertzen/</Homepage>
+
+  </Author>
+  <Author>
+    Markus Lange-Hegermann<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Markus Lange-Hegermann<Br/>
+Hochschule Ostwestfalen-Lippe<Br/>
+Liebigstraße 87<Br/>
+32657 Lemgo<Br/>
+Germany<Br/>
+</Address>
+<Email>markus.lange-hegermann@hs-owl.de</Email>
+<Homepage>https://www.th-owl.de/eecs/fachbereich/team/markus-lange-hegermann/</Homepage>
+
+  </Author>
+  <Date>
+    23 December 2025
+  </Date>
+  <Copyright>
+    &copyright; 2008-2015 by Mohamed Barakat, Simon Goertzen, Markus Lange-Hegermann
+
+This package may be distributed under the terms and conditions of the GNU Public License Version 2 or (at your option) any later version.
+  </Copyright>
+  </TitlePage>

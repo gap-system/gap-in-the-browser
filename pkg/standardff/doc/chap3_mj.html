@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (StandardFF) - Chapter 3: Standard generators of cyclic groups</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap3"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap3.html">[MathJax off]</a></p>
+<p><a id="X7C788F1583FB8544" name="X7C788F1583FB8544"></a></p>
+<div class="ChapSects"><a href="chap3_mj.html#X7C788F1583FB8544">3 <span class="Heading">Standard generators of cyclic groups</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X864390D67EA526FA">3.1 <span class="Heading">Generators of multiplicative groups</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X79D3165F833F28DA">3.1-1 StandardCyclicGenerator</a></span>
+</div></div>
+</div>
+
+<h3>3 <span class="Heading">Standard generators of cyclic groups</span></h3>
+
+<p><a id="X864390D67EA526FA" name="X864390D67EA526FA"></a></p>
+
+<h4>3.1 <span class="Heading">Generators of multiplicative groups</span></h4>
+
+<p>The multiplicative group of each finite field is cyclic and so for each divisor <span class="SimpleMath">\(m\)</span> of its order there is a unique subgroup of order <span class="SimpleMath">\(m\)</span>.</p>
+
+<p>In <a href="chapBib_mj.html#biBStdFFCyc">[Lüb23]</a> we define standardized generators <span class="SimpleMath">\(x_m\)</span> of these cyclic groups in the standard finite fields described in chapter <a href="chap2_mj.html#X7D1270E8831F128E"><span class="RefLink">2</span></a> which fulfill the following compatibility condition: If <span class="SimpleMath">\(k | m\)</span> then <span class="SimpleMath">\(x_m^{{m/k}} = x_k\)</span>.</p>
+
+<p>The condition that <span class="SimpleMath">\(x_m\)</span> can be computed is that <span class="SimpleMath">\(m\)</span> can be factorized. (If we do not know the prime divisors of <span class="SimpleMath">\(m\)</span> then we cannot show that a given element has order <span class="SimpleMath">\(m\)</span>.) Note that this means that we can compute <span class="SimpleMath">\(x_m\)</span> in <code class="code">FF(p,n)</code> when <span class="SimpleMath">\(m | (p^n -1)\)</span> and we know the prime divisors of <span class="SimpleMath">\(m\)</span>, even when the factorization of <span class="SimpleMath">\((p^n-1)\)</span> is not known.</p>
+
+<p>In the case that the factorization of <span class="SimpleMath">\(m = p^n-1\)</span> is known the corresponding <span class="SimpleMath">\(x_m\)</span> is a standardized primitive root of <code class="code">FF(p,n)</code> that can be computed.</p>
+
+<p>Let <span class="SimpleMath">\(l | n\)</span> and set <span class="SimpleMath">\(m = p^n-1\)</span> and <span class="SimpleMath">\(k = p^l-1\)</span>. Then <span class="SimpleMath">\(x_m\)</span> and <span class="SimpleMath">\(x_k\)</span> are the standard primitive roots of <code class="code">FF(p,n)</code> and <code class="code">FF(p,l)</code> (considered as subfield of <code class="code">FF(p,n)</code>), respectively. The compatibity condition says that <span class="SimpleMath">\(x_m^{{m/k}} = x_k\)</span>. This shows that the minimal polynomials of <span class="SimpleMath">\(x_m\)</span> and <span class="SimpleMath">\(x_k\)</span> over the prime field fulfill the same compatibility conditions as Conway polynomials (see <code class="func">ConwayPolynomial</code> (<a href="../../../doc/ref/chap59_mj.html#X7C2425A786F09054"><span class="RefLink">Reference: ConwayPolynomial</span></a>).</p>
+
+<p><a id="X79D3165F833F28DA" name="X79D3165F833F28DA"></a></p>
+
+<h5>3.1-1 StandardCyclicGenerator</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StandardCyclicGenerator</code>( <var class="Arg">F</var>[, <var class="Arg">m</var>] )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StandardPrimitiveRoot</code>( <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: an element of <var class="Arg">F</var> or <code class="keyw">fail</code></p>
+
+<p>The argument <var class="Arg">F</var> must be a standard finite field (see <code class="func">FF</code> (<a href="chap2_mj.html#X80DCBB4F84F04DDB"><span class="RefLink">2.2-1</span></a>)) and <var class="Arg">m</var> a positive integer. If <var class="Arg">m</var> does not divide <span class="SimpleMath">\(|\textit{F}| - 1\)</span> the function returns <code class="keyw">fail</code>. Otherwise a standardized element <span class="SimpleMath">\(x_{\textit{m}}\)</span> of order <var class="Arg">m</var> is returned, as described above.</p>
+
+<p>The argument <var class="Arg">m</var> is optional, if not given its default value is <span class="SimpleMath">\(|\textit{F}| - 1\)</span>. In this case <span class="SimpleMath">\(x_{\textit{m}}\)</span> can also be computed with the attribute <code class="func">StandardPrimitiveRoot</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(67, 18); # Conway polynomial was hard to compute</span>
+FF(67, 18)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := PrimitiveElement(F);</span>
+ZZ(67,18,[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">xprim := StandardPrimitiveRoot(F);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">k := (Size(F)-1) / Order(x);</span>
+6853662165340556076084083497526
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">xm := StandardCyclicGenerator(F, Order(x));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">xm = xprim^k;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(23, 201); # factorization of (|F| - 1) not known </span>
+FF(23, 201)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:=79*269*67939;</span>
+1443771689
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">(Size(F)-1) mod m;</span>
+0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OrderMod(23, m);</span>
+201
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">xm := StandardCyclicGenerator(F, m);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsOne(xm^m);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(Factors(m), r-&gt; not IsOne(xm^(m/r)));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(7,48);</span>
+FF(7, 48)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K := FF(7,12);</span>
+FF(7, 12)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">emb := Embedding(K, F);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := StandardPrimitiveRoot(F);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y := StandardPrimitiveRoot(K);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y^emb = x^((Size(F)-1)/(Size(K)-1));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">v := Indeterminate(FF(7,1), "v");</span>
+v
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">px := MinimalPolynomial(FF(7,1), x, v);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">py := MinimalPolynomial(FF(7,1), y, v);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Value(py, PowerMod(v, (Size(F)-1)/(Size(K)-1), px)) mod px;</span>
+0*Z(7)
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

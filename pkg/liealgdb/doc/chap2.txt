@@ -1,0 +1,379 @@
+  
+  [1X2 [33X[0;0YThe families of Lie algebras included in the database[133X[101X
+  
+  [33X[0;0YHere  we  describe  the  functions  that  access  the classifications of Lie
+  algebras  that  are stored in the package. A function below either returns a
+  single  Lie  algebra, depending on a list of parameters, or a collection. It
+  is  important  to note that two calls of the function [3XNonSolvableLieAlgebra[103X,
+  [3XSolvableLieAlgebra[103X,   or   [3XNilpotentLieAlgebra[103X  may  return  isomorphic  Lie
+  algebras  even  if  the parameters are different (see the description of the
+  parameter  list  for  each  of  the functions). If, however, the output of a
+  function  is  a collection, then the members of this collection are pairwise
+  non-isomorphic.[133X
+  
+  [33X[0;0YThe  Lie  algebras  in  the  database  are  stored  in the form of structure
+  constant  tables.  Usually  the  size  of  a  family  of Lie algebras in the
+  database  is  small  enough  so  that  the entries of the structure constant
+  tables  can  be  stored  without  any  compression.  However  the  number of
+  nilpotent  Lie  algebras with dimension at least 7 is very large, and so the
+  structure  constant  tables  are  compressed  as follows. If [23XL[123X is such a Lie
+  algebra,   then  we  fix  a  basis  [23XB=\{b_1,\ldots,b_n\}[123X  and  consider  the
+  coefficients  of  the  products  [23X[b_i,b_j][123X  where  [23Xj>i[123X. We concatenate these
+  coefficient sequences and consider the long sequence so obtained as a number
+  written  in base [23Xp[123X. Then we convert this number to base 62 and write it down
+  using  the digits [23X0,\ldots,9,a\ldots,z,A\ldots,Z[123X. Then this string is stored
+  in    the   files   [3Xgap/nilpotent/nilpotent_data*.gi[103X.   See   the   function
+  [3XReadStringToNilpotentLieAlgebra[103X  in  the file [3Xgap/nilpotent/nilpotent.gi[103X for
+  the precise details.[133X
+  
+  
+  [1X2.1 [33X[0;0YNon-solvable Lie algebras[133X[101X
+  
+  [33X[0;0YThe  package  contains  the  list  of  non-solvable Lie algebras over finite
+  fields up to dimension 6. The classification follows the one in [Str].[133X
+  
+  [1X2.1-1 NonSolvableLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XNonSolvableLieAlgebra[102X( [3XF[103X, [3Xpars[103X ) [32X method[133X
+  
+  [33X[0;0Y[3XF[103X  is  an  arbitrary  finite field, [3Xpars[103X is a list of parameters with length
+  between  1  and 4. The output is a non-solvable Lie algebra corresponding to
+  the  parameters,  which  is displayed as a string that describes the algebra
+  following  [Str].  The  first entry of [3Xpars[103X is the dimension of the algebra,
+  and  the  possible  additional entries of [3Xpars[103X describe the algebra if there
+  are more algebras with dimension [3Xpars[1][103X.[133X
+  
+  [33X[0;0YThe possible values of [3Xpars[103X are as follows.[133X
+  
+  
+  [1X2.1-2 [33X[0;0YDimension 1 and 2[133X[101X
+  
+  [33X[0;0YThere are no non-solvable Lie algebras with dimension less than 3, and so if
+  [3Xpars[1][103X is less than 3 then [3XNonSolvableLieAlgebra[103X returns an error message.[133X
+  
+  
+  [1X2.1-3 [33X[0;0YDimension 3[133X[101X
+  
+  [33X[0;0YThere  is just one non-solvable Lie algebra over an arbitrary finite field [3XF[103X
+  (see Section [14X3.2[114X) which is returned by [3XNonSolvableLieAlgebra( F, [3] )[103X.[133X
+  
+  
+  [1X2.1-4 [33X[0;0YDimension 4[133X[101X
+  
+  [33X[0;0YIf  [3XF[103X has odd characteristic then there is a unique non-solvable Lie algebra
+  with    dimension   4   over   [3XF[103X   and   this   algebra   is   returned   by
+  [3XNonSolvableLieAlgebra(  F,  [4] )[103X. If [3XF[103X has characteristic 2, then there are
+  two distinct Lie algebras and they are returned by [3XNonSolvableLieAlgebra( F,
+  [4,i] )[103X for [3Xi=1, 2[103X. See Section [14X3.3[114X for a description of the algebras.[133X
+  
+  
+  [1X2.1-5 [33X[0;0YDimension 5[133X[101X
+  
+  [33X[0;0YIf  [3XF[103X  has  characteristic  2  then  there  are  5  isomorphism  classes  of
+  non-solvable  Lie  algebras  over [3XF[103X and they are described in Section [14X3.4-1[114X.
+  The possible values of [3Xpars[103X are as follows.[133X
+  
+  [30X    [33X[0;6Y[3X[5,1][103X: the Lie algebra in [14X3.4-1[114X(1).[133X
+  
+  [30X    [33X[0;6Y[3X[5,2,i][103X: [3Xi=0, 1[103X; the Lie algebras in [14X3.4-1[114X(2).[133X
+  
+  [30X    [33X[0;6Y[3X[5,3,i][103X: [3Xi=0, 1[103X; the Lie algebras in [14X3.4-1[114X(3).[133X
+  
+  [33X[0;0YIf  the  characteristic  of  [3XF[103X  is  odd, then the list of Lie algebras is as
+  follows (see Section [14X3.4-2[114X).[133X
+  
+  [30X    [33X[0;6Y[3X[5,1,i][103X: [3Xi=1, 0[103X; the Lie algebras that occur in [14X3.4-2[114X(1).[133X
+  
+  [30X    [33X[0;6Y[3X[5,2][103X: the Lie algebra in [14X3.4-2[114X(2).[133X
+  
+  [30X    [33X[0;6Y[3X[5,3][103X:  this algebra only exists if the characteristic of [3XF[103X is 3 or 5.
+        In  the  former  case the algebra is the one in [14X3.4-2[114X(3), while in the
+        latter it is in [14X3.4-2[114X(4).[133X
+  
+  
+  [1X2.1-6 [33X[0;0YDimension 6[133X[101X
+  
+  [33X[0;0YThe 6-dimensional non-solvable Lie algebras are described in Section [14X3.5[114X. If
+  [3XF[103X has characteristic 2, then the possible values of [3Xpars[103X is as follows.[133X
+  
+  [30X    [33X[0;6Y[3X[6,1][103X: the Lie algebra in [14X3.5-1[114X(1).[133X
+  
+  [30X    [33X[0;6Y[3X[6,2][103X: the Lie algebra in [14X3.5-1[114X(2).[133X
+  
+  [30X    [33X[0;6Y[3X[6,3,i][103X: [3Xi=0, 1[103X; the two Lie algebras [14X3.5-1[114X(3).[133X
+  
+  [30X    [33X[0;6Y[3X[6,4,x][103X:  [3Xx=0,  1,  2,  3[103X  or  [3Xx[103X  is  a  field  element.  In this case
+        [3XAllNonSolvableLieAlgebras[103X returns one of the Lie algebras in [14X3.5-1[114X(4).
+        If  [3Xx=0,  1,  2,  3[103X then the Lie algebra corresponding to the [3X(x+1)[103X-th
+        matrix  of  [14X3.5-1[114X(4)  is returned. If [3Xx[103X is a field element, then a Lie
+        algebra is returned which corresponds to the 5th matrix in [14X3.5-1[114X(4).[133X
+  
+  [30X    [33X[0;6Y[3X[6,5][103X: the Lie algebra in [14X3.5-1[114X(5).[133X
+  
+  [30X    [33X[0;6Y[3X[6,6,1],  [6,6,2], [6,6,3,x], [6,6,4,x][103X: [3Xx[103X is a field element; the Lie
+        algebras  in  [14X3.5-1[114X(6). The third and fourth entries of [3Xpars[103X determine
+        the  isomorphism  type  of the radical as a solvable Lie algebra. More
+        precisely, if the third argument [3Xpars[3][103X is 1 or 2 then the radical is
+        isomorphic  to  [3XSolvableLieAlgebra(  F,[3,pars[3]]  )[103X.  If  the  third
+        argument  [3Xpars[3][103X  is  3  or  4  then  the  radical  is  isomorphic to
+        [3XSolvableLieAlgebra(  F,[3,pars[3],pars[4]]  )[103X;  see [2XSolvableLieAlgebra[102X
+        ([14X2.2-1[114X).[133X
+  
+  [30X    [33X[0;6Y[3X[6,7][103X: the Lie algebra in [14X3.5-1[114X(7).[133X
+  
+  [30X    [33X[0;6Y[3X[6,8][103X: the Lie algebra in [14X3.5-1[114X(8).[133X
+  
+  [33X[0;0YIf  the characteristic of [3XF[103X is odd, then the possible values of [3Xpars[103X are the
+  following (see Sections [14X3.5-2[114X, [14X3.5-3[114X, and [14X3.5-4[114X).[133X
+  
+  [30X    [33X[0;6Y[3X[6,1][103X: the Lie algebra in [14X3.5-2[114X(1).[133X
+  
+  [30X    [33X[0;6Y[3X[6,2][103X: the Lie algebra in [14X3.5-2[114X(2).[133X
+  
+  [30X    [33X[0;6Y[3X[6,3,1],  [6,3,2], [6,3,3,x], [6,3,4,x][103X: [3Xx[103X is a field element; the Lie
+        algebras  in  [14X3.5-2[114X(3). The third and fourth entries of [3Xpars[103X determine
+        the  isomorphism  type  of the radical as a solvable Lie algebra. More
+        precisely, if the third argument [3Xpars[3][103X is 1 or 2 then the radical is
+        isomorphic  to  [3XSolvableLieAlgebra(  F,[3,pars[3]]  )[103X.  If  the  third
+        argument  [3Xpars[3][103X  is  3  or  4  then  the  radical  is  isomorphic to
+        [3XSolvableLieAlgebra(  F,[3,pars[3],pars[4]]  )[103X;  see [2XSolvableLieAlgebra[102X
+        ([14X2.2-1[114X).[133X
+  
+  [30X    [33X[0;6Y[3X[6,4][103X: the Lie algebra in [14X3.5-2[114X(4).[133X
+  
+  [30X    [33X[0;6Y[3X[6,5][103X: the Lie algebra in [14X3.5-2[114X(5).[133X
+  
+  [30X    [33X[0;6Y[3X[6,6][103X: the Lie algebra in [14X3.5-2[114X(6).[133X
+  
+  [30X    [33X[0;6Y[3X[6,7][103X: the Lie algebra in [14X3.5-2[114X(7).[133X
+  
+  [33X[0;0YIf  the  characteristic  is  3  or  5 then there are additional families. In
+  characteristic 3, these families are as follows.[133X
+  
+  [30X    [33X[0;6Y[3X[6,8,x][103X:  [3Xx[103X  is  a  field  element; returns one of the Lie algebras in
+        [14X3.5-3[114X(1).[133X
+  
+  [30X    [33X[0;6Y[3X[6,9][103X: the Lie algebra in [14X3.5-3[114X(2).[133X
+  
+  [30X    [33X[0;6Y[3X[6,10][103X: the Lie algebra in [14X3.5-3[114X(3).[133X
+  
+  [30X    [33X[0;6Y[3X[6,11,i][103X: [3Xi=0, 1[103X; one of the two Lie algebras in [14X3.5-3[114X(4).[133X
+  
+  [30X    [33X[0;6Y[3X[6,12][103X: the first Lie algebra in [14X3.5-3[114X(5).[133X
+  
+  [30X    [33X[0;6Y[3X[6,13][103X: the second Lie algebra [14X3.5-3[114X(5).[133X
+  
+  [33X[0;0YIf  the  characteristic  is  5,  then  the  additional  Lie algebras are the
+  following.[133X
+  
+  [30X    [33X[0;6Y[3X[6,8][103X: the Lie algebra in [14X3.5-4[114X(1).[133X
+  
+  [30X    [33X[0;6Y[3X[6,9][103X: the Lie algebra in [14X3.5-4[114X(2).[133X
+  
+  [1X2.1-7 AllNonSolvableLieAlgebras[101X
+  
+  [33X[1;0Y[29X[2XAllNonSolvableLieAlgebras[102X( [3XF[103X, [3Xdim[103X ) [32X method[133X
+  
+  [33X[0;0YHere  [3XF[103X  is an arbitrary finite field, and [3Xdim[103X is at most 6. A collection is
+  returned   whose   members   form   a   complete  and  irredundant  list  of
+  representatives  of  the  isomorphism types of the non-solvable Lie algebras
+  over  [3XF[103X with dimension [3Xdim[103X. In order to obtain the algebras contained in the
+  collection,  one  can  use  the  functions  [3XAsList[103X, [3XEnumerator[103X, [3XIterator[103X, as
+  illustrated by the following example.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL := AllNonSolvableLieAlgebras( GF(4), 4 );[127X[104X
+    [4X[28X<Collection of nonsolvable Lie algebras with dimension 4 over GF(2^2)>[128X[104X
+    [4X[25Xgap>[125X [27X e := Enumerator( L );[127X[104X
+    [4X[28X<enumerator>[128X[104X
+    [4X[25Xgap>[125X [27Xfor i in e do Print( Dimension( LieSolvableRadical( i )), "\n" ); od;[127X[104X
+    [4X[28X0[128X[104X
+    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27XAsList( L );[127X[104X
+    [4X[28X[ W(1;2), W(1;2)^{(1)}+GF(4) ][128X[104X
+    [4X[25Xgap>[125X [27XDimension( LieCenter( last[2] ));[127X[104X
+    [4X[28X1[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YAs  the  output  of  [3XAllNonSolvableLieAlgebras[103X is a collection, the user can
+  efficiently  access  the  classification  of  [23Xd[123X-dimensional non-solvable Lie
+  algebras  over  a  given  field, even if the classification contains a large
+  number  of algebras. For instance, there are 95367431640638 non-solvable Lie
+  algebras  over  [23XGF(5^{20})[123X. Clearly one cannot expect to be able to handle a
+  list  containing  all  these algebras; it is, however, possible to work with
+  the collection of these Lie algebras, as follows.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL := AllNonSolvableLieAlgebras( GF(5^20), 6 );[127X[104X
+    [4X[28X<Collection of nonsolvable Lie algebras with dimension 6 over GF(5^20)>[128X[104X
+    [4X[25Xgap>[125X [27Xe := Enumerator( L );[127X[104X
+    [4X[28X<enumerator>[128X[104X
+    [4X[25Xgap>[125X [27XLength( last );[127X[104X
+    [4X[28X95367431640638[128X[104X
+    [4X[25Xgap>[125X [27XDimension( LieDerivedSubalgebra( e[462468528345] ));[127X[104X
+    [4X[28X5[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YWe  note  that  we  could  not  enumerate  the  non-solvable Lie algebras of
+  dimension  6  over  finite  fields  of characteristic 3, and so the function
+  [3XEnumerator[103X  cannot  be  used  in  that  context.  You  can, however, use the
+  functions [3XIterator[103X and [3XAsList[103X as follows.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL := AllNonSolvableLieAlgebras( GF(3), 6 );[127X[104X
+    [4X[28X<Collection of nonsolvable Lie algebras with dimension 6 over GF(3)>[128X[104X
+    [4X[25Xgap>[125X [27X e := Iterator( L );[127X[104X
+    [4X[28X<iterator>[128X[104X
+    [4X[25Xgap>[125X [27Xdims := [];;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in e do Add( dims, Dimension( LieSolvableRadical( i ))); od;[127X[104X
+    [4X[25Xgap>[125X [27Xdims;[127X[104X
+    [4X[28X[ 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XAsList( L );[127X[104X
+    [4X[28X[ sl(2,3)+sl(2,3), sl(2,GF(9)), sl(2,3)+solv([ 1 ]), sl(2,3)+solv([ 2 ]), [128X[104X
+    [4X[28X  sl(2,3)+solv([ 3, 0*Z(3) ]), sl(2,3)+solv([ 3, Z(3)^0 ]), [128X[104X
+    [4X[28X  sl(2,3)+solv([ 3, Z(3) ]), sl(2,3)+solv([ 4, 0*Z(3) ]), [128X[104X
+    [4X[28X  sl(2,3)+solv([ 4, Z(3) ]), sl(2,3)+solv([ 4, Z(3)^0 ]), sl(2,3):(V(1)+V(0)),[128X[104X
+    [4X[28X  sl(2,3):V(2), sl(2,3):H, sl(2,3):<x,y,z|[x,y]=y,[x,z]=z>, [128X[104X
+    [4X[28X  sl(2,3):V(2,0*Z(3)), sl(2,3):V(2,Z(3)), W(1;1):O(1;1), W(1;1):O(1;1)*, [128X[104X
+    [4X[28X  sl(2,3).H(0), sl(2,3).H(1), sl(2,3).(GF(3)+GF(3)+GF(3))(1), [128X[104X
+    [4X[28X  sl(2,3).(GF(3)+GF(3)+GF(3))(2) ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-8 AllSimpleLieAlgebras[101X
+  
+  [33X[1;0Y[29X[2XAllSimpleLieAlgebras[102X( [3XF[103X, [3Xdim[103X ) [32X method[133X
+  
+  [33X[0;0YHere  [3XF[103X  is a finite field, and [3Xdim[103X is either an integer not greater than 6,
+  or,  if  [3XF=GF(2)[103X,  then  [3Xdim[103X  is not greater than 9. The output is a list of
+  simple  Lie  algebras over [3XF[103X of dimension [3Xdim[103X. If [3Xdim[103X is at most 6, then the
+  classification  by Strade [Str] is used. If [3XF=GF(2)[103X and [3Xdim[103X is between 7 and
+  9,  then  the  Lie  algebras  in [Vau06] are returned (see Section [14X3.6[114X). The
+  algebras  in  the  list are pairwise non-isomorphic. Note that the output of
+  this  function  is  a  list  and  not a collection, and the package does not
+  contain a function called [3XSimpleLieAlgebra[103X.[133X
+  
+  
+  [1X2.2 [33X[0;0YSolvable and nilpotent Lie algebras[133X[101X
+  
+  [33X[0;0YThe  package  contains  the  classification  of  solvable  Lie  algebras  of
+  dimensions  2,  3  and  4  (taken  from  [dG05]),  and the classification of
+  nilpotent   Lie  algebras  of  dimensions  5  and  6  (from  [CdGS11]).  The
+  classifications  are  complemented by a function for identifying a given Lie
+  algebra  as  a  member  of  the list. This function also returns an explicit
+  isomorphism.  In  Section [14X3.7[114X the list is given of the multiplication tables
+  of  the  solvable and nilpotent Lie algebras, corresponding to the functions
+  in this section.[133X
+  
+  [1X2.2-1 SolvableLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XSolvableLieAlgebra[102X( [3XF[103X, [3Xpars[103X ) [32X method[133X
+  
+  [33X[0;0YHere  [3XF[103X  is  an  arbitrary  field,  [3Xpars[103X is a list of parameters with length
+  between  [9X2[109X  and  [9X4[109X. The first entry of [3Xpars[103X is the dimension of the algebra,
+  which  has  to  be  2, 3, or 4. If the dimension is 3, or 4, then the second
+  entry  of [3Xpars[103X is the number of the Lie algebra with which it appears in the
+  list  of [dG05]. If the dimension is 2, then there are only two (isomorphism
+  classes  of)  solvable Lie algebras. In this case, if the second entry is 1,
+  then  the  abelian  Lie  algebra  is  returned,  if it is 2, then the unique
+  non-abelian  solvable  Lie algebra of dimension 2 is returned. A Lie algebra
+  in  the list of [dG05] can have one or two parameters. In that case the list
+  [3Xpars[103X also has to contain the parameters.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSolvableLieAlgebra( Rationals, [4,6,1,2] );[127X[104X
+    [4X[28X<Lie algebra of dimension 4 over Rationals>[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-2 NilpotentLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XNilpotentLieAlgebra[102X( [3XF[103X, [3Xpars[103X ) [32X method[133X
+  
+  [33X[0;0YHere  [3XF[103X  is  an  arbitrary  field,  [3Xpars[103X is a list of parameters with length
+  between  [9X2[109X  and  [9X3[109X. The first entry of [3Xpars[103X is the dimension of the algebra,
+  which  has  to  be 5 or 6. The second entry of [3Xpars[103X is the number of the Lie
+  algebra  with  which it appears in the list of Section [14X3.7[114X. A Lie algebra in
+  the  list  of Section [14X3.7[114X can have one parameter. In that case the list [3Xpars[103X
+  also has to contain the parameter.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNilpotentLieAlgebra( GF(3^7), [ 6, 24, Z(3^7)^101 ] );[127X[104X
+    [4X[28X<Lie algebra of dimension 6 over GF(3^7)>[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-3 AllSolvableLieAlgebras[101X
+  
+  [33X[1;0Y[29X[2XAllSolvableLieAlgebras[102X( [3XF[103X, [3Xdim[103X ) [32X method[133X
+  
+  [33X[0;0YHere  [3XF[103X  is an arbitrary finite field, and [3Xdim[103X is at most 4. A collection of
+  all  solvable  Lie  algebras over [3XF[103X of dimension [3Xdim[103X is returned. The output
+  does  not  contain  isomorphic  Lie  algebras.  The  order  in which the Lie
+  algebras  appear in the list is always the same. It is possible to construct
+  an enumerator from the output collection for all of the valid choices of the
+  parameters.  See [3XAllNonSolvableLieAlgebra[103X for a more detailed description of
+  usage.[133X
+  
+  [1X2.2-4 AllNilpotentLieAlgebras[101X
+  
+  [33X[1;0Y[29X[2XAllNilpotentLieAlgebras[102X( [3XF[103X, [3Xdim[103X ) [32X method[133X
+  
+  [33X[0;0YHere  [3XF[103X  is a finite field, and [3Xdim[103X not greater than 9. Further, if [3Xdim=9[103X or
+  [3Xdim=8[103X,  then  [3XF[103X  must be [3XGF(2)[103X; if [3Xdim=7[103X then [3XF[103X must be one of [3XGF(2)[103X, [3XGF(3)[103X,
+  [3XGF(5)[103X  and if [3Xdim≤6[103X then [3XF[103X can be an arbitrary finite field. A collection of
+  all  nilpotent  Lie  algebras over [3XF[103X of dimension [3Xdim[103X is returned. If [3Xdim[103X is
+  not  greater  than  6  then  the  collection  of  nilpotent  Lie algebras is
+  determined  by  [CdGS11],  otherwise  the  classification  can  be  found in
+  [Sch05].  The  output does not contain isomorphic Lie algebras. The order in
+  which  the  Lie  algebras appear in the collection is always the same. It is
+  possible  to  construct  an enumerator from the output collection for all of
+  the valid choices of the parameters. See [3XAllNonSolvableLieAlgebra[103X for a more
+  detailed description of usage.[133X
+  
+  [1X2.2-5 NrNilpotentLieAlgebras[101X
+  
+  [33X[1;0Y[29X[2XNrNilpotentLieAlgebras[102X( [3XF[103X, [3Xdim[103X ) [32X method[133X
+  
+  [33X[0;0YHere  [3XF[103X is a finite field, and [3Xdim[103X is an integer. The restrictions for [3XF[103X and
+  [3Xdim[103X  are  the same as in the function [3XAllNilpotentLieAlgebras[103X. The number of
+  nilpotent Lie algebras over [3XF[103X of dimension [3Xdim[103X is returned.[133X
+  
+  [1X2.2-6 LieAlgebraIdentification[101X
+  
+  [33X[1;0Y[29X[2XLieAlgebraIdentification[102X( [3XL[103X ) [32X method[133X
+  
+  [33X[0;0YHere  [3XL[103X  is  a  solvable  Lie  algebra  of  dimension  2,3, or 4, or it is a
+  nilpotent  Lie  algebra  of dimension 5 or 6. This function returns a record
+  with three fields.[133X
+  
+  [30X    [33X[0;6Y[3Xname[103X  This  is  a  string  containing  the name of the Lie algebra. It
+        starts  with  a capital L if it is a solvable Lie algebra of dimension
+        2,3,4.  It starts with a capital N if it is a nilpotent Lie algebra of
+        dimension 5 or 6. A name like[133X
+  
+  "N6_24( GF(3^7), Z(3^7) )"
+  
+        [33X[0;6Ymeans that the input Lie algebra is isomorphic to the Lie algebra with
+        number  24  in  the  list  of  6-dimensional  nilpotent  Lie algebras.
+        Furthermore  the  field  is  given and the value of the parameters (if
+        there are any).[133X
+  
+  [30X    [33X[0;6Y[3Xparameters[103X This contains the parameters that appear in the name of the
+        algebra.[133X
+  
+  [30X    [33X[0;6Y[3Xisomorphism[103X This is an isomorphism of the input Lie algebra to the Lie
+        algebra from the classification with the given name.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL:= SolvableLieAlgebra( Rationals, [4,14,3] );[127X[104X
+    [4X[28X<Lie algebra of dimension 4 over Rationals>[128X[104X
+    [4X[25Xgap>[125X [27X LieAlgebraIdentification( L );[127X[104X
+    [4X[28Xrec( isomorphism := CanonicalBasis( <Lie algebra of dimension [128X[104X
+    [4X[28X    4 over Rationals> ) -> [ v.3, (-1)*v.2, v.1, (1/3)*v.4 ], [128X[104X
+    [4X[28X  name := "L4_14( Rationals, 1/3 )", parameters := [ 1/3 ] )[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIn the example we see that the program finds a different parameter, than the
+  one with which the Lie algebra was constructed. The explanation is that some
+  parametric  classes  of  Lie  algebras  contain isomorphic Lie algebras, for
+  different values of the parameters. In that case the identification function
+  makes its own choice.[133X
+  

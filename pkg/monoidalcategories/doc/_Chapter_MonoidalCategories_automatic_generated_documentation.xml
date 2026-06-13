@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_MonoidalCategories_automatic_generated_documentation">
+<Heading>MonoidalCategories automatic generated documentation</Heading>
+
+<Section Label="Chapter_MonoidalCategories_automatic_generated_documentation_Section_MonoidalCategories_automatic_generated_documentation_of_properties">
+<Heading>MonoidalCategories automatic generated documentation of properties</Heading>
+
+<ManSection>
+  <Prop Arg="C" Name="IsAdditiveMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being additive monoidal,
+  i.e., where the tensor product preserves finite direct sums.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsBraidedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being braided monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsClosedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being (bi)closed monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCoclosedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being (bi)coclosed monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsLeftClosedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being left closed monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsLeftCoclosedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being coclosed monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsStrictMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being strict monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsRigidSymmetricClosedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being rigid symmetric closed monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsRigidSymmetricCoclosedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being rigid symmetric coclosed monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsSymmetricClosedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being symmetric closed monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsSymmetricCoclosedMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being symmetric coclosed monoidal.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsSymmetricMonoidalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being symmetric monoidal.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

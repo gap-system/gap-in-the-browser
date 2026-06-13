@@ -1,0 +1,65 @@
+  
+  
+  [1XIndex[101X
+  
+  AlgebraIBNP 4.1-1 
+  CommutativeDivision 3.2-2 
+  conventional divisor 3.2 
+  disjoint cones 6.3 
+  [2XDivisionRecord[102X 3.2-7 
+  [2XDivisionRecordCP[102X 3.2-7 
+  [2XDivisionRecordNP[102X 6.1-6 
+  [2XDivNM[102X 4.1-9 
+  GitHub repository 1.0 
+  [2XGM2NM[102X 4.1-4 
+  [2XGM2NMList[102X 4.1-4 
+  GP2NP 2.1 
+  [2XGtNPoly[102X 5.1-3 
+  homogeneous polynomials 3.3-5 
+  [2XIAutoreduce[102X 3.2-10 
+  [2XIAutoreduceCP[102X 3.2-10 
+  [2XIAutoreduceNP[102X 6.1-10 
+  involutive divisor 3.2 
+  InvolutiveAbortLimit 3.3-3 
+  [2XInvolutiveBasis[102X 3.3-2 
+  [2XInvolutiveBasisCP[102X 3.3-2 
+  [2XInvolutiveBasisNP[102X 6.2-1 
+  [2XIPolyReduce[102X 3.2-8 
+  [2XIPolyReduceCP[102X 3.2-8 
+  [2XIPolyReduceNP[102X 6.1-7 
+  [2XIsSubwordNM[102X 4.1-7 
+  [2XJanetDivision[102X 3.2-6 
+  [2XLeadExpNM[102X 4.1-8 
+  [2XLeadVarNM[102X 4.1-8 
+  [2XLeftDivision[102X 6.1-1 
+  [2XLeftOverlapDivision[102X 6.1-3 
+  [2XLoggedIPolyReduce[102X 3.2-9 
+  [2XLoggedIPolyReduceCP[102X 3.2-9 
+  [2XLoggedIPolyReduceNP[102X 6.1-8 
+  [2XLowestLeadMonomialPosNP[102X 5.1-4 
+  [2XLtNPoly[102X 5.1-3 
+  [2XMaxDegreeNP[102X 5.1-1 
+  [2XNM2GM[102X 4.1-3 
+  [2XNM2GMList[102X 4.1-3 
+  NoncommutativeDivision 6.1-5 
+  NP2GP 2.1 
+  orderings 3.2-3 
+  [2XPommaretDivision[102X 3.2-4 
+  [2XPrefixNM[102X 4.1-5 
+  [2XPrintNM[102X 4.1-2 
+  [2XPrintNMList[102X 4.1-2 
+  [2XRightDivision[102X 6.1-2 
+  [2XRightOverlapDivision[102X 6.1-4 
+  [2XScalarMulNP[102X 5.1-2 
+  [2XStrongLeftOverlapDivision[102X 6.3-1 
+  [2XStrongRightOverlapDivision[102X 6.3-2 
+  [2XSubwordNM[102X 4.1-5 
+  [2XSubwordPosNM[102X 4.1-7 
+  [2XSuffixNM[102X 4.1-5 
+  [2XSuffixPrefixPosNM[102X 4.1-6 
+  [2XTailNM[102X 4.1-8 
+  [2XThomasDivision[102X 3.2-5 
+  [2XVerifyLoggedRecordNP[102X 6.1-9 
+  
+  
+  -------------------------------------------------------

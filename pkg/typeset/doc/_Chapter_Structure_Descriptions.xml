@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Structure_Descriptions">
+<Heading>Structure Descriptions</Heading>
+
+<P/>
+<Section Label="Chapter_Structure_Descriptions_Section_Typesetting_Structure_Descriptions_of_Groups">
+<Heading>Typesetting Structure Descriptions of Groups</Heading>
+
+<P/>
+<ManSection>
+  <Func Arg="desc" Name="TypesetStructureDescription" />
+ <Returns>  A String
+</Returns>
+ <Description>
+   Generates a typesettable representation equivalent to a given
+   structure description <A>desc</A> of a group. Said structure descriptions
+   can be calculated via <Ref BookName="ref" Func="StructureDescription"/>.
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="desc" Name="LatexStructureDescription" />
+ <Returns>  A String
+</Returns>
+ <Description>
+   Generates a LaTeX representation equivalent to a given structure description
+   <A>desc</A>. Called by <Ref Func="TypesetStructureDescription"/> as the
+   default markup language for structure description typesetting.
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="desc, sep, newsep" Name="ConcatStructDescOperands" />
+ <Returns>  A String
+</Returns>
+ <Description>
+   Concatenates the tokens parsed from splitting the string <A>desc</A> with the
+   provided separator string <A>sep</A>. It will then process the tokens
+   with <Ref Func="LatexStructureDescription"/>, and concatenate the
+   results with the given new separator <A>newsep</A>.
+<P/>
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<P/>
+ While <Ref BookName="ref" Func="StructureDescription"/> provides powerful functionality
+ in calculating the structure description of an input group, the returned string is simply
+ raw text, and does not look good when rendered in typical typesetting environment.
+<P/>
+ To improve this, the following functions have been written to help convert the structure
+ description strings into typesettable representations, that use language-specific features
+ to ensure that displaying structure descriptions aesthetically is easy and efficient.
+<P/>
+</Chapter>
+

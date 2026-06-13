@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    QDistRnd
+  </Title>
+  <Subtitle>
+    Calculate the distance of a q-ary quantum stabilizer code
+  </Subtitle>
+  <Version>
+    0.9.5
+  </Version>
+  <Author>
+    Leonid P. Pryadko<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Physics &amp; Astronomy<Br/>
+University of California<Br/>
+Riverside, CA 92521<Br/>
+USA<Br/>
+</Address>
+<Email>leonid.pryadko@gmail.com</Email>
+<Homepage>http://faculty.ucr.edu/~leonid</Homepage>
+
+  </Author>
+  <Author>
+    V. A. Shabashov<Alt Only="LaTeX"><Br/></Alt>
+<Email>vadim.art.shabashov@gmail.com</Email>
+<Homepage>https://sites.google.com/view/vadim-shabashov/</Homepage>
+
+  </Author>
+  <Author>
+    V. K. Kozin<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Physics, University of Basel<Br/>
+Klingelbergstrasse 82, CH-4056 Basel,<Br/>
+Switzerland<Br/>
+</Address>
+<Email>kozin.valera@gmail.com</Email>
+
+  </Author>
+  <Date>
+    20 November 2024
+  </Date>
+  <Copyright>
+          <Index>License</Index>                                    
+      &copyright; 2021--2024 by L. P. Pryadko, V. K. Kozin, and V. A. Shabashov<P/>    
+      &QDistRnd; package is free software;  
+      you can redistribute it and/or modify it under the terms of the
+      <URL Text="GNU General Public License">https://www.fsf.org/licenses/gpl.html</URL>
+      as published by the Free Software Foundation; either version 2 of the License,
+      or (at your option) any later version.
+      
+  </Copyright>
+  <Acknowledgements>
+          We appreciate very much all past and future comments, suggestions and 
+      contributions to this package and its documentation provided by &GAP;
+      users and developers.
+            
+  </Acknowledgements>
+  </TitlePage>

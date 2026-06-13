@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (StandardFF) - Chapter 2: Standard finite fields</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2_mj.html">[MathJax on]</a></p>
+<p><a id="X7D1270E8831F128E" name="X7D1270E8831F128E"></a></p>
+<div class="ChapSects"><a href="chap2.html#X7D1270E8831F128E">2 <span class="Heading">Standard finite fields</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7F9D926586E030D9">2.1 <span class="Heading">Definition of standard finite fields</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X82D368EB8718370E">2.2 <span class="Heading">Creating standard finite fields</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X80DCBB4F84F04DDB">2.2-1 <span class="Heading">Constructing standard finite fields</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7DD6C7C3867D84B8">2.2-2 <span class="Heading">Filters for standard fields</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X84ED04C57C4BB25B">2.3 <span class="Heading">Elements in standard finite fields</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8569D7B1786AE5FC">2.3-1 <span class="Heading">Maps for elements of standard finite fields</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7F3D740F80F68F74">2.4 <span class="Heading">Embeddings of standard finite fields</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X85BC2EF17DA2E707">2.4-1 SteinitzPair</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X851FD36881708D5E">2.4-2 Embedding</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X800EE1C5800EE1C5">2.4-3 ZZ</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X839220E3865258DA">2.4-4 MoveToSmallestStandardField</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7ECCD8D27FBA9505">2.4-5 StandardIsomorphismGF</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Standard finite fields</span></h3>
+
+<p><a id="X7F9D926586E030D9" name="X7F9D926586E030D9"></a></p>
+
+<h4>2.1 <span class="Heading">Definition of standard finite fields</span></h4>
+
+<p>In <a href="chapBib.html#biBStdFFCyc">[Lüb23]</a> we define for each prime <span class="SimpleMath">p</span> and positive integer <span class="SimpleMath">n</span> a standardized model for the finite field with <span class="SimpleMath">p^n</span> elements. This is done by defining for each prime <span class="SimpleMath">r</span> polynomials of degree <span class="SimpleMath">r</span> which define recursively <span class="SimpleMath">r</span>-power extensions of the prime field <span class="SimpleMath">GF(p)</span> and by combining these for all <span class="SimpleMath">r | n</span> in a unique tower of extensions of finite fields where the successive degrees are non-decreasing primes.</p>
+
+<p>Relative to this tower of prime degree extensions the resulting field comes with a natural basis over the prime field which we call the <em>tower basis</em>. This construction has the nice property that whenever <span class="SimpleMath">n | m</span> then the tower basis of the field with <span class="SimpleMath">p^n</span> elements is a subset of the tower basis of the field with <span class="SimpleMath">p^m</span> elements. (See <a href="chapBib.html#biBStdFFCyc">[Lüb23]</a> for more details.)</p>
+
+<p>Expressing elements as linear combination of the tower basis we define a bijection from the elements in the field of order <span class="SimpleMath">p^n</span> to the range <code class="code">[0..p^n-1]</code>; we call the number assigned to an element its <em>Steinitz number</em>.</p>
+
+<p>Via this construction each element in the algebraic closure of <span class="SimpleMath">GF(p)</span> can be identified by its degree <span class="SimpleMath">d</span> over the prime field and its Steinitz number in the field with <span class="SimpleMath">p^d</span> elements (we call this a <em>Steinitz pair</em>).</p>
+
+<p>Since arithmetic in simple algebraic extensions is more efficient than in iterated extensions we construct the fields recursively as simple extensions, and including information about the base change between the tower basis and the basis given by the powers of the generator.</p>
+
+<p><a id="X82D368EB8718370E" name="X82D368EB8718370E"></a></p>
+
+<h4>2.2 <span class="Heading">Creating standard finite fields</span></h4>
+
+<p><a id="X80DCBB4F84F04DDB" name="X80DCBB4F84F04DDB"></a></p>
+
+<h5>2.2-1 <span class="Heading">Constructing standard finite fields</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StandardFiniteField</code>( <var class="Arg">p</var>, <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FF</code>( <var class="Arg">p</var>, <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a finite field</p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StandardPrimeDegreePolynomial</code>( <var class="Arg">p</var>, <var class="Arg">r</var>, <var class="Arg">k</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a polynomial of degree <var class="Arg">r</var></p>
+
+<p>The arguments are a prime <var class="Arg">p</var> and a positive integer <var class="Arg">n</var>. The function <code class="func">FF</code> (or its synomym <code class="func">StandardFiniteField</code>) is one of the main functions of this package. It returns a standardized field <code class="code">F</code> of order <span class="SimpleMath"><var class="Arg">p</var>^<var class="Arg">n</var></span>. It is implemented as a simple extension over the prime field <code class="code">GF(p)</code> using <code class="func">AlgebraicExtension</code> (<a href="../../../doc/ref/chap67.html#X7CDA90537D2BAC8A"><span class="RefLink">Reference: AlgebraicExtension</span></a>)</p>
+
+<p>The polynomials used for the prime degree extensions are accessible with <code class="func">StandardPrimeDegreePolynomial</code>. For arguments <var class="Arg">p, r, k</var> it returns the irreducible polynomial of degree <var class="Arg">r</var> for the <var class="Arg">k</var>-th iterated extension of degree <var class="Arg">r</var> over the prime field. The polynomial is in the variable <code class="code">x</code><em>r</em><code class="code">_</code><em>k</em> and the coefficients can contain variables <code class="code">x</code><em>r</em><code class="code">_</code><em>l</em> with <span class="SimpleMath">l &lt; k</span>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Fp := FF(2, 1);</span>
+GF(2)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(2, 100);</span>
+FF(2, 100)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(F);</span>
+1267650600228229401496703205376
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p := NextPrimeInt(10^50);</span>
+100000000000000000000000000000000000000000000000151
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K := FF(p, 60);</span>
+FF(100000000000000000000000000000000000000000000000151, 60)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogInt(Size(K), 10);</span>
+3000
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(13, 9*5);</span>
+FF(13, 45)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StandardPrimeDegreePolynomial(13, 3, 1);</span>
+x3_1^3+Z(13)^7
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StandardPrimeDegreePolynomial(13, 3, 2);</span>
+x3_2^3-x3_1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StandardPrimeDegreePolynomial(13, 5, 1);</span>
+x5_1^5+Z(13)^4*x5_1^2+Z(13)^4*x5_1-Z(13)^0
+</pre></div>
+
+<p><a id="X7DD6C7C3867D84B8" name="X7DD6C7C3867D84B8"></a></p>
+
+<h5>2.2-2 <span class="Heading">Filters for standard fields</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsStandardPrimeField</code>( <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsStandardFiniteField</code>( <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsStandardFiniteFieldElement</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>These properties identify the finite fields constructed with <code class="func">FF</code> (<a href="chap2.html#X80DCBB4F84F04DDB"><span class="RefLink">2.2-1</span></a>). Prime fields constructed as <code class="code">FF(p, 1)</code> have the property <code class="func">IsStandardPrimeField</code>. They are identical with <code class="code">GF(p)</code>, but calling them via <code class="func">FF</code> (<a href="chap2.html#X80DCBB4F84F04DDB"><span class="RefLink">2.2-1</span></a>) we store some additional information in these objects.</p>
+
+<p>The fields constructed by <code class="code">FF(p,k)</code> with <code class="code">k</code> <span class="SimpleMath">&gt; 1</span> have the property <code class="func">IsStandardFiniteField</code>. Elements <var class="Arg">x</var> in such a field are in <code class="func">IsStandardFiniteFieldElement</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(19,1);</span>
+GF(19)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsStandardFiniteField(F);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsStandardPrimeField(F);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(23,48);</span>
+FF(23, 48)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsStandardFiniteField(F);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsStandardFiniteFieldElement(Random(F));</span>
+true
+</pre></div>
+
+<p><a id="X84ED04C57C4BB25B" name="X84ED04C57C4BB25B"></a></p>
+
+<h4>2.3 <span class="Heading">Elements in standard finite fields</span></h4>
+
+<p>For fields in <code class="func">IsStandardFiniteField</code> (<a href="chap2.html#X7DD6C7C3867D84B8"><span class="RefLink">2.2-2</span></a>) we provide functions to map elements to their linear combination of the tower basis, to their Steinitz number and Steinitz pair, or to their representing multivariate polynomial with respect to all prime degree extensions, and vice versa.</p>
+
+<p><a id="X8569D7B1786AE5FC" name="X8569D7B1786AE5FC"></a></p>
+
+<h5>2.3-1 <span class="Heading">Maps for elements of standard finite fields</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsVector</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: a vector over prime field of <code class="code">F</code></p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElementVector</code>( <var class="Arg">F</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: an element in <code class="code">F</code></p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsPolynomial</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: a polynomial in variables of the tower of <code class="code">F</code></p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElementPolynomial</code>( <var class="Arg">F</var>, <var class="Arg">pol</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: an element in <code class="code">F</code></p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SteinitzNumber</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: an integer</p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElementSteinitzNumber</code>( <var class="Arg">F</var>, <var class="Arg">nr</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: an element in <code class="code">F</code></p>
+
+<p>Here, <var class="Arg">F</var> is always a standard finite field (<code class="func">IsStandardFiniteField</code> (<a href="chap2.html#X7DD6C7C3867D84B8"><span class="RefLink">2.2-2</span></a>)) and <var class="Arg">a</var> is an element of <var class="Arg">F</var>.</p>
+
+<p><code class="func">AsVector</code> returns the coefficient vector of <var class="Arg">a</var> with respect to the tower basis of <var class="Arg">F</var>. And vice versa <code class="func">ElementVector</code> returns the element of <var class="Arg">F</var> with the given coefficient vector.</p>
+
+<p>Similarly, <code class="func">AsPolynomial</code> returns the (reduced) polynomial in the indeterminates defining the tower of <var class="Arg">F</var>. Here, for each prime <span class="SimpleMath">r</span> dividing the degree of the field the polynomial defining the <span class="SimpleMath">k</span>-th extension of degree <span class="SimpleMath">r</span> over the prime field is written in the variable <code class="code">x</code><span class="SimpleMath">r</span><code class="code">_</code><span class="SimpleMath">k</span>. And <code class="func">ElementPolynomial</code> returns the element of <var class="Arg">F</var> represented by the given polynomial (which does not need to be reduced).</p>
+
+<p>Finally, <code class="func">SteinitzNumber</code> returns the Steinitz number of <var class="Arg">a</var>. And <code class="func">ElementSteinitzNumber</code> returns the element with given Steinitz number.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(17, 12);</span>
+FF(17, 12)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := PrimitiveElement(F);; a := a^11-3*a^5+a;</span>
+ZZ(17,12,[0,1,0,0,0,14,0,0,0,0,0,1])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">v := AsVector(a);</span>
+&lt; immutable compressed vector length 12 over GF(17) &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a = ElementVector(F, v);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ExtRepOfObj(a) = v * TowerBasis(F);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pol := AsPolynomial(a);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ElementPolynomial(F, pol^10) = a^10;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">nr := SteinitzNumber(a);</span>
+506020624175737
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a = ElementSteinitzNumber(F, nr);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## primitive element of FF(17, 6)</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y := ElementSteinitzNumber(F, 17^5);</span>
+ZZ(17,12,[0,0,1,0,0,0,12,0,0,0,5,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y = ValuePol([0,0,1,0,0,0,12,0,0,0,5,0], PrimitiveElement(F));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x6 := Indeterminate(FF(17,1), "x6");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPolynomial(FF(17,1), y, x6) = DefiningPolynomial(FF(17,6));</span>
+true
+</pre></div>
+
+<p><a id="X7F3D740F80F68F74" name="X7F3D740F80F68F74"></a></p>
+
+<h4>2.4 <span class="Heading">Embeddings of standard finite fields</span></h4>
+
+<p>The tower basis of a standard finite field <code class="code">F</code> contains the tower basis of any subfield. This yields a construction of canonical embeddings of all subfields of <code class="code">F</code> into <code class="code">F</code>. And one can easily read off the smallest subfield containing an element in <code class="code">F</code> from its coefficient vector with respect to the tower basis. Each element of the algebraic closure of <code class="code">FF(p,1)</code> is uniquely determined by its degree <code class="code">d</code> and its Steinitz number in <code class="code">FF(p, d)</code>.</p>
+
+<p><a id="X85BC2EF17DA2E707" name="X85BC2EF17DA2E707"></a></p>
+
+<h5>2.4-1 SteinitzPair</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SteinitzPair</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a pair of integers</p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SteinitzPair</code>( <var class="Arg">K</var>, <var class="Arg">snr</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: a pair of integers</p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SteinitzNumber</code>( <var class="Arg">K</var>, <var class="Arg">pair</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: an integer</p>
+
+<p>The argument <var class="Arg">a</var> must be an element in <code class="func">IsStandardFiniteFieldElement</code> (<a href="chap2.html#X7DD6C7C3867D84B8"><span class="RefLink">2.2-2</span></a>). Then <code class="func">SteinitzPair</code> returns a pair <code class="code">[d, nr]</code> where <code class="code">d</code> is the degree of <var class="Arg">a</var> over the prime field <code class="code">FF(p, 1)</code> and <code class="code">nr</code> is the Steinitz number of <var class="Arg">a</var> considered as element of <code class="code">FF(p, d)</code>.</p>
+
+<p>In the second variant a standard finite field <var class="Arg">K</var> is given and the Steinitz number of an element in <var class="Arg">K</var> and the result is the Steinitz pair of the corresponding element.</p>
+
+<p>The inverse map is provided by a method for <code class="func">SteinitzNumber</code> which gets a standard finite field and a Steinitz pair.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(7, 360);</span>
+FF(7, 360)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t := ElementSteinitzNumber(F, 7^10);; # prim. elt of FF(7,12)</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">sp := SteinitzPair(t);</span>
+[ 12, 117649 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H := FF(7, 12);</span>
+FF(7, 12)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := ElementSteinitzNumber(H, 117649);</span>
+ZZ(7,12,[0,1,0,0,0,0,0,0,0,0,0,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Value(MinimalPolynomial(FF(7,1), t), b);</span>
+ZZ(7,12,[0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">nr := SteinitzNumber(t);</span>
+282475249
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">nr = SteinitzNumber(F, sp);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">sp = SteinitzPair(F, nr);</span>
+true
+</pre></div>
+
+<p><a id="X851FD36881708D5E" name="X851FD36881708D5E"></a></p>
+
+<h5>2.4-2 Embedding</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Embedding</code>( <var class="Arg">H</var>, <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: a field homomorphism</p>
+
+<p>Let <var class="Arg">F</var> and <var class="Arg">H</var> be standard finite fields and <var class="Arg">H</var> be isomorphic to a subfield of <var class="Arg">F</var>. This function returns the canonical embedding of <var class="Arg">H</var> into <var class="Arg">F</var>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(7, 360);</span>
+FF(7, 360)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H := FF(7, 45);</span>
+FF(7, 45)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">emb := Embedding(H, F);</span>
+MappingByFunction( FF(7, 45), FF(7, 360), function( x ) ... end )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y := PrimitiveElement(H);</span>
+ZZ(7,45,[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := y^emb;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">((y+One(H))^12345)^emb = (x+One(F))^12345;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PreImageElm(emb, x^5);</span>
+ZZ(7,45,[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PreImageElm(emb, PrimitiveElement(F));</span>
+fail
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SteinitzNumber(y);</span>
+13841287201
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SteinitzNumber(x) mod 10^50;</span>
+72890819326613454654477690085519113574118965817601
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SteinitzPair(x);</span>
+[ 45, 13841287201 ]
+</pre></div>
+
+<p><a id="X800EE1C5800EE1C5" name="X800EE1C5800EE1C5"></a></p>
+
+<h5>2.4-3 ZZ</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZZ</code>( <var class="Arg">p</var>, <var class="Arg">n</var>, <var class="Arg">coeffs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZZ</code>( <var class="Arg">p</var>, <var class="Arg">n</var>, <var class="Arg">ffe</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an element in <code class="code">FF(<var class="Arg">p</var>, <var class="Arg">n</var>)</code></p>
+
+<p>For a prime <var class="Arg">p</var>, positive integer <var class="Arg">n</var> and an integer list <var class="Arg">coeffs</var> this function returns the element in <code class="code">FF(<var class="Arg">p</var>, <var class="Arg">n</var>)</code> represented by the polynomial with coefficient list <var class="Arg">coeffs</var> modulo <var class="Arg">p</var>. Elements in standard finite fields are also printed in this way.</p>
+
+<p>For convenience the third argument <var class="Arg">ffe</var> can be in `GF(p,n)` (see <code class="func">GF</code> (<a href="../../../doc/ref/chap59.html#X8592DBB086A8A9BE"><span class="RefLink">Reference: GF for characteristic and degree</span></a>) and <code class="func">IsFFE</code> (<a href="../../../doc/ref/chap59.html#X7D3DF32C84FEBD25"><span class="RefLink">Reference: IsFFE</span></a>)). This returns the image of <var class="Arg">ffe</var> under the <code class="func">StandardIsomorphismGF</code> (<a href="chap2.html#X7ECCD8D27FBA9505"><span class="RefLink">2.4-5</span></a>) of <code class="code">FF(<var class="Arg">p</var>,<var class="Arg">n</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := ZZ(19,5,[1,2,3,4,5]);</span>
+ZZ(19,5,[1,2,3,4,5])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := PrimitiveElement(FF(19,5));</span>
+ZZ(19,5,[0,1,0,0,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x = [1,2,3,4,5]*[a^0,a^1,a^2,a^3,a^4];</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">One(FF(19,5)); # elements in prime field abbreviated</span>
+ZZ(19,5,[1])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">One(FF(19,5)) = ZZ(19,5,[1]);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ZZ(19,5,Z(19^5)); # zero of ConwayPolynomial(19,5)</span>
+ZZ(19,5,[12,5,3,4,5])
+</pre></div>
+
+<p><a id="X839220E3865258DA" name="X839220E3865258DA"></a></p>
+
+<h5>2.4-4 MoveToSmallestStandardField</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MoveToSmallestStandardField</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \+</code>( <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \*</code>( <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \-</code>( <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \/</code>( <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns: a field element</p>
+
+<p>Here <var class="Arg">x</var> and <var class="Arg">y</var> must be elements in standard finite fields (of the same characteristic).</p>
+
+<p>Then <code class="func">MoveToSmallestStandardField</code> returns the element <var class="Arg">x</var> as element of the smallest possible degree extension over the prime field.</p>
+
+<p>The arithmetic operations are even possible when <var class="Arg">x</var> and <var class="Arg">y</var> are not represented as elements in the same field. In this case the elements are first mapped to the smallest field containing both.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(1009,4);</span>
+FF(1009, 4)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := FF(1009,6);</span>
+FF(1009, 6)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := (PrimitiveElement(F)+One(F))^13;</span>
+ZZ(1009,4,[556,124,281,122])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y := (PrimitiveElement(G)+One(G))^5;</span>
+ZZ(1009,6,[1,5,10,10,5,1])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x+y;</span>
+ZZ(1009,12,[557,0,936,713,332,0,462,0,843,191,797,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x-y;</span>
+ZZ(1009,12,[555,0,73,713,677,0,97,0,166,191,212,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x*y;</span>
+ZZ(1009,12,[253,289,700,311,109,851,345,408,813,657,147,887])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x/y;</span>
+ZZ(1009,12,[690,599,714,648,184,217,563,130,251,675,73,782])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">z  := -y + (x+y);</span>
+ZZ(1009,12,[556,0,0,713,0,0,784,0,0,191,0,0])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SteinitzPair(z);</span>
+[ 4, 125450261067 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x=z;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MoveToSmallestStandardField(z);</span>
+ZZ(1009,4,[556,124,281,122])
+</pre></div>
+
+<p><a id="X7ECCD8D27FBA9505" name="X7ECCD8D27FBA9505"></a></p>
+
+<h5>2.4-5 StandardIsomorphismGF</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StandardIsomorphismGF</code>( <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: a field isomorphism</p>
+
+<p>The argument <var class="Arg">F</var> must be a standard finite field, say <code class="code">FF(p,n)</code> such that <strong class="pkg">GAP</strong> can generate <code class="code">GF(p,n)</code>. This function returns the field isomorphism from <code class="code">GF(p,n)</code> to <var class="Arg">F</var>, which sends <code class="code">Z(p,n)</code> to the element with Steinitz pair computed by <code class="func">SteinitzPairConwayGenerator</code> (<a href="chap4.html#X784E128A811F5C91"><span class="RefLink">4.4-3</span></a>).</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F := FF(13,21);</span>
+FF(13, 21)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso := StandardIsomorphismGF(F);</span>
+MappingByFunction( GF(13^21), FF(13, 21), function( x ) ... end )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K := GF(13,21);</span>
+GF(13^21)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Random(K);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l := [1,2,3,4,5];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ValuePol(l, x)^iso = ValuePol(l, x^iso);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y :=  ElementSteinitzNumber(F, SteinitzPairConwayGenerator(F)[2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PreImageElm(iso, y);</span>
+z
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

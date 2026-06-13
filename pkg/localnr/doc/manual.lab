@@ -1,0 +1,43 @@
+\GAPDocLabFile{localnr}
+\makelabel{localnr:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{localnr:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{localnr:Local nearrings}{1}{X7FA640B47E64CE5F}
+\makelabel{localnr:The local nearrings library}{1.1}{X83C317B77CB6A7D2}
+\makelabel{localnr:Functions}{2}{X86FA580F8055B274}
+\makelabel{localnr:Group functions}{2.1}{X86271CEC83E77A58}
+\makelabel{localnr:Nearring functions}{2.2}{X86A9AE187AF165C9}
+\makelabel{localnr:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{localnr:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{localnr:Index}{Ind}{X83A0356F839C696F}
+\makelabel{localnr:AdditiveGroupsOfLibraryOfLNRsOfOrder}{1.1.1}{X816BBAC67F5CE775}
+\makelabel{localnr:LibraryOfLNRsOnGroup}{1.1.2}{X82F6B0D18723BCC7}
+\makelabel{localnr:LocalNearRing}{1.1.3}{X7F95FD0A7F953C41}
+\makelabel{localnr:AllLocalNearRings}{1.1.4}{X83C221F187A90BBE}
+\makelabel{localnr:NumberLocalNearRings}{1.1.5}{X78DCE2A07C830905}
+\makelabel{localnr:IsAdditiveGroupOfLibraryOfLNRs}{1.1.6}{X8147B516875F3499}
+\makelabel{localnr:IsMinimalNonAbelianGroup}{2.1.1}{X7EDBADD77E2638BD}
+\makelabel{localnr:IsMetacyclicPGroup}{2.1.2}{X83C3B54B789609D4}
+\makelabel{localnr:EndoOrbitsOfGroup}{2.1.3}{X81771B097A79D6BF}
+\makelabel{localnr:IsEndoCyclicGroup}{2.1.4}{X784893BB7947F14D}
+\makelabel{localnr:UnitsOfNearRing}{2.2.1}{X877D0B1B8729395F}
+\makelabel{localnr:IsLocalNearRing}{2.2.2}{X7E2BB4F27E6B71E6}
+\makelabel{localnr:IsLocalRing}{2.2.3}{X7B37F8E185604257}
+\makelabel{localnr:NearRingNonUnits}{2.2.4}{X87400EFF857CCFD8}
+\makelabel{localnr:SubNearRingByGenerators}{2.2.5}{X7CE616A982D407C0}
+\makelabel{localnr:NonUnitsAsAdditiveSubgroup}{2.2.6}{X8321BFC6856907B6}
+\makelabel{localnr:NonUnitsAsNearRingIdeal}{2.2.7}{X8113B5737BC3D587}
+\makelabel{localnr:MultiplicativeSemigroupOfNearRing}{2.2.8}{X80619E5279778AE6}
+\makelabel{localnr:NonUnitsAsMultiplicativeSemigroup}{2.2.9}{X83280C7283BA2D92}
+\makelabel{localnr:IsOneGeneratedNearRing}{2.2.10}{X78C3A806874CB77D}
+\makelabel{localnr:AutomorphismsAssociatedWithNearRingUnits}{2.2.11}{X836935BD79EE8810}
+\makelabel{localnr:EndomorphismsAssociatedWithNearRingElements}{2.2.12}{X847294DD81E00F8C}
+\makelabel{localnr:SemidirectProductAssociatedWithNearRing}{2.2.13}{X7F82AB357B378109}
+\makelabel{localnr:IsCircleSubgroupOfNearRing}{2.2.14}{X786B756C79BDA836}
+\makelabel{localnr:FactorizedGroupAssociatedWithCircleSubgroupOfNearRing}{2.2.15}{X79C31AE57BB7CAF4}
+\makelabel{localnr:ConstantPartOfNearRing}{2.2.16}{X790356BF873963F4}
+\makelabel{localnr:ZeroSymmetricPartOfNearRing}{2.2.17}{X7F2C663584E108AD}
+\makelabel{localnr:GroupOfUnitsAsGroupOfAutomorphisms}{2.2.18}{X8000A8D98567B2F8}
+\makelabel{localnr:IsDistributiveElementOfNearRing}{2.2.19}{X870157C878E9606B}
+\makelabel{localnr:IsSemiDistributiveNearRing}{2.2.20}{X7F84066685C00F01}
+\makelabel{localnr:IsNearRingWithIdentity}{2.2.21}{X798571F68791D67A}
+\makelabel{localnr:IsSubNearRing}{2.2.22}{X7A513FD081323B01}

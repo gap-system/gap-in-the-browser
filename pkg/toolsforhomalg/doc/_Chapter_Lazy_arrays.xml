@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Lazy_arrays">
+<Heading>Lazy arrays</Heading>
+
+<Section Label="Chapter_Lazy_arrays_Section_GAP_categories">
+<Heading>GAP categories</Heading>
+
+<ManSection>
+  <Filt Arg="L" Type="Category" Name="IsLazyArray" Label="for IsComponentObjectRep and IsList"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of lazy arrays.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Lazy_arrays_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection Label="lazyarray">
+  <Func Arg="n, func, values, type" Name="LazyArrayWithValues" />
+  <Func Arg="n, func" Name="LazyArray" />
+  <Func Arg="length" Name="LazyStandardInterval" />
+  <Func Arg="length, start" Name="LazyInterval" />
+  <Func Arg="n, number" Name="LazyConstantArray" />
+  <Func Arg="list" Name="LazyArrayFromList" />
+ <Description>
+  Construct a lazy array out of the nonnegative integer <A>n</A>
+  and the function <A>func</A> defined in the range [ 0 .. <A>n</A> ],
+  and possibly empty (sparse) list <A>values</A> of a posteriori possibly known values.
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

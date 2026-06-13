@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[
+    <#Include SYSTEM "_entities.xml">
+]
+>
+<Book Name="lpres">
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+<Body>
+<#Include SYSTEM "preface.xml">
+<#Include SYSTEM "lpresented.xml">
+<#Include SYSTEM "nq.xml">
+<#Include SYSTEM "subgrps.xml">
+<#Include SYSTEM "schumu.xml">
+<#Include SYSTEM "pargap.xml">
+</Body>
+<Bibliography Databases="lpres.bib"/>
+<TheIndex/>
+</Book>

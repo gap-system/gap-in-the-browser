@@ -1,0 +1,303 @@
+  
+  [1X10 [33X[0;0YGeneralized Straight Line Programs[133X[101X
+  
+  [33X[0;0YThe  functions described in this chapter have been written by Thomas Breuer,
+  they are available since [5XUtils[105X 0.94.[133X
+  
+  [33X[0;0Y[13XGeneralized  straight  line programs[113X (in the following abbreviated as [13Xgslps[113X)
+  are a generalization of the straight line programs that are described in the
+  [5XGAP[105X  library,  see  [14X'Reference:  Straight  Line  Programs'[114X.  Like the latter
+  objects,  gslps describe an efficient way for evaluating an abstract word at
+  concrete generators. The difference is that gslps can be built from existing
+  (generalized)  straight  line  programs,  whereas a straight line program is
+  given  by  an  explicit list of instructions (see [2XLinesOfStraightLineProgram[102X
+  ([14XReference:  LinesOfStraightLineProgram[114X)). So the advantages of using a gslp
+  instead   of   constructing   an   equivalent  straight  line  program  (see
+  [2XEquivalentStraightLineProgram[102X ([14X10.1-7[114X)) are that[133X
+  
+  [30X    [33X[0;6Yavailable objects (the building blocks of the gslp) are reused,[133X
+  
+  [30X    [33X[0;6Ythe  internal  structure  of  the gslp is retained (one can access the
+        building blocks if one wants), and[133X
+  
+  [30X    [33X[0;6Yin  the evaluation of a gslp, the intermediate results that arise in a
+        building  block  of  the  gslp can be garbage collected as soon as the
+        evaluation of this building block has finished.[133X
+  
+  [33X[0;0YA   gslp   in   [5XGAP[105X   is   represented   by   an   object  in  the  category
+  [2XIsGeneralizedStraightLineProgram[102X  ([14X10.1-1[114X).  This  object has exactly one of
+  the following forms.[133X
+  
+  [30X    [33X[0;6YIt  is  a  straight  line  program,  that  is, it lies in the category
+        [2XIsStraightLineProgram[102X    ([14XReference:    IsStraightLineProgram[114X),    and
+        evaluation     at     some    group    elements    is    defined    by
+        [2XResultOfStraightLineProgram[102X ([14XReference: ResultOfStraightLineProgram[114X).[133X
+  
+  [30X    [33X[0;6YIt  is of [21Xunion[121X kind, that is, the defining data are a nonempty list [22Xl[122X
+        of  gslps, and evaluation at some group elements means to evaluate the
+        gslps in [22Xl[122X at these group elements, and to return the concatenation of
+        the results.[133X
+  
+  [30X    [33X[0;6YIt  is of [21Xcompose[121X kind, that is, the defining data are a nonempty list
+        [22Xl[122X  of  gslps,  and evaluation at some group elements means to evaluate
+        [22Xl[1][122X  at  these  elements,  then to evaluate [22Xl[2][122X at the result of the
+        first evaluation, and so on, and to return the last result.[133X
+  
+  [33X[0;0YHere  are  two  typical situations where gslps arise. In both cases, suppose
+  that a list [22Xl[122X of standard generators for a group [22XG[122X is given.[133X
+  
+  [31X1[131X   [33X[0;6YSuppose  that we know a straight line program for computing generators
+        [22Xl'[122X of a maximal subgroup [22XM[122X of [22XG[122X from [22Xl[122X. For example, these data may be
+        taken  from  the [5XATLAS[105X of Group Representations [WWT+]. If [22XM[122X is also a
+        group for which the [5XATLAS[105X of Group Representations contains generators
+        and straight line programs, we may be interested in computing standard
+        generators [22Xl''[122X for [22XM[122X from [22Xl'[122X.[133X
+  
+        [33X[0;6YFor  that,  a second straight line program may be needed, and it makes
+        sense  to  encode  the computation of [22Xl''[122X from [22Xl[122X via a gslp of [21Xcompose[121X
+        kind.[133X
+  
+  [31X2[131X   [33X[0;6YSuppose that we are in fact interested in a downward extension [22XH[122X of [22XG[122X,
+        and  that  [22Xπ[122X is the natural epimorphism from [22XH[122X to [22XG[122X, which maps a list
+        [22XL[122X,  say,  of  standard generators of [22XH[122X to [22Xl[122X. Then the above gslp for [22XG[122X
+        can  be applied to [22XL[122X, but the result [22XL'[122X may generate a proper subgroup
+        of [22Xπ^-1(M)[122X because some part of the kernel of [22Xπ[122X is missing.[133X
+  
+        [33X[0;6YA  list  [22XK[122X  of  generators  of  the  kernel of [22Xπ[122X can be described by a
+        straight line program that takes [22XL[122X as its input, and it makes sense to
+        encode  the  computation of the concatenation of [22XL'[122X and [22XK[122X from [22XL[122X via a
+        gslp of [21Xunion[121X kind.[133X
+  
+  [33X[0;0YGslps can be constructed using [2XGeneralizedStraightLineProgram[102X ([14X10.1-2[114X).[133X
+  
+  [33X[0;0YDefining  attributes  for gslps are [2XNrInputsOfGeneralizedStraightLineProgram[102X
+  ([14X10.1-4[114X)  and  [2XDataOfGeneralizedStraightLineProgram[102X  ([14X10.1-3[114X).  The probably
+  most         interesting         operation        for        gslps        is
+  [2XResultOfGeneralizedStraightLineProgram[102X ([14X10.1-6[114X).[133X
+  
+  [33X[0;0YCurrently  we  do  not  intend  to provide methods applicable to generalized
+  straight line programs for all operations that are defined for straight line
+  programs.  For  example,  there  is  no  [2XIntermediateResultOfSLP[102X ([14XReference:
+  IntermediateResultOfSLP[114X) method for generalized straight line programs.[133X
+  
+  [33X[0;0YSpecial  methods  applicable  to  gslps  are  installed  for  the operations
+  [2XIsInternallyConsistent[102X  ([14X10.1-8[114X),  [2XViewString[102X  ([14XReference:  ViewString[114X), and
+  [2XString[102X ([14XReference: String[114X).[133X
+  
+  
+  [1X10.1 [33X[0;0YFunctions for Generalized Straight Line Programs[133X[101X
+  
+  [1X10.1-1 IsGeneralizedStraightLineProgram[101X
+  
+  [33X[1;0Y[29X[2XIsGeneralizedStraightLineProgram[102X( [3Xobj[103X ) [32X category[133X
+  
+  [33X[0;0YEach  generalized  straight  line  program  in  [5XGAP[105X  lies  in  the  category
+  [2XIsGeneralizedStraightLineProgram[102X.  Examples are straight line programs, that
+  is,    objects    in    the   category   [2XIsStraightLineProgram[102X   ([14XReference:
+  IsStraightLineProgram[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xgslp:= GeneralizedStraightLineProgram( "union",[127X[104X
+    [4X[25X>[125X [27X              [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );[127X[104X
+    [4X[28X<generalized straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XIsGeneralizedStraightLineProgram( gslp );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xslp:= StraightLineProgram( [[[1,2]]], 1 );[127X[104X
+    [4X[28X<straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XIsGeneralizedStraightLineProgram( slp );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsGeneralizedStraightLineProgram( [ slp, slp ] );[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X10.1-2 [33X[0;0YGeneralizedStraightLineProgram[133X[101X
+  
+  [33X[1;0Y[29X[2XGeneralizedStraightLineProgram[102X( [3Xlines[103X[, [3Xnrgens[103X] ) [32X function[133X
+  [33X[1;0Y[29X[2XGeneralizedStraightLineProgram[102X( [3Xkind[103X, [3Xlist[103X ) [32X function[133X
+  
+  [33X[0;0YIn  the  first  form,  [3Xlines[103X  must  be a list of lists that defines a unique
+  straight     line     program     (see [2XIsStraightLineProgram[102X     ([14XReference:
+  IsStraightLineProgram[114X));   in   this   case   [2XGeneralizedStraightLineProgram[102X
+  delegates  to [2XStraightLineProgram[102X ([14XReference: StraightLineProgram for a list
+  of lines (and the number of generators)[114X).[133X
+  
+  [33X[0;0YIn  the  second  form, [3Xkind[103X must be one of the strings [10X"union"[110X or [10X"compose"[110X,
+  and  [3Xlist[103X  must be a nonempty list such that each of its entries is either a
+  gslp  or  a  list  [22Xl[122X,  say, such that [2XCallFuncList[102X ([14XReference: CallFuncList[114X)
+  applied to [2XGeneralizedStraightLineProgram[102X and [22Xl[122X returns a gslp.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGeneralizedStraightLineProgram( [[[1,2]]], 1 );[127X[104X
+    [4X[28X<straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XGeneralizedStraightLineProgram( "union",[127X[104X
+    [4X[25X>[125X [27X[ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );[127X[104X
+    [4X[28X<generalized straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XGeneralizedStraightLineProgram( "compose",[127X[104X
+    [4X[25X>[125X [27X[ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );[127X[104X
+    [4X[28X<generalized straight line program>[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-3 DataOfGeneralizedStraightLineProgram[101X
+  
+  [33X[1;0Y[29X[2XDataOfGeneralizedStraightLineProgram[102X( [3Xgslp[103X ) [32X attribute[133X
+  
+  [33X[0;0YFor  a  generalized  straight  line program [3Xgslp[103X that is [13Xnot[113X a straight line
+  program,  [2XDataOfGeneralizedStraightLineProgram[102X returns a list of length two,
+  the  first  entry being either [10X"union"[110X or [10X"compose"[110X and the second being the
+  list of defining generalized straight line programs.[133X
+  
+  [33X[0;0YIf  [3Xgslp[103X  is a straight line program then this attribute is not set in [3Xgslp[103X.
+  There is no default method to compute the value if it is not stored.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xgslp:= GeneralizedStraightLineProgram( "union",[127X[104X
+    [4X[25X>[125X [27X              [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );[127X[104X
+    [4X[28X<generalized straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XDataOfGeneralizedStraightLineProgram( gslp );[127X[104X
+    [4X[28X[ "union", [ <straight line program>, <straight line program> ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-4 NrInputsOfGeneralizedStraightLineProgram[101X
+  
+  [33X[1;0Y[29X[2XNrInputsOfGeneralizedStraightLineProgram[102X( [3Xgslp[103X ) [32X attribute[133X
+  
+  [33X[0;0YFor  a  generalized  straight  line  program [3Xgslp[103X, this function returns the
+  number of generators that are needed as input.[133X
+  
+  [33X[0;0YIf  [3Xgslp[103X  is a straight line program then it may be necessary that the value
+  is  set  in  the  construction  of  [3Xgslp[103X,  see [2XNrInputsOfStraightLineProgram[102X
+  ([14XReference:  NrInputsOfStraightLineProgram[114X).  If [3Xgslp[103X is not a straight line
+  program  then  the  value  is  determined by the (generalized) straight line
+  programs from which [3Xgslp[103X is constructed.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNrInputsOfGeneralizedStraightLineProgram([127X[104X
+    [4X[25X>[125X [27X       GeneralizedStraightLineProgram( "union",[127X[104X
+    [4X[25X>[125X [27X           [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] ) );[127X[104X
+    [4X[28X1[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIn  order  to  avoid  the  introduction  of  unnecessary  filters, we define
+  [2XNrInputsOfGeneralizedStraightLineProgram[102X    just    as    a    synonym    of
+  [2XNrInputsOfStraightLineProgram[102X ([14XReference: NrInputsOfStraightLineProgram[114X).[133X
+  
+  [1X10.1-5 NrOutputsOfGeneralizedStraightLineProgram[101X
+  
+  [33X[1;0Y[29X[2XNrOutputsOfGeneralizedStraightLineProgram[102X( [3Xgslp[103X ) [32X attribute[133X
+  
+  [33X[0;0YFor  a  generalized  straight  line  program [3Xgslp[103X, this function returns the
+  number   of   elements  returned  by  [2XResultOfGeneralizedStraightLineProgram[102X
+  ([14X10.1-6[114X) when [3Xgslp[103X is evaluated.[133X
+  
+  [33X[0;0YNote  that  the  [5XGAP[105X  library  does not define a corresponding attribute for
+  straight line programs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNrOutputsOfGeneralizedStraightLineProgram([127X[104X
+    [4X[25X>[125X [27X       GeneralizedStraightLineProgram( "union",[127X[104X
+    [4X[25X>[125X [27X           [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] ) );[127X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27XNrOutputsOfGeneralizedStraightLineProgram([127X[104X
+    [4X[25X>[125X [27X       GeneralizedStraightLineProgram( "compose",[127X[104X
+    [4X[25X>[125X [27X           [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] ) );[127X[104X
+    [4X[28X1[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-6 ResultOfGeneralizedStraightLineProgram[101X
+  
+  [33X[1;0Y[29X[2XResultOfGeneralizedStraightLineProgram[102X( [3Xgslp[103X, [3Xgens[103X ) [32X operation[133X
+  
+  [33X[0;0Y[2XResultOfGeneralizedStraightLineProgram[102X  evaluates  the  generalized straight
+  line  program  (see [2XIsGeneralizedStraightLineProgram[102X  ([14X10.1-1[114X))  [3Xgslp[103X at the
+  group elements in the list [3Xgens[103X, as follows.[133X
+  
+  [30X    [33X[0;6YIf   [3Xgslp[103X   is   a   straight   line   program   then   the  value  of
+        [2XResultOfStraightLineProgram[102X  ([14XReference:  ResultOfStraightLineProgram[114X)
+        is returned.[133X
+  
+  [30X    [33X[0;6YIf  [3Xgslp[103X  is of [21Xunion[121X kind then [2XResultOfGeneralizedStraightLineProgram[102X
+        is applied to each of the involved generalized straight line programs,
+        with  second  argument  [3Xgens[103X,  and the concatenation of the results is
+        returned.[133X
+  
+  [30X    [33X[0;6YIf [3Xgslp[103X is of [21Xcompose[121X kind then [2XResultOfGeneralizedStraightLineProgram[102X
+        is  first  called  with  the  first involved generalized straight line
+        program  and  [3Xgens[103X,  then  the  operation  is  called  with the second
+        involved  generalized  straight  line  program  and the result of this
+        call, and so on; the last such result is returned.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xgens:= [ (1,2,3,4,5,6) ];;[127X[104X
+    [4X[25Xgap>[125X [27Xgslp:= GeneralizedStraightLineProgram( "union",[127X[104X
+    [4X[25X>[125X [27X              [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );[127X[104X
+    [4X[28X<generalized straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XResultOfGeneralizedStraightLineProgram( gslp, gens );[127X[104X
+    [4X[28X[ (1,3,5)(2,4,6), (1,4)(2,5)(3,6) ][128X[104X
+    [4X[25Xgap>[125X [27Xgslp:= GeneralizedStraightLineProgram( "compose",[127X[104X
+    [4X[25X>[125X [27X              [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );[127X[104X
+    [4X[28X<generalized straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XResultOfGeneralizedStraightLineProgram( gslp, gens );[127X[104X
+    [4X[28X[ () ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIn  order  to  avoid  the  introduction of unnecessary operations, we define
+  [2XResultOfGeneralizedStraightLineProgram[102X     just     as    a    synonym    of
+  [2XResultOfStraightLineProgram[102X ([14XReference: ResultOfStraightLineProgram[114X).[133X
+  
+  [1X10.1-7 EquivalentStraightLineProgram[101X
+  
+  [33X[1;0Y[29X[2XEquivalentStraightLineProgram[102X( [3Xgslp[103X ) [32X attribute[133X
+  
+  [33X[0;0YFor  a generalized straight line program [3Xgslp[103X, [2XEquivalentStraightLineProgram[102X
+  returns  a straight line program such that evaluating [3Xgslp[103X and this straight
+  line program with [2XResultOfGeneralizedStraightLineProgram[102X ([14X10.1-6[114X) yields the
+  same output, for any list of input elements.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xgslp:= GeneralizedStraightLineProgram( "union",[127X[104X
+    [4X[25X>[125X [27X              [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );[127X[104X
+    [4X[28X<generalized straight line program>[128X[104X
+    [4X[25Xgap>[125X [27Xslp:= EquivalentStraightLineProgram( gslp );[127X[104X
+    [4X[28X<straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XDisplay( slp );[127X[104X
+    [4X[28X# input:[128X[104X
+    [4X[28Xr:= [ g1 ];[128X[104X
+    [4X[28X# program:[128X[104X
+    [4X[28X# return values:[128X[104X
+    [4X[28X[ r[1]^2, r[1]^3 ][128X[104X
+    [4X[25Xgap>[125X [27Xgslp:= GeneralizedStraightLineProgram( "compose",[127X[104X
+    [4X[25X>[125X [27X              [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );[127X[104X
+    [4X[28X<generalized straight line program>[128X[104X
+    [4X[25Xgap>[125X [27Xslp:= EquivalentStraightLineProgram( gslp );[127X[104X
+    [4X[28X<straight line program>[128X[104X
+    [4X[25Xgap>[125X [27XDisplay( slp );[127X[104X
+    [4X[28X# input:[128X[104X
+    [4X[28Xr:= [ g1 ];[128X[104X
+    [4X[28X# program:[128X[104X
+    [4X[28Xr[2]:= r[1]^2;[128X[104X
+    [4X[28Xr[1]:= r[2];[128X[104X
+    [4X[28X# return values:[128X[104X
+    [4X[28X[ r[1]^3 ][128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-8 IsInternallyConsistent[101X
+  
+  [33X[1;0Y[29X[2XIsInternallyConsistent[102X( [3Xgslp[103X ) [32X method[133X
+  
+  [33X[0;0YFor  a  generalized  straight  line  program [3Xgslp[103X, it is checked whether all
+  (generalized) straight line programs from which [3Xgslp[103X is built are internally
+  consistent,  and  whether their numbers of inputs and outputs are consistent
+  and compatible with the numbers of inputs and outputs of [3Xgslp[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xgslp:= GeneralizedStraightLineProgram( "union",[127X[104X
+    [4X[25X>[125X [27X              [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;[127X[104X
+    [4X[25Xgap>[125X [27XIsInternallyConsistent( gslp );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xgslp:= GeneralizedStraightLineProgram( "compose",[127X[104X
+    [4X[25X>[125X [27X              [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;[127X[104X
+    [4X[25Xgap>[125X [27XIsInternallyConsistent( gslp );[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  

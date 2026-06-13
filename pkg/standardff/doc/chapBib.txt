@@ -1,0 +1,22 @@
+  
+  
+  [1XReferences[101X
+  
+  [[20XCro[120X]      [16XCrombie,      J.[116X,      [17XFactor     collection     a^n     ±     1[117X,
+  (http://myfactorcollection.mooo.com:8090/).
+  
+  [[20XLüb23[120X]  [16XLübeck,  F.[116X,  [17XStandard generators of finite fields and their cyclic
+  subgroups[117X,  [18XJ.  Symbolic  Comput.[118X,  [19X117[119X  (2023),  51--67,  (Similar to arXiv
+  2107.02257).
+  
+  [[20XSho[120X]    [16XShoup,    V.[116X,   [17XNTL:   A   library   for   doing   Number   Theory[117X,
+  (https://libntl.org/).
+  
+  [[20XSho99[120X] [16XShoup, V.[116X, [17XEfficient computation of minimal polynomials in algebraic
+  extensions  of  finite  fields[117X,  in  Proceedings  of  the 1999 International
+  Symposium  on  Symbolic  and Algebraic Computation (Vancouver, BC), ACM, New
+  York (1999), 53--58.
+  
+  
+  
+  [32X

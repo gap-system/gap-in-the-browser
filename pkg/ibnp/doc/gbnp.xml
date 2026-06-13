@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<Chapter Label="chap-desc">
+
+<Heading>Using the packages <Package>GBNP</Package>
+and <Package>NMO</Package></Heading>
+
+This package deals with polynomials in noncommutative algebras
+and to do so makes use of the noncommutative polynomial operations 
+provided by the <Package>GBNP</Package> <Cite Key='GBNP'/> package,
+and orderings provided by the <Package>NMO</Package> package,
+which is now included within <Package>GBNP</Package>.
+In this chapter we remind users how to call some of these operations.
+
+
+<Section Label="sec-nps">
+<Heading>Noncommutative polynomials (NPs)</Heading>
+
+Recall that the main datatype used by the &GBNP; package is a list 
+of noncommutative polynomials (NPs). 
+The data type for a noncommutative polynomial (its NP format)
+is a list of two lists:
+<List>
+<Item>
+The first is a list <M>m</M> of monomials.
+</Item>
+<Item>
+The second is a list <M>c</M> of coefficients of these monomials.
+</Item>
+</List>
+The two lists have the same length. 
+The polynomial represented by the ordered pair <M>[m,c]</M> is 
+<M>\sum_i c_i m_i</M>.
+A monomial is a list of positive integers.
+They are interpreted as the indices of the variables. 
+So, if <M>k = [1,3,2,2,1]</M> and the variables are <M>x,y,z</M> 
+(in this order), then <M>k</M> represents the monomial <M>xzy^2x</M>. 
+There are various ways to print these, 
+but the default uses variables <M>a,b,c,\ldots</M>.
+The zero polynomial is represented by <C>[[],[]]</C> and
+the polynomial <M>1</M> is represented by <C>[[[]],[1]]</C>. 
+The algorithms are applicable for the algebra 
+<M>\mathbb{F}[x_1,x_2,\ldots,x_t]</M>
+of noncommutative polynomials in <A>t</A> variables 
+over the field <M>\mathbb{F}</M>.
+Accordingly, the list <M>c</M> should contain elements of 
+<M>\mathbb F</M>.
+<P/>
+<Index>NP2GP</Index> <Index>GP2NP</Index>
+The &GBNP; functions <C>GP2NP</C> and <C>NP2GP</C> 
+convert a polynomial to NP format and back again.
+Polynomials returned by <C>NP2GP</C> print with their coefficients
+enclosed in brackets.
+Polynomials may also be printed using the function <C>PrintNP</C>. 
+The function PrintNPList is used to print a list of NPs,
+with one polynomial per line.
+The function <C>CleanNP</C> is used to collect terms and reorder them. 
+The default ordering is first by degree and then lexicographically - <C>MonomialGrlexOrdering</C>.
+Alternative orderings are available - 
+see section <Ref Sect="sec-orderings"/>.
+<P/>
+<Example>
+<![CDATA[
+gap> A3 := FreeAssociativeAlgebraWithOne(Rationals,"a","b","c");;
+gap> a := A3.1;; b := A3.2;; c := A3.3;;
+gap> ## define a polynomial and convert to NP-format
+gap> p1 := 7*a^2*b*c + 8*b*c*a;
+(8)*b*c*a+(7)*a^2*b*c
+gap> Lp1 := GP2NP( p1 );
+[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ]
+gap> ## define an NP-poly; clean it; and convert to a polynomial
+gap> Lp2 := [ [ [1,1], [1,2,1], [3], [1,1], [3,1,2] ], [5,6,7,8,9] ];;
+gap> PrintNP( Lp2 );
+ 5a^2 + 6aba + 7c + 8a^2 + 9cab
+gap> Lp2 := CleanNP( Lp2 );
+[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ]
+gap> ## note the degree lexicographic ordering
+gap> PrintNP( Lp2 );
+ 9cab + 6aba + 13a^2 + 7c
+gap> p2 := NP2GP( Lp2, A3 );
+(9)*c*a*b+(6)*a*b*a+(13)*a^2+(7)*c
+gap> PrintNPList( [ Lp1, Lp2, [ [], [] ], [ [ [] ], [9] ] ] );
+ 7a^2bc + 8bca
+ 9cab + 6aba + 13a^2 + 7c
+ 0
+ 9 
+]]>
+</Example>
+
+</Section>
+
+<Section Label="sec-grob">
+<Heading>&Grob; Bases</Heading>
+
+The &GBNP; package computes &Grob; bases using the function <C>SGrobner</C>.
+In the example below the polynomials <M>\{p,q\}</M> define an ideal in 
+<M>\mathbb{Z}[a,b]</M> which has a three element &Grob; basis.
+<Example>
+<![CDATA[
+gap> p := [ [ [2,2,2], [2,1], [1,2] ], [1,3,-1] ];;
+gap> q := [ [ [1,1], [2] ], [1,1] ];; 
+gap> PrintNPList( [p,q] );
+ b^3 + 3ba - ab
+ a^2 + b 
+gap> GB := SGrobner( [p,q] );;
+gap> PrintNPList(GB);
+ a^2 + b 
+ ba - ab 
+ b^3 + 2ab 
+]]>
+</Example>
+</Section>
+
+<Section Label="sec-orderings">
+<Heading>Orderings for monomials</Heading>
+
+The three monomial orderings provided by the main &GAP; library are
+<C>MonomialLexOrdering</C>, <C>MonomialGrlexOrdering</C>
+and <C>MonomialGrevlexOrdering</C>.
+The first of these is the default used by <Package>GBNP</Package>.
+<P/>
+The <Package>NMO</Package> package is now part of the package 
+<Package>GBNP</Package>.
+It provides a choice of orderings on monomials, including 
+lexicographic and length-lexicographic ones.
+<P/>
+<Example>
+<![CDATA[
+gap> Lp1;
+[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ]
+gap> Lp2;
+[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ]
+gap> GtNPoly( Lp1, Lp2 );
+true
+gap> ## select the lexicographic ordering and reorder p1, p2
+gap> lexord := NCMonomialLeftLexicographicOrdering( A3 );;
+gap> PatchGBNP( lexord );
+LtNP patched.
+GtNP patched.
+gap> Lp1 := CleanNP( Lp1 );
+[ [ [ 2, 3, 1 ], [ 1, 1, 2, 3 ] ], [ 8, 7 ] ]
+gap> Lp2 := CleanNP( Lp2 );
+[ [ [ 3, 1, 2 ], [ 3 ], [ 1, 2, 1 ], [ 1, 1 ] ], [ 9, 7, 6, 13 ] ]
+gap> GtNPoly( Lp1, Lp2 );
+false
+gap> ## revert to degree lex order
+gap> UnpatchGBNP();;
+LtNP restored.
+GtNP restored.
+gap> Lp1 := CleanNP( Lp1 );
+[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ]
+gap> Lp2 := CleanNP( Lp2 );
+[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ]
+gap> GtNPoly( Lp1, Lp2 );
+true
+]]>
+</Example>
+
+</Section>
+
+</Chapter>

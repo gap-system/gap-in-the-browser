@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Other_functionality">
+<Heading>Other functionality</Heading>
+
+<Section Label="Chapter_Other_functionality_Section_The_Jordan-Chevalley_decomposition">
+<Heading>The Jordan-Chevalley decomposition</Heading>
+
+<ManSection>
+  <Func Arg="A,f" Name="JordanChevalleyDecMat" />
+ <Description>
+  Returns the unique pair of matrices <M>D</M>, 
+  <M>N</M> such that the matrix <A>A</A> is written as <M>A=D+N</M>, where 
+  <M>N</M> is a nilpotent matrix and <M>D</M> is a matrix that is 
+  diagonalisable (over some extension field of the default field of 
+  <A>A</A>), such that <M>D.N=N.D</M>; the argument <A>f</A> is a 
+  polynomial such that <M>f(A)=0</M> (e.g., the minimal polynomial of 
+  <A>A</A>). This is called the Jordan-Chevalley decomposition of <A>A</A>; 
+  the algorithm is based on <Cite Key ="Gec22"/>. Note that this 
+  algorithm does not require the knowledge of the eigenvalues of <A>A</A>; 
+  it works over any perfect field that is available in &GAP;.
+<P/>
+<Example><![CDATA[
+gap> A:=[ [  6, -2,  6,  1,  1 ],
+>         [  1, -1,  2,  1, -2 ],
+>         [ -2,  0, -1,  0, -1 ],
+>         [ -1,  0, -2,  2, -1 ],
+>         [ -4,  4, -6, -2,  3 ] ];;
+gap> jc:=JordanChevalleyDecMat(A,MinimalPolynomial(A));
+[ [ [  4,  0,  4, -1,  1 ], 
+    [  1,  0,  1,  1, -1 ], 
+    [ -1, -1,  0,  1, -1 ], 
+    [  0,  0, -2,  3,  0 ], 
+    [ -3,  2, -4, -1,  2 ] ], 
+  [ [  2, -2,  2,  2,  0 ], 
+    [  0, -1,  1,  0, -1 ], 
+    [ -1,  1, -1, -1,  0 ], 
+    [ -1,  0,  0, -1, -1 ], 
+    [ -1,  2, -2, -1,  1 ] ] ]
+gap> MinimalPolynomial(jc[1]);
+x_1^3-5*x_1^2+9*x_1-5
+gap> Factors(last);
+[ x_1-1, x_1^2-4*x_1+5 ]  
+gap> MinimalPolynomial(jc[2]);
+x_1^2                     
+]]></Example>
+
+  If the input matrix is very large, then <Ref Func="JordanChevalleyDecMatF"/>
+  may be more efficient; this function first computes the Frobenius normal 
+  form of <A>A</A> and then applies <C>JordanChevalleyDecMat</C> to each diagonal 
+  block. (The result will be the same as that of 
+  'JordanChevalleyDecMat(<A>A</A>);)'
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A" Name="JordanChevalleyDecMatF" />
+ <Description>
+  First computes the Frobenius normal form and
+  then applies <Ref Func="JordanChevalleyDecMat"/> to each diagonal block.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Other_functionality_Section_The_primary_decomposition">
+<Heading>The primary decomposition</Heading>
+
+<ManSection>
+  <Attr Arg="A" Name="PrimaryDecomposition" Label="for IsMatrixOrMatrixObj"/>
+ <Description>
+  Returns a list containing three elements. The first element is
+  a base change matrix <M>B</M> such that <M>B</M><A>A</A><M>B^{-1}</M> is a
+  primary form of the matrix <A>A</A>, i.e., a block diagonal matrix where the minimal polynomials
+  of the the diagonal blocks are precisely the powers of irreducible factors
+  of the minimal polynomial of <A>A</A>, in descending order. The second element is a list containing
+  the collected irreducible factors of the minimal polynomial of <A>A</A>, in the same order. The
+  last element is a list containing the the size of each block. 
+  The exact algorithm used in this function is described in <Cite Key ="Bon26"/>
+<P/>
+<Example><![CDATA[
+gap> A := [ [ Z(5)^2, 0*Z(5), Z(5)^2, Z(5)^3, Z(5) ], 
+>    [ 0*Z(5), 0*Z(5), Z(5)^3, Z(5), Z(5)^0 ],  
+>    [ Z(5), Z(5)^0, 0*Z(5), Z(5)^0, 0*Z(5) ],
+>    [ Z(5)^0, Z(5)^0, Z(5)^0, 0*Z(5), Z(5)^3 ],
+>    [ Z(5), 0*Z(5), Z(5)^3, 0*Z(5), Z(5)^3 ] ];;
+gap> B := PrimaryDecomposition(A);;
+gap> Display(B[3]);
+[ 1, 4 ]
+gap> Factors(MinimalPolynomial(A));
+[ x_1-Z(5)^0, x_1^4-x_1^3+Z(5)^3*x_1+Z(5)^3 ]
+gap> PrimA := A^Inverse(B[1]);;
+gap> MinimalPolynomial(PrimA{[1..1]}{[1..1]});
+x_1-Z(5)^0
+gap> MinimalPolynomial(PrimA{[2..5]}{[2..5]});
+x_1^4-x_1^3+Z(5)^3*x_1+Z(5)^3
+]]></Example>
+
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

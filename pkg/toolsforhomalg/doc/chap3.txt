@@ -1,0 +1,22 @@
+  
+  [1X3 [33X[0;0YLazy homogeneous lists[133X[101X
+  
+  
+  [1X3.1 [33X[0;0YGAP categories[133X[101X
+  
+  [1X3.1-1 IsLazyHList[101X
+  
+  [33X[1;0Y[29X[2XIsLazyHList[102X( [3XL[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YThe [5XGAP[105X category of lazy homogeneous lists.[133X
+  
+  
+  [1X3.2 [33X[0;0YConstructors[133X[101X
+  
+  [1X3.2-1 LazyHList[101X
+  
+  [33X[1;0Y[29X[2XLazyHList[102X( [3XL[103X, [3Xfunc[103X ) [32X function[133X
+  
+  [33X[0;0YConstruct a lazy list[133X
+  

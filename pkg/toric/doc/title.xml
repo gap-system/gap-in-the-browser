@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    Toric
+  </Title>
+  <Subtitle>
+    toric varieties and some combinatorial geometry computations
+  </Subtitle>
+  <Version>
+    1.9.6
+  </Version>
+  <Author>
+    David Joyner<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+W. David Joyner<Br/>
+Mathematics Department<Br/>
+U. S. Naval Academy<Br/>
+Annapolis, MD 21402<Br/>
+USA<Br/>
+</Address>
+<Email>wdjoyner@gmail.com</Email>
+<Homepage>https://sites.google.com/site/wdjoyner/</Homepage>
+
+  </Author>
+  <Date>
+    4 July 2024
+  </Date>
+  <Copyright>
+    &copyright; 2004-2017 David Joyner.
+  </Copyright>
+  <Acknowledgements>
+    The code for the <Package>toric</Package> package was written during the
+summer of 2002. 
+It was put into &GAP; package format in the summer of 2004.
+<P/>
+    <Package>toric</Package> is free software; you can redistribute it and/or modify
+    it under the terms of the MIT License.
+<P/>
+    <Package>toric</Package> is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    MIT License for more details.
+<P/>
+
+<P/>This documentation was prepared with the 
+<Package>GAPDoc</Package> package of Frank Lübeck and Max Neunhöffer. 
+Moreover, a bug in toric 1.8 was fixed with the help of Max Horn, and this
+documentation was modified accordingly. Finally, I thank Olexandr Konovalov
+and Max Horn for transferring this package to the new Git repository.
+  </Acknowledgements>
+  </TitlePage>

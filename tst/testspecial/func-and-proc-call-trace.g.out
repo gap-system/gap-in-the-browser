@@ -1,0 +1,273 @@
+gap> informproc0 := function(l)
+> Add(l,1);
+> l();
+> end;;
+gap> informproc0([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l(  );
+   @ *stdin*:4
+<function "informproc0">( <arguments> )
+ called from read-eval loop at *stdin*:6
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informproc1 := function(l)
+> Add(l,1);
+> l(1);
+> end;;
+gap> informproc1([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1 );
+   @ *stdin*:9
+<function "informproc1">( <arguments> )
+ called from read-eval loop at *stdin*:11
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informproc2 := function(l)
+> Add(l,1);
+> l(1,2);
+> end;;
+gap> informproc2([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2 );
+   @ *stdin*:14
+<function "informproc2">( <arguments> )
+ called from read-eval loop at *stdin*:16
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informproc3 := function(l)
+> Add(l,1);
+> l(1,2,3);
+> end;;
+gap> informproc3([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3 );
+   @ *stdin*:19
+<function "informproc3">( <arguments> )
+ called from read-eval loop at *stdin*:21
+you can enter 'quit;' to quit to outer loop
+brk> quit; 
+gap> Print("\n\n");
+
+
+gap> informproc4 := function(l)
+> Add(l,1);
+> l(1,2,3,4);
+> end;;
+gap> informproc4([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3, 4 );
+   @ *stdin*:24
+<function "informproc4">( <arguments> )
+ called from read-eval loop at *stdin*:26
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informproc5 := function(l)
+> Add(l,1);
+> l(1,2,3,4,5);
+> end;;
+gap> informproc5([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3, 4, 5 );
+   @ *stdin*:29
+<function "informproc5">( <arguments> )
+ called from read-eval loop at *stdin*:31
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informproc6 := function(l)
+> Add(l,1);
+> l(1,2,3,4,5,6);
+> end;;
+gap> informproc6([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3, 4, 5, 6 );
+   @ *stdin*:34
+<function "informproc6">( <arguments> )
+ called from read-eval loop at *stdin*:36
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informprocmore := function(l)
+> Add(l,1);
+> l(1,2,3,4,5,6,7);
+> end;;
+gap> informprocmore([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3, 4, 5, 6, 7 );
+   @ *stdin*:39
+<function "informprocmore">( <arguments> )
+ called from read-eval loop at *stdin*:41
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informfunc0 := function(l)
+> Add(l,1);
+> Print(l());
+> end;;
+gap> informfunc0([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l(  )
+   @ *stdin*:44
+<function "informfunc0">( <arguments> )
+ called from read-eval loop at *stdin*:46
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informfunc1 := function(l)
+> Add(l,1);
+> Print(l(1));
+> end;;
+gap> informfunc1([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1 )
+   @ *stdin*:49
+<function "informfunc1">( <arguments> )
+ called from read-eval loop at *stdin*:51
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informfunc2 := function(l)
+> Add(l,1);
+> Print(l(1,2));
+> end;;
+gap> informfunc2([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2 )
+   @ *stdin*:54
+<function "informfunc2">( <arguments> )
+ called from read-eval loop at *stdin*:56
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informfunc3 := function(l)
+> Add(l,1);
+> Print(l(1,2,3));
+> end;;
+gap> informfunc3([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3 )
+   @ *stdin*:59
+<function "informfunc3">( <arguments> )
+ called from read-eval loop at *stdin*:61
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informfunc4 := function(l)
+> Add(l,1);
+> Print(l(1,2,3,4));
+> end;;
+gap> informfunc4([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3, 4 )
+   @ *stdin*:64
+<function "informfunc4">( <arguments> )
+ called from read-eval loop at *stdin*:66
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informfunc5 := function(l)
+> Add(l,1);
+> Print(l(1,2,3,4,5));
+> end;;
+gap> informfunc5([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3, 4, 5 )
+   @ *stdin*:69
+<function "informfunc5">( <arguments> )
+ called from read-eval loop at *stdin*:71
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informfunc6 := function(l)
+> Add(l,1);
+> Print(l(1,2,3,4,5,6));
+> end;;
+gap> informfunc6([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3, 4, 5, 6 )
+   @ *stdin*:74
+<function "informfunc6">( <arguments> )
+ called from read-eval loop at *stdin*:76
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> informfuncmore := function(l)
+> Add(l,1);
+> Print(l(1,2,3,4,5,6,7));
+> end;;
+gap> informfuncmore([]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `CallFuncList' on 2 arguments
+Stack trace:
+*[1] l( 1, 2, 3, 4, 5, 6, 7 )
+   @ *stdin*:79
+<function "informfuncmore">( <arguments> )
+ called from read-eval loop at *stdin*:81
+you can enter 'quit;' to quit to outer loop
+brk> quit;
+gap> Print("\n\n");
+
+
+gap> QUIT;

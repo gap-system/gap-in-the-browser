@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Algebraic_Properties_of_Braces">
+<Heading>Algebraic Properties of Braces</Heading>
+
+<P/>
+<Section Label="Chapter_Algebraic_Properties_of_Braces_Section_Braces_and_Radical_Rings">
+<Heading>Braces and Radical Rings</Heading>
+
+<ManSection>
+  <Attr Arg="ring" Name="AdditiveGroupOfRing" Label="for IsRing"/>
+ <Returns>a group
+</Returns>
+ <Description>
+ This function returns a permutation representation 
+ of the additive group of the given ring. 
+<Example><![CDATA[
+gap> rg := SmallRing(8,10);;
+gap> StructureDescription(AdditiveGroupOfRing(rg));
+"C4 x C2"
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="ring" Name="IsJacobsonRadical" Label="for IsRing"/>
+ <Returns>true if the ring is radical and false otherwise.
+</Returns>
+ <Description>
+ This function checks whether a ring is Jacobson radical. 
+<Example><![CDATA[
+gap> rg := SmallRing(8,11);;
+gap> IsJacobsonRadical(rg);
+true
+gap> rg := SmallRing(8,20);;
+gap> IsJacobsonRadical(rg);
+false
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Algebraic_Properties_of_Braces_Section_Braces_and_Yang-Baxter_Equation">
+<Heading>Braces and Yang-Baxter Equation</Heading>
+
+<ManSection>
+  <Oper Arg="table" Name="Table2YB" Label="for IsList"/>
+ <Returns>the solution given by the table
+</Returns>
+ <Description>
+ Given the table with <Math>r(x,y)</Math> in the position <Math>(x,y)</Math> find the corresponding <Math>r</Math>  
+<Example><![CDATA[
+gap> l := Table(SmallIYB(4,13));;
+gap> t := Table2YB(l);;
+gap> IdCycleSet(YB2CycleSet(t));
+[ 4, 13 ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="obj,pair" Name="Evaluate" Label="for IsYB, IsList"/>
+ <Returns>a pair of two integers
+</Returns>
+ <Description>
+ Given the pair <Math>(x,y)</Math> this function returns <Math>r(x,y)</Math>. 
+<Example><![CDATA[
+gap> cs := SmallCycleSet(4,13);;
+gap> yb := CycleSet2YB(cs);;
+gap> Permutations(yb);
+[ [ (3,4), (1,3,2,4), (1,4,2,3), (1,2) ], 
+  [ (2,4), (1,4,3,2), (1,2,3,4), (1,3) ] ]
+gap> Evaluate(yb, [1,2]);
+[ 2, 4 ]
+gap> Evaluate(yb, [1,3]); 
+[ 4, 2 ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="size,f,g" Name="LyubashenkoYB" Label="for IsInt, IsPerm, IsPerm"/>
+ <Returns>a permutation solution to the YBE
+</Returns>
+ <Description>
+ Finite Lyubashenko (or permutation) solutions are defined as follows: Let 
+ <Math>X=\{1,\dots,n\}</Math> and <Math>f,g\colon X\to X</Math> be bijective functions such that 
+ <Math>fg=gf</Math>. Then <Math>(X,r)</Math>, where <Math>r(x,y)=(f(y),g(x))</Math>, is a set-theoretic 
+ solution to the YBE.
+<Example><![CDATA[
+gap> yb := LyubashenkoYB(4, (1,2),(3,4));
+<A set-theoretical solution of size 4>
+gap> Permutations(last);
+[ [ (1,2), (1,2), (1,2), (1,2) ], [ (3,4), (3,4), (3,4), (3,4) ] ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="X" Name="IsIndecomposable" Label="for IsYB"/>
+ <Returns>true if the involutive solutions is indecomposable
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="obj" Name="Table" Label="for IsYB"/>
+ <Returns>a table with the image of the solution
+</Returns>
+ <Description>
+ The table shows the value of <Math>r(x,y)</Math> for each <Math>(x,y)</Math>
+<Example><![CDATA[
+gap> yb := SmallIYB(3,2);;
+gap> Table(yb);
+[ [ [ 1, 1 ], [ 2, 1 ], [ 3, 2 ] ], [ [ 1, 2 ], [ 2, 2 ], [ 3, 1 ] ], [ [ 2, 3 ], [ 1, 3 ], [ 3, 3 ] ] ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="obj" Name="DehornoyClass" Label="for IsYB"/>
+ <Returns>The class of an involutive solution
+</Returns>
+ <Description>
+<Example><![CDATA[
+gap> cs := SmallCycleSet(4,13);;
+gap> yb := CycleSet2YB(cs);;
+gap> DehornoyClass(yb);
+2
+gap> cs := SmallCycleSet(4,19);;
+gap> yb := CycleSet2YB(cs);;
+gap> DehornoyClass(yb);
+4
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="obj,variable" Name="DehornoyRepresentationOfStructureGroup" Label="for IsYB, IsObject"/>
+ <Returns>A faithful linear representation of the structure group of <A>obj</A>
+</Returns>
+ <Description>
+<P/>
+<Example><![CDATA[
+gap> cs := SmallCycleSet(4,13);;
+gap> yb := CycleSet2YB(cs);;
+gap> Permutations(yb);
+[ [ (3,4), (1,3,2,4), (1,4,2,3), (1,2) ], 
+  [ (2,4), (1,4,3,2), (1,2,3,4), (1,3) ] ]
+gap> field := FunctionField(Rationals, 1);;
+gap> q := IndeterminatesOfFunctionField(field)[1];;
+gap> G := DehornoyRepresentationOfStructureGroup(yb, q);;
+gap> x1 := G.1;;
+gap> x2 := G.2;;
+gap> x3 := G.3;;
+gap> x4 := G.4;;
+gap> x1*x2=x2*x4;
+true
+gap> x1*x3=x4*x2;
+true
+gap> x1*x4=x3*x3;
+true
+gap> x2*x1=x3*x4;
+true
+gap> x2*x2=x4*x1;
+true
+gap> x3*x1=x4*x3;
+true
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="obj" Name="IdYB" Label="for IsYB"/>
+ <Returns>the identification number of <A>obj</A>
+</Returns>
+ <Description>
+<P/>
+<Example><![CDATA[
+gap> cs := SmallCycleSet(5,10);;
+gap> IdCycleSet(cs);
+[ 5, 10 ]
+gap> cs := SmallCycleSet(4,3);;
+gap> yb := CycleSet2YB(cs);;
+gap> IdYB(yb);
+[ 4, 3 ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="obj" Name="LinearRepresentationOfStructureGroup" Label="for IsYB"/>
+ <Returns>the permutation brace of the involutive solution of <A>obj</A> a linear representation of the structure group of a finite involutive solution
+</Returns>
+ <Description>
+<P/>
+<Log><![CDATA[
+gap> yb := SmallIYB(5,86);;
+gap> IdBrace(IYBBrace(yb));
+[ 6, 2 ]
+]]></Log>
+
+
+<P/>
+<Example><![CDATA[
+gap> yb := SmallIYB(5,86);;
+gap> gr := LinearRepresentationOfStructureGroup(yb);;
+gap> gens := GeneratorsOfGroup(gr);;
+gap> Display(gens[1]);
+[ [  0,  1,  0,  0,  0,  1 ],
+  [  1,  0,  0,  0,  0,  0 ],
+  [  0,  0,  0,  0,  1,  0 ],
+  [  0,  0,  1,  0,  0,  0 ],
+  [  0,  0,  0,  1,  0,  0 ],
+  [  0,  0,  0,  0,  0,  1 ] ]
+]]></Example>
+
+
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

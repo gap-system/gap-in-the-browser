@@ -1,0 +1,32 @@
+  
+  [1X1 [33X[0;0YIntroduction[133X[101X
+  
+  [33X[0;0YA  number  field  is  a  finite  extension of the field of rational numbers.
+  [5XAlnuth[105X  provides  various  methods  to  compute with number fields which are
+  given  by  a  defining polynomial or by generators. For background on number
+  fields we refer to [ST79].[133X
+  
+  [33X[0;0YSome  of  the  methods provided in this package are written in [5XGAP[105X code. The
+  other  part  of  the  methods  is imported from the Computer Algebra Systems
+  PARI/GP  [PAR11]  respectively  OSCAR  [DEF+25], [OSC24]. Hence this package
+  contains  some  [5XGAP[105X  functions  and  an interface to some functions to these
+  computer  algebra  systems.  Therefore  one  has  to  have  PARI/GP or OSCAR
+  installed to use the full functionality of [5XAlnuth[105X.[133X
+  
+  [33X[0;0YWe  note  that  only a very small part of the functions available in PARI/GP
+  respectively OSCAR are linked to [5XGAP[105X and they provides many more methods for
+  computations in number fields.[133X
+  
+  [33X[0;0YThe  main methods included in [5XAlnuth[105X are: creating a number field, computing
+  its  maximal order, computing its unit group and a presentation of this unit
+  group,  computing  the  elements  of  a  given  norm  of  the  number field,
+  determining a presentation for a finitely generated multiplicative subgroup,
+  and  factoring  polynomials  defined  over  number fields. For background on
+  algorithms for number fields we refer to [Poh93], [PZ89] and [Coh93].[133X
+  
+  [33X[0;0YThe  functions  provided  by [5XAlnuth[105X are introduced in the following chapter.
+  Then an example application is outlined. In the final chapter of this manual
+  the  installation  of  the  package  and  configuration  of  the  interface,
+  including  hints  on  the  installation  of  PARI/GP respectively OSCAR, are
+  described.[133X
+  

@@ -1,0 +1,448 @@
+\GAPDocLabFile{guava}
+\makelabel{guava:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{guava:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{guava:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{guava:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{guava:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{guava:Introduction to the GUAVA package}{1.1}{X787D826579603719}
+\makelabel{guava:Installing GUAVA}{1.2}{X7E2CB7DF83B514A8}
+\makelabel{guava:Loading GUAVA}{1.3}{X80EAA631863F805B}
+\makelabel{guava:A First Tutorial in GUAVA}{2}{X81904A7583751067}
+\makelabel{guava:Working with codewords}{2.1}{X7B4C487180E9CBCD}
+\makelabel{guava:Calculations with codes}{2.2}{X7DEC2B677A1F2B03}
+\makelabel{guava:Codewords}{3}{X836BAA9A7EBD08B1}
+\makelabel{guava:Construction of Codewords}{3.1}{X81B73ABB87DA8E49}
+\makelabel{guava:Comparisons of Codewords}{3.2}{X8253374284B475B6}
+\makelabel{guava:Arithmetic Operations for Codewords}{3.3}{X7ADE7E95867A14E1}
+\makelabel{guava:Functions that Convert Codewords to Vectors or Polynomials}{3.4}{X7BBA5DCD7A8BD60D}
+\makelabel{guava:Functions that Change the Display Form of a Codeword}{3.5}{X81D3230A797FE6E3}
+\makelabel{guava:Other Codeword Functions}{3.6}{X805BF7147C68CACD}
+\makelabel{guava:Codes}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:Comparisons of Codes}{4.1}{X7ECE60E1873B49A6}
+\makelabel{guava:Operations for Codes}{4.2}{X832DA51986A3882C}
+\makelabel{guava:Boolean Functions for Codes}{4.3}{X864091AA7D4AFE86}
+\makelabel{guava:Equivalence and Isomorphism of Codes}{4.4}{X86442DCD7A0B2146}
+\makelabel{guava:Domain Functions for Codes}{4.5}{X866EB39483DDAE72}
+\makelabel{guava:Printing and Displaying Codes}{4.6}{X823827927D6A8235}
+\makelabel{guava:Generating (Check) Matrices and Polynomials}{4.7}{X7D0F48B685A3ECDD}
+\makelabel{guava:Parameters of Codes}{4.8}{X8170B52D7C154247}
+\makelabel{guava:Distributions}{4.9}{X806384B4815EFF2E}
+\makelabel{guava:Decoding Functions}{4.10}{X7D9A39BF801948C8}
+\makelabel{guava:Generating Codes}{5}{X87EB64ED831CCE99}
+\makelabel{guava:Generating Unrestricted Codes}{5.1}{X86A92CB184CBD3C7}
+\makelabel{guava:Generating Linear Codes}{5.2}{X7A11F29F7BBF45BB}
+\makelabel{guava:Gabidulin Codes}{5.3}{X858721967BE44000}
+\makelabel{guava:Golay Codes}{5.4}{X81F6E4A785F368B0}
+\makelabel{guava:Generating Cyclic Codes}{5.5}{X8366CC3685F0BC85}
+\makelabel{guava:Evaluation Codes}{5.6}{X850A28C579137220}
+\makelabel{guava:Algebraic geometric codes}{5.7}{X7AE2B2CD7C647990}
+\makelabel{guava:Low-Density Parity-Check Codes}{5.8}{X84F3673D7BBF5956}
+\makelabel{guava:Manipulating Codes}{6}{X866FC1117814B64D}
+\makelabel{guava:Functions that Generate a New Code from a Given Code}{6.1}{X8271A4697FDA97B2}
+\makelabel{guava:Functions that Generate a New Code from Two or More Given Codes}{6.2}{X7964BF0081CC8352}
+\makelabel{guava:Bounds on codes, special matrices and miscellaneous functions}{7}{X7A814D518460862E}
+\makelabel{guava:Distance bounds on codes}{7.1}{X87C753EB840C34D3}
+\makelabel{guava:Covering radius bounds on codes}{7.2}{X817D0A647D3331EB}
+\makelabel{guava:Special matrices in GUAVA}{7.3}{X806EBEC77C16E657}
+\makelabel{guava:Some functions related to the norm of a code}{7.4}{X7AB5E5CE7FDF7132}
+\makelabel{guava:Miscellaneous functions}{7.5}{X8308D685809A4E2F}
+\makelabel{guava:Miscellaneous polynomial functions}{7.6}{X7969103F7A8598F9}
+\makelabel{guava:Coding theory functions in GAP}{8}{X7A93308C82637F4F}
+\makelabel{guava:Distance functions}{8.1}{X80F192497C008691}
+\makelabel{guava:Other functions}{8.2}{X87C3D1B984960984}
+\makelabel{guava:GNU Free Documentation License}{9}{X82257DE97D1822AA}
+\makelabel{guava:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{guava:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{guava:Index}{Ind}{X83A0356F839C696F}
+\makelabel{guava:linear code}{3}{X836BAA9A7EBD08B1}
+\makelabel{guava:Codeword}{3.1.1}{X7B9E353D852851AA}
+\makelabel{guava:CodewordNr}{3.1.2}{X7E7ED91C79BF3EF3}
+\makelabel{guava:IsCodeword}{3.1.3}{X7F25479781E6E109}
+\makelabel{guava:< >}{3.2.1}{X82D4BC7380741DAE}
+\makelabel{guava:codewords, addition}{3.3.1}{X84BD38C87F3956FB}
+\makelabel{guava:codewords, subtraction}{3.3.2}{X8692958781AF6CA8}
+\makelabel{guava:codewords, cosets}{3.3.3}{X86DC36217EC11723}
+\makelabel{guava:coset}{3.3.3}{X86DC36217EC11723}
+\makelabel{guava:VectorCodeword}{3.4.1}{X87C8B0B178496F6A}
+\makelabel{guava:PolyCodeword}{3.4.2}{X822465E884D0F484}
+\makelabel{guava:TreatAsVector}{3.5.1}{X7E3E174B7954AA6B}
+\makelabel{guava:TreatAsPoly}{3.5.2}{X7A6828148490BD2E}
+\makelabel{guava:NullWord}{3.6.1}{X8000B6597EF0282F}
+\makelabel{guava:DistanceCodeword}{3.6.2}{X7CDA1B547D55E6FB}
+\makelabel{guava:Support}{3.6.3}{X7B689C0284AC4296}
+\makelabel{guava:WeightCodeword}{3.6.4}{X7AD61C237D8D3849}
+\makelabel{guava:code}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:code, elements of}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:code, unrestricted}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:code, (n,M,d)}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:minimum distance}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:length}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:size}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:code, linear}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:parity check matrix}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:code, [n, k, d]r}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:code, cyclic}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:generator polynomial}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:check polynomial}{4}{X85FDDF0B7B7D87FB}
+\makelabel{guava:< >}{4.1.1}{X8686D5FA839F1A3D}
+\makelabel{guava:codes, addition}{4.2.1}{X82E2E5127CD25168}
+\makelabel{guava:codes, direct sum}{4.2.1}{X82E2E5127CD25168}
+\makelabel{guava:codes, product}{4.2.2}{X7EFA08EE7BA22261}
+\makelabel{guava:codes, encoding}{4.2.3}{X84D8B18F7C494A58}
+\makelabel{guava:encoder map}{4.2.3}{X84D8B18F7C494A58}
+\makelabel{guava:InformationWord}{4.2.4}{X8744BA5E78BCF3F9}
+\makelabel{guava:codes, decoding}{4.2.4}{X8744BA5E78BCF3F9}
+\makelabel{guava:information bits}{4.2.4}{X8744BA5E78BCF3F9}
+\makelabel{guava:in}{4.3.1}{X87BDB89B7AAFE8AD}
+\makelabel{guava:code, element test}{4.3.1}{X87BDB89B7AAFE8AD}
+\makelabel{guava:IsSubset}{4.3.2}{X79CA175481F8105F}
+\makelabel{guava:code, subcode}{4.3.2}{X79CA175481F8105F}
+\makelabel{guava:IsCode}{4.3.3}{X7F71186281DEA83A}
+\makelabel{guava:IsLinearCode}{4.3.4}{X7B24748A7CE8D4B9}
+\makelabel{guava:IsCyclicCode}{4.3.5}{X850C23D07C9A9B19}
+\makelabel{guava:IsPerfectCode}{4.3.6}{X85E3BD26856424F7}
+\makelabel{guava:code, perfect}{4.3.6}{X85E3BD26856424F7}
+\makelabel{guava:IsMDSCode}{4.3.7}{X789380D28018EC3F}
+\makelabel{guava:code, maximum distance separable}{4.3.7}{X789380D28018EC3F}
+\makelabel{guava:MDS}{4.3.7}{X789380D28018EC3F}
+\makelabel{guava:IsSelfDualCode}{4.3.8}{X80166D8D837FEB58}
+\makelabel{guava:code, self-dual}{4.3.8}{X80166D8D837FEB58}
+\makelabel{guava:self-orthogonal}{4.3.8}{X80166D8D837FEB58}
+\makelabel{guava:IsSelfOrthogonalCode}{4.3.9}{X7B2A0CC481D2366F}
+\makelabel{guava:code, self-orthogonal}{4.3.9}{X7B2A0CC481D2366F}
+\makelabel{guava:doubly-even}{4.3.9}{X7B2A0CC481D2366F}
+\makelabel{guava:IsDoublyEvenCode}{4.3.10}{X8358D43981EBE970}
+\makelabel{guava:code, doubly-even}{4.3.10}{X8358D43981EBE970}
+\makelabel{guava:singly-even}{4.3.10}{X8358D43981EBE970}
+\makelabel{guava:IsSinglyEvenCode}{4.3.11}{X79ACAEF5865414A0}
+\makelabel{guava:code, singly-even}{4.3.11}{X79ACAEF5865414A0}
+\makelabel{guava:even}{4.3.11}{X79ACAEF5865414A0}
+\makelabel{guava:IsEvenCode}{4.3.12}{X7CE150ED7C3DC455}
+\makelabel{guava:code, even}{4.3.12}{X7CE150ED7C3DC455}
+\makelabel{guava:self complementary code}{4.3.12}{X7CE150ED7C3DC455}
+\makelabel{guava:IsSelfComplementaryCode}{4.3.13}{X7B6DB8CC84FCAC1C}
+\makelabel{guava:affine code}{4.3.13}{X7B6DB8CC84FCAC1C}
+\makelabel{guava:IsAffineCode}{4.3.14}{X7AFD3844859B20BF}
+\makelabel{guava:IsAlmostAffineCode}{4.3.15}{X861D32FB81EF0D77}
+\makelabel{guava:permutation equivalent codes}{4.4}{X86442DCD7A0B2146}
+\makelabel{guava:equivalent codes}{4.4}{X86442DCD7A0B2146}
+\makelabel{guava:IsEquivalent}{4.4.1}{X843034687D9C75B0}
+\makelabel{guava:CodeIsomorphism}{4.4.2}{X874DED8E86BC180B}
+\makelabel{guava:AutomorphismGroup}{4.4.3}{X87677B0787B4461A}
+\makelabel{guava:PermutationAutomorphismGroup}{4.4.3}{X87677B0787B4461A}
+\makelabel{guava:PermutationAutomorphismGroup}{4.4.4}{X79F3261F86C29F6D}
+\makelabel{guava:IsFinite}{4.5.1}{X808A4061809A6E67}
+\makelabel{guava:Size}{4.5.2}{X858ADA3B7A684421}
+\makelabel{guava:LeftActingDomain}{4.5.3}{X86F070E0807DC34E}
+\makelabel{guava:Dimension}{4.5.4}{X7E6926C6850E7C4E}
+\makelabel{guava:AsSSortedList}{4.5.5}{X856D927378C33548}
+\makelabel{guava:Print}{4.6.1}{X7AFA64D97A1F39A3}
+\makelabel{guava:String}{4.6.2}{X81FB5BE27903EC32}
+\makelabel{guava:Display}{4.6.3}{X83A5C59278E13248}
+\makelabel{guava:DisplayBoundsInfo}{4.6.4}{X7CD08C8C780543C4}
+\makelabel{guava:GeneratorMat}{4.7.1}{X817224657C9829C4}
+\makelabel{guava:CheckMat}{4.7.2}{X85D4B26E7FB38D57}
+\makelabel{guava:GeneratorPol}{4.7.3}{X78E33C3A843B0261}
+\makelabel{guava:CheckPol}{4.7.4}{X7C45AA317BB1195F}
+\makelabel{guava:RootsOfCode}{4.7.5}{X7F4CB9DB7CD97178}
+\makelabel{guava:WordLength}{4.8.1}{X7A36C3C67B0062E8}
+\makelabel{guava:Redundancy}{4.8.2}{X7E33FD56792DBF3D}
+\makelabel{guava:MinimumDistance}{4.8.3}{X7B31613D8538BD29}
+\makelabel{guava:MinimumDistanceLeon}{4.8.4}{X813F226F855590EE}
+\makelabel{guava:MinimumWeight}{4.8.5}{X84EDF67B86B4154C}
+\makelabel{guava:DecreaseMinimumDistanceUpperBound}{4.8.6}{X823B9A797EE42F6D}
+\makelabel{guava:MinimumDistanceRandom}{4.8.7}{X7A679B0A7816B030}
+\makelabel{guava:t(n,k)}{4.8.7}{X7A679B0A7816B030}
+\makelabel{guava:covering code}{4.8.7}{X7A679B0A7816B030}
+\makelabel{guava:CoveringRadius}{4.8.8}{X7A195E317D2AB7CE}
+\makelabel{guava:SetCoveringRadius}{4.8.9}{X81004B007EC5DF58}
+\makelabel{guava:MinimumWeightWords}{4.9.1}{X7AEE64467FB1E0B9}
+\makelabel{guava:WeightDistribution}{4.9.2}{X8728BCC9842A6E5D}
+\makelabel{guava:InnerDistribution}{4.9.3}{X871FD301820717A4}
+\makelabel{guava:distance}{4.9.3}{X871FD301820717A4}
+\makelabel{guava:DistancesDistribution}{4.9.4}{X87AD54F87C5EE77E}
+\makelabel{guava:OuterDistribution}{4.9.5}{X8495870687195324}
+\makelabel{guava:Decode}{4.10.1}{X7A42FF7D87FC34AC}
+\makelabel{guava:Decodeword}{4.10.2}{X7D870C9387C47D9F}
+\makelabel{guava:GeneralizedReedSolomonDecoderGao}{4.10.3}{X7D48DE2A84474C6A}
+\makelabel{guava:GeneralizedReedSolomonListDecoder}{4.10.4}{X7CFF98D483502053}
+\makelabel{guava:BitFlipDecoder}{4.10.5}{X80E17FA27DCAB676}
+\makelabel{guava:NearestNeighborGRSDecodewords}{4.10.6}{X7B88DEB37F28404A}
+\makelabel{guava:NearestNeighborDecodewords}{4.10.7}{X825E35757D778787}
+\makelabel{guava:Syndrome}{4.10.8}{X7D02E0FE8735D3E6}
+\makelabel{guava:SyndromeTable}{4.10.9}{X7B9E71987E4294A7}
+\makelabel{guava:syndrome table}{4.10.9}{X7B9E71987E4294A7}
+\makelabel{guava:StandardArray}{4.10.10}{X8642D0BD789DA9B5}
+\makelabel{guava:PermutationDecode}{4.10.11}{X83231E717CCB0247}
+\makelabel{guava:PermutationDecodeNC}{4.10.12}{X85B692177E2A745D}
+\makelabel{guava:ElementsCode}{5.1.1}{X81AACBDD86E89D7D}
+\makelabel{guava:code, Hadamard}{5.1.1}{X81AACBDD86E89D7D}
+\makelabel{guava:HadamardCode}{5.1.2}{X86755AAC83A0AF4B}
+\makelabel{guava:Hadamard matrix}{5.1.2}{X86755AAC83A0AF4B}
+\makelabel{guava:code, conference}{5.1.2}{X86755AAC83A0AF4B}
+\makelabel{guava:ConferenceCode}{5.1.3}{X8122BA417F705997}
+\makelabel{guava:conference matrix}{5.1.3}{X8122BA417F705997}
+\makelabel{guava:MOLSCode}{5.1.4}{X81B7EE4279398F67}
+\makelabel{guava:RandomCode}{5.1.5}{X7D87DD6380B2CE69}
+\makelabel{guava:code, Nordstrom-Robinson}{5.1.5}{X7D87DD6380B2CE69}
+\makelabel{guava:NordstromRobinsonCode}{5.1.6}{X816353397F25B62E}
+\makelabel{guava:code, greedy}{5.1.6}{X816353397F25B62E}
+\makelabel{guava:GreedyCode}{5.1.7}{X7880D34485C60BAF}
+\makelabel{guava:LexiCode}{5.1.8}{X7C1B374583AFB923}
+\makelabel{guava:GeneratorMatCode}{5.2.1}{X83F400A681CFC0D6}
+\makelabel{guava:CheckMatCodeMutable}{5.2.2}{X7CDDDFE47A10A008}
+\makelabel{guava:CheckMatCode}{5.2.3}{X848D3F7B805DEB66}
+\makelabel{guava:code, Hamming}{5.2.3}{X848D3F7B805DEB66}
+\makelabel{guava:HammingCode}{5.2.4}{X7DECB0A57C798583}
+\makelabel{guava:code, Reed-Muller}{5.2.4}{X7DECB0A57C798583}
+\makelabel{guava:ReedMullerCode}{5.2.5}{X801C88D578DA6ACA}
+\makelabel{guava:code, alternant}{5.2.5}{X801C88D578DA6ACA}
+\makelabel{guava:AlternantCode}{5.2.6}{X851592C7811D3D2A}
+\makelabel{guava:code, Goppa (classical)}{5.2.6}{X851592C7811D3D2A}
+\makelabel{guava:GoppaCode}{5.2.7}{X7EE808BB7D1E487A}
+\makelabel{guava:code, Srivastava}{5.2.7}{X7EE808BB7D1E487A}
+\makelabel{guava:GeneralizedSrivastavaCode}{5.2.8}{X7F9C0A727EE075B7}
+\makelabel{guava:SrivastavaCode}{5.2.9}{X7A38EB3178961F3E}
+\makelabel{guava:code, Cordaro-Wagner}{5.2.9}{X7A38EB3178961F3E}
+\makelabel{guava:CordaroWagnerCode}{5.2.10}{X87F7CB8B7A8BE624}
+\makelabel{guava:FerreroDesignCode}{5.2.11}{X865534267C8E902A}
+\makelabel{guava:RandomLinearCode}{5.2.12}{X7BCA10CE8660357F}
+\makelabel{guava:OptimalityCode}{5.2.13}{X839CFE4C7A567D4D}
+\makelabel{guava:BestKnownLinearCode}{5.2.14}{X871508567CB34D96}
+\makelabel{guava:code, Gabidulin}{5.3}{X858721967BE44000}
+\makelabel{guava:GabidulinCode}{5.3.1}{X79BE5D497CB2E59E}
+\makelabel{guava:EnlargedGabidulinCode}{5.3.2}{X873950F67D4A9184}
+\makelabel{guava:code, Davydov}{5.3.2}{X873950F67D4A9184}
+\makelabel{guava:DavydovCode}{5.3.3}{X7F5BE77B7F343182}
+\makelabel{guava:code, Tombak}{5.3.3}{X7F5BE77B7F343182}
+\makelabel{guava:TombakCode}{5.3.4}{X845B4DBE83288D2D}
+\makelabel{guava:EnlargedTombakCode}{5.3.5}{X7D6583347C0D4292}
+\makelabel{guava:code, Golay (binary)}{5.4}{X81F6E4A785F368B0}
+\makelabel{guava:BinaryGolayCode}{5.4.1}{X80ED89C079CD0D09}
+\makelabel{guava:ExtendedBinaryGolayCode}{5.4.2}{X84520C7983538806}
+\makelabel{guava:code, Golay (ternary)}{5.4.2}{X84520C7983538806}
+\makelabel{guava:TernaryGolayCode}{5.4.3}{X7E0CCCD7866ADB94}
+\makelabel{guava:ExtendedTernaryGolayCode}{5.4.4}{X81088A66816BCAE4}
+\makelabel{guava:generator polynomial}{5.5}{X8366CC3685F0BC85}
+\makelabel{guava:check polynomial}{5.5}{X8366CC3685F0BC85}
+\makelabel{guava:GeneratorPolCode}{5.5.1}{X853D34A5796CEB73}
+\makelabel{guava:CheckPolCode}{5.5.2}{X82440B78845F7F6E}
+\makelabel{guava:RootsCode}{5.5.3}{X818F0E6583E01D4B}
+\makelabel{guava:code, Bose-Chaudhuri-Hockenghem}{5.5.3}{X818F0E6583E01D4B}
+\makelabel{guava:BCHCode}{5.5.4}{X7C6BB07C87853C00}
+\makelabel{guava:Bose distance}{5.5.4}{X7C6BB07C87853C00}
+\makelabel{guava:code, Reed-Solomon}{5.5.4}{X7C6BB07C87853C00}
+\makelabel{guava:ReedSolomonCode}{5.5.5}{X838F3CB3872CEF95}
+\makelabel{guava:ExtendedReedSolomonCode}{5.5.6}{X8730B90A862A3B3E}
+\makelabel{guava:QRCode}{5.5.7}{X825F42F68179D2AB}
+\makelabel{guava:QQRCodeNC}{5.5.8}{X8764ABCF854C695E}
+\makelabel{guava:QQRCode}{5.5.9}{X7F4C3AD2795A8D7A}
+\makelabel{guava:code, Fire}{5.5.9}{X7F4C3AD2795A8D7A}
+\makelabel{guava:FireCode}{5.5.10}{X7F3B8CC8831DA0E4}
+\makelabel{guava:order of polynomial}{5.5.10}{X7F3B8CC8831DA0E4}
+\makelabel{guava:WholeSpaceCode}{5.5.11}{X7BC245E37EB7B23F}
+\makelabel{guava:NullCode}{5.5.12}{X7B4EF2017B2C61AD}
+\makelabel{guava:RepetitionCode}{5.5.13}{X83C5F8FE7827EAA7}
+\makelabel{guava:CyclicCodes}{5.5.14}{X82FA9F65854D98A6}
+\makelabel{guava:NrCyclicCodes}{5.5.15}{X8263CE4A790D294A}
+\makelabel{guava:QuasiCyclicCode}{5.5.16}{X79826B16785E8BD3}
+\makelabel{guava:CyclicMDSCode}{5.5.17}{X7BFEDA52835A601D}
+\makelabel{guava:MDS}{5.5.17}{X7BFEDA52835A601D}
+\makelabel{guava:cyclic}{5.5.17}{X7BFEDA52835A601D}
+\makelabel{guava:FourNegacirculantSelfDualCode}{5.5.18}{X7F40AF3B81C252DC}
+\makelabel{guava:self-dual}{5.5.18}{X7F40AF3B81C252DC}
+\makelabel{guava:FourNegacirculantSelfDualCodeNC}{5.5.19}{X87137A257E761291}
+\makelabel{guava:code, evaluation}{5.6}{X850A28C579137220}
+\makelabel{guava:EvaluationCode}{5.6.1}{X78E078567D19D433}
+\makelabel{guava:GeneralizedReedSolomonCode}{5.6.2}{X810AB3DB844FFCE9}
+\makelabel{guava:GeneralizedReedMullerCode}{5.6.3}{X85B8699680B9D786}
+\makelabel{guava:ToricPoints}{5.6.4}{X7EE68B58872D7E82}
+\makelabel{guava:code, toric}{5.6.4}{X7EE68B58872D7E82}
+\makelabel{guava:ToricCode}{5.6.5}{X7B24BE418010F596}
+\makelabel{guava:code, AG}{5.7}{X7AE2B2CD7C647990}
+\makelabel{guava:AffineCurve}{5.7.1}{X802DD9FB79A9ACA7}
+\makelabel{guava:point}{5.7.1}{X802DD9FB79A9ACA7}
+\makelabel{guava:AffinePointsOnCurve}{5.7.2}{X857EFE567C05C981}
+\makelabel{guava:GenusCurve}{5.7.3}{X857E36ED814A40B8}
+\makelabel{guava:GOrbitPoint }{5.7.4}{X8572A3037DA66F88}
+\makelabel{guava:divisor}{5.7.4}{X8572A3037DA66F88}
+\makelabel{guava:support}{5.7.4}{X8572A3037DA66F88}
+\makelabel{guava:DivisorOnAffineCurve}{5.7.5}{X79742B7183051D99}
+\makelabel{guava:DivisorAddition }{5.7.6}{X8626E2B57D01F2DC}
+\makelabel{guava:DivisorDegree }{5.7.7}{X865FE28D828C1EAD}
+\makelabel{guava:degree}{5.7.7}{X865FE28D828C1EAD}
+\makelabel{guava:DivisorNegate }{5.7.8}{X789DC358819A8F54}
+\makelabel{guava:DivisorIsZero }{5.7.9}{X8688C0E187B5C7DB}
+\makelabel{guava:DivisorsEqual }{5.7.10}{X816A07997D9A7075}
+\makelabel{guava:DivisorGCD }{5.7.11}{X857B89847A649A26}
+\makelabel{guava:greatest common divisor}{5.7.11}{X857B89847A649A26}
+\makelabel{guava:DivisorLCM }{5.7.12}{X82231CF08073695F}
+\makelabel{guava:least common multiple}{5.7.12}{X82231CF08073695F}
+\makelabel{guava:RiemannRochSpaceBasisFunctionP1 }{5.7.13}{X79C878697F99A10F}
+\makelabel{guava:DivisorOfRationalFunctionP1 }{5.7.14}{X856DDA207EDDF256}
+\makelabel{guava:RiemannRochSpaceBasisP1 }{5.7.15}{X878970A17E580224}
+\makelabel{guava:MoebiusTransformation }{5.7.16}{X807C52E67A440DEB}
+\makelabel{guava:ActionMoebiusTransformationOnFunction }{5.7.17}{X85A0419580ED0391}
+\makelabel{guava:ActionMoebiusTransformationOnDivisorP1 }{5.7.18}{X7E48F9C67E7FB7B5}
+\makelabel{guava:IsActionMoebiusTransformationOnDivisorDefinedP1 }{5.7.19}{X79FD980E7B24DB9C}
+\makelabel{guava:DivisorAutomorphismGroupP1 }{5.7.20}{X823386037F450B0E}
+\makelabel{guava:MatrixRepresentationOnRiemannRochSpaceP1 }{5.7.21}{X80EDF3D682E7EF3F}
+\makelabel{guava:GoppaCodeClassical}{5.7.22}{X8777388C7885E335}
+\makelabel{guava:EvaluationBivariateCode}{5.7.23}{X8422A310854C09B0}
+\makelabel{guava:EvaluationBivariateCodeNC}{5.7.24}{X7B6C2BED8319C811}
+\makelabel{guava:OnePointAGCode}{5.7.25}{X842E227E8785168E}
+\makelabel{guava:LDPC}{5.8}{X84F3673D7BBF5956}
+\makelabel{guava:QCLDPCCodeFromGroup}{5.8.1}{X8020A9357AD0BA92}
+\makelabel{guava:Parity check}{6.1}{X8271A4697FDA97B2}
+\makelabel{guava:ExtendedCode}{6.1.1}{X794679BE7F9EB5C1}
+\makelabel{guava:PuncturedCode}{6.1.2}{X7E6E4DDA79574FDB}
+\makelabel{guava:EvenWeightSubcode}{6.1.3}{X87691AB67FF5621B}
+\makelabel{guava:PermutedCode}{6.1.4}{X79577EB27BE8524B}
+\makelabel{guava:ExpurgatedCode}{6.1.5}{X87E5849784BC60D2}
+\makelabel{guava:AugmentedCode}{6.1.6}{X8134BE2B8478BE8A}
+\makelabel{guava:RemovedElementsCode}{6.1.7}{X7B0A6E1F82686B43}
+\makelabel{guava:AddedElementsCode}{6.1.8}{X784E1255874FCA8A}
+\makelabel{guava:ShortenedCode}{6.1.9}{X81CBEAFF7B9DE6EF}
+\makelabel{guava:LengthenedCode}{6.1.10}{X7A5D5419846FC867}
+\makelabel{guava:SubCode}{6.1.11}{X7982D699803ECD0F}
+\makelabel{guava:ResidueCode}{6.1.12}{X809376187C1525AA}
+\makelabel{guava:ConstructionBCode}{6.1.13}{X7E92DC9581F96594}
+\makelabel{guava:DualCode}{6.1.14}{X799B12F085ACB609}
+\makelabel{guava:self-dual}{6.1.14}{X799B12F085ACB609}
+\makelabel{guava:ConversionFieldCode}{6.1.15}{X81FE1F387DFCCB22}
+\makelabel{guava:TraceCode}{6.1.16}{X82D18907800FE3D9}
+\makelabel{guava:CosetCode}{6.1.17}{X8799F4BF81B0842B}
+\makelabel{guava:ConstantWeightSubcode}{6.1.18}{X873EA5EE85699832}
+\makelabel{guava:StandardFormCode}{6.1.19}{X7AA203A380BC4C79}
+\makelabel{guava:PiecewiseConstantCode}{6.1.20}{X7EF49A257D6DB53B}
+\makelabel{guava:DirectSumCode}{6.2.1}{X79E00D3A8367D65A}
+\makelabel{guava:UUVCode}{6.2.2}{X86E9D6DE7F1A07E6}
+\makelabel{guava:DirectProductCode}{6.2.3}{X7BFBBA5784C293C1}
+\makelabel{guava:IntersectionCode}{6.2.4}{X78F0B1BC81FB109C}
+\makelabel{guava:hull}{6.2.4}{X78F0B1BC81FB109C}
+\makelabel{guava:UnionCode}{6.2.5}{X8228A1F57A29B8F4}
+\makelabel{guava:ExtendedDirectSumCode}{6.2.6}{X7A85F8AF8154D387}
+\makelabel{guava:AmalgamatedDirectSumCode}{6.2.7}{X7E17107686A845DB}
+\makelabel{guava:BlockwiseDirectSumCode}{6.2.8}{X7D8981AF7DFE9814}
+\makelabel{guava:ConstructionXCode}{6.2.9}{X7C37D467791CE99B}
+\makelabel{guava:ConstructionXXCode}{6.2.10}{X7B50943B8014134F}
+\makelabel{guava:BZCode}{6.2.11}{X790C614985BFAE16}
+\makelabel{guava:BZCodeNC}{6.2.12}{X820327D6854A50B5}
+\makelabel{guava:bounds, Singleton}{7.1}{X87C753EB840C34D3}
+\makelabel{guava:UpperBoundSingleton}{7.1.1}{X8673277C7F6C04C3}
+\makelabel{guava:maximum distance separable}{7.1.1}{X8673277C7F6C04C3}
+\makelabel{guava:bounds, Hamming}{7.1.1}{X8673277C7F6C04C3}
+\makelabel{guava:bounds, sphere packing bound}{7.1.1}{X8673277C7F6C04C3}
+\makelabel{guava:perfect}{7.1.1}{X8673277C7F6C04C3}
+\makelabel{guava:UpperBoundHamming}{7.1.2}{X828095537C91FDFA}
+\makelabel{guava:bounds, Johnson}{7.1.2}{X828095537C91FDFA}
+\makelabel{guava:UpperBoundJohnson}{7.1.3}{X82EBFAAB7F5BFD4A}
+\makelabel{guava:bounds, Plotkin}{7.1.3}{X82EBFAAB7F5BFD4A}
+\makelabel{guava:UpperBoundPlotkin}{7.1.4}{X7A26E2537DFF4409}
+\makelabel{guava:bounds, Elias}{7.1.4}{X7A26E2537DFF4409}
+\makelabel{guava:UpperBoundElias}{7.1.5}{X86A5A7C67F625A40}
+\makelabel{guava:bounds, Griesmer}{7.1.5}{X86A5A7C67F625A40}
+\makelabel{guava:UpperBoundGriesmer}{7.1.6}{X82366C277E218130}
+\makelabel{guava:Griesmer code}{7.1.6}{X82366C277E218130}
+\makelabel{guava:IsGriesmerCode}{7.1.7}{X8301FA9F7C6C7445}
+\makelabel{guava:A(n,d)}{7.1.7}{X8301FA9F7C6C7445}
+\makelabel{guava:UpperBound}{7.1.8}{X7A5CB74485184FEE}
+\makelabel{guava:LowerBoundMinimumDistance}{7.1.9}{X7FDF54BA81115D88}
+\makelabel{guava:bound, Gilbert-Varshamov lower}{7.1.9}{X7FDF54BA81115D88}
+\makelabel{guava:LowerBoundGilbertVarshamov}{7.1.10}{X7CF15D2084499869}
+\makelabel{guava:bound, sphere packing lower}{7.1.10}{X7CF15D2084499869}
+\makelabel{guava:LowerBoundSpherePacking}{7.1.11}{X8217D830871286D8}
+\makelabel{guava:UpperBoundMinimumDistance}{7.1.12}{X7C6A58327BD6B685}
+\makelabel{guava:BoundsMinimumDistance}{7.1.13}{X7B3858B27A9E509A}
+\makelabel{guava:BoundsCoveringRadius}{7.2.1}{X8320D1C180A1AAAD}
+\makelabel{guava:IncreaseCoveringRadiusLowerBound}{7.2.2}{X7881E03E812140F4}
+\makelabel{guava:ExhaustiveSearchCoveringRadius}{7.2.3}{X7AD9F1D27C52BC0F}
+\makelabel{guava:GeneralLowerBoundCoveringRadius}{7.2.4}{X85D671F4824B4B0C}
+\makelabel{guava:GeneralUpperBoundCoveringRadius}{7.2.5}{X8638F5A67D6E50C1}
+\makelabel{guava:LowerBoundCoveringRadiusSphereCovering}{7.2.6}{X7E7FBCC87D5562AB}
+\makelabel{guava:LowerBoundCoveringRadiusVanWee1}{7.2.7}{X85E20C518360AB70}
+\makelabel{guava:LowerBoundCoveringRadiusVanWee2}{7.2.8}{X7C72994A825228E7}
+\makelabel{guava:LowerBoundCoveringRadiusCountingExcess}{7.2.9}{X7F95362485759ACB}
+\makelabel{guava:LowerBoundCoveringRadiusEmbedded1}{7.2.10}{X829C14A383B5BF59}
+\makelabel{guava:LowerBoundCoveringRadiusEmbedded2}{7.2.11}{X7B0C81B88604C448}
+\makelabel{guava:LowerBoundCoveringRadiusInduction}{7.2.12}{X7D27F6E27B9A0D35}
+\makelabel{guava:UpperBoundCoveringRadiusRedundancy}{7.2.13}{X80F8DFAD7D67CBEC}
+\makelabel{guava:external distance}{7.2.13}{X80F8DFAD7D67CBEC}
+\makelabel{guava:UpperBoundCoveringRadiusDelsarte}{7.2.14}{X832847A17FD0D142}
+\makelabel{guava:UpperBoundCoveringRadiusStrength}{7.2.15}{X86F10D9E79AB8796}
+\makelabel{guava:strength}{7.2.15}{X86F10D9E79AB8796}
+\makelabel{guava:UpperBoundCoveringRadiusGriesmerLike}{7.2.16}{X8585C6A982489FC3}
+\makelabel{guava:UpperBoundCoveringRadiusCyclicCode}{7.2.17}{X82A38F5F858CF3FC}
+\makelabel{guava:KrawtchoukMat}{7.3.1}{X82899B64802A4BCE}
+\makelabel{guava:Gary code}{7.3.1}{X82899B64802A4BCE}
+\makelabel{guava:GrayMat}{7.3.2}{X87AFE2C078031CE4}
+\makelabel{guava:SylvesterMat}{7.3.3}{X7E1E7C5287919CDB}
+\makelabel{guava:Hadamard matrix}{7.3.3}{X7E1E7C5287919CDB}
+\makelabel{guava:HadamardMat}{7.3.4}{X8014A1F181ECD8AA}
+\makelabel{guava:VandermondeMat}{7.3.5}{X797F43607AD8660D}
+\makelabel{guava:standard form}{7.3.5}{X797F43607AD8660D}
+\makelabel{guava:PutStandardForm}{7.3.6}{X7B47D82485B66F1D}
+\makelabel{guava:IsInStandardForm}{7.3.7}{X7D4EDA0A854EBFEF}
+\makelabel{guava:PermutedCols}{7.3.8}{X7A97AD477E7638DE}
+\makelabel{guava:VerticalConversionFieldMat}{7.3.9}{X7B68119F85E9EC6D}
+\makelabel{guava:HorizontalConversionFieldMat}{7.3.10}{X8033E9A67BA155C8}
+\makelabel{guava:mutually orthogonal Latin squares}{7.3.10}{X8033E9A67BA155C8}
+\makelabel{guava:Latin square}{7.3.10}{X8033E9A67BA155C8}
+\makelabel{guava:MOLS}{7.3.11}{X804AAFF2867080F7}
+\makelabel{guava:IsLatinSquare}{7.3.12}{X7F34306B81DC2776}
+\makelabel{guava:AreMOLS}{7.3.13}{X81B9B40B7B2D97D5}
+\makelabel{guava:CoordinateNorm}{7.4.1}{X8032E53078264ABB}
+\makelabel{guava:norm of a code}{7.4.1}{X8032E53078264ABB}
+\makelabel{guava:CodeNorm}{7.4.2}{X7ED2EF368203AF47}
+\makelabel{guava:acceptable coordinate}{7.4.2}{X7ED2EF368203AF47}
+\makelabel{guava:IsCoordinateAcceptable}{7.4.3}{X7D24F8BF7F9A7BF1}
+\makelabel{guava:acceptable coordinate}{7.4.3}{X7D24F8BF7F9A7BF1}
+\makelabel{guava:GeneralizedCodeNorm}{7.4.4}{X87039FD179AD3009}
+\makelabel{guava:normal code}{7.4.4}{X87039FD179AD3009}
+\makelabel{guava:IsNormalCode}{7.4.5}{X80283A2F7C8101BD}
+\makelabel{guava:weight enumerator polynomial}{7.5}{X8308D685809A4E2F}
+\makelabel{guava:CodeWeightEnumerator}{7.5.1}{X871286437DE7A6A4}
+\makelabel{guava:CodeDistanceEnumerator}{7.5.2}{X84DA928083B103A0}
+\makelabel{guava:MacWilliams transform}{7.5.2}{X84DA928083B103A0}
+\makelabel{guava:CodeMacWilliamsTransform}{7.5.3}{X84B2BE66780EFBF9}
+\makelabel{guava:density of a code}{7.5.3}{X84B2BE66780EFBF9}
+\makelabel{guava:CodeDensity}{7.5.4}{X7903286078F8051B}
+\makelabel{guava:perfect code}{7.5.4}{X7903286078F8051B}
+\makelabel{guava:SphereContent}{7.5.5}{X85303BAE7BD46D81}
+\makelabel{guava:Krawtchouk}{7.5.6}{X7ACDC5377CD17451}
+\makelabel{guava:PrimitiveUnityRoot}{7.5.7}{X827E39957A87EB51}
+\makelabel{guava:PrimitivePolynomialsNr}{7.5.8}{X78AEA40F7AD9D541}
+\makelabel{guava:IrreduciblePolynomialsNr}{7.5.9}{X7A2B54EF868AA752}
+\makelabel{guava:MatrixRepresentationOfElement}{7.5.10}{X7B50D3417F6FD7C6}
+\makelabel{guava:reciprocal polynomial}{7.5.10}{X7B50D3417F6FD7C6}
+\makelabel{guava:ReciprocalPolynomial}{7.5.11}{X7805D2BB7CE4D455}
+\makelabel{guava:CyclotomicCosets}{7.5.12}{X7AEA9F807E6FFEFF}
+\makelabel{guava:WeightHistogram}{7.5.13}{X7A4EA98D794CF410}
+\makelabel{guava:MultiplicityInList}{7.5.14}{X805DF25C84585FD6}
+\makelabel{guava:MostCommonInList}{7.5.15}{X8072B0DA78FBE562}
+\makelabel{guava:RotateList}{7.5.16}{X7C5407EF87849857}
+\makelabel{guava:CirculantMatrix}{7.5.17}{X85E526367878F72A}
+\makelabel{guava:MatrixTransformationOnMultivariatePolynomial }{7.6.1}{X84D51EBB784E7C5D}
+\makelabel{guava:DegreeMultivariatePolynomial}{7.6.2}{X80433A4B792880EF}
+\makelabel{guava:DegreesMultivariatePolynomial}{7.6.3}{X83F44E397C56F2E0}
+\makelabel{guava:SolveLinearSystem}{7.6.4}{X79E76B6F7D177E27}
+\makelabel{guava:GuavaVersion}{7.6.5}{X80171AA687FFDC70}
+\makelabel{guava:ZechLog}{7.6.6}{X7EBBE86D85CC90C0}
+\makelabel{guava:CoefficientToPolynomial}{7.6.7}{X7C8C1E6A7E3497F0}
+\makelabel{guava:DegreesMonomialTerm}{7.6.8}{X8431985183B63BB7}
+\makelabel{guava:DivisorsMultivariatePolynomial}{7.6.9}{X860EF39B841380A1}
+\makelabel{guava:AClosestVectorCombinationsMatFFEVecFFE}{8.1.1}{X82E5987E81487D18}
+\makelabel{guava:AClosestVectorComb..MatFFEVecFFECoords}{8.1.2}{X870DE258833C5AA0}
+\makelabel{guava:DistancesDistributionMatFFEVecFFE}{8.1.3}{X85135CEB86E61D49}
+\makelabel{guava:DistancesDistributionVecFFEsVecFFE}{8.1.4}{X7F2F630984A9D3D6}
+\makelabel{guava:WeightVecFFE}{8.1.5}{X7C9F4D657F9BA5A1}
+\makelabel{guava:Hamming metric}{8.1.5}{X7C9F4D657F9BA5A1}
+\makelabel{guava:DistanceVecFFE}{8.1.6}{X85AA5C6587559C1C}
+\makelabel{guava:GF(p)}{8.2}{X87C3D1B984960984}
+\makelabel{guava:GF(q)}{8.2}{X87C3D1B984960984}
+\makelabel{guava:defining polynomial}{8.2}{X87C3D1B984960984}
+\makelabel{guava:primitive element}{8.2}{X87C3D1B984960984}
+\makelabel{guava:ConwayPolynomial}{8.2.1}{X7C2425A786F09054}
+\makelabel{guava:IsCheapConwayPolynomial}{8.2.1}{X7C2425A786F09054}
+\makelabel{guava:RandomPrimitivePolynomial}{8.2.2}{X7ECC593583E68A6C}
+\makelabel{guava:IsPrimitivePolynomial}{8.2.2}{X7ECC593583E68A6C}

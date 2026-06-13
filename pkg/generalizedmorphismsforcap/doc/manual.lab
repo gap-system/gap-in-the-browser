@@ -1,0 +1,192 @@
+\GAPDocLabFile{generalizedmorphismsforcap}
+\makelabel{generalizedmorphismsforcap:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{generalizedmorphismsforcap:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{generalizedmorphismsforcap:Generalized Morphism Category}{1}{X7BD6D8987DF55657}
+\makelabel{generalizedmorphismsforcap:GAP Categories}{1.1}{X7D03633A7D98026B}
+\makelabel{generalizedmorphismsforcap:Attributes}{1.2}{X7C701DBF7BAE649A}
+\makelabel{generalizedmorphismsforcap:Operations}{1.3}{X7DE8E16C7C2D387B}
+\makelabel{generalizedmorphismsforcap:Properties}{1.4}{X871597447BB998A1}
+\makelabel{generalizedmorphismsforcap:Convenience methods}{1.5}{X7B40ED8B78D067A5}
+\makelabel{generalizedmorphismsforcap:Generalized Morphism Category by Cospans}{2}{X87EB52217E1FF49C}
+\makelabel{generalizedmorphismsforcap:GAP Categories}{2.1}{X7D03633A7D98026B}
+\makelabel{generalizedmorphismsforcap:Properties}{2.2}{X871597447BB998A1}
+\makelabel{generalizedmorphismsforcap:Attributes}{2.3}{X7C701DBF7BAE649A}
+\makelabel{generalizedmorphismsforcap:Operations}{2.4}{X7DE8E16C7C2D387B}
+\makelabel{generalizedmorphismsforcap:Constructors}{2.5}{X86EC0F0A78ECBC10}
+\makelabel{generalizedmorphismsforcap:Constructors of lifts of exact functors and natrual (iso)morphisms}{2.6}{X83F3C1E6877018D8}
+\makelabel{generalizedmorphismsforcap:Generalized Morphism Category by Spans}{3}{X7D54782279124748}
+\makelabel{generalizedmorphismsforcap:GAP Categories}{3.1}{X7D03633A7D98026B}
+\makelabel{generalizedmorphismsforcap:Properties}{3.2}{X871597447BB998A1}
+\makelabel{generalizedmorphismsforcap:Attributes}{3.3}{X7C701DBF7BAE649A}
+\makelabel{generalizedmorphismsforcap:Operations}{3.4}{X7DE8E16C7C2D387B}
+\makelabel{generalizedmorphismsforcap:Constructors}{3.5}{X86EC0F0A78ECBC10}
+\makelabel{generalizedmorphismsforcap:Generalized Morphism Category by Three Arrows}{4}{X7F39133179F83B50}
+\makelabel{generalizedmorphismsforcap:GAP Categories}{4.1}{X7D03633A7D98026B}
+\makelabel{generalizedmorphismsforcap:Properties}{4.2}{X871597447BB998A1}
+\makelabel{generalizedmorphismsforcap:Attributes}{4.3}{X7C701DBF7BAE649A}
+\makelabel{generalizedmorphismsforcap:Operations}{4.4}{X7DE8E16C7C2D387B}
+\makelabel{generalizedmorphismsforcap:Constructors}{4.5}{X86EC0F0A78ECBC10}
+\makelabel{generalizedmorphismsforcap:Conversion functors for generalized morphisms}{5}{X83C47FBC7D238AD6}
+\makelabel{generalizedmorphismsforcap:Functors from Cospans}{5.1}{X7FBE737787FB4785}
+\makelabel{generalizedmorphismsforcap:Functors from Spans}{5.2}{X828C320C7CE9AAEF}
+\makelabel{generalizedmorphismsforcap:Functors from Three Arrows}{5.3}{X79688A9387244A81}
+\makelabel{generalizedmorphismsforcap:Serre Quotients Subcategory}{6}{X877B8C39873C2938}
+\makelabel{generalizedmorphismsforcap:implementation}{6.1}{X78289A737AF28B39}
+\makelabel{generalizedmorphismsforcap:Serre Quotients}{7}{X7E44E8FA8790C32A}
+\makelabel{generalizedmorphismsforcap:General operations}{7.1}{X7AB3D4ED7A4EF781}
+\makelabel{generalizedmorphismsforcap:Serre quotients by cospans}{7.2}{X87F6FB587AA54985}
+\makelabel{generalizedmorphismsforcap:Serre Quotients by Spans}{7.3}{X7E8AEC567A971ABF}
+\makelabel{generalizedmorphismsforcap:Serre Quotients modeled by three arrows}{7.4}{X8718215E7B950D7C}
+\makelabel{generalizedmorphismsforcap:Serre Quotients Functors}{8}{X79D7DBA7827EFB86}
+\makelabel{generalizedmorphismsforcap:Functors}{8.1}{X78D1062D78BE08C1}
+\makelabel{generalizedmorphismsforcap:Examples and Tests}{9}{X7967FE8E7BBDF485}
+\makelabel{generalizedmorphismsforcap:Basic Commands}{9.1}{X8104A77D7B5CCD4F}
+\makelabel{generalizedmorphismsforcap:Intersection of Nodal Curve and Cusp}{9.2}{X8769971A878B6648}
+\makelabel{generalizedmorphismsforcap:WrapperCategory}{9.3}{X8245BF297DF9A3E7}
+\makelabel{generalizedmorphismsforcap:Sweep}{9.4}{X8325B23C86E16E76}
+\makelabel{generalizedmorphismsforcap:Generalized Morphisms Category}{9.5}{X86FB477C7908A3A6}
+\makelabel{generalizedmorphismsforcap:IsWellDefined}{9.6}{X7E8AFE5085FF7E15}
+\makelabel{generalizedmorphismsforcap:Index}{Ind}{X83A0356F839C696F}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismCategory for IsCapCategory}{1.1.1}{X79F2D53F7B79450C}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismCategoryObject for IsCapCategoryObject}{1.1.2}{X7BEE0C4D8324D332}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphism for IsCapCategoryMorphism}{1.1.3}{X805BE326803873AC}
+\makelabel{generalizedmorphismsforcap:UnderlyingHonestObject for IsGeneralizedMorphismCategoryObject}{1.2.1}{X78C35DEB7A844B1D}
+\makelabel{generalizedmorphismsforcap:DomainEmbedding for IsGeneralizedMorphism}{1.2.2}{X7E72DC48842AFA58}
+\makelabel{generalizedmorphismsforcap:GeneralizedImageEmbedding for IsGeneralizedMorphism}{1.2.3}{X86B43E60846202CA}
+\makelabel{generalizedmorphismsforcap:DefectEmbedding for IsGeneralizedMorphism}{1.2.4}{X7EF102897D38A0CE}
+\makelabel{generalizedmorphismsforcap:GeneralizedKernelEmbedding for IsGeneralizedMorphism}{1.2.5}{X834716A87EADE83E}
+\makelabel{generalizedmorphismsforcap:CodomainProjection for IsGeneralizedMorphism}{1.2.6}{X867950C684A50A6E}
+\makelabel{generalizedmorphismsforcap:GeneralizedCokernelProjection for IsGeneralizedMorphism}{1.2.7}{X80E5FD8C84054135}
+\makelabel{generalizedmorphismsforcap:CodefectProjection for IsGeneralizedMorphism}{1.2.8}{X7E323705780A7472}
+\makelabel{generalizedmorphismsforcap:GeneralizedCoimageProjection for IsGeneralizedMorphism}{1.2.9}{X7E0DAE747945216A}
+\makelabel{generalizedmorphismsforcap:AssociatedMorphism for IsGeneralizedMorphism}{1.2.10}{X8056D2E886060EB7}
+\makelabel{generalizedmorphismsforcap:DomainAssociatedMorphismCodomainTriple for IsGeneralizedMorphism}{1.2.11}{X7CF4DA3478101045}
+\makelabel{generalizedmorphismsforcap:HonestRepresentative for IsGeneralizedMorphism}{1.2.12}{X8129D15C87A5642B}
+\makelabel{generalizedmorphismsforcap:GeneralizedInverse for IsCapCategoryMorphism}{1.2.13}{X8180D14B85D8DDFD}
+\makelabel{generalizedmorphismsforcap:IdempotentDefinedBySubobject for IsCapCategoryMorphism}{1.2.14}{X87BA1A897A3019B0}
+\makelabel{generalizedmorphismsforcap:IdempotentDefinedByFactorobject for IsCapCategoryMorphism}{1.2.15}{X7F3F851D7FD6BE60}
+\makelabel{generalizedmorphismsforcap:UnderlyingHonestCategory for IsCapCategory}{1.2.16}{X8387D5C484A26089}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismFromFactorToSubobject for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.3.1}{X82FE8F3E84432929}
+\makelabel{generalizedmorphismsforcap:CommonRestriction for IsList}{1.3.2}{X7B8E3FBC82429136}
+\makelabel{generalizedmorphismsforcap:ConcatenationProduct for IsList}{1.3.3}{X83CB98F3783972DE}
+\makelabel{generalizedmorphismsforcap:IsHonest for IsGeneralizedMorphism}{1.4.1}{X78B6216F7869E215}
+\makelabel{generalizedmorphismsforcap:HasFullDomain for IsGeneralizedMorphism}{1.4.2}{X806C879182E335B6}
+\makelabel{generalizedmorphismsforcap:HasFullCodomain for IsGeneralizedMorphism}{1.4.3}{X7A5A03577DF86A1F}
+\makelabel{generalizedmorphismsforcap:IsSingleValued for IsGeneralizedMorphism}{1.4.4}{X7B025572785DACBA}
+\makelabel{generalizedmorphismsforcap:IsTotal for IsGeneralizedMorphism}{1.4.5}{X85E05A137F6C759A}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismCategory for IsCapCategory}{1.5.1}{X8276ADE97D53B8F0}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismObject for IsCapCategoryObject}{1.5.2}{X846BEA5784436575}
+\makelabel{generalizedmorphismsforcap:AsGeneralizedMorphism for IsCapCategoryMorphism}{1.5.3}{X7F89465C80D5CB2F}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphism for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.5.4}{X7BCAEAEC78CE8093}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphism for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism}{1.5.5}{X87C5A2AC86D384BC}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismWithRangeAid for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.5.6}{X7DC1AF448411DFCE}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismWithSourceAid for IsCapCategoryMorphism, IsCapCategoryMorphism}{1.5.7}{X7D32834C7EA50379}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismCategoryByCospans for IsGeneralizedMorphismCategory}{2.1.1}{X8187BB8479575083}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismCategoryByCospansObject for IsGeneralizedMorphismCategoryObject}{2.1.2}{X86C1877D7EC9F075}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismByCospan for IsGeneralizedMorphism}{2.1.3}{X82D8F9C38330F81E}
+\makelabel{generalizedmorphismsforcap:HasIdentityAsReversedArrow for IsGeneralizedMorphismByCospan}{2.2.1}{X815D6FE986CC3F99}
+\makelabel{generalizedmorphismsforcap:UnderlyingHonestObject for IsGeneralizedMorphismCategoryByCospansObject}{2.3.1}{X7D7E0AB87D8C6BE4}
+\makelabel{generalizedmorphismsforcap:Arrow for IsGeneralizedMorphismByCospan}{2.3.2}{X7863825F85197D30}
+\makelabel{generalizedmorphismsforcap:ReversedArrow for IsGeneralizedMorphismByCospan}{2.3.3}{X871D3BBC7E6B544B}
+\makelabel{generalizedmorphismsforcap:NormalizedCospanTuple for IsGeneralizedMorphismByCospan}{2.3.4}{X7DCA5A8278F4C569}
+\makelabel{generalizedmorphismsforcap:PseudoInverse for IsGeneralizedMorphismByCospan}{2.3.5}{X7F4AC0FE847140A4}
+\makelabel{generalizedmorphismsforcap:GeneralizedInverseByCospan for IsCapCategoryMorphism}{2.3.6}{X87E4921884F9F1FF}
+\makelabel{generalizedmorphismsforcap:IdempotentDefinedBySubobjectByCospan for IsCapCategoryMorphism}{2.3.7}{X7CFE9A12793AF805}
+\makelabel{generalizedmorphismsforcap:IdempotentDefinedByFactorobjectByCospan for IsCapCategoryMorphism}{2.3.8}{X8330AB9480BC933A}
+\makelabel{generalizedmorphismsforcap:NormalizedCospan for IsGeneralizedMorphismByCospan}{2.3.9}{X7B636E0D7A9FA235}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismFromFactorToSubobjectByCospan for IsCapCategoryMorphism, IsCapCategoryMorphism}{2.4.1}{X7988FD538374DC5C}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismByCospan for IsCapCategoryMorphism, IsCapCategoryMorphism}{2.5.1}{X8313697F833CA064}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismByCospan for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism}{2.5.2}{X865028F47CB5A9FA}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismByCospanWithSourceAid for IsCapCategoryMorphism, IsCapCategoryMorphism}{2.5.3}{X7B744FE28475F25B}
+\makelabel{generalizedmorphismsforcap:AsGeneralizedMorphismByCospan for IsCapCategoryMorphism}{2.5.4}{X79F31F9E80A5BFAD}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismCategoryByCospans for IsCapCategory}{2.5.5}{X879C3A4F82EC9C13}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismByCospansObject for IsCapCategoryObject}{2.5.6}{X81ADB9C17D822C05}
+\makelabel{generalizedmorphismsforcap:AsGeneralizedMorphismByCospan for IsCapFunctor, IsString}{2.6.1}{X7A094900868E02F1}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismCategoryBySpans for IsGeneralizedMorphismCategory}{3.1.1}{X7B3EA2C279A4F9E4}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismCategoryBySpansObject for IsGeneralizedMorphismCategoryObject}{3.1.2}{X78F2B8E882ECF61E}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismBySpan for IsGeneralizedMorphism}{3.1.3}{X7A5BDCEE78549DFB}
+\makelabel{generalizedmorphismsforcap:HasIdentityAsReversedArrow for IsGeneralizedMorphismBySpan}{3.2.1}{X7A058F5C7F7116DB}
+\makelabel{generalizedmorphismsforcap:UnderlyingHonestObject for IsGeneralizedMorphismCategoryBySpansObject}{3.3.1}{X7BDCF7FD7EAE01C3}
+\makelabel{generalizedmorphismsforcap:Arrow for IsGeneralizedMorphismBySpan}{3.3.2}{X83C847FC86AB508B}
+\makelabel{generalizedmorphismsforcap:ReversedArrow for IsGeneralizedMorphismBySpan}{3.3.3}{X826CC0B57D6F7F3B}
+\makelabel{generalizedmorphismsforcap:NormalizedSpanTuple for IsGeneralizedMorphismBySpan}{3.3.4}{X8082EEE27FB449E5}
+\makelabel{generalizedmorphismsforcap:PseudoInverse for IsGeneralizedMorphismBySpan}{3.3.5}{X878EE24487756BD4}
+\makelabel{generalizedmorphismsforcap:GeneralizedInverseBySpan for IsCapCategoryMorphism}{3.3.6}{X800786037C19DEF5}
+\makelabel{generalizedmorphismsforcap:IdempotentDefinedBySubobjectBySpan for IsCapCategoryMorphism}{3.3.7}{X7B8C00217DD3A64C}
+\makelabel{generalizedmorphismsforcap:IdempotentDefinedByFactorobjectBySpan for IsCapCategoryMorphism}{3.3.8}{X82D0B42E8413A5FE}
+\makelabel{generalizedmorphismsforcap:NormalizedSpan for IsGeneralizedMorphismBySpan}{3.3.9}{X86499E0D83A9D090}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismFromFactorToSubobjectBySpan for IsCapCategoryMorphism, IsCapCategoryMorphism}{3.4.1}{X7D3675B0866191EC}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismBySpan for IsCapCategoryMorphism, IsCapCategoryMorphism}{3.5.1}{X83FA5A4C787261DB}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismBySpan for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism}{3.5.2}{X7EAF87447D2A08EE}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismBySpanWithRangeAid for IsCapCategoryMorphism, IsCapCategoryMorphism}{3.5.3}{X79A8B50C7EB5ADE2}
+\makelabel{generalizedmorphismsforcap:AsGeneralizedMorphismBySpan for IsCapCategoryMorphism}{3.5.4}{X79C48BB782BD799F}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismCategoryBySpans for IsCapCategory}{3.5.5}{X812CBF7580098CCF}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismBySpansObject for IsCapCategoryObject}{3.5.6}{X817694F38145FD9F}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismCategoryByThreeArrows for IsGeneralizedMorphismCategory}{4.1.1}{X869A7C2A85C2743A}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismCategoryByThreeArrowsObject for IsGeneralizedMorphismCategoryObject}{4.1.2}{X7E861596801CA565}
+\makelabel{generalizedmorphismsforcap:IsGeneralizedMorphismByThreeArrows for IsGeneralizedMorphism}{4.1.3}{X87934BAA84C6E654}
+\makelabel{generalizedmorphismsforcap:HasIdentitiesAsReversedArrows for IsGeneralizedMorphismByThreeArrows}{4.2.1}{X8247F41681D15233}
+\makelabel{generalizedmorphismsforcap:HasIdentityAsSourceAid for IsGeneralizedMorphismByThreeArrows}{4.2.2}{X8347A40179DBD909}
+\makelabel{generalizedmorphismsforcap:HasIdentityAsRangeAid for IsGeneralizedMorphismByThreeArrows}{4.2.3}{X81F0F4FA78F9F361}
+\makelabel{generalizedmorphismsforcap:UnderlyingHonestObject for IsGeneralizedMorphismCategoryByThreeArrowsObject}{4.3.1}{X8028877F819A0DBF}
+\makelabel{generalizedmorphismsforcap:SourceAid for IsGeneralizedMorphismByThreeArrows}{4.3.2}{X7B17B7587A449B8E}
+\makelabel{generalizedmorphismsforcap:RangeAid for IsGeneralizedMorphismByThreeArrows}{4.3.3}{X87B0A0AF84F8AF7D}
+\makelabel{generalizedmorphismsforcap:Arrow for IsGeneralizedMorphismByThreeArrows}{4.3.4}{X7CCBCD5385E55586}
+\makelabel{generalizedmorphismsforcap:PseudoInverse for IsGeneralizedMorphismByThreeArrows}{4.3.5}{X784C006B8525E205}
+\makelabel{generalizedmorphismsforcap:GeneralizedInverseByThreeArrows for IsCapCategoryMorphism}{4.3.6}{X78A8A55883C06AB1}
+\makelabel{generalizedmorphismsforcap:IdempotentDefinedBySubobjectByThreeArrows for IsCapCategoryMorphism}{4.3.7}{X80E329707BAA3B29}
+\makelabel{generalizedmorphismsforcap:IdempotentDefinedByFactorobjectByThreeArrows for IsCapCategoryMorphism}{4.3.8}{X8217014B870B3EC2}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismFromFactorToSubobjectByThreeArrows for IsCapCategoryMorphism, IsCapCategoryMorphism}{4.4.1}{X78C1A22D86943E97}
+\makelabel{generalizedmorphismsforcap:CommonCoastriction for IsList}{4.4.2}{X7A50AC43855B33B1}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismByThreeArrows for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism}{4.5.1}{X8477D6E679E15474}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismByThreeArrowsWithSourceAid for IsCapCategoryMorphism, IsCapCategoryMorphism}{4.5.2}{X7D60D9F97A2F7D5F}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismByThreeArrowsWithRangeAid for IsCapCategoryMorphism, IsCapCategoryMorphism}{4.5.3}{X7F9E6B188755170A}
+\makelabel{generalizedmorphismsforcap:AsGeneralizedMorphismByThreeArrows for IsCapCategoryMorphism}{4.5.4}{X7E0CF2A87AC08A8B}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismCategoryByThreeArrows for IsCapCategory}{4.5.5}{X8296606484DDDF6C}
+\makelabel{generalizedmorphismsforcap:GeneralizedMorphismByThreeArrowsObject for IsCapCategoryObject}{4.5.6}{X8165802A8625467E}
+\makelabel{generalizedmorphismsforcap:FunctorFromCospansToThreeArrows for IsCapCategory}{5.1.1}{X79C6FF647D725997}
+\makelabel{generalizedmorphismsforcap:FunctorFromCospansToSpans for IsCapCategory}{5.1.2}{X8092A53484B9D89E}
+\makelabel{generalizedmorphismsforcap:FunctorFromSpansToThreeArrows for IsCapCategory}{5.2.1}{X7A250CED7862BD61}
+\makelabel{generalizedmorphismsforcap:FunctorFromSpansToCospans for IsCapCategory}{5.2.2}{X80EAF5547D5E3A08}
+\makelabel{generalizedmorphismsforcap:FunctorFromThreeArrowsToCospans for IsCapCategory}{5.3.1}{X805E300E7CBA3F18}
+\makelabel{generalizedmorphismsforcap:FunctorFromThreeArrowsToSpans for IsCapCategory}{5.3.2}{X7E0E745085802E80}
+\makelabel{generalizedmorphismsforcap:FullSubcategoryByMembershipFunction for IsCapCategory, IsFunction}{6.1.1}{X7C2C5BC07CABE97D}
+\makelabel{generalizedmorphismsforcap:IsSerreQuotientCategoryObject for IsCapCategoryObject}{7.1.1}{X7BC5B052783425A2}
+\makelabel{generalizedmorphismsforcap:IsSerreQuotientCategoryMorphism for IsCapCategoryMorphism}{7.1.2}{X82C2C3C27C0FC106}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategory for IsCapCategory, IsFunction, IsString}{7.1.3}{X8311C69E7FEEF417}
+\makelabel{generalizedmorphismsforcap:AsSerreQuotientCategoryObject for IsCapCategory, IsCapCategoryObject}{7.1.4}{X7B2E75C3828CFEE4}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryMorphism for IsCapCategory, IsGeneralizedMorphism}{7.1.5}{X8228022A7EB4CB66}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryMorphism for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.1.6}{X7C93747782930A14}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryMorphism for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.1.7}{X7FF1277C81BAD87E}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryMorphismWithSourceAid for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.1.8}{X7BD12BC6873CB655}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryMorphismWithRangeAid for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.1.9}{X8461E2707FCF6EB0}
+\makelabel{generalizedmorphismsforcap:AsSerreQuotientCategoryMorphism for IsCapCategory, IsCapCategoryMorphism}{7.1.10}{X7C2D68DA796082CE}
+\makelabel{generalizedmorphismsforcap:SubcategoryMembershipTestFunctionForSerreQuotient for IsCapCategory}{7.1.11}{X7F51A2A678518D91}
+\makelabel{generalizedmorphismsforcap:UnderlyingHonestCategory for IsCapCategory}{7.1.12}{X8387D5C484A26089}
+\makelabel{generalizedmorphismsforcap:UnderlyingGeneralizedMorphismCategory for IsCapCategory}{7.1.13}{X7B0FD44F7FA4F8C1}
+\makelabel{generalizedmorphismsforcap:UnderlyingGeneralizedObject for IsSerreQuotientCategoryObject}{7.1.14}{X86E915208420C01C}
+\makelabel{generalizedmorphismsforcap:UnderlyingHonestObject for IsSerreQuotientCategoryObject}{7.1.15}{X812EDC687898EEBF}
+\makelabel{generalizedmorphismsforcap:UnderlyingGeneralizedMorphism for IsSerreQuotientCategoryMorphism}{7.1.16}{X7E403ABA78261622}
+\makelabel{generalizedmorphismsforcap:CanonicalProjection for IsCapCategory}{7.1.17}{X7A1765BF783041DC}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByCospans for IsCapCategory, IsFunction, IsString}{7.2.1}{X7B0DFAB77891EB63}
+\makelabel{generalizedmorphismsforcap:AsSerreQuotientCategoryByCospansObject for IsCapCategory, IsCapCategoryObject}{7.2.2}{X7C696E9E83CA9250}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByCospansMorphism for IsCapCategory, IsGeneralizedMorphismByCospan}{7.2.3}{X7F1CBD4F82097FFE}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByCospansMorphism for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.2.4}{X7B6DB3178122E617}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByCospansMorphismWithSourceAid for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.2.5}{X84649E8381E40A5E}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByCospansMorphism for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.2.6}{X8163B686820C8119}
+\makelabel{generalizedmorphismsforcap:AsSerreQuotientCategoryByCospansMorphism for IsCapCategory, IsCapCategoryMorphism}{7.2.7}{X83B53BAD85CDABE3}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryBySpans for IsCapCategory, IsFunction, IsString}{7.3.1}{X81B80C5882061F37}
+\makelabel{generalizedmorphismsforcap:AsSerreQuotientCategoryBySpansObject for IsCapCategory, IsCapCategoryObject}{7.3.2}{X82726E3C7A66996A}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryBySpansMorphism for IsCapCategory, IsGeneralizedMorphismBySpan}{7.3.3}{X8540DCE084BB710F}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryBySpansMorphism for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.3.4}{X854E2C577EBC71A8}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryBySpansMorphism for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.3.5}{X85320AF0799B2ED6}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryBySpansMorphismWithRangeAid for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.3.6}{X7BF244A67D0A7199}
+\makelabel{generalizedmorphismsforcap:AsSerreQuotientCategoryBySpansMorphism for IsCapCategory, IsCapCategoryMorphism}{7.3.7}{X838E9D4D7BF0AA85}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByThreeArrows for IsCapCategory, IsFunction, IsString}{7.4.1}{X856C35F28411363D}
+\makelabel{generalizedmorphismsforcap:AsSerreQuotientCategoryByThreeArrowsObject for IsCapCategory, IsCapCategoryObject}{7.4.2}{X80BDE2C9864D84B8}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByThreeArrowsMorphism for IsCapCategory, IsGeneralizedMorphismByThreeArrows}{7.4.3}{X7E798D6882E5DBB4}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByThreeArrowsMorphism for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.4.4}{X7AAB402C852E6030}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByThreeArrowsMorphismWithSourceAid for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.4.5}{X8597A92278BC8D63}
+\makelabel{generalizedmorphismsforcap:SerreQuotientCategoryByThreeArrowsMorphismWithRangeAid for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism}{7.4.6}{X820FF6B88188DB68}
+\makelabel{generalizedmorphismsforcap:AsSerreQuotientCategoryByThreeArrowsMorphism for IsCapCategory, IsCapCategoryMorphism}{7.4.7}{X7DFC91D07E9A187B}
+\makelabel{generalizedmorphismsforcap:SerreQuotientConversionFunctor for IsCapCategory, IsCapCategory}{8.1.1}{X873A67F482BA7BFD}

@@ -1,0 +1,517 @@
+  
+  [1X1 [33X[0;0Ysmallantimagmas automatic generated documentation[133X[101X
+  
+  
+  [1X1.1 [33X[0;0Ysmallantimagmas automatic generated documentation of properties[133X[101X
+  
+  [1X1.1-1 IsAntiassociative[101X
+  
+  [33X[1;0Y[29X[2XIsAntiassociative[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yidentifies whether magma [3XM[103X is antiassociative.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsAntiassociative(OneSmallGroup(16));[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsAntiassociative(OneSmallAntimagma(2));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsAntiassociative(OneSmallAntimagma(3));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-2 IsLeftCyclic[101X
+  
+  [33X[1;0Y[29X[2XIsLeftCyclic[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yif magma is left cyclic [3Xm[103X.[133X
+  
+  [1X1.1-3 IsRightCyclic[101X
+  
+  [33X[1;0Y[29X[2XIsRightCyclic[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yif magma is left cyclic [3Xm[103X.[133X
+  
+  [1X1.1-4 IsLeftDistributive[101X
+  
+  [33X[1;0Y[29X[2XIsLeftDistributive[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yif magma is left distributive [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(3), M -> IsLeftDistributive(M) );[127X[104X
+    [4X[28X[ true, false, false, false, false, false, false, false, false, true ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-5 IsRightDistributive[101X
+  
+  [33X[1;0Y[29X[2XIsRightDistributive[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yif magma is right distributive [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(3), M -> IsRightDistributive(M) );[127X[104X
+    [4X[28X[ false, false, false, false, true, false, false, false, true, false ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-6 IsLeftCancellative[101X
+  
+  [33X[1;0Y[29X[2XIsLeftCancellative[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yif magma is left cancellative [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XDisplay( MultiplicationTable(M) );[127X[104X
+    [4X[28X[ [  2,  1 ],[128X[104X
+    [4X[28X  [  2,  1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XIsRightCancellative(M);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsLeftCancellative(M);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(2), M -> IsLeftCancellative(M));[127X[104X
+    [4X[28X[ true, false ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-7 IsRightCancellative[101X
+  
+  [33X[1;0Y[29X[2XIsRightCancellative[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yif magma is right cancellative [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(2), M -> IsRightCancellative(M));[127X[104X
+    [4X[28X[ false, true ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-8 IsCancellative[101X
+  
+  [33X[1;0Y[29X[2XIsCancellative[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yif magma is cancellative [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(2), M -> IsCancellative(M));[127X[104X
+    [4X[28X[ false, false ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-9 IsLeftFPFInducted[101X
+  
+  [33X[1;0Y[29X[2XIsLeftFPFInducted[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yis a left-hand sided fixed-point free inducted [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDisplay( MultiplicationTable( SmallAntimagma(2, 2) ) );[127X[104X
+    [4X[28X[ [  2,  2 ],[128X[104X
+    [4X[28X  [  1,  1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XIsLeftFPFInducted( SmallAntimagma(2, 2) ); [127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-10 IsRightFPFInducted[101X
+  
+  [33X[1;0Y[29X[2XIsRightFPFInducted[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yis a right-hand sided fixed-point free inducted [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDisplay( MultiplicationTable( SmallAntimagma(2, 1) ) );[127X[104X
+    [4X[28X[ [  2,  1 ],[128X[104X
+    [4X[28X  [  2,  1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XIsRightFPFInducted( SmallAntimagma(2, 1) );            [127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-11 IsLeftDerangementInducted[101X
+  
+  [33X[1;0Y[29X[2XIsLeftDerangementInducted[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yis a left-hand sided derangment inducted [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 2);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsLeftFPFInducted(M);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsRightFPFInducted(M);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsRightDerangementInducted(M);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-12 IsRightDerangementInducted[101X
+  
+  [33X[1;0Y[29X[2XIsRightDerangementInducted[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yis a right-hand sided derangment inducted [3Xm[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsLeftFPFInducted(M);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsRightFPFInducted(M);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsRightDerangementInducted(M);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X1.1-13 IsLeftAlternative[101X
+  
+  [33X[1;0Y[29X[2XIsLeftAlternative[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yis a left-alternatve magma [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+  [4X[32X[104X
+  
+  [1X1.1-14 IsRightAlternative[101X
+  
+  [33X[1;0Y[29X[2XIsRightAlternative[102X( [3XM[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Yis a right-alternatve magma [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+  [4X[32X[104X
+  
+  
+  [1X1.2 [33X[0;0Ysmallantimagmas automatic generated documentation of attributes[133X[101X
+  
+  [1X1.2-1 AssociativityIndex[101X
+  
+  [33X[1;0Y[29X[2XAssociativityIndex[102X( [3XM[103X ) [32X attribute[133X
+  
+  [33X[0;0Yidentifies associativity index of [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XOneSmallAntimagma(2);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XAssociativityIndex(OneSmallAntimagma(2));[127X[104X
+    [4X[28X0[128X[104X
+    [4X[25Xgap>[125X [27XOneSmallGroup(4);[127X[104X
+    [4X[28X<pc group of size 4 with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XAssociativityIndex(OneSmallGroup(4));[127X[104X
+    [4X[28X64[128X[104X
+    [4X[25Xgap>[125X [27XAssociativityIndex(OneSmallGroup(4)) = 4 ^ 3;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X1.2-2 DiagonalOfMultiplicationTable[101X
+  
+  [33X[1;0Y[29X[2XDiagonalOfMultiplicationTable[102X( [3XM[103X ) [32X attribute[133X
+  
+  [33X[0;0Ycomputes diaognal of multiplication table of [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(3), M -> DiagonalOfMultiplicationTable((M)));                [127X[104X
+    [4X[28X[ [ 2, 1, 1 ], [ 2, 1, 1 ], [128X[104X
+    [4X[28X  [ 2, 3, 2 ], [ 2, 1, 1 ], [128X[104X
+    [4X[28X  [ 2, 1, 1 ], [ 2, 1, 2 ], [128X[104X
+    [4X[28X  [ 2, 3, 2 ], [ 2, 1, 2 ], [128X[104X
+    [4X[28X  [ 2, 3, 1 ], [ 2, 3, 1 ][128X[104X
+    [4X[28X][128X[104X
+  [4X[32X[104X
+  
+  [1X1.2-3 CommutativityIndex[101X
+  
+  [33X[1;0Y[29X[2XCommutativityIndex[102X( [3XM[103X ) [32X attribute[133X
+  
+  [33X[0;0Yidentifies commutativity index of [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X1.2-4 AnticommutativityIndex[101X
+  
+  [33X[1;0Y[29X[2XAnticommutativityIndex[102X( [3XM[103X ) [32X attribute[133X
+  
+  [33X[0;0Ycalculates anticommutativity index of [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+  [4X[32X[104X
+  
+  [1X1.2-5 SquaresIndex[101X
+  
+  [33X[1;0Y[29X[2XSquaresIndex[102X( [3XM[103X ) [32X attribute[133X
+  
+  [33X[0;0Ycomputes squares index of [3XM[103X so the order of [23X\left\{ m^2 | m \in M \right\}[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(2), M -> List(M, m -> m * m) );                [127X[104X
+    [4X[28X[ [ m2, m1 ], [ m2, m1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(2), M -> SquaresIndex(M ));[127X[104X
+    [4X[28X[ 2, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(3), M -> SquaresIndex(M ));[127X[104X
+    [4X[28X[ 2, 2, 2, 2, 2, 2, 2, 2, 3, 3 ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.2-6 IdSmallAntimagma[101X
+  
+  [33X[1;0Y[29X[2XIdSmallAntimagma[102X( [3XM[103X ) [32X attribute[133X
+  
+  [33X[0;0Yidentifies class of antiassociative magma [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsAntiassociative(OneSmallGroup(16));[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsAntiassociative(OneSmallAntimagma(2));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsAntiassociative(OneSmallAntimagma(3));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X1.2-7 LeftOrder[101X
+  
+  [33X[1;0Y[29X[2XLeftOrder[102X( [[3Xm[103X] ) [32X attribute[133X
+  
+  [33X[0;0Yreturns a left order of element [3Xm[103X.[133X
+  
+  [1X1.2-8 RightOrder[101X
+  
+  [33X[1;0Y[29X[2XRightOrder[102X( [[3Xm[103X] ) [32X attribute[133X
+  
+  [33X[0;0Yreturns a right order of element [3Xm[103X.[133X
+  
+  [1X1.2-9 LeftOrdersOfElements[101X
+  
+  [33X[1;0Y[29X[2XLeftOrdersOfElements[102X( [[3Xm[103X] ) [32X attribute[133X
+  
+  [33X[0;0Yreturns a left order of element [3Xm[103X.[133X
+  
+  [1X1.2-10 RightOrdersOfElements[101X
+  
+  [33X[1;0Y[29X[2XRightOrdersOfElements[102X( [[3Xm[103X] ) [32X attribute[133X
+  
+  [33X[0;0Yreturns a left order of element [3Xm[103X.[133X
+  
+  
+  [1X1.3 [33X[0;0Ysmallantimagmas automatic generated documentation of global functions[133X[101X
+  
+  [1X1.3-1 AllSubmagmas[101X
+  
+  [33X[1;0Y[29X[2XAllSubmagmas[102X( [3XM[103X ) [32X function[133X
+  
+  [33X[0;0Ybuilds a collection of non-isomorphic submagmas of [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XAllSmallAntimagmas(2);[127X[104X
+    [4X[28X[ <magma with 2 generators>, <magma with 2 generators> ][128X[104X
+    [4X[25Xgap>[125X [27XList(AllSmallAntimagmas(2), M -> AllSubmagmas(M));[127X[104X
+    [4X[28X[ [ <magma with 1 generator> ], [ <magma with 1 generator> ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-2 MagmaIsomorphismInvariantsMatch[101X
+  
+  [33X[1;0Y[29X[2XMagmaIsomorphismInvariantsMatch[102X( [3XM[103X ) [32X function[133X
+  
+  [33X[0;0Ycomputes isomorphism invariants of [3XM[103X.[133X
+  
+  [1X1.3-3 IsMagmaIsomorphic[101X
+  
+  [33X[1;0Y[29X[2XIsMagmaIsomorphic[102X( [3XM[103X, [3XN[103X ) [32X function[133X
+  
+  [33X[0;0Yidentifies whether magmas [3XM[103X, [3XN[103X are isomorphic.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XN := SmallAntimagma(2, 2);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XT := MagmaByMultiplicationTable([ [2, 1], [2, 1] ]);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsMagmaIsomorphic(M, M);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsMagmaIsomorphic(M, T);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsMagmaIsomorphic(M, N);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-4 IsMagmaAntiisomorphic[101X
+  
+  [33X[1;0Y[29X[2XIsMagmaAntiisomorphic[102X( [[3XM[103X, [3XN[103X] ) [32X function[133X
+  
+  [33X[0;0Yidentifies whether magmas [3XM[103X, [3XN[103X are antiisomorphic.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XN := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XN := SmallAntimagma(2, 2);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsMagmaAntiisomorphic(M, M);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsMagmaAntiisomorphic(M, N);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsMagmaAntiisomorphic(M, TransposedMagma(M));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-5 TransposedMagma[101X
+  
+  [33X[1;0Y[29X[2XTransposedMagma[102X( [[3XM[103X] ) [32X function[133X
+  
+  [33X[0;0Ygenerates transposed magma [3XM[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsMagmaAntiisomorphic(M, TransposedMagma(M));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsMagmaIsomorphic(M, TransposedMagma(TransposedMagma(M)));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XDisplay(MultiplicationTable(M));[127X[104X
+    [4X[28X[ [  2,  1 ],[128X[104X
+    [4X[28X  [  2,  1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XDisplay(MultiplicationTable(TransposedMagma(M)));[127X[104X
+    [4X[28X[ [  2,  2 ],[128X[104X
+    [4X[28X  [  1,  1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-6 LeftPower[101X
+  
+  [33X[1;0Y[29X[2XLeftPower[102X( [[3Xm[103X, [3Xk[103X] ) [32X function[133X
+  
+  [33X[0;0Yreturns a left [23Xk[123X-power of element [3Xm[103X.[133X
+  
+  [1X1.3-7 RightPower[101X
+  
+  [33X[1;0Y[29X[2XRightPower[102X( [[3Xm[103X, [3Xk[103X] ) [32X function[133X
+  
+  [33X[0;0Yreturns a right [23Xk[123X-power of element [3Xm[103X.[133X
+  
+  [1X1.3-8 AllSmallAntimagmas[101X
+  
+  [33X[1;0Y[29X[2XAllSmallAntimagmas[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0Yreturns all antiassociative magmas of specified size [3Xn[103X (a number)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XAllSmallAntimagmas(2);[127X[104X
+    [4X[28X[ <magma with 2 generators>, <magma with 2 generators> ][128X[104X
+    [4X[25Xgap>[125X [27XAllSmallAntimagmas(3);[127X[104X
+    [4X[28X[ [128X[104X
+    [4X[28X  <magma with 3 generators>, <magma with 3 generators>, <magma with 3 generators>,[128X[104X
+    [4X[28X  <magma with 3 generators>, <magma with 3 generators>, <magma with 3 generators>,[128X[104X
+    [4X[28X  <magma with 3 generators>, <magma with 3 generators>,[128X[104X
+    [4X[28X  <magma with 3 generators>, <magma with 3 generators>[128X[104X
+    [4X[28X][128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-9 NrSmallAntimagmas[101X
+  
+  [33X[1;0Y[29X[2XNrSmallAntimagmas[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0Ycounts number of antiassociative magmas of specified size [3Xn[103X (a number).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNrSmallAntimagmas(2);[127X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27XNrSmallAntimagmas(3);[127X[104X
+    [4X[28X10[128X[104X
+    [4X[25Xgap>[125X [27XNrSmallAntimagmas(4);[127X[104X
+    [4X[28X17780[128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-10 SmallAntimagma[101X
+  
+  [33X[1;0Y[29X[2XSmallAntimagma[102X( [3Xn[103X, [3Xi[103X ) [32X function[133X
+  
+  [33X[0;0Yreturns antiassociative magma of id [3X[n, i][103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSmallAntimagma(4, 5);[127X[104X
+    [4X[28X<magma with 4 generators>[128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-11 OneSmallAntimagma[101X
+  
+  [33X[1;0Y[29X[2XOneSmallAntimagma[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0Yreturns a random antiassociative magma of size [3Xn[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XOneSmallAntimagma(2);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XOneSmallAntimagma(3);[127X[104X
+    [4X[28X<magma with 3 generators>[128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-12 ReallyAllSmallAntimagmas[101X
+  
+  [33X[1;0Y[29X[2XReallyAllSmallAntimagmas[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0Yreturns  really-all  antiassociative magmas, isomorphic, of specified size [3Xn[103X
+  (a number)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XReallyAllSmallAntimagmas(2);[127X[104X
+    [4X[28X[ <magma with 2 generators>, <magma with 2 generators> ][128X[104X
+  [4X[32X[104X
+  
+  [1X1.3-13 ReallyNrSmallAntimagmas[101X
+  
+  [33X[1;0Y[29X[2XReallyNrSmallAntimagmas[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0Ycounts number of antiassociative magmas of specified size [3Xn[103X (a number)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XReallyNrSmallAntimagmas(3);[127X[104X
+    [4X[28X52[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X1.4 [33X[0;0Ysmallantimagmas automatic generated documentation of methods[133X[101X
+  
+  [1X1.4-1 MagmaIsomorphism[101X
+  
+  [33X[1;0Y[29X[2XMagmaIsomorphism[102X( [3XM[103X, [3XN[103X ) [32X operation[133X
+  
+  [33X[0;0Ycomputes an isomoprhism between magmas [3XM[103X, [3XN[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XN := MagmaByMultiplicationTable([ [2, 1], [2, 1] ]);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMagmaIsomorphism(M, N);[127X[104X
+    [4X[28X<general mapping: Domain([ m1, m2 ]) -> Domain([ m1, m2 ]) >[128X[104X
+  [4X[32X[104X
+  
+  [1X1.4-2 MagmaAntiisomorphism[101X
+  
+  [33X[1;0Y[29X[2XMagmaAntiisomorphism[102X( [3XM[103X, [3XN[103X ) [32X operation[133X
+  
+  [33X[0;0Ycreates an antiisomoprhism between magmas [3XM[103X, [3XN[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM := SmallAntimagma(2, 1);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XN := SmallAntimagma(2, 2);[127X[104X
+    [4X[28X<magma with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMagmaAntiisomorphism(M, N);[127X[104X
+    [4X[28X<mapping: Domain([ m1, m2 ]) -> Domain([ m1, m2 ]) >[128X[104X
+  [4X[32X[104X
+  

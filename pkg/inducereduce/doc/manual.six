@@ -1,0 +1,56 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "InduceReduce",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Copyright", "0.0-1", [ 0, 0, 1 ], 20, 2, "copyright", 
+      "X81488B807F2A1CF1" ], 
+  [ "Acknowledgements", "0.0-2", [ 0, 0, 2 ], 31, 2, "acknowledgements", 
+      "X82A988D47DFAFCFA" ], 
+  [ "Table of Contents", "0.0-3", [ 0, 0, 3 ], 38, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe \033[5XInduceReduce\033[105X\033[101X\027\\
+033[1X\027 package\033[133X\033[101X", "1", [ 1, 0, 0 ], 1, 4, 
+      "the inducereduce package", "X8063C5AD861C9596" ], 
+  [ "\033[1X\033[33X\033[0;-2YTheory\033[133X\033[101X", "1.1", [ 1, 1, 0 ], 
+      4, 4, "theory", "X8729B87B848E3F89" ], 
+  [ "\033[1X\033[33X\033[0;-2YProgram\033[133X\033[101X", "1.2", [ 1, 2, 0 ], 
+      22, 4, "program", "X7A4605C07A94C9F6" ], 
+  [ "\033[1X\033[33X\033[0;-2YOptions\033[133X\033[101X", "1.3", [ 1, 3, 0 ], 
+      99, 5, "options", "X7E6B8D107B819CDC" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YDoCyclicFirst and DocyclicLast\033[133X\033[101X"
+        , "1.3-1", [ 1, 3, 1 ], 110, 6, "docyclicfirst and docycliclast", 
+      "X8650B24882BA95D0" ], 
+  [ "\033[1X\033[33X\033[0;-2YLLLOffset\033[133X\033[101X", "1.3-2", 
+      [ 1, 3, 2 ], 146, 6, "llloffset", "X853CD33F845DFFD8" ], 
+  [ "\033[1X\033[33X\033[0;-2YDelta\033[133X\033[101X", "1.3-3", [ 1, 3, 3 ], 
+      172, 7, "delta", "X82C33CF282FC5A73" ], 
+  [ "\033[1X\033[33X\033[0;-2YChanging the default options\033[133X\033[101X",
+      "1.3-4", [ 1, 3, 4 ], 211, 7, "changing the default options", 
+      "X83236B2C84A86425" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YInstalling and Loading the \033[5XInduceReduce\\
+033[105X\033[101X\027\033[1X\027 Package\033[133X\033[101X", "2", 
+      [ 2, 0, 0 ], 1, 9, "installing and loading the inducereduce package", 
+      "X84F39EA27AC21C70" ], 
+  [ "\033[1X\033[33X\033[0;-2YInstalling the package\033[133X\033[101X", 
+      "2.1", [ 2, 1, 0 ], 4, 9, "installing the package", "X82D1C6CB791B726C" 
+     ], [ "\033[1X\033[33X\033[0;-2YLoading the package\033[133X\033[101X", 
+      "2.2", [ 2, 2, 0 ], 19, 9, "loading the package", "X87B74F4A7E059AED" ],
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 10, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 10, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 11, "index", "X83A0356F839C696F" ], 
+  [ "License", "0.0-1", [ 0, 0, 1 ], 20, 2, "license", "X81488B807F2A1CF1" ], 
+  [ "\033[2XCharacterTableUnger\033[102X", "1.2-1", [ 1, 2, 1 ], 28, 4, 
+      "charactertableunger", "X800870BA80335175" ], 
+  [ "\033[2XInfoCTUnger\033[102X", "1.2-2", [ 1, 2, 2 ], 43, 4, 
+      "infoctunger", "X854929007C135EA0" ], 
+  [ "\033[2XCTUngerDefaultOptions\033[102X", "1.2-3", [ 1, 2, 3 ], 84, 5, 
+      "ctungerdefaultoptions", "X82B1841B7ED017DA" ] ]
+);

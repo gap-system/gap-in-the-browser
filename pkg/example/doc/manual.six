@@ -1,0 +1,52 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "Example",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Copyright", "0.0-1", [ 0, 0, 1 ], 47, 2, "copyright", 
+      "X81488B807F2A1CF1" ], 
+  [ "Acknowledgements", "0.0-2", [ 0, 0, 2 ], 58, 2, "acknowledgements", 
+      "X82A988D47DFAFCFA" ], 
+  [ "Table of Contents", "0.0-3", [ 0, 0, 3 ], 65, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Example Package\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 4, "the example package", "X8656021F83A3BD80" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Main Functions\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 22, 4, "the main functions", "X7D3DC4ED855DC13C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YInstalling and Loading the Example Package\033[13\
+3X\033[101X", "2", [ 2, 0, 0 ], 1, 6, 
+      "installing and loading the example package", "X83473D1A871AB899" ], 
+  [ "\033[1X\033[33X\033[0;-2YUnpacking the Example Package\033[133X\033[101X"
+        , "2.1", [ 2, 1, 0 ], 4, 6, "unpacking the example package", 
+      "X7A671E2078C9770B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCompiling Binaries of the Example Package\033[133\
+X\033[101X", "2.2", [ 2, 2, 0 ], 41, 6, 
+      "compiling binaries of the example package", "X79E203C779518B3D" ], 
+  [ "\033[1X\033[33X\033[0;-2YLoading the Example Package\033[133X\033[101X", 
+      "2.3", [ 2, 3, 0 ], 64, 7, "loading the example package", 
+      "X7A242BA97D904EDF" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 8, "index", "X83A0356F839C696F" ], 
+  [ "License", "0.0-1", [ 0, 0, 1 ], 47, 2, "license", "X81488B807F2A1CF1" ], 
+  [ "Example package", "1.0", [ 1, 0, 0 ], 1, 4, "example package", 
+      "X8656021F83A3BD80" ], 
+  [ "\033[2XListDirectory\033[102X", "1.1-1", [ 1, 1, 1 ], 27, 4, 
+      "listdirectory", "X791F84D17C64D56A" ], 
+  [ "\033[2XFindFile\033[102X", "1.1-2", [ 1, 1, 2 ], 34, 4, "findfile", 
+      "X841462157B10C113" ], 
+  [ "\033[2XLoadedPackages\033[102X", "1.1-3", [ 1, 1, 3 ], 42, 4, 
+      "loadedpackages", "X7856BE147FCE91AC" ], 
+  [ "\033[2XWhich\033[102X", "1.1-4", [ 1, 1, 4 ], 56, 5, "which", 
+      "X7838D0477D8C0571" ], 
+  [ "\033[2XWhereIsPkgProgram\033[102X", "1.1-5", [ 1, 1, 5 ], 69, 5, 
+      "whereispkgprogram", "X79090A0F87898612" ], 
+  [ "\033[2XHelloWorld\033[102X", "1.1-6", [ 1, 1, 6 ], 80, 5, "helloworld", 
+      "X80F716527825B803" ], 
+  [ "\033[2XFruitCake\033[102X", "1.1-7", [ 1, 1, 7 ], 86, 5, "fruitcake", 
+      "X84DA2EEC8534A70D" ], 
+  [ "\033[2XRecipe\033[102X", "1.1-8", [ 1, 1, 8 ], 93, 5, "recipe", 
+      "X85B83BDB83B1C910" ] ]
+);

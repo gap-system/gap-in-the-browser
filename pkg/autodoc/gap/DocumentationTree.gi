@@ -1,0 +1,668 @@
+# AutoDoc: Generate documentation from GAP source code
+#
+# Copyright of AutoDoc belongs to its developers.
+# Please refer to the COPYRIGHT file for details.
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+##
+BindGlobal( "AUTODOC_IdentifierLetters",
+            "+-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz" );
+
+BindGlobal( "AUTODOC_IsSafeGeneratedLabelCharacter",
+  function( c )
+    local code;
+
+    code := IntChar( c );
+    return code >= 32 and code <> 127 and not c in "/\\&<>\";";
+end );
+
+BindGlobal( "AUTODOC_NormalizeGeneratedLabel",
+  function( label )
+    return Filtered( ReplacedString( label, " ", "_" ),
+                     AUTODOC_IsSafeGeneratedLabelCharacter );
+end );
+
+BindGlobal( "AUTODOC_IsSafeGeneratedFilenameCharacter",
+  function( c )
+    local code;
+
+    code := IntChar( c );
+    return code >= 32 and code <> 127 and not c in "/\\:";
+end );
+
+DeclareRepresentation( "IsTreeForDocumentationRep",
+        IsAttributeStoringRep and IsTreeForDocumentation,
+        [ ] );
+
+BindGlobal( "TheFamilyOfDocumentationTrees",
+        NewFamily( "TheFamilyOfDocumentationTrees" ) );
+
+BindGlobal( "TheTypeOfDocumentationTrees",
+        NewType( TheFamilyOfDocumentationTrees,
+                IsTreeForDocumentationRep ) );
+
+## Metatype, specify later
+DeclareRepresentation( "IsTreeForDocumentationNodeRep",
+        IsAttributeStoringRep and IsTreeForDocumentationNode,
+        [ ] );
+
+BindGlobal( "TheFamilyOfDocumentationTreeNodes",
+        NewFamily( "TheFamilyOfDocumentationTreeNodes" ) );
+
+BindGlobal( "TheTypeOfDocumentationTreeNodes",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationNodeRep ) );
+
+## Chapter node
+DeclareRepresentation( "IsTreeForDocumentationNodeForChapterRep",
+        IsTreeForDocumentationNodeRep,
+        [ ] );
+
+BindGlobal( "TheTypeOfDocumentationTreeNodesForChapter",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationNodeForChapterRep ) );
+
+## Section node
+DeclareRepresentation( "IsTreeForDocumentationNodeForSectionRep",
+        IsTreeForDocumentationNodeRep,
+        [ ] );
+
+BindGlobal( "TheTypeOfDocumentationTreeNodesForSection",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationNodeForSectionRep ) );
+
+## Subsection node
+DeclareRepresentation( "IsTreeForDocumentationNodeForSubsectionRep",
+        IsTreeForDocumentationNodeRep,
+        [ ] );
+
+BindGlobal( "TheTypeOfDocumentationTreeNodesForSubsection",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationNodeForSubsectionRep ) );
+
+## Text node
+DeclareRepresentation( "IsTreeForDocumentationNodeForTextRep",
+        IsTreeForDocumentationNodeRep,
+        [ ] );
+
+BindGlobal( "TheTypeOfDocumentationTreeNodesForText",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationNodeForTextRep ) );
+
+## ManItem node
+DeclareRepresentation( "IsTreeForDocumentationNodeForManItemRep",
+        IsTreeForDocumentationNodeRep,
+        [ ] );
+
+BindGlobal( "TheTypeOfDocumentationTreeNodesForManItem",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationNodeForManItemRep ) );
+
+## Group Node
+DeclareRepresentation( "IsTreeForDocumentationNodeForGroupRep",
+        IsTreeForDocumentationNodeRep,
+        [ ] );
+
+BindGlobal( "TheTypeOfDocumentationTreeNodesForGroup",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationNodeForGroupRep ) );
+
+## DeclareRepresentation
+DeclareRepresentation( "IsTreeForDocumentationChunkNodeRep",
+                       IsTreeForDocumentationNodeRep,
+                       [ ] );
+
+BindGlobal( "TheTypeOfDocumentationTreeChunkNodes",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationChunkNodeRep ) );
+
+## DeclareRepresentation
+DeclareRepresentation( "IsTreeForDocumentationVerbatimNodeRep",
+                       IsTreeForDocumentationNodeRep,
+                       [ ] );
+
+BindGlobal( "TheTypeOfDocumentationTreeVerbatimNodes",
+        NewType( TheFamilyOfDocumentationTreeNodes,
+                IsTreeForDocumentationVerbatimNodeRep ) );
+
+
+
+###################################
+##
+## Tools
+##
+###################################
+
+##
+InstallGlobalFunction( AUTODOC_TREE_NODE_NAME_ITERATOR,
+  function( tree )
+    local curr_val;
+
+    curr_val := tree!.node_name_iterator;
+    tree!.node_name_iterator := curr_val + 1;
+    return curr_val;
+end );
+
+##
+InstallGlobalFunction( AUTODOC_LABEL_OF_CONTEXT,
+  function( context )
+    local label;
+    if not IsList( context ) then
+        Error( "wrong type of context" );
+    fi;
+    if IsString( context ) then
+        label := context;
+    elif Length( context ) = 1 then
+        label := Concatenation( "Chapter_", context[ 1 ] );
+    elif Length( context ) = 2 then
+        label := Concatenation( "Chapter_", context[ 1 ], "_Section_", context[ 2 ] );
+    elif Length( context ) = 3 then
+        label := Concatenation( "Chapter_", context[ 1 ], "_Section_", context[ 2 ], "_Subsection_", context[ 3 ] );
+    else
+        Error( "wrong type of context" );
+    fi;
+    return AUTODOC_NormalizeGeneratedLabel( label );
+end );
+
+###################################
+##
+## Constructors
+##
+###################################
+
+##
+InstallMethod( DocumentationTree, [ ],
+  function( )
+    local tree;
+
+    tree := rec(
+                  content := [ ],   # a list of nodes
+                  cached_nodes_by_label := rec( ),
+                  node_name_iterator := 0,
+                  TitlePage := rec( ),
+                  chunks := rec( ),
+            );
+    ObjectifyWithAttributes( tree, TheTypeOfDocumentationTrees );
+    return tree;
+end );
+
+## create a chapter, section or subsection
+InstallMethod( StructurePartInTree, [ IsTreeForDocumentation, IsList ],
+  function( tree, context )
+    local label, parent, new_node, type;
+    
+    if IsEmpty( context ) then
+        return tree;
+    fi;
+
+    # if the part already exist, use that
+    label := AUTODOC_LABEL_OF_CONTEXT( context );
+    if IsBound( tree!.cached_nodes_by_label.( label ) ) then
+        return tree!.cached_nodes_by_label.( label );
+    fi;
+
+    parent := StructurePartInTree( tree, context{[1..Length(context)-1]} );
+
+    new_node := rec( content := [ ],
+                     name := Last( context ),
+                     chapter_info := context );
+    if Length( context ) = 1 then
+        type := TheTypeOfDocumentationTreeNodesForChapter;
+    elif Length( context ) = 2 then
+        type := TheTypeOfDocumentationTreeNodesForSection;
+    elif Length( context ) = 3 then
+        type := TheTypeOfDocumentationTreeNodesForSubsection;
+    fi;
+    ObjectifyWithAttributes( new_node, type, Label, label );
+
+    tree!.cached_nodes_by_label.( label ) := new_node;
+    Add( parent!.content, new_node );
+    return new_node;
+end );
+
+##
+InstallMethod( DocumentationExample, [ IsString ],
+  function( element_name )
+    local node;
+    node := DocumentationVerbatim( element_name, rec( ), [ ] );
+    node!.closing_separator := "\n\n";
+    return node;
+end );
+
+##
+InstallMethod( DocumentationVerbatim, [ IsString, IsRecord, IsList ],
+  function( element_name, attributes, content )
+    local node;
+
+    node := rec( element_name := element_name,
+                 attributes := StructuralCopy( attributes ),
+                 content := ShallowCopy( content ) );
+    node!.closing_separator := "\n";
+    ObjectifyWithAttributes( node, TheTypeOfDocumentationTreeVerbatimNodes );
+    return node;
+end );
+
+##
+InstallMethod( DocumentationChunk, [ IsTreeForDocumentation, IsString ],
+  function( tree, name )
+    local node;
+
+    if IsBound( tree!.chunks.( name ) ) then
+        return tree!.chunks.( name );
+    fi;
+    node := rec( content := [ ],
+                 content_source_positions := [ ] );
+    ObjectifyWithAttributes( node, TheTypeOfDocumentationTreeChunkNodes,
+                              Label, name );
+    node!.is_defined := false;
+    node!.is_inserted := false;
+    tree!.chunks.( name ) := node;
+    return node;
+end );
+
+##
+InstallMethod( DocumentationManItem, [ ],
+  function( )
+    local node;
+
+    node := rec( description := [ ],
+                 description_source_positions := [ ],
+                 return_value := [ ],
+                 return_value_source_positions := [ ] );
+    ObjectifyWithAttributes( node, TheTypeOfDocumentationTreeNodesForManItem );
+    node!.content := node!.description;
+    node!.content_source_field := "description_source_positions";
+    return node;
+end );
+
+InstallMethod( DocumentationGroup, [ IsTreeForDocumentation, IsString ],
+  function( tree, group_name )
+    local group, name;
+
+    name := Concatenation( "GROUP_", group_name );
+    if IsBound( tree!.cached_nodes_by_label.( name ) ) then
+        return tree!.cached_nodes_by_label.( name );
+    fi;
+    group := rec( content := [ ],
+                  content_source_positions := [ ] );
+    ObjectifyWithAttributes( group, TheTypeOfDocumentationTreeNodesForGroup,
+                             Label, name );
+    tree!.cached_nodes_by_label.( name ) := group;
+    group!.is_added := false;
+    return group;
+end );
+
+##
+InstallMethod( DocumentationGroup, [ IsTreeForDocumentation, IsString, IsList ],
+  function( tree, group_name, context )
+    local name, group, context_node;
+
+    name := Concatenation( "GROUP_", group_name );
+    if IsBound( tree!.cached_nodes_by_label.( name ) ) then
+        return tree!.cached_nodes_by_label.( name );
+    fi;
+    context_node := StructurePartInTree( tree, context );
+    group := DocumentationGroup( tree, group_name );
+    Add( context_node, group );
+    group!.is_added := true;
+    return group;
+end );
+
+##
+InstallMethod( Add, [ IsTreeForDocumentationNode, IsTreeForDocumentationNode ],
+  function( parent_node, node )
+    Add( parent_node!.content, node );
+end );
+
+##
+InstallMethod( Add, [ IsTreeForDocumentationNode, IsString ],
+  function( parent_node, string )
+    Add( parent_node!.content, string );
+end );
+
+##
+InstallMethod( Add, [ IsTreeForDocumentation, IsTreeForDocumentationNodeForManItemRep and HasChapterInfo ],
+  function( tree, node )
+    local chapter_info, section;
+    chapter_info := ChapterInfo( node );
+    section := SectionInTree( tree, chapter_info[ 1 ], chapter_info[ 2 ] );
+    Add( section, node );
+end );
+
+##
+InstallMethod( Add, [ IsTreeForDocumentation, IsTreeForDocumentationNodeForManItemRep and HasGroupName ],
+  function( tree, node )
+    local group;
+    group := DocumentationGroup( tree, GroupName( node ) );
+    Add( group, node );
+end );
+
+##
+InstallMethod( Add, [ IsTreeForDocumentation, IsTreeForDocumentationNodeForManItemRep and HasGroupName and HasChapterInfo ],
+  function( tree, node )
+    local chapter_info, group;
+    chapter_info := ChapterInfo( node );
+    group := DocumentationGroup( tree, GroupName( node ), chapter_info );
+    Add( group, node );
+end );
+
+##
+InstallMethod( Add, [ IsTreeForDocumentation, IsTreeForDocumentationNode, IsList ],
+  function( tree, node, context )
+    local context_node;
+    context_node := StructurePartInTree( tree, context );
+    Add( context_node, node );
+end );
+
+##
+InstallMethod( IsEmptyNode, [ IsTreeForDocumentationNode ],
+  function( node )
+    if IsBound( node!.content ) then
+        return ForAll( node!.content, IsEmptyNode );
+    fi;
+    return false;
+end );
+
+##
+InstallMethod( IsEmptyNode, [ IsString ],
+  function( node )
+    return node = "";
+end );
+
+##
+InstallMethod( IsEmptyNode, [ IsTreeForDocumentationNodeForManItemRep ],
+  function( node )
+    return false;
+end );
+
+####################################
+##
+## Add functions
+##
+####################################
+
+##
+InstallMethod( ChapterInTree, [ IsTreeForDocumentation, IsString ],
+  function( tree, name )
+    return StructurePartInTree( tree, [ name ] );
+end );
+
+##
+InstallMethod( AppendixInTree, [ IsTreeForDocumentation, IsString ],
+  function( tree, name )
+    local node;
+
+    node := ChapterInTree( tree, name );
+    node!.is_appendix := true;
+    SetLabel( node,
+        Concatenation( "Appendix_", AUTODOC_NormalizeGeneratedLabel( name ) ) );
+    return node;
+end );
+
+##
+InstallMethod( SectionInTree, [ IsTreeForDocumentation, IsString, IsString ],
+  function( tree, chapter_name, section_name )
+    return StructurePartInTree( tree, [ chapter_name, section_name ] );
+end );
+
+##
+InstallMethod( SubsectionInTree, [ IsTreeForDocumentation, IsString, IsString, IsString ],
+  function( tree, chapter_name, section_name, subsection_name )
+    return StructurePartInTree( tree, [ chapter_name, section_name, subsection_name ] );
+end );
+
+#############################################
+##
+## Write functions
+##
+#############################################
+
+BindGlobal( "AUTODOC_ConvertHeadingToGAPDocXML",
+  function( heading, source_position )
+    local converted_heading;
+
+    converted_heading := AUTODOC_ConvertMarkdownToGAPDocXML(
+        [ NormalizedWhitespace( heading ) ],
+        [ source_position ]
+    );
+    if not ForAll( converted_heading, IsString ) then
+        Error( "headings must convert to inline GAPDoc XML" );
+    fi;
+    converted_heading := Filtered( converted_heading,
+        piece -> piece <> "" and piece <> "<P/>" );
+    return JoinStringsWithSeparator( converted_heading, "" );
+end );
+
+BindGlobal( "AUTODOC_WriteStructuralNode",
+  function( node, element_name, stream )
+    local heading, title_source_position;
+
+    if ForAll( node!.content, IsEmptyNode ) then
+        return false;
+    fi;
+
+    if IsBound( node!.title_string ) then
+        heading := NormalizedWhitespace( node!.title_string );
+        title_source_position := node!.title_string_source_position;
+    else
+        heading := ReplacedString( node!.name, "_", " " );
+        title_source_position := fail;
+    fi;
+    heading := AUTODOC_ConvertHeadingToGAPDocXML( heading, title_source_position );
+
+    AppendTo( stream, "<", element_name, " Label=\"", Label( node ), "\">\n" );
+    AppendTo( stream, "<Heading>", heading, "</Heading>\n\n" );
+    WriteDocumentation( node!.content, stream );
+    AppendTo( stream, "</", element_name, ">\n\n" );
+    return true;
+end );
+
+BindGlobal( "AUTODOC_ChapterFilename",
+  function( node )
+    local filename;
+
+    # Strip characters that are known to cause trouble in generated filenames.
+    # In particular, GAP rejects ':', '\' and '/' as they are potentially path
+    # separators.
+    filename := Filtered( Label( node ), AUTODOC_IsSafeGeneratedFilenameCharacter );
+    return Concatenation( "_", filename, ".xml" );
+end );
+
+BindGlobal( "WriteChunks",
+  function( tree, path_to_xmlfiles )
+    local chunks_stream, filename, chunk_names, current_chunk_name,
+          current_chunk;
+
+    filename := "_Chunks.xml";
+
+    chunks_stream := AUTODOC_OutputTextFile( path_to_xmlfiles, filename );
+    chunk_names := RecNames( tree!.chunks );
+
+    for current_chunk_name in chunk_names do
+        current_chunk := tree!.chunks.( current_chunk_name );
+        if current_chunk!.is_defined = true and current_chunk!.is_inserted = false then
+            Info(
+                InfoAutoDoc,
+                1,
+                "WARNING: chunk ",
+                current_chunk_name,
+                " was defined but never inserted"
+            );
+        elif current_chunk!.is_defined = false and current_chunk!.is_inserted = true then
+            Info(
+                InfoAutoDoc,
+                1,
+                "WARNING: chunk ",
+                current_chunk_name,
+                " was inserted but never defined"
+            );
+        fi;
+        AppendTo( chunks_stream, "<#GAPDoc Label=\"", current_chunk_name, "\">\n" );
+        if IsBound( current_chunk!.content ) then
+            AUTODOC_WriteDocumentationListWithSource(
+                current_chunk!.content,
+                current_chunk!.content_source_positions,
+                chunks_stream
+            );
+        fi;
+        AppendTo( chunks_stream, "\n<#/GAPDoc>\n" );
+    od;
+
+    CloseStream( chunks_stream );
+
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsTreeForDocumentation, IsDirectory ],
+  function( tree, path_to_xmlfiles )
+    local stream, appendix_stream, i;
+
+    stream := AUTODOC_OutputTextFile( path_to_xmlfiles, _AUTODOC_GLOBAL_OPTION_RECORD.AutoDocMainFile );
+    AppendTo( stream, AUTODOC_XML_HEADER );
+    appendix_stream := fail;
+    for i in tree!.content do
+        if IsTreeForDocumentationNodeForChapterRep( i ) then
+            if IsBound( i!.is_appendix ) and i!.is_appendix = true then
+                if appendix_stream = fail then
+                    appendix_stream := AUTODOC_OutputTextFile(
+                        path_to_xmlfiles,
+                        "_AutoDocAppendicesMainFile.xml"
+                    );
+                    AppendTo( appendix_stream, AUTODOC_XML_HEADER );
+                fi;
+                WriteDocumentation( i, appendix_stream, path_to_xmlfiles );
+            else
+                WriteDocumentation( i, stream, path_to_xmlfiles );
+            fi;
+        else
+            Error( "this should never happen" );
+        fi;
+    od;
+    if appendix_stream <> fail then
+        CloseStream( appendix_stream );
+    fi;
+
+    WriteChunks( tree, path_to_xmlfiles );
+
+    # Workaround for issue #65
+    if IsEmpty( tree!.content ) then
+        AppendTo( stream, "&nbsp;\n" );
+    fi;
+    CloseStream( stream );
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsTreeForDocumentationNodeForChapterRep, IsStream, IsDirectory ],
+  function( node, stream, path_to_xmlfiles )
+    local filename, chapter_stream, element_name;
+
+    if ForAll( node!.content, IsEmptyNode ) then
+        return;
+    fi;
+
+    filename := AUTODOC_ChapterFilename( node );
+    chapter_stream := AUTODOC_OutputTextFile( path_to_xmlfiles, filename );
+    AppendTo( stream, "<#Include SYSTEM \"", filename, "\">\n" );
+    AppendTo( chapter_stream, AUTODOC_XML_HEADER );
+    element_name := "Chapter";
+    if IsBound( node!.is_appendix ) and node!.is_appendix = true then
+        element_name := "Appendix";
+    fi;
+    AUTODOC_WriteStructuralNode( node, element_name, chapter_stream );
+    CloseStream( chapter_stream );
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsList, IsStream ],
+  function( node_list, filestream )
+    local current_string_list, i, FlushConvertedStrings;
+
+    FlushConvertedStrings := function()
+        if current_string_list = [ ] then
+            return;
+        fi;
+        AUTODOC_WriteStringListWithSource(
+            current_string_list,
+            fail,
+            filestream
+        );
+        current_string_list := [ ];
+    end;
+
+    i := 1;
+    current_string_list := [ ];
+    for i in [ 1 .. Length( node_list ) ] do
+        if IsString( node_list[ i ] ) then
+            Add( current_string_list, ShallowCopy( node_list[ i ] ) );
+        else
+            FlushConvertedStrings();
+            WriteDocumentation( node_list[ i ], filestream );
+        fi;
+    od;
+    FlushConvertedStrings();
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsString, IsStream ],
+  function( text, filestream )
+    ## In case the list is empty, do nothing.
+    ## Once the empty string = empty list bug is fixed,
+    ## this could be removed.
+    text := Chomp( text );
+    if NormalizedWhitespace( text ) = "" then
+        return;
+    fi;
+    AppendTo( filestream, text, "\n" );
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsTreeForDocumentationNodeForSectionRep, IsStream ],
+  function( node, filestream )
+    AUTODOC_WriteStructuralNode( node, "Section", filestream );
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsTreeForDocumentationNodeForSubsectionRep, IsStream ],
+  function( node, filestream )
+    AUTODOC_WriteStructuralNode( node, "Subsection", filestream );
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsTreeForDocumentationNodeForManItemRep, IsStream ],
+  function( node, filestream )
+    AutoDoc_WriteDocEntry( filestream, [ node ], fail );
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsTreeForDocumentationNodeForGroupRep, IsStream ],
+  function( node, filestream )
+    local heading;
+    heading := fail;
+    if IsBound( node!.title_string ) then
+        heading := node!.title_string;
+    fi;
+    AutoDoc_WriteDocEntry( filestream, node!.content, heading );
+end );
+
+##
+InstallMethod( WriteDocumentation, [ IsTreeForDocumentationChunkNodeRep, IsStream ],
+  function( node, filestream )
+    node!.is_inserted := true;
+    WriteDocumentation( Concatenation( "<#Include Label=\"", Label( node ), "\">" ), filestream );
+end );
+
+InstallMethod( WriteDocumentation, [ IsTreeForDocumentationVerbatimNodeRep, IsStream ],
+  function( node, filestream )
+    local line, attr_name;
+
+    AppendTo( filestream, "<", node!.element_name );
+    for attr_name in Set( RecNames( node!.attributes ) ) do
+        AppendTo( filestream, " ", attr_name, "=\"", node!.attributes.( attr_name ), "\"" );
+    od;
+    AppendTo( filestream, "><![CDATA[\n" );
+    for line in node!.content do
+        AppendTo( filestream, AUTODOC_EscapeCDATAContent( Chomp( line ) ), "\n" );
+    od;
+    AppendTo( filestream, "]]></", node!.element_name, ">", node!.closing_separator );
+end );

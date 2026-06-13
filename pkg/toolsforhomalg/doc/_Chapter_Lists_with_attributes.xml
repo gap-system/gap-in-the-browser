@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Lists_with_attributes">
+<Heading>Lists with attributes</Heading>
+
+  These are homogeneous lists which still carry enough information of their context even if they are empty.
+<Section Label="Chapter_Lists_with_attributes_Section_GAP_categories">
+<Heading>GAP categories</Heading>
+
+<ManSection>
+  <Filt Arg="L" Type="Category" Name="IsListWithAttributes" Label="for IsAttributeStoringRep and IsList"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of lists with attributes.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Lists_with_attributes_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Func Arg="L, type, attr1, value1, attr2, value2, ..." Name="TypedListWithAttributes" />
+ <Description>
+  Construct a list with attributes.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="L, attr1, value1, attr2, value2, ..." Name="ListWithAttributes" />
+ <Description>
+  Construct a list with attributes of type TheTypeListWithAttributesRep
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

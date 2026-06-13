@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    smallantimagmas
+  </Title>
+  <Subtitle>
+    A library of antiassociative magmas of small order
+  </Subtitle>
+  <Version>
+    0.5.1
+  </Version>
+  <Author>
+    Kamil Zabielski<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Theoretical Computer Science<Br/>
+Białystok University of Technology<Br/>
+Wiejska 45A<Br/>
+15-325 Białystok<Br/>
+Poland<Br/>
+</Address>
+
+  </Author>
+  <Author>
+    Ryszard Mazurek<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Theoretical Computer Science<Br/>
+Białystok University of Technology<Br/>
+Wiejska 45A<Br/>
+15-325 Białystok<Br/>
+Poland<Br/>
+</Address>
+
+  </Author>
+  <Date>
+    26 September 2025
+  </Date>
+  <Copyright>
+          <Index>License</Index>
+      &copyright; 2024 by Kamil Zabielski<P/>
+      &smallantimagmas; package is free software;
+      you can redistribute it and/or modify it under the terms of the
+      <URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL>
+      as published by the Free Software Foundation; either version 2 of the License,
+      or (at your option) any later version.
+      
+  </Copyright>
+  <Acknowledgements>
+          We appreciate very much all past and future comments, suggestions and
+      contributions to this package and its documentation provided by &GAP;
+      users and developers.
+      
+  </Acknowledgements>
+  </TitlePage>

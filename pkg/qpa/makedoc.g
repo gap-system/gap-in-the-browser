@@ -1,0 +1,2 @@
+LoadPackage( "qpa" );
+MakeQPADocumentation();

@@ -1,0 +1,555 @@
+\GAPDocLabFile{loops}
+\makelabel{loops:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{loops:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{loops:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{loops:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{loops:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{loops:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{loops:Installation}{1.1}{X8360C04082558A12}
+\makelabel{loops:Documentation}{1.2}{X7F4F8D6F7CD6B765}
+\makelabel{loops:Test Files}{1.3}{X801051CC86594630}
+\makelabel{loops:Memory Management}{1.4}{X79342B4E7E55FD0F}
+\makelabel{loops:Feedback}{1.5}{X80D704CC7EBFDF7A}
+\makelabel{loops:Mathematical Background}{2}{X7EF1B6708069B0C7}
+\makelabel{loops:Quasigroups and Loops}{2.1}{X80243DE5826583B8}
+\makelabel{loops:Translations}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:Subquasigroups and Subloops}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:Nilpotence and Solvability}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:Associators and Commutators}{2.5}{X7E0849977869E53D}
+\makelabel{loops:Homomorphism and Homotopisms}{2.6}{X791066ED7DD9F254}
+\makelabel{loops:How the Package Works}{3}{X7A6DF65E826B8CFF}
+\makelabel{loops:Representing Quasigroups}{3.1}{X86F02BBD87FEA1C6}
+\makelabel{loops:Conversions between magmas, quasigroups, loops and groups}{3.2}{X807D76EF81B9D061}
+\makelabel{loops:Calculating with Quasigroups}{3.3}{X87E49ED884FA6DC4}
+\makelabel{loops:Naming, Viewing and Printing Quasigroups and their Elements}{3.4}{X7D75C7A6787AF72A}
+\makelabel{loops:SetQuasigroupElmName and SetLoopElmName}{3.4.1}{X7A7EB1B579273D07}
+\makelabel{loops:Creating Quasigroups and Loops}{4}{X7AA4B9C0877550ED}
+\makelabel{loops:About Cayley Tables}{4.1}{X7DE8405B82BC36A9}
+\makelabel{loops:Testing Cayley Tables}{4.2}{X7827BF877AA87246}
+\makelabel{loops:IsQuasigroupTable and IsQuasigroupCayleyTable}{4.2.1}{X81179355869B9DFE}
+\makelabel{loops:IsLoopTable and IsLoopCayleyTable}{4.2.2}{X7AAE48507A471069}
+\makelabel{loops:Canonical and Normalized Cayley Tables}{4.3}{X7BA749CA7DB4EA87}
+\makelabel{loops:Creating Quasigroups and Loops From Cayley Tables}{4.4}{X7C2372BB8739C5A2}
+\makelabel{loops:QuasigroupByCayleyTable and LoopByCayleyTable}{4.4.1}{X860135BB85F2DB19}
+\makelabel{loops:Creating Quasigroups and Loops from a File}{4.5}{X849944F17E2B37F8}
+\makelabel{loops:QuasigroupFromFile and LoopFromFile}{4.5.1}{X81A1DB918057933E}
+\makelabel{loops:Creating Quasigroups and Loops From Sections}{4.6}{X820E67F88319C38B}
+\makelabel{loops:QuasigroupByLeftSection and LoopByLeftSection}{4.6.2}{X7EC1EB0D7B8382A1}
+\makelabel{loops:QuasigroupByRightSection and LoopByRightSection}{4.6.3}{X80B436ED7CC0749E}
+\makelabel{loops:Creating Quasigroups and Loops From Folders}{4.7}{X85ABE99E84E5B0E8}
+\makelabel{loops:QuasigroupByRightFolder and LoopByRightFolder}{4.7.1}{X83168E62861F70AB}
+\makelabel{loops:Creating Quasigroups and Loops By Nuclear Extensions}{4.8}{X8759431780AC81A9}
+\makelabel{loops:Random Quasigroups and Loops}{4.9}{X7AE29A1A7AA5C25A}
+\makelabel{loops:RandomQuasigroup and RandomLoop}{4.9.1}{X8271C0F5786B6FA9}
+\makelabel{loops:Conversions}{4.10}{X7BC2D8877A943D74}
+\makelabel{loops:Products of Quasigroups and Loops}{4.11}{X79B7327C79029086}
+\makelabel{loops:Opposite Quasigroups and Loops}{4.12}{X7865FC8D7854C2E3}
+\makelabel{loops:Opposite, OppositeQuasigroup and OppositeLoop}{4.12.1}{X87B6AED47EE2BCD3}
+\makelabel{loops:Basic Methods And Attributes}{5}{X7B9F619279641FAA}
+\makelabel{loops:Basic Attributes}{5.1}{X8373A7348161DB23}
+\makelabel{loops:Basic Arithmetic Operations}{5.2}{X82F2CA4A848ABD2B}
+\makelabel{loops:LeftDivision and RightDivision}{5.2.1}{X7D5956967BCC1834}
+\makelabel{loops:LeftDivisionCayleyTable and RightDivisionCayleyTable}{5.2.2}{X804F67C8796A0EB3}
+\makelabel{loops:Powers and Inverses}{5.3}{X810850247ADB4EE9}
+\makelabel{loops:LeftInverse, RightInverse and Inverse}{5.3.1}{X805781838020CF44}
+\makelabel{loops:Associators and Commutators}{5.4}{X7E0849977869E53D}
+\makelabel{loops:Generators}{5.5}{X7BD5B55C802805B4}
+\makelabel{loops:GeneratorsOfQuasigroup and GeneratorsOfLoop}{5.5.1}{X83944A777D161D10}
+\makelabel{loops:Methods Based on Permutation Groups}{6}{X794A04C5854D352B}
+\makelabel{loops:Parent of a Quasigroup}{6.1}{X8731D818827C08F3}
+\makelabel{loops:Subquasigroups and Subloops}{6.2}{X83EDF04F7952143F}
+\makelabel{loops:IsSubquasigroup and IsSubloop}{6.2.3}{X87AC8B7E80CE9260}
+\makelabel{loops:Translations and Sections}{6.3}{X78AA3D177CCA49FF}
+\makelabel{loops:LeftTranslation and RightTranslation}{6.3.1}{X7B45B48C7C4D6061}
+\makelabel{loops:LeftSection and RightSection}{6.3.2}{X7EB9197C80FB4664}
+\makelabel{loops:Multiplication Groups}{6.4}{X78ED50F578A88046}
+\makelabel{loops:LeftMultiplicationGroup, RightMultiplicationGroup and MultiplicationGroup}{6.4.1}{X7AB8C9947C1303E2}
+\makelabel{loops:RelativeLeftMultiplicationGroup, RelativeRightMultiplicationGroup and RelativeMultiplicationGroup}{6.4.2}{X847256B779E1E7E5}
+\makelabel{loops:Inner Mapping Groups}{6.5}{X8740D61178ACD217}
+\makelabel{loops:LeftInnerMapping, RightInnerMapping, MiddleInnerMapping}{6.5.1}{X7EE1E78C856C6F7C}
+\makelabel{loops:LeftInnerMappingGroup, RightInnerMappingGroup, MiddleInnerMappingGroup}{6.5.2}{X79CDA09A7D48BF2B}
+\makelabel{loops:Nuclei, Commutant, Center, and Associator Subloop}{6.6}{X7B45C2AF7C2E28AB}
+\makelabel{loops:LeftNucleus, MiddleNucleus, and RightNucleus}{6.6.1}{X798316F47A47FF63}
+\makelabel{loops:Nuc, NucleusOfQuasigroup and NucleusOfLoop}{6.6.2}{X84D389677A91C290}
+\makelabel{loops:Normal Subloops and Simple Loops}{6.7}{X85B650D284FE39F3}
+\makelabel{loops:Factor Loops}{6.8}{X87F66DB383C29A4A}
+\makelabel{loops:Nilpotency and Central Series}{6.9}{X821F40748401D698}
+\makelabel{loops:Solvability, Derived Series and Frattini Subloop}{6.10}{X83A38A6C7EDBCA63}
+\makelabel{loops:FrattiniSubloop and FrattinifactorSize}{6.10.4}{X85BD2C517FA7A47E}
+\makelabel{loops:Isomorphisms and Automorphisms}{6.11}{X81F3496578EAA74E}
+\makelabel{loops:Isotopisms}{6.12}{X7E996BDD81E594F9}
+\makelabel{loops:Testing Properties of Quasigroups and Loops}{7}{X7910E575825C713E}
+\makelabel{loops:Associativity, Commutativity and Generalizations}{7.1}{X7960E3FB7A7F0F00}
+\makelabel{loops:Inverse Properties}{7.2}{X8748BA2187604B24}
+\makelabel{loops:HasLeftInverseProperty, HasRightInverseProperty and HasInverseProperty}{7.2.1}{X85EDD10586596458}
+\makelabel{loops:Some Properties of Quasigroups}{7.3}{X7D8CB6DA828FD744}
+\makelabel{loops:IsLeftDistributive, IsRightDistributive, IsDistributive}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:IsEntropic and IsMedial}{7.3.7}{X7F23D4D97A38D223}
+\makelabel{loops:Loops of Bol Moufang Type}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:Power Alternative Loops}{7.5}{X83A501387E1AC371}
+\makelabel{loops:IsLeftPowerAlternative, IsRightPowerAlternative and IsPowerAlternative}{7.5.1}{X875C3DF681B3FAE2}
+\makelabel{loops:Conjugacy Closed Loops and Related Properties}{7.6}{X8176B2C47A4629CD}
+\makelabel{loops:Automorphic Loops}{7.7}{X793B22EA8643C667}
+\makelabel{loops:Additional Varieties of Loops}{7.8}{X878C9D247FB0D56E}
+\makelabel{loops:IsLeftBruckLoop and IsLeftKLoop}{7.8.3}{X85F1BD4280E44F5B}
+\makelabel{loops:IsRightBruckLoop and IsRightKLoop}{7.8.4}{X857B373E7B4E0519}
+\makelabel{loops:Specific Methods}{8}{X85AFC9C47FD3C03F}
+\makelabel{loops:Core Methods for Bol Loops}{8.1}{X7990F2F880E717EE}
+\makelabel{loops:AssociatedLeftBruckLoop and AssociatedRightBruckLoop}{8.1.1}{X8664CA927DD73DBE}
+\makelabel{loops:Moufang Modifications}{8.2}{X819F82737C2A860D}
+\makelabel{loops:Triality for Moufang Loops}{8.3}{X83E73A767D79FAFD}
+\makelabel{loops:Realizing Groups as Multiplication Groups of Loops}{8.4}{X841ED66B8084AA73}
+\makelabel{loops:Libraries of Loops}{9}{X7BF3EE6E7953560D}
+\makelabel{loops:A Typical Library}{9.1}{X874DFEAA79B3377C}
+\makelabel{loops:Left Bol Loops and Right Bol Loops}{9.2}{X7DF21BD685FBF258}
+\makelabel{loops:Left Bruck Loops and Right Bruck Loops}{9.3}{X8028D69A86B15897}
+\makelabel{loops:Moufang Loops}{9.4}{X7953702D84E60AF4}
+\makelabel{loops:Code Loops}{9.5}{X7BCA6BCB847F79DC}
+\makelabel{loops:Steiner Loops}{9.6}{X84E941EE7846D3EE}
+\makelabel{loops:Conjugacy Closed Loops}{9.7}{X867E5F0783FEB8B5}
+\makelabel{loops:RCCLoop and RightConjugacyClosedLoop}{9.7.1}{X806B2DE67990E42F}
+\makelabel{loops:LCCLoop and LeftConjugacyClosedLoop}{9.7.2}{X80AB8B107D55FB19}
+\makelabel{loops:CCLoop and ConjugacyClosedLoop}{9.7.3}{X798BC601843E8916}
+\makelabel{loops:Small Loops}{9.8}{X7E3A8F2C790F2CA1}
+\makelabel{loops:Paige Loops}{9.9}{X8135C8FD8714C606}
+\makelabel{loops:Nilpotent Loops}{9.10}{X86695C577A4D1784}
+\makelabel{loops:Automorphic Loops}{9.11}{X793B22EA8643C667}
+\makelabel{loops:Interesting Loops}{9.12}{X843BD73F788049F7}
+\makelabel{loops:Libraries of Loops Up To Isotopism}{9.13}{X864839227D5C0A90}
+\makelabel{loops:Files}{A}{X7BC4571A79FFB7D0}
+\makelabel{loops:Filters}{B}{X84EFA4C07D4277BB}
+\makelabel{loops:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{loops:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{loops:Index}{Ind}{X83A0356F839C696F}
+\makelabel{loops:License}{}{X81488B807F2A1CF1}
+\makelabel{loops:groupoid}{2.1}{X80243DE5826583B8}
+\makelabel{loops:magma}{2.1}{X80243DE5826583B8}
+\makelabel{loops:neutral element}{2.1}{X80243DE5826583B8}
+\makelabel{loops:identity element}{2.1}{X80243DE5826583B8}
+\makelabel{loops:inverse two-sided}{2.1}{X80243DE5826583B8}
+\makelabel{loops:group}{2.1}{X80243DE5826583B8}
+\makelabel{loops:quasigroup}{2.1}{X80243DE5826583B8}
+\makelabel{loops:latin square}{2.1}{X80243DE5826583B8}
+\makelabel{loops:loop}{2.1}{X80243DE5826583B8}
+\makelabel{loops:translation left}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:translation right}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:division left}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:division right}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:section left}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:section right}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:multiplication group left}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:multiplication group right}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:multiplication group}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:inner mapping group left}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:inner mapping group right}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:inner mapping group}{2.2}{X7EC01B437CC2B2C9}
+\makelabel{loops:subquasigroup}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:subloop}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:nucleus left}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:nucleus middle}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:nucleus right}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:nucleus}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:commutant}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:center}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:subloop normal}{2.3}{X83EDF04F7952143F}
+\makelabel{loops:nilpotence class}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:nilpotent loop}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:loop nilpotent}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:central series upper}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:derived subloop}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:solvability class}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:solvable loop}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:loop solvable}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:derived series}{2.4}{X869CBCE381E2C422}
+\makelabel{loops:commutator}{2.5}{X7E0849977869E53D}
+\makelabel{loops:associator}{2.5}{X7E0849977869E53D}
+\makelabel{loops:associator subloop}{2.5}{X7E0849977869E53D}
+\makelabel{loops:homomorphism}{2.6}{X791066ED7DD9F254}
+\makelabel{loops:isomorphism}{2.6}{X791066ED7DD9F254}
+\makelabel{loops:homotopism}{2.6}{X791066ED7DD9F254}
+\makelabel{loops:isotopism}{2.6}{X791066ED7DD9F254}
+\makelabel{loops:isotopism principal}{2.6}{X791066ED7DD9F254}
+\makelabel{loops:loop isotope principal}{2.6}{X791066ED7DD9F254}
+\makelabel{loops:IsQuasigroupElement}{3.1}{X86F02BBD87FEA1C6}
+\makelabel{loops:IsLoopElement}{3.1}{X86F02BBD87FEA1C6}
+\makelabel{loops:IsQuasigroup}{3.1}{X86F02BBD87FEA1C6}
+\makelabel{loops:IsLoop}{3.1}{X86F02BBD87FEA1C6}
+\makelabel{loops:Bol loop left}{3.3}{X87E49ED884FA6DC4}
+\makelabel{loops:loop left Bol}{3.3}{X87E49ED884FA6DC4}
+\makelabel{loops:simple loop}{3.3}{X87E49ED884FA6DC4}
+\makelabel{loops:loop simple}{3.3}{X87E49ED884FA6DC4}
+\makelabel{loops:SetQuasigroupElmName}{3.4.1}{X7A7EB1B579273D07}
+\makelabel{loops:SetLoopElmName}{3.4.1}{X7A7EB1B579273D07}
+\makelabel{loops:Cayley table}{4.1}{X7DE8405B82BC36A9}
+\makelabel{loops:multiplication table}{4.1}{X7DE8405B82BC36A9}
+\makelabel{loops:quasigroup table}{4.1}{X7DE8405B82BC36A9}
+\makelabel{loops:latin square}{4.1}{X7DE8405B82BC36A9}
+\makelabel{loops:loop table}{4.1}{X7DE8405B82BC36A9}
+\makelabel{loops:IsQuasigroupTable}{4.2.1}{X81179355869B9DFE}
+\makelabel{loops:IsQuasigroupCayleyTable}{4.2.1}{X81179355869B9DFE}
+\makelabel{loops:IsLoopTable}{4.2.2}{X7AAE48507A471069}
+\makelabel{loops:IsLoopCayleyTable}{4.2.2}{X7AAE48507A471069}
+\makelabel{loops:CanonicalCayleyTable}{4.3.1}{X7971CCB87DAFF7B9}
+\makelabel{loops:Cayley table canonical}{4.3.1}{X7971CCB87DAFF7B9}
+\makelabel{loops:CanonicalCopy}{4.3.2}{X7B816D887F46E6B7}
+\makelabel{loops:NormalizedQuasigroupTable}{4.3.3}{X821A2F9E85FAD8BF}
+\makelabel{loops:QuasigroupByCayleyTable}{4.4.1}{X860135BB85F2DB19}
+\makelabel{loops:LoopByCayleyTable}{4.4.1}{X860135BB85F2DB19}
+\makelabel{loops:QuasigroupFromFile}{4.5.1}{X81A1DB918057933E}
+\makelabel{loops:LoopFromFile}{4.5.1}{X81A1DB918057933E}
+\makelabel{loops:CayleyTableByPerms}{4.6.1}{X7F94C8DD7E1A3470}
+\makelabel{loops:QuasigroupByLeftSection}{4.6.2}{X7EC1EB0D7B8382A1}
+\makelabel{loops:LoopByLeftSection}{4.6.2}{X7EC1EB0D7B8382A1}
+\makelabel{loops:QuasigroupByRightSection}{4.6.3}{X80B436ED7CC0749E}
+\makelabel{loops:LoopByRightSection}{4.6.3}{X80B436ED7CC0749E}
+\makelabel{loops:folder quasigroup}{4.7}{X85ABE99E84E5B0E8}
+\makelabel{loops:QuasigroupByRightFolder}{4.7.1}{X83168E62861F70AB}
+\makelabel{loops:LoopByRightFolder}{4.7.1}{X83168E62861F70AB}
+\makelabel{loops:extension}{4.8}{X8759431780AC81A9}
+\makelabel{loops:extension nuclear}{4.8}{X8759431780AC81A9}
+\makelabel{loops:cocycle}{4.8}{X8759431780AC81A9}
+\makelabel{loops:NuclearExtension}{4.8.1}{X784733C67AA6B2FA}
+\makelabel{loops:LoopByExtension}{4.8.2}{X79AEE93E7E15B802}
+\makelabel{loops:latin square random}{4.9}{X7AE29A1A7AA5C25A}
+\makelabel{loops:RandomQuasigroup}{4.9.1}{X8271C0F5786B6FA9}
+\makelabel{loops:RandomLoop}{4.9.1}{X8271C0F5786B6FA9}
+\makelabel{loops:RandomNilpotentLoop}{4.9.2}{X817132C887D3FD3A}
+\makelabel{loops:loop nilpotent}{4.9.2}{X817132C887D3FD3A}
+\makelabel{loops:IntoQuasigroup}{4.10.1}{X84575A4B78CC545E}
+\makelabel{loops:PrincipalLoopIsotope}{4.10.2}{X79CEA57C850C7070}
+\makelabel{loops:IntoLoop}{4.10.3}{X7A59C36683118E5A}
+\makelabel{loops:IntoGroup}{4.10.4}{X7B5C6C64831B866E}
+\makelabel{loops:DirectProduct}{4.11.1}{X861BA02C7902A4F4}
+\makelabel{loops:opposite quasigroup}{4.12}{X7865FC8D7854C2E3}
+\makelabel{loops:quasigroup opposite}{4.12}{X7865FC8D7854C2E3}
+\makelabel{loops:Opposite}{4.12.1}{X87B6AED47EE2BCD3}
+\makelabel{loops:OppositeQuasigroup}{4.12.1}{X87B6AED47EE2BCD3}
+\makelabel{loops:OppositeLoop}{4.12.1}{X87B6AED47EE2BCD3}
+\makelabel{loops:Elements}{5.1.1}{X79B130FC7906FB4C}
+\makelabel{loops:CayleyTable}{5.1.2}{X85457FA27DE7114D}
+\makelabel{loops:One}{5.1.3}{X8129A6877FFD804B}
+\makelabel{loops:Size}{5.1.4}{X858ADA3B7A684421}
+\makelabel{loops:Exponent}{5.1.5}{X7D44470C7DA59C1C}
+\makelabel{loops:loop power associative}{5.1.5}{X7D44470C7DA59C1C}
+\makelabel{loops:power associative loop}{5.1.5}{X7D44470C7DA59C1C}
+\makelabel{loops:exponent}{5.1.5}{X7D44470C7DA59C1C}
+\makelabel{loops:LeftDivision}{5.2.1}{X7D5956967BCC1834}
+\makelabel{loops:RightDivision}{5.2.1}{X7D5956967BCC1834}
+\makelabel{loops:LeftDivision}{5.2.1}{X7D5956967BCC1834}
+\makelabel{loops:LeftDivision}{5.2.1}{X7D5956967BCC1834}
+\makelabel{loops:RightDivision}{5.2.1}{X7D5956967BCC1834}
+\makelabel{loops:RightDivision}{5.2.1}{X7D5956967BCC1834}
+\makelabel{loops:LeftDivisionCayleyTable}{5.2.2}{X804F67C8796A0EB3}
+\makelabel{loops:RightDivisionCayleyTable}{5.2.2}{X804F67C8796A0EB3}
+\makelabel{loops:inverse left}{5.3}{X810850247ADB4EE9}
+\makelabel{loops:inverse right}{5.3}{X810850247ADB4EE9}
+\makelabel{loops:inverse}{5.3}{X810850247ADB4EE9}
+\makelabel{loops:LeftInverse}{5.3.1}{X805781838020CF44}
+\makelabel{loops:RightInverse}{5.3.1}{X805781838020CF44}
+\makelabel{loops:Inverse}{5.3.1}{X805781838020CF44}
+\makelabel{loops:Associator}{5.4.1}{X82B7448879B91F7B}
+\makelabel{loops:Commutator}{5.4.2}{X7D624A9587FB1FE5}
+\makelabel{loops:GeneratorsOfQuasigroup}{5.5.1}{X83944A777D161D10}
+\makelabel{loops:GeneratorsOfLoop}{5.5.1}{X83944A777D161D10}
+\makelabel{loops:GeneratorsSmallest}{5.5.2}{X82FD78AF7F80A0E2}
+\makelabel{loops:SmallGeneratingSet}{5.5.3}{X814DBABC878D5232}
+\makelabel{loops:Parent}{6.1.1}{X7BC856CC7F116BB0}
+\makelabel{loops:Position}{6.1.2}{X79975EC6783B4293}
+\makelabel{loops:PosInParent}{6.1.3}{X832295DE866E44EE}
+\makelabel{loops:Subquasigroup}{6.2.1}{X7DD511FF864FCDFF}
+\makelabel{loops:Subloop}{6.2.2}{X84E6744E804AE830}
+\makelabel{loops:IsSubquasigroup}{6.2.3}{X87AC8B7E80CE9260}
+\makelabel{loops:IsSubloop}{6.2.3}{X87AC8B7E80CE9260}
+\makelabel{loops:AllSubquasigroups}{6.2.4}{X859B6C8183537E75}
+\makelabel{loops:AllSubloops}{6.2.5}{X81EF252585592001}
+\makelabel{loops:RightCosets}{6.2.6}{X835F48248571364F}
+\makelabel{loops:coset}{6.2.6}{X835F48248571364F}
+\makelabel{loops:RightTransversal}{6.2.7}{X85C65D06822E716F}
+\makelabel{loops:transversal}{6.2.7}{X85C65D06822E716F}
+\makelabel{loops:LeftTranslation}{6.3.1}{X7B45B48C7C4D6061}
+\makelabel{loops:RightTranslation}{6.3.1}{X7B45B48C7C4D6061}
+\makelabel{loops:LeftSection}{6.3.2}{X7EB9197C80FB4664}
+\makelabel{loops:RightSection}{6.3.2}{X7EB9197C80FB4664}
+\makelabel{loops:LeftMultiplicationGroup}{6.4.1}{X7AB8C9947C1303E2}
+\makelabel{loops:RightMultiplicationGroup}{6.4.1}{X7AB8C9947C1303E2}
+\makelabel{loops:MultiplicationGroup}{6.4.1}{X7AB8C9947C1303E2}
+\makelabel{loops:RelativeLeftMultiplicationGroup}{6.4.2}{X847256B779E1E7E5}
+\makelabel{loops:RelativeRightMultiplicationGroup}{6.4.2}{X847256B779E1E7E5}
+\makelabel{loops:RelativeMultiplicationGroup}{6.4.2}{X847256B779E1E7E5}
+\makelabel{loops:multiplication group relative left}{6.4.2}{X847256B779E1E7E5}
+\makelabel{loops:multiplication group relative right}{6.4.2}{X847256B779E1E7E5}
+\makelabel{loops:multiplication group relative}{6.4.2}{X847256B779E1E7E5}
+\makelabel{loops:inner mapping left}{6.5}{X8740D61178ACD217}
+\makelabel{loops:inner mapping right}{6.5}{X8740D61178ACD217}
+\makelabel{loops:conjugation}{6.5}{X8740D61178ACD217}
+\makelabel{loops:inner mapping middle}{6.5}{X8740D61178ACD217}
+\makelabel{loops:inner mapping group middle}{6.5}{X8740D61178ACD217}
+\makelabel{loops:LeftInnerMapping}{6.5.1}{X7EE1E78C856C6F7C}
+\makelabel{loops:RightInnerMapping}{6.5.1}{X7EE1E78C856C6F7C}
+\makelabel{loops:MiddleInnerMapping}{6.5.1}{X7EE1E78C856C6F7C}
+\makelabel{loops:LeftInnerMappingGroup}{6.5.2}{X79CDA09A7D48BF2B}
+\makelabel{loops:RightInnerMappingGroup}{6.5.2}{X79CDA09A7D48BF2B}
+\makelabel{loops:MiddleInnerMappingGroup}{6.5.2}{X79CDA09A7D48BF2B}
+\makelabel{loops:InnerMappingGroup}{6.5.3}{X82513A3B7C3A6420}
+\makelabel{loops:LeftNucleus}{6.6.1}{X798316F47A47FF63}
+\makelabel{loops:MiddleNucleus}{6.6.1}{X798316F47A47FF63}
+\makelabel{loops:RightNucleus}{6.6.1}{X798316F47A47FF63}
+\makelabel{loops:Nuc}{6.6.2}{X84D389677A91C290}
+\makelabel{loops:NucleusOfQuasigroup}{6.6.2}{X84D389677A91C290}
+\makelabel{loops:NucleusOfLoop}{6.6.2}{X84D389677A91C290}
+\makelabel{loops:Commutant}{6.6.3}{X7C8428DE791F3CE1}
+\makelabel{loops:Center}{6.6.4}{X7C1FBE7A84DD4873}
+\makelabel{loops:AssociatorSubloop}{6.6.5}{X7F7FDE82780EDD7E}
+\makelabel{loops:IsNormal}{6.7.1}{X838186F9836F678C}
+\makelabel{loops:subloop normal}{6.7.1}{X838186F9836F678C}
+\makelabel{loops:normal subloop}{6.7.1}{X838186F9836F678C}
+\makelabel{loops:NormalClosure}{6.7.2}{X7BDEA0A98720D1BB}
+\makelabel{loops:normal closure}{6.7.2}{X7BDEA0A98720D1BB}
+\makelabel{loops:IsSimple}{6.7.3}{X7D8E63A7824037CC}
+\makelabel{loops:simple loop}{6.7.3}{X7D8E63A7824037CC}
+\makelabel{loops:loop simple}{6.7.3}{X7D8E63A7824037CC}
+\makelabel{loops:FactorLoop}{6.8.1}{X83E1953980E2DE2F}
+\makelabel{loops:NaturalHomomorphismByNormalSubloop}{6.8.2}{X870FCB497AECC730}
+\makelabel{loops:IsNilpotent}{6.9.1}{X78A4B93781C96AAE}
+\makelabel{loops:NilpotencyClassOfLoop}{6.9.2}{X7D5FC62581A99482}
+\makelabel{loops:IsStronglyNilpotent}{6.9.3}{X7E7C2D117B55F6A0}
+\makelabel{loops:strongly nilpotent loop}{6.9.3}{X7E7C2D117B55F6A0}
+\makelabel{loops:nilpotent loop strongly}{6.9.3}{X7E7C2D117B55F6A0}
+\makelabel{loops:loop strongly nilpotent}{6.9.3}{X7E7C2D117B55F6A0}
+\makelabel{loops:UpperCentralSeries}{6.9.4}{X7ED37AA07BEE79E0}
+\makelabel{loops:LowerCentralSeries}{6.9.5}{X817BDBC2812992ED}
+\makelabel{loops:central series lower}{6.9.5}{X817BDBC2812992ED}
+\makelabel{loops:IsSolvable}{6.10.1}{X79B10B337A3B1C6E}
+\makelabel{loops:DerivedSubloop}{6.10.2}{X7A82DC4680DAD67C}
+\makelabel{loops:DerivedLength}{6.10.3}{X7A9AA1577CEC891F}
+\makelabel{loops:FrattiniSubloop}{6.10.4}{X85BD2C517FA7A47E}
+\makelabel{loops:Frattini subloop}{6.10.4}{X85BD2C517FA7A47E}
+\makelabel{loops:FrattinifactorSize}{6.10.5}{X855286367A2D5A54}
+\makelabel{loops:IsomorphismQuasigroups}{6.11.1}{X801067F67E5292F7}
+\makelabel{loops:IsomorphismLoops}{6.11.2}{X7D7B10D6836FCA9F}
+\makelabel{loops:QuasigroupsUpToIsomorphism}{6.11.3}{X82373C5479574F22}
+\makelabel{loops:LoopsUpToIsomorphism}{6.11.4}{X8308F38283C61B20}
+\makelabel{loops:AutomorphismGroup}{6.11.5}{X87677B0787B4461A}
+\makelabel{loops:QuasigroupIsomorph}{6.11.6}{X7A42812B7B027DD4}
+\makelabel{loops:LoopIsomorph}{6.11.7}{X7BD1AC32851286EA}
+\makelabel{loops:IsomorphicCopyByPerm}{6.11.8}{X85B3E22679FD8D81}
+\makelabel{loops:IsomorphicCopyByNormalSubloop}{6.11.9}{X8121DE3A78795040}
+\makelabel{loops:Discriminator}{6.11.10}{X7D09D8957E4A0973}
+\makelabel{loops:AreEqualDiscriminators}{6.11.11}{X812F0DEE7C896E18}
+\makelabel{loops:IsotopismLoops}{6.12.1}{X84C5ADE77F910F63}
+\makelabel{loops:LoopsUpToIsotopism}{6.12.2}{X841E540B7A7EF29F}
+\makelabel{loops:IsAssociative}{7.1.1}{X7C83B5A47FD18FB7}
+\makelabel{loops:IsCommutative}{7.1.2}{X830A4A4C795FBC2D}
+\makelabel{loops:IsPowerAssociative}{7.1.3}{X7D53EA947F1CDA69}
+\makelabel{loops:quasigroup power associative}{7.1.3}{X7D53EA947F1CDA69}
+\makelabel{loops:power associative quasigroup}{7.1.3}{X7D53EA947F1CDA69}
+\makelabel{loops:IsDiassociative}{7.1.4}{X872DCA027E1A4A1D}
+\makelabel{loops:quasigroup diassociative}{7.1.4}{X872DCA027E1A4A1D}
+\makelabel{loops:diassociative quasigroup}{7.1.4}{X872DCA027E1A4A1D}
+\makelabel{loops:inverse left}{7.2}{X8748BA2187604B24}
+\makelabel{loops:inverse right}{7.2}{X8748BA2187604B24}
+\makelabel{loops:HasLeftInverseProperty}{7.2.1}{X85EDD10586596458}
+\makelabel{loops:HasRightInverseProperty}{7.2.1}{X85EDD10586596458}
+\makelabel{loops:HasInverseProperty}{7.2.1}{X85EDD10586596458}
+\makelabel{loops:inverse property left}{7.2.1}{X85EDD10586596458}
+\makelabel{loops:inverse property right}{7.2.1}{X85EDD10586596458}
+\makelabel{loops:inverse property}{7.2.1}{X85EDD10586596458}
+\makelabel{loops:HasTwosidedInverses}{7.2.2}{X86B93E1B7AEA6EDA}
+\makelabel{loops:inverse two-sided}{7.2.2}{X86B93E1B7AEA6EDA}
+\makelabel{loops:HasWeakInverseProperty}{7.2.3}{X793909B780761EA8}
+\makelabel{loops:inverse property weak}{7.2.3}{X793909B780761EA8}
+\makelabel{loops:HasAutomorphicInverseProperty}{7.2.4}{X7F46CE6B7D387158}
+\makelabel{loops:automorphic inverse property}{7.2.4}{X7F46CE6B7D387158}
+\makelabel{loops:inverse property automorphic}{7.2.4}{X7F46CE6B7D387158}
+\makelabel{loops:HasAntiautomorphicInverseProperty}{7.2.5}{X8538D4638232DB51}
+\makelabel{loops:antiautomorphic inverse property}{7.2.5}{X8538D4638232DB51}
+\makelabel{loops:inverse property antiautomorphic}{7.2.5}{X8538D4638232DB51}
+\makelabel{loops:IsSemisymmetric}{7.3.1}{X834848ED85F9012B}
+\makelabel{loops:semisymmetric quasigroup}{7.3.1}{X834848ED85F9012B}
+\makelabel{loops:quasigroup semisymmetric}{7.3.1}{X834848ED85F9012B}
+\makelabel{loops:IsTotallySymmetric}{7.3.2}{X834F809B8060B754}
+\makelabel{loops:totally symmetric quasigroup}{7.3.2}{X834F809B8060B754}
+\makelabel{loops:quasigroup totally symmetric}{7.3.2}{X834F809B8060B754}
+\makelabel{loops:IsIdempotent}{7.3.3}{X7CB5896082D29173}
+\makelabel{loops:idempotent quasigroup}{7.3.3}{X7CB5896082D29173}
+\makelabel{loops:quasigroup idempotent}{7.3.3}{X7CB5896082D29173}
+\makelabel{loops:IsSteinerQuasigroup}{7.3.4}{X83DE7DD77C056C1F}
+\makelabel{loops:Steiner quasigroup}{7.3.4}{X83DE7DD77C056C1F}
+\makelabel{loops:quasigroup Steiner}{7.3.4}{X83DE7DD77C056C1F}
+\makelabel{loops:unipotent quasigroup}{7.3.5}{X7CA3DCA07B6CB9BD}
+\makelabel{loops:quasigroup unipotent}{7.3.5}{X7CA3DCA07B6CB9BD}
+\makelabel{loops:IsUnipotent}{7.3.5}{X7CA3DCA07B6CB9BD}
+\makelabel{loops:IsLeftDistributive}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:IsRightDistributive}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:IsDistributive}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:quasigroup left distributive}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:distributive quasigroup left}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:quasigroup right distributive}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:distributive quasigroup right}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:quasigroup distributive}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:distributive quasigroup}{7.3.6}{X7B76FD6E878ED4F1}
+\makelabel{loops:IsEntropic}{7.3.7}{X7F23D4D97A38D223}
+\makelabel{loops:IsMedial}{7.3.7}{X7F23D4D97A38D223}
+\makelabel{loops:entropic quasigroup}{7.3.7}{X7F23D4D97A38D223}
+\makelabel{loops:quasigroup entropic}{7.3.7}{X7F23D4D97A38D223}
+\makelabel{loops:medial quasigroup}{7.3.7}{X7F23D4D97A38D223}
+\makelabel{loops:quasigroup medial}{7.3.7}{X7F23D4D97A38D223}
+\makelabel{loops:loop of Bol-Moufang type}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:identity of Bol-Moufang type}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:alternative loop left}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop left alternative}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:alternative loop right}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop right alternative}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:nuclear square loop left}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop left nuclear square}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:nuclear square loop middle}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop middle nuclear square}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:nuclear square loop right}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop right nuclear square}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:flexible loop}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop flexible}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:Bol loop left}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop left Bol}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:Bol loop right}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop right Bol}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:LC loop}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop LC}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:RC loop}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop RC}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:Moufang loop}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop Moufang}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:C loop}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop C}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:extra loop}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop extra}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:alternative loop}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop alternative}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:nuclear square loop}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:loop nuclear square}{7.4}{X780D907986EBA6C7}
+\makelabel{loops:IsExtraLoop}{7.4.1}{X7988AFE27D06ACB5}
+\makelabel{loops:IsMoufangLoop}{7.4.2}{X7F1C151484C97E61}
+\makelabel{loops:IsCLoop}{7.4.3}{X866F04DC7AE54B7C}
+\makelabel{loops:IsLeftBolLoop}{7.4.4}{X801DAAE8834A1A65}
+\makelabel{loops:IsRightBolLoop}{7.4.5}{X79279F9787E72566}
+\makelabel{loops:IsLCLoop}{7.4.6}{X789E0A6979697C4C}
+\makelabel{loops:IsRCLoop}{7.4.7}{X7B03CC577802F4AB}
+\makelabel{loops:IsLeftNuclearSquareLoop}{7.4.8}{X819F285887B5EB9E}
+\makelabel{loops:IsMiddleNuclearSquareLoop}{7.4.9}{X8474F55681244A8A}
+\makelabel{loops:IsRightNuclearSquareLoop}{7.4.10}{X807B3B21825E3076}
+\makelabel{loops:IsNuclearSquareLoop}{7.4.11}{X796650088213229B}
+\makelabel{loops:IsFlexible}{7.4.12}{X7C32851A7AF1C45F}
+\makelabel{loops:IsLeftAlternative}{7.4.13}{X7DF0196786B9CE08}
+\makelabel{loops:IsRightAlternative}{7.4.14}{X8416FAD87F148F5D}
+\makelabel{loops:IsAlternative}{7.4.15}{X8379356E82DB5DDA}
+\makelabel{loops:power alternative loop left}{7.5}{X83A501387E1AC371}
+\makelabel{loops:loop left power alternative}{7.5}{X83A501387E1AC371}
+\makelabel{loops:power alternative loop right}{7.5}{X83A501387E1AC371}
+\makelabel{loops:loop right power alternative}{7.5}{X83A501387E1AC371}
+\makelabel{loops:power alternative loop}{7.5}{X83A501387E1AC371}
+\makelabel{loops:loop power alternative}{7.5}{X83A501387E1AC371}
+\makelabel{loops:IsLeftPowerAlternative}{7.5.1}{X875C3DF681B3FAE2}
+\makelabel{loops:IsRightPowerAlternative}{7.5.1}{X875C3DF681B3FAE2}
+\makelabel{loops:IsPowerAlternative}{7.5.1}{X875C3DF681B3FAE2}
+\makelabel{loops:conjugacy closed loop left}{7.6}{X8176B2C47A4629CD}
+\makelabel{loops:loop left conjugacy closed}{7.6}{X8176B2C47A4629CD}
+\makelabel{loops:conjugacy closed loop right}{7.6}{X8176B2C47A4629CD}
+\makelabel{loops:loop right conjugacy closed}{7.6}{X8176B2C47A4629CD}
+\makelabel{loops:conjugacy closed loop}{7.6}{X8176B2C47A4629CD}
+\makelabel{loops:loop conjugacy closed}{7.6}{X8176B2C47A4629CD}
+\makelabel{loops:IsLCCLoop}{7.6.1}{X784E08CD7B710AF4}
+\makelabel{loops:IsLeftConjugacyClosedLoop}{7.6.1}{X784E08CD7B710AF4}
+\makelabel{loops:IsRCCLoop}{7.6.2}{X7B3016B47A1A8213}
+\makelabel{loops:IsRightConjugacyClosedLoop}{7.6.2}{X7B3016B47A1A8213}
+\makelabel{loops:IsCCLoop}{7.6.3}{X878B614479DCB83F}
+\makelabel{loops:IsConjugacyClosedLoop}{7.6.3}{X878B614479DCB83F}
+\makelabel{loops:IsOsbornLoop}{7.6.4}{X8655956878205FC1}
+\makelabel{loops:Osborn loop}{7.6.4}{X8655956878205FC1}
+\makelabel{loops:loop Osborn}{7.6.4}{X8655956878205FC1}
+\makelabel{loops:automorphic loop left}{7.7}{X793B22EA8643C667}
+\makelabel{loops:loop left automorphic}{7.7}{X793B22EA8643C667}
+\makelabel{loops:automorphic loop middle}{7.7}{X793B22EA8643C667}
+\makelabel{loops:loop middle automorphic}{7.7}{X793B22EA8643C667}
+\makelabel{loops:automorphic loop right}{7.7}{X793B22EA8643C667}
+\makelabel{loops:loop right automorphic}{7.7}{X793B22EA8643C667}
+\makelabel{loops:automorphic loop}{7.7}{X793B22EA8643C667}
+\makelabel{loops:loop automorphic}{7.7}{X793B22EA8643C667}
+\makelabel{loops:IsLeftAutomorphicLoop}{7.7.1}{X7F063914804659F1}
+\makelabel{loops:IsLeftALoop}{7.7.1}{X7F063914804659F1}
+\makelabel{loops:IsMiddleAutomorphicLoop}{7.7.2}{X7DFE830584A769E5}
+\makelabel{loops:IsMiddleALoop}{7.7.2}{X7DFE830584A769E5}
+\makelabel{loops:IsRightAutomorphicLoop}{7.7.3}{X7EA9165A87F99E35}
+\makelabel{loops:IsRightALoop}{7.7.3}{X7EA9165A87F99E35}
+\makelabel{loops:IsAutomorphicLoop}{7.7.4}{X7899603184CF13FD}
+\makelabel{loops:IsALoop}{7.7.4}{X7899603184CF13FD}
+\makelabel{loops:IsCodeLoop}{7.8.1}{X790FA1188087D5C1}
+\makelabel{loops:code loop}{7.8.1}{X790FA1188087D5C1}
+\makelabel{loops:loop code}{7.8.1}{X790FA1188087D5C1}
+\makelabel{loops:IsSteinerLoop}{7.8.2}{X793600C9801F4F62}
+\makelabel{loops:Steiner loop}{7.8.2}{X793600C9801F4F62}
+\makelabel{loops:loop Steiner}{7.8.2}{X793600C9801F4F62}
+\makelabel{loops:IsLeftBruckLoop}{7.8.3}{X85F1BD4280E44F5B}
+\makelabel{loops:IsLeftKLoop}{7.8.3}{X85F1BD4280E44F5B}
+\makelabel{loops:Bruck loop left}{7.8.3}{X85F1BD4280E44F5B}
+\makelabel{loops:loop left Bruck}{7.8.3}{X85F1BD4280E44F5B}
+\makelabel{loops:K loop left}{7.8.3}{X85F1BD4280E44F5B}
+\makelabel{loops:loop left K}{7.8.3}{X85F1BD4280E44F5B}
+\makelabel{loops:IsRightBruckLoop}{7.8.4}{X857B373E7B4E0519}
+\makelabel{loops:IsRightKLoop}{7.8.4}{X857B373E7B4E0519}
+\makelabel{loops:Bruck loop right}{7.8.4}{X857B373E7B4E0519}
+\makelabel{loops:loop right Bruck}{7.8.4}{X857B373E7B4E0519}
+\makelabel{loops:K loop right}{7.8.4}{X857B373E7B4E0519}
+\makelabel{loops:loop right K}{7.8.4}{X857B373E7B4E0519}
+\makelabel{loops:AssociatedLeftBruckLoop}{8.1.1}{X8664CA927DD73DBE}
+\makelabel{loops:AssociatedRightBruckLoop}{8.1.1}{X8664CA927DD73DBE}
+\makelabel{loops:loop left Bol}{8.1.1}{X8664CA927DD73DBE}
+\makelabel{loops:Bol loop left}{8.1.1}{X8664CA927DD73DBE}
+\makelabel{loops:Bruck loop associated left}{8.1.1}{X8664CA927DD73DBE}
+\makelabel{loops:loop associated left Bruck}{8.1.1}{X8664CA927DD73DBE}
+\makelabel{loops:IsExactGroupFactorization}{8.1.2}{X82FC16F386CE11F1}
+\makelabel{loops:exact group factorization}{8.1.2}{X82FC16F386CE11F1}
+\makelabel{loops:RightBolLoopByExactGroupFactorization}{8.1.3}{X7DCA64807F899127}
+\makelabel{loops:modification Moufang}{8.2}{X819F82737C2A860D}
+\makelabel{loops:LoopByCyclicModification}{8.2.1}{X7B3165C083709831}
+\makelabel{loops:modification cyclic}{8.2.1}{X7B3165C083709831}
+\makelabel{loops:LoopByDihedralModification}{8.2.2}{X7D7717C587BC2D1E}
+\makelabel{loops:modification dihedral}{8.2.2}{X7D7717C587BC2D1E}
+\makelabel{loops:LoopMG2}{8.2.3}{X7CC6CDB786E9BBA0}
+\makelabel{loops:Chein loop}{8.2.3}{X7CC6CDB786E9BBA0}
+\makelabel{loops:loop Chein}{8.2.3}{X7CC6CDB786E9BBA0}
+\makelabel{loops:group with triality}{8.3}{X83E73A767D79FAFD}
+\makelabel{loops:TrialityPermGroup}{8.3.1}{X7DB4DE647F6F56F0}
+\makelabel{loops:TrialityPcGroup}{8.3.2}{X82CC977085DFDFE8}
+\makelabel{loops:AllLoopTablesInGroup}{8.4.1}{X804F40087DD1225D}
+\makelabel{loops:AllProperLoopTablesInGroup}{8.4.2}{X7854C8E382DC8E8B}
+\makelabel{loops:OneLoopTableInGroup}{8.4.3}{X7BFFC66A824BA6AA}
+\makelabel{loops:OneProperLoopTableInGroup}{8.4.4}{X84C5A76585B335FF}
+\makelabel{loops:AllLoopsWithMltGroup}{8.4.5}{X7E5F1C2879358EEF}
+\makelabel{loops:OneLoopWithMltGroup}{8.4.6}{X8266DE05824226E6}
+\makelabel{loops:LibraryLoop}{9.1.1}{X849865D6786EEF9B}
+\makelabel{loops:MyLibraryLoop}{9.1.2}{X78C4B8757902D49F}
+\makelabel{loops:DisplayLibraryInfo}{9.1.3}{X7A64372E81E713B4}
+\makelabel{loops:LeftBolLoop}{9.2.1}{X7EE99F647C537994}
+\makelabel{loops:RightBolLoop}{9.2.2}{X8774304282654C58}
+\makelabel{loops:LeftBruckLoop}{9.3.1}{X8290B01780F0FCD3}
+\makelabel{loops:RightBruckLoop}{9.3.2}{X798DD7CF871F648F}
+\makelabel{loops:MoufangLoop}{9.4.1}{X81E82098822543EE}
+\makelabel{loops:octonion loop}{9.4.1}{X81E82098822543EE}
+\makelabel{loops:loop octonion}{9.4.1}{X81E82098822543EE}
+\makelabel{loops:CodeLoop}{9.5.1}{X7DB4D3B27BB4D7EE}
+\makelabel{loops:SteinerLoop}{9.6.1}{X87C235457E859AF4}
+\makelabel{loops:RCCLoop}{9.7.1}{X806B2DE67990E42F}
+\makelabel{loops:RightConjugacyClosedLoop}{9.7.1}{X806B2DE67990E42F}
+\makelabel{loops:LCCLoop}{9.7.2}{X80AB8B107D55FB19}
+\makelabel{loops:LeftConjugacyClosedLoop}{9.7.2}{X80AB8B107D55FB19}
+\makelabel{loops:CCLoop}{9.7.3}{X798BC601843E8916}
+\makelabel{loops:ConjugacyClosedLoop}{9.7.3}{X798BC601843E8916}
+\makelabel{loops:SmallLoop}{9.8.1}{X7C6EE23E84CD87D3}
+\makelabel{loops:Paige loop}{9.9}{X8135C8FD8714C606}
+\makelabel{loops:loop Paige}{9.9}{X8135C8FD8714C606}
+\makelabel{loops:PaigeLoop}{9.9.1}{X7FCF4D6B7AD66D74}
+\makelabel{loops:NilpotentLoop}{9.10.1}{X7A9C960D86E2AD28}
+\makelabel{loops:AutomorphicLoop}{9.11.1}{X784FFA9E7FDA9F43}
+\makelabel{loops:sedenion loop}{9.12}{X843BD73F788049F7}
+\makelabel{loops:loop sedenion}{9.12}{X843BD73F788049F7}
+\makelabel{loops:InterestingLoop}{9.12.1}{X87F24AD3811910D3}
+\makelabel{loops:ItpSmallLoop}{9.13.1}{X850C4C01817A098D}

@@ -1,0 +1,15 @@
+  
+  [1X1 [33X[0;0YThe nofoma package[133X[101X
+  
+  [33X[0;0YLet  [22XK[122X  be  a  field  and  [22XA[122X be an [22Xn× n[122X-matrix over [22XK[122X. This package provides
+  functions for computing both the Frobenius normal form and the Jordan normal
+  form  of [22XA[122X. Furthermore, it also includes a functions for the computation of
+  a primary decomposition and the Jordan-Chevalley decomposition of [22XA[122X.[133X
+  
+  
+  [1X1.1 [33X[0;0YInstallation of the [5Xnofoma[105X[101X[1X package[133X[101X
+  
+  [33X[0;0YTo  install  this  package first unpack it inside some [5XGAP[105X root directory in
+  the  subdirectory  [10Xpkg[110X  (see  [14X'Reference:  Installing  a GAP Package'[114X). Then
+  [5Xnofoma[105X can already be loaded and used (just type [10XLoadPackage("nofoma");[110X).[133X
+  

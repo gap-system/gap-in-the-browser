@@ -1,0 +1,170 @@
+@Chapter Add Functions
+
+This section describes the overall structure of Add-functions and the functions installed by them.
+
+@Section Functions Installed by Add
+
+Add functions have the following syntax:
+
+@BeginCode AddSomeFunc
+DeclareOperation( "AddSomeFunc",
+                  [ IsCapCategory, IsList, IsInt ] );
+@EndCode
+
+@InsertCode AddSomeFunc
+
+The first argument is the category to which some function (e.g. `KernelObject`)
+is added, the second is a list containing pairs of functions and additional
+filters for the arguments, (e.g. if one argument is a morphism, an additional filter could be `IsMomomorphism`).
+The third is an optional weight which will then be the weight for `SomeFunc` (default value: 100). This is described later.
+If only one function is to be installed, the list can be replaced by the function.
+CAP installs the given function(s) as methods for `SomeFunc` (resp. `SomeFuncOp` if `SomeFunc` is not an operation).
+
+All installed methods follow the following steps, described below:
+* Redirect function
+* Prefunction
+* Function
+* Logic
+* Postfunction
+* Addfunction
+
+Every other part, except from function, does only depend on the name `SomeFunc`. We now explain the steps in detail.
+
+* Redirect function: The redirect is used to redirect the computation from the given functions to some other symbol.
+  If there is for example a with given method for some universal property, and the universal object is already computed,
+  the redirect function might detect such a thing, calls the with given operation with the universal object as additional
+  argument and then returns the value. In general, the redirect can be an arbitrary function. It is called with the same
+  arguments as the operation `SomeFunc` itself and can return an array containing `[ true, something ]`, which will cause
+  the installed method to simply return the object `something`, or `[ false ]`. If the output is `false`, the computation will
+  continue with the step Prefunction.
+
+* Prefunction: The prefunction should be used for error handling and plausibility checks of the input to `SomeFunc`
+  (e.g. for `KernelLift` it should check wether range and source of the morphims coincide). Generally, the prefunction is defined
+  in the method record and only depends on the name `SomeFunc`. It is called with the same input as the function itself, and
+  should return either `[ true ]`, which continues the computation, or `[ false, "message" ]`, which will cause an error with
+  message `"message"` and some additional information.
+
+* Full prefunction: The full prefuction has the same semantics as the prefunction, but can perform additional, very
+  costly checks. They are disabled by default.
+
+* Function: This will launch the function(s) given as arguments. The result should be as specified in the type of
+  `SomeFunc`. The resulting object is now named the result.
+
+* Logic: For every function, some logical todos can be implemented in a logic texfile for the category. If there is
+  some logic written down in a file belonging to the category, or belonging to some type of category. Please see the
+  description of logic for more details. If there is some logic and some predicate relations for the function `SomeFunc`,
+  it is installed in this step for the result.
+
+* Postfunction: The postfunction called with the arguments of the function and the result. It can be an arbitrary function doing
+  some cosmetics. If for example `SomeFunc` is `KernelEmbedding`, it will set the `KernelObject` of the input morphism to result.
+  The postfunction is also taken from the method record and does only depend on the name `SomeFunc`.
+
+* Addfunction: If the result is a category cell, it is added to the category for which the function was installed.
+  This is disabled by default and can be enabled via <Ref Func="EnableAddForCategoricalOperations" />.
+
+@Section Add Method
+
+Except from installing a new method for the name `SomeFunc`, an Add method does slightly more.
+Every Add method has the same structure. The steps in the Add method are as follows:
+
+* Default weight: If the weight parameter is -1, the default weight is assumed, which is 100.
+
+* Weight check: If the current weight of the operation is lower than the given weight of the new functions,
+                then the add function returns and installs nothing.
+
+* Installation: Next, the method to install the functions is created. It creates the correct filter list, by merging the standard filters
+                for the operation with the particular filters for the given functions, then installs the method as described above.
+
+After calling an add method, the corresponding operation is available in the category. Also, some derivations, which are triggered by the setting
+of the primitive value, might be available.
+
+
+@Section Method name record entries
+@SectionLabel method_name_record_entries
+
+The entries of method name records can have the following components:
+@InsertCode CAP_INTERNAL_VALID_METHOD_NAME_RECORD_COMPONENTS
+
+* pre_function (optional): A function which is used as the prefunction of the installed methods, as described above.
+  Can also be the name of another operation. In this case the pre function of the referenced operation is used.
+
+* pre_function_full (optional): A function which is used as the full prefunction of the installed methods, as described above.
+  Can also be the name of another operation. In this case the full pre function of the referenced operation is used.
+
+* redirect_function (optional): A function which is used as the redirect function of the installed methods, as described above.
+  Can also be the name of another operation. In this case the redirect function of the referenced operation is used.
+
+* post_function (optional): A function which is used as the postfunction of the installed methods, as described above.
+
+* filter_list: A list containing the basic filters for the methods installed by the add methods. Possible entries are filters, or
+               the strings listed below, which will be replaced by appropriate filters at the time the add method is called.
+               The first entry of `filter_list` must be the string `category`. If the category can be inferred from the remaining arguments, a convenience method without the category
+               as the first argument is installed automatically.
+               * <C>category</C>,
+               * <C>object</C>,
+               * <C>morphism</C>,
+               * <C>twocell</C>,
+               * <C>object_in_range_category_of_homomorphism_structure</C>,
+               * <C>morphism_in_range_category_of_homomorphism_structure</C>,
+               * <C>list_of_objects</C>,
+               * <C>list_of_morphisms</C>,
+               * <C>list_of_twocells</C>.
+
+* return_type: The return type can either be a filter or one of the strings in the list below.
+               For objects, morphisms and $2$-cells the correct <C>Add</C> function (see above) is
+               used for the result of the computation. Otherwise, no <C>Add</C> function is used after all.
+@InsertCode CAP_INTERNAL_VALID_RETURN_TYPES
+
+* functorial (optional): If an object has a corresponding functorial function, e.g., `KernelObject` and `KernelObjectFunctorial`,
+                         the name of the functorial is stored as a string.
+
+* dual_operation (optional): Name of the dual operation.
+
+* dual_arguments_reversed (optional): Boolean, marks whether for the call of the dual operation all arguments have to be given in reversed order.
+
+* dual_with_given_objects_reversed (optional): Boolean, marks whether for the call of the dual operation the source and range of a with given operation have to be given in reversed order.
+
+* dual_preprocessor_func[_string] (optional): let f be an operation with dual operation g. For the automatic installation of g from f,
+  the arguments given to g are preprocessed by this given function. The function can also be given as a string.
+
+* dual_postprocessor_func[_string] (optional): let f be an operation with dual operation g. For the automatic installation of g from f,
+  the computed value of f is postprocessed by the given function. The function can also be given as a string.
+
+* input_arguments_names (optional): A duplicate free list (of the same length as `filter_list`) of strings.
+  For example, these strings will be used as the names of the arguments when automatically generating functions for this operation, e.g. in the opposite category.
+
+* output_source_getter_string (optional): Only valid if the operation returns a morphism: a piece of GAP code which computes the source of the
+  returned morphism. The input arguments are available via the names given in `input_arguments_names`.
+
+* output_source_getter_preconditions (optional): Only valid if output_source_getter_string is set: The preconditions of output_source_getter_string in the same form as preconditions of derivations
+  but with the CAP operations given as strings.
+
+* output_range_getter_string (optional): Only valid if the operation returns a morphism: a piece of GAP code which computes the range of the
+  returned morphism. The input arguments are available via the names given in `input_arguments_names`.
+
+* output_range_getter_preconditions (optional): Only valid if output_range_getter_string is set: The preconditions of output_range_getter_string in the same form as preconditions of derivations
+  but with the CAP operations given as strings.
+
+* with_given_object_position (optional): One of the following strings: `"Source"`, `"Range"`, or `"both"`.
+  Set for the without given operation in a with given pair. Describes whether the source resp. range are given
+  (as the last argument of the with given operation) or both (as the second and the last argument of the with given operation).
+
+* compatible_with_congruence_of_morphisms (optional): Indicates if the operation is compatible with the congruence of morphisms, that is,
+  if the output does not change with regard to `IsEqualForObjects` and `IsCongruentForMorphisms` if the input changes with regard to `IsEqualForObjects` and `IsCongruentForMorphisms`.
+
+
+@Section Enhancing the method name record
+
+The function CAP_INTERNAL_ENHANCE_NAME_RECORD can be applied to a method name record to make the following enhancements:
+
+* Function name: Set the component function_name to the entry name.
+
+* WithGiven special case: If the current entry belongs to a WithGiven operation or its without given pair, the with_given_without_given_name_pair is set.
+                          Additionally, the with given flag of the WithGiven operation is set to true.
+
+* Redirect and post functions are created for all operations belonging to universal constructions (e.g. `KernelLift`) which are not a WithGiven operation.
+
+
+@Section Prepare functions
+
+@Section Available Add functions

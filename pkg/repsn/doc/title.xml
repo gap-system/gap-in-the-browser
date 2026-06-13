@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    Repsn
+  </Title>
+  <Subtitle>
+    Constructing representations of finite groups
+  </Subtitle>
+  <Version>
+    3.1.2
+  </Version>
+  <Author>
+    Vahid Dabbaghian<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Vahid Dabbaghian<Br/>
+Department of Mathematics<Br/>
+Simon Fraser University<Br/>
+Burnaby, British Columbia<Br/>
+V5A 1S6 Canada<Br/>
+</Address>
+<Email>vdabbagh@sfu.ca</Email>
+<Homepage>https://www.sfu.ca/~vdabbagh</Homepage>
+
+  </Author>
+  <Date>
+    22 January 2024
+  </Date>
+  <Acknowledgements>
+    <P/>The first version of this package was obtained during my Ph.D.
+studies at Carleton University. I would like to express deep gratitude
+to my supervisor Professor John D. Dixon whose guidance and support were
+crucial for the successful completion of this project. I also thank
+Professor Charles Wright and referees for pointing out some important
+comments to improve <Package>Repsn</Package>.
+
+<P/>This documentation was prepared with the <Package>GAPDoc</Package>
+package by Frank Lübeck and Max Neunhöffer.
+  </Acknowledgements>
+  </TitlePage>

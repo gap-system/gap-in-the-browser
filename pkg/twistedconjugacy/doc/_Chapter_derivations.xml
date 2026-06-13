@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_derivations">
+<Heading>Group derivations</Heading>
+
+<P/>
+Let <Math>G</Math> and <Math>H</Math> be groups and let <Math>H</Math> act on <Math>G</Math> via automorphisms, i.e.
+there is a group homomorphism
+<Display>\alpha \colon H \to \operatorname{Aut}(G) \colon h \mapsto \alpha_h</Display>
+such that <Math>g^h = \alpha_h(g)</Math> for all <Math>g \in G</Math> and <Math>h \in H</Math>.
+A <Emph>group derivation</Emph> <Math>\delta \colon H \to G</Math> is a map such that
+<Display>\delta(h_1h_2) = \delta(h_1)^{h_2}\delta(h_2).</Display>
+Note that we do not require <Math>G</Math> to be abelian.
+<P/>
+<P/>
+<P/>
+Algorithms designed for computing with twisted conjugacy classes can be
+leveraged to do computations involving group derivations, see
+<Cite Key='tert26-a' Where='Sec. 10'/> for a description on this.
+<P/>
+<P/>
+<P/>
+Please note that the functions in this chapter require <Math>G</Math> and <Math>H</Math> to either
+both be finite, or both be PcpGroups.
+<P/>
+<Section Label="Chapter_derivations_Section_gd_creating">
+<Heading>Creating group derivations</Heading>
+
+<P/>
+<ManSection Label="AutoDoc_generated_group26">
+  <Func Arg="H, G[[, gens], imgs], act" Name="GroupDerivationByImages" />
+  <Func Arg="H, G[[, gens], imgs], act" Name="GroupDerivationByImagesNC" />
+ <Returns>the specified group derivation, or <K>fail</K> if the given  arguments do not define a derivation.
+</Returns>
+ <Description>
+ This works in the same vein as
+ <Ref Func="GroupHomomorphismByImages" BookName="Ref" Style="Number"/>. The
+ group <A>H</A> acts on the group <A>G</A> via <A>act</A>, which must be a
+ homomorphism from <A>H</A> into a group of automorphisms of <A>G</A>. This
+ command then returns the group derivation defined by mapping the list
+ <A>gens</A> of generators of <A>H</A> to the list <A>imgs</A> of images in
+ <A>G</A>.
+<P/>
+ If omitted, the arguments <A>gens</A> and <A>imgs</A> default to the
+ <C>GeneratorsOfGroup</C> value of <A>H</A> and <A>G</A> respectively.
+<P/>
+ This function checks whether <A>gens</A> generate <A>H</A> and whether the
+ mapping of the generators extends to a group derivation. This test can be
+ expensive, so if one is certain that the given arguments produce a group
+ derivation, these checks can be avoided by using the <C>NC</C> version.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="H, G, fun, act" Name="GroupDerivationByFunction" />
+ <Returns>the specified group derivation.
+</Returns>
+ <Description>
+ <C>GroupDerivationByFunction</C> works in the same vein as
+ <Ref Func="GroupHomomorphismByFunction" BookName="Ref" Style="Number"/>. The
+ group <A>H</A> acts on the group <A>G</A> via <A>act</A>, which must be a
+ homomorphism from <A>H</A> into a group of automorphisms of <A>G</A>. This
+ command then returns the group derivation defined by mapping the element
+ <C>h</C> of <A>H</A> to the element <A>fun</A>( <C>h</C> ) of <A>G</A>,
+ where <A>fun</A> is a &GAP; function.
+<P/>
+ No tests are performed to check whether the arguments really produce a group
+ derivation.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="H, G, act" Name="GroupDerivationByAffineAction" />
+ <Returns>the derivation that makes up the translational part of the affine  action.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> H := PcGroupCode( 149167619499417164, 72 );;
+gap> G := PcGroupCode( 5551210572, 72 );;
+gap> inn := InnerAutomorphism( G, G.2 );;
+gap> hom := GroupHomomorphismByImages( G, G, [ G.1 * G.2, G.5 ],
+>  [ G.1 * G.2 ^ 2 * G.3 ^ 2 * G.4, G.5 ] );;
+gap> act := GroupHomomorphismByImages( H, AutomorphismGroup( G ),
+>  [ H.2, H.1 * H.4 ], [ inn, hom ] );;
+gap> gens := [ H.2, H.1 * H.4 ];;
+gap> imgs := [ G.5, G.2 ];;
+gap> der := GroupDerivationByImages( H, G, gens, imgs, act );
+Group derivation [ f2, f1*f4 ] -> [ f5, f2 ]
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_derivations_Section_gd_operations">
+<Heading>Operations for group derivations</Heading>
+
+<P/>
+Many of the functions, operations, attributes... available to group
+homomorphisms are available for group derivations as well.
+We list some of the more useful ones.
+<P/>
+<ManSection Label="AutoDoc_generated_group27">
+<Heading>IsInjective</Heading>
+  <Prop Arg="der" Name="IsInjective" Label="for a group derivation"/>
+ <Returns><K>true</K> if the group derivation <A>der</A> is injective,  otherwise <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group28">
+<Heading>IsSurjective</Heading>
+  <Prop Arg="der" Name="IsSurjective" Label="for a group derivation"/>
+ <Returns><K>true</K> if the group derivation <A>der</A> is surjective,  otherwise <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group29">
+<Heading>IsBijective</Heading>
+  <Prop Arg="der" Name="IsBijective" Label="for a group derivation"/>
+ <Returns><K>true</K> if the group derivation <A>der</A> is bijjective,  otherwise <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group30">
+<Heading>Kernel</Heading>
+  <Oper Arg="der" Name="Kernel" Label="of a group derivation"/>
+ <Returns>the set of elements that are mapped to the identity by <A>der</A>.
+</Returns>
+ <Description>
+ This will always be a subgroup of <C>Source</C>(<A>der</A>).
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group31">
+<Heading>Image</Heading>
+  <Func Arg="der" Name="Image" Label="of a group derivation"/>
+  <Func Arg="der, elm" Name="Image" Label="of an element under a group derivation"/>
+  <Func Arg="der, sub" Name="Image" Label="of a subgroup under a group derivation"/>
+ <Returns>the image of the group derivation <A>der</A>.
+</Returns>
+ <Description>
+ One can optionally give an element <A>elm</A> or a subgroup <A>sub</A> as a
+ second argument, in which case <C>Image</C> will calculate the image of this
+ argument under <A>der</A>.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group32">
+<Heading>PreImagesRepresentative</Heading>
+  <Oper Arg="der, elm" Name="PreImagesRepresentative" Label="of an element under a group derivation"/>
+ <Returns>a preimage of the element <A>elm</A> under the group derivation  <A>der</A>, or <K>fail</K> if no preimage exists.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group33">
+<Heading>PreImages</Heading>
+  <Func Arg="der, elm" Name="PreImages" Label="of an element under a group derivation"/>
+ <Returns>the set of all preimages of the element <A>elm</A> under the group  derivation <A>der</A>.
+</Returns>
+ <Description>
+ This will always be a (right) coset of <C>Kernel</C>( <A>der</A> ), or the
+ empty list.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> IsInjective( der ) or IsSurjective( der );
+false
+gap> K := Kernel( der );;
+gap> Size( K );
+9
+gap> ImH := Image( der );
+Group derivation image in Group( [ f1, f2, f3, f4, f5 ] )
+gap> h1 := H.1 * H.3;;
+gap> g := Image( der, h1 );
+f2*f4
+gap> ImK := Image( der, K );
+Group derivation image in Group( [ f1, f2, f3, f4, f5 ] )
+gap> h2 := PreImagesRepresentative( der, g );;
+gap> Image( der, h2 ) = g;
+true
+gap> PreIm := PreImages( der, g );
+RightCoset(<group of size 9 with 2 generators>,<object>)
+gap> PreIm = RightCoset( K, h2 );
+true
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_derivations_Section_gd_images">
+<Heading>Images of group derivations</Heading>
+
+<P/>
+In general, the image of a group derivation is not a subgroup. However, it
+is still possible to do a membership test, to calculate the number of
+elements, and to enumerate the elements if there are only finitely many.
+<ManSection Label="AutoDoc_generated_group34">
+<Heading>\in</Heading>
+  <Oper Arg="elm, img" Name="\in" Label="for an element and a group derivation image"/>
+ <Returns><K>true</K> if <A>elm</A> is an element of <A>img</A>, otherwise  <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group35">
+<Heading>IsFinite</Heading>
+  <Prop Arg="img" Name="IsFinite" Label="for a group derivation image"/>
+ <Returns><K>true</K> if <A>img</A> is finite, otherwise <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group36">
+<Heading>Size</Heading>
+  <Attr Arg="img" Name="Size" Label="of a group derivation image"/>
+ <Returns>the number of elements in <A>img</A>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group37">
+<Heading>List</Heading>
+  <Func Arg="img" Name="List" Label="of a group derivation image"/>
+  <Attr Arg="img" Name="AsList" Label="for a group derivation image"/>
+ <Returns>a list containing the elements of <A>img</A>.
+</Returns>
+ <Description>
+ If <A>img</A> is infinite, this will run forever or cause an error. It is
+ recommended to first test the finiteness of <A>img</A> using
+ <Ref Prop="IsFinite" Label="for a group derivation image" Style="Number"/>.
+<P/>
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> Size( ImH );
+8
+gap> Size( ImK );
+1
+gap> g in ImH;
+true
+gap> g in ImK;
+false
+gap> List( ImK );
+[ <identity> of ... ]
+]]></Example>
+
+</Section>
+
+</Chapter>
+

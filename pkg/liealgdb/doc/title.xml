@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    LieAlgDB
+  </Title>
+  <Subtitle>
+    A database of Lie algebras
+  </Subtitle>
+  <Version>
+    2.3.0
+  </Version>
+  <Author>
+    Serena Cicalò<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Dipartimento di Matematica e Informatica<Br/>
+Via Ospedale 72<Br/>
+Italy<Br/>
+</Address>
+<Email>cicalo@science.unitn.it</Email>
+
+  </Author>
+  <Author>
+    Willem Adriaan de Graaf<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Dipartimento di Matematica<Br/>
+Via Sommarive 14<Br/>
+Italy<Br/>
+</Address>
+<Email>degraaf@science.unitn.it</Email>
+<Homepage>http://www.science.unitn.it/~degraaf</Homepage>
+
+  </Author>
+  <Author>
+    Csaba Schneider<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Departamento de Matemática<Br/>
+Instituto de Ciências Exatas<Br/>
+Universidade Federal de Minas Gerais (UFMG)<Br/>
+Belo Horizonte, Brasil<Br/>
+</Address>
+<Email>csaba@mat.ufmg.br</Email>
+<Homepage>http://www.mat.ufmg.br/~csaba/</Homepage>
+
+  </Author>
+  <Date>
+    24 September 2025
+  </Date>
+  <Abstract>
+    This package provides access to the classification of the following
+families of Lie algebras:
+<List>
+<Item> non-solvable Lie algebras over finite fields up to dimension 6;
+</Item>
+<Item> nilpotent Lie algebras of dimension up to 9 over <A>GF(2)</A>, of dimension
+up to 7 over <A>GF(3)</A> or <A>GF(5)</A>;</Item>
+<Item> simple Lie algebras of dimensions between 7 and 9 over <A>GF(2)</A>;
+</Item>
+<Item> the classification of solvable Lie algebras of dimension at most 4;
+</Item>
+<Item> the classification of nilpotent Lie algebras of dimensions at most 6.
+</Item>
+</List>
+  </Abstract>
+  <Copyright>
+    <Index>License</Index>
+&copyright; 2006--2007 Willem de Graaf and Csaba Schneider<P/>
+The &LieAlgDB; package is free software;
+you can redistribute it and/or modify it under the terms of the
+<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL>
+as published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+    We are grateful to Andrea Caranti, Marco Costantini, Bettina Eick,
+Helmut Strade, Michael Vaughan-Lee. Without
+their help, interest, and encouragement, this package would not have been
+made. We also acknowledge the effort of the referees to improve the
+implementation and the documentation.<P/>
+Serena Cical&#242; would like to thank the Centro de &#193;lgebra da
+Universidade de Lisboa for their kind hospitality during July - December 2009 and May - September 2010, when the
+classification of the 6-dimensional nilpotent Lie algebras over
+fields of characteristic 2 was made and added to the package.
+  </Acknowledgements>
+  </TitlePage>

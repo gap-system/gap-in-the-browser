@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    Guarana
+  </Title>
+  <Subtitle>
+    Applications of Lie methods for computations with infinite polycyclic groups
+  </Subtitle>
+  <Version>
+    0.96.3
+  </Version>
+  <Author>
+    Björn Assmann<Alt Only="LaTeX"><Br/></Alt>
+<Email>bjoern@mcs.st-and.ac.uk</Email>
+
+  </Author>
+  <Date>
+    11 February 2022
+  </Date>
+  <Copyright>
+    &copyright; 2007 Björn Assmann.
+  </Copyright>
+  </TitlePage>

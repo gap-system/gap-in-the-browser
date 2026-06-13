@@ -1,0 +1,12 @@
+LoadPackage("alnuth");
+
+# ensure name of indeterminate matches the manual
+x := Indeterminate(Rationals, "x");
+
+dirs := DirectoriesPackageLibrary( "alnuth", "tst" );
+tests := [
+    "ALNUTH.tst",
+    "userprefs.tst",
+];
+tests := List(tests, f -> Filename(dirs,f));
+TestDirectory(tests, rec(exitGAP := false));

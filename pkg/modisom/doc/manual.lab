@@ -1,0 +1,108 @@
+\makelabel{ModIsom:Introduction}{1}
+\makelabel{ModIsom:Associative algebras and nilpotency}{1.1}
+\makelabel{ModIsom:Isomorphisms and Automorphisms}{1.2}
+\makelabel{ModIsom:The Modular Isomorphism Problem (MIP)}{1.3}
+\makelabel{ModIsom:A nilpotent quotient algorithm}{1.4}
+\makelabel{ModIsom:Kurosh Algebras}{1.5}
+\makelabel{ModIsom:Tables}{2}
+\makelabel{ModIsom:Nilpotent tables}{2.1}
+\makelabel{ModIsom:GetEntryTable}{2.1.1}
+\makelabel{ModIsom:MultByTable}{2.1.2}
+\makelabel{ModIsom:CompareTables}{2.1.3}
+\makelabel{ModIsom:CheckAssociativity}{2.1.4}
+\makelabel{ModIsom:CheckCommutativity}{2.1.5}
+\makelabel{ModIsom:CheckConsistency}{2.1.6}
+\makelabel{ModIsom:Algebras in the GAP sense}{2.2}
+\makelabel{ModIsom:AlgebraByTable}{2.2.1}
+\makelabel{ModIsom:NilpotentTable}{2.2.1}
+\makelabel{ModIsom:NilpotentTableOfRad}{2.2.2}
+\makelabel{ModIsom:Tables for the Modular Isomorphism Problem}{2.3}
+\makelabel{ModIsom:TableOfRadQuotient}{2.3.1}
+\makelabel{ModIsom:ModIsomTable}{2.3.2}
+\makelabel{ModIsom:MIPElementTableToAlgebra}{2.3.3}
+\makelabel{ModIsom:MIPElementAlgebraToTable}{2.3.4}
+\makelabel{ModIsom:Automorphism groups and Canonical Forms}{3}
+\makelabel{ModIsom:Automorphism groups}{3.1}
+\makelabel{ModIsom:AutGroupOfTable}{3.1.1}
+\makelabel{ModIsom:AutGroupOfRad}{3.1.1}
+\makelabel{ModIsom:Canonical forms}{3.2}
+\makelabel{ModIsom:CanonicalFormOfTable}{3.2.1}
+\makelabel{ModIsom:CanonicalFormOfRad}{3.2.1}
+\makelabel{ModIsom:CanoFormWithAutGroupOfTable}{3.2.2}
+\makelabel{ModIsom:CanoFormWithAutGroupOfRad}{3.2.2}
+\makelabel{ModIsom:Example of canonical form computation}{3.3}
+\makelabel{ModIsom:The modular isomorphism problem}{4}
+\makelabel{ModIsom:Computing bins and checking bins}{4.1}
+\makelabel{ModIsom:BinsByGT}{4.1.1}
+\makelabel{ModIsom:MIPSplitGroupsByGroupTheoreticalInvariants }{4.1.2}
+\makelabel{ModIsom:MIPSplitGroupsByGroupTheoreticalInvariantsNoCohomology}{4.1.3}
+\makelabel{ModIsom:BinsByGTAllFields}{4.1.4}
+\makelabel{ModIsom:MIPSplitGroupsByGroupTheoreticalInvariantsAllFields}{4.1.5}
+\makelabel{ModIsom:MIPSplitGroupsByGroupTheoreticalInvariantsAllFieldsNoCohomology}{4.1.6}
+\makelabel{ModIsom:MIPSplitGroupsByAlgebras}{4.1.7}
+\makelabel{ModIsom:MIPBinSplit}{4.1.8}
+\makelabel{ModIsom:Kernel size}{4.2}
+\makelabel{ModIsom:KernelSizePowerMap}{4.2.1}
+\makelabel{ModIsom:The group theoretical invariants}{4.3}
+\makelabel{ModIsom:GroupInfo}{4.3.1}
+\makelabel{ModIsom:CenterDerivedInfo}{4.3.2}
+\makelabel{ModIsom:SandlingInfo}{4.3.3}
+\makelabel{ModIsom:JenningsInfo}{4.3.4}
+\makelabel{ModIsom:JenningsDerivedInfo}{4.3.5}
+\makelabel{ModIsom:BaginskiInfo}{4.3.6}
+\makelabel{ModIsom:BaginskiCarantiInfo}{4.3.7}
+\makelabel{ModIsom:NilpotencyClassInfo}{4.3.8}
+\makelabel{ModIsom:Theorem41MS22}{4.3.9}
+\makelabel{ModIsom:CyclicDerivedInfo}{4.3.10}
+\makelabel{ModIsom:MaximalAbelianDirectFactor}{4.3.11}
+\makelabel{ModIsom:SuccessorsN}{4.3.12}
+\makelabel{ModIsom:CanonicalNormalSubgroups}{4.3.13}
+\makelabel{ModIsom:NormalSubgroupsInfo}{4.3.14}
+\makelabel{ModIsom:IsCoveredByTheory}{4.3.15}
+\makelabel{ModIsom:DimensionTwoCohomology}{4.3.16}
+\makelabel{ModIsom:ConjugacyClassInfo}{4.3.17}
+\makelabel{ModIsom:SubgroupsInfo}{4.3.18}
+\makelabel{ModIsom:Nilpotent Quotients}{5}
+\makelabel{ModIsom:Computing nilpotent quotients}{5.1}
+\makelabel{ModIsom:NilpotentQuotientOfFpAlgebra}{5.1.1}
+\makelabel{ModIsom:Example of nilpotent quotient computation}{5.2}
+\makelabel{ModIsom:Relatively free Algebras}{6}
+\makelabel{ModIsom:Computing Kurosh Algebras}{6.1}
+\makelabel{ModIsom:KuroshAlgebra}{6.1.1}
+\makelabel{ModIsom:ExpandExponentLaw}{6.1.2}
+\makelabel{ModIsom:A Library of Kurosh Algebras}{6.2}
+\makelabel{ModIsom:KuroshAlgebraByLib}{6.2.1}
+\makelabel{ModIsom:Example of accessing the library of Kurosh algebras}{6.3}
+\makelabel{ModIsom:Bibliography}{}
+\setcitlab {Bag92}{Bag92}
+\setcitlab {Bag99}{Bag99}
+\setcitlab {BC88}{BC88}
+\setcitlab {BGL24}{BGL24}
+\setcitlab {BK07}{BK07}
+\setcitlab {BKRW99}{BKRW99}
+\setcitlab {BaginskiZabielski25}{BZ25}
+\setcitlab {Dre89}{Dre89}
+\setcitlab {Eic07}{Eic08}
+\setcitlab {Eic11}{Eic11}
+\setcitlab {EKo11}{EK11}
+\setcitlab {GL24}{GL24}
+\setcitlab {GLdR23}{GLdR24}
+\setcitlab {GLdRS22}{GLdRS23}
+\setcitlab {GLM24}{GLM24}
+\setcitlab {GLMdR22}{GLMdR22}
+\setcitlab {Her07}{Her07}
+\setcitlab {HS06}{HS06}
+\setcitlab {Jen41}{Jen41}
+\setcitlab {MM22}{MM22}
+\setcitlab {MRT16}{MRT16}
+\setcitlab {MS22}{MS22}
+\setcitlab {MS25SaoPaulo}{MS25}
+\setcitlab {MSS23}{MSS23}
+\setcitlab {PS72}{PS72}
+\setcitlab {Roehl90}{R{\accent 127 9}0}
+\setcitlab {RS83}{RS83}
+\setcitlab {RS93}{RS93}
+\setcitlab {San85}{San85}
+\setcitlab {San89}{San89}
+\setcitlab {Wur93}{Wur93}
+\makelabel{ModIsom:Index}{}

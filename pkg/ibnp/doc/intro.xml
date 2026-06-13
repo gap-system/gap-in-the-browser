@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<Chapter Label="chap-intro">
+
+<Heading>Introduction</Heading>
+
+The &IBNP; package provides methods for computing an involutive (&Grob;)
+basis <M>B</M> for an ideal <M>J</M> over a polynomial ring 
+<M>\mathbb{R}</M> in both the commutative and noncommutative cases.
+Secondly, methods are provided to involutively reduce a given polynomial
+to its normal form in <M>\mathbb{R}/J</M>.
+<P/>
+This package was started using &GAP; 4.13.1 
+and first released with &GAP; 4.15.0. 
+<P/> 
+
+The package is loaded with the command
+<Example>
+<![CDATA[
+gap> LoadPackage( "ibnp" ); 
+]]>
+</Example>
+<P/>
+
+The package may be obtained as a compressed <Code>.tar</Code> file 
+<File>IBNP-0.16.tar.gz</File> from the GitHub release site: 
+<URL>https://github.com/gap-packages/ibnp/releases/tag/v0.16</URL>.
+<Index>GitHub repository</Index> 
+The package also has a GitHub repository at: 
+<URL>https://github.com/gap-packages/ibnp</URL>. 
+<P/> 
+
+Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
+can be found in the documentation folder. 
+The <Code>html</Code> versions, with or without MathJax, 
+may be rebuilt as follows: 
+<P/>
+<Example>
+<![CDATA[
+gap> ReadPackage( "ibnp", "makedoc.g" ); 
+]]>
+</Example>
+<P/>
+
+It is possible to check that the package has been installed correctly
+by running the test files (this terminates the &GAP; session): 
+<P/>
+<Example>
+<![CDATA[
+gap> TestPackage( "ibnp" );
+Architecture: . . . . . 
+testing: . . . . . 
+. . . 
+#I  No errors detected while testing
+]]>
+</Example>
+<P/>
+
+
+<Section Label="sec-history">
+<Heading>History</Heading>
+
+The theoretical basis behind this package is the Ph.D. thesis
+"Noncommutative Involutive Bases" of Gareth Evans in 2005
+<Cite Key='gareth-thesis'/>.
+(The main concepts and results may also be found in the papers 
+<Cite Key='Beaumont'/> and <Cite Key='EW-JSC'/>.)
+We quote here the summary from that thesis.
+<P/>
+
+<E>The theory of &Grob; Bases originated in the work of Buchberger 
+<Cite Key='buchberger'/> and is now considered to be one of the 
+most important and useful areas of symbolic computation.
+A great deal of effort has been put into improving Buchberger's algorithm
+for computing a &Grob; Basis,
+and indeed in finding alternative methods of computing &Grob; Bases.
+Two of these methods include the &Grob; Walk method <Cite Key='onthewalk'/>
+and the computation of Involutive Bases <Cite Key='yuyu'/>.</E>
+<P/>
+<E>By the mid 1980's, Buchberger's work had been generalised for
+noncommutative polynomial rings by Bergman <Cite Key='bergman'/>
+and Mora <Cite Key='mora'/>.
+This thesis provides the corresponding generalisation
+for Involutive Bases and (to a lesser extent) the &Grob; Walk,
+with the main results being as follows.
+</E>
+
+<List>
+<Item>
+<E>Algorithms for several new noncommutative involutive divisions
+are given, including strong; weak; global and local divisions.</E>
+</Item>
+<Item>
+<E>An algorithm for computing a noncommutative Involutive Basis is given.
+When used with one of the aforementioned involutive divisions,
+it is shown that this algorithm returns a noncommutative &Grob; Basis
+on termination.</E>
+</Item>
+<Item>
+<E>An algorithm for a noncommutative &Grob; Walk is given,
+in the case of conversion between two harmonious monomial orderings.
+It is shown that this algorithm generalises to give an algorithm
+for performing a noncommutative Involutive Walk,
+again in the case of conversion between two harmonious monomial orderings.</E>
+</Item>
+<Item>
+<E>Two new properties of commutative involutive divisions are introduced
+(stability and extendibility), respectively ensuring the termination
+of the Involutive Basis algorithm and the applicability
+(under certain conditions) of homogeneous methods of computing
+Involutive Bases.</E>
+</Item>
+</List>
+<P/>
+<E>Source code for an initial implementation of an algorithm to compute
+noncommutative Involutive Bases is provided in Appendix B.
+This source code, written using ANSI C and a series of libraries 
+(AlgLib) provided by MSSRC
+forms part of a larger collection of programs providing examples for this thesis,
+including implementations of the commutative and noncommutative
+&Grob; Basis algorithms <Cite Key='buchberger'/>, <Cite Key='mora'/>;
+the commutative Involutive Basis algorithm for the Pommaret and Janet
+involutive divisions <Cite Key='yuyu'/>;
+and the Knuth-Bendix critical pairs completion algorithm for monoid rewrite systems <Cite Key='knuth-bendix'/>.</E>
+<P/>
+The implementations described in the last paragraph formed a package
+<E>Involutive</E> in 2005.
+This was based on libraries developed by the 
+<E>Multidisciplinary Software Systems Research Corporation</E> (MSSRC)
+which apparently no longer exists.
+This software was provided for the research by Larry Lambe 
+who was an Honorary Professor in the Mathematics Department 
+at Bangor at that time.
+(For an example of his work, see <Cite Key='lambe-radford'/>.)
+<P/>
+It has long been our intention to make these algorithms available 
+to the wider symbolic computation community,
+and this &GAP; package is the result.
+Involutive Bases are constructed, but &Grob; Walks will have to wait
+until a later version.
+In place of the AlgLib library functions we use the noncommutative 
+polynomial operations provided by the <Package>GBNP</Package> 
+<Cite Key='GBNP'/> package.
+
+</Section>
+
+</Chapter>

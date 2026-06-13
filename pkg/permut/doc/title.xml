@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    permut
+  </Title>
+  <Subtitle>
+    A package to deal with permutability in finite groups
+  </Subtitle>
+  <Version>
+    2.0.5
+  </Version>
+  <Author>
+    Adolfo Ballester-Bolinches<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Departament de Matemàtiques<Br/>
+Universitat de València<Br/>
+Dr. Moliner, 50<Br/>
+46100 Burjassot, València, Spain<Br/>
+</Address>
+<Email>Adolfo.Ballester@uv.es</Email>
+
+  </Author>
+  <Author>
+    Enric Cosme-Llópez<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Departament de Matemàtiques<Br/>
+Universitat de València<Br/>
+Dr. Moliner, 50<Br/>
+46100 Burjassot, València, Spain<Br/>
+</Address>
+<Email>Enric.Cosme@uv.es</Email>
+<Homepage>https://www.uv.es/coslloen</Homepage>
+
+  </Author>
+  <Author>
+    Ramón Esteban-Romero<Alt Only="LaTeX"><Br/></Alt>
+<Email>Ramon.Esteban@uv.es</Email>
+<Homepage>https://www.uv.es/estebanr</Homepage>
+
+  </Author>
+  <Date>
+    11 January 2024
+  </Date>
+  </TitlePage>

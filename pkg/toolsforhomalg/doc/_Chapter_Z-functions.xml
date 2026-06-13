@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Z-functions">
+<Heading>Z-functions</Heading>
+
+<Section Label="Chapter_Z-functions_Section_Gap_categories_for_Z_functions">
+<Heading>Gap categories for Z functions</Heading>
+
+ A <Math>\mathbb{Z}</Math>-function is an enumerated collection of objects in which repetitions are allowed
+ and order does matter. The reason behind calling it a <Math>\mathbb{Z}</Math>-function rather than
+ simply a sequence, is to avoid possible conflicts with other packages that use the terms
+ <Emph>Sequence</Emph> and <Emph>IsSequence</Emph>.
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsZFunction" Label="for IsObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  Gap-categories of <Math>\mathbb{Z}</Math>-functions
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsZFunctionWithInductiveSides" Label="for IsZFunction"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  Gap-categories of inductive <Math>\mathbb{Z}</Math>-functions
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Z-functions_Section_Creating_Z-functions">
+<Heading>Creating Z-functions</Heading>
+
+<ManSection>
+  <Func Arg="func" Name="VoidZFunction" />
+ <Returns>an integer
+</Returns>
+ <Description>
+ The global function has no arguments and the output is an empty <Math>\mathbb{Z}</Math>-function. That means, it can not be evaluated yet.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="func" Name="AsZFunction" Label="for IsFunction"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The argument is a function <A>func</A> that can be applied on integers.
+ The output is a <Math>\mathbb{Z}</Math>-function <C>z_func</C>. We call <A>func</A>
+ the <C>UnderlyingFunction</C> of <C>z_func</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="z_func" Name="UnderlyingFunction" Label="for IsZFunction"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The argument is a <A>z_func</A>. The output is its <C>UnderlyingFunction</C> function. I.e., the function that will be applied on index <C>i</C>
+ whenever we call <A>z_func</A>[<C>i</C>].
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="z_func, i" Name="ZFunctionValue" Label="for IsZFunction, IsInt"/>
+ <Returns>a Gap object
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A> and an integer <A>i</A>. The output is
+ <A>z_func</A>[<A>i</A>].
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="z_func, i" Name="\[\]" Label="for IsZFunction, IsInt"/>
+ <Returns>a Gap object
+</Returns>
+ <Description>
+ The method delegates to <C>ZFunctionValue</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="n, val_n, lower_func, upper_func, compare_func" Name="ZFunctionWithInductiveSides" Label="for IsInt, IsObject, IsFunction, IsFunction, IsFunction"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function with inductive sides
+</Returns>
+ <Description>
+ The arguments are an integer <A>n</A>, a Gap object <A>val_n</A>, a function <A>lower_func</A>, a function <A>upper_func</A> and a function <A>compare_func</A>.
+ The output is the <Math>\mathbb{Z}</Math>-function <C>z_func</C> defined as follows:
+ <C>z_func</C>[<C>i</C>]
+ is equal to <A>lower_func</A>(<C>z_func</C>[<C>i+1</C>]) if <C>i</C><C>&lt;</C><A>n</A>;
+ and is equal to <A>val_n</A> if <C>i</C>=<A>n</A>;
+ and is equal to <A>upper_func</A>(<C>z_func</C>[<C>i-1</C>]) otherwise.
+ At each call, the method compares the computed value to the previous or next value via the function
+ <A>compare_func</A>; and 
+ in the affermative case, the method sets a upper or lower stable values.
+ </Description>
+</ManSection>
+
+<#Include Label="AsZFunctionWithInductiveSides">
+<ManSection Label="9228">
+  <Attr Arg="z_func" Name="UpperFunction" Label="for IsZFunctionWithInductiveSides"/>
+  <Attr Arg="z_func" Name="LowerFunction" Label="for IsZFunctionWithInductiveSides"/>
+  <Attr Arg="z_func" Name="StartingIndex" Label="for IsZFunctionWithInductiveSides"/>
+  <Attr Arg="z_func" Name="StartingValue" Label="for IsZFunctionWithInductiveSides"/>
+  <Attr Arg="z_func" Name="CompareFunction" Label="for IsZFunctionWithInductiveSides"/>
+ <Returns>a function
+</Returns>
+ <Description>
+ They are the attributes that define a <Math>\mathbb{Z}</Math>-function with inductive sides.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="z_func" Name="StableUpperValue" Label="for IsZFunction"/>
+ <Returns>a Gap object
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A>. We say that <A>z_func</A> has a stable upper value <C>val</C>,
+ if there is an index <C>n</C> such that <A>z_func</A>[<C>i</C>] is equal to <C>val</C> for all indices <C>i</C>'s greater or equal to <C>n</C>.
+ In that case, the output is the value <C>val</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="z_func" Name="IndexOfStableUpperValue" Label="for IsZFunction"/>
+ <Returns>an integer
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A> with a stable upper value <C>val</C>. The output is some index where <A>z_func</A> starts to take
+ values equal to <C>val</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="z_func, n, val" Name="SetStableUpperValue" Label="for IsZFunction, IsInt, IsObject"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+ The arguments are a <Math>\mathbb{Z}</Math>-function <A>z_func</A>,
+ an integer <A>n</A> and an object <A>val</A>.
+ The operation sets <A>val</A> as a stable upper value for
+ <A>z_func</A> at the index <A>n</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="z_func" Name="StableLowerValue" Label="for IsZFunction"/>
+ <Returns>a Gap object
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A>. We say that <A>z_func</A> has a stable lower value <C>val</C>,
+ if there is an index <C>n</C> such that <A>z_func</A>[<C>i</C>] is equal to <C>val</C> for all indices <C>i</C>'s less or equal to <C>n</C>.
+ In that case, the output is the value <C>val</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="z_func" Name="IndexOfStableLowerValue" Label="for IsZFunction"/>
+ <Returns>an integer
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A> with a stable lower value <C>val</C>. The output is some index where <A>z_func</A> starts to take
+ values equal to <C>val</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="z_func, n, val" Name="SetStableLowerValue" Label="for IsZFunction, IsInt, IsObject"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+ The arguments are a <Math>\mathbb{Z}</Math>-function <A>z_func</A>,
+ an integer <A>n</A> and an object <A>val</A>.
+ The operation sets <A>val</A> as a stable lower value for
+ <A>z_func</A> at the index <A>n</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="z_func" Name="Reflection" Label="for IsZFunction"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A>. The output is another
+ <Math>\mathbb{Z}</Math>-function <C>ref_z_func</C> such that <C>ref_z_func</C>[<C>i</C>] is equal
+ to <A>z_func</A>[<C>-i</C>] for all <C>i</C>'s in <Math>\mathbb{Z}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="z_func, n" Name="ApplyShift" Label="for IsZFunction, IsInt"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A> and an integer <A>n</A>. The output is
+ another <Math>\mathbb{Z}</Math>-function <C>m</C> such that <C>m</C>[<C>i</C>] is equal to <A>z_func</A>[<C>n+i</C>].
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="z_func, F" Name="ApplyMap" Label="for IsZFunction, IsFunction"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The arguments are a <Math>\mathbb{Z}</Math>-function <A>z_func</A> and a function <A>F</A> that can
+ be applied on one argument.
+ The output is another <Math>\mathbb{Z}</Math>-function <C>m</C> such that
+ <C>m</C>[<C>i</C>] is equal to <A>F</A>(<A>z_func</A>[<C>i</C>]).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L, F" Name="ApplyMap" Label="for IsDenseList, IsFunction"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The arguments are a list of <Math>\mathbb{Z}</Math>-functions
+ <A>L</A> and a function <A>F</A> with
+ <C>Length</C>(<A>L</A>) arguments.
+ The output is another <Math>\mathbb{Z}</Math>-function <C>m</C> such that
+ <C>m</C>[<C>i</C>] is equal to <A>F</A>(<A>L</A>[1][<C>i</C>],...,
+ <A>L</A>[<C>Length</C>(<A>L</A>)][<C>i</C>]). We call the list <A>L</A> the <C>BaseZFunctions</C>
+ of <C>m</C> and <A>F</A> the <C>AppliedMap</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="z_func" Name="BaseZFunctions" Label="for IsZFunction"/>
+ <Returns>a list of <Math>\mathbb{Z}</Math>-functions
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A> that has been defined by applying a map <C>F</C>
+ on a list <C>L</C> of <Math>\mathbb{Z}</Math>-functions. The output is the list <C>L</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="z_func" Name="AppliedMap" Label="for IsZFunction"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A> that has been defined by applying a map <C>F</C>
+ on a list <C>L</C> of <Math>\mathbb{Z}</Math>-functions. The output is the function <C>F</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L" Name="CombineZFunctions" Label="for IsDenseList"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The argument is a dense list <A>L</A> of <Math>\mathbb{Z}</Math>-functions.
+ The output is another <Math>\mathbb{Z}</Math>-function <C>m</C> such that
+ <C>m</C>[<C>i</C>] is equal to [<A>L</A>[1][<C>i</C>],...,
+ <A>L</A>[<C>Length</C>(<A>L</A>)][<C>i</C>]] for all indices <C>i</C>'s in <Math>\mathbb{Z}</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="z_func, n, L" Name="Replace" Label="for IsZFunction, IsInt, IsDenseList"/>
+ <Returns>a <Math>\mathbb{Z}</Math>-function
+</Returns>
+ <Description>
+ The argument is a <Math>\mathbb{Z}</Math>-function <A>z_func</A>, an integer <A>n</A> and a dense list <A>L</A>.
+ The output is a new <Math>\mathbb{Z}</Math>-function whose values between <A>n</A> and <A>n</A>+<C>Length</C>(<A>L</A>)-1
+ are the entries of <A>L</A>.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

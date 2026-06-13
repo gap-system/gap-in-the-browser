@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[
+    [<#Include SYSTEM "_entities.xml">
+]
+>
+<Book Name="IdRel">
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+<Body>
+<#Include SYSTEM "intro.xml">
+<#Include SYSTEM "rws.xml">
+<#Include SYSTEM "logrws.xml">
+<#Include SYSTEM "monpoly.xml">
+<#Include SYSTEM "modpoly.xml">
+<#Include SYSTEM "idrels.xml">
+</Body>
+<Bibliography Databases="bib.xml"/>
+<TheIndex/>
+</Book>

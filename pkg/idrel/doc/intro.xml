@@ -1,0 +1,183 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  intro.xml           IdRel documentation             Chris Wensley  -->
+<!--                                                    & Anne Heyworth  -->
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?LaTeX ExtraPreamble="\usepackage[pdftex]{graphicx}"?>
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="intro">
+<Heading>Introduction</Heading>
+
+This manual describes the &idrel; package for &GAP; 4.7 
+for computing the identities among relators of a group presentation 
+using rewriting, logged rewriting, monoid polynomials, module polynomials 
+and <M>Y</M>-sequences.
+<P/>
+The theoretical background for these computations is contained in 
+Brown and Huebschumann <Cite Key="BrHu" />, 
+Brown and Razak Salleh <Cite Key="BrSa" /> and is surveyed in 
+the first author's thesis <Cite Key="anne-thesis" />.
+<P/>
+&idrel; is primarily designed for the computation of a minimal set 
+of generators for the module of identities among relators. 
+It also contains functions which compute logged rewrite systems 
+for group presentations (and complete them where possible); 
+functions for operations involving elements of monoid rings; 
+and functions for operations with elements of right modules over 
+monoid rings.
+The <M>Y</M>-sequences are used as a <E>rewriting</E> way of representing 
+elements of a free crossed module 
+(products of conjugates of group relators and inverse relators).
+The package is written entirely in &GAP;4, and requires no compilation.
+<P/>
+The package is loaded into &GAP; with the <C>LoadPackage</C> command, 
+and on-line help is available in the usual way.
+<Example>
+<![CDATA[
+gap> LoadPackage( "idrel" ); 
+gap> ?idrel
+]]>
+</Example>
+
+A pdf version of the &idrel; manual is available 
+in the <F>doc</F> directory of the home directory of &idrel;.
+
+The information parameter <C>InfoIdRel</C> has default value <C>0</C>.
+When raised to a higher value, additional information is printed out.
+
+&idrel; was originally developed in 1999 using &GAP;3, 
+partially supported by a University of Wales Research Assistantship 
+for the first author, Anne Heyworth.
+<P/>
+If you use &idrel; to solve a problem then please send a short email to 
+the second author, to whom bug reports, suggestions and other comments 
+should also be sent. 
+You may reference the package by mentioning <Cite Key="HeWe1" />
+and <Cite Key="anne-thesis" />.
+<P/>
+The package may be obtained as a compressed tar file 
+<File>idrel-version.number.tar.gz</File>
+by ftp from one of the following sites: 
+<List>
+<Item>
+the &idrel; GitHub site: 
+<URL>https://github.com/gap-packages.github.io/idrel/</URL>. 
+</Item>
+<Item>
+any &GAP; archive, e.g. 
+<URL>https://www.gap-system.org/Packages/packages.html</URL>; 
+</Item>
+</List>
+The package also has a GitHub repository at: 
+<URL>https://github.com/gap-packages/idrel/</URL> 
+where issues can be raised. 
+<P/>
+
+
+<Section Label="sect-illustration"> 
+<Heading>An illustrative example</Heading>
+
+A typical input for &idrel; is an fp-group presentation. 
+This requires a free group <C>F</C> on a set of generators 
+and a set of relators <C>R</C> (words in the free group). 
+The module of identities among relators for this presentation 
+has as its elements the Peiffer equivalence classes of all products of 
+conjugates of relators which represent the identity in the free group.
+<P/> 
+In this package the identities among relators are represented by Y-sequences, 
+which are lists <M>[[r_1, u_1],\ldots,[r_k,u_k]]</M> 
+where <M>r_1,\ldots,r_k</M> are the group relators or their inverses, 
+and <M>u_1,\ldots,u_k</M> are words in the free group <C>F</C>. 
+A Y-sequence is evaluated in <C>F</C> as the product 
+<M>(u_1^{-1}r_1u_1)\ldots(u_k^{-1}r_ku_k)</M> 
+and is an identity Y-sequence if it evaluates to the identity in <C>F</C>. 
+An identity Y-sequence represents an identity among the relators 
+of the group presentation. 
+The main function of the package is to produce a set of Y-sequences 
+which generate the module of identites among relators, and further, 
+that this set be minimal in the sense that every element in it 
+is needed to generate the module.
+<P/>
+Before starting on the main example, 
+we consider a simpler example illustrating the use of &idrel;. 
+All the functions used are described in detail in this manual.
+We compute a reduced set of identities among relators 
+for the presentation of the symmetric group <C>s3 = F/[f^3,g^2,(fg)^2]</C>. 
+In the listings below, <C>s3_Ri</C> is the <C>i</C>-th relator for <C>s3</C>, and <C>f1,f2</C> are the generators <M>f,g</M> of <M>F</M>. 
+<P/>
+<Example>
+<![CDATA[
+gap> F := FreeGroup( 2 );; 
+gap> f := F.1;;  g := F.2;; 
+gap> rels3 := [ f^3, g^2, f*g*f*g ]; 
+[ f1^3, f2^2, (f1*f2)^2 ]
+gap> s3 := F/rels3; 
+<fp group on the generators [ f1, f2 ]>
+gap> SetName( s3, "s3" );; 
+gap> IdentitiesAmongRelators( s3 );
+[ [ [ -1, <identity ...> ], [ 1, s3_M1 ] ], 
+  [ [ -2, <identity ...> ], [ 2, s3_M2 ] ], 
+  [ [ -3, <identity ...> ], [ 3, s3_M1*s3_M2 ] ], 
+  [ [ 1, <identity ...> ], [ -3, s3_M1 ], [ 2, s3_M3*s3_M4 ], [ 1, s3_M4 ], 
+      [ -3, <identity ...> ], [ 2, s3_M3*s3_M4*s3_M3 ], [ 2, s3_M3 ], 
+      [ -3, s3_M3 ] ], 
+  [ [ 1, <identity ...> ], [ -3, s3_M2 ], [ 2, s3_M3*s3_M4*s3_M3*s3_M2 ], 
+      [ 2, s3_M3*s3_M2 ], [ 1, s3_M2 ], [ -3, <identity ...> ], [ 2, s3_M3 ], 
+      [ -3, s3_M3 ] ] ]
+]]>
+</Example>
+
+If we write <M>\rho=f^3</M>, <M>\sigma=g^2</M>, <M>\tau=(fg)^2</M> 
+then the first identity becomes <M>\rho^{-1} \rho^{f}</M>. 
+Similarly, the second and third identities are the root identities 
+<M>\sigma^{-1} \sigma^{g}</M> and <M>\tau^{-1} \tau^{fg}</M>. 
+The fourth identity, which is not a root identity, 
+is obtained by walking around the Schreier diagram of the presentation, 
+a somewhat truncated triangular prism. 
+Taking the appropriate conjugate of each face in turn, we get: 
+<Display>
+\rho\ (\tau^{-1})^f\ \sigma^{f^{-1}g^{-1}}\ \rho^{g^{-1}}\ (\tau^{-1})\ 
+\sigma^{f^{-1}g^{-1}f^{-1}}\ \sigma^{f^{-1}}\ (\tau^{-1})^{f^{-1}}\, . 
+</Display> 
+The fifth identity is equivalent to the fourth, as we shall show in 
+section <Ref Sect="sect-s3"/>.
+<P/>
+In order to form the <E>module of identities</E> for <C>s3</C> 
+the identities are transformed into module polynomials. 
+The first is  <M>y_1 = \rho(f-1)</M>. 
+The second and third are <M>y_2 = \sigma(g-1)</M> and <M>y_3 = \tau(fg-1)</M>, 
+while the fourth is <M>\rho(1+g^{-1}f) + \sigma(1+f^{-1}g^{-1}+f^{-1}g^{-1}f) 
+- \tau(1++f+f^2)</M>. 
+Note that, in the fourth polynomial, the conjugators are converted to 
+their normal forms in <C>s3</C>, namely 
+<M>f^2=f^{-1},\ f^{-1}g^{-1}f=fg,\ g^{-1}f=gf</M> and <M>fg^{-1}f=g</M>. 
+Generators for this module are returned by the operation 
+<C>IdentityYSequences</C>. 
+<P/>
+<Example>
+<![CDATA[
+gap> idyseq3 := IdentityYSequences( s3 );     
+[ ( s3_Y1*( -s3_M1), s3_R1*( s3_M1 - <identity ...>) ), 
+  ( s3_Y2*( <identity ...>), s3_R2*( s3_M2 - <identity ...>) ), 
+  ( s3_Y3*( s3_M1), s3_R3*( s3_M2 - s3_M1) ), 
+  ( s3_Y9*( -<identity ...>), s3_R1*( -s3_M2*s3_M1 - s3_M1) + s3_R2*( -s3_M1*s\
+3_M2 - s3_M1 - <identity ...>) + s3_R3*( s3_M3 + s3_M2 + <identity ...>) ) ]
+]]>
+</Example>
+
+Further examples are given in chapter <Ref Sect="chap-idrels"/>. 
+<P/> 
+An extensive revision has been released with version 2.44. 
+This has concentrated in the area of log sequences, 
+adding many of the functions described in sections 
+<Ref Sect="sect-s3"/> and <Ref Sect="sect-reducing"/>. 
+<P/> 
+Work on revising Y-sequences is needed, but must wait for later versions. 
+
+</Section>
+
+</Chapter>

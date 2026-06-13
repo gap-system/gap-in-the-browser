@@ -1,0 +1,212 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "ModulePresentationsForCAP",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Table of Contents", "0.0-1", [ 0, 0, 1 ], 53, 2, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YModule Presentations\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 3, "module presentations", "X7B8C95CA7DA733B4" ], 
+  [ "\033[1X\033[33X\033[0;-2YFunctors\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 4, 3, "functors", "X78D1062D78BE08C1" ], 
+  [ "\033[1X\033[33X\033[0;-2YGAP Categories\033[133X\033[101X", "1.2", 
+      [ 1, 2, 0 ], 91, 4, "gap categories", "X7D03633A7D98026B" ], 
+  [ "\033[1X\033[33X\033[0;-2YConstructors\033[133X\033[101X", "1.3", 
+      [ 1, 3, 0 ], 138, 5, "constructors", "X86EC0F0A78ECBC10" ], 
+  [ "\033[1X\033[33X\033[0;-2YAttributes\033[133X\033[101X", "1.4", 
+      [ 1, 4, 0 ], 270, 8, "attributes", "X7C701DBF7BAE649A" ], 
+  [ "\033[1X\033[33X\033[0;-2YNon-Categorical Operations\033[133X\033[101X", 
+      "1.5", [ 1, 5, 0 ], 289, 8, "non-categorical operations", 
+      "X81CDBC6E7DBB4EA0" ], 
+  [ "\033[1X\033[33X\033[0;-2YNatural Transformations\033[133X\033[101X", 
+      "1.6", [ 1, 6, 0 ], 311, 8, "natural transformations", 
+      "X836749D8814FEEE6" ], 
+  [ "\033[1X\033[33X\033[0;-2YExamples and Tests\033[133X\033[101X", "2", 
+      [ 2, 0, 0 ], 1, 10, "examples and tests", "X7967FE8E7BBDF485" ], 
+  [ "\033[1X\033[33X\033[0;-2YAnnihilator\033[133X\033[101X", "2.1", 
+      [ 2, 1, 0 ], 4, 10, "annihilator", "X7FFB58F67850769C" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntersection of Submodules\033[133X\033[101X", 
+      "2.2", [ 2, 2, 0 ], 29, 10, "intersection of submodules", 
+      "X86E8A9537A87B4EC" ], 
+  [ "\033[1X\033[33X\033[0;-2YKoszul Complex\033[133X\033[101X", "2.3", 
+      [ 2, 3, 0 ], 72, 11, "koszul complex", "X8296A25779A52244" ], 
+  [ "\033[1X\033[33X\033[0;-2YMonoidal Categories\033[133X\033[101X", "2.4", 
+      [ 2, 4, 0 ], 159, 13, "monoidal categories", "X808DC49C7ED99B52" ], 
+  [ "\033[1X\033[33X\033[0;-2YClosed Monoidal Structure\033[133X\033[101X", 
+      "2.5", [ 2, 5, 0 ], 264, 15, "closed monoidal structure", 
+      "X828DF9B1782D1AF6" ], 
+  [ "\033[1X\033[33X\033[0;-2YProjectivity test\033[133X\033[101X", "2.6", 
+      [ 2, 6, 0 ], 305, 15, "projectivity test", "X7C3B1694803034A2" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 17, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XFunctorStandardModuleLeft\033[102X for IsHomalgRing", "1.1-1", 
+      [ 1, 1, 1 ], 7, 3, "functorstandardmoduleleft for ishomalgring", 
+      "X7F7AC44478418555" ], 
+  [ "\033[2XFunctorStandardModuleRight\033[102X for IsHomalgRing", "1.1-2", 
+      [ 1, 1, 2 ], 15, 3, "functorstandardmoduleright for ishomalgring", 
+      "X87AEC1177DB7F50D" ], 
+  [ "\033[2XFunctorGetRidOfZeroGeneratorsLeft\033[102X for IsHomalgRing", 
+      "1.1-3", [ 1, 1, 3 ], 23, 3, 
+      "functorgetridofzerogeneratorsleft for ishomalgring", 
+      "X8427C0B17A445822" ], 
+  [ "\033[2XFunctorGetRidOfZeroGeneratorsRight\033[102X for IsHomalgRing", 
+      "1.1-4", [ 1, 1, 4 ], 31, 3, 
+      "functorgetridofzerogeneratorsright for ishomalgring", 
+      "X7F1E779D8003146B" ], 
+  [ "\033[2XFunctorLessGeneratorsLeft\033[102X for IsHomalgRing", "1.1-5", 
+      [ 1, 1, 5 ], 39, 3, "functorlessgeneratorsleft for ishomalgring", 
+      "X819A04517B3601C0" ], 
+  [ "\033[2XFunctorLessGeneratorsRight\033[102X for IsHomalgRing", "1.1-6", 
+      [ 1, 1, 6 ], 47, 4, "functorlessgeneratorsright for ishomalgring", 
+      "X7F80AE9B7EC07198" ], 
+  [ "\033[2XFunctorDualLeft\033[102X for IsHomalgRing", "1.1-7", [ 1, 1, 7 ], 
+      55, 4, "functordualleft for ishomalgring", "X877B7ACE87E1BEC2" ], 
+  [ "\033[2XFunctorDualRight\033[102X for IsHomalgRing", "1.1-8", 
+      [ 1, 1, 8 ], 64, 4, "functordualright for ishomalgring", 
+      "X7D56611D7BF91B54" ], 
+  [ "\033[2XFunctorDoubleDualLeft\033[102X for IsHomalgRing", "1.1-9", 
+      [ 1, 1, 9 ], 73, 4, "functordoubledualleft for ishomalgring", 
+      "X7C9901F8851FD24A" ], 
+  [ "\033[2XFunctorDoubleDualRight\033[102X for IsHomalgRing", "1.1-10", 
+      [ 1, 1, 10 ], 82, 4, "functordoubledualright for ishomalgring", 
+      "X8016306881444DCA" ], 
+  [ 
+      "\033[2XIsLeftOrRightPresentationMorphism\033[102X for IsCapCategoryMorphis\
+m", "1.2-1", [ 1, 2, 1 ], 94, 4, 
+      "isleftorrightpresentationmorphism for iscapcategorymorphism", 
+      "X79DBCB747E91FB70" ], 
+  [ 
+      "\033[2XIsLeftPresentationMorphism\033[102X for IsLeftOrRightPresentationMo\
+rphism", "1.2-2", [ 1, 2, 2 ], 102, 5, 
+      "isleftpresentationmorphism for isleftorrightpresentationmorphism", 
+      "X85E26CFF86855B6B" ], 
+  [ 
+      "\033[2XIsRightPresentationMorphism\033[102X for IsLeftOrRightPresentationM\
+orphism", "1.2-3", [ 1, 2, 3 ], 109, 5, 
+      "isrightpresentationmorphism for isleftorrightpresentationmorphism", 
+      "X873EFE29849F6998" ], 
+  [ "\033[2XIsLeftOrRightPresentation\033[102X for IsCapCategoryObject", 
+      "1.2-4", [ 1, 2, 4 ], 116, 5, 
+      "isleftorrightpresentation for iscapcategoryobject", 
+      "X7BB95B7A7EB96854" ], 
+  [ "\033[2XIsLeftPresentation\033[102X for IsLeftOrRightPresentation", 
+      "1.2-5", [ 1, 2, 5 ], 124, 5, 
+      "isleftpresentation for isleftorrightpresentation", "X7C71B8D17C60C6B5" 
+     ], 
+  [ "\033[2XIsRightPresentation\033[102X for IsLeftOrRightPresentation", 
+      "1.2-6", [ 1, 2, 6 ], 131, 5, 
+      "isrightpresentation for isleftorrightpresentation", 
+      "X7DBF478D7EE3FE63" ], 
+  [ 
+      "\033[2XPresentationMorphism\033[102X for IsLeftOrRightPresentation, IsHoma\
+lgMatrix, IsLeftOrRightPresentation", "1.3-1", [ 1, 3, 1 ], 141, 5, 
+      "presentationmorphism for isleftorrightpresentation ishomalgmatrix islef\
+torrightpresentation", "X87010AB6819736C8" ], 
+  [ 
+      "\033[2XAsMorphismBetweenFreeLeftPresentations\033[102X for IsHomalgMatrix"
+        , "1.3-2", [ 1, 3, 2 ], 152, 5, 
+      "asmorphismbetweenfreeleftpresentations for ishomalgmatrix", 
+      "X7C9B36AD7B9CCC8D" ], 
+  [ 
+      "\033[2XAsMorphismBetweenFreeRightPresentations\033[102X for IsHomalgMatrix\
+", "1.3-3", [ 1, 3, 3 ], 162, 6, 
+      "asmorphismbetweenfreerightpresentations for ishomalgmatrix", 
+      "X7F1AD55C852BE617" ], 
+  [ "\033[2XAsLeftPresentation\033[102X for IsHomalgMatrix", "1.3-4", 
+      [ 1, 3, 4 ], 172, 6, "asleftpresentation for ishomalgmatrix", 
+      "X7BE01A1381744627" ], 
+  [ "\033[2XAsRightPresentation\033[102X for IsHomalgMatrix", "1.3-5", 
+      [ 1, 3, 5 ], 181, 6, "asrightpresentation for ishomalgmatrix", 
+      "X780443B07F43AA1C" ], 
+  [ "\033[2XFreeLeftPresentation\033[102X for IsInt, IsHomalgRing", "1.3-6", 
+      [ 1, 3, 6 ], 190, 6, "freeleftpresentation for isint ishomalgring", 
+      "X7F345A2A87ABE417" ], 
+  [ "\033[2XFreeRightPresentation\033[102X for IsInt, IsHomalgRing", "1.3-7", 
+      [ 1, 3, 7 ], 199, 6, "freerightpresentation for isint ishomalgring", 
+      "X85536E4E85D15252" ], 
+  [ "\033[2XUnderlyingMatrix\033[102X for IsLeftOrRightPresentation", 
+      "1.3-8", [ 1, 3, 8 ], 208, 6, 
+      "underlyingmatrix for isleftorrightpresentation", "X86F926B27C579E66" ],
+  [ "\033[2XUnderlyingHomalgRing\033[102X for IsLeftOrRightPresentation", 
+      "1.3-9", [ 1, 3, 9 ], 216, 7, 
+      "underlyinghomalgring for isleftorrightpresentation", 
+      "X7D8E30E486A08439" ], 
+  [ "\033[2XAnnihilator\033[102X for IsLeftOrRightPresentation", "1.3-10", 
+      [ 1, 3, 10 ], 224, 7, "annihilator for isleftorrightpresentation", 
+      "X7B5539AB8541F618" ], 
+  [ "\033[2XLeftPresentations\033[102X for IsHomalgRing", "1.3-11", 
+      [ 1, 3, 11 ], 234, 7, "leftpresentations for ishomalgring", 
+      "X87946F997AD1005A" ], 
+  [ "\033[2XRightPresentations\033[102X for IsHomalgRing", "1.3-12", 
+      [ 1, 3, 12 ], 242, 7, "rightpresentations for ishomalgring", 
+      "X7BDF988F7FFEAB8C" ], 
+  [ 
+      "\033[2XLeftPresentations_as_FreydCategory_CategoryOfRows\033[102X for IsHo\
+malgRing", "1.3-13", [ 1, 3, 13 ], 250, 7, 
+      "leftpresentations_as_freydcategory_categoryofrows for ishomalgring", 
+      "X8145816A85BA2680" ], 
+  [ 
+      "\033[2XRightPresentations_as_FreydCategory_CategoryOfColumns\033[102X for \
+IsHomalgRing", "1.3-14", [ 1, 3, 14 ], 260, 7, 
+      "rightpresentations_as_freydcategory_categoryofcolumns for ishomalgring"
+        , "X7ED9DFEB82DE9653" ], 
+  [ 
+      "\033[2XUnderlyingHomalgRing\033[102X for IsLeftOrRightPresentationMorphism\
+", "1.4-1", [ 1, 4, 1 ], 273, 8, 
+      "underlyinghomalgring for isleftorrightpresentationmorphism", 
+      "X8157F3E8847B15E1" ], 
+  [ "\033[2XUnderlyingMatrix\033[102X for IsLeftOrRightPresentationMorphism", 
+      "1.4-2", [ 1, 4, 2 ], 281, 8, 
+      "underlyingmatrix for isleftorrightpresentationmorphism", 
+      "X83CA6F06832162B7" ], 
+  [ 
+      "\033[2XStandardGeneratorMorphism\033[102X for IsLeftOrRightPresentation, I\
+sInt", "1.5-1", [ 1, 5, 1 ], 292, 8, 
+      "standardgeneratormorphism for isleftorrightpresentation isint", 
+      "X8508310C7E908093" ], 
+  [ "\033[2XCoverByFreeModule\033[102X for IsLeftOrRightPresentation", 
+      "1.5-2", [ 1, 5, 2 ], 302, 8, 
+      "coverbyfreemodule for isleftorrightpresentation", "X7EF1493A7D341F5E" ]
+    , 
+  [ 
+      "\033[2XNaturalIsomorphismFromIdentityToStandardModuleLeft\033[102X for IsH\
+omalgRing", "1.6-1", [ 1, 6, 1 ], 314, 8, 
+      "naturalisomorphismfromidentitytostandardmoduleleft for ishomalgring", 
+      "X85D3DB1F856D05EF" ], 
+  [ 
+      "\033[2XNaturalIsomorphismFromIdentityToStandardModuleRight\033[102X for Is\
+HomalgRing", "1.6-2", [ 1, 6, 2 ], 323, 8, 
+      "naturalisomorphismfromidentitytostandardmoduleright for ishomalgring", 
+      "X7B64AF718133C945" ], 
+  [ 
+      "\033[2XNaturalIsomorphismFromIdentityToGetRidOfZeroGeneratorsLeft\033[102X\
+ for IsHomalgRing", "1.6-3", [ 1, 6, 3 ], 332, 9, 
+      "naturalisomorphismfromidentitytogetridofzerogeneratorsleft for ishomalg\
+ring", "X7CA2B84E7F933125" ], 
+  [ 
+      "\033[2XNaturalIsomorphismFromIdentityToGetRidOfZeroGeneratorsRight\033[102\
+X for IsHomalgRing", "1.6-4", [ 1, 6, 4 ], 342, 9, 
+      "naturalisomorphismfromidentitytogetridofzerogeneratorsright for ishomal\
+gring", "X7A2DCBD6844093E3" ], 
+  [ 
+      "\033[2XNaturalIsomorphismFromIdentityToLessGeneratorsLeft\033[102X for IsH\
+omalgRing", "1.6-5", [ 1, 6, 5 ], 352, 9, 
+      "naturalisomorphismfromidentitytolessgeneratorsleft for ishomalgring", 
+      "X7B331B0A86010185" ], 
+  [ 
+      "\033[2XNaturalIsomorphismFromIdentityToLessGeneratorsRight\033[102X for Is\
+HomalgRing", "1.6-6", [ 1, 6, 6 ], 361, 9, 
+      "naturalisomorphismfromidentitytolessgeneratorsright for ishomalgring", 
+      "X834AC0FD825FCD2F" ], 
+  [ 
+      "\033[2XNaturalTransformationFromIdentityToDoubleDualLeft\033[102X for IsHo\
+malgRing", "1.6-7", [ 1, 6, 7 ], 370, 9, 
+      "naturaltransformationfromidentitytodoubledualleft for ishomalgring", 
+      "X7E37CB058378CBEE" ], 
+  [ 
+      "\033[2XNaturalTransformationFromIdentityToDoubleDualRight\033[102X for IsH\
+omalgRing", "1.6-8", [ 1, 6, 8 ], 379, 9, 
+      "naturaltransformationfromidentitytodoubledualright for ishomalgring", 
+      "X7F92B4448041A68C" ] ]
+);

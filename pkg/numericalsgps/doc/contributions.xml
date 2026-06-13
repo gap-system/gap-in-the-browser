@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Appendix Label="ap:contrib"><Heading>Contributions</Heading>
+
+Sebastian Gutsche helped in the implementation of inference of properties from already known properties, and also with the integration of 4ti2Interface. Max Horn adapted the definition of the objects numerical and affine semigroups; the behave like lists of integers or lists of lists of integers (affine case), and one can intersect numerical semigroups with lists of integers, or affine semigroup with cartesian products of lists of integers. 
+
+<Section><Heading>Functions implemented by A. Sammartano</Heading>
+
+A. Sammartano implemented the following functions.
+
+<P/>
+<Ref Func="IsAperySetGammaRectangular"/>,
+
+<P/>
+<Ref Func="IsAperySetBetaRectangular"/>,
+
+<P/>
+<Ref Func="IsAperySetAlphaRectangular"/>,
+
+<P/>
+<Ref Func="TypeSequenceOfNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="IsGradedAssociatedRingNumericalSemigroupBuchsbaum"/>,
+
+<P/>
+<Ref Func="IsGradedAssociatedRingNumericalSemigroupBuchsbaum"/>,
+
+<P/>
+<Ref Func="TorsionOfAssociatedGradedRingNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="IsMpureNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="IsPureNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="IsGradedAssociatedRingNumericalSemigroupGorenstein"/>,
+
+<P/>
+<Ref Func="IsGradedAssociatedRingNumericalSemigroupCI"/>.
+
+
+</Section>
+
+<Section><Heading>Functions implemented by C. O'Neill</Heading>
+
+Chris implemented the following functions described in <Cite Key="B-P-ON"></Cite>:
+
+<P/>
+<Ref Func="OmegaPrimalityOfElementListInNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="FactorizationsElementListWRTNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="DeltaSetPeriodicityBoundForNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="DeltaSetPeriodicityStartForNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="DeltaSetListUpToElementWRTNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="DeltaSetUnionUpToElementWRTNumericalSemigroup"/>,
+
+<P/>
+<Ref Func="DeltaSetOfNumericalSemigroup"/>.
+
+<P/>And contributed to:
+
+<P/>
+<Ref Func="DeltaSetOfAffineSemigroup"/>.
+
+Also he implemented the new version of 
+
+<P/>
+<Ref Func="AperyListOfNumericalSemigroupWRTElement"/>.
+
+
+</Section>
+
+<Section><Heading>Functions implemented by K. Stokes</Heading>
+
+Klara Stokes helped with the implementation of functions related to patterns for ideals of numerical semigroups <Ref Sect="sec:PatternsIdeals"/>.
+
+</Section>
+
+<Section><Heading>Functions implemented by I. Ojeda and C. J. Moreno Ávila</Heading>
+
+Ignacio and Carlos Jesús implemented the algorithms given in <Cite Key="Roune"></Cite> and <Cite Key="MC-O-T"></Cite> for the calculation of the Frobenius number and Apéry set of a numerical semigroup using Gröbner basis calculations. Since the new implementation by Chris was included, these algorithms are no longer used.
+</Section>
+
+
+<Section><Heading>Functions implemented by I. Ojeda</Heading>
+
+Ignacio also implemented the following functions. 
+<P/>
+<Ref Func="AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType"/>,
+<P/>
+<Ref Func="AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType"/>,
+<P/>
+<Ref Func="NumericalSemigroupsWithFrobeniusNumberAndMultiplicity"/>,
+<P/>
+<Ref Func="IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity"/>.
+<P/>
+Ignacio also implemented the new versions of 
+<P/>
+<Ref Func="AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber"/>,
+<P/>
+<Ref Func="NumericalSemigroupsWithFrobeniusNumber"/>,
+
+</Section>
+
+
+
+
+<Section><Heading>Functions implemented by A. Sánchez-R. Navarro</Heading>
+  Alfredo helped in the implementation of methods for <A>4ti2gap</A> of the following functions.
+<P/>
+<Ref Func="FactorizationsVectorWRTList"/>,
+<P/>
+
+<Ref Func="DegreesOfPrimitiveElementsOfAffineSemigroup"/>,
+<P/>
+<Ref Func="MinimalPresentationOfAffineSemigroup"/>.
+<P/>
+
+
+
+He also helped in preliminary versions of the following functions.
+<P/>
+<Ref Func="CatenaryDegreeOfSetOfFactorizations"/>,
+<P/>
+<Ref Func="TameDegreeOfSetOfFactorizations"/>,
+<P/>
+<Ref Func="TameDegreeOfNumericalSemigroup"/>,
+<P/>
+<Ref Func="TameDegreeOfAffineSemigroup"/>,
+<P/>
+<Ref Func="OmegaPrimalityOfElementInAffineSemigroup"/>,
+<P/>
+<Ref Func="CatenaryDegreeOfAffineSemigroup"/>,
+<P/>
+<Ref Func="MonotoneCatenaryDegreeOfSetOfFactorizations"/>.
+<P/>
+<Ref Func="EqualCatenaryDegreeOfSetOfFactorizations"/>.
+<P/>
+<Ref Func="AdjacentCatenaryDegreeOfSetOfFactorizations"/>.
+<P/>
+<Ref Func="HomogeneousCatenaryDegreeOfAffineSemigroup"/>.
+
+
+</Section>
+
+
+
+<Section><Heading>Functions implemented by G. Zito</Heading>
+  Giuseppe gave the algorithms for the current version functions
+<P/>
+<Ref Func="ArfNumericalSemigroupsWithFrobeniusNumber"/>,
+<P/>
+<Ref Func="ArfNumericalSemigroupsWithFrobeniusNumberUpTo"/>,
+<P/>
+<Ref Func="ArfNumericalSemigroupsWithGenus"/>,
+<P/>
+<Ref Func="ArfNumericalSemigroupsWithGenusUpTo"/>,
+<P/>
+<Ref Func="ArfCharactersOfArfNumericalSemigroup"/>.
+
+</Section>
+
+
+<Section><Heading>Functions implemented by A. Herrera-Poyatos</Heading>
+  Andrés Herrera-Poyatos gave new implementations of
+  <P/>
+    <Ref Func="IsSelfReciprocalUnivariatePolynomial"/> and
+  <P/>
+    <Ref Func="IsKroneckerPolynomial"/>.
+
+	Andrés is also coauthor of the dot functions, see Chapter <Ref Chap="ch:dot"/>
+</Section>
+
+<Section><Heading>Functions implemented by Benjamin Heredia</Heading>
+  Benjamin Heredia implemented a preliminary version of
+  <P/>
+    <Ref Func="FengRaoDistance"/>.
+</Section>
+
+<Section><Heading>Functions implemented by Juan Ignacio García-García</Heading>
+  Juan Ignacio implemented a preliminary version of
+  <P/>
+    <Ref Func="NumericalSemigroupsWithFrobeniusNumber"/>.
+
+</Section>
+
+
+<Section><Heading>Functions implemented by C. Cisto</Heading>
+  Carmelo provided some functions to deal with affine semigroups given by gaps, and to compute gaps of affine semigroups with finite genus, see for instance 
+  <P/>
+    <Ref Func="AffineSemigroupByGaps"/>,
+  <P/>
+    <Ref Func="RemoveMinimalGeneratorFromAffineSemigroup"/>,
+  <P/>
+    <Ref Func="AddSpecialGapOfAffineSemigroup"/>.
+
+</Section>
+
+
+<Section><Heading>Functions implemented by N. Matsuoka</Heading>
+  Naoyuki implemented the function associated to the generalized Gorenstein property, see Section <Ref Sect="sc:generalized-gorenstein"/>.
+
+</Section>
+
+
+<Section><Heading>Functions implemented by N. Maugeri</Heading>
+  Nicola fixed the implementation of  <Ref Func="ArfGoodSemigroupClosure"/>.
+
+  He also implemented 
+
+  <P/>
+  <Ref Func="ProjectionOfAGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="GenusOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="LengthOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="AperySetOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="StratifiedAperySetOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="AbsoluteIrreduciblesOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="TracksOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="RandomGoodSemigroupWithFixedMultiplicity"/>.
+
+  And the multiplicity and local property for good semigroups.
+
+</Section>
+
+<Section><Heading>Functions implemented by H. Martín Cruz</Heading>
+Helena helped in the implementation of the code for ideals of affine semigroups <Ref Sect="sec:ideals-affine"/>
+
+</Section>
+
+<Section><Heading>Functions implemented by J. Angulo Rodríguez</Heading>
+Jorge implemented the code corresponding to decompositions of ideals into irreducibles <Ref Sect="sec:decomposition-irreducibles"/>. He also implemented <Ref Func="NumericalSemigroupByNuSequence"/> and <Ref Func="NumericalSemigroupByTauSequence"/>.
+
+
+</Section>
+
+<Section><Heading>Functions implemented by F. Strazzanti</Heading>
+Francesco helped in the implementation of the following methods.
+
+  <P/>
+  <Ref Prop="IsAlmostCanonicalIdeal"/>,
+  <P/>
+  <Ref Func="TraceIdealOfNumericalSemigroup"/>,
+  <P/>
+  <Ref Prop="IsNearlyGorenstein"/>,
+  <P/>
+  <Ref Prop="IsGeneralizedAlmostSymmetric"/>,
+  <P/>
+  <Ref Prop="IsHomogeneousNumericalSemigroup"/>,
+  <P/>
+  <Ref Func="AsNumericalDuplication"/>,
+  <P/>
+  <Ref Func="RFMatrices"/>,
+  <P/>
+  <Ref Func="DilatationOfNumericalSemigroup"/>.
+
+</Section>
+
+
+</Appendix>

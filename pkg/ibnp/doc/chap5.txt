@@ -1,0 +1,104 @@
+  
+  [1X5 [33X[0;0YFunctions for Noncommutative Polynomials[133X[101X
+  
+  
+  [1X5.1 [33X[0;0YBasic functions for polynomials[133X[101X
+  
+  [1X5.1-1 MaxDegreeNP[101X
+  
+  [33X[1;0Y[29X[2XMaxDegreeNP[102X( [3Xpolylist[103X ) [32X operation[133X
+  
+  [33X[0;0YGiven  an [10XFAlgList[110X, this function calculates the degree of the lead term for
+  each element of the list and returns the largest value found. In the example
+  this is [22Xv[122X with degree [22X4[122X[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XA2 := AlgebraIBNP;[127X[104X
+    [4X[28X<algebra-with-one over Rationals, with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xa := A2.1;; b := A2.2;;[127X[104X
+    [4X[25Xgap>[125X [27Xord := NCMonomialLeftLengthLexicographicOrdering( A2 );;[127X[104X
+    [4X[25Xgap>[125X [27Xu := [ [ [1,1,2], [2,1], [1] ], [3,2,-1] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xv := [ [ [1,1,2,1], [1,2,2], [2,1] ], [4,-2,1] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xw := [ [ [2,1,2], [1,2], [2] ], [2,-1,3] ];; [127X[104X
+    [4X[25Xgap>[125X [27XL3 := [ u, v, w ];; [127X[104X
+    [4X[25Xgap>[125X [27XPrintNPList( L3 ); [127X[104X
+    [4X[28X 3a^2b + 2ba - a [128X[104X
+    [4X[28X 4a^2ba - 2ab^2 + ba [128X[104X
+    [4X[28X 2bab - ab + 3b [128X[104X
+    [4X[25Xgap>[125X [27XMaxDegreeNP( L3 );[127X[104X
+    [4X[28X4[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X5.1-2 ScalarMulNP[101X
+  
+  [33X[1;0Y[29X[2XScalarMulNP[102X( [3Xpol[103X, [3Xconst[103X ) [32X operation[133X
+  
+  [33X[0;0YArithmetic  with  polynomials  is  performed using the [5XGBNP[105X functions [10XAddNP[110X,
+  [10XMulNP[110X  and  [10XBimulNP[110X.  We  find  it  convenient  to add here a function which
+  multiplies  a  polynomial  by  an  element  of  the  underlying field of the
+  algebra.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xu2 := ScalarMulNP( u, 2 );;  PrintNP( u2 );[127X[104X
+    [4X[28X 6a^2b + 4ba - 2a[128X[104X
+    [4X[25Xgap>[125X [27Xx := [ [ [2,1] ], [5] ];;  PrintNP( x );[127X[104X
+    [4X[28X 5ba [128X[104X
+    [4X[25Xgap>[125X [27Xv2 := AddNP( v, x, 1, -2 );;  PrintNP( v2 );[127X[104X
+    [4X[28X 4a^2ba - 2ab^2 - 9ba [128X[104X
+    [4X[25Xgap>[125X [27Xw2 := MulNP( w, x );;  PrintNP( w2 );[127X[104X
+    [4X[28X 10bab^2a - 5ab^2a + 15b^2a [128X[104X
+    [4X[25Xgap>[125X [27Xu3 := BimulNP( [2,2], u, [1,1] );;  PrintNP( u3 );               [127X[104X
+    [4X[28X 3b^2a^2ba^2 + 2b^3a^3 - b^2a^3 [128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X5.1-3 LtNPoly[101X
+  
+  [33X[1;0Y[29X[2XLtNPoly[102X( [3Xpol1[103X, [3Xpol2[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XGtNPoly[102X( [3Xpol1[103X, [3Xpol2[103X ) [32X operation[133X
+  
+  [33X[0;0YThese  two  functions  generalise  the  [5XGBNP[105X  functions  [10XLtNP[110X and [10XGtNP[110X which
+  (confusingly)  apply  only  to monomials. They compare a pair of polynomials
+  with  respect  to the monomial ordering currently being used. In the example
+  we check that [22Xw > u[122X, that [22Xu < 2u[122X and [22Xv > v-10ba[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27X[ LtNPoly( w, u ), LtNPoly( u, u2 ) ];     [127X[104X
+    [4X[28X[ false, true ][128X[104X
+    [4X[25Xgap>[125X [27XGtNPoly( v, v2 );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X## LtNPoly and GtNPoly may be used within the Sort command:[127X[104X
+    [4X[25Xgap>[125X [27XL4 := [u,v,u2,v2];[127X[104X
+    [4X[28X[ [ [ [ 1, 1, 2 ], [ 2, 1 ], [ 1 ] ], [ 3, 2, -1 ] ], [128X[104X
+    [4X[28X  [ [ [ 1, 1, 2, 1 ], [ 1, 2, 2 ], [ 2, 1 ] ], [ 4, -2, 1 ] ], [128X[104X
+    [4X[28X  [ [ [ 1, 1, 2 ], [ 2, 1 ], [ 1 ] ], [ 6, 4, -2 ] ], [128X[104X
+    [4X[28X  [ [ [ 1, 1, 2, 1 ], [ 1, 2, 2 ], [ 2, 1 ] ], [ 4, -2, -9 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XSort( L4, GtNPoly );[127X[104X
+    [4X[25Xgap>[125X [27XL4;[127X[104X
+    [4X[28X[ [ [ [ 1, 1, 2, 1 ], [ 1, 2, 2 ], [ 2, 1 ] ], [ 4, -2, 1 ] ], [128X[104X
+    [4X[28X  [ [ [ 1, 1, 2, 1 ], [ 1, 2, 2 ], [ 2, 1 ] ], [ 4, -2, -9 ] ], [128X[104X
+    [4X[28X  [ [ [ 1, 1, 2 ], [ 2, 1 ], [ 1 ] ], [ 6, 4, -2 ] ], [128X[104X
+    [4X[28X  [ [ [ 1, 1, 2 ], [ 2, 1 ], [ 1 ] ], [ 3, 2, -1 ] ] ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X5.1-4 LowestLeadMonomialPosNP[101X
+  
+  [33X[1;0Y[29X[2XLowestLeadMonomialPosNP[102X( [3Xpolylist[103X ) [32X operation[133X
+  
+  [33X[0;0YGiven  a  list  of  polynomials,  this  function  looks  at  all the leading
+  monomials  and  returns  the  position  of  the  smallest lead monomial with
+  respect to the monomial ordering currently being used. In the example, since
+  [10XL4[110X is sorted, the fourth polynomial is the least.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XLowestLeadMonomialPosNP( L4 );[127X[104X
+    [4X[28X4[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  

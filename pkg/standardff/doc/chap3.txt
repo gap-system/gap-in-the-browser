@@ -1,0 +1,84 @@
+  
+  [1X3 [33X[0;0YStandard generators of cyclic groups[133X[101X
+  
+  
+  [1X3.1 [33X[0;0YGenerators of multiplicative groups[133X[101X
+  
+  [33X[0;0YThe  multiplicative  group  of  each  finite field is cyclic and so for each
+  divisor [22Xm[122X of its order there is a unique subgroup of order [22Xm[122X.[133X
+  
+  [33X[0;0YIn  [Lüb23]  we define standardized generators [22Xx_m[122X of these cyclic groups in
+  the  standard  finite  fields  described  in  chapter  [14X2[114X  which  fulfill the
+  following compatibility condition: If [22Xk | m[122X then [22Xx_m^{m/k} = x_k[122X.[133X
+  
+  [33X[0;0YThe  condition  that [22Xx_m[122X can be computed is that [22Xm[122X can be factorized. (If we
+  do not know the prime divisors of [22Xm[122X then we cannot show that a given element
+  has order [22Xm[122X.) Note that this means that we can compute [22Xx_m[122X in [10XFF(p,n)[110X when [22Xm
+  |  (p^n -1)[122X and we know the prime divisors of [22Xm[122X, even when the factorization
+  of [22X(p^n-1)[122X is not known.[133X
+  
+  [33X[0;0YIn  the  case that the factorization of [22Xm = p^n-1[122X is known the corresponding
+  [22Xx_m[122X is a standardized primitive root of [10XFF(p,n)[110X that can be computed.[133X
+  
+  [33X[0;0YLet [22Xl | n[122X and set [22Xm = p^n-1[122X and [22Xk = p^l-1[122X. Then [22Xx_m[122X and [22Xx_k[122X are the standard
+  primitive  roots of [10XFF(p,n)[110X and [10XFF(p,l)[110X (considered as subfield of [10XFF(p,n)[110X),
+  respectively.  The  compatibity  condition  says  that [22Xx_m^{m/k} = x_k[122X. This
+  shows  that  the  minimal  polynomials  of  [22Xx_m[122X and [22Xx_k[122X over the prime field
+  fulfill  the  same  compatibility  conditions  as  Conway  polynomials  (see
+  [2XConwayPolynomial[102X ([14XReference: ConwayPolynomial[114X).[133X
+  
+  [1X3.1-1 StandardCyclicGenerator[101X
+  
+  [33X[1;0Y[29X[2XStandardCyclicGenerator[102X( [3XF[103X[, [3Xm[103X] ) [32X operation[133X
+  [33X[1;0Y[29X[2XStandardPrimitiveRoot[102X( [3XF[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan element of [3XF[103X or [9Xfail[109X[133X
+  
+  [33X[0;0YThe  argument  [3XF[103X  must  be  a standard finite field (see [2XFF[102X ([14X2.2-1[114X)) and [3Xm[103X a
+  positive  integer.  If  [3Xm[103X does not divide [22X|[3XF[103X| - 1[122X the function returns [9Xfail[109X.
+  Otherwise  a  standardized  element [22Xx_[3Xm[103X[122X of order [3Xm[103X is returned, as described
+  above.[133X
+  
+  [33X[0;0YThe  argument  [3Xm[103X  is optional, if not given its default value is [22X|[3XF[103X| - 1[122X. In
+  this case [22Xx_[3Xm[103X[122X can also be computed with the attribute [2XStandardPrimitiveRoot[102X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(67, 18); # Conway polynomial was hard to compute[127X[104X
+    [4X[28XFF(67, 18)[128X[104X
+    [4X[25Xgap>[125X [27Xx := PrimitiveElement(F);[127X[104X
+    [4X[28XZZ(67,18,[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])[128X[104X
+    [4X[25Xgap>[125X [27Xxprim := StandardPrimitiveRoot(F);;[127X[104X
+    [4X[25Xgap>[125X [27Xk := (Size(F)-1) / Order(x);[127X[104X
+    [4X[28X6853662165340556076084083497526[128X[104X
+    [4X[25Xgap>[125X [27Xxm := StandardCyclicGenerator(F, Order(x));;[127X[104X
+    [4X[25Xgap>[125X [27Xxm = xprim^k;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XF := FF(23, 201); # factorization of (|F| - 1) not known [127X[104X
+    [4X[28XFF(23, 201)[128X[104X
+    [4X[25Xgap>[125X [27Xm:=79*269*67939;[127X[104X
+    [4X[28X1443771689[128X[104X
+    [4X[25Xgap>[125X [27X(Size(F)-1) mod m;[127X[104X
+    [4X[28X0[128X[104X
+    [4X[25Xgap>[125X [27XOrderMod(23, m);[127X[104X
+    [4X[28X201[128X[104X
+    [4X[25Xgap>[125X [27Xxm := StandardCyclicGenerator(F, m);;[127X[104X
+    [4X[25Xgap>[125X [27XIsOne(xm^m);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XForAll(Factors(m), r-> not IsOne(xm^(m/r)));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XF := FF(7,48);[127X[104X
+    [4X[28XFF(7, 48)[128X[104X
+    [4X[25Xgap>[125X [27XK := FF(7,12);[127X[104X
+    [4X[28XFF(7, 12)[128X[104X
+    [4X[25Xgap>[125X [27Xemb := Embedding(K, F);;[127X[104X
+    [4X[25Xgap>[125X [27Xx := StandardPrimitiveRoot(F);;[127X[104X
+    [4X[25Xgap>[125X [27Xy := StandardPrimitiveRoot(K);;[127X[104X
+    [4X[25Xgap>[125X [27Xy^emb = x^((Size(F)-1)/(Size(K)-1));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xv := Indeterminate(FF(7,1), "v");[127X[104X
+    [4X[28Xv[128X[104X
+    [4X[25Xgap>[125X [27Xpx := MinimalPolynomial(FF(7,1), x, v);;[127X[104X
+    [4X[25Xgap>[125X [27Xpy := MinimalPolynomial(FF(7,1), y, v);;[127X[104X
+    [4X[25Xgap>[125X [27XValue(py, PowerMod(v, (Size(F)-1)/(Size(K)-1), px)) mod px;[127X[104X
+    [4X[28X0*Z(7)[128X[104X
+  [4X[32X[104X
+  

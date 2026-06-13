@@ -1,0 +1,79 @@
+\GAPDocLabFile{lpres}
+\makelabel{lpres:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{lpres:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{lpres:The lpres package}{1}{X86B8787287B59CA4}
+\makelabel{lpres:Introduction}{1.1}{X7DFB63A97E67C0A1}
+\makelabel{lpres:An Introduction to L-presented groups}{2}{X7AEB47327D75B633}
+\makelabel{lpres:Definitions}{2.1}{X84541F61810C741D}
+\makelabel{lpres:Creating an L-presented group}{2.2}{X81065E797A486D0F}
+\makelabel{lpres:The underlying free group}{2.3}{X80B65AF48662DE70}
+\makelabel{lpres:Accessing an L-presentation}{2.4}{X847047F083826C00}
+\makelabel{lpres:Attributes and properties of L-presented groups}{2.5}{X817DA8E686311B54}
+\makelabel{lpres:Methods for L-presented groups}{2.6}{X7B5C48EA7CD8A57E}
+\makelabel{lpres:Nilpotent Quotients of L-presented groups}{3}{X824CC9CA824D3F1E}
+\makelabel{lpres:New methods for L-presented groups}{3.1}{X791C3E5280F38329}
+\makelabel{lpres:A brief description of the algorithm}{3.2}{X7C529DA9802E603E}
+\makelabel{lpres:Nilpotent Quotient Systems for invariant L-presentations}{3.3}{X864A3F6F796E99DF}
+\makelabel{lpres:Attributes of L-presented groups related with the nilpotent quotient algorithm}{3.4}{X87CA2F188762A2B5}
+\makelabel{lpres:The Info-Class InfoLPRES}{3.5}{X7BB56B4C7C1EFAB8}
+\makelabel{lpres:Subgroups of L-presented groups}{4}{X874D64AA789F224E}
+\makelabel{lpres:Creating a subgroup of an L-presented group}{4.1}{X86B9E4BD7F5D1610}
+\makelabel{lpres:Computing the index of finite-index subgroups}{4.2}{X7A4EB4E0819ACB91}
+\makelabel{lpres:Technical details}{4.3}{X87A9EC0A7DF04931}
+\makelabel{lpres:Approximating the Schur multiplier}{5}{X7FBE94957D7ECCFC}
+\makelabel{lpres:Methods}{5.1}{X8606FDCE878850EF}
+\makelabel{lpres:On a parallel nilpotent quotient algorithm}{6}{X7BC16B0082A2B827}
+\makelabel{lpres:Usage}{6.1}{X86A9B6F87E619FFF}
+\makelabel{lpres:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{lpres:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{lpres:Index}{Ind}{X83A0356F839C696F}
+\makelabel{lpres:LPresentedGroup}{2.2.1}{X7BBBE4C082AE4D5A}
+\makelabel{lpres:ExamplesOfLPresentations}{2.2.2}{X79A034B8851444C9}
+\makelabel{lpres:FreeEngelGroup}{2.2.3}{X7DA323A87E7B6A7C}
+\makelabel{lpres:FreeBurnsideGroup}{2.2.4}{X81C3537083E40A5C}
+\makelabel{lpres:FreeNilpotentGroup}{2.2.5}{X8796306C7A7924D1}
+\makelabel{lpres:GeneralizedFabrykowskiGuptaLpGroup}{2.2.6}{X81450ABA81F0FCE5}
+\makelabel{lpres:LamplighterGroup llint}{2.2.7}{X83BF8C597E1DC266}
+\makelabel{lpres:LamplighterGroup llpcgroup}{2.2.7}{X83BF8C597E1DC266}
+\makelabel{lpres:EmbeddingOfIASubgroup}{2.2.8}{X7DBA63A37853BE46}
+\makelabel{lpres:FreeGroupOfLpGroup}{2.3.1}{X7F883CC57A3CCAC7}
+\makelabel{lpres:FreeGeneratorsOfLpGroup}{2.3.2}{X838079A587E8CF43}
+\makelabel{lpres:GeneratorsOfGroup}{2.3.3}{X79C44528864044C5}
+\makelabel{lpres:UnderlyingElement}{2.3.4}{X85C405D57F65048A}
+\makelabel{lpres:ElementOfLpGroup}{2.3.5}{X8573CDF57CB216D7}
+\makelabel{lpres:FixedRelatorsOfLpGroup}{2.4.1}{X7CD9BE57815552FF}
+\makelabel{lpres:IteratedRelatorsOfLpGroup}{2.4.2}{X7C468D1C81964268}
+\makelabel{lpres:EndomorphismsOfLpGroup}{2.4.3}{X85D253888263A3F6}
+\makelabel{lpres:UnderlyingAscendingLPresentation}{2.5.1}{X85E77B29796AB730}
+\makelabel{lpres:UnderlyingInvariantLPresentation}{2.5.2}{X86F017E085082624}
+\makelabel{lpres:IsAscendingLPresentation}{2.5.3}{X84E7A9E07A5DFDCF}
+\makelabel{lpres:IsInvariantLPresentation}{2.5.4}{X87F0C52978D99BB5}
+\makelabel{lpres:EmbeddingOfAscendingSubgroup}{2.5.5}{X783B99E381C5C8BF}
+\makelabel{lpres:EpimorphismFromFpGroup}{2.6.1}{X7C81CB1C7F0D7A90}
+\makelabel{lpres:SplitExtensionByAutomorphismsLpGroup}{2.6.2}{X7972B0D87EF36536}
+\makelabel{lpres:AsLpGroup}{2.6.3}{X84F112247DA4037C}
+\makelabel{lpres:IsomorphismLpGroup}{2.6.4}{X856F237B7BAC3BC8}
+\makelabel{lpres:NilpotentQuotient}{3.1.1}{X8216791583DE512C}
+\makelabel{lpres:LargestNilpotentQuotient}{3.1.2}{X79AC8BE285CBB392}
+\makelabel{lpres:NqEpimorphismNilpotentQuotient}{3.1.3}{X8758F663782AE655}
+\makelabel{lpres:AbelianInvariants}{3.1.4}{X812827937F403300}
+\makelabel{lpres:InitQuotientSystem}{3.3.1}{X7E58D47A8729FA8E}
+\makelabel{lpres:ExtendQuotientSystem}{3.3.2}{X7910D0698781E02A}
+\makelabel{lpres:NilpotentQuotientSystem}{3.4.1}{X7CC4586B85C22457}
+\makelabel{lpres:NilpotentQuotients}{3.4.2}{X7D54126783CB7118}
+\makelabel{lpres:InfoLPRES}{3.5.1}{X85F6BC1F8573D710}
+\makelabel{lpres:InfoLPRESMAXGENS}{3.5.2}{X80F8139B81D2294E}
+\makelabel{lpres:Subgroup}{4.1.1}{X7C82AA387A42DCA0}
+\makelabel{lpres:SubgroupLpGroupByCosetTable}{4.1.2}{X7FC6C908782DEA48}
+\makelabel{lpres:IndexInWholeGroup}{4.2.1}{X8014135884DCC53E}
+\makelabel{lpres:FactorCosetAction}{4.2.1}{X8014135884DCC53E}
+\makelabel{lpres:Index}{4.2.2}{X83A0356F839C696F}
+\makelabel{lpres:CosetTableInWholeGroup}{4.2.3}{X846EC8AB7803114D}
+\makelabel{lpres:LPRESTCSTART}{4.3.1}{X823EECA37A8EC3FE}
+\makelabel{lpres:LPRESCosetEnumerator}{4.3.2}{X7C46A9B57BA4CA84}
+\makelabel{lpres:GeneratingSetOfMultiplier}{5.1.1}{X83A5F95E84D3B662}
+\makelabel{lpres:FiniteRankSchurMultiplier}{5.1.2}{X87A3D6C07D99C79A}
+\makelabel{lpres:EndomorphismsOfFRSchurMultiplier}{5.1.3}{X78084374873BDFE1}
+\makelabel{lpres:EpimorphismCoveringGroups}{5.1.4}{X7CF92D9880A3687E}
+\makelabel{lpres:EpimorphismFiniteRankSchurMultiplier}{5.1.5}{X86EAE6457CE03B7B}
+\makelabel{lpres:ImageInFiniteRankSchurMultiplier}{5.1.6}{X87182BC081DCA91E}

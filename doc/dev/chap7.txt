@@ -1,0 +1,27 @@
+  
+  [1X7 [33X[0;0YMaintaining the [5XGAP[105X[101X[1X website[133X[101X
+  
+  [33X[0;0YThis    chapter    describes    how    the    information    accessible   on
+  [7Xhttps://www.gap-system.org/[107X   is   stored  and  collected,  and  how  it  is
+  transformed into web pages.[133X
+  
+  
+  [1X7.1 [33X[0;0YOverview[133X[101X
+  
+  [33X[0;0YAll  the  sources  for  the  web  pages  are  kept  in  the  git  repository
+  [10Xhttps://github.com/gap-system/GapWWW[110X. So you can clone this repository using[133X
+  
+  git clone https://github.com/gap-system/GapWWW
+  
+  [33X[0;0YThe  website is hosted on a web server at RPTU Kaiserslautern-Landau. It use
+  a  clone  of  the  above  git repository. Whenever a commit is pushed to its
+  [9Xmaster[109X branch, the server automatically fetches the changes, runs the Jekyll
+  tool and then serves the pages.[133X
+  
+  [33X[0;0YThe  [11XREADME.md[111X  and  [11Xetc/README.server.md[111X  in  that  repository  explain the
+  technical details about the website setup.[133X
+  
+  [33X[0;0YFurthermore  the  file [11Xdev/releases/README.md[111X in the main GAP git repository
+  contains instructions on how to update the website when a new GAP release is
+  made.[133X
+  

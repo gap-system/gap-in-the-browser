@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[
+<!ENTITY VERSION '2.1.14'>
+<!ENTITY DATE '15/03/2022'>
+<!ENTITY YEAR '2022'>
+<!ENTITY simpcomp '<Package>simpcomp</Package>'>
+<!ENTITY see '<Alt Only="LaTeX">$\to$</Alt><Alt Not="LaTeX">--&gt;</Alt>'>
+]
+>
+<Book Name="simpcomp">
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+<Body>
+<#Include SYSTEM "howto.xml">
+<#Include SYSTEM "theory.xml">
+<#Include SYSTEM "functions.xml">
+<#Include SYSTEM "demo.xml">
+<#Include SYSTEM "internals.xml">
+</Body>
+<Bibliography Databases="biblio"/>
+<TheIndex/>
+</Book>

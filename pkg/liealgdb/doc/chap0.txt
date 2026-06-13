@@ -1,0 +1,129 @@
+  
+  
+                                   [1X LieAlgDB [101X
+  
+  
+                          [1X A database of Lie algebras [101X
+  
+  
+                                     2.3.0
+  
+  
+                               24 September 2025
+  
+  
+                                 Serena Cicalò
+  
+                            Willem Adriaan de Graaf
+  
+                                Csaba Schneider
+  
+  
+  
+  Serena Cicalò
+      Email:    [7Xmailto:cicalo@science.unitn.it[107X
+      Address:  [33X[0;14YDipartimento di Matematica e Informatica[133X
+                [33X[0;14YVia Ospedale 72[133X
+                [33X[0;14YItaly[133X
+  
+  
+  Willem Adriaan de Graaf
+      Email:    [7Xmailto:degraaf@science.unitn.it[107X
+      Homepage: [7Xhttp://www.science.unitn.it/~degraaf[107X
+      Address:  [33X[0;14YDipartimento di Matematica[133X
+                [33X[0;14YVia Sommarive 14[133X
+                [33X[0;14YItaly[133X
+  
+  
+  Csaba Schneider
+      Email:    [7Xmailto:csaba@mat.ufmg.br[107X
+      Homepage: [7Xhttp://www.mat.ufmg.br/~csaba/[107X
+      Address:  [33X[0;14YDepartamento de Matemática[133X
+                [33X[0;14YInstituto de Ciências Exatas[133X
+                [33X[0;14YUniversidade Federal de Minas Gerais (UFMG)[133X
+                [33X[0;14YBelo Horizonte, Brasil[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XAbstract[101X
+  [33X[0;0YThis package provides access to the classification of the following families
+  of Lie algebras:[133X
+  
+  [30X    [33X[0;6Ynon-solvable Lie algebras over finite fields up to dimension 6;[133X
+  
+  [30X    [33X[0;6Ynilpotent  Lie  algebras of dimension up to 9 over [3XGF(2)[103X, of dimension
+        up to 7 over [3XGF(3)[103X or [3XGF(5)[103X;[133X
+  
+  [30X    [33X[0;6Ysimple Lie algebras of dimensions between 7 and 9 over [3XGF(2)[103X;[133X
+  
+  [30X    [33X[0;6Ythe classification of solvable Lie algebras of dimension at most 4;[133X
+  
+  [30X    [33X[0;6Ythe classification of nilpotent Lie algebras of dimensions at most 6.[133X
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2006--2007 Willem de Graaf and Csaba Schneider[133X
+  
+  [33X[0;0YThe [5XLieAlgDB[105X package is free software; you can redistribute it and/or modify
+  it    under    the    terms    of    the    GNU   General   Public   License
+  ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
+  Foundation;  either  version 2 of the License, or (at your option) any later
+  version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YWe  are  grateful  to Andrea Caranti, Marco Costantini, Bettina Eick, Helmut
+  Strade,   Michael   Vaughan-Lee.   Without   their   help,   interest,   and
+  encouragement,  this  package  would not have been made. We also acknowledge
+  the   effort   of  the  referees  to  improve  the  implementation  and  the
+  documentation.[133X
+  
+  [33X[0;0YSerena  Cicalò  would like to thank the Centro de Álgebra da Universidade de
+  Lisboa  for  their  kind  hospitality  during July - December 2009 and May -
+  September  2010,  when the classification of the 6-dimensional nilpotent Lie
+  algebras over fields of characteristic 2 was made and added to the package.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (LieAlgDB)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+  2 [33X[0;0YThe families of Lie algebras included in the database[133X
+    2.1 [33X[0;0YNon-solvable Lie algebras[133X
+      2.1-1 NonSolvableLieAlgebra
+      2.1-2 [33X[0;0YDimension 1 and 2[133X
+      2.1-3 [33X[0;0YDimension 3[133X
+      2.1-4 [33X[0;0YDimension 4[133X
+      2.1-5 [33X[0;0YDimension 5[133X
+      2.1-6 [33X[0;0YDimension 6[133X
+      2.1-7 AllNonSolvableLieAlgebras
+      2.1-8 AllSimpleLieAlgebras
+    2.2 [33X[0;0YSolvable and nilpotent Lie algebras[133X
+      2.2-1 SolvableLieAlgebra
+      2.2-2 NilpotentLieAlgebra
+      2.2-3 AllSolvableLieAlgebras
+      2.2-4 AllNilpotentLieAlgebras
+      2.2-5 NrNilpotentLieAlgebras
+      2.2-6 LieAlgebraIdentification
+  3 [33X[0;0YA description of the Lie algebras that are contained in the package[133X
+    3.1 [33X[0;0YDescription of the non-solvable Lie algebras[133X
+    3.2 [33X[0;0YDimension 3[133X
+    3.3 [33X[0;0YDimension 4[133X
+    3.4 [33X[0;0YDimension 5[133X
+      3.4-1 [33X[0;0YCharacteristic 2[133X
+      3.4-2 [33X[0;0YOdd characteristic[133X
+    3.5 [33X[0;0YDimension 6[133X
+      3.5-1 [33X[0;0YCharacteristic 2[133X
+      3.5-2 [33X[0;0YGeneral odd characteristic[133X
+      3.5-3 [33X[0;0YCharacteristic 3[133X
+      3.5-4 [33X[0;0YCharacteristic 5[133X
+    3.6 [33X[0;0YDescription of the simple Lie algebras[133X
+    3.7 [33X[0;0YDescription of the solvable and nilpotent Lie algebras[133X
+  
+  
+  [32X

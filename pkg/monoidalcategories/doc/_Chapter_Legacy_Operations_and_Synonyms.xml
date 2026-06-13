@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Legacy_Operations_and_Synonyms">
+<Heading>Legacy Operations and Synonyms</Heading>
+
+<Section Label="Chapter_Legacy_Operations_and_Synonyms_Section_Legacy_operations">
+<Heading>Legacy operations</Heading>
+
+<ManSection>
+  <Oper Arg="a, b" Name="CoclosedCoevaluationMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Description>
+  This is a legacy operation for <Code>CoclosedMonoidalLeftCoevaluationMorphism</Code>( <A>b</A>, <A>a</A> ),
+  i.e., with the first and second argument interchanged.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b, s" Name="CoclosedCoevaluationMorphismWithGivenSource" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Description>
+  This is a legacy operation for <Code>CoclosedMonoidalLeftCoevaluationMorphismWithGivenSource</Code>( <A>b</A>, <A>a</A>, <A>s</A> ),
+  i.e., with the first and second argument interchanged.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b" Name="CoclosedEvaluationMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Description>
+  This is a legacy operation for <Code>CoclosedMonoidalLeftEvaluationMorphism</Code>( <A>b</A>, <A>a</A> ),
+  i.e., with the first and second argument interchanged.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b, r" Name="CoclosedEvaluationMorphismWithGivenRange" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Description>
+  This is a legacy operation for <Code>CoclosedMonoidalLeftEvaluationMorphismWithGivenRange</Code>( <A>b</A>, <A>a</A>, <A>r</A> ),
+  i.e., with the first and second argument interchanged.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b" Name="CoevaluationMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Description>
+  This is a legacy operation for <Code>ClosedMonoidalLeftCoevaluationMorphism</Code>( <A>b</A>, <A>a</A> ),
+  i.e., with the first and second argument interchanged.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b, r" Name="CoevaluationMorphismWithGivenRange" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Description>
+  This is a legacy operation for <Code>ClosedMonoidalLeftCoevaluationMorphismWithGivenRange</Code>( <A>b</A>, <A>a</A>, <A>r</A> ),
+  i.e., with the first and second argument interchanged.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Legacy_Operations_and_Synonyms_Section_Synonyms_for_legacy_operations">
+<Heading>Synonyms for legacy operations</Heading>
+
+<ManSection>
+  <Oper Arg="arg1,arg2" Name="EvaluationMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Description>
+  This is a synonym for <Code>ClosedMonoidalLeftEvaluationMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3" Name="EvaluationMorphismWithGivenSource" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Description>
+  This is a synonym for <Code>ClosedMonoidalLeftEvaluationMorphismWithGivenSource</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="InternalCoHomToTensorProductAdjunctionMap" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>InternalCoHomToTensorProductLeftAdjunctMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="InternalCoHomToTensorProductAdjunctionMapWithGivenTensorProduct" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>InternalCoHomToTensorProductLeftAdjunctionMapWithGivenTensorProduct</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="InternalHomToTensorProductAdjunctionMap" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>InternalHomToTensorProductLeftAdjunctMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="InternalHomToTensorProductAdjunctionMapWithGivenTensorProduct" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>InternalHomToTensorProductLeftAdjunctionMapWithGivenTensorProduct</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="TensorProductToInternalCoHomAdjunctionMap" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>TensorProductToInternalCoHomLeftAdjunctMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>TensorProductToInternalCoHomLeftAdjunctMorphismWithGivenInternalCoHom</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="TensorProductToInternalHomAdjunctionMap" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>TensorProductToInternalHomLeftAdjunctMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="TensorProductToInternalHomAdjunctionMapWithGivenInternalHom" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>TensorProductToInternalHomLeftAdjunctMorphismWithGivenInternalHom</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="InternalCoHomToTensorProductLeftAdjunctionMap" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>InternalCoHomToTensorProductLeftAdjunctMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="InternalHomToTensorProductLeftAdjunctionMap" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>InternalHomToTensorProductLeftAdjunctMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="TensorProductToInternalCoHomLeftAdjunctionMap" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>TensorProductToInternalCoHomLeftAdjunctMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="TensorProductToInternalCoHomLeftAdjunctionMapWithGivenInternalCoHom" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>TensorProductToInternalCoHomLeftAdjunctMorphismWithGivenInternalCoHom</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="TensorProductToInternalHomLeftAdjunctionMap" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>TensorProductToInternalHomLeftAdjunctMorphism</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="TensorProductToInternalHomLeftAdjunctionMapWithGivenInternalHom" Label="for IsObject"/>
+ <Description>
+  This is a synonym for <Code>TensorProductToInternalHomLeftAdjunctMorphismWithGivenInternalHom</Code>.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

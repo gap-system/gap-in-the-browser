@@ -1,0 +1,500 @@
+\GAPDocLabFile{fr}
+\makelabel{fr:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{fr:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{fr:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{fr:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{fr:Colophon}{}{X7982162280BC7A61}
+\makelabel{fr:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{fr:Licensing}{1}{X86DB23CC834ABD71}
+\makelabel{fr:FR package}{2}{X7ADCE68284FB4ACF}
+\makelabel{fr:A brief mathematical introduction}{2.1}{X80C332C686212786}
+\makelabel{fr:An example session}{2.2}{X78DF4DE18260BD80}
+\makelabel{fr:Functionally recursive machines}{3}{X7D65CA8B876E514C}
+\makelabel{fr:Types of machines}{3.1}{X7D52F7ED83E2D153}
+\makelabel{fr:Products of machines}{3.2}{X7EB36FBB78F4F26A}
+\makelabel{fr:Creators for FRMachines}{3.3}{X828640667D2E5280}
+\makelabel{fr:Attributes for FRMachines}{3.4}{X8753FA157B2AD6DC}
+\makelabel{fr:Operations for FRMachines}{3.5}{X8158A8307CA98A3D}
+\makelabel{fr:Functionally recursive elements}{4}{X863D82207A1320F1}
+\makelabel{fr:Creators for FRElements}{4.1}{X79DE08CD7EE57360}
+\makelabel{fr:Operations and Attributes for FRElements}{4.2}{X812C932C7E2F2885}
+\makelabel{fr:Mealy machines and elements}{5}{X7C77EBC17DEF4CF6}
+\makelabel{fr:Creators for MealyMachines and MealyElements}{5.1}{X846B89F686B50AE1}
+\makelabel{fr:Operations and Attributes for MealyMachines and MealyElements}{5.2}{X7F673D877B205708}
+\makelabel{fr:Linear machines and elements}{6}{X84AD415C872BFB91}
+\makelabel{fr:Methods and operations for LinearFRMachines and LinearFRElements}{6.1}{X812C0F7B7A31FCEF}
+\makelabel{fr:Self-similar groups, monoids and semigroups}{7}{X86C0E6F083DCCDC8}
+\makelabel{fr:Creators for FR semigroups}{7.1}{X80A26BAA7B53C1BD}
+\makelabel{fr:Operations for FR semigroups}{7.2}{X84E20571841DE1E4}
+\makelabel{fr:Properties for infinite groups}{7.3}{X7E8485A081EBB3AA}
+\makelabel{fr:Algebras}{8}{X7DDBF6F47A2E021C}
+\makelabel{fr:Creators for FR algebras}{8.1}{X842EE9427C63F92E}
+\makelabel{fr:Operations for FR algebras}{8.2}{X7EFB4F2E7E908B9F}
+\makelabel{fr:Examples}{9}{X7A489A5D79DA9E5C}
+\makelabel{fr:Examples of groups}{9.1}{X7AF5DEF08531AFA5}
+\makelabel{fr:Examples of semigroups}{9.2}{X81B82FA1811AAF8D}
+\makelabel{fr:Examples of algebras}{9.3}{X803B02408573A30E}
+\makelabel{fr:Bacher's determinant identities}{9.4}{X7989134C83AF38AE}
+\makelabel{fr:VH groups}{9.5}{X7C4A51947E1609A8}
+\makelabel{fr:FR implementation details}{10}{X86D6616E868AF75C}
+\makelabel{fr:The family of FR objects}{10.1}{X79719CD17A948933}
+\makelabel{fr:Filters for FRObjects}{10.2}{X856A3AD87C93FC1F}
+\makelabel{fr:Some of the algorithms implemented}{10.3}{X7E97015E8153F782}
+\makelabel{fr:Order of FR elements}{10.3.2}{X84B4FF607DA18152}
+\makelabel{fr:Membership in semigroups}{10.3.3}{X847B4AFF809D2A56}
+\makelabel{fr:The conjugacy problem}{10.3.4}{X7F24533B7F846FC4}
+\makelabel{fr:Order of groups}{10.3.8}{X7A0AC96784ACE0BE}
+\makelabel{fr:Images and preimages of some groups in f.p. and l.p. groups}{10.3.9}{X8329884F790E1542}
+\makelabel{fr:Comparison of FR, Mealy, vector, and algebra elements}{10.3.10}{X7F4247367D1EBEB9}
+\makelabel{fr:Inverses of linear elements}{10.3.11}{X81F95FEB7C72ABFF}
+\makelabel{fr:Miscellanea}{11}{X785C6C0B80936CC8}
+\makelabel{fr:Generic operations}{11.1}{X783AA02C7BEF48A9}
+\makelabel{fr:Periodic lists}{11.2}{X816865747DD51C11}
+\makelabel{fr:Word growth}{11.3}{X7A336C66855E632D}
+\makelabel{fr:Finding short relations}{11.4}{X791D4D398201C17D}
+\makelabel{fr:Braid groups}{11.5}{X82712E6C815DB9B2}
+\makelabel{fr:Dirichlet series}{11.6}{X839ED1F982DB3469}
+\makelabel{fr:Projective representations}{11.7}{X86256BD187D9A7FF}
+\makelabel{fr:Miscellanea}{11.8}{X785C6C0B80936CC8}
+\makelabel{fr:User settings}{11.9}{X7ADFF37084706CEC}
+\makelabel{fr:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{fr:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{fr:Index}{Ind}{X83A0356F839C696F}
+\makelabel{fr:FRMachineNC family,free,listlist,list}{3.3.1}{X80D310EF7FD5EA44}
+\makelabel{fr:FRMachine [list,]list,list}{3.3.2}{X808F3BD97EDA8CE8}
+\makelabel{fr:FRMachine semigroup,list,list}{3.3.2}{X808F3BD97EDA8CE8}
+\makelabel{fr:UnderlyingFRMachine}{3.3.3}{X7C383F4383D22BFC}
+\makelabel{fr:AsGroupFRMachine}{3.3.4}{X7BF186227C0ABE8D}
+\makelabel{fr:AsMonoidFRMachine}{3.3.4}{X7BF186227C0ABE8D}
+\makelabel{fr:AsSemigroupFRMachine}{3.3.4}{X7BF186227C0ABE8D}
+\makelabel{fr:AsGroupFRMachine endomorphism}{3.3.5}{X78130FC97C58AFC4}
+\makelabel{fr:AsMonoidFRMachine endomorphism}{3.3.5}{X78130FC97C58AFC4}
+\makelabel{fr:AsSemigroupFRMachine endomorphism}{3.3.5}{X78130FC97C58AFC4}
+\makelabel{fr:StateSet FR machine}{3.4.1}{X8000470D7DA7FFBD}
+\makelabel{fr:GeneratorsOfFRMachine}{3.4.2}{X7F77F5DD789FA2F4}
+\makelabel{fr:Output FR machine}{3.4.3}{X7DBC41D4808979BC}
+\makelabel{fr:Output FR machine,state}{3.4.3}{X7DBC41D4808979BC}
+\makelabel{fr:Output FR machine,state,letter}{3.4.3}{X7DBC41D4808979BC}
+\makelabel{fr:Transition FR machine,state,input}{3.4.4}{X7AEE87BC8393FA54}
+\makelabel{fr:Transitions FR machine,state}{3.4.5}{X82B3A8AB80B5E181}
+\makelabel{fr:WreathRecursion}{3.4.6}{X7D95D1498586E5D0}
+\makelabel{fr:StructuralGroup}{3.5.1}{X8289C2F77D67EDC3}
+\makelabel{fr:StructuralMonoid}{3.5.1}{X8289C2F77D67EDC3}
+\makelabel{fr:StructuralSemigroup}{3.5.1}{X8289C2F77D67EDC3}
+\makelabel{fr:TensorSumOp FR Machines}{3.5.4}{X7C0677148107F7FE}
+\makelabel{fr:TensorProductOp FR Machines}{3.5.5}{X8077C8A47E22FCB5}
+\makelabel{fr:DirectSumOp FR Machines}{3.5.6}{X7D248C737D29A7CC}
+\makelabel{fr:DirectProductOp FR Machines}{3.5.7}{X81456F10820CAC87}
+\makelabel{fr:TreeWreathProduct FR machine}{3.5.8}{X7A0858097AA3FBDA}
+\makelabel{fr:SubFRMachine}{3.5.9}{X811B5BF17A3FE577}
+\makelabel{fr:SubFRMachine machine,map}{3.5.9}{X811B5BF17A3FE577}
+\makelabel{fr:ChangeFRMachineBasis}{3.5.10}{X814F53B97C3F43F5}
+\makelabel{fr:Minimized FR machine}{3.5.11}{X81B382BD81B2BD34}
+\makelabel{fr:Correspondence FR machine}{3.5.12}{X7C107A42815F91DA}
+\makelabel{fr:FRElementNC family,free,listlist,list,assocword}{4.1.1}{X7839813183881054}
+\makelabel{fr:FRElement [list,]list,list,list}{4.1.2}{X7CF5EDEB874BF9E3}
+\makelabel{fr:FRElement semigroup,list,list,list}{4.1.2}{X7CF5EDEB874BF9E3}
+\makelabel{fr:ComposeElement elementcoll,perm}{4.1.4}{X80D518E2804ABF70}
+\makelabel{fr:VertexElement}{4.1.5}{X7CE388057DAB4802}
+\makelabel{fr:DiagonalElement}{4.1.6}{X848EB430831097E6}
+\makelabel{fr:AsGroupFRElement}{4.1.7}{X7EB5DE3978840CDF}
+\makelabel{fr:AsMonoidFRElement}{4.1.7}{X7EB5DE3978840CDF}
+\makelabel{fr:AsSemigroupFRElement}{4.1.7}{X7EB5DE3978840CDF}
+\makelabel{fr:Output FR element}{4.2.1}{X78F819CF7DDBF310}
+\makelabel{fr:Activity}{4.2.2}{X8732D01C82999F32}
+\makelabel{fr:ActivityInt}{4.2.2}{X8732D01C82999F32}
+\makelabel{fr:ActivityTransformation}{4.2.2}{X8732D01C82999F32}
+\makelabel{fr:ActivityPerm}{4.2.2}{X8732D01C82999F32}
+\makelabel{fr:Transition FR element,input}{4.2.3}{X7CE58B2D837B2845}
+\makelabel{fr:Transitions FR element}{4.2.4}{X7D4248467B1B097A}
+\makelabel{fr:Portrait}{4.2.5}{X84A193C67CDBDA35}
+\makelabel{fr:PortraitPerm}{4.2.5}{X84A193C67CDBDA35}
+\makelabel{fr:PortraitTransformation}{4.2.5}{X84A193C67CDBDA35}
+\makelabel{fr:PortraitInt}{4.2.5}{X84A193C67CDBDA35}
+\makelabel{fr:DecompositionOfFRElement}{4.2.6}{X850EB66E7804BA3B}
+\makelabel{fr:StateSet FR element}{4.2.7}{X85441F1683E9D820}
+\makelabel{fr:State}{4.2.8}{X819E3E3080297347}
+\makelabel{fr:States}{4.2.9}{X7B0C97BC7C3BA20D}
+\makelabel{fr:FixedStates}{4.2.10}{X804B2E0F7E37F5B8}
+\makelabel{fr:LimitStates}{4.2.11}{X8303B36C83371FB3}
+\makelabel{fr:IsFiniteStateFRElement}{4.2.12}{X7C4076707CBBE945}
+\makelabel{fr:IsFiniteStateFRMachine}{4.2.12}{X7C4076707CBBE945}
+\makelabel{fr:NucleusOfFRMachine}{4.2.13}{X829A87E087F15194}
+\makelabel{fr:Nucleus FR machine}{4.2.13}{X829A87E087F15194}
+\makelabel{fr:InitialState}{4.2.14}{X79E65E818690B4EB}
+\makelabel{fr:MealyMachine [list,]listlist,list}{5.1.1}{X7EF3E00080624B70}
+\makelabel{fr:MealyElement [list,]listlist,list,int}{5.1.1}{X7EF3E00080624B70}
+\makelabel{fr:MealyMachine domain,domain,function,function}{5.1.2}{X875B8FED7FD20FA1}
+\makelabel{fr:MealyElement domain,domain,function,function,obj}{5.1.2}{X875B8FED7FD20FA1}
+\makelabel{fr:MealyMachineNC family,listlist,list}{5.1.3}{X8578657C7F4B6254}
+\makelabel{fr:MealyElementNC family,listlist,list,int}{5.1.3}{X8578657C7F4B6254}
+\makelabel{fr:AllMealyMachines}{5.1.4}{X83BBE01884D6E315}
+\makelabel{fr:Draw}{5.2.1}{X7DF9F3AD86602DFC}
+\makelabel{fr:Minimized Mealy machine}{5.2.2}{X8395542D846FA2B9}
+\makelabel{fr:DualMachine}{5.2.3}{X809F069B798ED985}
+\makelabel{fr:IsReversible}{5.2.4}{X7D5D480C782FCC0B}
+\makelabel{fr:IsMinimized}{5.2.5}{X8310A1C08158793C}
+\makelabel{fr:AlphabetInvolution}{5.2.6}{X7CCB79B981912CCC}
+\makelabel{fr:IsBireversible}{5.2.7}{X80D2545D7D0990A2}
+\makelabel{fr:StateGrowth}{5.2.8}{X83364DAB825D7A0D}
+\makelabel{fr:Degree FR element}{5.2.9}{X84BE780A81CAC69C}
+\makelabel{fr:DegreeOfFRMachine}{5.2.9}{X84BE780A81CAC69C}
+\makelabel{fr:DegreeOfFRElement}{5.2.9}{X84BE780A81CAC69C}
+\makelabel{fr:IsFinitaryFRElement}{5.2.10}{X793C427084F830CE}
+\makelabel{fr:IsFinitaryFRMachine}{5.2.10}{X793C427084F830CE}
+\makelabel{fr:Depth FR element}{5.2.11}{X7E5E8B2C79688DC0}
+\makelabel{fr:DepthOfFRMachine}{5.2.11}{X7E5E8B2C79688DC0}
+\makelabel{fr:DepthOfFRElement}{5.2.11}{X7E5E8B2C79688DC0}
+\makelabel{fr:IsBoundedFRElement}{5.2.12}{X82F4410E85C54C7E}
+\makelabel{fr:IsBoundedFRMachine}{5.2.12}{X82F4410E85C54C7E}
+\makelabel{fr:IsPolynomialGrowthFRElement}{5.2.13}{X81D4A3F27C5FAD96}
+\makelabel{fr:IsPolynomialGrowthFRMachine}{5.2.13}{X81D4A3F27C5FAD96}
+\makelabel{fr:Signatures}{5.2.14}{X7ECE17387910C023}
+\makelabel{fr:VertexTransformationsFRMachine}{5.2.15}{X83DFDC3384EA4634}
+\makelabel{fr:VertexTransformationsFRElement}{5.2.15}{X83DFDC3384EA4634}
+\makelabel{fr:FixedRay FR element}{5.2.16}{X7E0CB3767CE08692}
+\makelabel{fr:IsLevelTransitiveFRElement}{5.2.17}{X7A519D4C86CC4786}
+\makelabel{fr:AsMealyMachine FR machine}{5.2.18}{X79EFE2C97D2CCEEC}
+\makelabel{fr:AsMealyMachine List}{5.2.19}{X80F9A18483F98442}
+\makelabel{fr:AsMealyElement}{5.2.20}{X7FB3F0A2878DD2CF}
+\makelabel{fr:AsIntMealyMachine}{5.2.21}{X7FBBBD9A839011C8}
+\makelabel{fr:AsIntMealyElement}{5.2.21}{X7FBBBD9A839011C8}
+\makelabel{fr:TopElement}{5.2.22}{X8191456B7E586785}
+\makelabel{fr:ConfinalityClasses}{5.2.23}{X7A87ED9D789245E4}
+\makelabel{fr:IsWeaklyFinitaryFRElement}{5.2.23}{X7A87ED9D789245E4}
+\makelabel{fr:Germs}{5.2.24}{X81592E3D79745A40}
+\makelabel{fr:NormOfBoundedFRElement}{5.2.24}{X81592E3D79745A40}
+\makelabel{fr:HasOpenSetConditionFRElement}{5.2.25}{X7F76AF2D7C0279F9}
+\makelabel{fr:LimitFRMachine}{5.2.26}{X795017598575FCA3}
+\makelabel{fr:NucleusMachine FR machine}{5.2.27}{X7F8163B5816969C8}
+\makelabel{fr:GuessMealyElement}{5.2.28}{X7B29565784A591EC}
+\makelabel{fr:VectorMachine}{6.1.1}{X7F1EB8CB87229764}
+\makelabel{fr:VectorElement}{6.1.1}{X7F1EB8CB87229764}
+\makelabel{fr:VectorMachineNC}{6.1.1}{X7F1EB8CB87229764}
+\makelabel{fr:VectorElementNC}{6.1.1}{X7F1EB8CB87229764}
+\makelabel{fr:AssociativeObject}{6.1.2}{X825CA46481197C7A}
+\makelabel{fr:AlgebraMachine}{6.1.3}{X7F65118683209DC5}
+\makelabel{fr:AlgebraElement}{6.1.3}{X7F65118683209DC5}
+\makelabel{fr:AlgebraMachineNC}{6.1.3}{X7F65118683209DC5}
+\makelabel{fr:AlgebraElementNC}{6.1.3}{X7F65118683209DC5}
+\makelabel{fr:Transition Linear machine}{6.1.4}{X7A19036B828BBA0C}
+\makelabel{fr:Transitions}{6.1.5}{X846683198081BA82}
+\makelabel{fr:NestedMatrixState}{6.1.6}{X80F694298399E78D}
+\makelabel{fr:NestedMatrixCoefficient}{6.1.6}{X80F694298399E78D}
+\makelabel{fr:ActivitySparse}{6.1.7}{X7FCEE3BF86B02CC6}
+\makelabel{fr:Activities}{6.1.8}{X8436BEA67F1C3C27}
+\makelabel{fr:IsConvergent}{6.1.9}{X7EF5B7417AE6B3F8}
+\makelabel{fr:TransposedFRElement}{6.1.10}{X8136C21885019A4A}
+\makelabel{fr:IsSymmetricFRElement}{6.1.10}{X8136C21885019A4A}
+\makelabel{fr:IsAntisymmetricFRElement}{6.1.10}{X8136C21885019A4A}
+\makelabel{fr:IsLowerTriangularFRElement}{6.1.10}{X8136C21885019A4A}
+\makelabel{fr:IsUpperTriangularFRElement}{6.1.10}{X8136C21885019A4A}
+\makelabel{fr:IsDiagonalFRElement}{6.1.10}{X8136C21885019A4A}
+\makelabel{fr:LDUDecompositionFRElement}{6.1.11}{X796B736286CACF85}
+\makelabel{fr:GuessVectorElement}{6.1.12}{X783E8F427A23EAD1}
+\makelabel{fr:AsLinearMachine}{6.1.13}{X865EE2E887ECC079}
+\makelabel{fr:AsLinearElement}{6.1.13}{X865EE2E887ECC079}
+\makelabel{fr:AsVectorMachine}{6.1.14}{X82586DFB8458EF05}
+\makelabel{fr:AsVectorElement}{6.1.14}{X82586DFB8458EF05}
+\makelabel{fr:AsAlgebraMachine}{6.1.15}{X7818245A7DABB311}
+\makelabel{fr:AsAlgebraElement}{6.1.15}{X7818245A7DABB311}
+\makelabel{fr:AsVectorMachine Linear machine}{6.1.16}{X7BDD40B27F7541B2}
+\makelabel{fr:AsVectorElement Linear machine}{6.1.16}{X7BDD40B27F7541B2}
+\makelabel{fr:AsAlgebraMachine Linear machine}{6.1.17}{X8120605981DDE434}
+\makelabel{fr:AsAlgebraElement Linear machine}{6.1.17}{X8120605981DDE434}
+\makelabel{fr:FRGroup}{7.1.1}{X7AE8F92383272329}
+\makelabel{fr:FRMonoid}{7.1.1}{X7AE8F92383272329}
+\makelabel{fr:FRSemigroup}{7.1.1}{X7AE8F92383272329}
+\makelabel{fr:NewSemigroupFRMachine}{7.1.2}{X7D4A6996874A3DF3}
+\makelabel{fr:NewMonoidFRMachine}{7.1.2}{X7D4A6996874A3DF3}
+\makelabel{fr:NewGroupFRMachine}{7.1.2}{X7D4A6996874A3DF3}
+\makelabel{fr:SCGroup}{7.1.3}{X853E3F0680C76F56}
+\makelabel{fr:SCGroupNC}{7.1.3}{X853E3F0680C76F56}
+\makelabel{fr:SCMonoid}{7.1.3}{X853E3F0680C76F56}
+\makelabel{fr:SCMonoidNC}{7.1.3}{X853E3F0680C76F56}
+\makelabel{fr:SCSemigroup}{7.1.3}{X853E3F0680C76F56}
+\makelabel{fr:SCSemigroupNC}{7.1.3}{X853E3F0680C76F56}
+\makelabel{fr:Correspondence FR semigroup}{7.1.4}{X7F15D57A7959FEF6}
+\makelabel{fr:FullSCGroup}{7.1.5}{X7D0B8334786E2802}
+\makelabel{fr:FullSCMonoid}{7.1.5}{X7D0B8334786E2802}
+\makelabel{fr:FullSCSemigroup}{7.1.5}{X7D0B8334786E2802}
+\makelabel{fr:FRMachineFRGroup}{7.1.6}{X7DB92C34827D513F}
+\makelabel{fr:FRMachineFRMonoid}{7.1.6}{X7DB92C34827D513F}
+\makelabel{fr:FRMachineFRSemigroup}{7.1.6}{X7DB92C34827D513F}
+\makelabel{fr:MealyMachineFRGroup}{7.1.6}{X7DB92C34827D513F}
+\makelabel{fr:MealyMachineFRMonoid}{7.1.6}{X7DB92C34827D513F}
+\makelabel{fr:MealyMachineFRSemigroup}{7.1.6}{X7DB92C34827D513F}
+\makelabel{fr:IsomorphismFRGroup}{7.1.7}{X7BF4AC9F830A8E1A}
+\makelabel{fr:IsomorphismFRMonoid}{7.1.7}{X7BF4AC9F830A8E1A}
+\makelabel{fr:IsomorphismFRSemigroup}{7.1.7}{X7BF4AC9F830A8E1A}
+\makelabel{fr:IsomorphismMealyGroup}{7.1.8}{X7DE1CAE981F2825B}
+\makelabel{fr:IsomorphismMealyMonoid}{7.1.8}{X7DE1CAE981F2825B}
+\makelabel{fr:IsomorphismMealySemigroup}{7.1.8}{X7DE1CAE981F2825B}
+\makelabel{fr:FRGroupByVirtualEndomorphism}{7.1.9}{X7BB8DDEA83946C73}
+\makelabel{fr:TreeWreathProduct FR group}{7.1.10}{X79D75A7D80DD9AD1}
+\makelabel{fr:WeaklyBranchedEmbedding}{7.1.11}{X85840A047C04BFC6}
+\makelabel{fr:PermGroup}{7.2.1}{X7C6D7BA0818A3A3D}
+\makelabel{fr:EpimorphismPermGroup}{7.2.1}{X7C6D7BA0818A3A3D}
+\makelabel{fr:PcGroup}{7.2.2}{X8620BEAF7957FA4D}
+\makelabel{fr:EpimorphismPcGroup}{7.2.2}{X8620BEAF7957FA4D}
+\makelabel{fr:TransformationMonoid}{7.2.3}{X83834FF77F972912}
+\makelabel{fr:EpimorphismTransformationMonoid}{7.2.3}{X83834FF77F972912}
+\makelabel{fr:TransformationSemigroup}{7.2.4}{X8768C22D859BE75F}
+\makelabel{fr:EpimorphismTransformationSemigroup}{7.2.4}{X8768C22D859BE75F}
+\makelabel{fr:EpimorphismGermGroup}{7.2.5}{X7BDC634086437315}
+\makelabel{fr:EpimorphismGermGroup EGG0}{7.2.5}{X7BDC634086437315}
+\makelabel{fr:GermData}{7.2.6}{X812242E584462766}
+\makelabel{fr:GermValue}{7.2.6}{X812242E584462766}
+\makelabel{fr:StabilizerImage}{7.2.7}{X87378D53791D0B70}
+\makelabel{fr:LevelStabilizer}{7.2.8}{X7B4CD9CA872BA368}
+\makelabel{fr:IsStateClosed}{7.2.9}{X7C5002E683A044C1}
+\makelabel{fr:StateClosure}{7.2.10}{X79246DB482BEAF2D}
+\makelabel{fr:IsRecurrentFRSemigroup}{7.2.11}{X7E2F34417EBB7673}
+\makelabel{fr:IsLevelTransitiveFRGroup}{7.2.12}{X825688FD7CE96479}
+\makelabel{fr:IsInfinitelyTransitive}{7.2.13}{X7D95219481AEDD20}
+\makelabel{fr:IsLevelTransitiveOnPatterns}{7.2.13}{X7D95219481AEDD20}
+\makelabel{fr:IsFinitaryFRSemigroup}{7.2.14}{X7A6CB30181662C77}
+\makelabel{fr:IsWeaklyFinitaryFRSemigroup}{7.2.14}{X7A6CB30181662C77}
+\makelabel{fr:IsBoundedFRSemigroup}{7.2.14}{X7A6CB30181662C77}
+\makelabel{fr:IsPolynomialGrowthFRSemigroup}{7.2.14}{X7A6CB30181662C77}
+\makelabel{fr:IsFiniteStateFRSemigroup}{7.2.14}{X7A6CB30181662C77}
+\makelabel{fr:Degree FR semigroup}{7.2.15}{X791BCD9D782C6237}
+\makelabel{fr:DegreeOfFRSemigroup}{7.2.15}{X791BCD9D782C6237}
+\makelabel{fr:Depth FR semigroup}{7.2.15}{X791BCD9D782C6237}
+\makelabel{fr:DepthOfFRSemigroup}{7.2.15}{X791BCD9D782C6237}
+\makelabel{fr:HasOpenSetConditionFRSemigroup}{7.2.16}{X7FA67E4387C91BD8}
+\makelabel{fr:HasCongruenceProperty}{7.2.17}{X7D870F9E82ACB54C}
+\makelabel{fr:IsContracting}{7.2.18}{X7EAB4B5B843C0EC5}
+\makelabel{fr:NucleusOfFRSemigroup}{7.2.19}{X7CA062A67C1554BB}
+\makelabel{fr:Nucleus FR semigroup}{7.2.19}{X7CA062A67C1554BB}
+\makelabel{fr:NucleusMachine FR semigroup}{7.2.20}{X8443D711796F06E4}
+\makelabel{fr:AdjacencyBasesWithOne}{7.2.21}{X824A9E177F5A9753}
+\makelabel{fr:AdjacencyPoset}{7.2.21}{X824A9E177F5A9753}
+\makelabel{fr:BranchingSubgroup}{7.2.22}{X7A874A107D4944E1}
+\makelabel{fr:FindBranchingSubgroup}{7.2.23}{X78ADACCD8586D3C7}
+\makelabel{fr:IsBranched FR group}{7.2.24}{X832D98E47ACA099C}
+\makelabel{fr:IsBranchingSubgroup FR semigroup}{7.2.25}{X7A905CE87B49213F}
+\makelabel{fr:BranchStructure}{7.2.26}{X8404ECA782F2521A}
+\makelabel{fr:TopVertexTransformations}{7.2.27}{X8749E0797A99F531}
+\makelabel{fr:VertexTransformations FR semigroup}{7.2.28}{X7C56C90086070A2E}
+\makelabel{fr:VirtualEndomorphism}{7.2.29}{X7DF2D9838625CDED}
+\makelabel{fr:EpimorphismFromFpGroup}{7.2.30}{X7C81CB1C7F0D7A90}
+\makelabel{fr:IsomorphismSubgroupFpGroup}{7.2.31}{X8740656382656D63}
+\makelabel{fr:AsSubgroupFpGroup}{7.2.31}{X8740656382656D63}
+\makelabel{fr:IsomorphismLpGroup}{7.2.31}{X8740656382656D63}
+\makelabel{fr:AsLpGroup}{7.2.31}{X8740656382656D63}
+\makelabel{fr:IsTorsionGroup}{7.3.1}{X840ED7D279ECAB7F}
+\makelabel{fr:IsTorsionFreeGroup}{7.3.2}{X7914F2D68077F503}
+\makelabel{fr:IsAmenableGroup}{7.3.3}{X87E93FFC820ED40E}
+\makelabel{fr:IsVirtuallySimpleGroup}{7.3.4}{X873C0A7C8422C0C9}
+\makelabel{fr:LambdaElementVHGroup}{7.3.4}{X873C0A7C8422C0C9}
+\makelabel{fr:IsResiduallyFinite}{7.3.5}{X79A3A0CF82B6F089}
+\makelabel{fr:IsSQUniversal}{7.3.6}{X86E1182E7EEFAADB}
+\makelabel{fr:IsJustInfinite}{7.3.7}{X7FDAEAFF78A5E7D2}
+\makelabel{fr:FRAlgebra}{8.1.1}{X812FEA6778152E49}
+\makelabel{fr:FRAlgebraWithOne}{8.1.1}{X812FEA6778152E49}
+\makelabel{fr:SCAlgebra}{8.1.2}{X844B890F7BF56236}
+\makelabel{fr:SCLieAlgebra}{8.1.2}{X844B890F7BF56236}
+\makelabel{fr:SCAlgebraWithOne}{8.1.2}{X844B890F7BF56236}
+\makelabel{fr:SCAlgebraNC}{8.1.2}{X844B890F7BF56236}
+\makelabel{fr:SCAlgebraWithOneNC}{8.1.2}{X844B890F7BF56236}
+\makelabel{fr:NucleusOfFRAlgebra}{8.1.3}{X7B8330F180BABC43}
+\makelabel{fr:Nucleus FR algebra}{8.1.3}{X7B8330F180BABC43}
+\makelabel{fr:BranchingIdeal}{8.1.4}{X81D8D0E886C8E143}
+\makelabel{fr:MatrixQuotient}{8.2.1}{X8115B018871FD364}
+\makelabel{fr:EpimorphismMatrixQuotient}{8.2.1}{X8115B018871FD364}
+\makelabel{fr:ThinnedAlgebra}{8.2.2}{X8150FC4E84D208C6}
+\makelabel{fr:ThinnedAlgebraWithOne}{8.2.2}{X8150FC4E84D208C6}
+\makelabel{fr:Nillity}{8.2.3}{X8572DCAE7F888DDA}
+\makelabel{fr:IsNilElement}{8.2.3}{X8572DCAE7F888DDA}
+\makelabel{fr:DegreeOfHomogeneousElement}{8.2.4}{X85163F29824C944D}
+\makelabel{fr:IsHomogeneousElement}{8.2.4}{X85163F29824C944D}
+\makelabel{fr:FullBinaryGroup}{9.1.1}{X7D774B847D81E6DE}
+\makelabel{fr:FiniteDepthBinaryGroup}{9.1.1}{X7D774B847D81E6DE}
+\makelabel{fr:FinitaryBinaryGroup}{9.1.1}{X7D774B847D81E6DE}
+\makelabel{fr:BoundedBinaryGroup}{9.1.1}{X7D774B847D81E6DE}
+\makelabel{fr:PolynomialGrowthBinaryGroup}{9.1.1}{X7D774B847D81E6DE}
+\makelabel{fr:FiniteStateBinaryGroup}{9.1.1}{X7D774B847D81E6DE}
+\makelabel{fr:BinaryKneadingGroup}{9.1.2}{X813F53C57F41F5F5}
+\makelabel{fr:BinaryKneadingMachine}{9.1.2}{X813F53C57F41F5F5}
+\makelabel{fr:BasilicaGroup}{9.1.3}{X7B8D49D079D336E8}
+\makelabel{fr:FornaessSibonyGroup}{9.1.4}{X8449487686E00D22}
+\makelabel{fr:AddingGroup}{9.1.5}{X85F4FDF787173863}
+\makelabel{fr:AddingMachine}{9.1.5}{X85F4FDF787173863}
+\makelabel{fr:AddingElement}{9.1.5}{X85F4FDF787173863}
+\makelabel{fr:BinaryAddingGroup}{9.1.6}{X7A4BB24A805CDF63}
+\makelabel{fr:BinaryAddingMachine}{9.1.6}{X7A4BB24A805CDF63}
+\makelabel{fr:BinaryAddingElement}{9.1.6}{X7A4BB24A805CDF63}
+\makelabel{fr:MixerGroup}{9.1.7}{X78AFA63B86C94227}
+\makelabel{fr:MixerMachine}{9.1.7}{X78AFA63B86C94227}
+\makelabel{fr:SunicGroup}{9.1.8}{X84C97E0687F119C0}
+\makelabel{fr:SunicMachine}{9.1.8}{X84C97E0687F119C0}
+\makelabel{fr:GrigorchukMachines}{9.1.9}{X79E3F3BE80F34590}
+\makelabel{fr:GrigorchukGroups}{9.1.9}{X79E3F3BE80F34590}
+\makelabel{fr:GrigorchukMachine}{9.1.10}{X85BAE48780E665A4}
+\makelabel{fr:GrigorchukGroup}{9.1.10}{X85BAE48780E665A4}
+\makelabel{fr:GrigorchukOverGroup}{9.1.11}{X800640597E9C707D}
+\makelabel{fr:GrigorchukTwistedTwin}{9.1.12}{X7E765AF77AAC21A6}
+\makelabel{fr:BrunnerSidkiVieiraGroup}{9.1.13}{X7F93EC437B5AE276}
+\makelabel{fr:BrunnerSidkiVieiraMachine}{9.1.13}{X7F93EC437B5AE276}
+\makelabel{fr:AleshinGroups}{9.1.14}{X7F8A028B799946D3}
+\makelabel{fr:AleshinMachines}{9.1.14}{X7F8A028B799946D3}
+\makelabel{fr:AleshinGroup}{9.1.15}{X7C286D3A84790ECE}
+\makelabel{fr:AleshinMachine}{9.1.15}{X7C286D3A84790ECE}
+\makelabel{fr:BabyAleshinGroup}{9.1.16}{X7E024B4D7BA411B1}
+\makelabel{fr:BabyAleshinMachine}{9.1.16}{X7E024B4D7BA411B1}
+\makelabel{fr:SidkiFreeGroup}{9.1.17}{X8108E3A8872A6FFE}
+\makelabel{fr:GuptaSidkiGroups}{9.1.18}{X82D3CB6A7C189C78}
+\makelabel{fr:GeneralizedGuptaSidkiGroups}{9.1.18}{X82D3CB6A7C189C78}
+\makelabel{fr:GuptaSidkiMachines}{9.1.18}{X82D3CB6A7C189C78}
+\makelabel{fr:GuptaSidkiGroup}{9.1.19}{X83E59288860EF661}
+\makelabel{fr:GuptaSidkiMachine}{9.1.19}{X83E59288860EF661}
+\makelabel{fr:NeumannGroup}{9.1.20}{X8521B4FF7BA189B2}
+\makelabel{fr:NeumannMachine}{9.1.20}{X8521B4FF7BA189B2}
+\makelabel{fr:FabrykowskiGuptaGroup}{9.1.21}{X878D1C7080EA9797}
+\makelabel{fr:FabrykowskiGuptaGroups}{9.1.21}{X878D1C7080EA9797}
+\makelabel{fr:ZugadiSpinalGroup}{9.1.22}{X7C5ADAE77EA3876D}
+\makelabel{fr:GammaPQMachine}{9.1.23}{X7A0319827CB51ED0}
+\makelabel{fr:GammaPQGroup}{9.1.23}{X7A0319827CB51ED0}
+\makelabel{fr:RattaggiGroup}{9.1.24}{X80B617717C2887D4}
+\makelabel{fr:HanoiGroup}{9.1.25}{X7A0BE9F57B401C5C}
+\makelabel{fr:DahmaniGroup}{9.1.26}{X7C7A0EEF7EFF8B99}
+\makelabel{fr:MamaghaniGroup}{9.1.27}{X7C958AB78484E256}
+\makelabel{fr:WeierstrassGroup}{9.1.28}{X86D952E8784E4D97}
+\makelabel{fr:StrichartzGroup}{9.1.29}{X80D59AFF7E7D3B8B}
+\makelabel{fr:FRAffineGroup}{9.1.30}{X86B124758135DFBD}
+\makelabel{fr:CayleyGroup}{9.1.31}{X7CFBE31A78F2681B}
+\makelabel{fr:CayleyMachine}{9.1.31}{X7CFBE31A78F2681B}
+\makelabel{fr:LamplighterGroup}{9.1.31}{X7CFBE31A78F2681B}
+\makelabel{fr:I2Machine}{9.2.1}{X87541DA582705033}
+\makelabel{fr:I2Monoid}{9.2.1}{X87541DA582705033}
+\makelabel{fr:I4Machine}{9.2.2}{X7B32ED3D8715FA4B}
+\makelabel{fr:I4Monoid}{9.2.2}{X7B32ED3D8715FA4B}
+\makelabel{fr:PSZAlgebra}{9.3.1}{X80E15ABC879F8EE2}
+\makelabel{fr:GrigorchukThinnedAlgebra}{9.3.2}{X7D015CA5829FAA2A}
+\makelabel{fr:GuptaSidkiThinnedAlgebra}{9.3.3}{X7B66ED537D0A43AF}
+\makelabel{fr:GrigorchukLieAlgebra}{9.3.4}{X86CE9A8787F69DBC}
+\makelabel{fr:GuptaSidkiLieAlgebra}{9.3.4}{X86CE9A8787F69DBC}
+\makelabel{fr:SidkiFreeAlgebra}{9.3.5}{X7B0B5B09878C7CEA}
+\makelabel{fr:SidkiMonomialAlgebra}{9.3.6}{X7988B29F836BAA62}
+\makelabel{fr:VHStructure}{9.5.1}{X7E0071D4838B239D}
+\makelabel{fr:IsVHGroup}{9.5.1}{X7E0071D4838B239D}
+\makelabel{fr:VerticalAction}{9.5.2}{X7F852A357D7E2E76}
+\makelabel{fr:HorizontalAction}{9.5.2}{X7F852A357D7E2E76}
+\makelabel{fr:VHGroup}{9.5.3}{X86B1C2F079FE8D82}
+\makelabel{fr:IsIrreducibleVHGroup}{9.5.4}{X7D1FCB877D1B96EA}
+\makelabel{fr:MaximalSimpleSubgroup}{9.5.5}{X84DB7FA4846075A7}
+\makelabel{fr:FRMFamily}{10.1.1}{X7F5497A47F8C81DD}
+\makelabel{fr:FREFamily}{10.1.2}{X7C6A63427F6DB4C6}
+\makelabel{fr:AlphabetOfFRObject}{10.1.3}{X7BC9CD3685C26823}
+\makelabel{fr:AlphabetOfFRAlgebra}{10.1.3}{X7BC9CD3685C26823}
+\makelabel{fr:AlphabetOfFRSemigroup}{10.1.3}{X7BC9CD3685C26823}
+\makelabel{fr:Alphabet}{10.1.3}{X7BC9CD3685C26823}
+\makelabel{fr:AsPermutation FR object}{10.1.4}{X793E0E1283BE7C73}
+\makelabel{fr:AsTransformation FR object}{10.1.5}{X7B41902D87A48EDB}
+\makelabel{fr:IsGroupFRMachine}{10.2.1}{X7CC0BFD67CE7060E}
+\makelabel{fr:IsMonoidFRMachine}{10.2.1}{X7CC0BFD67CE7060E}
+\makelabel{fr:IsSemigroupFRMachine}{10.2.1}{X7CC0BFD67CE7060E}
+\makelabel{fr:IsFRMachineStrRep}{10.2.2}{X8157AE587CBA24C4}
+\makelabel{fr:IsMealyMachine}{10.2.3}{X79C2395A7D65214B}
+\makelabel{fr:IsMealyElement}{10.2.4}{X7C86614187606A4C}
+\makelabel{fr:IsMealyMachineIntRep}{10.2.5}{X78E206B28015A395}
+\makelabel{fr:IsMealyMachineDomainRep}{10.2.6}{X7AE5B4257E2DB7E6}
+\makelabel{fr:IsVectorFRMachineRep}{10.2.7}{X8087EE9F79E8E339}
+\makelabel{fr:IsAlgebraFRMachineRep}{10.2.8}{X7859869E7FEDA49F}
+\makelabel{fr:IsLinearFRMachine}{10.2.9}{X877B1EBD80170001}
+\makelabel{fr:IsLinearFRElement}{10.2.10}{X823F46A67D458AAD}
+\makelabel{fr:IsFRElement}{10.2.11}{X7966F9B982B1DFE1}
+\makelabel{fr:IsSemigroupFRElement}{10.2.11}{X7966F9B982B1DFE1}
+\makelabel{fr:IsMonoidFRElement}{10.2.11}{X7966F9B982B1DFE1}
+\makelabel{fr:IsGroupFRElement}{10.2.11}{X7966F9B982B1DFE1}
+\makelabel{fr:IsFRMealyElement}{10.2.12}{X847A4BBE82C736B6}
+\makelabel{fr:IsSemigroupFRMealyElement}{10.2.12}{X847A4BBE82C736B6}
+\makelabel{fr:IsMonoidFRMealyElement}{10.2.12}{X847A4BBE82C736B6}
+\makelabel{fr:IsGroupFRMealyElement}{10.2.12}{X847A4BBE82C736B6}
+\makelabel{fr:UnderlyingMealyElement}{10.2.12}{X847A4BBE82C736B6}
+\makelabel{fr:IsFRObject}{10.2.13}{X785D09F27DBDF6A8}
+\makelabel{fr:IsFRMachine}{10.2.14}{X7C22A1A28058F754}
+\makelabel{fr:IsInvertible}{10.2.15}{X83AEFB8184F4B023}
+\makelabel{fr:IsFRGroup}{10.2.16}{X81D717E187305F2A}
+\makelabel{fr:IsFRMonoid}{10.2.16}{X81D717E187305F2A}
+\makelabel{fr:IsFRSemigroup}{10.2.16}{X81D717E187305F2A}
+\makelabel{fr:IsFRAlgebra}{10.2.17}{X853B16B381CB5366}
+\makelabel{fr:IsFRAlgebraWithOne}{10.2.17}{X853B16B381CB5366}
+\makelabel{fr:FRMachineRWS}{10.3.1}{X84278D6F7AAD101F}
+\makelabel{fr:OrbitSignalizer}{10.3.5}{X8735D8087DADCCC9}
+\makelabel{fr:FRConjugacyAlgorithm}{10.3.6}{X817F734280E22447}
+\makelabel{fr:FRBranchGroupConjugacyData}{10.3.7}{X82A289077D4DAA03}
+\makelabel{fr:TensorSum}{11.1.1}{X844D3035877B5052}
+\makelabel{fr:TensorProduct}{11.1.2}{X87EB0B4A852CF4C6}
+\makelabel{fr:DirectSum}{11.1.3}{X82AD6F187B550060}
+\makelabel{fr:PeriodicListsFamily}{11.2.1}{X7E5CC87E871F35A3}
+\makelabel{fr:IsPeriodicList}{11.2.1}{X7E5CC87E871F35A3}
+\makelabel{fr:PeriodicList}{11.2.2}{X7B401DFE817D3927}
+\makelabel{fr:PeriodicList period, looping point}{11.2.2}{X7B401DFE817D3927}
+\makelabel{fr:PeriodicList list, function}{11.2.2}{X7B401DFE817D3927}
+\makelabel{fr:CompressedPeriodicList}{11.2.2}{X7B401DFE817D3927}
+\makelabel{fr:CompressedPeriodicList period, looping point}{11.2.2}{X7B401DFE817D3927}
+\makelabel{fr:PrePeriod}{11.2.2}{X7B401DFE817D3927}
+\makelabel{fr:Period}{11.2.2}{X7B401DFE817D3927}
+\makelabel{fr:CompressPeriodicList}{11.2.3}{X7AFE88F37FC58083}
+\makelabel{fr:IsConfinal}{11.2.4}{X7CA5FA3F7AF9BA3D}
+\makelabel{fr:ConfinalityClass}{11.2.5}{X86AB4AFF7B1613E3}
+\makelabel{fr:LargestCommonPrefix}{11.2.6}{X84FB28807BC8A502}
+\makelabel{fr:WordGrowth}{11.3.1}{X7BFF1432803C9172}
+\makelabel{fr:WordGrowth 1arg}{11.3.1}{X7BFF1432803C9172}
+\makelabel{fr:OrbitGrowth}{11.3.1}{X7BFF1432803C9172}
+\makelabel{fr:Ball}{11.3.1}{X7BFF1432803C9172}
+\makelabel{fr:Sphere}{11.3.1}{X7BFF1432803C9172}
+\makelabel{fr:ShortGroupRelations}{11.4.1}{X868E478F86A10CFF}
+\makelabel{fr:ShortMonoidRelations}{11.4.1}{X868E478F86A10CFF}
+\makelabel{fr:ShortGroupWordInSet}{11.4.2}{X7B9942AA84B0753E}
+\makelabel{fr:ShortMonoidWordInSet}{11.4.2}{X7B9942AA84B0753E}
+\makelabel{fr:ShortSemigroupWordInSet}{11.4.2}{X7B9942AA84B0753E}
+\makelabel{fr:SurfaceBraidFpGroup}{11.5.1}{X84472A637B648C47}
+\makelabel{fr:PureSurfaceBraidFpGroup}{11.5.1}{X84472A637B648C47}
+\makelabel{fr:CharneyBraidFpGroup}{11.5.2}{X87E12292861FFE79}
+\makelabel{fr:ArtinRepresentation}{11.5.3}{X814375977D2E4AD9}
+\makelabel{fr:DirichletSeries 0}{11.6.1}{X82D4E885838CFBD6}
+\makelabel{fr:DirichletSeries md}{11.6.1}{X82D4E885838CFBD6}
+\makelabel{fr:DirichletSeries ic}{11.6.1}{X82D4E885838CFBD6}
+\makelabel{fr:DirichletSeries sm}{11.6.1}{X82D4E885838CFBD6}
+\makelabel{fr:DegreeDirichletSeries}{11.6.2}{X7C8CD28D797A527F}
+\makelabel{fr:SpreadDirichletSeries}{11.6.3}{X81EA791C7CA3C3FF}
+\makelabel{fr:ShiftDirichletSeries}{11.6.4}{X7D792C6985BF482B}
+\makelabel{fr:ShrunkDirichletSeries}{11.6.5}{X80571E4A86B38D53}
+\makelabel{fr:ZetaSeriesOfGroup}{11.6.6}{X850F072E8523EE9D}
+\makelabel{fr:ValueOfDirichletSeries}{11.6.7}{X7F49DDBC829F18C8}
+\makelabel{fr:IsProjectiveRepresentation}{11.7.1}{X7CE116C27EF109D1}
+\makelabel{fr:IsLinearRepresentation}{11.7.1}{X7CE116C27EF109D1}
+\makelabel{fr:ProjectiveRepresentationByFunction}{11.7.2}{X80EEB0F58467ED68}
+\makelabel{fr:LinearRepresentationByImages}{11.7.3}{X7FC5A28278EB1E51}
+\makelabel{fr:DegreeOfProjectiveRepresentation}{11.7.4}{X87BC132B815B4638}
+\makelabel{fr:ProjectiveExtension}{11.7.5}{X81AF3D937F219A6D}
+\makelabel{fr:ProjectiveQuotient}{11.7.6}{X7C4E2ED57C2DDBE6}
+\makelabel{fr:ForwardOrbit}{11.8.1}{X7B5DD261825523A3}
+\makelabel{fr:StringByInt}{11.8.2}{X7E4966327C37C790}
+\makelabel{fr:PositionInTower}{11.8.3}{X7CE65002842C0BD8}
+\makelabel{fr:RenameSubobjects}{11.8.4}{X856E72B180084639}
+\makelabel{fr:CoefficientsInAbelianExtension}{11.8.5}{X79016B3878B5EFAA}
+\makelabel{fr:MagmaEndomorphismByImagesNC}{11.8.6}{X8624AFAD872509D8}
+\makelabel{fr:MagmaHomomorphismByImagesNC}{11.8.7}{X7F7E6457877F69EC}
+\makelabel{fr:Draw poset}{11.8.8}{X7A2A9D24781AFC34}
+\makelabel{fr:HeightOfPoset}{11.8.8}{X7A2A9D24781AFC34}
+\makelabel{fr:IsFIFO}{11.8.9}{X816A18137E5116E9}
+\makelabel{fr:NewFIFO}{11.8.9}{X816A18137E5116E9}
+\makelabel{fr:Add FIFO}{11.8.9}{X816A18137E5116E9}
+\makelabel{fr:Append FIFO}{11.8.9}{X816A18137E5116E9}
+\makelabel{fr:ProductIdeal}{11.8.10}{X86AC1C028093204D}
+\makelabel{fr:ProductBOIIdeal}{11.8.10}{X86AC1C028093204D}
+\makelabel{fr:DimensionSeries}{11.8.11}{X794940277C9AD85C}
+\makelabel{fr:AlgebraHomomorphismByFunction}{11.8.12}{X825149467C57DEFC}
+\makelabel{fr:AlgebraWithOneHomomorphismByFunction}{11.8.12}{X825149467C57DEFC}
+\makelabel{fr:IsFpLieAlgebra}{11.8.13}{X837F6C2A797FFD41}
+\makelabel{fr:JenningsLieAlgebra}{11.8.14}{X8692ADD581359CA1}
+\makelabel{fr:SolutionMatModN}{11.8.15}{X7F5427847E43CD62}
+\makelabel{fr:SolutionMatMod1}{11.8.16}{X80E9634283E2DF18}
+\makelabel{fr:CyclotomicByArgument}{11.8.17}{X7D2CEF7F845D2AF2}
+\makelabel{fr:ArgumentOfCyclotomic}{11.8.18}{X7A6CB5FE86501506}
+\makelabel{fr:InfoFR}{11.9.1}{X7E95AC267805E4C1}
+\makelabel{fr:SEARCH@}{11.9.2}{X835FBD72853595BE}

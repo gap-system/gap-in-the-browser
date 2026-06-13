@@ -1,0 +1,656 @@
+\GAPDocLabFile{numericalsgps}
+\makelabel{numericalsgps:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{numericalsgps:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{numericalsgps:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{numericalsgps:Colophon}{}{X7982162280BC7A61}
+\makelabel{numericalsgps:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{numericalsgps:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{numericalsgps:Numerical Semigroups}{2}{X8324E5D97DC2A801}
+\makelabel{numericalsgps:Generating Numerical Semigroups}{2.1}{X7E89D7EB7FCC2197}
+\makelabel{numericalsgps:Some basic tests}{2.2}{X7EF4254C81ED6665}
+\makelabel{numericalsgps:Basic operations with numerical semigroups}{3}{X7A9D13C778697F6C}
+\makelabel{numericalsgps:Invariants}{3.1}{X87AF9D4F7FD9E820}
+\makelabel{numericalsgps:Wilf's conjecture}{3.2}{X7EE22CA979CCAAB9}
+\makelabel{numericalsgps:Presentations of Numerical Semigroups}{4}{X7969F7F27AAF0BF1}
+\makelabel{numericalsgps:Presentations of Numerical Semigroups}{4.1}{X7969F7F27AAF0BF1}
+\makelabel{numericalsgps:Binomial ideals associated to numerical semigroups}{4.2}{X795E7F5682A6C8B3}
+\makelabel{numericalsgps:Uniquely Presented Numerical Semigroups}{4.3}{X7D7EA20F818A5994}
+\makelabel{numericalsgps:Constructing numerical semigroups from others}{5}{X8148F05A830EE2D5}
+\makelabel{numericalsgps:Adding and removing elements of a numerical semigroup}{5.1}{X782F3AB97ACF84B8}
+\makelabel{numericalsgps:Intersections, sums, quotients, dilatations, numerical duplications and multiples by integers}{5.2}{X7DC65D547FB274D8}
+\makelabel{numericalsgps:Constructing the set of all numerical semigroups containing a given numerical semigroup}{5.3}{X867D9A9A87CEB869}
+\makelabel{numericalsgps:Constructing the set of numerical semigroups with given Frobenius number}{5.4}{X8634CFB1848430DC}
+\makelabel{numericalsgps:Constructing the set of numerical semigroups with given maximum primitive}{5.5}{X8021419483185FE3}
+\makelabel{numericalsgps:Constructing the set of numerical semigroups with genus g}{5.6}{X7D6635CB7D041A54}
+\makelabel{numericalsgps:Constructing the set of numerical semigroups with a given set of pseudo-Frobenius numbers}{5.7}{X8265233586477CC7}
+\makelabel{numericalsgps:Irreducible numerical semigroups}{6}{X83C597EC7FAA1C0F}
+\makelabel{numericalsgps:Irreducible numerical semigroups}{6.1}{X83C597EC7FAA1C0F}
+\makelabel{numericalsgps:Complete intersection numerical semigroups}{6.2}{X7D3FD9C8786B5D72}
+\makelabel{numericalsgps:Almost-symmetric numerical semigroups}{6.3}{X7998FF857F70C9A2}
+\makelabel{numericalsgps:Several approaches generalizing the concept of symmetry}{6.4}{X7FDC79A285EE016B}
+\makelabel{numericalsgps:Ideals of numerical semigroups}{7}{X83C2F0CF825B3869}
+\makelabel{numericalsgps:Definitions and basic operations}{7.1}{X84B6453A8015B40B}
+\makelabel{numericalsgps:Decomposition into irreducibles}{7.2}{X7F09B9A085E226EF}
+\makelabel{numericalsgps:Blow ups and closures}{7.3}{X81CD9B12807EEA85}
+\makelabel{numericalsgps:Patterns for ideals}{7.4}{X78F124CC82E7B585}
+\makelabel{numericalsgps:Graded associated ring of numerical semigroup}{7.5}{X79C6CE8D7EF1632D}
+\makelabel{numericalsgps:Numerical semigroups with maximal embedding dimension}{8}{X7D2E70FC82D979D3}
+\makelabel{numericalsgps:Numerical semigroups with maximal embedding dimension}{8.1}{X7D2E70FC82D979D3}
+\makelabel{numericalsgps:Numerical semigroups with the Arf property and Arf closures}{8.2}{X82E40EFD83A4A186}
+\makelabel{numericalsgps:Saturated numerical semigroups}{8.3}{X7E6D857179E5BF1B}
+\makelabel{numericalsgps:Nonunique invariants for factorizations in numerical semigroups}{9}{X7B6F914879CD505F}
+\makelabel{numericalsgps:Factorizations in Numerical Semigroups}{9.1}{X7FDB54217B15148F}
+\makelabel{numericalsgps:Invariants based on lengths}{9.2}{X846FEE457D4EC03D}
+\makelabel{numericalsgps:Invariants based on distances}{9.3}{X84F5CA8D7B0F6C02}
+\makelabel{numericalsgps:Primality}{9.4}{X78EBC6A57B8167E6}
+\makelabel{numericalsgps:Homogenization of Numerical Semigroups}{9.5}{X86735EEA780CECDA}
+\makelabel{numericalsgps:Divisors, posets}{9.6}{X7A54E9FD7D4CB18F}
+\makelabel{numericalsgps:Feng-Rao distances and numbers}{9.7}{X82D8A59083FCDF46}
+\makelabel{numericalsgps:Numerical semigroups with Apéry sets having special factorization properties}{9.8}{X79A8A15087CEE8C1}
+\makelabel{numericalsgps:Polynomials and numerical semigroups}{10}{X7D2C77607815273E}
+\makelabel{numericalsgps:Generating functions or Hilbert series}{10.1}{X808FAEE28572191C}
+\makelabel{numericalsgps:Semigroup of values of algebraic curves}{10.2}{X7EEF2A1781432A2D}
+\makelabel{numericalsgps:Semigroups and Legendrian curves}{10.3}{X84C670E1826F8B92}
+\makelabel{numericalsgps:Affine semigroups}{11}{X7D92A1997D098A00}
+\makelabel{numericalsgps:Defining affine semigroups}{11.1}{X7E39DA7780D02DF5}
+\makelabel{numericalsgps:Gluings of affine semigroups}{11.2}{X7F13DF9D7A4FB547}
+\makelabel{numericalsgps:Presentations of affine semigroups}{11.3}{X86A1018D7CB7BA81}
+\makelabel{numericalsgps:Factorizations in affine semigroups}{11.4}{X80A934B0826E21A6}
+\makelabel{numericalsgps:Finitely generated ideals of affine semigroups}{11.5}{X849D1ECC808F2BBA}
+\makelabel{numericalsgps:Good semigroups}{12}{X7A9271AC84C7277F}
+\makelabel{numericalsgps:Defining good semigroups}{12.1}{X82B9F71084D2358E}
+\makelabel{numericalsgps:Notable elements}{12.2}{X8431465B82643392}
+\makelabel{numericalsgps:Symmetric good semigroups}{12.3}{X87FE42227F47666F}
+\makelabel{numericalsgps:Arf good closure}{12.4}{X80A3D64386A152EB}
+\makelabel{numericalsgps:Good ideals}{12.5}{X7FA8DCAC7951F7FB}
+\makelabel{numericalsgps:External packages}{13}{X84A2793F7A9F3E6A}
+\makelabel{numericalsgps:Using external packages}{13.1}{X7BD18FC581F0C4D3}
+\makelabel{numericalsgps:Dot functions}{14}{X7B8D661F79E957A6}
+\makelabel{numericalsgps:Dot functions}{14.1}{X7B8D661F79E957A6}
+\makelabel{numericalsgps:Generalities}{A}{X7AF8D94A7E56C049}
+\makelabel{numericalsgps:Bézout sequences}{A.1}{X7A5D608487A8C98F}
+\makelabel{numericalsgps:Periodic subadditive functions}{A.2}{X7D3D347987953F44}
+\makelabel{numericalsgps:"Random" functions}{B}{X86746B487B54A2D6}
+\makelabel{numericalsgps:Random functions for numerical semigroups}{B.1}{X7F3FF11486C5CA4B}
+\makelabel{numericalsgps:Random functions for affine semigroups}{B.2}{X7D86D133840F6860}
+\makelabel{numericalsgps:Random functions for good semigroups}{B.3}{X7DB89F2078A6095F}
+\makelabel{numericalsgps:Contributions}{C}{X7F1146137C92FF0E}
+\makelabel{numericalsgps:Functions implemented by A. Sammartano}{C.1}{X8516272A7ACC7C02}
+\makelabel{numericalsgps:Functions implemented by C. O'Neill}{C.2}{X821A695C7C0BDF59}
+\makelabel{numericalsgps:Functions implemented by K. Stokes}{C.3}{X7F4C9F8A7F7CDBC8}
+\makelabel{numericalsgps:Functions implemented by I. Ojeda and C. J. Moreno Ávila}{C.4}{X81478D2D862B6213}
+\makelabel{numericalsgps:Functions implemented by I. Ojeda}{C.5}{X7C7DCFA37C8B5260}
+\makelabel{numericalsgps:Functions implemented by A. Sánchez-R. Navarro}{C.6}{X8549AE427919FFDC}
+\makelabel{numericalsgps:Functions implemented by G. Zito}{C.7}{X7FAE71B27B0E3889}
+\makelabel{numericalsgps:Functions implemented by A. Herrera-Poyatos}{C.8}{X85067C3383705D0B}
+\makelabel{numericalsgps:Functions implemented by Benjamin Heredia}{C.9}{X81EA8996840BD031}
+\makelabel{numericalsgps:Functions implemented by Juan Ignacio García-García}{C.10}{X7ED672F578B6FDC3}
+\makelabel{numericalsgps:Functions implemented by C. Cisto}{C.11}{X8348844883A78B05}
+\makelabel{numericalsgps:Functions implemented by N. Matsuoka}{C.12}{X8130D17C7D6B5096}
+\makelabel{numericalsgps:Functions implemented by N. Maugeri}{C.13}{X78ED0D447B74A9FF}
+\makelabel{numericalsgps:Functions implemented by H. Martín Cruz}{C.14}{X8283CFD584D2E3EE}
+\makelabel{numericalsgps:Functions implemented by J. Angulo Rodríguez}{C.15}{X82919F927DC72A52}
+\makelabel{numericalsgps:Functions implemented by F. Strazzanti}{C.16}{X7C4C93CD8200C606}
+\makelabel{numericalsgps:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{numericalsgps:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{numericalsgps:Index}{Ind}{X83A0356F839C696F}
+\makelabel{numericalsgps:NumericalSemigroup by generators}{2.1.1}{X7D74299B8083E882}
+\makelabel{numericalsgps:NumericalSemigroupByGenerators}{2.1.1}{X7D74299B8083E882}
+\makelabel{numericalsgps:NumericalSemigroupBySubAdditiveFunction}{2.1.2}{X86D9D2EE7E1C16C2}
+\makelabel{numericalsgps:NumericalSemigroup by subadditive function}{2.1.2}{X86D9D2EE7E1C16C2}
+\makelabel{numericalsgps:NumericalSemigroupByAperyList}{2.1.3}{X799AC8727DB61A99}
+\makelabel{numericalsgps:NumericalSemigroup by Apery list}{2.1.3}{X799AC8727DB61A99}
+\makelabel{numericalsgps:NumericalSemigroupBySmallElements}{2.1.4}{X81A7E3527998A74A}
+\makelabel{numericalsgps:NumericalSemigroup by small elements}{2.1.4}{X81A7E3527998A74A}
+\makelabel{numericalsgps:NumericalSemigroupByGaps}{2.1.5}{X7BB0343D86EC5FEC}
+\makelabel{numericalsgps:NumericalSemigroup by gaps}{2.1.5}{X7BB0343D86EC5FEC}
+\makelabel{numericalsgps:NumericalSemigroupByFundamentalGaps}{2.1.6}{X86AC8B0E7C11147F}
+\makelabel{numericalsgps:NumericalSemigroup by fundamental gaps}{2.1.6}{X86AC8B0E7C11147F}
+\makelabel{numericalsgps:NumericalSemigroupByAffineMap}{2.1.7}{X7ACD94F478992185}
+\makelabel{numericalsgps:NumericalSemigroup by affine map}{2.1.7}{X7ACD94F478992185}
+\makelabel{numericalsgps:ModularNumericalSemigroup}{2.1.8}{X87206D597873EAFF}
+\makelabel{numericalsgps:NumericalSemigroup by modular condition}{2.1.8}{X87206D597873EAFF}
+\makelabel{numericalsgps:ProportionallyModularNumericalSemigroup}{2.1.9}{X879171CD7AC80BB5}
+\makelabel{numericalsgps:NumericalSemigroup by proportionally modular condition}{2.1.9}{X879171CD7AC80BB5}
+\makelabel{numericalsgps:NumericalSemigroupByInterval}{2.1.10}{X7D8F9D2A8173EF32}
+\makelabel{numericalsgps:NumericalSemigroup by (closed) interval}{2.1.10}{X7D8F9D2A8173EF32}
+\makelabel{numericalsgps:NumericalSemigroupByOpenInterval}{2.1.11}{X7C800FB37D76612F}
+\makelabel{numericalsgps:NumericalSemigroup by open interval}{2.1.11}{X7C800FB37D76612F}
+\makelabel{numericalsgps:IsNumericalSemigroup}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsNumericalSemigroupByGenerators}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsNumericalSemigroupByInterval}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsNumericalSemigroupByOpenInterval}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsNumericalSemigroupBySubAdditiveFunction}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsNumericalSemigroupByAperyList}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsNumericalSemigroupBySmallElements}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsNumericalSemigroupByGaps}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsNumericalSemigroupByFundamentalGaps}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsProportionallyModularNumericalSemigroup}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:IsModularNumericalSemigroup}{2.2.1}{X7B1B6B8C82BD7084}
+\makelabel{numericalsgps:RepresentsSmallElementsOfNumericalSemigroup}{2.2.2}{X87B02A9F7AF90CB9}
+\makelabel{numericalsgps:RepresentsGapsOfNumericalSemigroup}{2.2.3}{X78906CCD7BEE0E58}
+\makelabel{numericalsgps:IsAperyListOfNumericalSemigroup}{2.2.4}{X84A611557B5ACF42}
+\makelabel{numericalsgps:IsSubsemigroupOfNumericalSemigroup}{2.2.5}{X86D5B3517AF376D4}
+\makelabel{numericalsgps:IsSubset}{2.2.6}{X79CA175481F8105F}
+\makelabel{numericalsgps:BelongsToNumericalSemigroup}{2.2.7}{X864C2D8E80DD6D16}
+\makelabel{numericalsgps:Multiplicity for numerical semigroup}{3.1.1}{X80D23F08850A8ABD}
+\makelabel{numericalsgps:MultiplicityOfNumericalSemigroup}{3.1.1}{X80D23F08850A8ABD}
+\makelabel{numericalsgps:Generators for numerical semigroup}{3.1.2}{X850F430A8284DF9A}
+\makelabel{numericalsgps:GeneratorsOfNumericalSemigroup}{3.1.2}{X850F430A8284DF9A}
+\makelabel{numericalsgps:MinimalGenerators for numerical semigroup}{3.1.2}{X850F430A8284DF9A}
+\makelabel{numericalsgps:MinimalGeneratingSystemOfNumericalSemigroup}{3.1.2}{X850F430A8284DF9A}
+\makelabel{numericalsgps:MinimalGeneratingSystem for numerical semigroup}{3.1.2}{X850F430A8284DF9A}
+\makelabel{numericalsgps:EmbeddingDimension for numerical semigroup}{3.1.3}{X7884AE27790E687F}
+\makelabel{numericalsgps:EmbeddingDimensionOfNumericalSemigroup}{3.1.3}{X7884AE27790E687F}
+\makelabel{numericalsgps:SmallElements for numerical semigroup}{3.1.4}{X84A6B16E8113167B}
+\makelabel{numericalsgps:SmallElementsOfNumericalSemigroup}{3.1.4}{X84A6B16E8113167B}
+\makelabel{numericalsgps:Length for numerical semigroup}{3.1.5}{X7A56569F853DADED}
+\makelabel{numericalsgps:FirstElementsOfNumericalSemigroup}{3.1.6}{X7F0EDFA77F929120}
+\makelabel{numericalsgps:ElementsUpTo}{3.1.7}{X7D2B3AA9823371AE}
+\makelabel{numericalsgps:NextElementOfNumericalSemigroup}{3.1.10}{X84345D5E7CAA9B77}
+\makelabel{numericalsgps:ElementNumberNumericalSemigroup}{3.1.11}{X7B6C82DD86E5422F}
+\makelabel{numericalsgps:RthElementOfNumericalSemigroup}{3.1.11}{X7B6C82DD86E5422F}
+\makelabel{numericalsgps:NumberElementNumericalSemigroup}{3.1.12}{X78F4A7A7797E26D4}
+\makelabel{numericalsgps:Iterator for numerical semigroups}{3.1.13}{X867ABF7C7991ED7C}
+\makelabel{numericalsgps:Difference for numerical semigroups}{3.1.14}{X7E6F5D6F7B0C9635}
+\makelabel{numericalsgps:DifferenceOfNumericalSemigroups}{3.1.14}{X7E6F5D6F7B0C9635}
+\makelabel{numericalsgps:AperyList for numerical semigroup with respect to element}{3.1.15}{X7CB24F5E84793BE1}
+\makelabel{numericalsgps:AperyListOfNumericalSemigroupWRTElement}{3.1.15}{X7CB24F5E84793BE1}
+\makelabel{numericalsgps:AperyList for numerical semigroup with respect to multiplicity}{3.1.16}{X80431F487C71D67B}
+\makelabel{numericalsgps:AperyListOfNumericalSemigroup}{3.1.16}{X80431F487C71D67B}
+\makelabel{numericalsgps:AperyList for numerical semigroup with respect to integer}{3.1.17}{X7D06B00D7C305C64}
+\makelabel{numericalsgps:AperyListOfNumericalSemigroupWRTInteger}{3.1.17}{X7D06B00D7C305C64}
+\makelabel{numericalsgps:AperyListOfNumericalSemigroupAsGraph}{3.1.18}{X8022CC477E9BF678}
+\makelabel{numericalsgps:KunzCoordinates for a numerical semigroup and (optionally) an integer}{3.1.19}{X80B398537887FD87}
+\makelabel{numericalsgps:KunzCoordinatesOfNumericalSemigroup}{3.1.19}{X80B398537887FD87}
+\makelabel{numericalsgps:KunzPolytope}{3.1.20}{X7C21E5417A3894EC}
+\makelabel{numericalsgps:CocycleOfNumericalSemigroupWRTElement}{3.1.21}{X7802096584D32795}
+\makelabel{numericalsgps:FrobeniusNumber for numerical semigroup}{3.1.22}{X847BAD9480D186C0}
+\makelabel{numericalsgps:FrobeniusNumberOfNumericalSemigroup}{3.1.22}{X847BAD9480D186C0}
+\makelabel{numericalsgps:Conductor for numerical Semigroup}{3.1.23}{X835C729D7D8B1B36}
+\makelabel{numericalsgps:ConductorOfNumericalSemigroup}{3.1.23}{X835C729D7D8B1B36}
+\makelabel{numericalsgps:PseudoFrobenius}{3.1.24}{X861DED207A2B5419}
+\makelabel{numericalsgps:PseudoFrobeniusOfNumericalSemigroup}{3.1.24}{X861DED207A2B5419}
+\makelabel{numericalsgps:Type of a numerical semigroup}{3.1.25}{X865E2E12804CFCD3}
+\makelabel{numericalsgps:TypeOfNumericalSemigroup}{3.1.25}{X865E2E12804CFCD3}
+\makelabel{numericalsgps:Gaps for numerical semigroup}{3.1.26}{X8688B1837E4BC079}
+\makelabel{numericalsgps:GapsOfNumericalSemigroup}{3.1.26}{X8688B1837E4BC079}
+\makelabel{numericalsgps:Weight for numerical semigroup}{3.1.27}{X7F71983880DF4B9D}
+\makelabel{numericalsgps:Deserts}{3.1.28}{X7EB81BF886DDA29A}
+\makelabel{numericalsgps:DesertsOfNumericalSemigroup}{3.1.28}{X7EB81BF886DDA29A}
+\makelabel{numericalsgps:IsOrdinary for numerical semigroups}{3.1.29}{X82B1868F7A780B49}
+\makelabel{numericalsgps:IsOrdinaryNumericalSemigroup}{3.1.29}{X82B1868F7A780B49}
+\makelabel{numericalsgps:IsAcute for numerical semigroups}{3.1.30}{X83D4AFE882A79096}
+\makelabel{numericalsgps:IsAcuteNumericalSemigroup}{3.1.30}{X83D4AFE882A79096}
+\makelabel{numericalsgps:Holes for numerical semigroup}{3.1.31}{X7CCFC5267FD27DDE}
+\makelabel{numericalsgps:HolesOfNumericalSemigroup}{3.1.31}{X7CCFC5267FD27DDE}
+\makelabel{numericalsgps:LatticePathAssociatedToNumericalSemigroup}{3.1.32}{X794E615F85C2AAB0}
+\makelabel{numericalsgps:Genus for numerical semigroup}{3.1.33}{X7E9C8E157C4EAAB0}
+\makelabel{numericalsgps:GenusOfNumericalSemigroup}{3.1.33}{X7E9C8E157C4EAAB0}
+\makelabel{numericalsgps:FundamentalGaps for numerical semigroup}{3.1.34}{X7EC438CC7BF539D0}
+\makelabel{numericalsgps:FundamentalGapsOfNumericalSemigroup}{3.1.34}{X7EC438CC7BF539D0}
+\makelabel{numericalsgps:SpecialGaps for numerical semigroup}{3.1.35}{X803D550C78717A7C}
+\makelabel{numericalsgps:SpecialGapsOfNumericalSemigroup}{3.1.35}{X803D550C78717A7C}
+\makelabel{numericalsgps:WilfNumber for numerical semigroup}{3.2.1}{X78C2F4C77FB096F0}
+\makelabel{numericalsgps:WilfNumberOfNumericalSemigroup}{3.2.1}{X78C2F4C77FB096F0}
+\makelabel{numericalsgps:EliahouNumber for numerical semigroup}{3.2.2}{X80F9EC9A7BF4E606}
+\makelabel{numericalsgps:TruncatedWilfNumberOfNumericalSemigroup}{3.2.2}{X80F9EC9A7BF4E606}
+\makelabel{numericalsgps:ProfileOfNumericalSemigroup}{3.2.3}{X7B45623E7D539CB6}
+\makelabel{numericalsgps:EliahouSlicesOfNumericalSemigroup}{3.2.4}{X7846F90E7EA43C47}
+\makelabel{numericalsgps:MinimalPresentation for numerical semigroups}{4.1.1}{X81A2C4317A0BA48D}
+\makelabel{numericalsgps:MinimalPresentationOfNumericalSemigroup}{4.1.1}{X81A2C4317A0BA48D}
+\makelabel{numericalsgps:GraphAssociatedToElementInNumericalSemigroup}{4.1.2}{X81CC5A6C870377E1}
+\makelabel{numericalsgps:BettiElements of numerical semigroup}{4.1.3}{X815C0AF17A371E3E}
+\makelabel{numericalsgps:BettiElementsOfNumericalSemigroup}{4.1.3}{X815C0AF17A371E3E}
+\makelabel{numericalsgps:IsMinimalRelationOfNumericalSemigroup}{4.1.4}{X7FC66A1B82E86FAF}
+\makelabel{numericalsgps:AllMinimalRelationsOfNumericalSemigroup}{4.1.5}{X8750A6837EF75CA2}
+\makelabel{numericalsgps:DegreesOfPrimitiveElementsOfNumericalSemigroup}{4.1.6}{X7A9B5AE782CAEA2F}
+\makelabel{numericalsgps:ShadedSetOfElementInNumericalSemigroup}{4.1.7}{X7C42DEB68285F2B8}
+\makelabel{numericalsgps:BinomialIdealOfNumericalSemigroup}{4.2.1}{X7E6BBAA7803DE7F3}
+\makelabel{numericalsgps:IsUniquelyPresented for numerical semigroups}{4.3.1}{X7C6F554486274CAE}
+\makelabel{numericalsgps:IsUniquelyPresentedNumericalSemigroup}{4.3.1}{X7C6F554486274CAE}
+\makelabel{numericalsgps:IsGeneric for numerical semigroups}{4.3.2}{X79C010537C838154}
+\makelabel{numericalsgps:IsGenericNumericalSemigroup}{4.3.2}{X79C010537C838154}
+\makelabel{numericalsgps:RemoveMinimalGeneratorFromNumericalSemigroup}{5.1.1}{X7C94611F7DD9E742}
+\makelabel{numericalsgps:AddSpecialGapOfNumericalSemigroup}{5.1.2}{X865EA8377D632F53}
+\makelabel{numericalsgps:Intersection for numerical semigroups}{5.2.1}{X875A8D2679153D4B}
+\makelabel{numericalsgps:IntersectionOfNumericalSemigroups}{5.2.1}{X875A8D2679153D4B}
+\makelabel{numericalsgps:QuotientOfNumericalSemigroup}{5.2.3}{X83CCE63C82F34C25}
+\makelabel{numericalsgps:MultipleOfNumericalSemigroup}{5.2.4}{X7BE8DD6884DE693F}
+\makelabel{numericalsgps:NumericalDuplication}{5.2.5}{X7F395079839BBE9D}
+\makelabel{numericalsgps:AsNumericalDuplication}{5.2.6}{X8176CEB4829084B4}
+\makelabel{numericalsgps:InductiveNumericalSemigroup}{5.2.7}{X7DCEC67A82130CD8}
+\makelabel{numericalsgps:DilatationOfNumericalSemigroup}{5.2.8}{X81632C597E3E3DFE}
+\makelabel{numericalsgps:OverSemigroups of a numerical semigroup}{5.3.1}{X7FBA34637ADAFEDA}
+\makelabel{numericalsgps:OverSemigroupsNumericalSemigroup}{5.3.1}{X7FBA34637ADAFEDA}
+\makelabel{numericalsgps:NumericalSemigroupsWithFrobeniusNumberFG}{5.4.1}{X81759C3482B104D6}
+\makelabel{numericalsgps:NumericalSemigroupsWithFrobeniusNumberAndMultiplicity}{5.4.2}{X7DB3994B872C4940}
+\makelabel{numericalsgps:NumericalSemigroupsWithFrobeniusNumber}{5.4.3}{X87369D567AA6DBA0}
+\makelabel{numericalsgps:NumericalSemigroupsWithFrobeniusNumberPC}{5.4.4}{X80CACB287B4609E1}
+\makelabel{numericalsgps:NumericalSemigroupsWithMaxPrimitiveAndMultiplicity}{5.5.1}{X7C17AB04877559B6}
+\makelabel{numericalsgps:NumericalSemigroupsWithMaxPrimitive}{5.5.2}{X875A8B337DFA01F0}
+\makelabel{numericalsgps:NumericalSemigroupsWithMaxPrimitivePC}{5.5.3}{X7DA1FA7780684019}
+\makelabel{numericalsgps:NumericalSemigroupsWithGenus}{5.6.1}{X86970F6A868DEA95}
+\makelabel{numericalsgps:NumericalSemigroupsWithGenusPC}{5.6.2}{X7B4F3B5E841E3853}
+\makelabel{numericalsgps:ForcedIntegersForPseudoFrobenius}{5.7.1}{X874B252180BD7EB4}
+\makelabel{numericalsgps:SimpleForcedIntegersForPseudoFrobenius}{5.7.2}{X87AAFFF9814E9BD2}
+\makelabel{numericalsgps:NumericalSemigroupsWithPseudoFrobeniusNumbers}{5.7.3}{X7D6775A57B800892}
+\makelabel{numericalsgps:ANumericalSemigroupWithPseudoFrobeniusNumbers}{5.7.4}{X862DBFA379D52E2C}
+\makelabel{numericalsgps:IsIrreducible for numerical semigroups}{6.1.1}{X83E8CC8F862D1FC0}
+\makelabel{numericalsgps:IsIrreducibleNumericalSemigroup}{6.1.1}{X83E8CC8F862D1FC0}
+\makelabel{numericalsgps:IsSymmetric for numerical semigroups}{6.1.2}{X7C381E277917B0ED}
+\makelabel{numericalsgps:IsSymmetricNumericalSemigroup}{6.1.2}{X7C381E277917B0ED}
+\makelabel{numericalsgps:IsPseudoSymmetric for numerical semigroups}{6.1.3}{X7EA0D85085C4B607}
+\makelabel{numericalsgps:IsPseudoSymmetricNumericalSemigroup}{6.1.3}{X7EA0D85085C4B607}
+\makelabel{numericalsgps:AnIrreducibleNumericalSemigroupWithFrobeniusNumber}{6.1.4}{X7C8AB03F7E0B71F0}
+\makelabel{numericalsgps:IrreducibleNumericalSemigroupsWithFrobeniusNumber}{6.1.5}{X78345A267ADEFBAB}
+\makelabel{numericalsgps:IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity}{6.1.6}{X87C2738C7AA109DC}
+\makelabel{numericalsgps:DecomposeIntoIrreducibles for numerical semigroup}{6.1.7}{X8753F78D7FD732E2}
+\makelabel{numericalsgps:AsGluingOfNumericalSemigroups}{6.2.1}{X848FCB49851D19B8}
+\makelabel{numericalsgps:IsCompleteIntersection}{6.2.2}{X7A0DF10F85F32194}
+\makelabel{numericalsgps:IsACompleteIntersectionNumericalSemigroup}{6.2.2}{X7A0DF10F85F32194}
+\makelabel{numericalsgps:CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber}{6.2.3}{X86350BCE7D047599}
+\makelabel{numericalsgps:IsFree}{6.2.4}{X7CD2A77778432E7B}
+\makelabel{numericalsgps:IsFreeNumericalSemigroup}{6.2.4}{X7CD2A77778432E7B}
+\makelabel{numericalsgps:FreeNumericalSemigroupsWithFrobeniusNumber}{6.2.5}{X86B4BA6A79F734A8}
+\makelabel{numericalsgps:IsTelescopic}{6.2.6}{X830D0E0F7B8C6284}
+\makelabel{numericalsgps:IsTelescopicNumericalSemigroup}{6.2.6}{X830D0E0F7B8C6284}
+\makelabel{numericalsgps:TelescopicNumericalSemigroupsWithFrobeniusNumber}{6.2.7}{X84475353846384E8}
+\makelabel{numericalsgps:IsUniversallyFree}{6.2.8}{X7A1C2C737BC1C4CE}
+\makelabel{numericalsgps:IsUniversallyFreeNumericalSemigroup}{6.2.8}{X7A1C2C737BC1C4CE}
+\makelabel{numericalsgps:IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity}{6.2.9}{X847CD0EF8452F771}
+\makelabel{numericalsgps:NumericalSemigroupsPlanarSingularityWithFrobeniusNumber}{6.2.10}{X8784D11578C912F2}
+\makelabel{numericalsgps:IsAperySetGammaRectangular}{6.2.11}{X80CAA1FA7F6FF4FD}
+\makelabel{numericalsgps:IsAperySetBetaRectangular}{6.2.12}{X7E6E262C7C421635}
+\makelabel{numericalsgps:IsAperySetAlphaRectangular}{6.2.13}{X86F52FB67F76D2CB}
+\makelabel{numericalsgps:AlmostSymmetricNumericalSemigroupsFromIrreducible}{6.3.1}{X7A81F31479DB5DF2}
+\makelabel{numericalsgps:AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType}{6.3.2}{X8788F6597DBC6D98}
+\makelabel{numericalsgps:IsAlmostSymmetric}{6.3.3}{X84C44C7A7D9270BB}
+\makelabel{numericalsgps:IsAlmostSymmetricNumericalSemigroup}{6.3.3}{X84C44C7A7D9270BB}
+\makelabel{numericalsgps:AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber}{6.3.4}{X7B0DF2FE7D00A9E0}
+\makelabel{numericalsgps:AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType}{6.3.5}{X85C4DA6E82E726D2}
+\makelabel{numericalsgps:IsGeneralizedGorenstein}{6.4.1}{X8221EC44802E5158}
+\makelabel{numericalsgps:IsNearlyGorenstein}{6.4.2}{X866E48B47D66CFF2}
+\makelabel{numericalsgps:NearlyGorensteinVectors}{6.4.3}{X78049FC380A0006E}
+\makelabel{numericalsgps:IsGeneralizedAlmostSymmetric}{6.4.4}{X83F13D6482F021B2}
+\makelabel{numericalsgps:IdealOfNumericalSemigroup}{7.1.1}{X78E5F44E81485C17}
+\makelabel{numericalsgps:IsIdealOfNumericalSemigroup}{7.1.2}{X85BD6FAD7EA3B5DD}
+\makelabel{numericalsgps:MinimalGenerators for ideal of numerical semigroup}{7.1.3}{X85144E0F791038AE}
+\makelabel{numericalsgps:MinimalGeneratingSystem for ideal of numerical semigroup}{7.1.3}{X85144E0F791038AE}
+\makelabel{numericalsgps:MinimalGeneratingSystemOfIdealOfNumericalSemigroup}{7.1.3}{X85144E0F791038AE}
+\makelabel{numericalsgps:Generators for ideal of numerical semigroup}{7.1.4}{X7A842A4385B73C63}
+\makelabel{numericalsgps:GeneratorsOfIdealOfNumericalSemigroup}{7.1.4}{X7A842A4385B73C63}
+\makelabel{numericalsgps:AmbientNumericalSemigroupOfIdeal}{7.1.5}{X81E445518529C175}
+\makelabel{numericalsgps:IsIntegral for ideal of numerical semigroup}{7.1.6}{X7B0343BF794AC7EA}
+\makelabel{numericalsgps:IsIntegralIdealOfNumericalSemigroup}{7.1.6}{X7B0343BF794AC7EA}
+\makelabel{numericalsgps:IsComplementOfIntegralIdeal}{7.1.7}{X80233A6F80CA0615}
+\makelabel{numericalsgps:IdealByDivisorClosedSet}{7.1.8}{X8774724085D3371D}
+\makelabel{numericalsgps:SmallElements for ideal of numerical semigroup}{7.1.9}{X7811E92487110941}
+\makelabel{numericalsgps:SmallElementsOfIdealOfNumericalSemigroup}{7.1.9}{X7811E92487110941}
+\makelabel{numericalsgps:Conductor for ideal of numerical semigroup}{7.1.10}{X7EDDC78883A98A6E}
+\makelabel{numericalsgps:ConductorOfIdealOfNumericalSemigroup}{7.1.10}{X7EDDC78883A98A6E}
+\makelabel{numericalsgps:FrobeniusNumber for ideal of numerical semigroup}{7.1.11}{X7A8AF91C7D1F1B4E}
+\makelabel{numericalsgps:FrobeniusNumberOfIdealOfNumericalSemigroup}{7.1.11}{X7A8AF91C7D1F1B4E}
+\makelabel{numericalsgps:PseudoFrobenius for ideal of numerical semigroup}{7.1.12}{X805149CA847F6461}
+\makelabel{numericalsgps:PseudoFrobeniusOfIdealOfNumericalSemigroup for ideal of numerical semigroup}{7.1.12}{X805149CA847F6461}
+\makelabel{numericalsgps:Type for ideal of numerical semigroup}{7.1.13}{X7D4C7C997EEAADF7}
+\makelabel{numericalsgps:Minimum minimum of ideal of numerical semigroup}{7.1.14}{X821919B47D3D191A}
+\makelabel{numericalsgps:BelongsToIdealOfNumericalSemigroup}{7.1.15}{X87508E7A7CFB0B20}
+\makelabel{numericalsgps:ElementNumberIdealOfNumericalSemigroup}{7.1.16}{X83D0996D811A35C6}
+\makelabel{numericalsgps:NumberElementIdealOfNumericalSemigroup}{7.1.17}{X7B8B46CF7E81513D}
+\makelabel{numericalsgps:Iterator for ideals of numerical semigroups}{7.1.20}{X7A55BD4D82580537}
+\makelabel{numericalsgps:SumIdealsOfNumericalSemigroup}{7.1.21}{X7B39610D7AD5A654}
+\makelabel{numericalsgps:MultipleOfIdealOfNumericalSemigroup}{7.1.22}{X857FE5C57EE98F5E}
+\makelabel{numericalsgps:SubtractIdealsOfNumericalSemigroup}{7.1.23}{X78743CE2845B5860}
+\makelabel{numericalsgps:- for ideals of numerical semigroup}{7.1.23}{X78743CE2845B5860}
+\makelabel{numericalsgps:Difference for ideals of numerical semigroups}{7.1.24}{X8321A10885D2DEF8}
+\makelabel{numericalsgps:DifferenceOfIdealsOfNumericalSemigroup}{7.1.24}{X8321A10885D2DEF8}
+\makelabel{numericalsgps:TranslationOfIdealOfNumericalSemigroup}{7.1.25}{X803921F97BEDCA88}
+\makelabel{numericalsgps:Union for ideals of numerical semigroup}{7.1.26}{X7CD66453842CD0AD}
+\makelabel{numericalsgps:Intersection for ideals of numerical semigroups}{7.1.27}{X7B34033979009F64}
+\makelabel{numericalsgps:IntersectionIdealsOfNumericalSemigroup}{7.1.27}{X7B34033979009F64}
+\makelabel{numericalsgps:MaximalIdeal for numerical semigroups}{7.1.28}{X7D77F1BA7F22DA70}
+\makelabel{numericalsgps:MaximalIdealOfNumericalSemigroup}{7.1.28}{X7D77F1BA7F22DA70}
+\makelabel{numericalsgps:CanonicalIdeal for numerical semigroups}{7.1.29}{X85975C3C86C2BC53}
+\makelabel{numericalsgps:CanonicalIdealOfNumericalSemigroup}{7.1.29}{X85975C3C86C2BC53}
+\makelabel{numericalsgps:IsCanonicalIdeal}{7.1.30}{X7D15FA4C843A13B7}
+\makelabel{numericalsgps:IsCanonicalIdealOfNumericalSemigroup}{7.1.30}{X7D15FA4C843A13B7}
+\makelabel{numericalsgps:IsAlmostCanonicalIdeal}{7.1.31}{X829C9685798BB553}
+\makelabel{numericalsgps:TraceIdeal for numerical semigroups}{7.1.32}{X811B096B87636B8E}
+\makelabel{numericalsgps:TraceIdealOfNumericalSemigroup}{7.1.32}{X811B096B87636B8E}
+\makelabel{numericalsgps:TypeSequence for numerical semigroups}{7.1.33}{X7BB2A1B28139AA7E}
+\makelabel{numericalsgps:TypeSequenceOfNumericalSemigroup}{7.1.33}{X7BB2A1B28139AA7E}
+\makelabel{numericalsgps:IrreducibleZComponents}{7.2.1}{X7B83DEAC866B65E8}
+\makelabel{numericalsgps:DecomposeIntegralIdealIntoIrreducibles}{7.2.2}{X83E064C684FA534C}
+\makelabel{numericalsgps:HilbertFunctionOfIdealOfNumericalSemigroup}{7.3.1}{X82156F18807B00BF}
+\makelabel{numericalsgps:HilbertFunction}{7.3.2}{X81F1F3EB868D2117}
+\makelabel{numericalsgps:BlowUp for ideals of numerical semigroups}{7.3.3}{X79A1A22D8615BF78}
+\makelabel{numericalsgps:BlowUpIdealOfNumericalSemigroup}{7.3.3}{X79A1A22D8615BF78}
+\makelabel{numericalsgps:ReductionNumber for ideals of numerical semigroups}{7.3.4}{X7FAABCBF8299B12F}
+\makelabel{numericalsgps:ReductionNumberIdealNumericalSemigroup}{7.3.4}{X7FAABCBF8299B12F}
+\makelabel{numericalsgps:BlowUp for numerical semigroups}{7.3.5}{X7BFC52B7804542F5}
+\makelabel{numericalsgps:BlowUpOfNumericalSemigroup}{7.3.5}{X7BFC52B7804542F5}
+\makelabel{numericalsgps:LipmanSemigroup}{7.3.6}{X8799F0347FF0D510}
+\makelabel{numericalsgps:RatliffRushNumber}{7.3.7}{X7D6F643687DF8724}
+\makelabel{numericalsgps:RatliffRushNumberOfIdealOfNumericalSemigroup}{7.3.7}{X7D6F643687DF8724}
+\makelabel{numericalsgps:RatliffRushClosure}{7.3.8}{X82C2329380B9882D}
+\makelabel{numericalsgps:RatliffRushClosureOfIdealOfNumericalSemigroup}{7.3.8}{X82C2329380B9882D}
+\makelabel{numericalsgps:AsymptoticRatliffRushNumber}{7.3.9}{X79494A587A549E15}
+\makelabel{numericalsgps:AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup}{7.3.9}{X79494A587A549E15}
+\makelabel{numericalsgps:MultiplicitySequence}{7.3.10}{X8344B30D7EDE3B04}
+\makelabel{numericalsgps:MultiplicitySequenceOfNumericalSemigroup}{7.3.10}{X8344B30D7EDE3B04}
+\makelabel{numericalsgps:MicroInvariants}{7.3.11}{X87AC917578976B1E}
+\makelabel{numericalsgps:MicroInvariantsOfNumericalSemigroup}{7.3.11}{X87AC917578976B1E}
+\makelabel{numericalsgps:AperyList for ideals of numerical semigroups with respect to element}{7.3.12}{X805C984685EBC65C}
+\makelabel{numericalsgps:AperyListOfIdealOfNumericalSemigroupWRTElement}{7.3.12}{X805C984685EBC65C}
+\makelabel{numericalsgps:AperyList for ideals of numerical semigroups with respect to multiplicity}{7.3.13}{X82D2784B813C67D8}
+\makelabel{numericalsgps:AperyTable}{7.3.14}{X8244CCAE7D957F46}
+\makelabel{numericalsgps:AperyTableOfNumericalSemigroup}{7.3.14}{X8244CCAE7D957F46}
+\makelabel{numericalsgps:StarClosureOfIdealOfNumericalSemigroup}{7.3.15}{X7A16238D7EDB2AB3}
+\makelabel{numericalsgps:IsAdmissiblePattern}{7.4.1}{X865042FD7EBD15EE}
+\makelabel{numericalsgps:IsStronglyAdmissiblePattern}{7.4.2}{X7ED8306681407D0F}
+\makelabel{numericalsgps:AsIdealOfNumericalSemigroup}{7.4.3}{X799542C57E4E0D5E}
+\makelabel{numericalsgps:BoundForConductorOfImageOfPattern}{7.4.4}{X7F13F7CB7FBCF006}
+\makelabel{numericalsgps:ApplyPatternToIdeal}{7.4.5}{X7F4E597278AF31C8}
+\makelabel{numericalsgps:ApplyPatternToNumericalSemigroup}{7.4.6}{X7CFDFF6D7B9B595B}
+\makelabel{numericalsgps:IsAdmittedPatternByIdeal}{7.4.7}{X7F9232047F85C4D8}
+\makelabel{numericalsgps:IsAdmittedPatternByNumericalSemigroup}{7.4.8}{X827BB22083390CB9}
+\makelabel{numericalsgps:IsGradedAssociatedRingNumericalSemigroupCM}{7.5.1}{X7876199778D6B320}
+\makelabel{numericalsgps:IsGradedAssociatedRingNumericalSemigroupBuchsbaum}{7.5.2}{X782D557583CEDD04}
+\makelabel{numericalsgps:TorsionOfAssociatedGradedRingNumericalSemigroup}{7.5.3}{X78E57B9982F6E1DC}
+\makelabel{numericalsgps:BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup}{7.5.4}{X7E16B6947BE375B2}
+\makelabel{numericalsgps:IsGradedAssociatedRingNumericalSemigroupGorenstein}{7.5.5}{X7A5752C0836370FA}
+\makelabel{numericalsgps:IsGradedAssociatedRingNumericalSemigroupCI}{7.5.6}{X7800C5D68641E2B7}
+\makelabel{numericalsgps:IsMED}{8.1.1}{X783A0BE786C6BBBE}
+\makelabel{numericalsgps:IsMEDNumericalSemigroup}{8.1.1}{X783A0BE786C6BBBE}
+\makelabel{numericalsgps:MEDClosure}{8.1.2}{X7A6379A382D1FC20}
+\makelabel{numericalsgps:MEDNumericalSemigroupClosure}{8.1.2}{X7A6379A382D1FC20}
+\makelabel{numericalsgps:MinimalMEDGeneratingSystemOfMEDNumericalSemigroup}{8.1.3}{X848FD3FA7DB2DD4C}
+\makelabel{numericalsgps:IsArf}{8.2.1}{X86137A2A7D27F7EC}
+\makelabel{numericalsgps:IsArfNumericalSemigroup}{8.2.1}{X86137A2A7D27F7EC}
+\makelabel{numericalsgps:ArfClosure of numerical semigroup}{8.2.2}{X7E34F28585A2922B}
+\makelabel{numericalsgps:ArfNumericalSemigroupClosure}{8.2.2}{X7E34F28585A2922B}
+\makelabel{numericalsgps:ArfCharactersOfArfNumericalSemigroup}{8.2.3}{X83C242468796950D}
+\makelabel{numericalsgps:MinimalArfGeneratingSystemOfArfNumericalSemigroup}{8.2.3}{X83C242468796950D}
+\makelabel{numericalsgps:ArfNumericalSemigroupsWithFrobeniusNumber}{8.2.4}{X85CD144384FD55F3}
+\makelabel{numericalsgps:ArfNumericalSemigroupsWithFrobeniusNumberUpTo}{8.2.5}{X7E308CCF87448182}
+\makelabel{numericalsgps:ArfNumericalSemigroupsWithGenus}{8.2.6}{X80A13F7C81463AE5}
+\makelabel{numericalsgps:ArfNumericalSemigroupsWithGenusUpTo}{8.2.7}{X80EB35C17C83694D}
+\makelabel{numericalsgps:ArfNumericalSemigroupsWithGenusAndFrobeniusNumber}{8.2.8}{X7EE73B2F813F7E85}
+\makelabel{numericalsgps:ArfSpecialGaps}{8.2.9}{X7CC73F15831B06CE}
+\makelabel{numericalsgps:ArfOverSemigroups}{8.2.10}{X7DD2831683F870C5}
+\makelabel{numericalsgps:IsArfIrreducible}{8.2.11}{X8052BCE67CC2472F}
+\makelabel{numericalsgps:DecomposeIntoArfIrreducibles}{8.2.12}{X848E5559867D2D81}
+\makelabel{numericalsgps:IsSaturated}{8.3.1}{X81CCD9A88127E549}
+\makelabel{numericalsgps:IsSaturatedNumericalSemigroup}{8.3.1}{X81CCD9A88127E549}
+\makelabel{numericalsgps:SaturatedClosure for numerical semigroups}{8.3.2}{X78E6F00287A23FC1}
+\makelabel{numericalsgps:SaturatedNumericalSemigroupClosure}{8.3.2}{X78E6F00287A23FC1}
+\makelabel{numericalsgps:SaturatedNumericalSemigroupsWithFrobeniusNumber}{8.3.3}{X7CC07D997880E298}
+\makelabel{numericalsgps:FactorizationsIntegerWRTList}{9.1.1}{X8429AECF78EE7EAB}
+\makelabel{numericalsgps:Factorizations for an element in a numerical semigroup}{9.1.2}{X80EF105B82447F30}
+\makelabel{numericalsgps:Factorizations for a numerical semigroup and one of its elements}{9.1.2}{X80EF105B82447F30}
+\makelabel{numericalsgps:FactorizationsElementWRTNumericalSemigroup}{9.1.2}{X80EF105B82447F30}
+\makelabel{numericalsgps:FactorizationsElementListWRTNumericalSemigroup}{9.1.3}{X87C9E03C818AE1AA}
+\makelabel{numericalsgps:RClassesOfSetOfFactorizations}{9.1.4}{X813D2A3A83916A36}
+\makelabel{numericalsgps:LShapes}{9.1.5}{X7C5EED6D852C24DD}
+\makelabel{numericalsgps:LShapesOfNumericalSemigroup}{9.1.5}{X7C5EED6D852C24DD}
+\makelabel{numericalsgps:RFMatrices}{9.1.6}{X86062FCA85A51870}
+\makelabel{numericalsgps:DenumerantOfElementInNumericalSemigroup}{9.1.7}{X86D58E0084CFD425}
+\makelabel{numericalsgps:DenumerantFunction}{9.1.8}{X801DA4247A0BEBDA}
+\makelabel{numericalsgps:DenumerantIdeal denumerant ideal of a given number of factorizations in a numerical semigroup}{9.1.9}{X7D91A9377DAFAE35}
+\makelabel{numericalsgps:DenumerantIdeal denumerant ideal of semigroup with respect to a number of factorizations}{9.1.9}{X7D91A9377DAFAE35}
+\makelabel{numericalsgps:LengthsOfFactorizationsIntegerWRTList}{9.2.1}{X7D4CC092859AF81F}
+\makelabel{numericalsgps:LengthsOfFactorizationsElementWRTNumericalSemigroup}{9.2.2}{X7FDE4F94870951B1}
+\makelabel{numericalsgps:Elasticity for the factorizations of an element in a numerical semigroup}{9.2.3}{X860E461182B0C6F5}
+\makelabel{numericalsgps:Elasticity for the factorizations in a numerical semigroup of one of its elements}{9.2.3}{X860E461182B0C6F5}
+\makelabel{numericalsgps:ElasticityOfFactorizationsElementWRTNumericalSemigroup}{9.2.3}{X860E461182B0C6F5}
+\makelabel{numericalsgps:Elasticity for numerical semigroups}{9.2.4}{X7A2B01BB87086283}
+\makelabel{numericalsgps:ElasticityOfNumericalSemigroup}{9.2.4}{X7A2B01BB87086283}
+\makelabel{numericalsgps:DeltaSet for a set of integers}{9.2.5}{X79C953B5846F7057}
+\makelabel{numericalsgps:DeltaSetOfSetOfIntegers}{9.2.5}{X79C953B5846F7057}
+\makelabel{numericalsgps:DeltaSet for the factorizations of an element in a numerical semigroup}{9.2.6}{X7DB8BA5B7D6F81CB}
+\makelabel{numericalsgps:DeltaSet for the factorizations in a numerical semigroup of one of its elements}{9.2.6}{X7DB8BA5B7D6F81CB}
+\makelabel{numericalsgps:DeltaSetOfFactorizationsElementWRTNumericalSemigroup}{9.2.6}{X7DB8BA5B7D6F81CB}
+\makelabel{numericalsgps:DeltaSetPeriodicityBoundForNumericalSemigroup}{9.2.7}{X7A08CF05821DD2FC}
+\makelabel{numericalsgps:DeltaSetPeriodicityStartForNumericalSemigroup}{9.2.8}{X8123FC0E83ADEE45}
+\makelabel{numericalsgps:DeltaSetListUpToElementWRTNumericalSemigroup}{9.2.9}{X80B5DF908246BEB1}
+\makelabel{numericalsgps:DeltaSetUnionUpToElementWRTNumericalSemigroup}{9.2.10}{X85C6973E81583E8B}
+\makelabel{numericalsgps:DeltaSet for a numerical semigroup}{9.2.11}{X83B06062784E0FD9}
+\makelabel{numericalsgps:DeltaSetOfNumericalSemigroup}{9.2.11}{X83B06062784E0FD9}
+\makelabel{numericalsgps:MaximumDegree}{9.2.12}{X7AEFE27E87F51114}
+\makelabel{numericalsgps:MaximumDegreeOfElementWRTNumericalSemigroup}{9.2.12}{X7AEFE27E87F51114}
+\makelabel{numericalsgps:IsAdditiveNumericalSemigroup}{9.2.13}{X7F8B10C2870932B8}
+\makelabel{numericalsgps:MaximalDenumerant for element in numerical semigroup}{9.2.14}{X790308B07AB1A5C8}
+\makelabel{numericalsgps:MaximalDenumerant for a numerical semigroup and one of its elements}{9.2.14}{X790308B07AB1A5C8}
+\makelabel{numericalsgps:MaximalDenumerantOfElementInNumericalSemigroup}{9.2.14}{X790308B07AB1A5C8}
+\makelabel{numericalsgps:MaximalDenumerantOfSetOfFactorizations}{9.2.15}{X7DFC4ED0827761C1}
+\makelabel{numericalsgps:MaximalDenumerant}{9.2.16}{X811E5FFB83CCA4CE}
+\makelabel{numericalsgps:MaximalDenumerantOfNumericalSemigroup}{9.2.16}{X811E5FFB83CCA4CE}
+\makelabel{numericalsgps:Adjustment}{9.2.17}{X87F633D98003DE52}
+\makelabel{numericalsgps:AdjustmentOfNumericalSemigroup}{9.2.17}{X87F633D98003DE52}
+\makelabel{numericalsgps:CatenaryDegree for sets of factorizations}{9.3.1}{X86F9D7868100F6F9}
+\makelabel{numericalsgps:CatenaryDegreeOfSetOfFactorizations}{9.3.1}{X86F9D7868100F6F9}
+\makelabel{numericalsgps:AdjacentCatenaryDegreeOfSetOfFactorizations}{9.3.2}{X7DDB40BB84FF0042}
+\makelabel{numericalsgps:EqualCatenaryDegreeOfSetOfFactorizations}{9.3.3}{X86E0CAD28655839C}
+\makelabel{numericalsgps:MonotoneCatenaryDegreeOfSetOfFactorizations}{9.3.4}{X845D850F7812E176}
+\makelabel{numericalsgps:CatenaryDegree for element in a numerical semigroup}{9.3.5}{X797147AA796D1AFE}
+\makelabel{numericalsgps:CatenaryDegree for a numerical semigroup and one of its elements}{9.3.5}{X797147AA796D1AFE}
+\makelabel{numericalsgps:CatenaryDegreeOfElementInNumericalSemigroup}{9.3.5}{X797147AA796D1AFE}
+\makelabel{numericalsgps:TameDegree for sets of factorizations}{9.3.6}{X80D478418403E7CB}
+\makelabel{numericalsgps:TameDegreeOfSetOfFactorizations}{9.3.6}{X80D478418403E7CB}
+\makelabel{numericalsgps:CatenaryDegree for numerical semigroups}{9.3.7}{X785B83F17BEEA894}
+\makelabel{numericalsgps:CatenaryDegreeOfNumericalSemigroup}{9.3.7}{X785B83F17BEEA894}
+\makelabel{numericalsgps:DegreesOffEqualPrimitiveElementsOfNumericalSemigroup}{9.3.8}{X863E3EF986764267}
+\makelabel{numericalsgps:EqualCatenaryDegreeOfNumericalSemigroup}{9.3.9}{X780E2C737FA8B2A9}
+\makelabel{numericalsgps:DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup}{9.3.10}{X7E19683D7ADDE890}
+\makelabel{numericalsgps:MonotoneCatenaryDegreeOfNumericalSemigroup}{9.3.11}{X7E0458187956C395}
+\makelabel{numericalsgps:TameDegree for numerical semigroups}{9.3.12}{X809D97A179765EE6}
+\makelabel{numericalsgps:TameDegreeOfNumericalSemigroup}{9.3.12}{X809D97A179765EE6}
+\makelabel{numericalsgps:TameDegree for element in numerical semigroups}{9.3.13}{X7F7619BD79009B64}
+\makelabel{numericalsgps:TameDegree for numerical semigroups and one of its elements}{9.3.13}{X7F7619BD79009B64}
+\makelabel{numericalsgps:TameDegreeOfElementInNumericalSemigroup}{9.3.13}{X7F7619BD79009B64}
+\makelabel{numericalsgps:OmegaPrimality for an element in a numerical semigroup}{9.4.1}{X83075D7F837ACCB8}
+\makelabel{numericalsgps:OmegaPrimality for a numerical semigroup and one of its elements}{9.4.1}{X83075D7F837ACCB8}
+\makelabel{numericalsgps:OmegaPrimalityOfElementInNumericalSemigroup}{9.4.1}{X83075D7F837ACCB8}
+\makelabel{numericalsgps:OmegaPrimalityOfElementListInNumericalSemigroup}{9.4.2}{X85EB5E2581FFB8B2}
+\makelabel{numericalsgps:OmegaPrimality for a numerical semigroup}{9.4.3}{X80B48B7886A93FAC}
+\makelabel{numericalsgps:OmegaPrimalityOfNumericalSemigroup}{9.4.3}{X80B48B7886A93FAC}
+\makelabel{numericalsgps:BelongsToHomogenizationOfNumericalSemigroup}{9.5.1}{X856B689185C1F5D9}
+\makelabel{numericalsgps:FactorizationsInHomogenizationOfNumericalSemigroup}{9.5.2}{X85D03DBB7BA3B1FB}
+\makelabel{numericalsgps:HomogeneousBettiElementsOfNumericalSemigroup}{9.5.3}{X857CC7FF85C05318}
+\makelabel{numericalsgps:HomogeneousCatenaryDegreeOfNumericalSemigroup}{9.5.4}{X7DFFCAC87B3B632B}
+\makelabel{numericalsgps:MoebiusFunctionAssociatedToNumericalSemigroup}{9.6.1}{X853930E97F7F8A43}
+\makelabel{numericalsgps:MoebiusFunction}{9.6.2}{X7DF6825185C619AC}
+\makelabel{numericalsgps:DivisorsOfElementInNumericalSemigroup}{9.6.3}{X8771F39A7C7E031E}
+\makelabel{numericalsgps:NumericalSemigroupByNuSequence}{9.6.4}{X871CD69180783663}
+\makelabel{numericalsgps:NumericalSemigroupByTauSequence}{9.6.5}{X7F4CBFF17BBB37DE}
+\makelabel{numericalsgps:FengRaoDistance}{9.7.1}{X7939BCE08655B62D}
+\makelabel{numericalsgps:FengRaoNumber}{9.7.2}{X83F9F4C67D4535EF}
+\makelabel{numericalsgps:IsPure}{9.8.1}{X7B894ED27D38E4B5}
+\makelabel{numericalsgps:IsPureNumericalSemigroup}{9.8.1}{X7B894ED27D38E4B5}
+\makelabel{numericalsgps:IsMpure}{9.8.2}{X8400FB5D81EFB5FE}
+\makelabel{numericalsgps:IsMpureNumericalSemigroup}{9.8.2}{X8400FB5D81EFB5FE}
+\makelabel{numericalsgps:IsHomogeneousNumericalSemigroup}{9.8.3}{X80B707EE79990E1E}
+\makelabel{numericalsgps:IsSuperSymmetricNumericalSemigroup}{9.8.4}{X8630DEF77A350D76}
+\makelabel{numericalsgps:NumericalSemigroupPolynomial}{10.1.1}{X8391C8E782FBFA8A}
+\makelabel{numericalsgps:IsNumericalSemigroupPolynomial}{10.1.2}{X7F59E1167C1EE578}
+\makelabel{numericalsgps:NumericalSemigroupFromNumericalSemigroupPolynomial}{10.1.3}{X855497F77D13436F}
+\makelabel{numericalsgps:HilbertSeriesOfNumericalSemigroup}{10.1.4}{X780479F978D166B0}
+\makelabel{numericalsgps:GraeffePolynomial}{10.1.5}{X87C88E5C7B56931F}
+\makelabel{numericalsgps:IsCyclotomicPolynomial}{10.1.6}{X87A46B53815B158F}
+\makelabel{numericalsgps:IsKroneckerPolynomial}{10.1.7}{X7D9618ED83776B0B}
+\makelabel{numericalsgps:IsCyclotomicNumericalSemigroup}{10.1.8}{X8366BB727C496D31}
+\makelabel{numericalsgps:CyclotomicExponentSequence}{10.1.9}{X7B428FA2877EC733}
+\makelabel{numericalsgps:WittCoefficients}{10.1.10}{X7A33BA9B813A4070}
+\makelabel{numericalsgps:IsSelfReciprocalUnivariatePolynomial}{10.1.11}{X82C6355287C3BDD1}
+\makelabel{numericalsgps:SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity}{10.2.1}{X7FFF949A7BEEA912}
+\makelabel{numericalsgps:IsDeltaSequence}{10.2.2}{X834D6B1A7C421B9F}
+\makelabel{numericalsgps:DeltaSequencesWithFrobeniusNumber}{10.2.3}{X824ABFD680A34495}
+\makelabel{numericalsgps:CurveAssociatedToDeltaSequence}{10.2.4}{X87B819B886CA5A5C}
+\makelabel{numericalsgps:SemigroupOfValuesOfPlaneCurve}{10.2.5}{X7E2C3E9A7DE7A078}
+\makelabel{numericalsgps:SemigroupOfValuesOfCurveLocal}{10.2.6}{X7F88774F7812D30E}
+\makelabel{numericalsgps:SemigroupOfValuesOfCurveGlobal}{10.2.7}{X8597259279D1E793}
+\makelabel{numericalsgps:GeneratorsModuleGlobal}{10.2.8}{X7EE8528484642CEE}
+\makelabel{numericalsgps:GeneratorsKahlerDifferentials}{10.2.9}{X836D31F787641C22}
+\makelabel{numericalsgps:IsMonomialNumericalSemigroup}{10.2.10}{X7A04B8887F493733}
+\makelabel{numericalsgps:LegendrianGenericNumericalSemigroup}{10.3.1}{X7980A7CE79F09A89}
+\makelabel{numericalsgps:AffineSemigroup by generators}{11.1.1}{X7D7B03E17C8DBEA2}
+\makelabel{numericalsgps:AffineSemigroupByGenerators}{11.1.1}{X7D7B03E17C8DBEA2}
+\makelabel{numericalsgps:AffineSemigroupByEquations}{11.1.2}{X855C8667830AEDDC}
+\makelabel{numericalsgps:AffineSemigroup by equations}{11.1.2}{X855C8667830AEDDC}
+\makelabel{numericalsgps:AffineSemigroupByInequalities}{11.1.3}{X7846AD1081C14EF1}
+\makelabel{numericalsgps:AffineSemigroup by inequalities}{11.1.3}{X7846AD1081C14EF1}
+\makelabel{numericalsgps:AffineSemigroupByPMInequality}{11.1.4}{X7CC110D4798AAD99}
+\makelabel{numericalsgps:AffineSemigroup by pminequality}{11.1.4}{X7CC110D4798AAD99}
+\makelabel{numericalsgps:AffineSemigroupByGaps}{11.1.5}{X83F6DDB787E07771}
+\makelabel{numericalsgps:AffineSemigroup by gaps}{11.1.5}{X83F6DDB787E07771}
+\makelabel{numericalsgps:FiniteComplementIdealExtension}{11.1.6}{X7A3648D67CF81370}
+\makelabel{numericalsgps:Gaps for affine semigroup}{11.1.7}{X8361194C86AE807B}
+\makelabel{numericalsgps:Genus for affine semigroup}{11.1.8}{X867B27BD81104BEE}
+\makelabel{numericalsgps:PseudoFrobenius for affine semigroup}{11.1.9}{X80C3CD2082CE02F7}
+\makelabel{numericalsgps:SpecialGaps for affine semigroup}{11.1.10}{X82D42FCE81F20277}
+\makelabel{numericalsgps:Generators for affine semigroup}{11.1.11}{X84FDF85D7CDEDF3E}
+\makelabel{numericalsgps:GeneratorsOfAffineSemigroup}{11.1.11}{X84FDF85D7CDEDF3E}
+\makelabel{numericalsgps:MinimalGenerators for affine semigroup}{11.1.12}{X7ED1549486C251CA}
+\makelabel{numericalsgps:MinimalGeneratingSystem for affine semigroup}{11.1.12}{X7ED1549486C251CA}
+\makelabel{numericalsgps:RemoveMinimalGeneratorFromAffineSemigroup}{11.1.13}{X80516BCC78FDD45D}
+\makelabel{numericalsgps:AddSpecialGapOfAffineSemigroup}{11.1.14}{X7B78E02F7C50583F}
+\makelabel{numericalsgps:AsAffineSemigroup}{11.1.15}{X844806D97B4781B5}
+\makelabel{numericalsgps:IsAffineSemigroup}{11.1.16}{X7A2902207BAA3936}
+\makelabel{numericalsgps:IsAffineSemigroupByGenerators}{11.1.16}{X7A2902207BAA3936}
+\makelabel{numericalsgps:IsAffineSemigroupByEquations}{11.1.16}{X7A2902207BAA3936}
+\makelabel{numericalsgps:IsAffineSemigroupByInequalities}{11.1.16}{X7A2902207BAA3936}
+\makelabel{numericalsgps:BelongsToAffineSemigroup}{11.1.17}{X851788D781A13C50}
+\makelabel{numericalsgps:IsFull}{11.1.18}{X8607B621833FAECB}
+\makelabel{numericalsgps:IsFullAffineSemigroup}{11.1.18}{X8607B621833FAECB}
+\makelabel{numericalsgps:HilbertBasisOfSystemOfHomogeneousEquations}{11.1.19}{X7D4D017A79AD98E2}
+\makelabel{numericalsgps:HilbertBasisOfSystemOfHomogeneousInequalities}{11.1.20}{X825B1CD37B0407A6}
+\makelabel{numericalsgps:EquationsOfGroupGeneratedBy}{11.1.21}{X8307A0597864B098}
+\makelabel{numericalsgps:BasisOfGroupGivenByEquations}{11.1.22}{X7A1CE5A98425CEA1}
+\makelabel{numericalsgps:GluingOfAffineSemigroups}{11.2.1}{X7FE3B3C380641DDC}
+\makelabel{numericalsgps:CircuitsOfKernelCongruence}{11.3.1}{X795EEE4481E0497C}
+\makelabel{numericalsgps:PrimitiveRelationsOfKernelCongruence}{11.3.2}{X78B04C198258D3F8}
+\makelabel{numericalsgps:GeneratorsOfKernelCongruence}{11.3.3}{X7EE005267DEBC1DE}
+\makelabel{numericalsgps:CanonicalBasisOfKernelCongruence}{11.3.4}{X7AD2271E84F705D3}
+\makelabel{numericalsgps:GraverBasis}{11.3.5}{X7C3546477E07A1EA}
+\makelabel{numericalsgps:MinimalPresentation for affine semigroup}{11.3.6}{X80A7BD7478D8A94A}
+\makelabel{numericalsgps:MinimalPresentationOfAffineSemigroup}{11.3.6}{X80A7BD7478D8A94A}
+\makelabel{numericalsgps:BettiElements of affine semigroup}{11.3.7}{X86BCBD32781EBC2D}
+\makelabel{numericalsgps:BettiElementsOfAffineSemigroup}{11.3.7}{X86BCBD32781EBC2D}
+\makelabel{numericalsgps:ShadedSetOfElementInAffineSemigroup}{11.3.8}{X7C1B355F83A55285}
+\makelabel{numericalsgps:IsGeneric for affine semigroups}{11.3.9}{X81CA53DA8216DC82}
+\makelabel{numericalsgps:IsGenericAffineSemigroup}{11.3.9}{X81CA53DA8216DC82}
+\makelabel{numericalsgps:IsUniquelyPresented for affine semigroups}{11.3.10}{X79EC6F7583B0CBDD}
+\makelabel{numericalsgps:IsUniquelyPresentedAffineSemigroup}{11.3.10}{X79EC6F7583B0CBDD}
+\makelabel{numericalsgps:DegreesOfPrimitiveElementsOfAffineSemigroup}{11.3.11}{X7DCAFC5F7F74F3CB}
+\makelabel{numericalsgps:FactorizationsVectorWRTList}{11.4.1}{X8780C7E5830B9AE2}
+\makelabel{numericalsgps:Factorizations for an element in an affine semigroup}{11.4.2}{X820A0D06857C4EF5}
+\makelabel{numericalsgps:Factorizations}{11.4.2}{X820A0D06857C4EF5}
+\makelabel{numericalsgps:Elasticity for the factorizations of an element in an affine semigroup}{11.4.3}{X7F394FA67BE5151B}
+\makelabel{numericalsgps:Elasticity for the factorizations in an affine semigroup of one of its elements}{11.4.3}{X7F394FA67BE5151B}
+\makelabel{numericalsgps:ElasticityOfFactorizationsElementWRTAffineSemigroup}{11.4.3}{X7F394FA67BE5151B}
+\makelabel{numericalsgps:Elasticity for affine semigroups}{11.4.4}{X819CDBAA84DB7E83}
+\makelabel{numericalsgps:ElasticityOfAffineSemigroup}{11.4.4}{X819CDBAA84DB7E83}
+\makelabel{numericalsgps:DeltaSet for an affine semigroup}{11.4.5}{X839549448300AD26}
+\makelabel{numericalsgps:DeltaSetOfAffineSemigroup}{11.4.5}{X839549448300AD26}
+\makelabel{numericalsgps:CatenaryDegree for affine semigroups}{11.4.6}{X80742F2F7DECDB4C}
+\makelabel{numericalsgps:CatenaryDegreeOfAffineSemigroup}{11.4.6}{X80742F2F7DECDB4C}
+\makelabel{numericalsgps:EqualCatenaryDegreeOfAffineSemigroup}{11.4.7}{X7EADD306875FCBE6}
+\makelabel{numericalsgps:HomogeneousCatenaryDegreeOfAffineSemigroup}{11.4.8}{X84FE571A7E9E1AE9}
+\makelabel{numericalsgps:MonotoneCatenaryDegreeOfAffineSemigroup}{11.4.9}{X8510C1527F2FE18E}
+\makelabel{numericalsgps:TameDegree for affine semigroups}{11.4.10}{X8457595E7AA542E6}
+\makelabel{numericalsgps:TameDegreeOfAffineSemigroup}{11.4.10}{X8457595E7AA542E6}
+\makelabel{numericalsgps:OmegaPrimality for an element in an affine semigroup}{11.4.11}{X850790EE8442FD7D}
+\makelabel{numericalsgps:OmegaPrimality for an affine semigroup and one of its elements}{11.4.11}{X850790EE8442FD7D}
+\makelabel{numericalsgps:OmegaPrimalityOfElementInAffineSemigroup}{11.4.11}{X850790EE8442FD7D}
+\makelabel{numericalsgps:OmegaPrimality for an affine semigroup}{11.4.12}{X7A3571E187D0FCDE}
+\makelabel{numericalsgps:OmegaPrimalityOfAffineSemigroup}{11.4.12}{X7A3571E187D0FCDE}
+\makelabel{numericalsgps:IdealOfAffineSemigroup}{11.5.1}{X85775D4E7B9C7DAB}
+\makelabel{numericalsgps:IsIdealOfAffineSemigroup}{11.5.2}{X82A647B27FDFE49B}
+\makelabel{numericalsgps:MinimalGenerators for ideal of an affine semigroup}{11.5.3}{X7F16A5A27CBB7B93}
+\makelabel{numericalsgps:Generators for ideal of an affine semigroup}{11.5.4}{X8086C1EE7EAAB33D}
+\makelabel{numericalsgps:AmbientAffineSemigroupOfIdeal}{11.5.5}{X82D18D7B877582B0}
+\makelabel{numericalsgps:IsIntegral for ideals of affine semigroups}{11.5.6}{X7B0FBEC285F54B8D}
+\makelabel{numericalsgps:IsIntegralIdealOfAffineSemigroup}{11.5.6}{X7B0FBEC285F54B8D}
+\makelabel{numericalsgps:BelongsToIdealOfAffineSemigroup}{11.5.7}{X7F00912C853AA83D}
+\makelabel{numericalsgps:SumIdealsOfAffinSemigroup}{11.5.8}{X83A4392281981911}
+\makelabel{numericalsgps:MultipleOfIdealOfAffineSemigroup}{11.5.9}{X7D056A0C7F868209}
+\makelabel{numericalsgps:TranslationOfIdealOfAffineSemigroup}{11.5.10}{X788264A27ACD6AB5}
+\makelabel{numericalsgps:UnionIdealsOfAffineSemigroup}{11.5.11}{X7880F29982B559F2}
+\makelabel{numericalsgps:Union for ideals of affine semigroup}{11.5.11}{X7880F29982B559F2}
+\makelabel{numericalsgps:Intersection for ideals of affine semigroups}{11.5.12}{X7ED03363783D8FCD}
+\makelabel{numericalsgps:IntersectionIdealsOfAffineSemigroup}{11.5.12}{X7ED03363783D8FCD}
+\makelabel{numericalsgps:MaximalIdeal for affine semigroups}{11.5.13}{X79ECACE4793A6B00}
+\makelabel{numericalsgps:IsGoodSemigroup}{12.1.1}{X79E86DEE79281BF2}
+\makelabel{numericalsgps:NumericalSemigroupDuplication}{12.1.2}{X82A8863E78650FC4}
+\makelabel{numericalsgps:AmalgamationOfNumericalSemigroups}{12.1.3}{X873FE7B37A747247}
+\makelabel{numericalsgps:CartesianProductOfNumericalSemigroups}{12.1.4}{X855341C57F43DB72}
+\makelabel{numericalsgps:GoodSemigroup}{12.1.5}{X7856241678224958}
+\makelabel{numericalsgps:BelongsToGoodSemigroup}{12.2.1}{X79EBBF6D7A2C9A12}
+\makelabel{numericalsgps:Conductor for good semigroups}{12.2.2}{X78A2A60481EE02E7}
+\makelabel{numericalsgps:ConductorOfGoodSemigroup}{12.2.2}{X78A2A60481EE02E7}
+\makelabel{numericalsgps:Multiplicity for good semigroups}{12.2.3}{X7B2F716B7985872B}
+\makelabel{numericalsgps:IsLocal for good semigroups}{12.2.4}{X792BCCF87CF63122}
+\makelabel{numericalsgps:SmallElements for good semigroup}{12.2.5}{X836AB83682858A11}
+\makelabel{numericalsgps:SmallElementsOfGoodSemigroup}{12.2.5}{X836AB83682858A11}
+\makelabel{numericalsgps:RepresentsSmallElementsOfGoodSemigroup}{12.2.6}{X82D40159783F0D48}
+\makelabel{numericalsgps:GoodSemigroupBySmallElements}{12.2.7}{X7E538585815C94D0}
+\makelabel{numericalsgps:MaximalElementsOfGoodSemigroup}{12.2.8}{X83F444E586D96723}
+\makelabel{numericalsgps:IrreducibleMaximalElementsOfGoodSemigroup}{12.2.9}{X8503AC767A90C2BD}
+\makelabel{numericalsgps:GoodSemigroupByMaximalElements}{12.2.10}{X78B456D27856761F}
+\makelabel{numericalsgps:MinimalGoodGenerators}{12.2.11}{X8742875C836C9488}
+\makelabel{numericalsgps:MinimalGoodGeneratingSystemOfGoodSemigroup}{12.2.11}{X8742875C836C9488}
+\makelabel{numericalsgps:ProjectionOfAGoodSemigroup}{12.2.12}{X806865CB794CAC5D}
+\makelabel{numericalsgps:Genus for good semigroup}{12.2.13}{X7D70CD958333D49B}
+\makelabel{numericalsgps:GenusOfGoodSemigroup}{12.2.13}{X7D70CD958333D49B}
+\makelabel{numericalsgps:Length for good semigroup}{12.2.14}{X81BD57ED80145EB0}
+\makelabel{numericalsgps:LengthOfGoodSemigroup}{12.2.14}{X81BD57ED80145EB0}
+\makelabel{numericalsgps:AperySetOfGoodSemigroup}{12.2.15}{X809E0C077A613806}
+\makelabel{numericalsgps:StratifiedAperySetOfGoodSemigroup}{12.2.16}{X7B234A537F0C0AEF}
+\makelabel{numericalsgps:IsSymmetric for good semigroups}{12.3.1}{X85A0D9C485431828}
+\makelabel{numericalsgps:IsSymmetricGoodSemigroup}{12.3.1}{X85A0D9C485431828}
+\makelabel{numericalsgps:ArfClosure of good semigroup}{12.4.1}{X87248BD481228F36}
+\makelabel{numericalsgps:ArfGoodSemigroupClosure}{12.4.1}{X87248BD481228F36}
+\makelabel{numericalsgps:GoodIdeal}{12.5.1}{X843CA9D5874A33F2}
+\makelabel{numericalsgps:GoodGeneratingSystemOfGoodIdeal}{12.5.2}{X7E4FC6DB794992E0}
+\makelabel{numericalsgps:AmbientGoodSemigroupOfGoodIdeal}{12.5.3}{X82D384397EE5CAC4}
+\makelabel{numericalsgps:MinimalGoodGeneratingSystemOfGoodIdeal}{12.5.4}{X84636A127ECEDA24}
+\makelabel{numericalsgps:BelongsToGoodIdeal}{12.5.5}{X797999937E4E1E2B}
+\makelabel{numericalsgps:SmallElements for good ideal}{12.5.6}{X842F3CE07E893949}
+\makelabel{numericalsgps:SmallElementsOfGoodIdeal}{12.5.6}{X842F3CE07E893949}
+\makelabel{numericalsgps:CanonicalIdealOfGoodSemigroup}{12.5.7}{X7DA7AE32837CC1C7}
+\makelabel{numericalsgps:AbsoluteIrreduciblesOfGoodSemigroup}{12.5.8}{X7DC7A4B57BC2E55C}
+\makelabel{numericalsgps:TracksOfGoodSemigroup}{12.5.9}{X87AB3B09857B383A}
+\makelabel{numericalsgps:NumSgpsUse4ti2}{13.1.1}{X8736665E7CBEAB20}
+\makelabel{numericalsgps:NumSgpsUse4ti2gap}{13.1.2}{X875001717A8CF032}
+\makelabel{numericalsgps:NumSgpsUseNormalize}{13.1.3}{X875040237A692C3C}
+\makelabel{numericalsgps:NumSgpsUseSingular}{13.1.4}{X7CD12ADD78089CBE}
+\makelabel{numericalsgps:NumSgpsUseSingularInterface}{13.1.5}{X7F7699A9829940C2}
+\makelabel{numericalsgps:DotBinaryRelation}{14.1.1}{X7FEF6EC77E489886}
+\makelabel{numericalsgps:HasseDiagramOfNumericalSemigroup}{14.1.2}{X868991B084E42CE9}
+\makelabel{numericalsgps:HasseDiagramOfBettiElementsOfNumericalSemigroup}{14.1.3}{X832901FF85EB8F1C}
+\makelabel{numericalsgps:HasseDiagramOfAperyListOfNumericalSemigroup}{14.1.4}{X8050862F79EA9620}
+\makelabel{numericalsgps:DotTreeOfGluingsOfNumericalSemigroup}{14.1.5}{X7F62870F8652EDE6}
+\makelabel{numericalsgps:DotOverSemigroupsNumericalSemigroup}{14.1.6}{X7F43955582F472B6}
+\makelabel{numericalsgps:DotRosalesGraph for affine semigroup}{14.1.7}{X8195A2027B726448}
+\makelabel{numericalsgps:DotRosalesGraph for numerical semigroup}{14.1.7}{X8195A2027B726448}
+\makelabel{numericalsgps:DotFactorizationGraph}{14.1.8}{X7EC75F477D4F8CC3}
+\makelabel{numericalsgps:DotEliahouGraph}{14.1.9}{X83F1423980D2AEA4}
+\makelabel{numericalsgps:SetDotNSEngine}{14.1.10}{X81F579B783CF4363}
+\makelabel{numericalsgps:DotSplash}{14.1.11}{X7D1999A88268979F}
+\makelabel{numericalsgps:BezoutSequence}{A.1.1}{X86859C84858ECAF1}
+\makelabel{numericalsgps:IsBezoutSequence}{A.1.2}{X86C990AC7F40E8D0}
+\makelabel{numericalsgps:CeilingOfRational}{A.1.3}{X7C9DCBAF825CF7B2}
+\makelabel{numericalsgps:RepresentsPeriodicSubAdditiveFunction}{A.2.1}{X8466A4DC82F07579}
+\makelabel{numericalsgps:IsListOfIntegersNS}{A.2.2}{X7DFEDA6B87BB2E1F}
+\makelabel{numericalsgps:RandomNumericalSemigroup}{B.1.1}{X7CC477867B00AD13}
+\makelabel{numericalsgps:RandomListForNS}{B.1.2}{X79E73F8787741190}
+\makelabel{numericalsgps:RandomModularNumericalSemigroup}{B.1.3}{X82E22E9B843DF70F}
+\makelabel{numericalsgps:RandomProportionallyModularNumericalSemigroup}{B.1.4}{X8598F10A7CD4A135}
+\makelabel{numericalsgps:RandomListRepresentingSubAdditiveFunction}{B.1.5}{X8665F6B08036AFFB}
+\makelabel{numericalsgps:NumericalSemigroupWithRandomElementsAndFrobenius}{B.1.6}{X7B459C8C825194E4}
+\makelabel{numericalsgps:RandomNumericalSemigroupWithGenus}{B.1.7}{X78A2A0107CCBBB79}
+\makelabel{numericalsgps:RandomAffineSemigroupWithGenusAndDimension}{B.2.1}{X7FBFEE457E823E15}
+\makelabel{numericalsgps:RandomAffineSemigroup}{B.2.2}{X82569F0079599515}
+\makelabel{numericalsgps:RandomFullAffineSemigroup}{B.2.3}{X7F7BB53A7DF77ED5}
+\makelabel{numericalsgps:RandomGoodSemigroupWithFixedMultiplicity}{B.3.1}{X7F582A997B4B05EE}

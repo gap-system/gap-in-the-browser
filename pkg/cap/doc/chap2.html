@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (CAP) - Chapter 2: Objects</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chap15.html">15</a>  <a href="chap16.html">16</a>  <a href="chap17.html">17</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2_mj.html">[MathJax on]</a></p>
+<p><a id="X78497E777FB3E402" name="X78497E777FB3E402"></a></p>
+<div class="ChapSects"><a href="chap2.html#X78497E777FB3E402">2 <span class="Heading">Objects</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7ABD8E5A8408A301">2.1 <span class="Heading">Attributes for the Type of Objects</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C3B8C3D865002C8">2.1-1 CapCategory</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X81817A2C84F03D1D">2.2 <span class="Heading">Adding Objects to a Category</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X824AE09A81D2B184">2.2-1 Add</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X855C644A812F32B7">2.2-2 AddObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X87BD8BB88206D940">2.2-3 CreateCapCategoryObjectWithAttributes</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F5D75377B0D54A6">2.2-4 AsCapCategoryObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7FAE21CF84BD7986">2.2-5 AsPrimitiveValue</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X87FC6F8A78E599E0">2.3 <span class="Heading">Equalities for Objects</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8337569D81C0BBEC">2.3-1 IsEqualForObjects</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C34D06C7ABE563F">2.3-2 IsIsomorphicForObjects</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7D3407D68401C878">2.3-3 SomeIsomorphismBetweenObjects</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X86CCD70884952468">2.4 <span class="Heading">Categorical Properties of Objects</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X854468CF79122D57">2.4-1 IsBijectiveObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X849A94147D3446BE">2.4-2 IsProjective</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8788D5A27EC1F994">2.4-3 IsInjective</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7D3542EE7A8448A7">2.4-4 IsTerminal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X83F6095A80DCCDC3">2.4-5 IsInitial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X856FA5E084753312">2.4-6 IsZeroForObjects</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X824765AD78E027CC">2.4-7 IsZero</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X8332653E7EA2EB72">2.5 <span class="Heading">Random Objects</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X85A6C3687C46085F">2.5-1 RandomObjectByInteger</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7EEC27307C4B06E8">2.5-2 RandomObjectByList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7E0974E58188E6FB">2.5-3 RandomObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7AF3D62C7F8F40AE">2.5-4 RandomObject</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7DD668627932185C">2.6 <span class="Heading">Tool functions for caches</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7BAE9BBC874635CB">2.6-1 IsEqualForCacheForObjects</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X824C0CC579E8DD7F">2.7 <span class="Heading">Object constructors</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X825D050A8674D377">2.7-1 ObjectConstructor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C6745F27FBA23F7">2.7-2 /</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8521A36F7BBFF6BD">2.7-3 ObjectDatum</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7820B09C781A90A8">2.8 <span class="Heading">Well-Definedness of Objects</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F9A38A187D9ABFA">2.8-1 IsWellDefinedForObjects</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X866BE10883381E75">2.9 <span class="Heading">SetOfObjects</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8047E157804C680E">2.9-1 SetOfObjectsOfCategory</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7B77708881BFE682">2.9-2 SetOfObjects</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7EFAF5CD83C3298F">2.10 <span class="Heading">Projectives</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7FED5E898784C314">2.10-1 SomeProjectiveObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7D5951AA7EBD7750">2.10-2 EpimorphismFromSomeProjectiveObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X81F04D8186B94570">2.10-3 EpimorphismFromSomeProjectiveObjectWithGivenSomeProjectiveObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7BFFD7FE82DCB5F6">2.10-4 ProjectiveLift</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X87100AFB7A202D2F">2.11 <span class="Heading">Injectives</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C06E1807D8775AD">2.11-1 SomeInjectiveObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8502893C82A38864">2.11-2 MonomorphismIntoSomeInjectiveObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7A7C030382397A2B">2.11-3 MonomorphismIntoSomeInjectiveObjectWithGivenSomeInjectiveObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7CCBB0A384F37EC6">2.11-4 InjectiveColift</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7DEC418578FAA1C0">2.12 <span class="Heading">Simplified Objects</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7BA160B382F8D742">2.12-1 Simplify</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X85B54852792DEDD7">2.12-2 SimplifyObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X78C0D2CB867C5C90">2.12-3 SimplifyObject_IsoFromInputObject</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X835832A685F651C8">2.12-4 SimplifyObject_IsoToInputObject</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X814E7CE2792896ED">2.13 <span class="Heading">Dimensions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X824604E9876DDDC5">2.13-1 ProjectiveDimension</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X823062CF792E3359">2.13-2 InjectiveDimension</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Objects</span></h3>
+
+<p>Any GAP object which is IsCapCategoryObject can be added to a category and then becomes an object in this category. Any object can belong to one or no category. After a GAP object is added to the category, it knows which things can be computed in its category and to which category it belongs. It knows categorial properties and attributes, and the functions for existential quantifiers can be applied to the object.</p>
+
+<p><a id="X7ABD8E5A8408A301" name="X7ABD8E5A8408A301"></a></p>
+
+<h4>2.1 <span class="Heading">Attributes for the Type of Objects</span></h4>
+
+<p><a id="X7C3B8C3D865002C8" name="X7C3B8C3D865002C8"></a></p>
+
+<h5>2.1-1 CapCategory</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CapCategory</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a category</p>
+
+<p>The argument is an object <span class="Math">a</span>. The output is the category <span class="Math">\mathbf{C}</span> to which <span class="Math">a</span> was added.</p>
+
+<p><a id="X81817A2C84F03D1D" name="X81817A2C84F03D1D"></a></p>
+
+<h4>2.2 <span class="Heading">Adding Objects to a Category</span></h4>
+
+<p><a id="X824AE09A81D2B184" name="X824AE09A81D2B184"></a></p>
+
+<h5>2.2-1 Add</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Add</code>( <var class="Arg">category</var>, <var class="Arg">object</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Adds <var class="Arg">object</var> as an object to <var class="Arg">category</var>.</p>
+
+<p><a id="X855C644A812F32B7" name="X855C644A812F32B7"></a></p>
+
+<h5>2.2-2 AddObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AddObject</code>( <var class="Arg">category</var>, <var class="Arg">object</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Adds <var class="Arg">object</var> as an object to <var class="Arg">category</var>. If <var class="Arg">object</var> already lies in the filter <code class="code">IsCapCategoryObject</code>, the operation <code class="func">Add</code> (<a href="chap2.html#X824AE09A81D2B184"><span class="RefLink">2.2-1</span></a>) can be used instead.</p>
+
+<p><a id="X87BD8BB88206D940" name="X87BD8BB88206D940"></a></p>
+
+<h5>2.2-3 CreateCapCategoryObjectWithAttributes</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CreateCapCategoryObjectWithAttributes</code>( <var class="Arg">category</var>[, <var class="Arg">attribute1</var>, <var class="Arg">value1</var>, <var class="Arg">...</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: an object</p>
+
+<p>Creates an object in <var class="Arg">category</var> with the given attributes.</p>
+
+<p><a id="X7F5D75377B0D54A6" name="X7F5D75377B0D54A6"></a></p>
+
+<h5>2.2-4 AsCapCategoryObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsCapCategoryObject</code>( <var class="Arg">category</var>, <var class="Arg">value</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: an object</p>
+
+<p>EXPERIMENTAL: This specification might change any time without prior notice. Views <var class="Arg">value</var> as an object in <var class="Arg">category</var>.</p>
+
+<p><a id="X7FAE21CF84BD7986" name="X7FAE21CF84BD7986"></a></p>
+
+<h5>2.2-5 AsPrimitiveValue</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsPrimitiveValue</code>( <var class="Arg">object</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsInteger</code>( <var class="Arg">object</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsHomalgMatrix</code>( <var class="Arg">object</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a value</p>
+
+<p>EXPERIMENTAL: This specification might change any time without prior notice. Views an object obtained via <code class="func">AsCapCategoryObject</code> (<a href="chap2.html#X7F5D75377B0D54A6"><span class="RefLink">2.2-4</span></a>) as a primitive value again. Here, the word <em>primitive</em> means <em>primitive from the perspective of the category</em>. For example, from the perspective of an opposite category, objects of the underlying category are primitive values. The attribute is chosen according to the object datum type:</p>
+
+
+<ul>
+<li><p>For <code class="code">IsInt</code>, the attribute <code class="code">AsInteger</code> is used.</p>
+
+</li>
+<li><p>For <code class="code">IsHomalgMatrix</code>, the attribute <code class="code">AsHomalgMatrix</code> is used.</p>
+
+</li>
+</ul>
+<p>In all other cases or if no object datum type is given, the attribute <code class="code">AsPrimitiveValue</code> is used.</p>
+
+<p><a id="X87FC6F8A78E599E0" name="X87FC6F8A78E599E0"></a></p>
+
+<h4>2.3 <span class="Heading">Equalities for Objects</span></h4>
+
+<p><a id="X8337569D81C0BBEC" name="X8337569D81C0BBEC"></a></p>
+
+<h5>2.3-1 IsEqualForObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEqualForObjects</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The arguments are two objects <span class="Math">a</span> and <span class="Math">b</span>. The output is <code class="code">true</code> if <span class="Math">a = b</span>, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X7C34D06C7ABE563F" name="X7C34D06C7ABE563F"></a></p>
+
+<h5>2.3-2 IsIsomorphicForObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIsomorphicForObjects</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The arguments are two objects <span class="Math">a</span> and <span class="Math">b</span>. The output is <code class="code">true</code> if <span class="Math">a</span> and <span class="Math">b</span> are isomorphic, that is, if there exists an isomorphism <span class="Math">a \to b</span>, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X7D3407D68401C878" name="X7D3407D68401C878"></a></p>
+
+<h5>2.3-3 SomeIsomorphismBetweenObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SomeIsomorphismBetweenObjects</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an isomorphism in <span class="Math">\mathrm{Hom}(a,b)</span></p>
+
+<p>The arguments are two isomorphic objects <span class="Math">a</span> and <span class="Math">b</span>. The output is an isomorphism <span class="Math">a \to b</span>.</p>
+
+<p><a id="X86CCD70884952468" name="X86CCD70884952468"></a></p>
+
+<h4>2.4 <span class="Heading">Categorical Properties of Objects</span></h4>
+
+<p><a id="X854468CF79122D57" name="X854468CF79122D57"></a></p>
+
+<h5>2.4-1 IsBijectiveObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsBijectiveObject</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is an object <span class="Math">a</span>. The output is <code class="code">true</code> if <span class="Math">a</span> is a bijective object, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X849A94147D3446BE" name="X849A94147D3446BE"></a></p>
+
+<h5>2.4-2 IsProjective</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsProjective</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is an object <span class="Math">a</span>. The output is <code class="code">true</code> if <span class="Math">a</span> is a projective object, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X8788D5A27EC1F994" name="X8788D5A27EC1F994"></a></p>
+
+<h5>2.4-3 IsInjective</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsInjective</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is an object <span class="Math">a</span>. The output is <code class="code">true</code> if <span class="Math">a</span> is an injective object, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X7D3542EE7A8448A7" name="X7D3542EE7A8448A7"></a></p>
+
+<h5>2.4-4 IsTerminal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTerminal</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is an object <span class="Math">a</span> of a category <span class="Math">\mathbf{C}</span>. The output is <code class="code">true</code> if <span class="Math">a</span> is isomorphic to the terminal object of <span class="Math">\mathbf{C}</span>, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X83F6095A80DCCDC3" name="X83F6095A80DCCDC3"></a></p>
+
+<h5>2.4-5 IsInitial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsInitial</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is an object <span class="Math">a</span> of a category <span class="Math">\mathbf{C}</span>. The output is <code class="code">true</code> if <span class="Math">a</span> is isomorphic to the initial object of <span class="Math">\mathbf{C}</span>, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X856FA5E084753312" name="X856FA5E084753312"></a></p>
+
+<h5>2.4-6 IsZeroForObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsZeroForObjects</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is an object <span class="Math">a</span> of a category <span class="Math">\mathbf{C}</span>. The output is <code class="code">true</code> if <span class="Math">a</span> is isomorphic to the zero object of <span class="Math">\mathbf{C}</span>, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X824765AD78E027CC" name="X824765AD78E027CC"></a></p>
+
+<h5>2.4-7 IsZero</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsZero</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is an object <span class="Math">a</span> of a category <span class="Math">\mathbf{C}</span>. The output is <code class="code">true</code> if <span class="Math">a</span> is isomorphic to the zero object of <span class="Math">\mathbf{C}</span>, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X8332653E7EA2EB72" name="X8332653E7EA2EB72"></a></p>
+
+<h4>2.5 <span class="Heading">Random Objects</span></h4>
+
+<p>CAP provides two principal methods to generate random objects:</p>
+
+
+<ul>
+<li><p><em>By integers</em>: The integer is simply a parameter that can be used to create a random object.</p>
+
+</li>
+<li><p><em>By lists</em>: The list is used when creating a random object would need more than one parameter. Lists offer more flexibility at the expense of the genericity of the methods. This happens because lists that are valid as input in some category may be not valid for other categories. Hence, these operations are not thought to be used in generic categorical algorithms.</p>
+
+</li>
+</ul>
+<p><a id="X85A6C3687C46085F" name="X85A6C3687C46085F"></a></p>
+
+<h5>2.5-1 RandomObjectByInteger</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomObjectByInteger</code>( <var class="Arg">C</var>, <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an object in <span class="Math">C</span></p>
+
+<p>The arguments are a category <span class="Math">C</span> and an integer <span class="Math">n</span>. The output is a random object in <span class="Math">C</span>.</p>
+
+<p><a id="X7EEC27307C4B06E8" name="X7EEC27307C4B06E8"></a></p>
+
+<h5>2.5-2 RandomObjectByList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomObjectByList</code>( <var class="Arg">C</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an object in <span class="Math">C</span></p>
+
+<p>The arguments are a category <span class="Math">C</span> and a list <span class="Math">L</span>. The output is a random object in <span class="Math">C</span>.</p>
+
+<p><a id="X7E0974E58188E6FB" name="X7E0974E58188E6FB"></a></p>
+
+<h5>2.5-3 RandomObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomObject</code>( <var class="Arg">C</var>, <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>These are convenient methods and they, depending on the input, delegate to one of the above methods.</p>
+
+<p><a id="X7AF3D62C7F8F40AE" name="X7AF3D62C7F8F40AE"></a></p>
+
+<h5>2.5-4 RandomObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomObject</code>( <var class="Arg">C</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7DD668627932185C" name="X7DD668627932185C"></a></p>
+
+<h4>2.6 <span class="Heading">Tool functions for caches</span></h4>
+
+<p><a id="X7BAE9BBC874635CB" name="X7BAE9BBC874635CB"></a></p>
+
+<h5>2.6-1 IsEqualForCacheForObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEqualForCacheForObjects</code>( <var class="Arg">phi</var>, <var class="Arg">psi</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: true or false</p>
+
+<p>By default, CAP uses caches to store the values of Categorical operations. To get a value out of the cache, one needs to compare the input of a basic operation with its previous input. To compare objects in the category, IsEqualForCacheForObjects is used. By default, IsEqualForCacheForObjects falls back to IsEqualForCache (see ToolsForHomalg), which in turn defaults to recursive comparison for lists and <code class="code">IsIdenticalObj</code> in all other cases. If you add a function via <code class="code">AddIsEqualForCacheForObjects</code>, that function is used instead. A function <span class="Math">F: a,b \mapsto bool</span> is expected there. The output has to be true or false. Fail is not allowed in this context.</p>
+
+<p><a id="X824C0CC579E8DD7F" name="X824C0CC579E8DD7F"></a></p>
+
+<h4>2.7 <span class="Heading">Object constructors</span></h4>
+
+<p><a id="X825D050A8674D377" name="X825D050A8674D377"></a></p>
+
+<h5>2.7-1 ObjectConstructor</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ObjectConstructor</code>( <var class="Arg">C</var>, <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an object</p>
+
+<p>The arguments are a category <span class="Math">C</span> and an object datum <span class="Math">a</span> (type and semantics of the object datum depend on the category). The output is an object of <span class="Math">C</span> defined by <span class="Math">a</span>. Note that by default this CAP operation is not cached. You can change this behaviour by calling <code class="code">SetCachingToWeak( C, "ObjectConstructor" )</code> resp. <code class="code">SetCachingToCrisp( C, "ObjectConstructor" )</code>.</p>
+
+<p><a id="X7C6745F27FBA23F7" name="X7C6745F27FBA23F7"></a></p>
+
+<h5>2.7-2 /</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; /</code>( <var class="Arg">a</var>, <var class="Arg">C</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an object</p>
+
+<p>Shorthand for <code class="code">ObjectConstructor( C, a )</code>.</p>
+
+<p><a id="X8521A36F7BBFF6BD" name="X8521A36F7BBFF6BD"></a></p>
+
+<h5>2.7-3 ObjectDatum</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ObjectDatum</code>( <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: depends on the category</p>
+
+<p>The argument is a CAP category object <var class="Arg">obj</var>. The output is a datum which can be used to construct <var class="Arg">obj</var>, that is, <code class="code">IsEqualForObjects( </code><var class="Arg">obj</var><code class="code">, ObjectConstructor( CapCategory( </code><var class="Arg">obj</var><code class="code"> ), ObjectDatum( </code><var class="Arg">obj</var><code class="code"> ) ) )</code>. Note that by default this CAP operation is not cached. You can change this behaviour by calling <code class="code">SetCachingToWeak( C, "ObjectDatum" )</code> resp. <code class="code">SetCachingToCrisp( C, "ObjectDatum" )</code>.</p>
+
+<p><a id="X7820B09C781A90A8" name="X7820B09C781A90A8"></a></p>
+
+<h4>2.8 <span class="Heading">Well-Definedness of Objects</span></h4>
+
+<p><a id="X7F9A38A187D9ABFA" name="X7F9A38A187D9ABFA"></a></p>
+
+<h5>2.8-1 IsWellDefinedForObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsWellDefinedForObjects</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is an object <span class="Math">a</span>. The output is <code class="code">true</code> if <span class="Math">a</span> is well-defined, otherwise the output is <code class="code">false</code>.</p>
+
+<p><a id="X866BE10883381E75" name="X866BE10883381E75"></a></p>
+
+<h4>2.9 <span class="Heading">SetOfObjects</span></h4>
+
+<p><a id="X8047E157804C680E" name="X8047E157804C680E"></a></p>
+
+<h5>2.9-1 SetOfObjectsOfCategory</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetOfObjectsOfCategory</code>( <var class="Arg">C</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list of CAP category objects</p>
+
+<p>Return a duplicate free list of objects of the category <var class="Arg">C</var>. The ordering of the returned list must always be the same.</p>
+
+<p><a id="X7B77708881BFE682" name="X7B77708881BFE682"></a></p>
+
+<h5>2.9-2 SetOfObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetOfObjects</code>( <var class="Arg">C</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list of CAP category objects</p>
+
+<p>Return a duplicate free list of objects of the category <var class="Arg">C</var>. The ordering of the returned list must always be the same. The corresponding CAP operation is <code class="code">SetOfObjectsOfCategory</code>.</p>
+
+<p><a id="X7EFAF5CD83C3298F" name="X7EFAF5CD83C3298F"></a></p>
+
+<h4>2.10 <span class="Heading">Projectives</span></h4>
+
+<p>For a given object <span class="Math">A</span> in an abelian category having enough projectives, the following commands allow us to compute some projective object <span class="Math">P</span> together with an epimorphism <span class="Math">\pi: P \rightarrow A</span>.</p>
+
+<p><a id="X7FED5E898784C314" name="X7FED5E898784C314"></a></p>
+
+<h5>2.10-1 SomeProjectiveObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SomeProjectiveObject</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: an object</p>
+
+<p>The argument is an object <span class="Math">A</span>. The output is some projective object <span class="Math">P</span> for which there exists an epimorphism <span class="Math">\pi: P \rightarrow A</span>.</p>
+
+<p><a id="X7D5951AA7EBD7750" name="X7D5951AA7EBD7750"></a></p>
+
+<h5>2.10-2 EpimorphismFromSomeProjectiveObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EpimorphismFromSomeProjectiveObject</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a morphism in <span class="Math">\mathrm{Hom}(P,A)</span></p>
+
+<p>The argument is an object <span class="Math">A</span>. The output is an epimorphism <span class="Math">\pi: P \rightarrow A</span> with <span class="Math">P</span> a projective object that equals the output of <span class="Math">\mathrm{SomeProjectiveObject}(A)</span>.</p>
+
+<p><a id="X81F04D8186B94570" name="X81F04D8186B94570"></a></p>
+
+<h5>2.10-3 EpimorphismFromSomeProjectiveObjectWithGivenSomeProjectiveObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EpimorphismFromSomeProjectiveObjectWithGivenSomeProjectiveObject</code>( <var class="Arg">A</var>, <var class="Arg">P</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a morphism in <span class="Math">\mathrm{Hom}(P,A)</span></p>
+
+<p>The arguments are an object <span class="Math">A</span> and a projective object <span class="Math">P</span> that equals the output of <span class="Math">\mathrm{SomeProjectiveObject}(A)</span>. The output is an epimorphism <span class="Math">\pi: P \rightarrow A</span>.</p>
+
+<p><a id="X7BFFD7FE82DCB5F6" name="X7BFFD7FE82DCB5F6"></a></p>
+
+<h5>2.10-4 ProjectiveLift</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProjectiveLift</code>( <var class="Arg">pi</var>, <var class="Arg">epsilon</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a morphism in <span class="Math">\mathrm{Hom}(P,B)</span></p>
+
+<p>The arguments are a morphism <span class="Math">\pi: P \rightarrow A</span> with <span class="Math">P</span> a projective, and an epimorphism <span class="Math">\epsilon: B \rightarrow A</span>. The output is a morphism <span class="Math">\lambda: P \rightarrow B</span> such that <span class="Math">\epsilon \circ \lambda = \pi</span>.</p>
+
+<p><a id="X87100AFB7A202D2F" name="X87100AFB7A202D2F"></a></p>
+
+<h4>2.11 <span class="Heading">Injectives</span></h4>
+
+<p>For a given object <span class="Math">A</span> in an abelian category having enough injectives, the following commands allow us to compute some injective object <span class="Math">I</span> together with a monomorphism <span class="Math">\iota: A \rightarrow I</span>.</p>
+
+<p><a id="X7C06E1807D8775AD" name="X7C06E1807D8775AD"></a></p>
+
+<h5>2.11-1 SomeInjectiveObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SomeInjectiveObject</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: an object</p>
+
+<p>The argument is an object <span class="Math">A</span>. The output is some injective object <span class="Math">I</span> for which there exists a monomorphism <span class="Math">\iota: A \rightarrow I</span>.</p>
+
+<p><a id="X8502893C82A38864" name="X8502893C82A38864"></a></p>
+
+<h5>2.11-2 MonomorphismIntoSomeInjectiveObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonomorphismIntoSomeInjectiveObject</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a morphism in <span class="Math">\mathrm{Hom}(I,A)</span></p>
+
+<p>The argument is an object <span class="Math">A</span>. The output is a monomorphism <span class="Math">\iota: A \rightarrow I</span> with <span class="Math">I</span> an injective object that equals the output of <span class="Math">\mathrm{SomeInjectiveObject}(A)</span>.</p>
+
+<p><a id="X7A7C030382397A2B" name="X7A7C030382397A2B"></a></p>
+
+<h5>2.11-3 MonomorphismIntoSomeInjectiveObjectWithGivenSomeInjectiveObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonomorphismIntoSomeInjectiveObjectWithGivenSomeInjectiveObject</code>( <var class="Arg">A</var>, <var class="Arg">I</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a morphism in <span class="Math">\mathrm{Hom}(I,A)</span></p>
+
+<p>The arguments are an object <span class="Math">A</span> and an injective object <span class="Math">I</span> that equals the output of <span class="Math">\mathrm{SomeInjectiveObject}(A)</span>. The output is a monomorphism <span class="Math">\iota: A \rightarrow I</span>.</p>
+
+<p><a id="X7CCBB0A384F37EC6" name="X7CCBB0A384F37EC6"></a></p>
+
+<h5>2.11-4 InjectiveColift</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InjectiveColift</code>( <var class="Arg">iota</var>, <var class="Arg">beta</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a morphism in <span class="Math">\mathrm{Hom}(A,I)</span></p>
+
+<p>The arguments are a monomorphism <span class="Math">\iota: B \rightarrow A</span> and a morphism <span class="Math">\beta: B \rightarrow I</span> where <span class="Math">I</span> is an injective object. The output is a morphism <span class="Math">\lambda: A \rightarrow I</span> such that <span class="Math">\lambda \circ \iota = \beta</span>.</p>
+
+<p><a id="X7DEC418578FAA1C0" name="X7DEC418578FAA1C0"></a></p>
+
+<h4>2.12 <span class="Heading">Simplified Objects</span></h4>
+
+<p>Let <span class="Math">i</span> be a positive integer or <span class="Math">\infty</span>. For a given object <span class="Math">A</span>, an <span class="Math">i</span>-th simplified object of <span class="Math">A</span> consists of</p>
+
+
+<ul>
+<li><p>an object <span class="Math">A_i</span>,</p>
+
+</li>
+<li><p>an isomorphism <span class="Math">\iota_A^i: A \rightarrow A_i</span>.</p>
+
+</li>
+</ul>
+<p>The idea is that the greater the <span class="Math">i</span>, the "simpler" the <span class="Math">A_i</span> (but this could mean the harder the computation) with <span class="Math">\infty</span> as a possible value.</p>
+
+<p><a id="X7BA160B382F8D742" name="X7BA160B382F8D742"></a></p>
+
+<h5>2.12-1 Simplify</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Simplify</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: an object</p>
+
+<p>The argument is an object <span class="Math">A</span>. The output is a simplified object <span class="Math">A_{\infty}</span>.</p>
+
+<p><a id="X85B54852792DEDD7" name="X85B54852792DEDD7"></a></p>
+
+<h5>2.12-2 SimplifyObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimplifyObject</code>( <var class="Arg">A</var>, <var class="Arg">i</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an object</p>
+
+<p>The arguments are an object <span class="Math">A</span> and a positive integer <span class="Math">i</span> or <code class="code">infinity</code>. The output is a simplified object <span class="Math">A_i</span>.</p>
+
+<p><a id="X78C0D2CB867C5C90" name="X78C0D2CB867C5C90"></a></p>
+
+<h5>2.12-3 SimplifyObject_IsoFromInputObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimplifyObject_IsoFromInputObject</code>( <var class="Arg">A</var>, <var class="Arg">i</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a morphism in <span class="Math">\mathrm{Hom}(A,A_i)</span></p>
+
+<p>The arguments are an object <span class="Math">A</span> and a positive integer <span class="Math">i</span> or <code class="code">infinity</code>. The output is an isomorphism to a simplified object <span class="Math">\iota_A^i: A \rightarrow A_i</span>.</p>
+
+<p><a id="X835832A685F651C8" name="X835832A685F651C8"></a></p>
+
+<h5>2.12-4 SimplifyObject_IsoToInputObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimplifyObject_IsoToInputObject</code>( <var class="Arg">A</var>, <var class="Arg">i</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a morphism in <span class="Math">\mathrm{Hom}(A_i,A)</span></p>
+
+<p>The arguments are an object <span class="Math">A</span> and a positive integer <span class="Math">i</span> or <code class="code">infinity</code>. The output is an isomorphism from a simplified object <span class="Math">(\iota_A^i)^{-1}: A_i \rightarrow A</span> which is the inverse of the output of <code class="code">SimplifyObject_IsoFromInputObject</code>.</p>
+
+<p><a id="X814E7CE2792896ED" name="X814E7CE2792896ED"></a></p>
+
+<h4>2.13 <span class="Heading">Dimensions</span></h4>
+
+<p><a id="X824604E9876DDDC5" name="X824604E9876DDDC5"></a></p>
+
+<h5>2.13-1 ProjectiveDimension</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProjectiveDimension</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a nonnegative integer or infinity</p>
+
+<p>The argument is an object <span class="Math">A</span>. The output is a the projective dimension of <span class="Math">A</span>.</p>
+
+<p><a id="X823062CF792E3359" name="X823062CF792E3359"></a></p>
+
+<h5>2.13-2 InjectiveDimension</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InjectiveDimension</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a nonnegative integer or infinity</p>
+
+<p>The argument is an object <span class="Math">A</span>. The output is a the injective dimension of <span class="Math">A</span>.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chap15.html">15</a>  <a href="chap16.html">16</a>  <a href="chap17.html">17</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

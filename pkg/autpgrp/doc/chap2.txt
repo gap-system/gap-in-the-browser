@@ -1,0 +1,86 @@
+  
+  [1X2 [33X[0;0YThe automorphism group method[133X[101X
+  
+  
+  [1X2.1 [33X[0;0YThe automorphism group method[133X[101X
+  
+  [33X[0;0YThe  [5XAutPGrp[105X  package  installs  a method for [10XAutomorphismGroup[110X for a finite
+  [22Xp[122X-group  (see  also  Section [14X'Reference: Groups of Automorphisms'[114X in the [5XGAP[105X
+  Reference Manual).[133X
+  
+  [1X2.1-1 AutomorphismGroup[101X
+  
+  [33X[1;0Y[29X[2XAutomorphismGroup[102X( [3XG[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe automorphism group of [3XG[103X.[133X
+  
+  [33X[0;0YThe  input  is  a  finite  [22Xp[122X-group  [3XG[103X. If the filters [10XIsPGroup[110X, [10XIsFinite[110X and
+  [10XCanEasilyComputePcgs[110X  are  set and true for [3XG[103X, the method selection of [5XGAP[105X 4
+  invokes this algorithm.[133X
+  
+  [33X[0;0YThe  output  of  the  method  is an automorphism group, whose generators are
+  given  in  [10XGroupHomomorphismByImages[110X  format in terms of their action on the
+  underlying group [3XG[103X.[133X
+  
+  [1X2.1-2 InfoAutGrp[101X
+  
+  [33X[1;0Y[29X[2XInfoAutGrp[102X [32X info class[133X
+  
+  [33X[0;0YThis  is  a  [5XGAP[105X  [2XInfoClass[102X  ([14XReference:  InfoClass  for  a GAP package[114X). By
+  assigning an [10Xlevel[110X in the range 1 to 4 via[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28XSetInfoLevel(InfoAutGrp, level);[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0Yvarying  levels  of  information on the progress of the computation, will be
+  obtained.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("autpgrp", false);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XG := PcGroupCode(619031068735, 32);  # SmallGroup( 32, 15 );[127X[104X
+    [4X[28X<pc group of size 32 with 5 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel( InfoAutGrp, 1 );[127X[104X
+    [4X[25Xgap>[125X [27XAutomorphismGroup(G);[127X[104X
+    [4X[28X#I  step 1: 2^2 -- init automorphisms[128X[104X
+    [4X[28X#I  step 2: 2^2 -- aut grp has size 2[128X[104X
+    [4X[28X#I  step 3: 2^1 -- aut grp has size 32[128X[104X
+    [4X[28X#I  final step: convert[128X[104X
+    [4X[28X<group of size 64 with 6 generators>[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe algorithm proceeds by induction down the lower [22Xp[122X-central series of [10XG[110X and
+  the information corresponds to the steps of this induction. In the following
+  example we observe that the method also accepts permutation groups as input,
+  provided they satisfy the required filters.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XG := DihedralGroup( IsPermGroup, 2^5 );;[127X[104X
+    [4X[25Xgap>[125X [27XIsPGroup(G);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XCanEasilyComputePcgs(G);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsFinite(G);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XA := AutomorphismGroup(G);[127X[104X
+    [4X[28X#I  step 1: 2^2 -- init automorphisms[128X[104X
+    [4X[28X#I  step 2: 2^1 -- aut grp has size 2[128X[104X
+    [4X[28X#I  step 3: 2^1 -- aut grp has size 8[128X[104X
+    [4X[28X#I  step 4: 2^1 -- aut grp has size 32[128X[104X
+    [4X[28X#I  final step: convert[128X[104X
+    [4X[28X<group of size 128 with 7 generators>[128X[104X
+    [4X[25Xgap>[125X [27XA.1;[127X[104X
+    [4X[28XPcgs([ ( 2,16)( 3,15)( 4,14)( 5,13)( 6,12)( 7,11)( 8,10),[128X[104X
+    [4X[28X  ( 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16),[128X[104X
+    [4X[28X  ( 1, 3, 5, 7, 9,11,13,15)( 2, 4, 6, 8,10,12,14,16),[128X[104X
+    [4X[28X  ( 1, 5, 9,13)( 2, 6,10,14)( 3, 7,11,15)( 4, 8,12,16),[128X[104X
+    [4X[28X  ( 1, 9)( 2,10)( 3,11)( 4,12)( 5,13)( 6,14)( 7,15)( 8,16) ]) ->[128X[104X
+    [4X[28X[ ( 1, 2)( 3,16)( 4,15)( 5,14)( 6,13)( 7,12)( 8,11)( 9,10),[128X[104X
+    [4X[28X  ( 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16),[128X[104X
+    [4X[28X  ( 1, 3, 5, 7, 9,11,13,15)( 2, 4, 6, 8,10,12,14,16),[128X[104X
+    [4X[28X  ( 1, 5, 9,13)( 2, 6,10,14)( 3, 7,11,15)( 4, 8,12,16),[128X[104X
+    [4X[28X  ( 1, 9)( 2,10)( 3,11)( 4,12)( 5,13)( 6,14)( 7,15)( 8,16) ][128X[104X
+    [4X[25Xgap>[125X [27XOrder(A.1);[127X[104X
+    [4X[28X16[128X[104X
+  [4X[32X[104X
+  

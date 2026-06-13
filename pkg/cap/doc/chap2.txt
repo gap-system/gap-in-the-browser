@@ -1,0 +1,436 @@
+  
+  [1X2 [33X[0;0YObjects[133X[101X
+  
+  [33X[0;0YAny  GAP  object which is IsCapCategoryObject can be added to a category and
+  then  becomes an object in this category. Any object can belong to one or no
+  category. After a GAP object is added to the category, it knows which things
+  can  be  computed in its category and to which category it belongs. It knows
+  categorial  properties  and  attributes,  and  the functions for existential
+  quantifiers can be applied to the object.[133X
+  
+  
+  [1X2.1 [33X[0;0YAttributes for the Type of Objects[133X[101X
+  
+  [1X2.1-1 CapCategory[101X
+  
+  [33X[1;0Y[29X[2XCapCategory[102X( [3Xa[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya category[133X
+  
+  [33X[0;0YThe  argument is an object [23Xa[123X. The output is the category [23X\mathbf{C}[123X to which
+  [23Xa[123X was added.[133X
+  
+  
+  [1X2.2 [33X[0;0YAdding Objects to a Category[133X[101X
+  
+  [1X2.2-1 Add[101X
+  
+  [33X[1;0Y[29X[2XAdd[102X( [3Xcategory[103X, [3Xobject[103X ) [32X operation[133X
+  
+  [33X[0;0YAdds [3Xobject[103X as an object to [3Xcategory[103X.[133X
+  
+  [1X2.2-2 AddObject[101X
+  
+  [33X[1;0Y[29X[2XAddObject[102X( [3Xcategory[103X, [3Xobject[103X ) [32X operation[133X
+  
+  [33X[0;0YAdds  [3Xobject[103X  as an object to [3Xcategory[103X. If [3Xobject[103X already lies in the filter
+  [10XIsCapCategoryObject[110X, the operation [2XAdd[102X ([14X2.2-1[114X) can be used instead.[133X
+  
+  [1X2.2-3 CreateCapCategoryObjectWithAttributes[101X
+  
+  [33X[1;0Y[29X[2XCreateCapCategoryObjectWithAttributes[102X( [3Xcategory[103X[, [3Xattribute1[103X, [3Xvalue1[103X, [3X...[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YCreates an object in [3Xcategory[103X with the given attributes.[133X
+  
+  [1X2.2-4 AsCapCategoryObject[101X
+  
+  [33X[1;0Y[29X[2XAsCapCategoryObject[102X( [3Xcategory[103X, [3Xvalue[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YEXPERIMENTAL: This specification might change any time without prior notice.
+  Views [3Xvalue[103X as an object in [3Xcategory[103X.[133X
+  
+  [1X2.2-5 AsPrimitiveValue[101X
+  
+  [33X[1;0Y[29X[2XAsPrimitiveValue[102X( [3Xobject[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XAsInteger[102X( [3Xobject[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XAsHomalgMatrix[102X( [3Xobject[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya value[133X
+  
+  [33X[0;0YEXPERIMENTAL: This specification might change any time without prior notice.
+  Views  an  object  obtained  via  [2XAsCapCategoryObject[102X ([14X2.2-4[114X) as a primitive
+  value  again.  Here, the word [13Xprimitive[113X means [13Xprimitive from the perspective
+  of  the category[113X. For example, from the perspective of an opposite category,
+  objects  of  the  underlying category are primitive values. The attribute is
+  chosen according to the object datum type:[133X
+  
+  [30X    [33X[0;6YFor [10XIsInt[110X, the attribute [10XAsInteger[110X is used.[133X
+  
+  [30X    [33X[0;6YFor [10XIsHomalgMatrix[110X, the attribute [10XAsHomalgMatrix[110X is used.[133X
+  
+  [33X[0;0YIn  all  other  cases  or  if  no  object datum type is given, the attribute
+  [10XAsPrimitiveValue[110X is used.[133X
+  
+  
+  [1X2.3 [33X[0;0YEqualities for Objects[133X[101X
+  
+  [1X2.3-1 IsEqualForObjects[101X
+  
+  [33X[1;0Y[29X[2XIsEqualForObjects[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are  two  objects  [23Xa[123X  and  [23Xb[123X.  The  output is [10Xtrue[110X if [23Xa = b[123X,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X2.3-2 IsIsomorphicForObjects[101X
+  
+  [33X[1;0Y[29X[2XIsIsomorphicForObjects[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are  two  objects [23Xa[123X and [23Xb[123X. The output is [10Xtrue[110X if [23Xa[123X and [23Xb[123X are
+  isomorphic,  that  is, if there exists an isomorphism [23Xa \to b[123X, otherwise the
+  output is [10Xfalse[110X.[133X
+  
+  [1X2.3-3 SomeIsomorphismBetweenObjects[101X
+  
+  [33X[1;0Y[29X[2XSomeIsomorphismBetweenObjects[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan isomorphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  two  isomorphic  objects  [23Xa[123X  and  [23Xb[123X.  The  output is an
+  isomorphism [23Xa \to b[123X.[133X
+  
+  
+  [1X2.4 [33X[0;0YCategorical Properties of Objects[133X[101X
+  
+  [1X2.4-1 IsBijectiveObject[101X
+  
+  [33X[1;0Y[29X[2XIsBijectiveObject[102X( [3Xa[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is an object [23Xa[123X. The output is [10Xtrue[110X if [23Xa[123X is a bijective object,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X2.4-2 IsProjective[101X
+  
+  [33X[1;0Y[29X[2XIsProjective[102X( [3Xa[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe argument is an object [23Xa[123X. The output is [10Xtrue[110X if [23Xa[123X is a projective object,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X2.4-3 IsInjective[101X
+  
+  [33X[1;0Y[29X[2XIsInjective[102X( [3Xa[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe argument is an object [23Xa[123X. The output is [10Xtrue[110X if [23Xa[123X is an injective object,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X2.4-4 IsTerminal[101X
+  
+  [33X[1;0Y[29X[2XIsTerminal[102X( [3Xa[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is an object [23Xa[123X of a category [23X\mathbf{C}[123X. The output is [10Xtrue[110X if
+  [23Xa[123X  is  isomorphic to the terminal object of [23X\mathbf{C}[123X, otherwise the output
+  is [10Xfalse[110X.[133X
+  
+  [1X2.4-5 IsInitial[101X
+  
+  [33X[1;0Y[29X[2XIsInitial[102X( [3Xa[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is an object [23Xa[123X of a category [23X\mathbf{C}[123X. The output is [10Xtrue[110X if
+  [23Xa[123X is isomorphic to the initial object of [23X\mathbf{C}[123X, otherwise the output is
+  [10Xfalse[110X.[133X
+  
+  [1X2.4-6 IsZeroForObjects[101X
+  
+  [33X[1;0Y[29X[2XIsZeroForObjects[102X( [3Xa[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is an object [23Xa[123X of a category [23X\mathbf{C}[123X. The output is [10Xtrue[110X if
+  [23Xa[123X  is  isomorphic  to the zero object of [23X\mathbf{C}[123X, otherwise the output is
+  [10Xfalse[110X.[133X
+  
+  [1X2.4-7 IsZero[101X
+  
+  [33X[1;0Y[29X[2XIsZero[102X( [3Xa[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is an object [23Xa[123X of a category [23X\mathbf{C}[123X. The output is [10Xtrue[110X if
+  [23Xa[123X  is  isomorphic  to the zero object of [23X\mathbf{C}[123X, otherwise the output is
+  [10Xfalse[110X.[133X
+  
+  
+  [1X2.5 [33X[0;0YRandom Objects[133X[101X
+  
+  [33X[0;0YCAP provides two principal methods to generate random objects:[133X
+  
+  [30X    [33X[0;6Y[13XBy  integers[113X:  The  integer  is simply a parameter that can be used to
+        create a random object.[133X
+  
+  [30X    [33X[0;6Y[13XBy  lists[113X:  The  list is used when creating a random object would need
+        more  than  one parameter. Lists offer more flexibility at the expense
+        of  the genericity of the methods. This happens because lists that are
+        valid as input in some category may be not valid for other categories.
+        Hence,  these  operations  are  not  thought  to  be  used  in generic
+        categorical algorithms.[133X
+  
+  [1X2.5-1 RandomObjectByInteger[101X
+  
+  [33X[1;0Y[29X[2XRandomObjectByInteger[102X( [3XC[103X, [3Xn[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan object in [23XC[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  category  [23XC[123X and an integer [23Xn[123X. The output is a random
+  object in [23XC[123X.[133X
+  
+  [1X2.5-2 RandomObjectByList[101X
+  
+  [33X[1;0Y[29X[2XRandomObjectByList[102X( [3XC[103X, [3XL[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan object in [23XC[123X[133X
+  
+  [33X[0;0YThe  arguments  are a category [23XC[123X and a list [23XL[123X. The output is a random object
+  in [23XC[123X.[133X
+  
+  [1X2.5-3 RandomObject[101X
+  
+  [33X[1;0Y[29X[2XRandomObject[102X( [3XC[103X, [3Xn[103X ) [32X operation[133X
+  
+  [33X[0;0YThese  are  convenient methods and they, depending on the input, delegate to
+  one of the above methods.[133X
+  
+  [1X2.5-4 RandomObject[101X
+  
+  [33X[1;0Y[29X[2XRandomObject[102X( [3XC[103X, [3XL[103X ) [32X operation[133X
+  
+  
+  [1X2.6 [33X[0;0YTool functions for caches[133X[101X
+  
+  [1X2.6-1 IsEqualForCacheForObjects[101X
+  
+  [33X[1;0Y[29X[2XIsEqualForCacheForObjects[102X( [3Xphi[103X, [3Xpsi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ytrue or false[133X
+  
+  [33X[0;0YBy  default,  CAP uses caches to store the values of Categorical operations.
+  To  get  a value out of the cache, one needs to compare the input of a basic
+  operation  with  its  previous  input.  To  compare objects in the category,
+  IsEqualForCacheForObjects  is  used.  By  default, IsEqualForCacheForObjects
+  falls  back  to IsEqualForCache (see ToolsForHomalg), which in turn defaults
+  to  recursive comparison for lists and [10XIsIdenticalObj[110X in all other cases. If
+  you  add  a function via [10XAddIsEqualForCacheForObjects[110X, that function is used
+  instead. A function [23XF: a,b \mapsto bool[123X is expected there. The output has to
+  be true or false. Fail is not allowed in this context.[133X
+  
+  
+  [1X2.7 [33X[0;0YObject constructors[133X[101X
+  
+  [1X2.7-1 ObjectConstructor[101X
+  
+  [33X[1;0Y[29X[2XObjectConstructor[102X( [3XC[103X, [3Xa[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThe  arguments are a category [23XC[123X and an object datum [23Xa[123X (type and semantics of
+  the  object  datum  depend  on  the  category). The output is an object of [23XC[123X
+  defined by [23Xa[123X. Note that by default this CAP operation is not cached. You can
+  change  this behaviour by calling [10XSetCachingToWeak( C, "ObjectConstructor" )[110X
+  resp. [10XSetCachingToCrisp( C, "ObjectConstructor" )[110X.[133X
+  
+  [1X2.7-2 /[101X
+  
+  [33X[1;0Y[29X[2X/[102X( [3Xa[103X, [3XC[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YShorthand for [10XObjectConstructor( C, a )[110X.[133X
+  
+  [1X2.7-3 ObjectDatum[101X
+  
+  [33X[1;0Y[29X[2XObjectDatum[102X( [3Xobj[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ydepends on the category[133X
+  
+  [33X[0;0YThe  argument  is a CAP category object [3Xobj[103X. The output is a datum which can
+  be    used    to   construct   [3Xobj[103X,   that   is,   [10XIsEqualForObjects(   [110X[3Xobj[103X[10X,
+  ObjectConstructor(  CapCategory( [110X[3Xobj[103X[10X ), ObjectDatum( [110X[3Xobj[103X[10X ) ) )[110X. Note that by
+  default  this  CAP operation is not cached. You can change this behaviour by
+  calling  [10XSetCachingToWeak(  C,  "ObjectDatum"  )[110X resp. [10XSetCachingToCrisp( C,
+  "ObjectDatum" )[110X.[133X
+  
+  
+  [1X2.8 [33X[0;0YWell-Definedness of Objects[133X[101X
+  
+  [1X2.8-1 IsWellDefinedForObjects[101X
+  
+  [33X[1;0Y[29X[2XIsWellDefinedForObjects[102X( [3Xa[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  an  object  [23Xa[123X.  The  output is [10Xtrue[110X if [23Xa[123X is well-defined,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  
+  [1X2.9 [33X[0;0YSetOfObjects[133X[101X
+  
+  [1X2.9-1 SetOfObjectsOfCategory[101X
+  
+  [33X[1;0Y[29X[2XSetOfObjectsOfCategory[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya list of CAP category objects[133X
+  
+  [33X[0;0YReturn  a  duplicate free list of objects of the category [3XC[103X. The ordering of
+  the returned list must always be the same.[133X
+  
+  [1X2.9-2 SetOfObjects[101X
+  
+  [33X[1;0Y[29X[2XSetOfObjects[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya list of CAP category objects[133X
+  
+  [33X[0;0YReturn  a  duplicate free list of objects of the category [3XC[103X. The ordering of
+  the  returned  list must always be the same. The corresponding CAP operation
+  is [10XSetOfObjectsOfCategory[110X.[133X
+  
+  
+  [1X2.10 [33X[0;0YProjectives[133X[101X
+  
+  [33X[0;0YFor  a  given object [23XA[123X in an abelian category having enough projectives, the
+  following  commands  allow  us  to compute some projective object [23XP[123X together
+  with an epimorphism [23X\pi: P \rightarrow A[123X.[133X
+  
+  [1X2.10-1 SomeProjectiveObject[101X
+  
+  [33X[1;0Y[29X[2XSomeProjectiveObject[102X( [3XA[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThe  argument  is  an  object  [23XA[123X. The output is some projective object [23XP[123X for
+  which there exists an epimorphism [23X\pi: P \rightarrow A[123X.[133X
+  
+  [1X2.10-2 EpimorphismFromSomeProjectiveObject[101X
+  
+  [33X[1;0Y[29X[2XEpimorphismFromSomeProjectiveObject[102X( [3XA[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(P,A)[123X[133X
+  
+  [33X[0;0YThe argument is an object [23XA[123X. The output is an epimorphism [23X\pi: P \rightarrow
+  A[123X    with    [23XP[123X   a   projective   object   that   equals   the   output   of
+  [23X\mathrm{SomeProjectiveObject}(A)[123X.[133X
+  
+  [1X2.10-3 EpimorphismFromSomeProjectiveObjectWithGivenSomeProjectiveObject[101X
+  
+  [33X[1;0Y[29X[2XEpimorphismFromSomeProjectiveObjectWithGivenSomeProjectiveObject[102X( [3XA[103X, [3XP[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(P,A)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  an  object  [23XA[123X and a projective object [23XP[123X that equals the
+  output  of  [23X\mathrm{SomeProjectiveObject}(A)[123X.  The  output is an epimorphism
+  [23X\pi: P \rightarrow A[123X.[133X
+  
+  [1X2.10-4 ProjectiveLift[101X
+  
+  [33X[1;0Y[29X[2XProjectiveLift[102X( [3Xpi[103X, [3Xepsilon[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(P,B)[123X[133X
+  
+  [33X[0;0YThe  arguments  are a morphism [23X\pi: P \rightarrow A[123X with [23XP[123X a projective, and
+  an  epimorphism [23X\epsilon: B \rightarrow A[123X. The output is a morphism [23X\lambda:
+  P \rightarrow B[123X such that [23X\epsilon \circ \lambda = \pi[123X.[133X
+  
+  
+  [1X2.11 [33X[0;0YInjectives[133X[101X
+  
+  [33X[0;0YFor  a  given  object [23XA[123X in an abelian category having enough injectives, the
+  following commands allow us to compute some injective object [23XI[123X together with
+  a monomorphism [23X\iota: A \rightarrow I[123X.[133X
+  
+  [1X2.11-1 SomeInjectiveObject[101X
+  
+  [33X[1;0Y[29X[2XSomeInjectiveObject[102X( [3XA[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThe argument is an object [23XA[123X. The output is some injective object [23XI[123X for which
+  there exists a monomorphism [23X\iota: A \rightarrow I[123X.[133X
+  
+  [1X2.11-2 MonomorphismIntoSomeInjectiveObject[101X
+  
+  [33X[1;0Y[29X[2XMonomorphismIntoSomeInjectiveObject[102X( [3XA[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(I,A)[123X[133X
+  
+  [33X[0;0YThe  argument  is  an  object  [23XA[123X.  The  output  is  a  monomorphism [23X\iota: A
+  \rightarrow  I[123X  with  [23XI[123X  an  injective  object  that  equals  the  output of
+  [23X\mathrm{SomeInjectiveObject}(A)[123X.[133X
+  
+  [1X2.11-3 MonomorphismIntoSomeInjectiveObjectWithGivenSomeInjectiveObject[101X
+  
+  [33X[1;0Y[29X[2XMonomorphismIntoSomeInjectiveObjectWithGivenSomeInjectiveObject[102X( [3XA[103X, [3XI[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(I,A)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  an  object  [23XA[123X and an injective object [23XI[123X that equals the
+  output  of  [23X\mathrm{SomeInjectiveObject}(A)[123X.  The  output  is a monomorphism
+  [23X\iota: A \rightarrow I[123X.[133X
+  
+  [1X2.11-4 InjectiveColift[101X
+  
+  [33X[1;0Y[29X[2XInjectiveColift[102X( [3Xiota[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A,I)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  monomorphism  [23X\iota:  B \rightarrow A[123X and a morphism
+  [23X\beta:  B  \rightarrow  I[123X  where  [23XI[123X  is an injective object. The output is a
+  morphism [23X\lambda: A \rightarrow I[123X such that [23X\lambda \circ \iota = \beta[123X.[133X
+  
+  
+  [1X2.12 [33X[0;0YSimplified Objects[133X[101X
+  
+  [33X[0;0YLet  [23Xi[123X  be  a  positive  integer  or  [23X\infty[123X.  For a given object [23XA[123X, an [23Xi[123X-th
+  simplified object of [23XA[123X consists of[133X
+  
+  [30X    [33X[0;6Yan object [23XA_i[123X,[133X
+  
+  [30X    [33X[0;6Yan isomorphism [23X\iota_A^i: A \rightarrow A_i[123X.[133X
+  
+  [33X[0;0YThe  idea  is  that the greater the [23Xi[123X, the "simpler" the [23XA_i[123X (but this could
+  mean the harder the computation) with [23X\infty[123X as a possible value.[133X
+  
+  [1X2.12-1 Simplify[101X
+  
+  [33X[1;0Y[29X[2XSimplify[102X( [3XA[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThe argument is an object [23XA[123X. The output is a simplified object [23XA_{\infty}[123X.[133X
+  
+  [1X2.12-2 SimplifyObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifyObject[102X( [3XA[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThe  arguments  are  an  object  [23XA[123X and a positive integer [23Xi[123X or [10Xinfinity[110X. The
+  output is a simplified object [23XA_i[123X.[133X
+  
+  [1X2.12-3 SimplifyObject_IsoFromInputObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifyObject_IsoFromInputObject[102X( [3XA[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A,A_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  an  object  [23XA[123X and a positive integer [23Xi[123X or [10Xinfinity[110X. The
+  output  is  an  isomorphism  to a simplified object [23X\iota_A^i: A \rightarrow
+  A_i[123X.[133X
+  
+  [1X2.12-4 SimplifyObject_IsoToInputObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifyObject_IsoToInputObject[102X( [3XA[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A_i,A)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  an  object  [23XA[123X and a positive integer [23Xi[123X or [10Xinfinity[110X. The
+  output  is  an  isomorphism  from  a simplified object [23X(\iota_A^i)^{-1}: A_i
+  \rightarrow    A[123X    which    is    the    inverse    of    the   output   of
+  [10XSimplifyObject_IsoFromInputObject[110X.[133X
+  
+  
+  [1X2.13 [33X[0;0YDimensions[133X[101X
+  
+  [1X2.13-1 ProjectiveDimension[101X
+  
+  [33X[1;0Y[29X[2XProjectiveDimension[102X( [3XA[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya nonnegative integer or infinity[133X
+  
+  [33X[0;0YThe argument is an object [23XA[123X. The output is a the projective dimension of [23XA[123X.[133X
+  
+  [1X2.13-2 InjectiveDimension[101X
+  
+  [33X[1;0Y[29X[2XInjectiveDimension[102X( [3XA[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya nonnegative integer or infinity[133X
+  
+  [33X[0;0YThe argument is an object [23XA[123X. The output is a the injective dimension of [23XA[123X.[133X
+  

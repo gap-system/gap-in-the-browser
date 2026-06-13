@@ -1,0 +1,215 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "StandardFF",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Copyright", "0.0-1", [ 0, 0, 1 ], 21, 2, "copyright", 
+      "X81488B807F2A1CF1" ], 
+  [ "Colophon", "0.0-2", [ 0, 0, 2 ], 29, 2, "colophon", "X7982162280BC7A61" ]
+    , 
+  [ "Table of Contents", "0.0-3", [ 0, 0, 3 ], 36, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIntroduction to \033[5XStandardFF\033[105X\033[10\
+1X\027\033[1X\027 package\033[133X\033[101X", "1", [ 1, 0, 0 ], 1, 4, 
+      "introduction to standardff package", "X7BC4C7287FDF6602" ], 
+  [ "\033[1X\033[33X\033[0;-2YAim\033[133X\033[101X", "1.1", [ 1, 1, 0 ], 4, 
+      4, "aim", "X8599E5B885932EEC" ], 
+  [ "\033[1X\033[33X\033[0;-2YStandard finite fields\033[133X\033[101X", "2", 
+      [ 2, 0, 0 ], 1, 5, "standard finite fields", "X7D1270E8831F128E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YDefinition of standard finite fields\033[133X\\
+033[101X", "2.1", [ 2, 1, 0 ], 4, 5, "definition of standard finite fields", 
+      "X7F9D926586E030D9" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCreating standard finite fields\033[133X\033[101X\
+", "2.2", [ 2, 2, 0 ], 33, 5, "creating standard finite fields", 
+      "X82D368EB8718370E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YConstructing standard finite fields\033[133X\033[\
+101X", "2.2-1", [ 2, 2, 1 ], 36, 5, "constructing standard finite fields", 
+      "X80DCBB4F84F04DDB" ], 
+  [ "\033[1X\033[33X\033[0;-2YFilters for standard fields\033[133X\033[101X", 
+      "2.2-2", [ 2, 2, 2 ], 81, 6, "filters for standard fields", 
+      "X7DD6C7C3867D84B8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YElements in standard finite fields\033[133X\033[1\
+01X", "2.3", [ 2, 3, 0 ], 113, 7, "elements in standard finite fields", 
+      "X84ED04C57C4BB25B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YMaps for elements of standard finite fields\033[1\
+33X\033[101X", "2.3-1", [ 2, 3, 1 ], 121, 7, 
+      "maps for elements of standard finite fields", "X8569D7B1786AE5FC" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YEmbeddings of standard finite fields\033[133X\\
+033[101X", "2.4", [ 2, 4, 0 ], 187, 8, "embeddings of standard finite fields",
+      "X7F3D740F80F68F74" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YStandard generators of cyclic groups\033[133X\\
+033[101X", "3", [ 3, 0, 0 ], 1, 12, "standard generators of cyclic groups", 
+      "X7C788F1583FB8544" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGenerators of multiplicative groups\033[133X\033[\
+101X", "3.1", [ 3, 1, 0 ], 4, 12, "generators of multiplicative groups", 
+      "X864390D67EA526FA" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YUtilities from the \033[5XStandardFF\033[105X\\
+033[101X\027\033[1X\027 package\033[133X\033[101X", "4", [ 4, 0, 0 ], 1, 14, 
+      "utilities from the standardff package", "X7B7EC1DC7BF3A7BD" ], 
+  [ "\033[1X\033[33X\033[0;-2YA simple bijection on a range\033[133X\033[101X"
+        , "4.1", [ 4, 1, 0 ], 4, 14, "a simple bijection on a range", 
+      "X7BFCD0EA853203E8" ], 
+  [ "\033[1X\033[33X\033[0;-2YFinding linear combinations\033[133X\033[101X", 
+      "4.2", [ 4, 2, 0 ], 22, 14, "finding linear combinations", 
+      "X845FFCBC7CE095A6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIrreducibility over finite fields\033[133X\033[10\
+1X", "4.3", [ 4, 3, 0 ], 59, 15, "irreducibility over finite fields", 
+      "X876B131786C80F86" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YConnection to Conway polynomials\033[133X\033[101\
+X", "4.4", [ 4, 4, 0 ], 92, 15, "connection to conway polynomials", 
+      "X86D4E7A6830D51D3" ], 
+  [ "\033[1X\033[33X\033[0;-2YDiscrete logarithms\033[133X\033[101X", "4.5", 
+      [ 4, 5, 0 ], 176, 17, "discrete logarithms", "X846AF3D08713D57A" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YMinimal polynomials of sequences\033[133X\033[101\
+X", "4.6", [ 4, 6, 0 ], 213, 17, "minimal polynomials of sequences", 
+      "X83936E9986D475BA" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YBrauer characters with respect to different lifts\
+\033[133X\033[101X", "4.7", [ 4, 7, 0 ], 287, 18, 
+      "brauer characters with respect to different lifts", 
+      "X7C69EBE885DA1B15" ], 
+  [ "\033[1X\033[33X\033[0;-2YFrobenius character values\033[133X\033[101X", 
+      "4.7-2", [ 4, 7, 2 ], 370, 20, "frobenius character values", 
+      "X814BE20A81F82969" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YKnown factorizations of multiplicative group orde\
+rs\033[133X\033[101X", "4.8", [ 4, 8, 0 ], 411, 20, 
+      "known factorizations of multiplicative group orders", 
+      "X78ED090878CEE6AA" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSome loops for \033[5XStandardFF\033[105X\033[101\
+X\027\033[1X\027\033[133X\033[101X", "4.9", [ 4, 9, 0 ], 445, 21, 
+      "some loops for standardff", "X7D85D01D7F846000" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YComputing all fields in various ranges\033[133X\\
+033[101X", "4.9-1", [ 4, 9, 1 ], 448, 21, 
+      "computing all fields in various ranges", "X788898E979B9E9D9" ], 
+  [ "\033[1X\033[33X\033[0;-2YUndocumented features\033[133X\033[101X", 
+      "4.10", [ 4, 10, 0 ], 489, 22, "undocumented features", 
+      "X7EA72E8A78A4ADE2" ], 
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 23, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 23, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 24, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XStandardFiniteField\033[102X", "2.2-1", [ 2, 2, 1 ], 36, 5, 
+      "standardfinitefield", "X80DCBB4F84F04DDB" ], 
+  [ "\033[2XFF\033[102X", "2.2-1", [ 2, 2, 1 ], 36, 5, "ff", 
+      "X80DCBB4F84F04DDB" ], 
+  [ "\033[2XStandardPrimeDegreePolynomial\033[102X", "2.2-1", [ 2, 2, 1 ], 
+      36, 5, "standardprimedegreepolynomial", "X80DCBB4F84F04DDB" ], 
+  [ "\033[2XIsStandardPrimeField\033[102X", "2.2-2", [ 2, 2, 2 ], 81, 6, 
+      "isstandardprimefield", "X7DD6C7C3867D84B8" ], 
+  [ "\033[2XIsStandardFiniteField\033[102X", "2.2-2", [ 2, 2, 2 ], 81, 6, 
+      "isstandardfinitefield", "X7DD6C7C3867D84B8" ], 
+  [ "\033[2XIsStandardFiniteFieldElement\033[102X", "2.2-2", [ 2, 2, 2 ], 81, 
+      6, "isstandardfinitefieldelement", "X7DD6C7C3867D84B8" ], 
+  [ "\033[2XAsVector\033[102X for elements in standard finite fields", 
+      "2.3-1", [ 2, 3, 1 ], 121, 7, 
+      "asvector for elements in standard finite fields", "X8569D7B1786AE5FC" ]
+    , [ "\033[2XElementVector\033[102X", "2.3-1", [ 2, 3, 1 ], 121, 7, 
+      "elementvector", "X8569D7B1786AE5FC" ], 
+  [ "\033[2XAsPolynomial\033[102X for elements in standard finite fields", 
+      "2.3-1", [ 2, 3, 1 ], 121, 7, 
+      "aspolynomial for elements in standard finite fields", 
+      "X8569D7B1786AE5FC" ], 
+  [ "\033[2XElementPolynomial\033[102X", "2.3-1", [ 2, 3, 1 ], 121, 7, 
+      "elementpolynomial", "X8569D7B1786AE5FC" ], 
+  [ "\033[2XSteinitzNumber\033[102X", "2.3-1", [ 2, 3, 1 ], 121, 7, 
+      "steinitznumber", "X8569D7B1786AE5FC" ], 
+  [ "\033[2XElementSteinitzNumber\033[102X", "2.3-1", [ 2, 3, 1 ], 121, 7, 
+      "elementsteinitznumber", "X8569D7B1786AE5FC" ], 
+  [ "\033[2XSteinitzPair\033[102X", "2.4-1", [ 2, 4, 1 ], 197, 8, 
+      "steinitzpair", "X85BC2EF17DA2E707" ], 
+  [ "\033[2XSteinitzPair\033[102X for Steinitz number", "2.4-1", [ 2, 4, 1 ], 
+      197, 8, "steinitzpair for steinitz number", "X85BC2EF17DA2E707" ], 
+  [ "\033[2XSteinitzNumber\033[102X for Steinitz pair", "2.4-1", [ 2, 4, 1 ], 
+      197, 8, "steinitznumber for steinitz pair", "X85BC2EF17DA2E707" ], 
+  [ "\033[2XEmbedding\033[102X for standard finite fields", "2.4-2", 
+      [ 2, 4, 2 ], 240, 9, "embedding for standard finite fields", 
+      "X851FD36881708D5E" ], 
+  [ "\033[2XZZ\033[102X", "2.4-3", [ 2, 4, 3 ], 274, 9, "zz", 
+      "X800EE1C5800EE1C5" ], 
+  [ "\033[2XZZ\033[102X for IsFFE", "2.4-3", [ 2, 4, 3 ], 274, 9, 
+      "zz for isffe", "X800EE1C5800EE1C5" ], 
+  [ "\033[2XMoveToSmallestStandardField\033[102X", "2.4-4", [ 2, 4, 4 ], 305, 
+      10, "movetosmalleststandardfield", "X839220E3865258DA" ], 
+  [ "\033[2X\\+\033[102X for standard finite field elements", "2.4-4", 
+      [ 2, 4, 4 ], 305, 10, "+ for standard finite field elements", 
+      "X839220E3865258DA" ], 
+  [ "\033[2X\\*\033[102X for standard finite field elements", "2.4-4", 
+      [ 2, 4, 4 ], 305, 10, "* for standard finite field elements", 
+      "X839220E3865258DA" ], 
+  [ "\033[2X\\-\033[102X for standard finite field elements", "2.4-4", 
+      [ 2, 4, 4 ], 305, 10, "- for standard finite field elements", 
+      "X839220E3865258DA" ], 
+  [ "\033[2X\\/\033[102X for standard finite field elements", "2.4-4", 
+      [ 2, 4, 4 ], 305, 10, "/ for standard finite field elements", 
+      "X839220E3865258DA" ], 
+  [ "\033[2XStandardIsomorphismGF\033[102X", "2.4-5", [ 2, 4, 5 ], 351, 10, 
+      "standardisomorphismgf", "X7ECCD8D27FBA9505" ], 
+  [ "\033[2XStandardCyclicGenerator\033[102X", "3.1-1", [ 3, 1, 1 ], 30, 12, 
+      "standardcyclicgenerator", "X79D3165F833F28DA" ], 
+  [ "\033[2XStandardPrimitiveRoot\033[102X", "3.1-1", [ 3, 1, 1 ], 30, 12, 
+      "standardprimitiveroot", "X79D3165F833F28DA" ], 
+  [ "\033[2XStandardAffineShift\033[102X", "4.1-1", [ 4, 1, 1 ], 7, 14, 
+      "standardaffineshift", "X85113F358019E11C" ], 
+  [ "\033[2XFindLinearCombination\033[102X", "4.2-1", [ 4, 2, 1 ], 25, 14, 
+      "findlinearcombination", "X7F1ABC6E83E257A3" ], 
+  [ "\033[2XIsIrreducibleCoeffList\033[102X", "4.3-1", [ 4, 3, 1 ], 62, 15, 
+      "isirreduciblecoefflist", "X7F7C09C3860AF01D" ], 
+  [ "\033[2XFindConjugateZeroes\033[102X", "4.4-1", [ 4, 4, 1 ], 95, 15, 
+      "findconjugatezeroes", "X7E781D7B7CB1DFF4" ], 
+  [ "\033[2XZeroesConway\033[102X", "4.4-2", [ 4, 4, 2 ], 119, 16, 
+      "zeroesconway", "X7C00A74780A75A10" ], 
+  [ "\033[2XSteinitzPairConwayGenerator\033[102X", "4.4-3", [ 4, 4, 3 ], 137, 
+      16, "steinitzpairconwaygenerator", "X784E128A811F5C91" ], 
+  [ "\033[2XDLog\033[102X", "4.5-1", [ 4, 5, 1 ], 179, 17, "dlog", 
+      "X84A138947E8C49A8" ], 
+  [ "\033[2XInvModCoeffs\033[102X", "4.6-1", [ 4, 6, 1 ], 216, 17, 
+      "invmodcoeffs", "X7E978CBD81D69FA2" ], 
+  [ "\033[2XBerlekampMassey\033[102X", "4.6-2", [ 4, 6, 2 ], 242, 18, 
+      "berlekampmassey", "X7CE85678790D8967" ], 
+  [ "\033[2XMinimalPolynomialByBerlekampMassey\033[102X", "4.6-3", 
+      [ 4, 6, 3 ], 263, 18, "minimalpolynomialbyberlekampmassey", 
+      "X7BBC9E097F02B26E" ], 
+  [ "\033[2XMinimalPolynomialByBerlekampMasseyShoup\033[102X", "4.6-3", 
+      [ 4, 6, 3 ], 263, 18, "minimalpolynomialbyberlekampmasseyshoup", 
+      "X7BBC9E097F02B26E" ], 
+  [ "\033[2XStandardValuesBrauerCharacter\033[102X", "4.7-1", [ 4, 7, 1 ], 
+      307, 19, "standardvaluesbrauercharacter", "X86408E6883916C5D" ], 
+  [ "\033[2XIsGaloisInvariant\033[102X", "4.7-1", [ 4, 7, 1 ], 307, 19, 
+      "isgaloisinvariant", "X86408E6883916C5D" ], 
+  [ "\033[2XSmallestDegreeFrobeniusCharacterValue\033[102X", "4.7-2", 
+      [ 4, 7, 2 ], 370, 20, "smallestdegreefrobeniuscharactervalue", 
+      "X814BE20A81F82969" ], 
+  [ "\033[2XStandardFrobeniusCharacterValue\033[102X", "4.7-2", [ 4, 7, 2 ], 
+      370, 20, "standardfrobeniuscharactervalue", "X814BE20A81F82969" ], 
+  [ "\033[2XCANFACT\033[102X", "4.8-1", [ 4, 8, 1 ], 414, 20, "canfact", 
+      "X7BAF533D86DAD073" ], 
+  [ "\033[2XAllPrimeDegreePolynomials\033[102X", "4.9-1", [ 4, 9, 1 ], 448, 
+      21, "allprimedegreepolynomials", "X788898E979B9E9D9" ], 
+  [ "\033[2XAllFF\033[102X", "4.9-1", [ 4, 9, 1 ], 448, 21, "allff", 
+      "X788898E979B9E9D9" ], 
+  [ "\033[2XAllPrimitiveRoots\033[102X", "4.9-1", [ 4, 9, 1 ], 448, 21, 
+      "allprimitiveroots", "X788898E979B9E9D9" ], 
+  [ "\033[2XAllPrimitiveRootsCANFACT\033[102X", "4.9-1", [ 4, 9, 1 ], 448, 
+      21, "allprimitiverootscanfact", "X788898E979B9E9D9" ], 
+  [ "\033[2XAllFieldsWithConwayPolynomial\033[102X", "4.9-1", [ 4, 9, 1 ], 
+      448, 21, "allfieldswithconwaypolynomial", "X788898E979B9E9D9" ] ]
+);

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    QuaGroup
+  </Title>
+  <Subtitle>
+    Computations with quantum groups
+  </Subtitle>
+  <Version>
+    Version 1.8.4
+  </Version>
+  <Author>
+    Willem Adriaan de Graaf<Alt Only="LaTeX"><Br/></Alt>
+<Email>degraaf@science.unitn.it</Email>
+<Homepage>http://www.science.unitn.it/~degraaf</Homepage>
+
+  </Author>
+  <Date>
+    11 January 2024
+  </Date>
+  <Copyright>
+    &copyright; 2002 Willem A. de Graaf
+  </Copyright>
+  </TitlePage>

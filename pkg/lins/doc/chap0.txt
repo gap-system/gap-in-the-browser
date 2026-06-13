@@ -1,0 +1,63 @@
+  
+  
+                                     [1X LINS [101X
+  
+  
+    [1X provides an algorithm for computing the normal subgroups of a finitely
+                 presented group up to some given index bound. [101X
+  
+  
+                                      0.9
+  
+  
+                                 15 March 2024
+  
+  
+                                Friedrich Rober
+  
+  
+  
+  Friedrich Rober
+      Email:    [7Xmailto:friedrich.rober@rwth-aachen.de[107X
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (LINS)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YOverview[133X
+    1.2 [33X[0;0YExamples[133X
+      1.2-1 [33X[0;0YExample : all normal subgroups up to index [22Xn[122X[133X
+      1.2-2 [33X[0;0YExample : all normal subgroups of index [22Xn[122X[133X
+    1.3 [33X[0;0YMain Functions[133X
+      1.3-1 LowIndexNormalSubs
+  2 [33X[0;0YLINS Interface[133X
+    2.1 [33X[0;0YLINS Graph[133X
+      2.1-1 List
+      2.1-2 ComputedNormalSubgroups
+      2.1-3 LinsRoot
+      2.1-4 IndexBound
+      2.1-5 LinsOptions
+      2.1-6 IsomorphismFpGroup
+    2.2 [33X[0;0YLINS Node[133X
+      2.2-1 Grp
+      2.2-2 Index
+      2.2-3 LinsNodeMinimalSupergroups
+      2.2-4 LinsNodeMinimalSubgroups
+      2.2-5 LinsNodeSupergroups
+      2.2-6 LinsNodeSubgroups
+    2.3 [33X[0;0YLINS Search Functions[133X
+      2.3-1 LowIndexNormalSubgroupsSearch
+      2.3-2 LowIndexNormalSubgroupsSearchForAll
+      2.3-3 LowIndexNormalSubgroupsSearchForIndex
+    2.4 [33X[0;0YExamples[133X
+      2.4-1 [33X[0;0YRevised Example : all normal subgroups up to index [22Xn[122X[133X
+      2.4-2 [33X[0;0YRevised Example : all normal subgroups of index [22Xn[122X[133X
+      2.4-3 [33X[0;0YExample : a normal subgroup of index [22Xn[122X[133X
+  3 [33X[0;0YLINS Search[133X
+    3.1 [33X[0;0YLINS Search Options[133X
+  4 [33X[0;0YLicense[133X
+  
+  
+  [32X

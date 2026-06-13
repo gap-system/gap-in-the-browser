@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    RingsForHomalg
+  </Title>
+  <Subtitle>
+    Dictionaries of external rings
+  </Subtitle>
+  <Version>
+    2026.05-01
+  </Version>
+  <Author>
+    Mohamed Barakat
+<Address>
+Walter-Flex-Str. 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>mohamed.barakat@uni-siegen.de</Email>
+<Homepage>https://mohamed-barakat.github.io</Homepage>
+  </Author>
+  <Author>
+    Simon Görtzen
+<Address>
+Simon Görtzen<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>simon.goertzen@rwth-aachen.de</Email>
+<Homepage>https://www.linkedin.com/in/simongoertzen/</Homepage>
+  </Author>
+  <Author>
+    Markus Kirschmer
+<Address>
+Markus Kirschmer<Br/>
+Lehrstuhl D fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>markus.kirschmer@math.rwth-aachen.de</Email>
+<Homepage>http://www.math.rwth-aachen.de/~Markus.Kirschmer/</Homepage>
+  </Author>
+  <Author>
+    Markus Lange-Hegermann
+<Address>
+Markus Lange-Hegermann<Br/>
+Hochschule Ostwestfalen-Lippe<Br/>
+Liebigstraße 87<Br/>
+32657 Lemgo<Br/>
+Germany<Br/>
+</Address>
+<Email>markus.lange-hegermann@hs-owl.de</Email>
+<Homepage>https://www.th-owl.de/eecs/fachbereich/team/markus-lange-hegermann/</Homepage>
+  </Author>
+  <Author>
+    Oleksandr Motsak
+<Address>
+Department of Mathematics<Br/>
+University of Kaiserslautern<Br/>
+67653 Kaiserslautern<Br/>
+Germany<Br/>
+</Address>
+<Email>motsak@mathematik.uni-kl.de</Email>
+<Homepage>http://www.mathematik.uni-kl.de/~motsak/</Homepage>
+  </Author>
+  <Author>
+    Daniel Robertz
+<Address>
+Daniel Robertz<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>daniel@momo.math.rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~daniel/</Homepage>
+  </Author>
+  <Author>
+    Hans Schönemann
+<Address>
+Department of Mathematics<Br/>
+University of Kaiserslautern<Br/>
+67653 Kaiserslautern<Br/>
+Germany<Br/>
+</Address>
+<Email>hannes@mathematik.uni-kl.de</Email>
+<Homepage>http://www.mathematik.uni-kl.de/~hannes/</Homepage>
+  </Author>
+  <Author>
+    Andreas Steenpaß
+<Address>
+Department of Mathematics<Br/>
+University of Kaiserslautern<Br/>
+67653 Kaiserslautern<Br/>
+Germany<Br/>
+</Address>
+<Email>steenpass@mathematik.uni-kl.de</Email>
+  </Author>
+  <Author>
+    Vinay Wagh
+<Address>
+E-102, Department of Mathematics,<Br/>
+Indian Institute of Technology Guwahati,<Br/>
+Guwahati, Assam, India.<Br/>
+PIN: 781 039.<Br/>
+India<Br/>
+</Address>
+<Email>waghoba@gmail.com</Email>
+<Homepage>http://www.iitg.ernet.in/vinay.wagh/</Homepage>
+  </Author>
+  <Date>
+    27 May 2026
+  </Date>
+  <Copyright>
+    &copyright; 2007-2015 by Mohamed Barakat, Simon Görtzen, Markus Kirschmer, Markus Lange-Hegermann, Oleksandr Motsak, Max Neunhöffer, Daniel Robertz, and Hans Schönemann.
+
+This package may be distributed under the terms and conditions of the GNU Public License Version 2 or (at your option) any later version.
+  </Copyright>
+  </TitlePage>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    GradedRingForHomalg
+  </Title>
+  <Subtitle>
+    Endow Commutative Rings with an Abelian Grading
+  </Subtitle>
+  <Version>
+    2026.04-01
+  </Version>
+  <Author>
+    Mohamed Barakat
+<Address>
+Walter-Flex-Str. 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>mohamed.barakat@uni-siegen.de</Email>
+<Homepage>https://mohamed-barakat.github.io</Homepage>
+  </Author>
+  <Author>
+    Sebastian Gutsche
+<Address>
+Department Mathematik<Br/>
+Universität Siegen<Br/>
+Walter-Flex-Straße 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>gutsche@mathematik.uni-siegen.de</Email>
+<Homepage>https://sebasguts.github.io</Homepage>
+  </Author>
+  <Author>
+    Markus Kirschmer
+<Address>
+Markus Kirschmer<Br/>
+Lehrstuhl D fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>markus.kischmer@math.rwth-aachen.de</Email>
+<Homepage>http://www.math.rwth-aachen.de/~Markus.Kirschmer/</Homepage>
+  </Author>
+  <Author>
+    Sebastian Jambor
+<Address>
+Sebastian Jambor<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>sebastian.jambor@rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~sebastian/</Homepage>
+  </Author>
+  <Author>
+    Markus Lange-Hegermann
+<Address>
+Markus Lange-Hegermann<Br/>
+Hochschule Ostwestfalen-Lippe<Br/>
+Liebigstraße 87<Br/>
+32657 Lemgo<Br/>
+Germany<Br/>
+</Address>
+<Email>markus.lange-hegermann@hs-owl.de</Email>
+<Homepage>https://www.th-owl.de/eecs/fachbereich/team/markus-lange-hegermann/</Homepage>
+  </Author>
+  <Author>
+    Daniel Robertz
+<Address>
+Daniel Robertz<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>daniel@momo.math.rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~daniel/</Homepage>
+  </Author>
+  <Date>
+    10 April 2026
+  </Date>
+  </TitlePage>

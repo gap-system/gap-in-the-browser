@@ -1,0 +1,130 @@
+  
+  [1X11 [33X[0;0YThe Category Constructor[133X[101X
+  
+  
+  [1X11.1 [33X[0;0YInfo class[133X[101X
+  
+  [1X11.1-1 InfoCategoryConstructor[101X
+  
+  [33X[1;0Y[29X[2XInfoCategoryConstructor[102X [32X info class[133X
+  
+  [33X[0;0YInfo class controlling the debugging output of [2XCategoryConstructor[102X ([14X11.2-1[114X).[133X
+  
+  
+  [1X11.2 [33X[0;0YConstructors[133X[101X
+  
+  [1X11.2-1 CategoryConstructor[101X
+  
+  [33X[1;0Y[29X[2XCategoryConstructor[102X( [3Xoptions[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya CAP category[133X
+  
+  [33X[0;0YCreates  a CAP category subject to the options given via [3Xoptions[103X, which is a
+  record with the following keys:[133X
+  
+  [30X    [33X[0;6Y[10Xname[110X (optional): name of the category[133X
+  
+  [30X    [33X[0;6Y[10Xcategory_filter[110X,    [10Xcategory_object_filter[110X,   [10Xcategory_morphism_filter[110X
+        (mandatory): passed to [2XCreateCapCategoryWithDataTypes[102X ([14X1.3-4[114X)[133X
+  
+  [30X    [33X[0;6Y[10Xobject_datum_type[110X,    [10Xmorphism_datum_type[110X    (optional):   passed   to
+        [2XCreateCapCategoryWithDataTypes[102X ([14X1.3-4[114X)[133X
+  
+  [30X    [33X[0;6Y[10Xcommutative_semiring_of_linear_category[110X  (optional):  ring attached as
+        [2XCommutativeSemiringOfLinearCategory[102X ([14X1.4-9[114X) to the category[133X
+  
+  [30X    [33X[0;6Y[10Xrange_category_of_homomorphism_structure[110X (optional): category attached
+        as  [2XRangeCategoryOfHomomorphismStructure[102X  ([14X1.4-10[114X) to the category (or
+        the string "self" to attach the category to itself)[133X
+  
+  [30X    [33X[0;6Y[10Xproperties[110X  (optional):  list  of  categorical properties the category
+        will have, see [10XCAP_INTERNAL_CATEGORICAL_PROPERTIES_LIST[110X[133X
+  
+  [30X    [33X[0;6Y[10Xobject_constructor[110X  (optional):  function  added as an installation of
+        [2XObjectConstructor[102X ([14X2.7-1[114X) to the category[133X
+  
+  [30X    [33X[0;6Y[10Xobject_datum[110X   (optional):   function  added  as  an  installation  of
+        [2XObjectDatum[102X ([14X2.7-3[114X) to the category[133X
+  
+  [30X    [33X[0;6Y[10Xmorphism_constructor[110X  (optional): function added as an installation of
+        [2XMorphismConstructor[102X ([14X3.3-1[114X) to the category[133X
+  
+  [30X    [33X[0;6Y[10Xmorphism_datum[110X  (optional):  function  added  as  an  installation  of
+        [2XMorphismDatum[102X ([14X3.3-2[114X) to the category[133X
+  
+  [30X    [33X[0;6Y[10Xlist_of_operations_to_install[110X  (mandatory):  a  list  of  names of CAP
+        operations which should be installed for the category[133X
+  
+  [30X    [33X[0;6Y[10Xis_computable[110X    (optional):   whether   the   category   can   decide
+        [10XIsCongruentForMorphisms[110X[133X
+  
+  [30X    [33X[0;6Y[10Xsupports_empty_limits[110X  (optional): whether the category supports empty
+        lists in inputs to operations of limits and colimits[133X
+  
+  [30X    [33X[0;6Y[10Xunderlying_category_getter_string[110X (optional): see below[133X
+  
+  [30X    [33X[0;6Y[10Xunderlying_category[110X (optional): see below[133X
+  
+  [30X    [33X[0;6Y[10Xunderlying_object_getter_string[110X (optional): see below[133X
+  
+  [30X    [33X[0;6Y[10Xunderlying_morphism_getter_string[110X (optional): see below[133X
+  
+  [30X    [33X[0;6Y[10Xtop_object_getter_string[110X (optional): see below[133X
+  
+  [30X    [33X[0;6Y[10Xtop_morphism_getter_string[110X (optional): see below[133X
+  
+  [30X    [33X[0;6Y[10Xgeneric_output_source_getter_string[110X (optional): see below[133X
+  
+  [30X    [33X[0;6Y[10Xgeneric_output_range_getter_string[110X (optional): see below[133X
+  
+  [30X    [33X[0;6Y[10Xcreate_func_bool[110X: see below[133X
+  
+  [30X    [33X[0;6Y[10Xcreate_func_object[110X: see below[133X
+  
+  [30X    [33X[0;6Y[10Xcreate_func_morphism[110X: see below[133X
+  
+  [30X    [33X[0;6Y[10Xcreate_func_list_of_objects[110X: see below[133X
+  
+  [33X[0;0YThe  values  of the keys [10Xcreate_func_*[110X should be either the string [10X"default[110X"
+  or  functions  which  accept the category and the name of a CAP operation of
+  the   corresponding  [10Xreturn_type[110X.  Values  for  return  types  occuring  for
+  operations  in  [10Xlist_of_operations_to_install[110X  are  mandatory. The functions
+  must  return either strings or pairs of a string and an integer: The strings
+  (after  some  replacements  described  below) will be evaluated and added as
+  installations  of  the corresponding operations to the category with weights
+  given  by  the integer (if provided). The value [10X"default"[110X chooses a suitable
+  default  string  (see  the  implementation for details) and gets the weights
+  from  [10Xunderlying_category[110X.  The  following  placeholders  may be used in the
+  strings and are replaced automatically:[133X
+  
+  [30X    [33X[0;6Y[10Xoperation_name[110X will be replaced by the name of the operation[133X
+  
+  [30X    [33X[0;6Y[10Xinput_arguments...[110X  will  be  replaced  by  the  [10Xinput_arguments_names[110X
+        specified in the method name record (see [14X7.3[114X)[133X
+  
+  [30X    [33X[0;6Y[10Xunderlying_arguments...[110X:  If  the constructed category is created from
+        another          category,          [10Xunderlying_category_getter_string[110X,
+        [10Xunderlying_object_getter_string[110X, and [10Xunderlying_morphism_getter_string[110X
+        may  be  strings  of functions computing the underlying category (when
+        applied  to  the constructed category) and the underlying object resp.
+        morphism (when applied to the constructed category and an object resp.
+        morphism  in the constructed category). These functions are applied to
+        [10Xinput_arguments[110X and [10Xunderlying_arguments[110X is replaced by the result.[133X
+  
+  [30X    [33X[0;6Y[10Xnumber_of_arguments[110X will be replaced by the number of input/underlying
+        arguments[133X
+  
+  [30X    [33X[0;6Y[10Xtop_source[110X  and  [10Xtop_range[110X: If the return type is [10Xmorphism[110X, source and
+        range  are  computed  if  possible  and  [10Xtop_source[110X  and [10Xtop_range[110X are
+        replaced   by  the  results.  For  computing  source  and  range,  the
+        [10Xoutput_source_getter_string[110X  and  [10Xoutput_range_getter_string[110X  from the
+        method   name  record  are  used  if  available  (see  [14X7.3[114X).  In  some
+        categories,  source  and range can always be obtained in a generic way
+        (e.g.     from     the     morphism     datum).    In    this    case,
+        [10Xgeneric_output_source_getter_string[110X                                and
+        [10Xgeneric_output_range_getter_string[110X  can  be  set  and  are used if the
+        required information is not available in the method name record.[133X
+  
+  [30X    [33X[0;6Y[10Xtop_object_getter[110X  and  [10Xtop_morphism_getter[110X  are used in the [10X"default"[110X
+        strings    and    are   replaced   by   [10Xtop_object_getter_string[110X   and
+        [10Xtop_morphism_getter_string[110X, respectively.[133X
+  

@@ -1,0 +1,67 @@
+\makelabel{symbcompcc:Installing and Loading the SymbCompCC Package}{1}
+\makelabel{symbcompcc:Installing the SymbCompCC Package}{1.1}
+\makelabel{symbcompcc:Loading the SymbCompCC Package}{1.2}
+\makelabel{symbcompcc:Introduction}{2}
+\makelabel{symbcompcc:Overview}{2.1}
+\makelabel{symbcompcc:Background on (polycyclic) parametrised presentations}{2.2}
+\makelabel{symbcompcc:Computation of Schur multiplicators}{2.3}
+\makelabel{symbcompcc:Computation of low-dimensional cohomology}{2.4}
+\makelabel{symbcompcc:Example}{2.5}
+\makelabel{symbcompcc:p-power-poly-pcp-groups}{3}
+\makelabel{symbcompcc:Example}{3.1}
+\makelabel{symbcompcc:Obtaining p-power-poly-pcp-groups}{3.2}
+\makelabel{symbcompcc:PPPPcpGroups}{3.2.1}
+\makelabel{symbcompcc:PPPPcpGroups}{3.2.1}
+\makelabel{symbcompcc:PPPPcpGroupsElement}{3.2.2}
+\makelabel{symbcompcc:Operations and functions for p-power-poly-pcp-group elements}{3.3}
+\makelabel{symbcompcc:CollectPPPPcp}{3.3.1}
+\makelabel{symbcompcc:Operations and functions for p-power-poly-pcp-groups}{3.4}
+\makelabel{symbcompcc:GeneratorsOfGroup}{3.4.1}
+\makelabel{symbcompcc:One}{3.4.2}
+\makelabel{symbcompcc:IsConsistentPPPPcp}{3.4.3}
+\makelabel{symbcompcc:IsConsistentPPPPcp}{3.4.3}
+\makelabel{symbcompcc:GetPcGroupPPowerPoly}{3.4.4}
+\makelabel{symbcompcc:GetPcGroupPPowerPoly}{3.4.4}
+\makelabel{symbcompcc:GetPcpGroupPPowerPoly}{3.4.5}
+\makelabel{symbcompcc:GetPcpGroupPPowerPoly}{3.4.5}
+\makelabel{symbcompcc:GAPInputPPPPcpGroups}{3.4.6}
+\makelabel{symbcompcc:GAPInputPPPPcpGroups}{3.4.6}
+\makelabel{symbcompcc:GAPInputPPPPcpGroupsAppend}{3.4.7}
+\makelabel{symbcompcc:GAPInputPPPPcpGroupsAppend}{3.4.7}
+\makelabel{symbcompcc:LatexInputPPPPcpGroups}{3.4.8}
+\makelabel{symbcompcc:LatexInputPPPPcpGroups}{3.4.8}
+\makelabel{symbcompcc:LatexInputPPPPcpGroupsAppend}{3.4.9}
+\makelabel{symbcompcc:LatexInputPPPPcpGroupsAppend}{3.4.9}
+\makelabel{symbcompcc:LatexInputPPPPcpGroupsAllAppend}{3.4.10}
+\makelabel{symbcompcc:LatexInputPPPPcpGroupsAllAppend}{3.4.10}
+\makelabel{symbcompcc:Info classes for the p-power-poly-pcp-groups}{3.5}
+\makelabel{symbcompcc:InfoConsistencyPPPPcp}{3.5.1}
+\makelabel{symbcompcc:InfoCollectingPPPPcp}{3.5.2}
+\makelabel{symbcompcc:Global variables for the p-power-poly-pcp-groups}{3.6}
+\makelabel{symbcompcc:COLLECT_PPOWERPOLY_PCP}{3.6.1}
+\makelabel{symbcompcc:Parametrised Presentations}{4}
+\makelabel{symbcompcc:Provided pp-presentations}{4.1}
+\makelabel{symbcompcc:ParPresGlobalVar_2_1}{4.1.1}
+\makelabel{symbcompcc:ParPresGlobalVar_2_2}{4.1.1}
+\makelabel{symbcompcc:ParPresGlobalVar_3_1}{4.1.1}
+\makelabel{symbcompcc:ParPresGlobalVar_p_r_Names}{4.1.2}
+\makelabel{symbcompcc:Schur extensions for p-power-poly-pcp-groups}{5}
+\makelabel{symbcompcc:Computing Schur extensions}{5.1}
+\makelabel{symbcompcc:SchurExtParPres}{5.1.1}
+\makelabel{symbcompcc:SchurExtParPres}{5.1.2}
+\makelabel{symbcompcc:Computing other invariants from Schur extensions}{5.2}
+\makelabel{symbcompcc:AbelianInvariantsMultiplier}{5.2.1}
+\makelabel{symbcompcc:SchurMultiplicatorPPPPcps!for p-power-poly-pcp-groups}{5.2.2}
+\makelabel{symbcompcc:AbelianInvariants!for p-power-poly-pcp-groups}{5.2.3}
+\makelabel{symbcompcc:ZeroCohomologyPPPPcps}{5.2.4}
+\makelabel{symbcompcc:FirstCohomologyPPPPcps}{5.2.5}
+\makelabel{symbcompcc:SecondCohomologyPPPPcps}{5.2.6}
+\makelabel{symbcompcc:Info classes for the computation of the Schur extension}{5.3}
+\makelabel{symbcompcc:InfoConsistencyRelPPowerPoly}{5.3.1}
+\makelabel{symbcompcc:InfoCollectingPPowerPoly}{5.3.2}
+\makelabel{symbcompcc:Bibliography}{}
+\setcitlab {dS00}{dS00}
+\setcitlab {EF11}{EF11}
+\setcitlab {ELG08}{ELG08}
+\setcitlab {EN08}{EN08}
+\setcitlab {LGN80}{LGN80}

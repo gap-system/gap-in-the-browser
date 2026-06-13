@@ -1,0 +1,117 @@
+\GAPDocLabFile{quagroup}
+\makelabel{quagroup:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{quagroup:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{quagroup:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{quagroup:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{quagroup:Background}{2}{X84AF2F1D7D4E7284}
+\makelabel{quagroup:Gaussian Binomials}{2.1}{X7AAC838B7CEB5E54}
+\makelabel{quagroup:Quantized enveloping algebras}{2.2}{X81394E207F6AA6CF}
+\makelabel{quagroup:PBW-type bases}{2.4}{X83E7F39F7D16793B}
+\makelabel{quagroup:The canonical basis}{2.6}{X78BE3EB980F0A295}
+\makelabel{quagroup:The path model}{2.7}{X83BBB99685FB9FB7}
+\makelabel{quagroup:Notes}{2.8}{X7BB6B9777D54FA07}
+\makelabel{quagroup:QuaGroup}{3}{X80C9BD6584865157}
+\makelabel{quagroup:Global constants}{3.1}{X7C202C54806653DE}
+\makelabel{quagroup:Gaussian integers}{3.2}{X83804A6F84BB2387}
+\makelabel{quagroup:Roots and root systems}{3.3}{X87064F787DEA9E21}
+\makelabel{quagroup:Weyl groups and their elements}{3.4}{X798CE6777FC473DD}
+\makelabel{quagroup:Quantized enveloping algebras}{3.5}{X81394E207F6AA6CF}
+\makelabel{quagroup:Homomorphisms and automorphisms}{3.6}{X847A0459844B7A59}
+\makelabel{quagroup:Hopf algebra structure}{3.7}{X832B6D897BDBC8A3}
+\makelabel{quagroup:Modules}{3.8}{X8183A6857B0C3633}
+\makelabel{quagroup:The path model}{3.9}{X83BBB99685FB9FB7}
+\makelabel{quagroup:Canonical bases}{3.10}{X827A177C8416C576}
+\makelabel{quagroup:Universal enveloping algebras}{3.11}{X7875070C85DD4E8E}
+\makelabel{quagroup:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{quagroup:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{quagroup:Index}{Ind}{X83A0356F839C696F}
+\makelabel{quagroup:QuantumField}{3.1.1}{X8748A60A7AB09B0C}
+\makelabel{quagroup:q}{3.1.2}{X87FCF1537A81E11D}
+\makelabel{quagroup:GaussNumber}{3.2.1}{X7985B6A67A30FDA1}
+\makelabel{quagroup:GaussianFactorial}{3.2.2}{X7EF34AC07BDFEF20}
+\makelabel{quagroup:GaussianBinomial}{3.2.3}{X7F1A5A457926F3CF}
+\makelabel{quagroup:RootSystem}{3.3.1}{X80D15C027BB8029B}
+\makelabel{quagroup:RootSystem}{3.3.1}{X80D15C027BB8029B}
+\makelabel{quagroup:BilinearFormMatNF}{3.3.2}{X79E8AE3A8739D11A}
+\makelabel{quagroup:PositiveRootsNF}{3.3.3}{X853E620A79D796E7}
+\makelabel{quagroup:SimpleSystemNF}{3.3.4}{X7D2E78B678C73E69}
+\makelabel{quagroup:PositiveRootsInConvexOrder}{3.3.5}{X7A5DFEAB7EC0D945}
+\makelabel{quagroup:SimpleRootsAsWeights}{3.3.6}{X7A5BD2D77ED1BEDD}
+\makelabel{quagroup:ApplyWeylElement}{3.4.1}{X7D738A0E85CD5C14}
+\makelabel{quagroup:LengthOfWeylWord}{3.4.2}{X792A49A8808D1C64}
+\makelabel{quagroup:LongestWeylWord}{3.4.3}{X83851E7D7ED84A48}
+\makelabel{quagroup:ReducedWordIterator}{3.4.4}{X81FC70FA84F1B6E9}
+\makelabel{quagroup:ExchangeElement}{3.4.5}{X8264626678D9F39A}
+\makelabel{quagroup:GetBraidRelations}{3.4.6}{X84138DD47BBEA4E0}
+\makelabel{quagroup:LongWords}{3.4.7}{X800BB9837DCF1DBD}
+\makelabel{quagroup:QuantizedUEA}{3.5.1}{X7C263EA87C6E4F8A}
+\makelabel{quagroup:QuantizedUEA}{3.5.1}{X7C263EA87C6E4F8A}
+\makelabel{quagroup:QuantizedUEA}{3.5.1}{X7C263EA87C6E4F8A}
+\makelabel{quagroup:QuantizedUEA}{3.5.1}{X7C263EA87C6E4F8A}
+\makelabel{quagroup:ObjByExtRep}{3.5.2}{X7E3D93D47AFDE8D4}
+\makelabel{quagroup:ExtRepOfObj}{3.5.3}{X8542B32A8206118C}
+\makelabel{quagroup:QuantumParameter}{3.5.4}{X7879B74F7C77E930}
+\makelabel{quagroup:CanonicalMapping}{3.5.5}{X82B42CD279854DFC}
+\makelabel{quagroup:WriteQEAToFile}{3.5.6}{X87C302567A9B2AD3}
+\makelabel{quagroup:ReadQEAFromFile}{3.5.7}{X874B8E4A83180063}
+\makelabel{quagroup:QEAHomomorphism}{3.6.1}{X8185FE54820AA950}
+\makelabel{quagroup:QEAAutomorphism}{3.6.2}{X81214E9B8532B06F}
+\makelabel{quagroup:QEAAutomorphism}{3.6.2}{X81214E9B8532B06F}
+\makelabel{quagroup:QEAAntiAutomorphism}{3.6.3}{X79D886AB7B248F75}
+\makelabel{quagroup:QEAAntiAutomorphism}{3.6.3}{X79D886AB7B248F75}
+\makelabel{quagroup:AutomorphismOmega}{3.6.4}{X851AE6987871E0E8}
+\makelabel{quagroup:AntiAutomorphismTau}{3.6.5}{X7E288BFE7FDF8BEA}
+\makelabel{quagroup:BarAutomorphism}{3.6.6}{X8576A5987AD999F0}
+\makelabel{quagroup:AutomorphismTalpha}{3.6.7}{X8277D87D7D81AE75}
+\makelabel{quagroup:DiagramAutomorphism}{3.6.8}{X7DC17C2D8540FCED}
+\makelabel{quagroup:TensorPower}{3.7.1}{X8245FA64874E085D}
+\makelabel{quagroup:UseTwistedHopfStructure}{3.7.2}{X783144818681D2E6}
+\makelabel{quagroup:ComultiplicationMap}{3.7.3}{X811565FF83FA4847}
+\makelabel{quagroup:AntipodeMap}{3.7.4}{X7985B7EF7E31C4DF}
+\makelabel{quagroup:CounitMap}{3.7.5}{X8361876D8770FC06}
+\makelabel{quagroup:HighestWeightModule for a quantized env. alg.}{3.8.1}{X7ED0FA2980330CE1}
+\makelabel{quagroup:IrreducibleQuotient}{3.8.2}{X7B00688F82AACDD0}
+\makelabel{quagroup:HWModuleByTensorProduct}{3.8.3}{X7B080C0078370E99}
+\makelabel{quagroup:DIYModule}{3.8.4}{X7C03DC018016B93B}
+\makelabel{quagroup:TensorProductOfAlgebraModules}{3.8.5}{X854FA09F7E07D2D0}
+\makelabel{quagroup:TensorProductOfAlgebraModules}{3.8.5}{X854FA09F7E07D2D0}
+\makelabel{quagroup:HWModuleByGenerator}{3.8.6}{X7F0AED7A85D603A2}
+\makelabel{quagroup:InducedQEAModule}{3.8.7}{X8565D4CD82EB2503}
+\makelabel{quagroup:GenericModule}{3.8.8}{X8680D0D67BACAE16}
+\makelabel{quagroup:CanonicalMapping}{3.8.9}{X82B42CD279854DFC}
+\makelabel{quagroup:U2Module}{3.8.10}{X7DCD17BF7B76E7CA}
+\makelabel{quagroup:MinusculeModule}{3.8.11}{X7E1B059780BB2E09}
+\makelabel{quagroup:DualAlgebraModule}{3.8.12}{X79C8F1317C2E8C60}
+\makelabel{quagroup:TrivialAlgebraModule}{3.8.13}{X87EBE47D86292754}
+\makelabel{quagroup:WeightsAndVectors}{3.8.14}{X7929063E7C428331}
+\makelabel{quagroup:HighestWeightsAndVectors}{3.8.15}{X7EEEBA347A816827}
+\makelabel{quagroup:RMatrix}{3.8.16}{X799E7D5981B9F14A}
+\makelabel{quagroup:IsomorphismOfTensorModules}{3.8.17}{X78E533D2813BDA9E}
+\makelabel{quagroup:WriteModuleToFile}{3.8.18}{X87FF182B86367CC4}
+\makelabel{quagroup:ReadModuleFromFile}{3.8.19}{X7DD49D8282C516B9}
+\makelabel{quagroup:DominantLSPath}{3.9.1}{X8025E1918067B03C}
+\makelabel{quagroup:Falpha for an LS-path}{3.9.2}{X82EDAFAB7E81BD1F}
+\makelabel{quagroup:Ealpha for an LS-path}{3.9.3}{X855C478587112804}
+\makelabel{quagroup:LSSequence}{3.9.4}{X820413E57DEDB0D1}
+\makelabel{quagroup:WeylWord}{3.9.5}{X8573A4077DB4659F}
+\makelabel{quagroup:EndWeight}{3.9.6}{X7D06353282BE96C6}
+\makelabel{quagroup:CrystalGraph for root system and weight}{3.9.7}{X8637218B80BDC906}
+\makelabel{quagroup:Falpha for a PBW-monomial}{3.10.1}{X8215C71E8361EE62}
+\makelabel{quagroup:Ealpha for a PBW-monomial}{3.10.2}{X814B1C7B7AF17B79}
+\makelabel{quagroup:CanonicalBasis}{3.10.3}{X7C8EBFF5805F8C51}
+\makelabel{quagroup:PBWElements}{3.10.4}{X8233212A79D722FB}
+\makelabel{quagroup:MonomialElements}{3.10.5}{X81631585816C4CCD}
+\makelabel{quagroup:Strings}{3.10.6}{X782174177D696504}
+\makelabel{quagroup:PrincipalMonomial}{3.10.7}{X842A5CC07C3E5848}
+\makelabel{quagroup:StringMonomial}{3.10.8}{X7C04F75683D0A512}
+\makelabel{quagroup:Falpha for a module element}{3.10.9}{X7E67BE5D856C77DC}
+\makelabel{quagroup:Ealpha for a module element}{3.10.10}{X855EFC817CFCE2C7}
+\makelabel{quagroup:CrystalBasis}{3.10.11}{X85A9229678572948}
+\makelabel{quagroup:CrystalVectors}{3.10.12}{X82CE52AB7E798902}
+\makelabel{quagroup:Falpha for a crystal vector}{3.10.13}{X80A534637D8F3210}
+\makelabel{quagroup:Ealpha for a crystal vector}{3.10.14}{X7B9C76BF841FA70B}
+\makelabel{quagroup:CrystalGraph for a module}{3.10.15}{X7D7607BB81ADF579}
+\makelabel{quagroup:UEA}{3.11.1}{X7E7B25307E6478CD}
+\makelabel{quagroup:UnderlyingLieAlgebra}{3.11.2}{X7CA021E28527763E}
+\makelabel{quagroup:HighestWeightModule for a universal env. alg}{3.11.3}{X8707EE2C8145701F}
+\makelabel{quagroup:QUEAToUEAMap}{3.11.4}{X7AD80E5C7E015859}

@@ -1,0 +1,90 @@
+  
+  [1X1 [33X[0;0YIntroduction[133X[101X
+  
+  [33X[0;0YThe  [5XALCO[105X  package provides tools for algebraic combinatorics, most of which
+  was  written for [5XGAP[105X during the author's Ph.D. program [Nas23]. This package
+  provides  implementations  in [5XGAP[105X of octonion algebras, Jordan algebras, and
+  certain important integer subrings of those algebras. It also provides tools
+  to  compute  the  parameters of t-designs in spherical and projective spaces
+  (modeled as manifolds of primitive idempotent elements in a simple Euclidean
+  Jordan  algebra).  Finally,  this package provides tools to explore octonion
+  lattice  constructions,  including  octonion  Leech  lattices. The following
+  examples  illustrate  how  one  might  use  this  package  to  explore these
+  structures.[133X
+  
+  [33X[0;0YThe  [5XALCO[105X  package allows users to work with the octavian integer ring (also
+  known  as  the  octonion arithmetic), which is described carefully in [CS03,
+  chaps.  9-11].  In  the  example below, we verify that the octavian integers
+  define  an  [23XE_8[123X  (Gossett)  lattice  relative to the standard octonion inner
+  product:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XO := OctavianIntegers;[127X[104X
+    [4X[28XOctavianIntegers[128X[104X
+    [4X[25Xgap>[125X [27Xg := List(Basis(O), x -> List(Basis(O), y -> [127X[104X
+    [4X[25X>[125X [27XNorm(x+y) - Norm(x) - Norm(y)));;[127X[104X
+    [4X[25Xgap>[125X [27XDisplay(g);[127X[104X
+    [4X[28X[ [   2,   0,  -1,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   2,   0,  -1,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [  -1,   0,   2,  -1,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,  -1,  -1,   2,  -1,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,  -1,   2,  -1,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,  -1,   2,  -1,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,  -1,   2,  -1 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,  -1,   2 ] ][128X[104X
+    [4X[25Xgap>[125X [27XIsGossetLatticeGramMatrix(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  [5XALCO[105X  package  also  provides  tools  to  construct  octonion lattices,
+  including  octonion  Leech  lattices  (see  for  example  [Wil09b]).  In the
+  following  example  we  compute the shortest vectors in the [10XOctavianIntegers[110X
+  lattice and select one that is a root of polynomial [23Xx^2 + x + 2[123X. We use this
+  root  [10Xs[110X  to define a set [10Xgens[110X of octonion triples to serve as generators for
+  the  lattice.  Finally,  we construct the lattice [10XL[110X and confirm that it is a
+  Leech lattice.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xshort := Set(ShortestVectors(g,4).vectors, y -> [127X[104X
+    [4X[25X>[125X [27XLinearCombination(Basis(OctavianIntegers), y));;[127X[104X
+    [4X[25Xgap>[125X [27Xs := First(short, x -> x^2 + x + 2*One(x) = Zero(x));[127X[104X
+    [4X[28X(-1)*e1+(-1/2)*e2+(-1/2)*e3+(-1/2)*e4+(-1/2)*e8[128X[104X
+    [4X[25Xgap>[125X [27Xgens := List(Basis(OctavianIntegers), x -> [127X[104X
+    [4X[25X>[125X [27Xx*[[s,s,0],[0,s,s],ComplexConjugate([s,s,s])]);;[127X[104X
+    [4X[25Xgap>[125X [27Xgens := Concatenation(gens);; [127X[104X
+    [4X[25Xgap>[125X [27XL := OctonionLatticeByGenerators(gens, One(O)*IdentityMat(3)/2);[127X[104X
+    [4X[28X<free left module over Integers, with 24 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsLeechLatticeGramMatrix(GramMatrix(L));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YWe  can also construct and study simple Euclidean Jordan algebras (described
+  well in [FK94]), including the Albert algebra:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XJ := AlbertAlgebra(Rationals);[127X[104X
+    [4X[28X<algebra-with-one of dimension 27 over Rationals>[128X[104X
+    [4X[25Xgap>[125X [27XSemiSimpleType(Derivations(Basis(J)));[127X[104X
+    [4X[28X"F4"[128X[104X
+    [4X[25Xgap>[125X [27Xi := Basis(J){[1..8]};[127X[104X
+    [4X[28X[ i1, i2, i3, i4, i5, i6, i7, i8 ][128X[104X
+    [4X[25Xgap>[125X [27Xj := Basis(J){[9..16]};[127X[104X
+    [4X[28X[ j1, j2, j3, j4, j5, j6, j7, j8 ][128X[104X
+    [4X[25Xgap>[125X [27Xk := Basis(J){[17..24]};[127X[104X
+    [4X[28X[ k1, k2, k3, k4, k5, k6, k7, k8 ][128X[104X
+    [4X[25Xgap>[125X [27Xe := Basis(J){[25..27]};[127X[104X
+    [4X[28X[ ei, ej, ek ][128X[104X
+    [4X[25Xgap>[125X [27XForAll(e, IsIdempotent);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XSet(i, x -> x^2);[127X[104X
+    [4X[28X[ ej+ek ][128X[104X
+    [4X[25Xgap>[125X [27XSet(j, x -> x^2);[127X[104X
+    [4X[28X[ ei+ek ][128X[104X
+    [4X[25Xgap>[125X [27XOne(J);[127X[104X
+    [4X[28Xei+ej+ek[128X[104X
+    [4X[25Xgap>[125X [27XDeterminant(One(J));[127X[104X
+    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27XTrace(One(J));[127X[104X
+    [4X[28X3[128X[104X
+  [4X[32X[104X
+  

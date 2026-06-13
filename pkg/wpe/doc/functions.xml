@@ -1,0 +1,115 @@
+<Chapter Label="Functions">
+<Heading>Functions</Heading>
+
+Here we include a list of all functions that are provided to the User.<P/>
+
+The following functions are designed to improve the User experience
+when working or experimenting with wreath products of finite groups and their elements.
+Most functions are about presenting elements in an intuitive way
+and giving access to useful information. <P/>
+
+<Section Label="Isomorphism Functions">
+<Heading>Generic Wreath Product Representation</Heading>
+
+The main way for the User to look at a wreath product in a "human-readable" way
+is by using an isomorphism from a specialised wreath product representation
+to a generic representation.
+
+<#Include Label="IsomorphismWreathProduct">
+
+</Section>
+
+<Section Label="Component Functions">
+<Heading>Accessing Components</Heading>
+
+The following functions give access to components of wreath products and their elements.
+
+<#Include Label="ComponentsOfWreathProduct">
+<#Include Label="TopGroupOfWreathProduct">
+<#Include Label="BaseGroupOfWreathProduct">
+
+<#Include Label="TopComponentOfWreathProductElement">
+<#Include Label="BaseComponentOfWreathProductElement">
+
+</Section>
+
+<Section Label="Wreath Product Element Functions">
+<Heading>Properties of Wreath Product Elements</Heading>
+
+The following functions give access to important properties of wreath product elements.
+
+<#Include Label="Territory">
+<#Include Label="IsWreathCycle">
+<#Include Label="IsSparseWreathCycle">
+<#Include Label="WreathCycleDecomposition">
+<#Include Label="Yade">
+
+</Section>
+
+<Section Label="Display Functions">
+<Heading>Printing, Viewing and Displaying</Heading>
+
+<ManSection>
+<Meth Name="ViewObj" Arg="x" Label="for a wreath product element"/>
+<Meth Name="PrintObj" Arg="x" Label="for a wreath product element"/>
+<Meth Name="Display" Arg="x[, optrec]" Label="for a wreath product element"/>
+
+<Description>
+Wreath product elements are viewed, printed and displayed (see
+Section <Ref BookName="Reference" Sect="View and Print"/> for the distinctions between these
+operations) as generic wreath product elements (see Section <Ref Sect="Wreath Product"/>).
+For an example of the distinctions and outputs see <Ref Sect="Tutorial Display Wreath Product Elements"/>. <P/>
+
+The method <C>Display</C> allows an optional argument <A>optrec</A> which must be a record
+and modifies the display output for the execution of a single instance of the command. <P/>
+
+For modifying the display output globally for all subsequent executions of <C>Display</C> see <Ref Func="SetDisplayOptionsForWreathProductElements"/>. <P/>
+
+The following components of <A>optrec</A> are supported.
+Note, that in the following <E>labels</E> refer to the the printing output <Q><M>1, /ldots, m</M></Q> and <Q>top</Q> as seen in the tutorials.
+
+<List>
+<Mark><C>horizontal</C></Mark>
+<Item>
+<K>true</K> to use the horizontal printer. <E>DEFAULT</E> <P/>
+<K>false</K> to use the vertical printer. <P/>
+</Item>
+<Mark><C>labels</C></Mark>
+<Item>
+<K>true</K> to print labels. <E>DEFAULT</E> <P/>
+<K>false</K> to suppress labels. <P/>
+</Item>
+<Mark><C>labelStyle</C></Mark>
+<Item>
+<K>"none"</K> for labels in normal intensity. <E>DEFAULT</E> <P/>
+<K>"bold"</K> for labels in increased intensity. <P/>
+<K>"faint"</K> for labels in decreased intensity. <P/>
+</Item>
+<Mark><C>labelColor</C></Mark>
+<Item>
+<K>"default"</K> for labels in the default GAP output color. <E>DEFAULT</E> <P/>
+<K>"red"</K> for labels in red color. <P/>
+<K>"blue"</K> for labels in blue color. <P/>
+</Item>
+</List>
+</Description>
+
+</ManSection>
+
+<#Include Label="DisplayOptionsForWreathProductElements">
+<#Include Label="SetDisplayOptionsForWreathProductElements">
+<#Include Label="ResetDisplayOptionsForWreathProductElements">
+
+</Section>
+
+<Section Label="Cycle Index">
+<Heading>Cycle Index of Wreath Products</Heading>
+
+The following functions construct the cycle index polynomial of wreath products in certain actions.
+
+<#Include Label="CycleIndexWreathProductImprimitiveAction">
+<#Include Label="CycleIndexWreathProductProductAction">
+
+</Section>
+
+</Chapter>

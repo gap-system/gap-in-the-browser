@@ -1,0 +1,19 @@
+gap> # test iterating over local variables from within a break loop
+gap> f:=function(x) local y; y:=42; Error("bar"); end;;
+gap> i:=0;
+0
+gap> f(1);
+Error, bar
+Stack trace:
+*[1] Error( "bar" );
+   @ *stdin*:3
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:5
+you can enter 'quit;' to quit to outer loop, or
+you can enter 'return;' to continue
+brk> x;
+1
+brk> y;
+42
+brk> for i in [x..y] do od;
+brk> QUIT;

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (ALCO) - Contents</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap0"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap0_mj.html">[MathJax on]</a></p>
+<p><a id="X7D2C85EC87DD46E5" name="X7D2C85EC87DD46E5"></a></p>
+<div class="pcenter">
+
+<h1>ALCO</h1>
+
+
+<h2>Tools for algebraic combinatorics</h2>
+
+<p>
+    1.1.2</p>
+
+<p>
+    5 September 2025
+  </p>
+
+</div>
+<p><b>
+    Benjamin Nasmith
+
+
+
+  </b>
+<br />Email: <span class="URL"><a href="mailto:bnasmith@proton.me">bnasmith@proton.me</a></span>
+<br />Homepage: <span class="URL"><a href="https://github.com/BNasmith/">https://github.com/BNasmith/</a></span>
+</p>
+
+<p><a id="X7AA6C5737B711C89" name="X7AA6C5737B711C89"></a></p>
+<h3>Abstract</h3>
+<p>ALCO provides implementations in <strong class="pkg">GAP</strong> of octonion algebras, Jordan algebras, and certain important integer subrings of those algebras. It also provides tools to compute the parameters of t-designs in spherical and projective spaces (modeled as manifolds of primitive idempotent elements in a simple Euclidean Jordan algebra). Finally, this package provides tools to explore octonion lattice constructions, including octonion Leech lattices.</p>
+
+<p><a id="X81488B807F2A1CF1" name="X81488B807F2A1CF1"></a></p>
+<h3>Copyright</h3>
+<p>© 2024 by Benjamin Nasmith</p>
+
+<p>This package may be distributed under the terms and conditions of the GNU Public License Version 3 or (at your option) any later version.</p>
+
+<p><a id="X82A988D47DFAFCFA" name="X82A988D47DFAFCFA"></a></p>
+<h3>Acknowledgements</h3>
+<p>This documentation was prepared using the <strong class="pkg">GAPDoc</strong> package.</p>
+
+<p><a id="X8537FEB07AF2BEC8" name="X8537FEB07AF2BEC8"></a></p>
+
+<div class="contents">
+<h3>Contents<a id="contents" name="contents"></a></h3>
+
+<div class="ContChap"><a href="chap1.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+</div>
+<div class="ContChap"><a href="chap2.html#X7E7EE82D811283C0">2 <span class="Heading">Octonions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7833529F8000FCAD">2.1 <span class="Heading">Octonion Algebras</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X81A45FA7806BF5AC">2.1-1 <span class="Heading">Octonion Filters</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X78767B4A7F44F77D">2.1-2 OctonionAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X87ABC5C38446DA89">2.1-3 <span class="Heading">Octavian Integers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7E4DEB1E7C7F2C1D">2.1-4 OctonionE8Basis</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X86E4523081C49806">2.2 <span class="Heading">Properties of Octonions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7CEAB1C67B22DA7E">2.2-1 Norm</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8794715F82DE210B">2.2-2 Trace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7DA1C9FC867AE862">2.2-3 ComplexConjugate</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7FCF154F7BD4E4ED">2.2-4 RealPart</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X80488CD07C9B9BD7">2.3 <span class="Heading">Other Octonion Tools</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7D66EA0A7C8036F6">2.3-1 <span class="Heading">Converting Octonion Vectors</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X85B2EBB27ED8A073">2.3-2 VectorToIdempotentMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X83DFA8B38603F6D6">2.3-3 WeylReflection</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7991AA0A852ABD60">2.4 <span class="Heading">Quaternion Tools</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F1D2B237E4AF7A6">2.4-1 Norm</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X855FA7867B9D0A9E">2.4-2 Trace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7A4069927811A5B7">2.4-3 <span class="Heading">Hurwitz Integers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X78FF8724803E2AB4">2.4-4 QuaternionD4Basis</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X79CDD8757D97A598">2.5 <span class="Heading">Icosian Tools</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X87BAE3917C966AA5">2.5-1 <span class="Heading">Icosian Ring</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F4267A77E5F8547">2.5-2 IcosianH4Generators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C5123127E6FFFA7">2.5-3 <span class="Heading">GoldenModSigma</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X816679827A2DC3D4">2.6 <span class="Heading">Other Integer Rings</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X87AE22947AC81C0E">2.6-1 EisensteinIntegers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X82AA45BF87E1AE33">2.6-2 KleinianIntegers</a></span>
+</div></div>
+</div>
+<div class="ContChap"><a href="chap3.html#X7E13C2AE7DEAF62D">3 <span class="Heading">Simple Euclidean Jordan Algebras</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X802D4E3380BC3177">3.1 <span class="Heading">Filters and Basic Attributes</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X878107A77FBFD00A">3.1-1 <span class="Heading">Jordan Filters</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7D20807E8513CEE8">3.1-2 <span class="Heading">Jordan Rank</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7CFD4EB480976FF8">3.1-3 <span class="Heading">Jordan Degree</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X80051D4E7B64E102">3.1-4 Trace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X844D03667EC7C372">3.1-5 Determinant</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X83B5D76B87AEF802">3.1-6 Norm</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X85D508B5853906E5">3.1-7 GenericMinimalPolynomial</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7FBD095A7B884F7F">3.2 <span class="Heading">Jordan Algebra Constructions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7852050A81DEB9F4">3.2-1 SimpleEuclideanJordanAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X86C6713C8178A69F">3.2-2 JordanSpinFactor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X859F001D7CB6CBD8">3.2-3 HermitianSimpleJordanAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X800B48C383196E06">3.2-4 JordanHomotope</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7B9397277AF7F920">3.3 <span class="Heading">The Albert Algebra</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7A6AFFE07994B4A9">3.3-1 AlbertAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X860036647BB9325E">3.3-2 AlbertVectorToHermitianMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8385802B7AE842E6">3.3-3 HermitianMatrixToAlbertVector</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7F03850D819127E2">3.4 <span class="Heading">The Quadratic Representation</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X79DF7566833EA9F9">3.4-1 JordanQuadraticOperator</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B5ABEA7816F6258">3.4-2 JordanTripleSystem</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7EA1D48F853C02F1">3.5 <span class="Heading">Additional Tools and Properties</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7C236EB080D05CD4">3.5-1 HermitianJordanAlgebraBasis</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X853480DC7F9B0BD7">3.5-2 JordanMatrixBasis</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7D167A057F3CB029">3.5-3 HermitianMatrixToJordanVector</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B6084887C1C5AF1">3.5-4 JordanAlgebraGramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X806F76C07B315DE4">3.5-5 JordanAdjugate</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7C82B2EB78CF9C17">3.5-6 IsPositiveDefinite</a></span>
+</div></div>
+</div>
+<div class="ContChap"><a href="chap4.html#X7B34D3B17F1B8391">4 <span class="Heading">Spherical and Projective Designs</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X79A71E957D5B9755">4.1 <span class="Heading">Jacobi Polynomials</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X872DC5F085155040">4.1-1 JacobiPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C78C3A57DDC372B">4.1-2 <span class="Heading">Renormalized Jacobi Polynomials</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X83D7DAD082EAD26D">4.2 <span class="Heading">Jordan Designs</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X82BCF4BA84BDEE9E">4.2-1 <span class="Heading">Jordan Design Categories</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7FD006D77B3C98E2">4.2-2 JordanDesignByParameters</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X82BB5F997B7B7B3A">4.2-3 <span class="Heading">Jordan Rank and Degree</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X87D80CFF7F4FD7D6">4.2-4 JordanDesignQPolynomials</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X80A1BCF87B87D691">4.2-5 JordanDesignConnectionCoefficients</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X87DA51657F7EC947">4.3 <span class="Heading">Designs with an Angle Set</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X848E40D6842751A6">4.3-1 IsJordanDesignWithAngleSet</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X78AC6815875A2024">4.3-2 <span class="Heading">Design Angle Sets</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X840BF5428457449B">4.3-3 JordanDesignByAngleSet</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7923181A81406714">4.3-4 JordanDesignNormalizedAnnihilatorPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85E104A27EC8435A">4.3-5 JordanDesignNormalizedIndicatorCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85E1790D86685EAF">4.3-6 IsJordanDesignWithPositiveIndicatorCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X858B619F7E32D5EB">4.3-7 JordanDesignSpecialBound</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X803F6A9986E27413">4.4 <span class="Heading">Designs with Angle Set and Cardinality</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F730A1C7FC9D987">4.4-1 <span class="Heading">Design Cardinality</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7CA9D3F585A7CBC3">4.4-2 <span class="Heading">Designs at the Special Bound</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X80BE4157859BAA6A">4.4-3 JordanDesignAnnihilatorPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C7C5DEF86F051F4">4.4-4 JordanDesignIndicatorCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C4ADEEA8355A774">4.4-5 <span class="Heading">Design Strength</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7DBF21947AB79F1B">4.4-6 <span class="Heading">Schemes and Tight Designs</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X814E031B82F35E16">4.5 <span class="Heading">Designs Admitting a Regular Scheme</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X83501A01792752CC">4.5-1 JordanDesignSubdegrees</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7EE9F8D97A51FBF9">4.6 <span class="Heading">Designs Admitting an Association Scheme</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85F7CF2D7FDF58D7">4.6-1 JordanDesignBoseMesnerAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F95AE4A7B7B5B2B">4.6-2 JordanDesignBoseMesnerIdempotentBasis</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X851F03427CFDC513">4.6-3 JordanDesignIntersectionNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X84E0CAFE83145B3F">4.6-4 JordanDesignKreinNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X87C0A2067F13F01A">4.6-5 JordanDesignFirstEigenmatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7FC9FDCC7DD82286">4.6-6 JordanDesignSecondEigenmatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7FB944C182A2FBE3">4.6-7 JordanDesignMultiplicities</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7E7012EB7BFE889D">4.6-8 DesignValencies</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X788831797E45CE02">4.6-9 JordanDesignReducedAdjacencyMatrices</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7A489A5D79DA9E5C">4.7 <span class="Heading">Examples</span></a>
+</span>
+</div>
+</div>
+<div class="ContChap"><a href="chap5.html#X7F6AA3C97E706F4F">5 <span class="Heading">Octonion Lattice Constructions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X86D2839985CED826">5.1 <span class="Heading">Gram Matrices and Octonion Lattices</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X86B3BD9C84639A7E">5.1-1 IsLeechLatticeGramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X78F07E967C6779FF">5.1-2 IsGossetLatticeGramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X824D0D267A7C0765">5.1-3 <span class="Heading">Miracle Octad Generator (MOG) Coordinates</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7C043B907EC1FE89">5.1-4 IsOctonionLattice</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7FCBD0FF7D8C0C19">5.1-5 OctonionLatticeByGenerators</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X786A725B7ADE7BDE">5.2 <span class="Heading">Octonion Lattice Attributes</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X781F36A17CD9FDA6">5.2-1 UnderlyingOctonionRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X8120692484549A5B">5.2-2 OctonionGramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X79113ABC7A39CFFB">5.2-3 GeneratorsAsCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X80B8907778F550EE">5.2-4 LLLReducedBasisCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X844164BC82764599">5.2-5 <span class="Heading">Octonion Lattice Dimension</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7F4BF549811C33EA">5.2-6 GramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X825D41AE7A411640">5.2-7 <span class="Heading">Lattice Basis</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X79F28E887AF17FFC">5.3 <span class="Heading">Octonion Lattice Operations</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X87BDB89B7AAFE8AD"><code>5.3-1 \in</code></a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X84CF857E83452B67">5.3-2 ScalarProduct</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7F68456883DCEE5D">5.3-3 <span class="Heading">Sublattice Identification</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X83B4296D7A2F59F8">5.3-4 <span class="Heading">Lattice Vector Coefficients</span></a>
+</span>
+</div></div>
+</div>
+<div class="ContChap"><a href="chap6.html#X86ED1AD579C62F21">6 <span class="Heading">Closure Tools</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X811639F384636DE8">6.1 <span class="Heading">Brute Force Method</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X87E8AA6582245C3E">6.1-1 Closure</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7F865ED67CC5740F">6.2 <span class="Heading">Random Choice Methods</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X78DC531B815591E8">6.2-1 RandomElementClosure</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7A4675E27B489038">6.2-2 RandomOrbitOnSets</a></span>
+</div></div>
+</div>
+<div class="ContChap"><a href="chapBib.html"><span class="Heading">References</span></a></div>
+<div class="ContChap"><a href="chapInd.html"><span class="Heading">Index</span></a></div>
+<br />
+</div>
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

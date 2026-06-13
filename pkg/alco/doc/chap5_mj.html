@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (ALCO) - Chapter 5: Octonion Lattice Constructions</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap5"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap5.html">[MathJax off]</a></p>
+<p><a id="X7F6AA3C97E706F4F" name="X7F6AA3C97E706F4F"></a></p>
+<div class="ChapSects"><a href="chap5_mj.html#X7F6AA3C97E706F4F">5 <span class="Heading">Octonion Lattice Constructions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X86D2839985CED826">5.1 <span class="Heading">Gram Matrices and Octonion Lattices</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X86B3BD9C84639A7E">5.1-1 IsLeechLatticeGramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X78F07E967C6779FF">5.1-2 IsGossetLatticeGramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X824D0D267A7C0765">5.1-3 <span class="Heading">Miracle Octad Generator (MOG) Coordinates</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7C043B907EC1FE89">5.1-4 IsOctonionLattice</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7FCBD0FF7D8C0C19">5.1-5 OctonionLatticeByGenerators</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X786A725B7ADE7BDE">5.2 <span class="Heading">Octonion Lattice Attributes</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X781F36A17CD9FDA6">5.2-1 UnderlyingOctonionRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X8120692484549A5B">5.2-2 OctonionGramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X79113ABC7A39CFFB">5.2-3 GeneratorsAsCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X80B8907778F550EE">5.2-4 LLLReducedBasisCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X844164BC82764599">5.2-5 <span class="Heading">Octonion Lattice Dimension</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7F4BF549811C33EA">5.2-6 GramMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X825D41AE7A411640">5.2-7 <span class="Heading">Lattice Basis</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X79F28E887AF17FFC">5.3 <span class="Heading">Octonion Lattice Operations</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X87BDB89B7AAFE8AD"><code>5.3-1 \in</code></a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X84CF857E83452B67">5.3-2 ScalarProduct</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7F68456883DCEE5D">5.3-3 <span class="Heading">Sublattice Identification</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X83B4296D7A2F59F8">5.3-4 <span class="Heading">Lattice Vector Coefficients</span></a>
+</span>
+</div></div>
+</div>
+
+<h3>5 <span class="Heading">Octonion Lattice Constructions</span></h3>
+
+<p>An <em>octonion vector</em> is a tuple of octonions. Vector addition and scalar multiplication are defined in the usual way, as component-wise addition and scalar multiplication. We can define the <em>octonion vector norm</em> and corresponding inner product for an octonion vector in a number of ways, but require that the octonion norm of an octonion vector belongs to the ring of scalars.</p>
+
+<p>An <em>octonion lattice</em> is a free left ℤ-module generated by a finite set of octonion vectors along with some octonion vector norm. Octonion lattice constructions of the Leech lattice are explored in several places, including <a href="chapBib_mj.html#biBelkies_exceptional_1996">[EG96]</a>, <a href="chapBib_mj.html#biBwilson_octonions_2009">[Wil09b]</a>, <a href="chapBib_mj.html#biBwilson_conways_2011">[Wil11]</a>, <a href="chapBib_mj.html#biBnasmith_octonions_2022">[Nas22]</a>, <a href="chapBib_mj.html#biBnasmith_tight_2023">[Nas23]</a>.</p>
+
+<p>The <strong class="pkg">ALCO</strong> package provides tools to construct and study octonion lattices, including the Leech lattice constructions given in the references above. This package constructs octonion lattices in <strong class="pkg">GAP</strong> as free left modules (that satisfy <code class="code">IsFreeLeftModule</code>) with the additional structure needed to compute the norms of lattice points and their inner product. It also includes tools to identify the Leech lattice and Gosset (<span class="SimpleMath">\(E_8\)</span>) lattice by examining the Gram matrix of a lattice.</p>
+
+<p><a id="X86D2839985CED826" name="X86D2839985CED826"></a></p>
+
+<h4>5.1 <span class="Heading">Gram Matrices and Octonion Lattices</span></h4>
+
+<p>The Gram matrix of a lattice basis is a computed by taking the inner products of the basis vectors. When the inner product is real-valued, the Gram matrix of a lattice basis must be a positive definite symmetric matrix (see <a href="chapBib_mj.html#biBconway_sphere_2013">[CS13, chap. 1]</a>). Certain important lattices may be identified using a Gram matrix of that lattice. The <strong class="pkg">ALCO</strong> package provides the following tools to identify a Gosset or Leech lattice Gram matrix.</p>
+
+<p><a id="X86B3BD9C84639A7E" name="X86B3BD9C84639A7E"></a></p>
+
+<h5>5.1-1 IsLeechLatticeGramMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLeechLatticeGramMatrix</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function tests whether <var class="Arg">G</var> is a Gram matrix of the Leech lattice. In order for the function to return <code class="code">true</code>, argument <var class="Arg">G</var> must satisfy the following. First, <var class="Arg">G</var> must satisfy <code class="code">IsOrdinaryMatrix(<var class="Arg">G</var>)</code>, <code class="code">DimensionsMat(<var class="Arg">G</var>) = [24,24]</code>, <code class="code">TransposedMat(<var class="Arg">G</var>) = <var class="Arg">G</var></code>, and <code class="code">ForAll(Flat(<var class="Arg">G</var>), IsInt)</code>. If so, then this function verifies that <var class="Arg">G</var> belongs to a unimodular lattice and computes <code class="code">ShortestVectors(<var class="Arg">G</var>, 3)</code>. Provided that no vectors of norm <span class="SimpleMath">\(1\)</span>, <span class="SimpleMath">\(2\)</span>, or <span class="SimpleMath">\(3\)</span> exist, then by the classification of unimodular lattices in <span class="SimpleMath">\(24\)</span> dimensions, Gram matrix <var class="Arg">G</var> must belong to a Leech lattice. For details about the classification see <a href="chapBib_mj.html#biBconway_sphere_2013">[CS13, chaps. 16-18]</a>.</p>
+
+<p><a id="X78F07E967C6779FF" name="X78F07E967C6779FF"></a></p>
+
+<h5>5.1-2 IsGossetLatticeGramMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGossetLatticeGramMatrix</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function tests whether <var class="Arg">G</var> is a Gram matrix of the Gosset lattice, also known as the <span class="SimpleMath">\(E_8\)</span> lattice. In order for the function to return <code class="code">true</code>, argument <var class="Arg">G</var> must satisfy the following. First, <var class="Arg">G</var> must satisfy <code class="code">IsOrdinaryMatrix(<var class="Arg">G</var>)</code>, <code class="code">DimensionsMat(<var class="Arg">G</var>) = [8,8]</code>, <code class="code">TransposedMat(<var class="Arg">G</var>) = <var class="Arg">G</var></code>, and <code class="code">ForAll(Flat(<var class="Arg">G</var>), IsInt)</code>. If so, then this function verifies that <var class="Arg">G</var> belongs to a unimodular lattice and computes <code class="code">ShortestVectors(<var class="Arg">G</var>, 1)</code>. Provided that no vectors of norm <span class="SimpleMath">\(1\)</span> exist, then by the classification of unimodular lattices in <span class="SimpleMath">\(8\)</span> dimensions, Gram matrix <var class="Arg">G</var> must belong to a Gosset lattice. For details about the classification see <a href="chapBib_mj.html#biBconway_sphere_2013">[CS13, chaps. 16-18]</a>.</p>
+
+<p><a id="X824D0D267A7C0765" name="X824D0D267A7C0765"></a></p>
+
+<h5>5.1-3 <span class="Heading">Miracle Octad Generator (MOG) Coordinates</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MOGLeechLatticeGeneratorMatrix</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MOGLeechLatticeGramMatrix</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<p>The Leech lattice is studied in detail in <a href="chapBib_mj.html#biBconway_sphere_2013">[CS13]</a> using a specific set of coordinates, known as "Miracle Octad Generator" coordinates. The choice of MOG coordinates exhibits the <span class="SimpleMath">\(M_{24}\)</span> symmetries of the lattice. The <strong class="pkg">ALCO</strong> package loads the following variables to construct the Leech lattice in MOG coordinates. The variable <code class="code">MOGLeechLatticeGeneratorMatrix</code> stores the <span class="SimpleMath">\(24 \times 24\)</span> integer matrix with rows that span a MOG Leech lattice <a href="chapBib_mj.html#biBconway_sphere_2013">[CS13, p. 133]</a>. The variable <code class="code">MOGLeechLatticeGramMatrix</code> stores the Gram matrix of the generator matrix rows, with the inner product computed as <code class="code">x*y/8</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M := MOGLeechLatticeGeneratorMatrix;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := M*TransposedMat(M)/8;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G = MOGLeechLatticeGramMatrix;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsLeechLatticeGramMatrix(G);</span>
+true</pre></div>
+
+<p><a id="X7C043B907EC1FE89" name="X7C043B907EC1FE89"></a></p>
+
+<h5>5.1-4 IsOctonionLattice</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOctonionLattice</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>As described above, an octonion lattice is a free left ℤ-module generated by a finite set of octonion vectors and equipped with some octonion vector norm. The category <code class="code">IsOctonionLattice</code> is a subcategory of <code class="code">IsFreeLeftModule</code> used by the <strong class="pkg">ALCO</strong> package to construct octonion lattices as free left modules with the additional structure of a norm on octonion vectors. The simplest available norm is perhaps to set the norm of an octonion vector to be the sum of the norms of the octonion coefficients. The norm for an octonion lattice in the <strong class="pkg">ALCO</strong> package is defined (via an inner product) in a more general way, described below.</p>
+
+<p>Let <var class="Arg">L</var> be an object that satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>. Then <var class="Arg">L</var> is equipped with an attribute <code class="code"><var class="Arg">G</var> = OctonionGramMatrix(<var class="Arg">L</var>)</code>. The matrix <var class="Arg">G</var> is a Hermitian octonion matrix used to define the octonion lattice norm and inner product. For <var class="Arg">x</var>, <var class="Arg">y</var> octonion vectors in <var class="Arg">L</var>, the inner product of <var class="Arg">x</var> and <var class="Arg">y</var> is computed as <code class="code">Trace(<var class="Arg">x</var>*<var class="Arg">G</var>*ComplexConjugate(<var class="Arg">y</var>))</code>. The trace (twice the real part) satisfies <code class="code">Trace((<var class="Arg">x</var>*<var class="Arg">y</var>)*<var class="Arg">z</var>) = Trace(<var class="Arg">x</var>*(<var class="Arg">y</var>*<var class="Arg">z</var>))</code> for any octonions <var class="Arg">x,y,z</var> <a href="chapBib_mj.html#biBwilson_finite_2009">[Wil09a, p. 145]</a>. It follows that the inner product defined above for octonion vectors is also well defined despite the non-associativity of the octonion algebra. If we define the norm as the inner product of a vector with itself, then we can set the vector norm to be the sum of the norms of the octonion coefficients by setting <code class="code"><var class="Arg">G</var> = OctonionGramMatrix(<var class="Arg">L</var>)</code> to be half the identity matrix.</p>
+
+<p><a id="X7FCBD0FF7D8C0C19" name="X7FCBD0FF7D8C0C19"></a></p>
+
+<h5>5.1-5 OctonionLatticeByGenerators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctonionLatticeByGenerators</code>( <var class="Arg">gens</var>[, <var class="Arg">G</var>[, <var class="Arg">B</var>]] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function returns a free left module that satisfies <code class="func">IsOctonionLattice</code> (<a href="chap5_mj.html#X7C043B907EC1FE89"><span class="RefLink">5.1-4</span></a>). The attribute <code class="code">LeftActingDomain</code> is automatically set to <code class="code">Integers</code>. Argument <var class="Arg">gens</var> must be a list of equal length octonion row vectors that satisfies <code class="code">IsOctonionCollColl(<var class="Arg">gens</var>)</code>. The inner product is defined by optional argument <var class="Arg">G</var>, which is an octonion Hermitian matrix that defaults to half the identity matrix. Optional argument <var class="Arg">B</var> is a basis for the octonion algebra used to construct the vectors and defaults to the canonical basis of that algebra. All three arguments must satisfy <code class="code">IsHomogeneousList(Flat([<var class="Arg">gens</var>, <var class="Arg">G</var>, <var class="Arg">B</var>]))</code> in order to ensure that the same octonion algebra is being used in each argument.</p>
+
+<p>The input <var class="Arg">gens</var> is stored as the attribute <code class="code">GeneratorsOfLeftOperatorAdditiveGroup</code>. The vectors in <var class="Arg">gens</var> need not be linearly independent. The octonion algebra basis <var class="Arg">B</var> is used to convert <var class="Arg">gens</var> to a list of real coefficients using <code class="code">OctonionToRealVector(<var class="Arg">B</var>, <var class="Arg">x</var>)</code> for each <var class="Arg">x</var> in <var class="Arg">gens</var>. These converted vectors are stored as the attribute <code class="code">GeneratorsAsCoefficients</code> and are used to compute a basis for the lattice which is stored as the attribute <code class="code"> LLLReducedBasisCoefficients</code>.</p>
+
+<p>The argument <var class="Arg">G</var> is stored as the attribute <code class="code">OctonionGramMatrix</code> and is used to define <code class="code">ScalarProduct(<var class="Arg">L</var>, <var class="Arg">x</var>, <var class="Arg">y</var>) = Trace(<var class="Arg">x</var>*<var class="Arg">G</var>*ComplexConjugate(<var class="Arg">y</var>))</code> for <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code> and <var class="Arg">x,y</var> octonion vectors in <var class="Arg">L</var>.</p>
+
+<p>In the following example, we construct the octonion lattice consisting of all octavian integer triples where the norm of a vector is the sum of the norms of the coefficients. We also supply the <span class="SimpleMath">\(E_8\)</span> basis for the octavian integers as the underlying octonion ring basis <var class="Arg">B</var> for the construction.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">O := OctavianIntegers;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens := Concatenation(List(IdentityMat(3), x -&gt; List(Basis(O), y -&gt; x*y)));</span>
+[ [ (-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7, 0*e1, 0*e1 ],
+  [ (-1/2)*e1+(-1/2)*e2+(-1/2)*e4+(-1/2)*e7, 0*e1, 0*e1 ],
+  [ (1/2)*e2+(1/2)*e3+(-1/2)*e5+(-1/2)*e7, 0*e1, 0*e1 ],
+  [ (1/2)*e1+(-1/2)*e3+(1/2)*e4+(1/2)*e5, 0*e1, 0*e1 ],
+  [ (-1/2)*e2+(1/2)*e3+(-1/2)*e5+(1/2)*e7, 0*e1, 0*e1 ],
+  [ (1/2)*e2+(-1/2)*e4+(1/2)*e5+(-1/2)*e6, 0*e1, 0*e1 ],
+  [ (-1/2)*e1+(-1/2)*e3+(1/2)*e4+(-1/2)*e5, 0*e1, 0*e1 ],
+  [ (1/2)*e1+(-1/2)*e4+(1/2)*e6+(-1/2)*e8, 0*e1, 0*e1 ],
+  [ 0*e1, (-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7, 0*e1 ],
+  [ 0*e1, (-1/2)*e1+(-1/2)*e2+(-1/2)*e4+(-1/2)*e7, 0*e1 ],
+  [ 0*e1, (1/2)*e2+(1/2)*e3+(-1/2)*e5+(-1/2)*e7, 0*e1 ],
+  [ 0*e1, (1/2)*e1+(-1/2)*e3+(1/2)*e4+(1/2)*e5, 0*e1 ],
+  [ 0*e1, (-1/2)*e2+(1/2)*e3+(-1/2)*e5+(1/2)*e7, 0*e1 ],
+  [ 0*e1, (1/2)*e2+(-1/2)*e4+(1/2)*e5+(-1/2)*e6, 0*e1 ],
+  [ 0*e1, (-1/2)*e1+(-1/2)*e3+(1/2)*e4+(-1/2)*e5, 0*e1 ],
+  [ 0*e1, (1/2)*e1+(-1/2)*e4+(1/2)*e6+(-1/2)*e8, 0*e1 ],
+  [ 0*e1, 0*e1, (-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7 ],
+  [ 0*e1, 0*e1, (-1/2)*e1+(-1/2)*e2+(-1/2)*e4+(-1/2)*e7 ],
+  [ 0*e1, 0*e1, (1/2)*e2+(1/2)*e3+(-1/2)*e5+(-1/2)*e7 ],
+  [ 0*e1, 0*e1, (1/2)*e1+(-1/2)*e3+(1/2)*e4+(1/2)*e5 ],
+  [ 0*e1, 0*e1, (-1/2)*e2+(1/2)*e3+(-1/2)*e5+(1/2)*e7 ],
+  [ 0*e1, 0*e1, (1/2)*e2+(-1/2)*e4+(1/2)*e5+(-1/2)*e6 ],
+  [ 0*e1, 0*e1, (-1/2)*e1+(-1/2)*e3+(1/2)*e4+(-1/2)*e5 ],
+  [ 0*e1, 0*e1, (1/2)*e1+(-1/2)*e4+(1/2)*e6+(-1/2)*e8 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := IdentityMat(3)*One(O)/2;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B := CanonicalBasis(O);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">O3 := OctonionLatticeByGenerators(gens, G, B);</span>
+&lt;free left module over Integers, with 24 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownAttributesOfObject(O3);</span>
+[ "LeftActingDomain", "Dimension", "GeneratorsOfLeftOperatorAdditiveGroup",
+  "UnderlyingOctonionRing", "UnderlyingOctonionRingBasis",
+  "OctonionGramMatrix", "GeneratorsAsCoefficients",
+  "LLLReducedBasisCoefficients" ]</pre></div>
+
+<p><a id="X786A725B7ADE7BDE" name="X786A725B7ADE7BDE"></a></p>
+
+<h4>5.2 <span class="Heading">Octonion Lattice Attributes</span></h4>
+
+<p>An free left module <var class="Arg">L</var> that satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code> has several attributes in addition to those of a free left module (such as <code class="code">LeftActingDomain</code> and <code class="code">GeneratorsOfLeftOperatorAdditiveGroup</code>). In the examples of this section, we use the octonion lattice <code class="code">O3</code> constructed above to illustrate these attributes.</p>
+
+<p><a id="X781F36A17CD9FDA6" name="X781F36A17CD9FDA6"></a></p>
+
+<h5>5.2-1 UnderlyingOctonionRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnderlyingOctonionRing</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>, this attribute stores the octonion algebra to which the coefficients of the generating octonion vectors <var class="Arg">gens</var> belong. This algebra is determined by <code class="code">FamilyObj(One(Flat(<var class="Arg">gens</var>)))!.fullSCAlgebra</code> where <var class="Arg">gens</var> is given by <code class="code">GeneratorsOfLeftOperatorAdditiveGroup(<var class="Arg">L</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">UnderlyingOctonionRing(O3);</span>
+&lt;algebra-with-one of dimension 8 over Rationals&gt;</pre></div>
+
+<p><a id="X8120692484549A5B" name="X8120692484549A5B"></a></p>
+
+<h5>5.2-2 OctonionGramMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctonionGramMatrix</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>, this attribute stores the optional argument <var class="Arg">G</var> of <code class="func">OctonionLatticeByGenerators</code> (<a href="chap5_mj.html#X7FCBD0FF7D8C0C19"><span class="RefLink">5.1-5</span></a>). When the optional argument is not supplied, the default value is half the appropriate octonion identity matrix. This octonion matrix is used to compute <code class="func">ScalarProduct</code> (<a href="chap5_mj.html#X84CF857E83452B67"><span class="RefLink">5.3-2</span></a>) between lattice vectors.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OctonionGramMatrix(O3);; Display(last);</span>
+[ [  (1/2)*e8,      0*e1,      0*e1 ],
+  [      0*e1,  (1/2)*e8,      0*e1 ],
+  [      0*e1,      0*e1,  (1/2)*e8 ] ]</pre></div>
+
+<p><a id="X79113ABC7A39CFFB" name="X79113ABC7A39CFFB"></a></p>
+
+<h5>5.2-3 GeneratorsAsCoefficients</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsAsCoefficients</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>, this attribute converts the lattice generators, <code class="code">GeneratorsOfLeftOperatorAdditiveGroup(<var class="Arg">L</var>)</code>, into a list of coefficients using <code class="code">OctonionToRealVector(<var class="Arg">B</var>, <var class="Arg">x</var>)</code> for each generator <var class="Arg">x</var>. Recall that <var class="Arg">B</var> is an optional argument of <code class="func">OctonionLatticeByGenerators</code> (<a href="chap5_mj.html#X7FCBD0FF7D8C0C19"><span class="RefLink">5.1-5</span></a>) that defaults to <code class="code">CanonicalBasis(UnderlyingOctonionRing(<var class="Arg">L</var>))</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsAsCoefficients(O3);</span>
+[ [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ] ]</pre></div>
+
+<p><a id="X80B8907778F550EE" name="X80B8907778F550EE"></a></p>
+
+<h5>5.2-4 LLLReducedBasisCoefficients</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LLLReducedBasisCoefficients</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>, this attribute stores the LLL reduced basis computed from <code class="code">GeneratorsAsCoefficients(<var class="Arg">L</var>)</code>. These vectors define the <code class="func">CanonicalBasis</code> (<a href="chap5_mj.html#X825D41AE7A411640"><span class="RefLink">5.2-7</span></a>) for <var class="Arg">L</var> and are used to compute the attribute <code class="func">GramMatrix</code> (<a href="chap5_mj.html#X7F4BF549811C33EA"><span class="RefLink">5.2-6</span></a>).</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LLLReducedBasisCoefficients(O3);</span>
+[ [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0 ],
+  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1 ] ]</pre></div>
+
+<p><a id="X844164BC82764599" name="X844164BC82764599"></a></p>
+
+<h5>5.2-5 <span class="Heading">Octonion Lattice Dimension</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dimension</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Rank</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>, these attributes store the lattice dimension, also known as rank. This is calculated by evaluating <code class="code">Rank( GeneratorsAsCoefficients(<var class="Arg">L</var>) )</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dimension(O3);</span>
+24
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Rank(O3);</span>
+24</pre></div>
+
+<p><a id="X7F4BF549811C33EA" name="X7F4BF549811C33EA"></a></p>
+
+<h5>5.2-6 GramMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GramMatrix</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>, this attribute stores the Gram matrix defined by the basis stored using the <code class="func">LLLReducedBasisCoefficients</code> (<a href="chap5_mj.html#X80B8907778F550EE"><span class="RefLink">5.2-4</span></a>) attribute and the inner product defined on the lattice by <code class="func">ScalarProduct</code> (<a href="chap5_mj.html#X84CF857E83452B67"><span class="RefLink">5.3-2</span></a>).</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g := 2*GramMatrix(O3);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DimensionsMat(g);</span>
+[ 24, 24 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeterminantMat(g);</span>
+1</pre></div>
+
+<p><a id="X825D41AE7A411640" name="X825D41AE7A411640"></a></p>
+
+<h5>5.2-7 <span class="Heading">Lattice Basis</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Basis</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalBasis</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVectors</code>( <var class="Arg">B</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOctonionLatticeBasis</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>, these attributes are used to store the lattice canonical basis determined by <code class="func">LLLReducedBasisCoefficients</code> (<a href="chap5_mj.html#X80B8907778F550EE"><span class="RefLink">5.2-4</span></a>). The attributes <code class="code">Basis(<var class="Arg">L</var>)</code> and <code class="code">CanonicalBasis(<var class="Arg">L</var>)</code> are equivalent and satisfy the filter <code class="code">IsOctonionLatticeBasis</code>. The attribute <code class="code">BasisVectors</code> returns the vectors stored in the attribute <code class="func">LLLReducedBasisCoefficients</code> (<a href="chap5_mj.html#X80B8907778F550EE"><span class="RefLink">5.2-4</span></a>) converted into octonion vectors using <code class="code">RealToOctonionVector(UnderlyingOctonionRingBasis(<var class="Arg">L</var>), <var class="Arg">x</var>)</code> for each <var class="Arg">x</var> in <code class="code">LLLReducedBasisCoefficients(<var class="Arg">L</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsOctonionLatticeBasis(Basis(O3));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := BasisVectors(Basis(O3));</span>
+[ [ (-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7, 0*e1, 0*e1 ],
+  [ (-1/2)*e1+(-1/2)*e2+(-1/2)*e4+(-1/2)*e7, 0*e1, 0*e1 ],
+  [ (1/2)*e1+(1/2)*e2+(1/2)*e4+(-1/2)*e7, 0*e1, 0*e1 ],
+  [ (1/2)*e2+(1/2)*e3+(-1/2)*e5+(-1/2)*e7, 0*e1, 0*e1 ],
+  [ (1/2)*e1+(1/2)*e3+(1/2)*e4+(-1/2)*e5, 0*e1, 0*e1 ],
+  [ (1/2)*e1+(1/2)*e2+(1/2)*e3+(-1/2)*e6, 0*e1, 0*e1 ],
+  [ (1/2)*e2+(1/2)*e4+(-1/2)*e5+(-1/2)*e6, 0*e1, 0*e1 ],
+  [ (1/2)*e1+(1/2)*e2+(-1/2)*e5+(-1/2)*e8, 0*e1, 0*e1 ],
+  [ 0*e1, (-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7, 0*e1 ],
+  [ 0*e1, (-1/2)*e1+(-1/2)*e2+(-1/2)*e4+(-1/2)*e7, 0*e1 ],
+  [ 0*e1, (1/2)*e1+(1/2)*e2+(1/2)*e4+(-1/2)*e7, 0*e1 ],
+  [ 0*e1, (1/2)*e2+(1/2)*e3+(-1/2)*e5+(-1/2)*e7, 0*e1 ],
+  [ 0*e1, (1/2)*e1+(1/2)*e3+(1/2)*e4+(-1/2)*e5, 0*e1 ],
+  [ 0*e1, (1/2)*e1+(1/2)*e2+(1/2)*e3+(-1/2)*e6, 0*e1 ],
+  [ 0*e1, (1/2)*e2+(1/2)*e4+(-1/2)*e5+(-1/2)*e6, 0*e1 ],
+  [ 0*e1, (1/2)*e1+(1/2)*e2+(-1/2)*e5+(-1/2)*e8, 0*e1 ],
+  [ 0*e1, 0*e1, (-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7 ],
+  [ 0*e1, 0*e1, (-1/2)*e1+(-1/2)*e2+(-1/2)*e4+(-1/2)*e7 ],
+  [ 0*e1, 0*e1, (1/2)*e1+(1/2)*e2+(1/2)*e4+(-1/2)*e7 ],
+  [ 0*e1, 0*e1, (1/2)*e2+(1/2)*e3+(-1/2)*e5+(-1/2)*e7 ],
+  [ 0*e1, 0*e1, (1/2)*e1+(1/2)*e3+(1/2)*e4+(-1/2)*e5 ],
+  [ 0*e1, 0*e1, (1/2)*e1+(1/2)*e2+(1/2)*e3+(-1/2)*e6 ],
+  [ 0*e1, 0*e1, (1/2)*e2+(1/2)*e4+(-1/2)*e5+(-1/2)*e6 ],
+  [ 0*e1, 0*e1, (1/2)*e1+(1/2)*e2+(-1/2)*e5+(-1/2)*e8 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GramMatrix(O3) = List(b, x -&gt; List(b, y -&gt; ScalarProduct(O3, x, y)));</span>
+true</pre></div>
+
+<p><a id="X79F28E887AF17FFC" name="X79F28E887AF17FFC"></a></p>
+
+<h4>5.3 <span class="Heading">Octonion Lattice Operations</span></h4>
+
+<p>There are some additional operations available to study octonion lattices. In the examples that follow, we continue to use the lattice <code class="code">O3</code> defined in the example of <code class="func">OctonionLatticeByGenerators</code> (<a href="chap5_mj.html#X7FCBD0FF7D8C0C19"><span class="RefLink">5.1-5</span></a>).</p>
+
+<p><a id="X87BDB89B7AAFE8AD" name="X87BDB89B7AAFE8AD"></a></p>
+
+<h5><code>5.3-1 \in</code></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \in</code>( <var class="Arg">x</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code> and <var class="Arg">x</var> is an octonion row vector that satisfies <code class="code">IsOctonionCollection and IsRowVector</code>, this operation test whether vector <var class="Arg">x</var> is in lattice <var class="Arg">L</var>. This operation will return <code class="code">fail</code> when <var class="Arg">x</var> and <var class="Arg">L</var> do not share the same underlying octonion ring. Note that <code class="code">\in(<var class="Arg">x</var>,<var class="Arg">L</var>)</code> and <code class="code"><var class="Arg">x</var> in <var class="Arg">L</var></code> are equivalent expression.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Sum(BasisVectors(Basis(O3)){[2,3,4]});</span>
+[ (1/2)*e2+(1/2)*e3+(-1/2)*e5+(-3/2)*e7, 0*e1, 0*e1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x in O3;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">\in( x, O3);</span>
+true</pre></div>
+
+<p><a id="X84CF857E83452B67" name="X84CF857E83452B67"></a></p>
+
+<h5>5.3-2 ScalarProduct</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ScalarProduct</code>( <var class="Arg">L</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> satisfies <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code> and <var class="Arg">x</var>, <var class="Arg">y</var> satisfy <code class="code">IsOctonionCollection and IsRowVector</code> then this operation returns <code class="code">Trace(<var class="Arg">x</var>*OctonionGramMatrix(<var class="Arg">L</var>)*ComplexConjugate(<var class="Arg">y</var>))</code>. Here the trace is the method <code class="func">Trace</code> (<a href="chap2_mj.html#X8794715F82DE210B"><span class="RefLink">2.2-2</span></a>) acting on an octonion argument (corresponding to twice the real part, or identity coefficient, of the octonion <code class="code"><var class="Arg">x</var>*OctonionGramMatrix(<var class="Arg">L</var>)*ComplexConjugate(<var class="Arg">y</var>)</code>). When <var class="Arg">x</var>, <var class="Arg">y</var> are not octonion vectors but rather coefficient vectors of the appropriate length, with<code class="code">IsHomogeneousList(Flat([x,y,GeneratorsAsCoefficients(L)]))</code>, then the operation <code class="code">ScalarProduct</code> converts <var class="Arg">x</var> and <var class="Arg">y</var> to suitable octonion vectors to compute the scalar product.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := BasisVectors(Basis(O3));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b[1];</span>
+[ (-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7, 0*e1, 0*e1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GramMatrix(O3) = List(b, x -&gt; List(b, y -&gt; ScalarProduct(O3, x, y)));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c := LLLReducedBasisCoefficients(O3);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c[1];</span>
+[ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GramMatrix(O3) = List(c, x -&gt; List(c, y -&gt; ScalarProduct(O3, x, y)));</span>
+true</pre></div>
+
+<p><a id="X7F68456883DCEE5D" name="X7F68456883DCEE5D"></a></p>
+
+<h5>5.3-3 <span class="Heading">Sublattice Identification</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSublattice</code>( <var class="Arg">L</var>, <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSubset</code>( <var class="Arg">L</var>, <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \=</code>( <var class="Arg">L</var>, <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>When <var class="Arg">L</var> and <var class="Arg">M</var> both satisfy <code class="code">IsOctonionLattice(<var class="Arg">L</var>)</code>, these operations determine whether <var class="Arg">M</var> is a sublattice of <var class="Arg">L</var> by checking whether the basis vectors for <var class="Arg">M</var> are in <var class="Arg">L</var>. If the lattices <var class="Arg">L</var> and <var class="Arg">M</var> do not share the same <code class="func">UnderlyingOctonionRing</code> (<a href="chap5_mj.html#X781F36A17CD9FDA6"><span class="RefLink">5.2-1</span></a>) then the operation will return <code class="code">fail</code>. The operation <code class="code">\=</code> returns the value of <code class="code">IsSublattice(<var class="Arg">L</var>, <var class="Arg">M</var>) and IsSublattice(<var class="Arg">L</var>, <var class="Arg">M</var>)</code>. In the example below we construct an octonion Leech lattice <code class="code">Leech</code> and verify that it is a sublattice of <code class="code">O3</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := LinearCombination(OctonionE8Basis, [ 1, 2, 1, 2, 2, 2, 2, 1 ]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">leech_gens := List(Basis(OctavianIntegers), x -&gt; </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">x*[[s,s,0],[0,s,s],ComplexConjugate([s,s,s])]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">leech_gens := Concatenation(leech_gens);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Leech := OctonionLatticeByGenerators(leech_gens, G, B);</span>
+&lt;free left module over Integers, with 24 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsLeechLatticeGramMatrix(GramMatrix(Leech));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSublattice(Leech, O3);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSublattice(O3, Leech);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubset(O3, Leech);</span>
+true</pre></div>
+
+<p><a id="X83B4296D7A2F59F8" name="X83B4296D7A2F59F8"></a></p>
+
+<h5>5.3-4 <span class="Heading">Lattice Vector Coefficients</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Coefficients</code>( <var class="Arg">B</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Let <var class="Arg">B</var> satisfy <code class="code">IsOctonionLatticeBasis(<var class="Arg">B</var>)</code> with basis <var class="Arg">B</var> belonging to octonion lattice <var class="Arg">L</var>. For <code class="code"><var class="Arg">y</var> in <var class="Arg">L</var></code> such that <code class="code">IsOctonionCollection(<var class="Arg">y</var>)</code>, the coefficients in <var class="Arg">y</var> in the lattice basis <var class="Arg">B</var> can be determined by <code class="code">Coefficients(<var class="Arg">B</var>, <var class="Arg">y</var>)</code>. For <code class="code"><var class="Arg">x</var></code> an integer row vector of suitable length, the linear combination of basis vectors is computed in the usual way as <code class="code">LinearCombination(<var class="Arg">B</var>, <var class="Arg">x</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">rand := Random(O3);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">coeffs := Coefficients(Basis(O3), rand);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">rand = LinearCombination(Basis(O3), coeffs);</span>
+true</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

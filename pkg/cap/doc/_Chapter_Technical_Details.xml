@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Technical_Details">
+<Heading>Technical Details</Heading>
+
+<P/>
+<Section Label="Chapter_Technical_Details_Section_The_Category_Cat">
+<Heading>The Category Cat</Heading>
+
+<ManSection>
+  <Attr Arg="functor" Name="ObjectCache" Label="for IsCapFunctor"/>
+ <Returns>IsCachingObject
+</Returns>
+ <Description>
+  Retuns the caching object which stores the results of the functor <A>functor</A> applied to objects.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="functor" Name="MorphismCache" Label="for IsCapFunctor"/>
+ <Returns>IsCachingObject
+</Returns>
+ <Description>
+  Retuns the caching object which stores the results of the functor <A>functor</A> applied to morphisms.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Technical_Details_Section_Tools">
+<Heading>Tools</Heading>
+
+<ManSection>
+  <Func Arg="specification, func" Name="FunctionWithNamedArguments" />
+ <Returns>a function
+</Returns>
+ <Description>
+  Simulates named arguments in &GAP; as follows:
+<List>
+<Item>
+<A>specification</A> is a list of pairs with first entry the name of the argument and second entry a default value (which must be immutable).
+</Item>
+<Item>
+<A>func</A> must be a function with first argument <Code>CAP_NAMED_ARGUMENTS</Code>.
+</Item>
+<Item>
+The return value is a function with one argument fewer than <A>func</A>.
+</Item>
+</List>
+<P/>
+  When calling the returned function, the arguments are passed on to <A>func</A>.
+  To simulate named arguments, any &GAP; options appearing in <A>specification</A> are consumed and put into the record <Code>CAP_NAMED_ARGUMENTS</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="filter_string[, category]" Name="CAP_INTERNAL_GET_DATA_TYPE_FROM_STRING" />
+ <Returns>a record
+</Returns>
+ <Description>
+  The function takes one of the strings listed under <Code>filter_list</Code> in <Ref Sect="Section_method_name_record_entries" /> as input
+  and returns the corresponding data type (see <Ref BookName="CompilerForCAP" Func="CapJitInferredDataTypes" /> for details).
+  If no category is given, data types with generic filters (<Code>IsCapCategoryObject</Code>, <Code>IsCapCategoryMorphism</Code> etc.) are returned.
+  However, those cannot be used in the context of <Code>CompilerForCAP</Code> because the component <Code>category</Code> cannot be set in this case.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list_of_strings[, category]" Name="CAP_INTERNAL_GET_DATA_TYPES_FROM_STRINGS" />
+ <Returns>a list
+</Returns>
+ <Description>
+  Applies <Ref Func="CAP_INTERNAL_GET_DATA_TYPE_FROM_STRING" /> to all elements of <A>list</A> and returns the result.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="filter_string[, category]" Name="CAP_INTERNAL_REPLACED_STRING_WITH_FILTER" />
+ <Returns>a filter
+</Returns>
+ <Description>
+  The function takes one of the strings listed under <Code>filter_list</Code> in <Ref Sect="Section_method_name_record_entries" /> as input.
+  The corresponding filter of the category <A>category</A> is returned.
+  If no category is given, generic filters (<Code>IsCapCategoryObject</Code>, <Code>IsCapCategoryMorphism</Code> etc.) are used.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list[, category]" Name="CAP_INTERNAL_REPLACED_STRINGS_WITH_FILTERS" />
+ <Returns>Replaced list
+</Returns>
+ <Description>
+  Applies <Ref Func="CAP_INTERNAL_REPLACED_STRING_WITH_FILTER" /> to all elements of <A>list</A> and returns the result.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="string, value" Name="CAP_INTERNAL_RETURN_OPTION_OR_DEFAULT" />
+ <Returns>option value
+</Returns>
+ <Description>
+  Returns the value of the option with name string, or, if this value is fail,
+  the object value.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="function, symbol_list, loop_multiple, replacement_record" Name="CAP_INTERNAL_FIND_APPEARANCE_OF_SYMBOL_IN_FUNCTION" />
+ <Returns>a list of symbols with multiples
+</Returns>
+ <Description>
+  The function searches for the appearance of the strings in symbol list on the function function
+  and returns a list of pairs, containing the name of the symbol and the number of appearance.
+  If the symbol appears in a loop, the number of appearance is counted times the loop multiple.
+  Moreover, if appearances of found strings should be replaced by collections of other strings, then
+  these can be specified in the replacement record.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list1, list2" Name="CAP_INTERNAL_MERGE_PRECONDITIONS_LIST" />
+ <Returns>merge list
+</Returns>
+ <Description>
+  The function takes two lists containing pairs of symbols (strings) and multiples.
+  The lists are merged that pairs where the string only appears in one list is then
+  added to the return list, if a pair with a string appears in both lists, the resulting
+  lists only contains this pair once, with the higher multiple from both lists.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="data_type, human_readable_identifier_getter" Name="CAP_INTERNAL_ASSERT_VALUE_IS_OF_TYPE_GETTER" />
+ <Returns>a function
+</Returns>
+ <Description>
+  Returns a function <Code>f</Code> which throws an error if its first argument is not of type <A>data_type</A>.
+  <A>human_readable_identifier_getter</A> is a function returning a string which is used to refer to the first argument of <Code>f</Code> in the error message.
+  The arguments of <Code>f</Code> except the first argument are passed on to <A>human_readable_identifier_getter</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="cell, category, human_readable_identifier_getter" Name="CAP_INTERNAL_ASSERT_IS_CELL_OF_CATEGORY" />
+ <Description>
+  The function throws an error if <A>cell</A> is not a cell of <A>category</A>.
+  If <A>category</A> is the boolean <C>false</C>, only general checks not specific to a concrete category are performed.
+  <A>human_readable_identifier_getter</A> is a 0-ary function returning a string which is used to refer to <A>cell</A> in the error message.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="object, category, human_readable_identifier_getter" Name="CAP_INTERNAL_ASSERT_IS_OBJECT_OF_CATEGORY" />
+ <Description>
+  The function throws an error if <A>object</A> is not an object of <A>category</A>.
+  If <A>category</A> is the boolean <C>false</C>, only general checks not specific to a concrete category are performed.
+  <A>human_readable_identifier_getter</A> is a 0-ary function returning a string which is used to refer to <A>cell</A> in the error message.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="morphism, category, human_readable_identifier_getter" Name="CAP_INTERNAL_ASSERT_IS_MORPHISM_OF_CATEGORY" />
+ <Description>
+  The function throws an error if <A>morphism</A> is not a morphism of <A>category</A>.
+  If <A>category</A> is the boolean <C>false</C>, only general checks not specific to a concrete category are performed.
+  <A>human_readable_identifier_getter</A> is a 0-ary function returning a string which is used to refer to <A>cell</A> in the error message.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="two_cell, category, human_readable_identifier_getter" Name="CAP_INTERNAL_ASSERT_IS_TWO_CELL_OF_CATEGORY" />
+ <Description>
+  The function throws an error if <A>two_cell</A> is not a <Math>2</Math>-cell of <A>category</A>.
+  If <A>category</A> is the boolean <C>false</C>, only general checks not specific to a concrete category are performed.
+  <A>human_readable_identifier_getter</A> is a 0-ary function returning a string which is used to refer to <A>cell</A> in the error message.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="category[, operation]" Name="CachingStatistic" />
+ <Description>
+ Prints statistics for all caches in <A>category</A>.
+ If <A>operation</A> is given (as a string), only statistics
+ for the given operation cache is stored.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="category" Name="BrowseCachingStatistic" />
+ <Description>
+ Displays statistics for all caches in <A>category</A>.
+ in a Browse window. Here "status" indicates if the cache is weak, strong, or inactive,
+ "hits" is the number of successful cache accesses, "misses" the number of unsuccessful cache
+ accesses, and "stored" the number of objects currently stored in the cache.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="alias_name, function_name, deprecation_date" Name="InstallDeprecatedAlias" />
+ <Description>
+   Makes the function given by <A>function_name</A> available under the alias <A>alias_name</A>
+   with a deprecation warning including the date <A>deprecation_date</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="filter1, filter2" Name="IsSpecializationOfFilter" />
+ <Description>
+   Checks if <A>filter2</A> is more special than <A>filter1</A>,
+   i.e. if <A>filter2</A> implies <A>filter1</A>.
+   <A>filter1</A> and/or <A>filter2</A> can also be one of the strings listed under <Code>filter_list</Code> in <Ref Sect="Section_method_name_record_entries" /> and
+   in this case are replaced by the corresponding filters (e.g. <Code>IsCapCategory</Code>, <Code>IsCapCategoryObject</Code>, <Code>IsCapCategoryMorphism</Code>, ...).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="filter_list1, filter_list2" Name="IsSpecializationOfFilterList" />
+ <Description>
+   Checks if <A>filter_list2</A> is more special than <A>filter_list1</A>,
+   i.e. if both lists have the same length and any element of <A>filter_list2</A> is more special than
+   the corresponding element of <A>filter_list1</A> in the sense of <Ref Func="IsSpecializationOfFilter" />.
+   <A>filter_list1</A> and <A>filter_list2</A> can also be the string <Code>&quot;any&quot;</Code>, respresenting a most general filter list of any length.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="same as for InstallMethod" Name="InstallMethodForCompilerForCAP" />
+ <Description>
+   Installs a method via <Code>InstallMethod</Code> and adds it to the list of methods known to the compiler.
+   See <Ref Func="CapJitAddKnownMethod" /> for requirements.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="same as for InstallOtherMethod" Name="InstallOtherMethodForCompilerForCAP" />
+ <Description>
+   Installs a method via <Code>InstallOtherMethod</Code> and adds it to the list of methods known to the compiler.
+   See <Ref Func="CapJitAddKnownMethod" /> for requirements.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="operation, filters, method" Name="CapJitAddKnownMethod" />
+ <Description>
+   Adds a method to the list of methods known to the compiler.
+   If the first filter implies <Code>IsCapCategory</Code>,
+   method selection only takes the number of arguments and the first filter into account.
+   This allows to resolve operations even in the case that the syntax tree cannot fully be typed.
+   If the first filter does not imply <Code>IsCapCategory</Code>,
+   method selection takes all filters into account.
+   To strictly distinguish between the two cases, <Code>IsCapCategory</Code> must not imply the first filter
+   (except if the first filter is equal to <Code>IsCapCategory</Code>).
+   Method selection is strict in the sense that two different methods for the same operation
+   must not be comparable. That is, they must have a different number of filters or the filters
+   at at least one position must not be related via implication.
+   In particular, adding two methods with a CAP category as first argument (or a convenience method for a CAP operation)
+   with the same number of arguments and one category filter implying the other is not supported.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="name, input_filters, output_data_type" Name="CapJitAddTypeSignature" />
+ <Description>
+   (experimental) Adds a type signature for the global function or operation given by <A>name</A> to the compiler.
+   <A>input_filters</A> must be a list of filters, or the string '"any"' representing a most general filter list of any length.
+   <A>output_data_type</A> must be a filter, a data type, or a function.
+   If it is a function with one argument, it must accept a list of input types and return the corresponding data type of the output.
+   If it is a function with two arguments, it must accept the arguments of a function call of <A>name</A> (as syntax trees)
+   and the function stack and return a record with components <Code>args</Code> (the possibly modified arguments) and <Code>output_type</Code>
+   (the data type of the output).
+   See <Ref BookName="CompilerForCAP" Func="CapJitInferredDataTypes" /> for more details on data types.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="element_type" Name="CapJitDataTypeOfListOf" />
+ <Description>
+   (experimental) Returns the data type of a list whose elements are of type <A>element_type</A>.
+   <A>element_type</A> must be a filter or a data type.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="n, element_types..." Name="CapJitDataTypeOfNTupleOf" />
+ <Description>
+   (experimental) Returns the data type of an <A>n</A>-tuple whose entries are of types corresponding to <A>element_types</A>.
+   <A>element_types...</A> must be filters or data types.
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group311">
+  <Func Arg="group" Name="CapJitDataTypeOfGroup" />
+  <Func Arg="group" Name="CapJitDataTypeOfSubgroup" />
+  <Func Arg="group" Name="CapJitDataTypeOfElementOfGroup" />
+ <Description>
+   (experimental) Returns the data type of the group (or elements of the group) <A>group</A>.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group312">
+  <Func Arg="ring" Name="CapJitDataTypeOfRing" />
+  <Func Arg="ring" Name="CapJitDataTypeOfElementOfRing" />
+ <Description>
+   (experimental) Returns the data type of the ring (or elements of the ring) <A>ring</A>.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group313">
+  <Func Arg="category" Name="CapJitDataTypeOfCategory" />
+  <Func Arg="category" Name="CapJitDataTypeOfObjectOfCategory" />
+  <Func Arg="category" Name="CapJitDataTypeOfMorphismOfCategory" />
+  <Func Arg="category" Name="CapJitDataTypeOfTwoCellOfCategory" />
+ <Description>
+   (experimental) Returns the data type of the category (or objects, morphisms, or two cells in the category) <A>category</A>.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="value, data_type_getter" Name="CapJitTypedExpression" />
+ <Description>
+   (experimental) Simply returns <A>value</A>, but allows to specify the data type of <A>value</A> for CompilerForCAP.
+   <A>data_type_getter</A> must be a literal function or a global variable pointing to a function.
+   The function must accept no arguments or a single argument, and return a valid data type.
+   If the function accepts a single argument, it must be inside a CAP operation or method known to CompilerForCAP (for example, see <Ref Func="InstallMethodForCompilerForCAP" />),
+   and the current category (i.e. the first argument of the CAP operation or method known to CompilerForCAP) will be passed to the function.
+   IMPORTANT: If <A>data_type_getter</A> is a literal function, it must not contain references to variables in its context.
+   Otherwise the code might access random memory locations.
+   See <Ref BookName="CompilerForCAP" Func="CapJitInferredDataTypes" /> for more details on data types.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="predicate, func, initial_value" Name="CapFixpoint" />
+ <Description>
+   Computes a fixpoint of <A>func</A> with regard to equality given by <A>predicate</A>, starting with <A>initial_value</A>.
+   More precisely, <C>CapFixpoint</C>( <A>predicate</A>, <A>func</A>, <A>initial_value</A> ) terminates and
+   returns <Math>y</Math> once <A>predicate</A>( <Math>x</Math>, <Math>y</Math> ) returns <C>true</C>, where <Math>y</Math> := <A>func</A>( <Math>x</Math> ).
+   If no such fixpoint exists, the execution does not terminate.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="list, func, initial_value" Name="Iterated" Label="for IsList, IsFunction, IsObject"/>
+ <Description>
+   This input is a homogeneous list of elements, i.e., having the same type,
+   a bivariate function <A>func</A>, and an object <A>initial_value</A>.
+   The type of the first argument of <A>func</A> must be equal to the type of <A>initial_value</A>.
+   The type of the second argument of <A>func</A> must be equal to the type of the entries of <A>list</A>.
+   The type of the output of <A>func</A> must be equal to the type of <A>initial_value</A>.
+   The installed method simply calls <Code>Iterated( Concatenation( [ &lt;A&gt;initial_value&lt;/A&gt; ], &lt;A&gt;list&lt;/A&gt; ), &lt;A&gt;func&lt;/A&gt; )</Code>.
+   In particular, if <A>list</A> is empty, the output will be <A>initial_value</A>.
+   This allows for the implementation of compilable initialized for-loops in CAP.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="list, func, initial_value, terminal_value" Name="Iterated" Label="for IsList, IsFunction, IsObject, IsObject"/>
+ <Description>
+   This input is a homogeneous list of elements, i.e., having the same type,
+   a bivariate function <A>func</A>, an object <A>initial_value</A>, and another object <A>terminal_entry</A>.
+   The type of the <A>terminal_entry</A> must be equal to the type of the entries of <A>list</A>.
+   The type of the first argument of <A>func</A> must be equal to the type of <A>initial_value</A>.
+   The type of the second argument of <A>func</A> must be equal to the type of the entries of <A>list</A>.
+   The type of the output of <A>func</A> must be equal to the type of <A>initial_value</A>.
+   The installed method simply calls <Code>Iterated( Concatenation( [ &lt;A&gt;initial_value&lt;/A&gt; ], &lt;A&gt;list&lt;/A&gt;, [ &lt;A&gt;terminal_entry&lt;/A&gt; ] ), &lt;A&gt;func&lt;/A&gt; )</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="package_name" Name="TransitivelyNeededOtherPackages" />
+ <Description>
+   Returns a list of package names which are transitively needed other packages of the package <A>package_name</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="operation_name" Name="PackageOfCAPOperation" />
+ <Description>
+   Returns the name of the package to which the CAP operation given by <A>operation_name</A> belongs or fail if the package is not known.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="list, obj" Name="SafePosition" Label="for IsList, IsObject"/>
+ <Returns>an integer
+</Returns>
+ <Description>
+   Returns <Code>Position( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;obj&lt;/A&gt; )</Code> while asserting that this value is not <Code>fail</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="list, obj" Name="SafeUniquePosition" Label="for IsList, IsObject"/>
+ <Returns>an integer
+</Returns>
+ <Description>
+   Returns <Code>Position( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;obj&lt;/A&gt; )</Code> while asserting that this value is not <Code>fail</Code> and the position is unique.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="list, func" Name="SafePositionProperty" Label="for IsList, IsFunction"/>
+ <Returns>an integer
+</Returns>
+ <Description>
+   Returns <Code>PositionProperty( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> while asserting that this value is not <Code>fail</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="list, func" Name="SafeUniquePositionProperty" Label="for IsList, IsFunction"/>
+ <Returns>an integer
+</Returns>
+ <Description>
+   Returns a position in <A>list</A> for which <A>func</A> returns <Keyword>true</Keyword> when applied to the corresponding entry while asserting that there exists exactly one such position.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="list, func" Name="SafeFirst" Label="for IsList, IsFunction"/>
+ <Returns>an element of the list
+</Returns>
+ <Description>
+   Returns <Code>First( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> while asserting that this value is not <Code>fail</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="list, func" Name="SafeUniqueEntry" Label="for IsList, IsFunction"/>
+ <Returns>an element of the list
+</Returns>
+ <Description>
+   Returns a value in <A>list</A> for which <A>func</A> returns <Keyword>true</Keyword> while asserting that there exists exactly one such entry.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="n, args..." Name="NTuple" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Returns <A>args</A> while asserting that its length is <A>n</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="first, second" Name="Pair" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Alias for <Code>NTuple( 2, &lt;A&gt;first&lt;/A&gt;, &lt;A&gt;second&lt;/A&gt; )</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="first, second, third" Name="Triple" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Alias for <Code>NTuple( 3, &lt;A&gt;first&lt;/A&gt;, &lt;A&gt;second&lt;/A&gt;, &lt;A&gt;third&lt;/A&gt; )</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="nr_rows, nr_cols, listlist" Name="TransposedMatWithGivenDimensions" />
+ <Returns>a list (of lists)
+</Returns>
+ <Description>
+  The arguments are two integers <A>nr_rows</A>, <A>nr_cols</A> and a list of lists <A>listlist</A> such that
+  <A>nr_rows</A> = <C>Length</C>(<A>listlist</A>) and <A>nr_cols</A> = <C>Length</C>(<A>listlist</A><Math>[i]</Math>) for <Math>i=1</Math> to <A>nr_rows</A>.
+  The output is the transpose of <A>listlist</A> as a list consisting of <A>nr_cols</A> rows and <A>nr_rows</A> columns.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="category, underlying_category, constructor_name" Name="HandlePrecompiledTowers" />
+ <Description>
+   Handles the information stored in <Code>&lt;A&gt;underlying_category&lt;/A&gt;!.compiler_hints.precompiled_towers</Code> (if bound) which is a list of records with components:
+<List>
+<Item>
+<Code>remaining_constructors_in_tower</Code>: a non-empty list of strings (names of category constructors)
+</Item>
+<Item>
+<Code>precompiled_functions_adder</Code>: a function accepting a CAP category as input
+</Item>
+</List>
+<P/>
+   If <A>constructor_name</A> is the only entry of <Code>remaining_constructors_in_tower</Code>, <Code>precompiled_functions_adder</Code> is applied to <A>category</A>
+   (except if the option <Code>no_precompiled_code</Code> is set to <Keyword>true</Keyword>) and should add precompiled code.
+   Else, if <A>constructor_name</A> is the first entry of <Code>remaining_constructors_in_tower</Code>, the information is attached to <Code>&lt;A&gt;category&lt;/A&gt;!.compiler_hints.precompiled_towers</Code>
+   after removing <A>constructor_name</A> from <Code>remaining_constructors_in_tower</Code>.
+   Note: Currently, there is no logic for finding the "optimal" code to install if <A>constructor_name</A> is the only entry of <Code>remaining_constructors_in_tower</Code> of multiple entries.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="value" Name="CAP_JIT_INCOMPLETE_LOGIC" />
+ <Description>
+   Simply returns <A>value</A>. Used to signify that the argument is not fully run through all logic functions/templates by CompilerForCAP.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="func" Name="CAP_JIT_EXPR_CASE_WRAPPER" />
+ <Description>
+   Simply returns <A>func</A>, which must be a literal function without arguments only containing an <Code>if-elif-else</Code> statement with each branch consisting of a single <Keyword>return</Keyword> statement.
+   Used to write expressions of the form <Code>function() if-elif-else end()</Code> as <Code>CAP_JIT_EXPR_CASE_WRAPPER(function() if-elif-else end)()</Code> because the former is not valid in Julia.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="ListWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>List( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="SumWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>Sum( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="ProductWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>Product( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="ForAllWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>ForAll( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="ForAnyWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>ForAny( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="NumberWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>Number( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="FilteredWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>Filtered( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="FirstWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>First( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="list, func" Name="LastWithKeys" />
+ <Returns>a list
+</Returns>
+ <Description>
+   Same as <Code>Last( &lt;A&gt;list&lt;/A&gt;, &lt;A&gt;func&lt;/A&gt; )</Code> but <A>func</A> gets both the key <Code>i</Code> and <Code>&lt;A&gt;list&lt;/A&gt;[i]</Code> as arguments.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="type, [attribute1, value1, ...]" Name="CreateGapObjectWithAttributes" />
+ <Description>
+   Shorthand for <Code>ObjectifyWithAttributes( rec( ), type, [attribute1, value1, ...] )</Code>.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

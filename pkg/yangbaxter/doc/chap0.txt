@@ -1,0 +1,135 @@
+  
+  
+                                  [1X YangBaxter [101X
+  
+  
+             [1X Combinatorial Solutions for the Yang-Baxter equation [101X
+  
+  
+                                     0.10.7
+  
+  
+                                  14 July 2025
+  
+  
+                               Leandro Vendramin
+  
+                               Olexandr Konovalov
+  
+  
+  
+  Leandro Vendramin
+      Email:    [7Xmailto:Leandro.Vendramin@vub.be[107X
+      Homepage: [7Xhttps://vendramin.github.io/[107X
+      Address:  [33X[0;14YVrije Universiteit Brussel[133X
+                [33X[0;14YFaculty of Sciences[133X
+                [33X[0;14YDepartment of Mathematics and Data Science[133X
+                [33X[0;14YPleinlaan 2, B-1050[133X
+                [33X[0;14YBrussel, Belgium[133X
+  
+  
+  Olexandr Konovalov
+      Email:    [7Xmailto:obk1@st-andrews.ac.uk[107X
+      Homepage: [7Xhttps://olexandr-konovalov.github.io/[107X
+      Address:  [33X[0;14YSchool of Computer Science[133X
+                [33X[0;14YUniversity of St Andrews[133X
+                [33X[0;14YJack Cole Building, North Haugh,[133X
+                [33X[0;14YSt Andrews, Fife, KY16 9SX, Scotland[133X
+  
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (YangBaxter)[101X
+  
+  1 [33X[0;0YPreliminaries[133X
+    1.1 [33X[0;0YDefinition and examples[133X
+      1.1-1 IsSkewbrace
+      1.1-2 Skewbrace
+      1.1-3 SmallSkewbrace
+      1.1-4 TrivialBrace
+      1.1-5 TrivialSkewbrace
+      1.1-6 SmallBrace
+      1.1-7 IdSkewbrace
+      1.1-8 AutomorphismGroup
+      1.1-9 IdBrace
+      1.1-10 IsomorphismSkewbraces
+      1.1-11 DirectProductSkewbraces
+      1.1-12 DirectProductOp
+      1.1-13 IsTwoSided
+      1.1-14 IsAutomorphismGroupOfSkewbrace
+      1.1-15 IsClassical
+      1.1-16 IsOfAbelianType
+      1.1-17 IsBiSkewbrace
+      1.1-18 IsOfNilpotentType
+      1.1-19 IsTrivialSkewbrace
+      1.1-20 Skewbrace2YB
+      1.1-21 Brace2YB
+      1.1-22 SkewbraceSubset2YB
+      1.1-23 SemidirectProduct
+      1.1-24 UnderlyingAdditiveGroup
+      1.1-25 UnderlyingMultiplicativeGroup
+  2 [33X[0;0YAlgebraic Properties of Braces[133X
+    2.1 [33X[0;0YBraces and Radical Rings[133X
+      2.1-1 AdditiveGroupOfRing
+      2.1-2 IsJacobsonRadical
+    2.2 [33X[0;0YBraces and Yang-Baxter Equation[133X
+      2.2-1 Table2YB
+      2.2-2 Evaluate
+      2.2-3 LyubashenkoYB
+      2.2-4 IsIndecomposable
+      2.2-5 Table
+      2.2-6 DehornoyClass
+      2.2-7 DehornoyRepresentationOfStructureGroup
+      2.2-8 IdYB
+      2.2-9 LinearRepresentationOfStructureGroup
+  3 [33X[0;0YYangBaxter automatic generated documentation[133X
+    3.1 [33X[0;0YYangBaxter automatic generated documentation of properties[133X
+      3.1-1 IsIndecomposable
+  4 [33X[0;0YIdeals and left ideals[133X
+    4.1 [33X[0;0YLeft ideals[133X
+      4.1-1 LeftIdeals
+      4.1-2 StrongLeftIdeals
+      4.1-3 IsLeftIdeal
+    4.2 [33X[0;0YIdeals[133X
+      4.2-1 IsIdeal
+      4.2-2 Ideals
+      4.2-3 AsIdeal
+      4.2-4 IdealGeneratedBy
+      4.2-5 IntersectionOfTwoIdeals
+      4.2-6 SumOfTwoIdeals
+    4.3 [33X[0;0YSequences (left) ideals[133X
+      4.3-1 LeftSeries
+      4.3-2 RightSeries
+      4.3-3 IsLeftNilpotent
+      4.3-4 IsSimpleSkewbrace
+      4.3-5 IsRightNilpotent
+      4.3-6 LeftNilpotentIdeals
+      4.3-7 RightNilpotentIdeals
+      4.3-8 SmoktunowiczSeries
+      4.3-9 Socle
+      4.3-10 Annihilator
+    4.4 [33X[0;0YMutipermutation skew braces[133X
+      4.4-1 SocleSeries
+      4.4-2 MultipermutationLevel
+      4.4-3 IsMultipermutation
+      4.4-4 Fix
+      4.4-5 KernelOfLambda
+      4.4-6 Quotient
+    4.5 [33X[0;0YPrime and semiprime ideals[133X
+      4.5-1 IsPrimeBrace
+      4.5-2 IsPrimeIdeal
+      4.5-3 PrimeIdeals
+      4.5-4 IsSemiprime
+      4.5-5 IsSemiprimeIdeal
+      4.5-6 SemiprimeIdeals
+      4.5-7 BaerRadical
+      4.5-8 IsBaer
+      4.5-9 WedderburnRadical
+      4.5-10 SolvableSeries
+      4.5-11 IsMinimalIdeal
+      4.5-12 MinimalIdeals
+  
+  
+  [32X

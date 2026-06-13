@@ -1,0 +1,47 @@
+\GAPDocLabFile{gaussforhomalg}
+\makelabel{gaussforhomalg:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{gaussforhomalg:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{gaussforhomalg:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{gaussforhomalg:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{gaussforhomalg:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{gaussforhomalg:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{gaussforhomalg:Overview over this manual}{1.1}{X786BACDB82918A65}
+\makelabel{gaussforhomalg:Installation of the GaussForHomalg Package}{1.2}{X8585599E87114B98}
+\makelabel{gaussforhomalg:Usage}{2}{X86A9B6F87E619FFF}
+\makelabel{gaussforhomalg:GaussForHomalg methods and functions}{3}{X789AFD2A804F2CD4}
+\makelabel{gaussforhomalg:The field of rationals}{3.1}{X853EA2DD78928BCB}
+\makelabel{gaussforhomalg:The Tools}{3.2}{X796BBDF981806C64}
+\makelabel{gaussforhomalg:The Basic Functions and homalg table creation}{3.3}{X87BA6DDD812E02F4}
+\makelabel{gaussforhomalg:Matrix entry manipulation}{3.4}{X805204B0834D63EB}
+\makelabel{gaussforhomalg:Example}{4}{X85861B017AEEC50B}
+\makelabel{gaussforhomalg:HomHom}{4.1}{X791E21F47805048A}
+\makelabel{gaussforhomalg:An Overview of the GaussForHomalg package source code}{A}{X82B7FBAA79447092}
+\makelabel{gaussforhomalg:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{gaussforhomalg:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{gaussforhomalg:Index}{Ind}{X83A0356F839C696F}
+\makelabel{gaussforhomalg:GaussForHomalg}{}{X8537FEB07AF2BEC8}
+\makelabel{gaussforhomalg:HomalgFieldOfRationals constructor for the field of rationals}{3.1.1}{X7F4829D6808187B3}
+\makelabel{gaussforhomalg:ZeroMatrix}{3.2.1}{X838F5B6C7C87C8E1}
+\makelabel{gaussforhomalg:IdentityMatrix}{3.2.2}{X7D807ABC7FCB4E77}
+\makelabel{gaussforhomalg:CopyMatrix}{3.2.3}{X8304B38F8200E127}
+\makelabel{gaussforhomalg:ImportMatrix}{3.2.4}{X7B5E86C283147027}
+\makelabel{gaussforhomalg:Involution}{3.2.5}{X81EB2A0A8756372B}
+\makelabel{gaussforhomalg:CertainRows}{3.2.6}{X7BAE852578C6B839}
+\makelabel{gaussforhomalg:CertainColumns}{3.2.7}{X7CE203DF7F323F87}
+\makelabel{gaussforhomalg:UnionOfRows}{3.2.8}{X81B6E8EC86BC649A}
+\makelabel{gaussforhomalg:UnionOfColumns}{3.2.9}{X81630C648148E324}
+\makelabel{gaussforhomalg:DiagMat}{3.2.10}{X792C1E46800C874C}
+\makelabel{gaussforhomalg:KroneckerMat}{3.2.11}{X7A1A3AE878C2AA3B}
+\makelabel{gaussforhomalg:DualKroneckerMat}{3.2.12}{X7CBC76A27A8EF473}
+\makelabel{gaussforhomalg:Compose}{3.2.13}{X798C13F97F955B72}
+\makelabel{gaussforhomalg:NumberRows}{3.2.14}{X7C72971F7D0CA3C8}
+\makelabel{gaussforhomalg:NumberColumns}{3.2.15}{X847D45BF7F2BC67C}
+\makelabel{gaussforhomalg:IsZeroMatrix}{3.2.16}{X7AEBD5187EE3DAA4}
+\makelabel{gaussforhomalg:IsDiagonalMatrix}{3.2.17}{X7EEC8E768178696E}
+\makelabel{gaussforhomalg:ZeroRows}{3.2.18}{X828225E0857B1FDA}
+\makelabel{gaussforhomalg:ZeroColumns}{3.2.19}{X870D761F7AB96D12}
+\makelabel{gaussforhomalg:ReducedRowEchelonForm}{3.3.1}{X791E6BF98311DE55}
+\makelabel{gaussforhomalg:CreateHomalgTable}{3.3.2}{X8187F91A834A4276}
+\makelabel{gaussforhomalg:MatElm}{3.4.1}{X870FBE817C884AB5}
+\makelabel{gaussforhomalg:SetMatElm}{3.4.2}{X7C33059984635480}
+\makelabel{gaussforhomalg:AddToMatElm}{3.4.3}{X7E0A73937C1B3966}

@@ -1,0 +1,146 @@
+<#GAPDoc Label="example_smallclassnrgroup">
+<Example><![CDATA[
+gap> SmallClassNrGroup( 4, 4 );
+<pc group of size 12 with 3 generators>
+gap> G := SmallClassNrGroup( 4, 4 : AsPermGroup );
+Group([ (1,2,3), (1,4,2) ])
+gap> NrConjugacyClasses( G );
+4
+gap> IsAlternatingGroup( G );
+true
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_idclassnr">
+<Example><![CDATA[
+gap> IdClassNr( AlternatingGroup( 4 ) );
+[ 4, 4 ]
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_smallclassnrgroupsavailable">
+<Example><![CDATA[
+gap> SmallClassNrGroupsAvailable( 14 );
+true
+gap> SmallClassNrGroupsAvailable( 15 );
+false
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_smallgrp">
+<Example><![CDATA[
+gap> IdClassNrToIdGroup( 9, 19 );
+[ 192, 1025 ]
+gap> IdClassNr( SmallGroup( 192, 1025 ) );
+[ 9, 19 ]
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_perfgrp">
+<Example><![CDATA[
+gap> IdClassNrToPerfGrp( 10, 36 );
+[ 14520, 1 ]
+gap> IdClassNr( PerfectGroup( 14520, 1 ) );
+[ 10, 36 ]
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_primgrp">
+<Example><![CDATA[
+gap> IdClassNrToPrimGrp( 9, 25 );
+[ 49, 25 ]
+gap> IdClassNr( PrimitiveGroup( 49, 25 ) );
+[ 9, 25 ]
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_transgrp">
+<Example><![CDATA[
+gap> IdClassNrToTransGrp( 12, 46 );
+[ 45, 314 ]
+gap> IdClassNr( TransitiveGroup( 45, 314 ) );
+[ 12, 46 ]
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_atlasrep">
+<Example><![CDATA[
+gap> IdClassNrToAtlasName( 11, 34 );
+"L2(17)"
+gap> IdClassNr( AtlasGroup( "L2(17)" ) );
+[ 11, 34 ]
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_allsmallclassnrgroups">
+<Example><![CDATA[
+gap> AllSmallClassNrGroups( IsSolvable, true, NrConjugacyClasses, 6 );
+[ <pc group of size 6 with 2 generators>,
+  <pc group of size 12 with 3 generators>,
+  <pc group of size 12 with 3 generators>,
+  <pc group of size 18 with 3 generators>,
+  <pc group of size 18 with 3 generators>,
+  <pc group of size 36 with 4 generators>,
+  <pc group of size 72 with 5 generators> ]
+gap> AllSmallClassNrGroups( [ 3 .. 5 ], IsNilpotent );
+[ <pc group of size 3 with 1 generator>,
+  <pc group of size 4 with 2 generators>,
+  <pc group of size 4 with 2 generators>,
+  <pc group of size 5 with 1 generator>,
+  <pc group of size 8 with 3 generators>,
+  <pc group of size 8 with 3 generators> ]
+gap> AllSmallClassNrGroups( [ 3 .. 5 ], IsNilpotent : AsPermGroup );
+[ Group([ (1,2,3) ]),
+  Group([ (1,2,3,4) ]),
+  Group([ (1,2), (3,4) ]),
+  Group([ (1,2,3,4,5) ]),
+  Group([ (1,2), (1,3)(2,4) ]),
+  Group([ (1,2,3,4)(5,6,7,8), (1,5,3,7)(2,8,4,6) ]) ]
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_onesmallclassnrgroup">
+<Example><![CDATA[
+gap> OneSmallClassNrGroup( 6, IsSolvable, false );
+Group([ (1,2,3)(4,5,6), (1,4)(2,7) ])
+gap> OneSmallClassNrGroup( 10, IsSolvable, true, IsNilpotent, false );
+<pc group of size 28 with 3 generators>
+gap> OneSmallClassNrGroup( 10, IsSolvable, true, IsNilpotent, false : AsPermGroup );
+Group([ (1,2,3,4,5,6,7), (2,7)(3,6)(4,5)(8,9,10,11) ])
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_nrsmallclassnrgroups">
+<Example><![CDATA[
+gap> NrSmallClassNrGroups( 14 );
+93
+gap> NrSmallClassNrGroups( IsSolvable, true, NrConjugacyClasses, 6 );
+7
+gap> NrSmallClassNrGroups( [ 3 .. 5 ], IsNilpotentGroup );
+6
+]]></Example>
+
+
+<#/GAPDoc>
+<#GAPDoc Label="example_iteratorsmallclassnrgroups">
+<Example><![CDATA[
+gap> iter := IteratorSmallClassNrGroups( 12, IsSimpleGroup );
+<iterator>
+gap> for G in iter do Print( Size( G ), "\n" ); od;
+3420
+5616
+443520
+]]></Example>
+
+
+<#/GAPDoc>

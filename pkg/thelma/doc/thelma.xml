@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[
+<!ENTITY see '<Alt Only="LaTeX">$\to$</Alt><Alt Not="LaTeX">--&gt;</Alt>'>
+<!ENTITY Thelma '<Package>Thelma</Package>'>
+]
+>
+<Book Name="Thelma">
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+<Body>
+<#Include SYSTEM "intro.xml">
+<#Include SYSTEM "bool_func.xml">
+<#Include SYSTEM "thr_elements.xml">
+<#Include SYSTEM "thr_networks.xml">
+<#Include SYSTEM "mvthr_el.xml">
+</Body>
+<Bibliography Databases="thelmabib.xml"/>
+<TheIndex/>
+</Book>

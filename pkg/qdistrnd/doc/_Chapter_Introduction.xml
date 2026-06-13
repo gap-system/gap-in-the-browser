@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Introduction">
+<Heading>Introduction</Heading>
+
+<P/>
+The &GAP; package &QDistRnd; implements a
+probabilistic algorithm for finding the distance of a <Math>q</Math>-ary quantum
+low-density parity-check code linear over a finite field <Math>F=\mathop{\rm GF}(q)</Math>.
+While there is no guarantee of the performance of the algorithm (the
+existing bounds in the case of quantum LDPC codes are weak, see <Ref
+Subsect="Subsection_TheAlgorithmDetails"/>), an empirical convergence
+criterion is given to estimate the probability that a minimum weight
+codeword has been found.  Versions for CSS and regular stabilizer
+codes are given, see Section <Ref Sect="Section_DistanceFunctions"/>
+<P/>
+In addition, a format for storing matrices associated with <Math>q</Math>-ary
+quantum codes is introduced and implemented, see
+Chapter <Ref Chap="Chapter_FileFormat"/> and
+Sec. <Ref Sect="Section_IOFunctions"/>.  The
+format is based on the well establised MaTrix market eXchange (MTX)
+Coordinate format developed at NIST, and is designed for full backward
+compatibility with this format.  Thus, the files are readable by any
+software package which supports MTX.
+<P/>
+The routines in the package are derived from the code originally written
+by one of the authors (LPP).  A related Covering Set algorithm has a
+provable performance for generic (non-LDPC) quantum codes based on
+random matrices <Cite Key="Dumer-Kovalev-Pryadko-IEEE-2017"/>.
+Implemented version is a variant of the random <Emph>information set</Emph>
+(IS) algorithm based on random column permutations and Gauss'
+elimination <Cite Key="Leon-1988"/> <Cite Key="Kruk-1989"/> <Cite
+Key="Coffey-Goodman-1990"/>.
+<P/>
+The &GAP; computer algebra system was chosen because of its excellent
+support for linear algebra over finite fields.  Here we give a
+reference implementation of the algorithm, with a focus on matrix
+formats and generality, as opposed to performance.  Nevertheless, the
+routines are sufficiently fast when dealing with codes of practically
+important block lengths <Math>n\lesssim 10^3</Math>.
+<P/>
+</Chapter>
+

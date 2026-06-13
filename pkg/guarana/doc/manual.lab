@@ -1,0 +1,42 @@
+\GAPDocLabFile{guarana}
+\makelabel{guarana:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{guarana:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{guarana:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{guarana:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{guarana:About Guarana}{1.1}{X7E0647AA861EA26C}
+\makelabel{guarana:Setup for computing the correspondence}{1.2}{X7E6EB42287311C08}
+\makelabel{guarana:Collection}{1.3}{X80AD720B85736A05}
+\makelabel{guarana:Computing the Mal'cev correspondence}{2}{X781C0216819C09A8}
+\makelabel{guarana:The main functions}{2.1}{X7D3DC4ED855DC13C}
+\makelabel{guarana:An example application}{2.2}{X81CAD2F27B2066C4}
+\makelabel{guarana:Mal'cev collection}{3}{X7989E7D27B142919}
+\makelabel{guarana:The main functions}{3.1}{X7D3DC4ED855DC13C}
+\makelabel{guarana:An example application}{3.2}{X81CAD2F27B2066C4}
+\makelabel{guarana:Installation}{4}{X8360C04082558A12}
+\makelabel{guarana:Installing this package}{4.1}{X81746D7285808409}
+\makelabel{guarana:Loading the Guarana package}{4.2}{X7F5D393E81A24451}
+\makelabel{guarana:Running the test suite}{4.3}{X796DF52483B61C74}
+\makelabel{guarana:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{guarana:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{guarana:Index}{Ind}{X83A0356F839C696F}
+\makelabel{guarana:MalcevObjectByTGroup}{2.1.1}{X7A3976DA834C0E90}
+\makelabel{guarana:UnderlyingGroup}{2.1.2}{X7A6720DD7B4AF466}
+\makelabel{guarana:UnderlyingLieAlgebra}{2.1.3}{X7CA021E28527763E}
+\makelabel{guarana:Dimension}{2.1.4}{X7E6926C6850E7C4E}
+\makelabel{guarana:MalcevGrpElementByExponents}{2.1.5}{X860138DA82C4F56D}
+\makelabel{guarana:MalcevLieElementByCoefficients}{2.1.6}{X849FCF377F5E29C2}
+\makelabel{guarana:RandomGrpElm}{2.1.7}{X86CC8994841B1193}
+\makelabel{guarana:RandomLieElm}{2.1.8}{X876F868B78430678}
+\makelabel{guarana:Log}{2.1.9}{X7E7C986487C4EB02}
+\makelabel{guarana:Exp}{2.1.10}{X86E48BC98197839E}
+\makelabel{guarana:Comm}{2.1.12}{X80761843831B468E}
+\makelabel{guarana:MalcevSymbolicGrpElementByExponents}{2.1.13}{X86C4910279A45173}
+\makelabel{guarana:MalcevLieElementByCoefficients}{2.1.14}{X849FCF377F5E29C2}
+\makelabel{guarana:MalcevCollectorConstruction}{3.1.1}{X7C7C33FB789E7F50}
+\makelabel{guarana:GUARANA.TrnO1}{3.1.2}{X78FA4EF079BEA275}
+\makelabel{guarana:GUARANA.TrnO2}{3.1.2}{X78FA4EF079BEA275}
+\makelabel{guarana:GUARANA.F2cAut1}{3.1.3}{X86FA27828711BB51}
+\makelabel{guarana:GUARANA.F3cAut1}{3.1.3}{X86FA27828711BB51}
+\makelabel{guarana:MalcevGElementByExponents}{3.1.4}{X79D925AD7AFF1202}
+\makelabel{guarana:Random}{3.1.5}{X79730D657AB219DB}
+\makelabel{guarana:GUARANA.AverageRuntimeCollec}{3.1.7}{X7DD44FEE7DE4E810}

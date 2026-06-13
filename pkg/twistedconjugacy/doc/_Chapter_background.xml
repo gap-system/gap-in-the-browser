@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_background">
+<Heading>Mathematical background</Heading>
+
+<P/>
+Let <Math>G</Math> and <Math>H</Math> be groups and let <Math>\varphi</Math> and <Math>\psi</Math> be group
+homomorphisms from <Math>H</Math> to <Math>G</Math>. The pair <Math>(\varphi,\psi)</Math> induces a (right)
+group action of <Math>H</Math> on <Math>G</Math> given by the map
+<Display>G \times H \to G \colon (g,h) \mapsto \varphi(h)^{-1} g\,\psi(h).</Display>
+This group action is called <Emph><Math>(\varphi,\psi)</Math>-twisted conjugation</Emph>. The
+orbits are called <Emph>Reidemeister classes</Emph> or <Emph>twisted conjugacy classes</Emph>,
+and the number of Reidemeister classes is called the <Emph>Reidemeister number</Emph>
+<Math>R(\varphi,\psi)</Math> of the pair <Math>(\varphi,\psi)</Math>. The stabiliser of the
+identity <Math>1_G</Math> under the <Math>(\varphi,\psi)</Math>-twisted conjugacy action of <Math>H</Math> is
+exactly the <Emph>coincidence group</Emph>
+<Display>\operatorname{Coin}(\varphi,\psi) =
+\left\{\, h \in H \mid \varphi(h) = \psi(h) \, \right\}.</Display>
+Generalising this, the stabiliser of any <Math>g \in G</Math> is the coincidence group
+<Math>\operatorname{Coin}(\iota_g\varphi,\psi)</Math>, with <Math>\iota_g</Math> the inner
+automorphism of <Math>G</Math> that conjugates by <Math>g</Math>.
+<P/>
+<P/>
+<P/>
+Twisted conjugacy originates in Reidemeister-Nielsen fixed point and
+coincidence theory, where it serves as a tool for studying fixed and
+coincidence points of continuous maps between topological spaces. Below, we
+briefly illustrate how and where this algebraic notion arises when studying
+coincidence points.
+Let <Math>X</Math> and <Math>Y</Math> be topological spaces with universal covers
+<Math>p \colon \tilde{X} \to X</Math> and <Math>q \colon \tilde{Y} \to Y</Math> and let
+<Math>\mathcal{D}(X), \mathcal{D}(Y)</Math> be their covering transformations groups.
+Let <Math>f,g \colon X \to Y</Math> be continuous maps with lifts
+<Math>\tilde{f}, \tilde{g} \colon \tilde{X} \to \tilde{Y}</Math>. By <Math>f_*\colon 
+\mathcal{D}(X) \to \mathcal{D}(Y)</Math>, denote the group homomorphism defined by
+<Math>\tilde{f} \circ \gamma = f_*(\gamma) \circ \tilde{f}</Math> for all  <Math>\gamma \in 
+\mathcal{D}(X)</Math>, and let <Math>g_*</Math> be defined similarly. The
+set of coincidence points <Math>\operatorname{Coin}(f,g)</Math> equals the union
+<Display>\operatorname{Coin}(f,g) = \bigcup_{\alpha \in \mathcal{D}(Y)}
+p(\operatorname{Coin}(\tilde{f}, \alpha \tilde{g})).</Display>
+For any two elements <Math>\alpha, \beta \in \mathcal{D}(Y)</Math>, the sets
+<Math>p(\operatorname{Coin}(\tilde{f}, \alpha \tilde{g}))</Math> and
+<Math>p(\operatorname{Coin}(\tilde{f}, \beta \tilde{g}))</Math> are either disjoint or
+equal. Moreover, they are equal if and only if there exists some <Math>\gamma
+\in \mathcal{D}(X)</Math> such that <Math>\alpha = f_*(\gamma)^{-1} \circ \beta \circ
+g_*(\gamma)</Math>, which is exactly the same as saying that <Math>\alpha</Math> and <Math>\beta</Math>
+are <Math>(f_*,g_*)</Math>-twisted conjugate. Thus,
+<Display>\operatorname{Coin}(f,g) = \bigsqcup_{[\alpha]}
+p(\operatorname{Coin}(\tilde{f}, \alpha \tilde{g})),</Display>
+where <Math>[\alpha]</Math> runs over the <Math>(f_*,g_*)</Math>-twisted conjugacy classes. For
+sufficiently well-behaved spaces <Math>X</Math> and <Math>Y</Math> (e.g. nilmanifolds of equal
+dimension)
+we have that if <Math>R(f_*,g_*) &lt; \infty</Math>, then 
+<Display>R(f_*,g_*) \leq \left|\operatorname{Coin}(f,g)\right|,</Display>
+whereas if <Math>R(f_*,g_*) = \infty</Math> there exist continuous maps <Math>f'</Math> and <Math>g'</Math>
+homotopic to <Math>f</Math> and <Math>g</Math> respectively such that
+<Math>\operatorname{Coin}(f',g') = \varnothing</Math>.
+</Chapter>
+

@@ -1,0 +1,24 @@
+  
+  
+  [1XReferences[101X
+  
+  [[20XBon14[120X]  [16XBongartz,  K.[116X, [17XA direct approach to the rational normal form[117X, arXiv
+  (2014) (https://doi.org/10.48550/ARXIV.1410.1683).
+  
+  [[20XBon26[120X]  [16XBonnet,  A.[116X,  [17XA  Generalised Jordan Normal Form and Its Computation
+  Over Finite Fields[117X, Bachelor's Thesis (2026).
+  
+  [[20XGec20[120X]  [16XGeck, M.[116X, [17XOn Jacob’s construction of the rational canonical form of
+  a  matrix[117X,  [18XThe  Electronic Journal of Linear Algebra[118X, University of Wyoming
+  Libraries, [19X36[119X, 36 (2020), 177–182 (https://doi.org/10.13001/ela.2020.5055).
+  
+  [[20XGec22[120X]  [16XGeck, M.[116X, [17XOn the Jordan--Chevalley decomposition of a matrix[117X, arXiv
+  (2022) (https://doi.org/10.48550/ARXIV.2205.05432).
+  
+  [[20XNP08[120X]  [16XNeunhöffer,  M. and Praeger, C. E.[116X, [17XComputing Minimal Polynomials of
+  Matrices[117X,  [18XLMS  Journal  of  Computation  and Mathematics[118X, Wiley, [19X11[119X (2008),
+  252–279 (https://doi.org/10.1112/s1461157000000590).
+  
+  
+  
+  [32X

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    Example
+  </Title>
+  <Subtitle>
+    Example/Template of a &GAP; Package
+  </Subtitle>
+  <Version>
+    4.4.1
+  </Version>
+  <Author>
+    Werner Nickel<Alt Only="LaTeX"><Br/></Alt>
+<Homepage>http://www.mathematik.tu-darmstadt.de/~nickel</Homepage>
+
+  </Author>
+  <Author>
+    Greg Gamble<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Greg Gamble<Br/>
+Department of Mathematics and Statistics<Br/>
+Curtin University of Technology<Br/>
+GPO Box U 1987<Br/>
+Perth WA 6845<Br/>
+Australia<Br/>
+</Address>
+<Email>gregg@math.rwth-aachen.de</Email>
+<Homepage>http://www.math.rwth-aachen.de/~Greg.Gamble</Homepage>
+
+  </Author>
+  <Author>
+    Olexandr Konovalov<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+School of Computer Science<Br/>
+University of St Andrews<Br/>
+Jack Cole Building, North Haugh,<Br/>
+St Andrews, Fife, KY16 9SX, Scotland<Br/>
+</Address>
+<Email>obk1@st-andrews.ac.uk</Email>
+<Homepage>https://olexandr-konovalov.github.io/</Homepage>
+
+  </Author>
+  <Date>
+    20 June 2025
+  </Date>
+  <Copyright>
+          <Index>License</Index>
+      &copyright; 1997-2022 by Werner Nickel, Greg Gamble and Olexandr Konovalov<P/>
+      &Example; package is free software;
+      you can redistribute it and/or modify it under the terms of the
+      <URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL>
+      as published by the Free Software Foundation; either version 2 of the License,
+      or (at your option) any later version.
+      
+  </Copyright>
+  <Acknowledgements>
+          We appreciate very much all past and future comments, suggestions and
+      contributions to this package and its documentation provided by &GAP;
+      users and developers.
+      
+  </Acknowledgements>
+  </TitlePage>

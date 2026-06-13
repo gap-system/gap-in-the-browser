@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Dummy_implementations">
+<Heading>Dummy implementations</Heading>
+
+<P/>
+ A dummy implementation of a concept seems to provide an interface for the concept, but calling any operation in this interface will simply signal an error.
+ Hence, when using a dummy implementation, we can be sure that we only rely on the abstract interface but not on any implementation details,
+ for the simple reason that there is no actual implementation.
+ This is useful for testing or compilation against a generic implementation of a concept.
+<Section Label="Chapter_Dummy_implementations_Section_Dummy_rings">
+<Heading>Dummy rings</Heading>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummySemiring" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of dummy semirings.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummySemiringElement" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of elements of a dummy semiring.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyCommutativeSemiring" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of dummy commutative semirings.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyCommutativeSemiringElement" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of elements of a dummy commutative semiring.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyRing" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of dummy rings.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyRingElement" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of elements of a dummy ring.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyCommutativeRing" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of dummy commutative rings.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyCommutativeRingElement" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of elements of a dummy commutative ring.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyField" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of dummy fields.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyFieldElement" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of elements of a dummy field.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="" Name="DummySemiring" />
+ <Returns>a dummy semiring
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="" Name="DummyCommutativeSemiring" />
+ <Returns>a dummy commutative semiring
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="" Name="DummyRing" />
+ <Returns>a dummy ring
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="" Name="DummyCommutativeRing" />
+ <Returns>a dummy commutative ring
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="" Name="DummyField" />
+ <Returns>a dummy field
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Dummy_implementations_Section_Dummy_categories">
+<Heading>Dummy categories</Heading>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsDummyCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of a dummy CAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsDummyCategoryObject" Label="for IsCapCategoryObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of objects in a dummy CAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsDummyCategoryMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of morphisms in a dummy CAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="options" Name="DummyCategory" Label="for IsRecord"/>
+ <Returns>a category
+</Returns>
+ <Description>
+  Creates a dummy category subject to the options given via <A>options</A>, which is a record passed on to <Ref Oper="CategoryConstructor" Label="for IsRecord" />.
+  Note that the options <Code>{category,object,morphism}_filter</Code> will be set to <Code>IsDummyCategory{,Object,Morphism}</Code> and the options <Code>{object,morphism}_{constructor,datum}</Code> and
+  <Code>create_func_*</Code> will be set to dummy implementations (throwing errors when actually called).
+  The dummy category will pretend to support empty limits by default.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Dummy_implementations_Section_Dummy_homalg_rings">
+<Heading>Dummy homalg rings</Heading>
+
+ The operations in this section require
+ <Code>MatricesForHomalg</Code> to be loaded.
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyHomalgRing" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of dummy homalg rings.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyHomalgRingElement" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of elements of a dummy homalg ring.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyCommutativeHomalgRing" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of dummy commutative homalg rings.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyCommutativeHomalgRingElement" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of elements of a dummy commutative homalg ring.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyHomalgField" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of dummy homalg fields.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDummyHomalgFieldElement" />
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; filter of elements of a dummy homalg field.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="" Name="DummyHomalgRing" />
+ <Returns>a dummy homalg ring
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="" Name="DummyCommutativeHomalgRing" />
+ <Returns>a dummy commutative homalg ring
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="" Name="DummyHomalgField" />
+ <Returns>a dummy homalg field
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

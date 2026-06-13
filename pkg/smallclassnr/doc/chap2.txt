@@ -1,0 +1,36 @@
+  
+  [1X2 [33X[0;0YClassification[133X[101X
+  
+  [33X[0;0YThe  [13Xclass number[113X [23Xk(G)[123X of a group [23XG[123X is the number of conjugacy classes of [23XG[123X.
+  In 1903, Landau proved in [Lan03] that for every [23Xn \in \mathbb{N}[123X, there are
+  only  finitely  many  finite  groups  with  exactly [23Xn[123X conjugacy classes. The
+  [5XSmallClassNr[105X  package provides access to the finite groups with class number
+  at most [23X14[123X. These groups were classified in the following papers:[133X
+  
+  [30X    [33X[0;6Y[23Xk(G)  \leq  5[123X,  by  Miller in [Mil11] and independently by Burnside in
+        [Bur11][133X
+  
+  [30X    [33X[0;6Y[23Xk(G) = 6,7[123X, by Poland in [Pol68][133X
+  
+  [30X    [33X[0;6Y[23Xk(G) = 8[123X, by Kosvintsev in [Kos74][133X
+  
+  [30X    [33X[0;6Y[23Xk(G) = 9[123X, by Odincov and Starostin in [OS76][133X
+  
+  [30X    [33X[0;6Y[23Xk(G) = 10,11[123X, by Vera López and Vera López in [VV85][133X
+  
+  [30X    [33X[0;6Y[23Xk(G) = 12[123X, by Vera López and Vera López in [VV86][133X
+  
+  [30X    [33X[0;6Y[23Xk(G) = 13, 14[123X, by Vera López and Sangroniz in [VS07][133X
+  
+  [33X[0;0YRemarks:[133X
+  
+  [31X1[131X   [33X[0;6YIn  [VV85], three distinct groups of the form [23X(C_5 \times C_5) \rtimes
+        C_4[123X  order  [23X100[123X with class number [23X10[123X are given. However, only two such
+        groups  exist,  being  the  ones  with  [10XIdClassNr[110X equal to [10X[10,25][110X and
+        [10X[10,26][110X.[133X
+  
+  [31X2[131X   [33X[0;6YIn  [VV86],  48  groups  with  class  number  12 are listed. There are
+        actually  51  such  groups,  the  three  groups  missing in [VV86] are
+        provided  in  the  appendix  of  [VS07].  These  are  the  groups with
+        [10XIdClassNr[110X equal to [10X[12,13][110X, [10X[12,16][110X and [10X[12,39][110X.[133X
+  

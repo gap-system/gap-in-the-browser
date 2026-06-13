@@ -1,0 +1,86 @@
+  
+  
+                                 [1X SmallClassNr [101X
+  
+  
+               [1X Library of finite groups with small class number [101X
+  
+  
+                                     1.5.1
+  
+  
+                                  11 May 2026
+  
+  
+                                  Sam Tertooy
+  
+  
+  
+  Sam Tertooy
+      Email:    [7Xmailto:sam.tertooy@kuleuven.be[107X
+      Homepage: [7Xhttps://stertooy.github.io/[107X
+      Address:  [33X[0;14YWiskunde[133X
+                [33X[0;14YKU Leuven, Kulak Kortrijk Campus[133X
+                [33X[0;14YEtienne Sabbelaan 53[133X
+                [33X[0;14Y8500 Kortrijk[133X
+                [33X[0;14YBelgium[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XAbstract[101X
+  [33X[0;0YThe  [5XSmallClassNr[105X  package provides access to finite groups with small class
+  number. Currently, it contains the finite groups of class number at most 14.[133X
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2022–2026 Sam Tertooy[133X
+  
+  [33X[0;0YThe  [5XSmallClassNr[105X  package  is free software, it may be redistributed and/or
+  modified  under the terms and conditions of the GNU Public License Version 2
+  ([7Xhttps://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html[107X)   or   (at  your
+  option) any later version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YThis documentation was created using the [5XGAPDoc[105X and [5XAutoDoc[105X packages.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (SmallClassNr)[101X
+  
+  1 [33X[0;0YThe SmallClassNr package[133X
+    1.1 [33X[0;0YInstallation[133X
+    1.2 [33X[0;0YLoading[133X
+    1.3 [33X[0;0YCiting[133X
+    1.4 [33X[0;0YSupport[133X
+  2 [33X[0;0YClassification[133X
+  3 [33X[0;0YThe Small Class Number Library[133X
+    3.1 [33X[0;0YSelecting groups by their ID's[133X
+      3.1-1 SmallClassNrGroup
+      3.1-2 IdClassNr
+    3.2 [33X[0;0YSelecting groups by their properties[133X
+      3.2-1 AllSmallClassNrGroups
+      3.2-2 OneSmallClassNrGroup
+      3.2-3 NrSmallClassNrGroups
+      3.2-4 IteratorSmallClassNrGroups
+    3.3 [33X[0;0YAvailability of the library[133X
+      3.3-1 SmallClassNrGroupsAvailable
+  4 [33X[0;0YConversion to other group libraries[133X
+    4.1 [33X[0;0YThe Small Groups Library[133X
+      4.1-1 IdClassNrToIdGroup
+    4.2 [33X[0;0YThe Library of Finite Perfect Groups[133X
+      4.2-1 IdClassNrToPerfGrp
+    4.3 [33X[0;0YThe Primitive Permutation Groups Library[133X
+      4.3-1 IdClassNrToPrimGrp
+    4.4 [33X[0;0YThe Library of Transitive Groups[133X
+      4.4-1 IdClassNrToTransGrp
+    4.5 [33X[0;0YThe ATLAS of Group Representations[133X
+      4.5-1 IdClassNrToAtlasName
+  
+  
+  [32X

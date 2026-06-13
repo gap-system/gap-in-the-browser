@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<#Include SYSTEM "_Chapter_Monoidal_Categories.xml">
+<#Include SYSTEM "_Chapter_Examples_and_Tests.xml">
+<#Include SYSTEM "_Chapter_Code_Generation_for_Monodial_Categories.xml">
+<#Include SYSTEM "_Chapter_The_terminal_category_with_multiple_objects.xml">
+<#Include SYSTEM "_Chapter_Legacy_Operations_and_Synonyms.xml">
+<#Include SYSTEM "_Chapter_MonoidalCategories_automatic_generated_documentation.xml">

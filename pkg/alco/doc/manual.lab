@@ -1,0 +1,177 @@
+\GAPDocLabFile{alco}
+\makelabel{alco:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{alco:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{alco:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{alco:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{alco:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{alco:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{alco:Octonions}{2}{X7E7EE82D811283C0}
+\makelabel{alco:Octonion Algebras}{2.1}{X7833529F8000FCAD}
+\makelabel{alco:Octonion Filters}{2.1.1}{X81A45FA7806BF5AC}
+\makelabel{alco:Octavian Integers}{2.1.3}{X87ABC5C38446DA89}
+\makelabel{alco:Properties of Octonions}{2.2}{X86E4523081C49806}
+\makelabel{alco:Other Octonion Tools}{2.3}{X80488CD07C9B9BD7}
+\makelabel{alco:Converting Octonion Vectors}{2.3.1}{X7D66EA0A7C8036F6}
+\makelabel{alco:Quaternion Tools}{2.4}{X7991AA0A852ABD60}
+\makelabel{alco:Hurwitz Integers}{2.4.3}{X7A4069927811A5B7}
+\makelabel{alco:Icosian Tools}{2.5}{X79CDD8757D97A598}
+\makelabel{alco:Icosian Ring}{2.5.1}{X87BAE3917C966AA5}
+\makelabel{alco:GoldenModSigma}{2.5.3}{X7C5123127E6FFFA7}
+\makelabel{alco:Other Integer Rings}{2.6}{X816679827A2DC3D4}
+\makelabel{alco:Simple Euclidean Jordan Algebras}{3}{X7E13C2AE7DEAF62D}
+\makelabel{alco:Filters and Basic Attributes}{3.1}{X802D4E3380BC3177}
+\makelabel{alco:Jordan Filters}{3.1.1}{X878107A77FBFD00A}
+\makelabel{alco:Jordan Rank}{3.1.2}{X7D20807E8513CEE8}
+\makelabel{alco:Jordan Degree}{3.1.3}{X7CFD4EB480976FF8}
+\makelabel{alco:Jordan Algebra Constructions}{3.2}{X7FBD095A7B884F7F}
+\makelabel{alco:The Albert Algebra}{3.3}{X7B9397277AF7F920}
+\makelabel{alco:The Quadratic Representation}{3.4}{X7F03850D819127E2}
+\makelabel{alco:Additional Tools and Properties}{3.5}{X7EA1D48F853C02F1}
+\makelabel{alco:Spherical and Projective Designs}{4}{X7B34D3B17F1B8391}
+\makelabel{alco:Jacobi Polynomials}{4.1}{X79A71E957D5B9755}
+\makelabel{alco:Renormalized Jacobi Polynomials}{4.1.2}{X7C78C3A57DDC372B}
+\makelabel{alco:Jordan Designs}{4.2}{X83D7DAD082EAD26D}
+\makelabel{alco:Jordan Design Categories}{4.2.1}{X82BCF4BA84BDEE9E}
+\makelabel{alco:Jordan Rank and Degree}{4.2.3}{X82BB5F997B7B7B3A}
+\makelabel{alco:Designs with an Angle Set}{4.3}{X87DA51657F7EC947}
+\makelabel{alco:Design Angle Sets}{4.3.2}{X78AC6815875A2024}
+\makelabel{alco:Designs with Angle Set and Cardinality}{4.4}{X803F6A9986E27413}
+\makelabel{alco:Design Cardinality}{4.4.1}{X7F730A1C7FC9D987}
+\makelabel{alco:Designs at the Special Bound}{4.4.2}{X7CA9D3F585A7CBC3}
+\makelabel{alco:Design Strength}{4.4.5}{X7C4ADEEA8355A774}
+\makelabel{alco:Schemes and Tight Designs}{4.4.6}{X7DBF21947AB79F1B}
+\makelabel{alco:Designs Admitting a Regular Scheme}{4.5}{X814E031B82F35E16}
+\makelabel{alco:Designs Admitting an Association Scheme}{4.6}{X7EE9F8D97A51FBF9}
+\makelabel{alco:Examples}{4.7}{X7A489A5D79DA9E5C}
+\makelabel{alco:Octonion Lattice Constructions}{5}{X7F6AA3C97E706F4F}
+\makelabel{alco:Gram Matrices and Octonion Lattices}{5.1}{X86D2839985CED826}
+\makelabel{alco:Miracle Octad Generator (MOG) Coordinates}{5.1.3}{X824D0D267A7C0765}
+\makelabel{alco:Octonion Lattice Attributes}{5.2}{X786A725B7ADE7BDE}
+\makelabel{alco:Octonion Lattice Dimension}{5.2.5}{X844164BC82764599}
+\makelabel{alco:Lattice Basis}{5.2.7}{X825D41AE7A411640}
+\makelabel{alco:Octonion Lattice Operations}{5.3}{X79F28E887AF17FFC}
+\makelabel{alco:Sublattice Identification}{5.3.3}{X7F68456883DCEE5D}
+\makelabel{alco:Lattice Vector Coefficients}{5.3.4}{X83B4296D7A2F59F8}
+\makelabel{alco:Closure Tools}{6}{X86ED1AD579C62F21}
+\makelabel{alco:Brute Force Method}{6.1}{X811639F384636DE8}
+\makelabel{alco:Random Choice Methods}{6.2}{X7F865ED67CC5740F}
+\makelabel{alco:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{alco:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{alco:Index}{Ind}{X83A0356F839C696F}
+\makelabel{alco:IsOctonion}{2.1.1}{X81A45FA7806BF5AC}
+\makelabel{alco:IsOctonionCollection}{2.1.1}{X81A45FA7806BF5AC}
+\makelabel{alco:IsOctonionAlgebra}{2.1.1}{X81A45FA7806BF5AC}
+\makelabel{alco:OctonionAlgebra}{2.1.2}{X78767B4A7F44F77D}
+\makelabel{alco:OctavianIntegers}{2.1.3}{X87ABC5C38446DA89}
+\makelabel{alco:IsOctavianInt}{2.1.3}{X87ABC5C38446DA89}
+\makelabel{alco:OctonionE8Basis}{2.1.4}{X7E4DEB1E7C7F2C1D}
+\makelabel{alco:Norm Octonions}{2.2.1}{X7CEAB1C67B22DA7E}
+\makelabel{alco:Trace Octonions}{2.2.2}{X8794715F82DE210B}
+\makelabel{alco:ComplexConjugate Octonions}{2.2.3}{X7DA1C9FC867AE862}
+\makelabel{alco:RealPart Octonions}{2.2.4}{X7FCF154F7BD4E4ED}
+\makelabel{alco:OctonionToRealVector}{2.3.1}{X7D66EA0A7C8036F6}
+\makelabel{alco:RealToOctonionVector}{2.3.1}{X7D66EA0A7C8036F6}
+\makelabel{alco:VectorToIdempotentMatrix}{2.3.2}{X85B2EBB27ED8A073}
+\makelabel{alco:WeylReflection}{2.3.3}{X83DFA8B38603F6D6}
+\makelabel{alco:Norm Quaternions}{2.4.1}{X7F1D2B237E4AF7A6}
+\makelabel{alco:Trace Quaternions}{2.4.2}{X855FA7867B9D0A9E}
+\makelabel{alco:HurwitzIntegers}{2.4.3}{X7A4069927811A5B7}
+\makelabel{alco:IsHurwitzInt}{2.4.3}{X7A4069927811A5B7}
+\makelabel{alco:QuaternionD4Basis}{2.4.4}{X78FF8724803E2AB4}
+\makelabel{alco:IcosianRing}{2.5.1}{X87BAE3917C966AA5}
+\makelabel{alco:IsIcosian}{2.5.1}{X87BAE3917C966AA5}
+\makelabel{alco:IcosianH4Generators}{2.5.2}{X7F4267A77E5F8547}
+\makelabel{alco:GoldenModSigma}{2.5.3}{X7C5123127E6FFFA7}
+\makelabel{alco:EisensteinIntegers}{2.6.1}{X87AE22947AC81C0E}
+\makelabel{alco:IsEisenInt}{2.6.1}{X87AE22947AC81C0E}
+\makelabel{alco:KleinianIntegers}{2.6.2}{X82AA45BF87E1AE33}
+\makelabel{alco:IsKleinInt}{2.6.2}{X82AA45BF87E1AE33}
+\makelabel{alco:IsJordanAlgebra}{3.1.1}{X878107A77FBFD00A}
+\makelabel{alco:IsJordanAlgebraObj}{3.1.1}{X878107A77FBFD00A}
+\makelabel{alco:JordanRank}{3.1.2}{X7D20807E8513CEE8}
+\makelabel{alco:Rank Jordan Algebras}{3.1.2}{X7D20807E8513CEE8}
+\makelabel{alco:JordanDegree}{3.1.3}{X7CFD4EB480976FF8}
+\makelabel{alco:Degree Jordan Algebras}{3.1.3}{X7CFD4EB480976FF8}
+\makelabel{alco:Trace Jordan Algebras}{3.1.4}{X80051D4E7B64E102}
+\makelabel{alco:Determinant Jordan Algebras}{3.1.5}{X844D03667EC7C372}
+\makelabel{alco:Norm Jordan Algebras}{3.1.6}{X83B5D76B87AEF802}
+\makelabel{alco:GenericMinimalPolynomial}{3.1.7}{X85D508B5853906E5}
+\makelabel{alco:SimpleEuclideanJordanAlgebra}{3.2.1}{X7852050A81DEB9F4}
+\makelabel{alco:JordanSpinFactor}{3.2.2}{X86C6713C8178A69F}
+\makelabel{alco:HermitianSimpleJordanAlgebra}{3.2.3}{X859F001D7CB6CBD8}
+\makelabel{alco:JordanHomotope}{3.2.4}{X800B48C383196E06}
+\makelabel{alco:AlbertAlgebra}{3.3.1}{X7A6AFFE07994B4A9}
+\makelabel{alco:AlbertVectorToHermitianMatrix}{3.3.2}{X860036647BB9325E}
+\makelabel{alco:HermitianMatrixToAlbertVector}{3.3.3}{X8385802B7AE842E6}
+\makelabel{alco:JordanQuadraticOperator}{3.4.1}{X79DF7566833EA9F9}
+\makelabel{alco:JordanTripleSystem}{3.4.2}{X7B5ABEA7816F6258}
+\makelabel{alco:HermitianJordanAlgebraBasis}{3.5.1}{X7C236EB080D05CD4}
+\makelabel{alco:JordanMatrixBasis}{3.5.2}{X853480DC7F9B0BD7}
+\makelabel{alco:HermitianMatrixToJordanVector}{3.5.3}{X7D167A057F3CB029}
+\makelabel{alco:JordanAlgebraGramMatrix}{3.5.4}{X7B6084887C1C5AF1}
+\makelabel{alco:JordanAdjugate}{3.5.5}{X806F76C07B315DE4}
+\makelabel{alco:IsPositiveDefinite}{3.5.6}{X7C82B2EB78CF9C17}
+\makelabel{alco:JacobiPolynomial}{4.1.1}{X872DC5F085155040}
+\makelabel{alco:Qkepsilon}{4.1.2}{X7C78C3A57DDC372B}
+\makelabel{alco:Rkepsilon}{4.1.2}{X7C78C3A57DDC372B}
+\makelabel{alco:IsJordanDesign}{4.2.1}{X82BCF4BA84BDEE9E}
+\makelabel{alco:IsSphericalJordanDesign}{4.2.1}{X82BCF4BA84BDEE9E}
+\makelabel{alco:IsProjectiveJordanDesign}{4.2.1}{X82BCF4BA84BDEE9E}
+\makelabel{alco:JordanDesignByParameters}{4.2.2}{X7FD006D77B3C98E2}
+\makelabel{alco:JordanDesignRank}{4.2.3}{X82BB5F997B7B7B3A}
+\makelabel{alco:JordanDesignDegree}{4.2.3}{X82BB5F997B7B7B3A}
+\makelabel{alco:JordanDesignQPolynomials}{4.2.4}{X87D80CFF7F4FD7D6}
+\makelabel{alco:JordanDesignConnectionCoefficients}{4.2.5}{X80A1BCF87B87D691}
+\makelabel{alco:IsJordanDesignWithAngleSet}{4.3.1}{X848E40D6842751A6}
+\makelabel{alco:JordanDesignAddAngleSet}{4.3.2}{X78AC6815875A2024}
+\makelabel{alco:JordanDesignAngleSet}{4.3.2}{X78AC6815875A2024}
+\makelabel{alco:JordanDesignByAngleSet}{4.3.3}{X840BF5428457449B}
+\makelabel{alco:JordanDesignNormalizedAnnihilatorPolynomial}{4.3.4}{X7923181A81406714}
+\makelabel{alco:JordanDesignNormalizedIndicatorCoefficients}{4.3.5}{X85E104A27EC8435A}
+\makelabel{alco:IsJordanDesignWithPositiveIndicatorCoefficients}{4.3.6}{X85E1790D86685EAF}
+\makelabel{alco:JordanDesignSpecialBound}{4.3.7}{X858B619F7E32D5EB}
+\makelabel{alco:IsJordanDesignWithCardinality}{4.4.1}{X7F730A1C7FC9D987}
+\makelabel{alco:JordanDesignAddCardinality}{4.4.1}{X7F730A1C7FC9D987}
+\makelabel{alco:JordanDesignCardinality}{4.4.1}{X7F730A1C7FC9D987}
+\makelabel{alco:IsSpecialBoundJordanDesign}{4.4.2}{X7CA9D3F585A7CBC3}
+\makelabel{alco:JordanDesignAnnihilatorPolynomial}{4.4.3}{X80BE4157859BAA6A}
+\makelabel{alco:JordanDesignIndicatorCoefficients}{4.4.4}{X7C7C5DEF86F051F4}
+\makelabel{alco:IsJordanDesignWithStrength}{4.4.5}{X7C4ADEEA8355A774}
+\makelabel{alco:JordanDesignStrength}{4.4.5}{X7C4ADEEA8355A774}
+\makelabel{alco:IsRegularSchemeJordanDesign}{4.4.6}{X7DBF21947AB79F1B}
+\makelabel{alco:IsAssociationSchemeJordanDesign}{4.4.6}{X7DBF21947AB79F1B}
+\makelabel{alco:IsTightJordanDesign}{4.4.6}{X7DBF21947AB79F1B}
+\makelabel{alco:JordanDesignSubdegrees}{4.5.1}{X83501A01792752CC}
+\makelabel{alco:JordanDesignBoseMesnerAlgebra}{4.6.1}{X85F7CF2D7FDF58D7}
+\makelabel{alco:JordanDesignBoseMesnerIdempotentBasis}{4.6.2}{X7F95AE4A7B7B5B2B}
+\makelabel{alco:JordanDesignIntersectionNumbers}{4.6.3}{X851F03427CFDC513}
+\makelabel{alco:JordanDesignKreinNumbers}{4.6.4}{X84E0CAFE83145B3F}
+\makelabel{alco:JordanDesignFirstEigenmatrix}{4.6.5}{X87C0A2067F13F01A}
+\makelabel{alco:JordanDesignSecondEigenmatrix}{4.6.6}{X7FC9FDCC7DD82286}
+\makelabel{alco:JordanDesignMultiplicities}{4.6.7}{X7FB944C182A2FBE3}
+\makelabel{alco:DesignValencies}{4.6.8}{X7E7012EB7BFE889D}
+\makelabel{alco:JordanDesignReducedAdjacencyMatrices}{4.6.9}{X788831797E45CE02}
+\makelabel{alco:IsLeechLatticeGramMatrix}{5.1.1}{X86B3BD9C84639A7E}
+\makelabel{alco:IsGossetLatticeGramMatrix}{5.1.2}{X78F07E967C6779FF}
+\makelabel{alco:MOGLeechLatticeGeneratorMatrix}{5.1.3}{X824D0D267A7C0765}
+\makelabel{alco:MOGLeechLatticeGramMatrix}{5.1.3}{X824D0D267A7C0765}
+\makelabel{alco:IsOctonionLattice}{5.1.4}{X7C043B907EC1FE89}
+\makelabel{alco:OctonionLatticeByGenerators}{5.1.5}{X7FCBD0FF7D8C0C19}
+\makelabel{alco:UnderlyingOctonionRing}{5.2.1}{X781F36A17CD9FDA6}
+\makelabel{alco:OctonionGramMatrix}{5.2.2}{X8120692484549A5B}
+\makelabel{alco:GeneratorsAsCoefficients}{5.2.3}{X79113ABC7A39CFFB}
+\makelabel{alco:LLLReducedBasisCoefficients}{5.2.4}{X80B8907778F550EE}
+\makelabel{alco:Dimension Octonion Lattices}{5.2.5}{X844164BC82764599}
+\makelabel{alco:Rank Octonion Lattices}{5.2.5}{X844164BC82764599}
+\makelabel{alco:GramMatrix Octonion Lattices}{5.2.6}{X7F4BF549811C33EA}
+\makelabel{alco:Basis Octonion Lattices}{5.2.7}{X825D41AE7A411640}
+\makelabel{alco:CanonicalBasis Octonion Lattices}{5.2.7}{X825D41AE7A411640}
+\makelabel{alco:BasisVectors Octonion Lattices}{5.2.7}{X825D41AE7A411640}
+\makelabel{alco:IsOctonionLatticeBasis Octonion Lattices}{5.2.7}{X825D41AE7A411640}
+\makelabel{alco:ScalarProduct Octonion Lattices}{5.3.2}{X84CF857E83452B67}
+\makelabel{alco:IsSublattice}{5.3.3}{X7F68456883DCEE5D}
+\makelabel{alco:IsSubset}{5.3.3}{X7F68456883DCEE5D}
+\makelabel{alco:Coefficients Octonion Lattices}{5.3.4}{X83B4296D7A2F59F8}
+\makelabel{alco:Closure}{6.1.1}{X87E8AA6582245C3E}
+\makelabel{alco:RandomElementClosure}{6.2.1}{X78DC531B815591E8}
+\makelabel{alco:RandomOrbitOnSets}{6.2.2}{X7A4675E27B489038}

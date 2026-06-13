@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[
+    [<#Include SYSTEM "_entities.xml">
+]
+>
+<Book Name="IBNP">
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+<Body>
+<#Include SYSTEM "intro.xml">
+<#Include SYSTEM "gbnp.xml">
+<#Include SYSTEM "involutive-cp.xml">
+<#Include SYSTEM "monom.xml">
+<#Include SYSTEM "poly.xml">
+<#Include SYSTEM "involutive-np.xml">
+</Body>
+<Bibliography Databases="bib.xml"/>
+<TheIndex/>
+</Book>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (IBNP) - Chapter 2: Using the packages GBNP
+and NMO</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2_mj.html">[MathJax on]</a></p>
+<p><a id="X86057870803DCA93" name="X86057870803DCA93"></a></p>
+<div class="ChapSects"><a href="chap2.html#X86057870803DCA93">2 <span class="Heading">Using the packages <strong class="pkg">GBNP</strong>
+and <strong class="pkg">NMO</strong></span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X783C6EC87988B533">2.1 <span class="Heading">Noncommutative polynomials (NPs)</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7E4277497D877661">2.2 <span class="Heading">Gröbner Bases</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7F82A3608248CD31">2.3 <span class="Heading">Orderings for monomials</span></a>
+</span>
+</div>
+</div>
+
+<h3>2 <span class="Heading">Using the packages <strong class="pkg">GBNP</strong>
+and <strong class="pkg">NMO</strong></span></h3>
+
+<p>This package deals with polynomials in noncommutative algebras and to do so makes use of the noncommutative polynomial operations provided by the <strong class="pkg">GBNP</strong> <a href="chapBib.html#biBGBNP">[CK24]</a> package, and orderings provided by the <strong class="pkg">NMO</strong> package, which is now included within <strong class="pkg">GBNP</strong>. In this chapter we remind users how to call some of these operations.</p>
+
+<p><a id="X783C6EC87988B533" name="X783C6EC87988B533"></a></p>
+
+<h4>2.1 <span class="Heading">Noncommutative polynomials (NPs)</span></h4>
+
+<p>Recall that the main datatype used by the <strong class="pkg">GBNP</strong> package is a list of noncommutative polynomials (NPs). The data type for a noncommutative polynomial (its NP format) is a list of two lists:</p>
+
+
+<ul>
+<li><p>The first is a list <span class="SimpleMath">m</span> of monomials.</p>
+
+</li>
+<li><p>The second is a list <span class="SimpleMath">c</span> of coefficients of these monomials.</p>
+
+</li>
+</ul>
+<p>The two lists have the same length. The polynomial represented by the ordered pair <span class="SimpleMath">[m,c]</span> is <span class="SimpleMath">∑_i c_i m_i</span>. A monomial is a list of positive integers. They are interpreted as the indices of the variables. So, if <span class="SimpleMath">k = [1,3,2,2,1]</span> and the variables are <span class="SimpleMath">x,y,z</span> (in this order), then <span class="SimpleMath">k</span> represents the monomial <span class="SimpleMath">xzy^2x</span>. There are various ways to print these, but the default uses variables <span class="SimpleMath">a,b,c,...</span>. The zero polynomial is represented by <code class="code">[[],[]]</code> and the polynomial <span class="SimpleMath">1</span> is represented by <code class="code">[[[]],[1]]</code>. The algorithms are applicable for the algebra <span class="SimpleMath">F[x_1,x_2,...,x_t]</span> of noncommutative polynomials in <var class="Arg">t</var> variables over the field <span class="SimpleMath">F</span>. Accordingly, the list <span class="SimpleMath">c</span> should contain elements of <span class="SimpleMath">F</span>.</p>
+
+<p>The <strong class="pkg">GBNP</strong> functions <code class="code">GP2NP</code> and <code class="code">NP2GP</code> convert a polynomial to NP format and back again. Polynomials returned by <code class="code">NP2GP</code> print with their coefficients enclosed in brackets. Polynomials may also be printed using the function <code class="code">PrintNP</code>. The function PrintNPList is used to print a list of NPs, with one polynomial per line. The function <code class="code">CleanNP</code> is used to collect terms and reorder them. The default ordering is first by degree and then lexicographically - <code class="code">MonomialGrlexOrdering</code>. Alternative orderings are available - see section <a href="chap2.html#X7F82A3608248CD31"><span class="RefLink">2.3</span></a>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A3 := FreeAssociativeAlgebraWithOne(Rationals,"a","b","c");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := A3.1;; b := A3.2;; c := A3.3;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## define a polynomial and convert to NP-format</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p1 := 7*a^2*b*c + 8*b*c*a;</span>
+(8)*b*c*a+(7)*a^2*b*c
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp1 := GP2NP( p1 );</span>
+[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## define an NP-poly; clean it; and convert to a polynomial</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp2 := [ [ [1,1], [1,2,1], [3], [1,1], [3,1,2] ], [5,6,7,8,9] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintNP( Lp2 );</span>
+ 5a^2 + 6aba + 7c + 8a^2 + 9cab
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp2 := CleanNP( Lp2 );</span>
+[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## note the degree lexicographic ordering</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintNP( Lp2 );</span>
+ 9cab + 6aba + 13a^2 + 7c
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p2 := NP2GP( Lp2, A3 );</span>
+(9)*c*a*b+(6)*a*b*a+(13)*a^2+(7)*c
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintNPList( [ Lp1, Lp2, [ [], [] ], [ [ [] ], [9] ] ] );</span>
+ 7a^2bc + 8bca
+ 9cab + 6aba + 13a^2 + 7c
+ 0
+ 9 
+
+</pre></div>
+
+<p><a id="X7E4277497D877661" name="X7E4277497D877661"></a></p>
+
+<h4>2.2 <span class="Heading">Gröbner Bases</span></h4>
+
+<p>The <strong class="pkg">GBNP</strong> package computes Gröbner bases using the function <code class="code">SGrobner</code>. In the example below the polynomials <span class="SimpleMath">{p,q}</span> define an ideal in <span class="SimpleMath">Z[a,b]</span> which has a three element Gröbner basis.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p := [ [ [2,2,2], [2,1], [1,2] ], [1,3,-1] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q := [ [ [1,1], [2] ], [1,1] ];; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintNPList( [p,q] );</span>
+ b^3 + 3ba - ab
+ a^2 + b 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GB := SGrobner( [p,q] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintNPList(GB);</span>
+ a^2 + b 
+ ba - ab 
+ b^3 + 2ab 
+
+</pre></div>
+
+<p><a id="X7F82A3608248CD31" name="X7F82A3608248CD31"></a></p>
+
+<h4>2.3 <span class="Heading">Orderings for monomials</span></h4>
+
+<p>The three monomial orderings provided by the main <strong class="pkg">GAP</strong> library are <code class="code">MonomialLexOrdering</code>, <code class="code">MonomialGrlexOrdering</code> and <code class="code">MonomialGrevlexOrdering</code>. The first of these is the default used by <strong class="pkg">GBNP</strong>.</p>
+
+<p>The <strong class="pkg">NMO</strong> package is now part of the package <strong class="pkg">GBNP</strong>. It provides a choice of orderings on monomials, including lexicographic and length-lexicographic ones.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp1;</span>
+[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp2;</span>
+[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GtNPoly( Lp1, Lp2 );</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## select the lexicographic ordering and reorder p1, p2</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">lexord := NCMonomialLeftLexicographicOrdering( A3 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PatchGBNP( lexord );</span>
+LtNP patched.
+GtNP patched.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp1 := CleanNP( Lp1 );</span>
+[ [ [ 2, 3, 1 ], [ 1, 1, 2, 3 ] ], [ 8, 7 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp2 := CleanNP( Lp2 );</span>
+[ [ [ 3, 1, 2 ], [ 3 ], [ 1, 2, 1 ], [ 1, 1 ] ], [ 9, 7, 6, 13 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GtNPoly( Lp1, Lp2 );</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## revert to degree lex order</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">UnpatchGBNP();;</span>
+LtNP restored.
+GtNP restored.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp1 := CleanNP( Lp1 );</span>
+[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Lp2 := CleanNP( Lp2 );</span>
+[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GtNPoly( Lp1, Lp2 );</span>
+true
+
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

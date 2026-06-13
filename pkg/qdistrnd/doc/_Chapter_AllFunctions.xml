@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_AllFunctions">
+<Heading>All Functions</Heading>
+
+<P/>
+<Section Label="Section_DistanceFunctions">
+<Heading>Functions for computing the distance</Heading>
+
+<P/>
+<ManSection>
+  <Func Arg="HX, HZ, num, mindist[, debug] :field:=GF(2), maxav:=fail" Name="DistRandCSS" />
+ <Returns>An upper bound on the CSS distance <Math>d_Z</Math>
+</Returns>
+ <Description>
+  Computes an upper bound on the distance <Math>d_Z</Math> of the
+  <Math>q</Math>-ary code with stabilizer generator matrices <Math>H_X</Math>, <Math>H_Z</Math> whose rows
+  are assumed to be orthogonal (<Emph>orthogonality is not verified</Emph>).
+  Details of the input parameters 
+<List>
+<Item>
+<Code>HX</Code>, <Code>HZ</Code>: the input matrices with elements in the Galois <Code>field</Code> <Math>F</Math>
+</Item>
+<Item>
+<Code>num</Code>: number of information sets to construct (should be large)
+</Item>
+<Item>
+<Code>mindist</Code> - the algorithm stops when distance equal or below <Code>mindist</Code>
+     is found and returns the result with negative sign.  Set
+     <Code>mindist</Code> to 0 if you want the actual distance.   
+</Item>
+<Item>
+<Code>debug</Code>: optional integer argument containing debug bitmap (default: <Code>0</Code>)
+<List>
+<Item>
+1 (0s  bit set) : print 1st of the vectors found
+</Item>
+<Item>
+2 (1st bit set) : check orthogonality of matrices and of the final vector
+</Item>
+<Item>
+4 (2nd bit set) : show occasional progress update
+</Item>
+<Item>
+8 (3rd bit set) : maintain cw count and estimate the success probability
+</Item>
+</List>
+</Item>
+<Item>
+<Code>field</Code> (Options stack): Galois field, default: <Math>\mathop{\rm GF}(2)</Math>.   
+</Item>
+<Item>
+<Code>maxav</Code> (Options stack): if set, terminate when <Math>\langle n\rangle</Math>&gt;<Code>maxav</Code>, 
+    see Section <Ref Sect="Section_Empirical"/>.  Not set by default.
+  See Section <Ref Sect="Section_SimpleVersion"/> for the
+  description of the algorithm.  
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="G, num, mindist[, debug] :field:=GF(2), maxav:=fail" Name="DistRandStab" />
+ <Returns>An upper bound on the code distance <Math>d</Math>
+</Returns>
+ <Description>
+  Computes an upper bound on the distance <Math>d</Math> of the
+  <Math>F</Math>-linear stabilizer code with generator matrix <Math>G</Math> whose rows
+  are assumed to be symplectic-orthogonal, see Section <Ref
+  Subsect="Subsection_AlgorithmGeneric"/> (<Emph>orthogonality is not verified</Emph>). 
+<P/>
+  Details of the input parameters:
+<List>
+<Item>
+<Code>G</Code>: the input matrix with elements in the Galois <Code>field</Code> <Math>F</Math>
+    with <Math>2n</Math> columns <Math>(a_1,b_1,a_2,b_2,\ldots,a_n,b_n)</Math>.
+  The remaining options are identical to those in the function
+  <Code>DistRandCSS</Code> <Ref Sect="Section_DistanceFunctions"/>.
+</Item>
+<Item>
+<Code>num</Code>: number of information sets to construct (should be large)
+</Item>
+<Item>
+<Code>mindist</Code> - the algorithm stops when distance equal or smaller than <Code>mindist</Code>
+     is found - set it to 0 if you want the actual distance
+</Item>
+<Item>
+<Code>debug</Code>: optional integer argument containing debug bitmap (default: <Code>0</Code>)
+<List>
+<Item>
+1 (0s  bit set) : print 1st of the vectors found
+</Item>
+<Item>
+2 (1st bit set) : check orthogonality of matrices and of the final vector
+</Item>
+<Item>
+4 (2nd bit set) : show occasional progress update
+</Item>
+<Item>
+8 (3rd bit set) : maintain cw count and estimate the success probability
+</Item>
+</List>
+</Item>
+<Item>
+<Code>field</Code> (Options stack): Galois field, default: <Math>\mathop{\rm GF}(2)</Math>.   
+</Item>
+<Item>
+<Code>maxav</Code> (Options stack): if set, terminate when <Math>\langle n\rangle</Math>&gt;<Code>maxav</Code>, 
+       see Section <Ref Sect="Section_Empirical"/>.  Not set by default.
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+
+<Subsection Label="Chapter_AllFunctions_Section_DistanceFunctions_Subsection_Examples">
+<Heading>Examples</Heading>
+
+ Here are a few simple examples illustrating the use of distance
+ functions.  In all examples, we use functions <Code>DistRandCSS</Code> and
+ <Code>DistRandStab</Code> with <Code>debug=2</Code> to ensure that row
+ orthogonality in the input matrices is verified.
+<Example><![CDATA[
+gap> F:=GF(5);;
+gap> Hx:=One(F)*[[1,-1,0,0 ],[0,0,1,-1]];;
+gap> Hz:=One(F)*[[1, 1,1,1]];;
+gap> DistRandCSS(Hz,Hx,100,0,2 : field:=F);
+2
+]]></Example>
+
+
+ Now, if we set the minimum distance <Code>mindist</Code> parameter too large,
+ the function terminates immediately after a codeword with such a
+ weight is found; in such a case the result is returned with the
+ negative sign.
+<Example><![CDATA[
+gap> DistRandCSS(Hz,Hx,100,2,2 : field:=F);
+-2
+]]></Example>
+
+
+ The function <Code>DistRandStab</Code> takes 
+ only one matrix.  This example uses the same CSS code but written
+ into a single matrix.  Notice how the values from the previous example are
+ intercalated with zeros.
+<Example><![CDATA[
+gap> F:=GF(5);;
+gap> H:=One(F)*[[1,0, -1,0,  0,0,  0,0 ], # original Hx in odd positions
+>            [0,0,  0,0,  1,0, -1,0 ],
+>            [0,1,  0,1,  0,1,  0,1 ]];; # original Hz in even positions
+gap> DistRandStab(H,100,0,2 : field:=F);
+2
+]]></Example>
+
+
+</Subsection>
+
+
+</Section>
+
+
+<Section Label="Section_IOFunctions">
+<Heading>Input/Output Functions</Heading>
+
+<P/>
+<ManSection>
+  <Func Arg="FilePath [,pair] : field:=GF(2)" Name="ReadMTXE" />
+ <Returns>a list [<Code>field</Code>, <Code>pair</Code>, <Code>Matrix</Code>, <Code>array_of_comment_strings</Code>] 
+</Returns>
+ <Description>
+Read matrix from an MTX file, an extended version of Matrix Market eXchange
+ coordinate format supporting finite Galois fields and
+ two-block matrices 
+ <Math> (A|B) </Math> 
+ with columns 
+ <Math>A=(a_1, a_2, \ldots , a_n)</Math> 
+ and 
+ <Math>B=(b_1, b_2, \ldots , b_n)</Math>, see Chapter <Ref Chap="Chapter_FileFormat"/>.
+<P/>
+<List>
+<Item>
+<Code>FilePath</Code> name of existing file storing the matrix
+</Item>
+<Item>
+<Code>pair</Code> (optional argument): specifies column ordering;
+          must correlate with the variable <Code>type</Code> in the file
+<List>
+<Item>
+<Code>pair=0</Code> for regular single-block matrices (e.g., CSS) <Code>type=integer</Code> (if <Code>pair</Code> not
+            specified, <Code>pair</Code>=0 is set by default for <Code>integer</Code>) 
+</Item>
+<Item>
+<Code>pair=1</Code> intercalated columns with <Code>type=integer</Code>
+            <Math> (a_1, b_1, a_2, b_2,\ldots) </Math> 
+</Item>
+<Item>
+<Code>pair=2</Code> grouped columns with <Code>type=integer</Code>
+            <Math> (a_1, a_2, \ldots, a_n\;    b_1, b_2,\ldots, b_n) </Math> 
+</Item>
+<Item>
+<Code>pair=3</Code> this is the only option for <Code>type=complex</Code> with elements 
+            specified as "complex" pairs 
+</Item>
+</List>
+</Item>
+<Item>
+<Code>field</Code> (Options stack):  Galois field, default: <Math>\mathop{\rm GF}(2)</Math>.
+</Item>
+</List>
+ <Emph>Must</Emph> match that given in the file (if any).
+ <Emph>Notice</Emph>: with <Code>pair</Code>=1 and <Code>pair</Code>=2, the number of matrix columns
+ specified in the file must be even, twice the block length of the
+ code.  <Emph>This version of the format is deprecated and should be avoided.</Emph>
+<P/>
+ 1st line of file must read:
+<#Include Label="LineOne">
+
+  with <Code>type</Code> being either <Code>integer</Code> or <Code>complex</Code>
+<P/>
+ 2nd line (optional) may contain:
+<P/>
+<#Include Label="LineTwoA">
+
+ or
+<#Include Label="LineTwoB">
+
+<P/>
+ Any additional entries in the second line are silently ignored.  By
+ default, <Math>\mathop{\rm GF}(2)</Math> is assumed;
+ the default can be overriden
+ by the optional <Code>field</Code> argument.   If the field is specified both
+ in the file and by the optional argument, the corresponding values
+ must match.  Primitive polynomial (if any) is only checked in the case of 
+ an extension field; it is silently ignored for a prime field.
+<P/>
+ See Chapter <Ref Chap="Chapter_FileFormat"/> for the details of how the elements
+ of the group are represented depending on whether the field is a prime
+ field (<Math> q </Math> a prime) or an extension field with <Math> q=p^m </Math>, <Math>p</Math> prime, and <Math>m>1</Math>.
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="StrPath, pair, matrix [,comment[,comment]] : field:=GF(2)" Name="WriteMTXE" />
+ <Returns>no output
+</Returns>
+ <Description>
+ Export a <Code>matrix</Code> in Extended MatrixMarket format, with options
+ specified by the <Code>pair</Code> argument.  
+<P/>
+<List>
+<Item>
+<Code>StrPath</Code> - name of the file to be created;
+</Item>
+<Item>
+<Code>pair</Code>: parameter to control the file format details, must match the storage
+    <Code>type</Code> of the matrix. 
+<List>
+<Item>
+<Code>pair=0</Code> for regular matrices (e.g., CSS) with <Code>type=integer</Code> 
+</Item>
+<Item>
+<Code>pair=1</Code> for intercalated columns <Math> (a_1, b_1, a_2, b_2, \ldots) </Math>
+              with <Code>type=integer</Code> (<Emph>deprecated</Emph>)
+</Item>
+<Item>
+<Code>pair=2</Code> for grouped columns with <Code>type=integer</Code> <Emph>(this is not supported!)</Emph>
+</Item>
+<Item>
+<Code>pair=3</Code> for columns specified in pairs with <Code>type=complex</Code>.
+</Item>
+</List>
+</Item>
+<Item>
+Columns of the input <Code>matrix</Code> must be intercalated unless <Code>pair=0</Code>
+</Item>
+<Item>
+optional <Code>comment</Code>: one or more strings (or a single list of
+   strings) to be output after the MTX header line.  
+</Item>
+</List>
+<P/>
+ The second line specifying the field will be generated
+ automatically <Emph>only</Emph> if the GAP Option <Code>field</Code> is present.
+ As an option, the line can also be  entered explicitly
+ as the first line of the comments, e.g., <Code>"% Field: GF(256)"</Code>
+<P/>
+ See Chapter <Ref Chap="Chapter_FileFormat"/> for the details of how the elements
+ of the group are represented depending on whether the field is a prime
+ field (<Math> q </Math> a prime) or an extension field with <Math> q=p^m </Math>, <Math> m>1 </Math>.
+<P/>
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Section_HelperFunctions">
+<Heading>Helper Functions</Heading>
+
+<P/>
+<ManSection>
+  <Func Arg="vector" Name="QDR_AverageCalc" />
+ <Description>
+Calculate the average of the components of a numerical <Code>vector</Code>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="vector, field" Name="QDR_SymplVecWeight" />
+ <Returns>symplectic weight of a vector
+</Returns>
+ <Description>
+Calculate the symplectic weight of a <Code>vector</Code> with
+ an even number of entries from the field <Code>field</Code>.   The elements of
+ the pairs are
+ intercalated: <Math>(a_1, b_1, a_2, b_2,\ldots)</Math>.
+<P/>
+ <Emph>Note: the parity of vector <Code>length</Code> and the format are not verified!!!</Emph>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="matrix" Name="QDR_WeightMat" />
+ <Returns>number of non-zero elements
+</Returns>
+ <Description>
+count the total number of non-zero entries in a matrix.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="vector, n, num" Name="QDR_DoProbOut" />
+ <Returns>nothing
+</Returns>
+ <Description>
+Aux function to print out the relevant probabilities given
+ the list <Code>vector</Code> of multiplicities of the codewords found.  Additional
+ parameters are <Code>n</Code>, the code length, and <Code>num</Code>, the number of
+ repetitions; these are ignored in the present version of the
+ program.  See <Ref Sect="Section_Empirical"/> for 
+ related discussion.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="str" Name="QDR_ParseFieldStr" />
+ <Returns>the corresponding Galois field
+</Returns>
+ <Description>
+Parse a string describing a Galois field
+ Supported formats: <Code>Z(p)</Code>, <Code>GF(q)</Code>, and <Code>GF(q^m)</Code>,
+ where <Code>p</Code> must be a prime, <Code>q</Code> a prime or a power of a prime, and <Code>m</Code> a natural integer.  
+ No spaces are allowed.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="F, str" Name="QDR_ParsePolyStr" />
+ <Returns>the corresponding polynomial
+</Returns>
+ <Description>
+Parse string <Code>str</Code> as a polynomial over the field <Code>F</Code>.
+ Only characters in "0123456789*+-^x" are allowed in the string. 
+ In particular, no spaces are allowed.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="F" Name="QDR_FieldHeaderStr" />
+ <Returns>the created header string
+</Returns>
+ <Description>
+Create a header string describing the field <Code>F</Code>
+ for use in the function <Code>WriteMTXE</Code>.
+ If <Code>F</Code> is a prime Galois field, just specify it: 
+ For an extension field <Math>\mathop{\rm GF}(p^m)</Math> with <Math>p</Math> prime and <Math>m>1</Math>, also give 
+ the primitive polynomial <Emph>which should not contain any spaces</Emph>.  For example,  
+ See Chapter <Ref Chap="Chapter_FileFormat"/> for details.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="recs, optF" Name="QDR_ProcessFieldHeader" />
+ <Returns>the list [Field, ConversionDegree, FormatIndex] (plus anything else we  may need in the future); the list is to be used as the second
+  parameter in <Code>QDR_ProcEntry()</Code>  
+</Returns>
+ <Description>
+Process the field header (second line in the MTXE file
+ format), including the field, PrimitiveP record, and anything else.
+ Supported format options:
+<#Include Label="FieldHeaderA">
+
+<P/>
+ Here the records should be separated by one or more spaces;
+ while <Code>field</Code>, <Code>polynomial</Code>, and <Code>format</Code> <Emph>should not contain any spaces.</Emph>
+ Any additional records in this line will be silently ignored.
+<P/>
+ The <Code>field</Code> option should specify a valid field, <Math>\mathop{\rm GF}(q)</Math> or
+ <Math>\mathop{\rm GF}(p^m)</Math>, where <Math>q>1</Math> should be a power of the prime <Math>p</Math>. 
+<P/>
+ The <Code>polynomial</Code> should be a valid expanded monic
+ polynomial with integer coefficients, with a single independent
+ variable <Code>x</Code>; it should contain no spaces.  An error will be
+ signaled if <Code>polynomial</Code> is not a valid primitive polynomial of the <Code>field</Code>.
+ This argument is optional;  by default, Conway polynomial will be used.
+<P/>
+ The optional <Code>format</Code> string (<Emph>not implemented</Emph>) should be "AdditiveInt" (the default
+ for prime fields), "PowerInt" (the default for extension fields
+ with <Math>m>1</Math>) or "VectorInt".  
+<P/>
+ <Code>AdditiveInt</Code> indicates that values listed
+ are expected to be in the corresponding prime field and should be
+ interpreted as integers mod <Math>p</Math>.  
+ <Code>PowerInt</Code> indicates that field elements are
+ represented as integers powers of the primitive element, root of
+ the primitive polynomial, or <Math>-1</Math> for the zero field element.  
+ <Code>VectorInt</Code> corresponds to encoding coefficients of a degree-<Math>(m-1)</Math> <Math>p</Math>-ary
+ polynomial representing field elements into a <Math>p</Math>-ary integer.  In
+ this notation, any negative value will be taken mod <Math>p</Math>, thus <Math>-1</Math>
+ will be interpreted as <Math>p-1</Math>, the additive inverse of the field <Math>1</Math>.
+<P/>
+ On input, <Code>recs</Code> should contain a list of tokens obtained by
+ splitting the field record line;
+ <Code>optF</Code> should be assigned to <Code>ValueOption("field")</Code> or <Code>fail</Code>.
+<P/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="str, fmt, FileName, LineNo" Name="QDR_ProcEntry" />
+ <Returns>the converted field element
+</Returns>
+ <Description>
+Convert a string entry which should represent an integer
+ to the Galois Field element as specified in the <Code>fmt</Code>.
+<List>
+<Item>
+<Code>str</Code> is the string representing an integer.
+</Item>
+<Item>
+<Code>fmt</Code> is a list  [Field, ConversionDegree, FormatIndex]
+<List>
+<Item>
+<Code>Field</Code> is the Galois field <Math>\mathop{\rm GF}(p^m)</Math> of the code
+</Item>
+<Item>
+<Code>ConversionDegree</Code> <Math>c</Math> : every element <Math>x</Math> read is replaces with
+     <Math>x^c</Math>.  This may be needed if a non-standard primitive
+     polynomial is used to define the field. 
+</Item>
+<Item>
+<Code>FormatIndex</Code> in {0,1,2}. <Code>0</Code> indicates no conversion (just a
+     modular integer).  <Code>1</Code> indicates that the integer represents
+     a power of the primitive element, or <Math>-1</Math> for 0.  <Code>2</Code>
+     indicates that the integer encodes coordinates of a length <Math>m</Math>
+     vector as the digits of a <Math>p</Math>-ary integer (<Emph>not yet implemented</Emph>).
+</Item>
+</List>
+</Item>
+<Item>
+<Code>FileName</Code>, <Code>LineNo</Code> are the line number and the name of the
+   input file; these are used to signal an error.
+</Item>
+</List>
+<P/>
+ </Description>
+</ManSection>
+
+
+<Subsection Label="Chapter_AllFunctions_Section_HelperFunctions_Subsection_Examples">
+<Heading>Examples</Heading>
+
+<Example><![CDATA[
+gap> QDR_AverageCalc([2,3,4,5]);
+3.5
+]]></Example>
+
+
+<Example><![CDATA[
+gap> F:=GF(3);; 
+gap> x:=Indeterminate(F,"x");; poly:=One(F)*(1-x);;
+gap> n:=5;;
+gap> mat:=QDR_DoCirc(poly,n,2*n,F);; # make a circulant matrix with 5 rows 
+gap> Display(mat);
+ 1 2 . . . . . . . .
+ . . 1 2 . . . . . .
+ . . . . 1 2 . . . .
+ . . . . . . 1 2 . .
+ . . . . . . . . 1 2
+]]></Example>
+
+
+ These examples illustrate the allowed format of field definitions in the header of an <Code>MTXE</Code> file:
+<Example><![CDATA[
+gap> QDR_ParseFieldStr("Z(5)");
+Z(5)
+gap> QDR_ParseFieldStr("Z(17)");
+Z(17)
+gap> QDR_ParseFieldStr("GF(5^2)");
+GF(5^2)
+gap> QDR_ParseFieldStr("GF(25)");
+GF(5^2)
+gap> QDR_ParseFieldStr("GF(125^2)");
+GF(5^6)
+]]></Example>
+
+
+<Example><![CDATA[
+gap> QDR_ParsePolyStr(GF(25),"x^2+1");
+x^2+Z(5)^0
+]]></Example>
+
+
+</Subsection>
+
+
+<ManSection>
+  <Func Arg="matrix, field" Name="QDR_MakeH" />
+ <Returns><Code>H</Code> (the check matrix constructed) 
+</Returns>
+ <Description>
+Given a two-block <Code>matrix</Code> with intercalated columns
+ <Math> (a_1, b_1, a_2, b_2, \ldots) </Math>,  calculate the corresponding check matrix <Code>H</Code> with
+ columns <Math> (-b_1, a_1, -b_2, a_2, \ldots) </Math>.  
+<P/>
+ The parity of the number of columns is verified. 
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="poly, m, n, field" Name="QDR_DoCirc" />
+ <Returns><Code>m</Code> by <Code>2*n</Code> circulant matrix constructed from the polynomial coefficients
+</Returns>
+ <Description>
+Given the polynomial <Code>poly</Code> <Math>a_0+b_0 x+a_1x^2+b_1x^3
+ +\ldots</Math> with coefficients from the field <Code>F</Code>, 
+ constructs the corresponding <Code>m</Code> by 2<Code>n</Code> double circulant matrix
+ obtained by <Code>m</Code> repeated cyclic shifts of the coefficients' vector
+ by <Math>s=2</Math> positions at a time. 
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

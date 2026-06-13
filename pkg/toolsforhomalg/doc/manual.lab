@@ -1,0 +1,215 @@
+\GAPDocLabFile{toolsforhomalg}
+\makelabel{toolsforhomalg:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{toolsforhomalg:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{toolsforhomalg:Caches}{1}{X7A42AF337F0F3EAE}
+\makelabel{toolsforhomalg:Object constructors}{1.1}{X824C0CC579E8DD7F}
+\makelabel{toolsforhomalg:Setters, getters}{1.2}{X7F4F8C2380D95C03}
+\makelabel{toolsforhomalg:Managing functions}{1.3}{X7CAF0DB27B3836F9}
+\makelabel{toolsforhomalg:Install functions}{1.4}{X8791224B7C97F0CF}
+\makelabel{toolsforhomalg:Lazy arrays}{2}{X83F0437887B743C6}
+\makelabel{toolsforhomalg:GAP categories}{2.1}{X7D03633A7D98026B}
+\makelabel{toolsforhomalg:Constructors}{2.2}{X86EC0F0A78ECBC10}
+\makelabel{toolsforhomalg:Lazy homogeneous lists}{3}{X833D807C81E07ABC}
+\makelabel{toolsforhomalg:GAP categories}{3.1}{X7D03633A7D98026B}
+\makelabel{toolsforhomalg:Constructors}{3.2}{X86EC0F0A78ECBC10}
+\makelabel{toolsforhomalg:Lists with attributes}{4}{X7AE60B0886355B92}
+\makelabel{toolsforhomalg:GAP categories}{4.1}{X7D03633A7D98026B}
+\makelabel{toolsforhomalg:Constructors}{4.2}{X86EC0F0A78ECBC10}
+\makelabel{toolsforhomalg:ToDo-list}{5}{X7B4028057844FD6B}
+\makelabel{toolsforhomalg:Blueprints}{5.1}{X849630B07F560FF5}
+\makelabel{toolsforhomalg:ToDo-list entries}{5.2}{X86137045808AF035}
+\makelabel{toolsforhomalg:Category}{5.3}{X7D9151158577E272}
+\makelabel{toolsforhomalg:Constructor}{5.4}{X7ABF649E831D4D8E}
+\makelabel{toolsforhomalg:This is the magic}{5.5}{X7B69858A7C5DD48B}
+\makelabel{toolsforhomalg:Methods for all objects}{5.6}{X844D8E5879757C61}
+\makelabel{toolsforhomalg:Proof tracking}{5.7}{X7AB979547B1614FD}
+\makelabel{toolsforhomalg:Maintainance}{5.8}{X8716E6D386B3DF40}
+\makelabel{toolsforhomalg:Basics}{6}{X868F7BAB7AC2EEBC}
+\makelabel{toolsforhomalg:Global variables}{6.1}{X7D9044767BEB1523}
+\makelabel{toolsforhomalg:GAP Categories}{6.2}{X7D03633A7D98026B}
+\makelabel{toolsforhomalg:Attributes}{6.3}{X7C701DBF7BAE649A}
+\makelabel{toolsforhomalg:Pointers}{7}{X81C68E82799A72EA}
+\makelabel{toolsforhomalg:Weak pointer objects}{7.1}{X86D963DC7968899B}
+\makelabel{toolsforhomalg:Pointer objects}{7.2}{X7D48F98C7CA131A2}
+\makelabel{toolsforhomalg:Tools}{8}{X8508AEF8845565A1}
+\makelabel{toolsforhomalg:Functions}{8.1}{X86FA580F8055B274}
+\makelabel{toolsforhomalg:Example functions}{8.2}{X86F60B7B826FA61E}
+\makelabel{toolsforhomalg:Trees}{9}{X82EAC5E57CAA5FC5}
+\makelabel{toolsforhomalg:Trees}{9.1}{X82EAC5E57CAA5FC5}
+\makelabel{toolsforhomalg:Z-functions}{10}{X7BE235988693C72F}
+\makelabel{toolsforhomalg:Gap categories for Z functions}{10.1}{X85BDA2257D22C617}
+\makelabel{toolsforhomalg:Creating Z-functions}{10.2}{X8416D8F37C19C23D}
+\makelabel{toolsforhomalg:Index}{Ind}{X83A0356F839C696F}
+\makelabel{toolsforhomalg:CachingObject}{1.1.1}{X7E14EE657C553EDB}
+\makelabel{toolsforhomalg:CachingObject for IsObject}{1.1.1}{X7E14EE657C553EDB}
+\makelabel{toolsforhomalg:CachingObject for IsObject, IsObject}{1.1.1}{X7E14EE657C553EDB}
+\makelabel{toolsforhomalg:CachingObject for IsObject, IsObject, IsInt}{1.1.2}{X85F7EEE385E58EBB}
+\makelabel{toolsforhomalg:CachingObject for IsObject, IsObject, IsInt, IsBool}{1.1.2}{X85F7EEE385E58EBB}
+\makelabel{toolsforhomalg:CacheValue for IsCachingObject, IsObject}{1.2.1}{X7FA41BDA822790B2}
+\makelabel{toolsforhomalg:SetCacheValue for IsCachingObject, IsObject, IsObject}{1.2.2}{X81D3DA3881F54824}
+\makelabel{toolsforhomalg:IsEqualForCache for IsObject, IsObject}{1.2.3}{X828F425478CE6FF1}
+\makelabel{toolsforhomalg:SetCachingObjectCrisp}{1.3.1}{X7E2443877886AEFD}
+\makelabel{toolsforhomalg:SetCachingObjectWeak}{1.3.2}{X7E1E50AD7FE9BE4D}
+\makelabel{toolsforhomalg:DeactivateCachingObject}{1.3.3}{X7B68A31E806C85A2}
+\makelabel{toolsforhomalg:InstallMethodWithCache}{1.4.1}{X7CC147407A5963AF}
+\makelabel{toolsforhomalg:InstallMethodWithCrispCache}{1.4.2}{X867A71918020901E}
+\makelabel{toolsforhomalg:InstallMethodWithCacheFromObject}{1.4.3}{X7B148C2280708F41}
+\makelabel{toolsforhomalg:FunctionWithCache}{1.4.4}{X8154383B83B3A992}
+\makelabel{toolsforhomalg:IsLazyArray for IsComponentObjectRep and IsList}{2.1.1}{X863831C4843545B3}
+\makelabel{toolsforhomalg:LazyArrayWithValues}{2.2.1}{X7F49E56781DF539E}
+\makelabel{toolsforhomalg:LazyArray}{2.2.1}{X7F49E56781DF539E}
+\makelabel{toolsforhomalg:LazyStandardInterval}{2.2.1}{X7F49E56781DF539E}
+\makelabel{toolsforhomalg:LazyInterval}{2.2.1}{X7F49E56781DF539E}
+\makelabel{toolsforhomalg:LazyConstantArray}{2.2.1}{X7F49E56781DF539E}
+\makelabel{toolsforhomalg:LazyArrayFromList}{2.2.1}{X7F49E56781DF539E}
+\makelabel{toolsforhomalg:IsLazyHList for IsComponentObjectRep and IsList}{3.1.1}{X7C320F5A879A7FD8}
+\makelabel{toolsforhomalg:LazyHList}{3.2.1}{X7C4EDA327FA79326}
+\makelabel{toolsforhomalg:IsListWithAttributes for IsAttributeStoringRep and IsList}{4.1.1}{X831B2B37870A29FD}
+\makelabel{toolsforhomalg:TypedListWithAttributes}{4.2.1}{X794FB63684D26A64}
+\makelabel{toolsforhomalg:ListWithAttributes}{4.2.2}{X870B67E178BEA1B6}
+\makelabel{toolsforhomalg:ToDoListEntryToMaintainEqualAttributes for IsList, IsList, IsList}{5.1.1}{X8627840881B04F30}
+\makelabel{toolsforhomalg:ToDoListEntryToMaintainFollowingAttributes for IsList, IsList, IsList}{5.1.2}{X83C3ABAA78446811}
+\makelabel{toolsforhomalg:ToDoListEntry for IsList, IsList}{5.1.3}{X829D3C967A146C7B}
+\makelabel{toolsforhomalg:ToDoListthisobject}{5.1.4}{X84032B267EDC4FAC}
+\makelabel{toolsforhomalg:ToDoListEntryToMaintainEqualAttributesBlueprint for IsObject, IsList, IsList, IsList}{5.1.5}{X87779438810212EE}
+\makelabel{toolsforhomalg:ToDoListEntryToMaintainFollowingAttributesBlueprint for IsObject, IsList, IsList, IsList}{5.1.6}{X7FFB4C148359E579}
+\makelabel{toolsforhomalg:ToDoListEntryBlueprint for IsObject, IsList, IsList}{5.1.7}{X7A7B0E87843AF435}
+\makelabel{toolsforhomalg:AddToToDoList for IsToDoListEntry}{5.2.1}{X7EB7863D7F4DC75E}
+\makelabel{toolsforhomalg:SourcePart for IsToDoListEntry}{5.2.2}{X876F23977AA5C19E}
+\makelabel{toolsforhomalg:TargetPart for IsToDoListEntry}{5.2.3}{X86B9FC7A78FF9347}
+\makelabel{toolsforhomalg:ProcessAToDoListEntry for IsToDoListEntry}{5.2.4}{X7F63A94D7B43B880}
+\makelabel{toolsforhomalg:ToDoListEntry for IsList, IsObject, IsString, IsObject}{5.2.5}{X7DF4A87E7E84F14F}
+\makelabel{toolsforhomalg:ToDoListEntry for IsList, IsFunction}{5.2.6}{X7FAFD188845D6FA6}
+\makelabel{toolsforhomalg:SetTargetValueObject for IsToDoListEntry, IsObject}{5.2.7}{X8041DC118358A5CD}
+\makelabel{toolsforhomalg:SetTargetObject for IsToDoListEntry, IsObject}{5.2.8}{X793216E3836F177C}
+\makelabel{toolsforhomalg:ToDoListEntryWithContraposition for IsObject, IsString, IsBool, IsObject, IsString, IsBool}{5.2.9}{X804F847184D6908B}
+\makelabel{toolsforhomalg:DescriptionOfImplication for IsToDoListEntry}{5.2.10}{X81E733C27D96F9C8}
+\makelabel{toolsforhomalg:ToDoListEntryForEqualAttributes for IsObject, IsString, IsObject, IsString}{5.2.11}{X83F78A1D7DF72241}
+\makelabel{toolsforhomalg:ToDoListEntryForEquivalentAttributes for IsObject, IsString, IsObject, IsObject, IsString, IsObject}{5.2.12}{X7F1C9BF878D60312}
+\makelabel{toolsforhomalg:IsToDoList for IsObject}{5.3.1}{X86D2B9E180E01856}
+\makelabel{toolsforhomalg:NewToDoList}{5.4.1}{X7A46917986B3374A}
+\makelabel{toolsforhomalg:ProcessAToDoListEntry}{5.5.1}{X788F2635833587F8}
+\makelabel{toolsforhomalg:ProcessToDoList for IsObject}{5.5.2}{X7AD403197873FE42}
+\makelabel{toolsforhomalg:ToDoList for IsObject}{5.6.1}{X87B1AEB986DECB11}
+\makelabel{toolsforhomalg:TraceProof for IsObject, IsString, IsObject}{5.7.1}{X86E9744B84BB30D1}
+\makelabel{toolsforhomalg:ActivateToDoList for IsObject}{5.8.1}{X83B49FF387DDD845}
+\makelabel{toolsforhomalg:ActivateToDoList}{5.8.2}{X7D3ECBE97AF4EC11}
+\makelabel{toolsforhomalg:DeactivateToDoList for IsObject}{5.8.3}{X7946D5AC84D7ACBD}
+\makelabel{toolsforhomalg:DeactivateToDoList}{5.8.4}{X824248897F4F4759}
+\makelabel{toolsforhomalg:ActivateWhereInfosInEntries}{5.8.5}{X82A37E2D78476607}
+\makelabel{toolsforhomalg:DeactivateWhereInfosInEntries}{5.8.6}{X82089CAA87F9930B}
+\makelabel{toolsforhomalg:HOMALGTOOLS}{6.1.1}{X7CB459E282D621B2}
+\makelabel{toolsforhomalg:IsStructureObjectOrObjectOrMorphism for IsAttributeStoringRep}{6.2.1}{X7E36B19C7FFEC100}
+\makelabel{toolsforhomalg:IsStructureObjectOrObject for IsStructureObjectOrObjectOrMorphism}{6.2.2}{X7A9BB94E7D9F3AB6}
+\makelabel{toolsforhomalg:IsStructureObject for IsStructureObjectOrObject}{6.2.3}{X85DC9C0A83ADB0C6}
+\makelabel{toolsforhomalg:IsStructureObjectMorphism for IsAttributeStoringRep}{6.2.4}{X7D2734947FBEB2EF}
+\makelabel{toolsforhomalg:IsHomalgSemiringOrModule for IsStructureObjectOrObject}{6.2.5}{X80AD13637B44AAC4}
+\makelabel{toolsforhomalg:SemiringFilter for IsSemiring}{6.3.1}{X869598F378A4F3E6}
+\makelabel{toolsforhomalg:SemiringElementFilter for IsSemiringElement}{6.3.2}{X7A863DAB86099D4E}
+\makelabel{toolsforhomalg:SemiringFilter for IsRing}{6.3.3}{X80EA752E8101F5A5}
+\makelabel{toolsforhomalg:SemiringElementFilter for IsRing}{6.3.4}{X79068254832A9BC6}
+\makelabel{toolsforhomalg:IsContainerForWeakPointers for IsComponentObjectRep}{7.1.1}{X7AF6D36B86EF4FBD}
+\makelabel{toolsforhomalg:ContainerForWeakPointers}{7.1.2}{X78528671799AA08D}
+\makelabel{toolsforhomalg:UpdateContainerOfWeakPointers for IsContainerForWeakPointers}{7.1.3}{X81A9F7857F8526B2}
+\makelabel{toolsforhomalg:AddElmWPObjForHomalg}{7.1.4}{X7E59DD5B8396C63B}
+\makelabel{toolsforhomalg:AddTwoElmWPObjForHomalg}{7.1.5}{X7E229DC980597F0D}
+\makelabel{toolsforhomalg:ElmWPObjForHomalg for IsContainerForWeakPointers, IsObject, IsObject}{7.1.6}{X7FD47F2B820F45E1}
+\makelabel{toolsforhomalg:IsContainerForPointers for IsComponentObjectRep}{7.2.1}{X820FC040793F6725}
+\makelabel{toolsforhomalg:ContainerForPointers}{7.2.2}{X7B40EDC784E11197}
+\makelabel{toolsforhomalg:UpdateContainerOfPointers for IsContainerForPointers}{7.2.3}{X79FC60458580DCAB}
+\makelabel{toolsforhomalg:AddElmPObjForHomalg}{7.2.4}{X81EB136386E98806}
+\makelabel{toolsforhomalg:AddTwoElmPObjForHomalg}{7.2.5}{X7C77C0C384F45C0C}
+\makelabel{toolsforhomalg:ElmPObjForHomalg for IsContainerForPointers, IsObject, IsObject}{7.2.6}{X854EF9EA85DB1E4F}
+\makelabel{toolsforhomalg:homalgTotalRuntimes}{8.1.1}{X7F85CB6A7CAA6BBF}
+\makelabel{toolsforhomalg:AddLeftRightLogicalImplicationsForHomalg}{8.1.2}{X828ACDE1848695B1}
+\makelabel{toolsforhomalg:LogicalImplicationsForOneHomalgObject}{8.1.3}{X7DBCB2087D46555D}
+\makelabel{toolsforhomalg:LogicalImplicationsForTwoHomalgBasicObjects}{8.1.4}{X7821595B7D6C985E}
+\makelabel{toolsforhomalg:InstallLogicalImplicationsForHomalgBasicObjects}{8.1.5}{X87595FE07BB2D793}
+\makelabel{toolsforhomalg:LeftRightAttributesForHomalg}{8.1.6}{X7B9DE98E8174793E}
+\makelabel{toolsforhomalg:InstallLeftRightAttributesForHomalg}{8.1.7}{X85A284627F1B7BF9}
+\makelabel{toolsforhomalg:MatchPropertiesAndAttributes}{8.1.8}{X79A7303E87C290EE}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullPropertyOrAttribute}{8.1.9}{X857BE9A3866F724E}
+\makelabel{toolsforhomalg:InstallImmediateMethodToConditionallyPullPropertyOrAttribute}{8.1.10}{X80C82B2178A64870}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullPropertyOrAttributeWithDifferentName}{8.1.11}{X7C553A4986E5420F}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullPropertiesOrAttributes}{8.1.12}{X7B57C37A7B535381}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullTrueProperty}{8.1.13}{X7C9F11D27AEB0202}
+\makelabel{toolsforhomalg:InstallImmediateMethodToConditionallyPullTrueProperty}{8.1.14}{X84075C2F827EE9FC}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullTruePropertyWithDifferentName}{8.1.15}{X7F103C9D809C6A2E}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullTrueProperties}{8.1.16}{X7A5A1B0186115AC0}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullFalseProperty}{8.1.17}{X821062A186F7D13F}
+\makelabel{toolsforhomalg:InstallImmediateMethodToConditionallyPullFalseProperty}{8.1.18}{X7AEEA30384AFABED}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullFalsePropertyWithDifferentName}{8.1.19}{X82B3D84386DB7F67}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPullFalseProperties}{8.1.20}{X7C25ACB185A071E8}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushPropertyOrAttribute}{8.1.21}{X81EA2ECA82E03EBC}
+\makelabel{toolsforhomalg:InstallImmediateMethodToConditionallyPushPropertyOrAttribute}{8.1.22}{X8459EC487E871B85}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushPropertyOrAttributeWithDifferentName}{8.1.23}{X7BF8B06F826A0EFD}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushPropertiesOrAttributes}{8.1.24}{X8295EE2C7FDC1F73}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushTrueProperty}{8.1.25}{X8396EFF27E644EF0}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushTruePropertyWithDifferentName}{8.1.26}{X7B176145841326DC}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushTrueProperties}{8.1.27}{X847108CD829E1632}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushFalseProperty}{8.1.28}{X82840F9D82789DCD}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushFalsePropertyWithDifferentName}{8.1.29}{X8567A6F582543395}
+\makelabel{toolsforhomalg:InstallImmediateMethodToPushFalseProperties}{8.1.30}{X7C7B82D3812F3D1A}
+\makelabel{toolsforhomalg:DeclareAttributeWithCustomGetter}{8.1.31}{X80BBA5FF81CA093E}
+\makelabel{toolsforhomalg:AppendToAhomalgTable}{8.1.32}{X7FC6DE90801EC0D3}
+\makelabel{toolsforhomalg:homalgNamesOfComponentsToIntLists}{8.1.33}{X80BD423678C01BE8}
+\makelabel{toolsforhomalg:IncreaseExistingCounterInObject}{8.1.34}{X7B1C91077BEF9BD5}
+\makelabel{toolsforhomalg:IncreaseExistingCounterInObjectWithTiming}{8.1.35}{X78DDBC728516654B}
+\makelabel{toolsforhomalg:IncreaseCounterInObject}{8.1.36}{X797F5F0A7840EBD8}
+\makelabel{toolsforhomalg:MemoryToString}{8.1.37}{X818E23CC81FC0355}
+\makelabel{toolsforhomalg:PrimePowerExponent}{8.1.38}{X861CC82A8236E488}
+\makelabel{toolsforhomalg:ViewList for IsList}{8.1.39}{X7960EFE481EB7D7D}
+\makelabel{toolsforhomalg:homalgLaTeX for IsObject}{8.1.40}{X7C4259BE7D66F63A}
+\makelabel{toolsforhomalg:IdenticalPosition for IsList, IsObject}{8.1.41}{X810CE8C27E769247}
+\makelabel{toolsforhomalg:PositionsOfMaximalObjects for IsList, IsFunction}{8.1.42}{X7C03CAC285CC3734}
+\makelabel{toolsforhomalg:MaximalObjects for IsList, IsFunction}{8.1.43}{X7B9807D581A928C0}
+\makelabel{toolsforhomalg:CollectEntries}{8.1.44}{X7F5EB34C835F5EA5}
+\makelabel{toolsforhomalg:MakeShowable}{8.1.45}{X85DB89C57A37721C}
+\makelabel{toolsforhomalg:MakeShowableWithLaTeX}{8.1.46}{X81B5CF5380CE2021}
+\makelabel{toolsforhomalg:ReplacedStringViaRecord}{8.1.47}{X7EF0700882F21FD8}
+\makelabel{toolsforhomalg:StartTimer}{8.1.48}{X7FED6864832055C4}
+\makelabel{toolsforhomalg:StopTimer}{8.1.49}{X7F11AC1E7EF7D799}
+\makelabel{toolsforhomalg:ResetTimer}{8.1.50}{X836482F57C4B757F}
+\makelabel{toolsforhomalg:DisplayTimer}{8.1.51}{X796292DF861A07AE}
+\makelabel{toolsforhomalg:ListImpliedFilters}{8.1.52}{X7F6543E78601EC4A}
+\makelabel{toolsforhomalg:Breakpoint}{8.1.53}{X7B82900C85ABA1C8}
+\makelabel{toolsforhomalg:ReadPackageOnce}{8.1.54}{X87CE4AC7811FC3E5}
+\makelabel{toolsforhomalg:ExamplesForHomalg}{8.2.1}{X7A0A10B585C49632}
+\makelabel{toolsforhomalg:ExamplesForHomalg for IsInt}{8.2.2}{X8041FC897BF996CB}
+\makelabel{toolsforhomalg:IsTree for IsObject}{9.1.1}{X7ACE7DC5811BC3E6}
+\makelabel{toolsforhomalg:Content for IsTree}{9.1.2}{X7F3BD31F8167E2AD}
+\makelabel{toolsforhomalg:ListOfSuccessors for IsTree}{9.1.3}{X87364E1880BAFD86}
+\makelabel{toolsforhomalg:Predecessor for IsTree}{9.1.4}{X7963601778389D55}
+\makelabel{toolsforhomalg:ListOfSentinels for IsTree}{9.1.5}{X7DBFDC727BD18391}
+\makelabel{toolsforhomalg:RemoveHead for IsTree}{9.1.6}{X82C8BE577AF4389D}
+\makelabel{toolsforhomalg:Tree}{9.1.7}{X81853D90786ACF86}
+\makelabel{toolsforhomalg:Tree for IsObject}{9.1.8}{X822ED357788C5AE8}
+\makelabel{toolsforhomalg:Add for IsTree, IsTree}{9.1.9}{X7C9C3B5F81D1B816}
+\makelabel{toolsforhomalg:ContentListFromSentinelToHead for IsTree}{9.1.10}{X874C552787D43D73}
+\makelabel{toolsforhomalg:PostOrder for IsTree}{9.1.11}{X851053447BC5684C}
+\makelabel{toolsforhomalg:IsZFunction for IsObject}{10.1.1}{X824F514F847A353D}
+\makelabel{toolsforhomalg:IsZFunctionWithInductiveSides for IsZFunction}{10.1.2}{X7F33D8E781560FA8}
+\makelabel{toolsforhomalg:VoidZFunction}{10.2.1}{X7F11AE5C829E0465}
+\makelabel{toolsforhomalg:AsZFunction for IsFunction}{10.2.2}{X7D65928287AA2E78}
+\makelabel{toolsforhomalg:UnderlyingFunction for IsZFunction}{10.2.3}{X860B41867880891C}
+\makelabel{toolsforhomalg:ZFunctionValue for IsZFunction, IsInt}{10.2.4}{X78F26197785091E3}
+\makelabel{toolsforhomalg:ZFunctionWithInductiveSides for IsInt, IsObject, IsFunction, IsFunction, IsFunction}{10.2.6}{X867DAC087866CD8C}
+\makelabel{toolsforhomalg:UpperFunction for IsZFunctionWithInductiveSides}{10.2.7}{X7F50565B78308CB0}
+\makelabel{toolsforhomalg:LowerFunction for IsZFunctionWithInductiveSides}{10.2.7}{X7F50565B78308CB0}
+\makelabel{toolsforhomalg:StartingIndex for IsZFunctionWithInductiveSides}{10.2.7}{X7F50565B78308CB0}
+\makelabel{toolsforhomalg:StartingValue for IsZFunctionWithInductiveSides}{10.2.7}{X7F50565B78308CB0}
+\makelabel{toolsforhomalg:CompareFunction for IsZFunctionWithInductiveSides}{10.2.7}{X7F50565B78308CB0}
+\makelabel{toolsforhomalg:StableUpperValue for IsZFunction}{10.2.8}{X8553572B7B5E58D9}
+\makelabel{toolsforhomalg:IndexOfStableUpperValue for IsZFunction}{10.2.9}{X846C56B882566639}
+\makelabel{toolsforhomalg:SetStableUpperValue for IsZFunction, IsInt, IsObject}{10.2.10}{X839E578D86B98DFD}
+\makelabel{toolsforhomalg:StableLowerValue for IsZFunction}{10.2.11}{X7C607DDE786591AC}
+\makelabel{toolsforhomalg:IndexOfStableLowerValue for IsZFunction}{10.2.12}{X7D5F7C4D80091041}
+\makelabel{toolsforhomalg:SetStableLowerValue for IsZFunction, IsInt, IsObject}{10.2.13}{X7E01C0927F9B5AC7}
+\makelabel{toolsforhomalg:Reflection for IsZFunction}{10.2.14}{X863225F9798BD2CC}
+\makelabel{toolsforhomalg:ApplyShift for IsZFunction, IsInt}{10.2.15}{X80EB63EC828CE582}
+\makelabel{toolsforhomalg:ApplyMap for IsZFunction, IsFunction}{10.2.16}{X8308ACDA78E96FC5}
+\makelabel{toolsforhomalg:ApplyMap for IsDenseList, IsFunction}{10.2.17}{X7AC919EC8734B869}
+\makelabel{toolsforhomalg:BaseZFunctions for IsZFunction}{10.2.18}{X7E943C6E7B5784CD}
+\makelabel{toolsforhomalg:AppliedMap for IsZFunction}{10.2.19}{X7A7795C883285A22}
+\makelabel{toolsforhomalg:CombineZFunctions for IsDenseList}{10.2.20}{X854A6DE682EAADB3}
+\makelabel{toolsforhomalg:Replace for IsZFunction, IsInt, IsDenseList}{10.2.21}{X83D1892185F38BDA}

@@ -1,0 +1,174 @@
+@Chapter Monoidal Categories
+
+@Section Monoidal Categories
+
+A $6$-tuple $( \mathbf{C}, \otimes, 1, \alpha, \lambda, \rho )$
+ consisting of
+* a category $\mathbf{C}$,
+* a functor $\otimes: \mathbf{C} \times \mathbf{C} \rightarrow \mathbf{C}$ compatible with the congruence of morphisms,
+* an object $1 \in \mathbf{C}$,
+* a natural isomorphism $\alpha_{a,b,c}: a \otimes (b \otimes c) \cong (a \otimes b) \otimes c$,
+* a natural isomorphism $\lambda_{a}: 1 \otimes a \cong a$,
+* a natural isomorphism $\rho_{a}: a \otimes 1 \cong a$,
+is called a <Emph>monoidal category</Emph>, if
+* for all objects $a,b,c,d$, the pentagon identity holds:
+ $(\alpha_{a,b,c} \otimes \mathrm{id}_d) \circ \alpha_{a,b \otimes c, d} \circ ( \mathrm{id}_a \otimes \alpha_{b,c,d} ) \sim \alpha_{a \otimes b, c, d} \circ \alpha_{a,b,c \otimes d}$,
+* for all objects $a,c$, the triangle identity holds:
+ $( \rho_a \otimes \mathrm{id}_c ) \circ \alpha_{a,1,c} \sim \mathrm{id}_a \otimes \lambda_c$.
+
+The corresponding GAP property is given by
+<C>IsMonoidalCategory</C>.
+
+@Section Additive Monoidal Categories
+
+@Section Braided Monoidal Categories
+
+A monoidal category $\mathbf{C}$ equipped with a natural isomorphism
+$B_{a,b}: a \otimes b \cong b \otimes a$
+is called a <Emph>braided monoidal category</Emph>
+if
+* $\lambda_a \circ B_{a,1} \sim \rho_a$,
+* $(B_{c,a} \otimes \mathrm{id}_b) \circ \alpha_{c,a,b} \circ B_{a \otimes b,c} \sim \alpha_{a,c,b} \circ ( \mathrm{id}_a \otimes B_{b,c}) \circ \alpha^{-1}_{a,b,c}$,
+* $( \mathrm{id}_b \otimes B_{c,a} ) \circ \alpha^{-1}_{b,c,a} \circ B_{a,b \otimes c} \sim \alpha^{-1}_{b,a,c} \circ (B_{a,b} \otimes \mathrm{id}_c) \circ \alpha_{a,b,c}$.
+
+The corresponding GAP property is given by
+<C>IsBraidedMonoidalCategory</C>.
+
+@Section Symmetric Monoidal Categories
+
+A braided monoidal category $\mathbf{C}$ is called <Emph>symmetric monoidal category</Emph>
+if $B_{a,b}^{-1} \sim B_{b,a}$.
+The corresponding GAP property is given by
+<C>IsSymmetricMonoidalCategory</C>.
+
+@Section Left Closed Monoidal Categories
+
+A monoidal category $\mathbf{C}$
+which has for each functor $- \otimes b: \mathbf{C} \rightarrow \mathbf{C}$
+a right adjoint (denoted by $\mathrm{\underline{Hom}_\ell}(b,-)$)
+is called a <Emph>left closed monoidal category</Emph>.
+
+If no operations involving left duals are installed manually, the left dual objects will be derived as $a^\vee \coloneqq \mathrm{\underline{Hom}_\ell}(a,1)$.
+
+The corresponding GAP property is called
+<C>IsLeftClosedMonoidalCategory</C>.
+
+@Section Closed Monoidal Categories
+
+A monoidal category $\mathbf{C}$
+which has for each functor $- \otimes b: \mathbf{C} \rightarrow \mathbf{C}$
+a right adjoint (denoted by $\mathrm{\underline{Hom}_\ell}(b,-)$)
+is called a <Emph>closed monoidal category</Emph>.
+
+If no operations involving duals are installed manually, the dual objects will be derived as $a^\vee \coloneqq \mathrm{\underline{Hom}_\ell}(a,1)$.
+
+The corresponding GAP property is called
+<C>IsClosedMonoidalCategory</C>.
+
+@Section Left Coclosed Monoidal Categories
+
+A monoidal category $\mathbf{C}$
+which has for each functor $- \otimes b: \mathbf{C} \rightarrow \mathbf{C}$
+a left adjoint (denoted by $\mathrm{\underline{coHom}}(-,b)$)
+is called a <Emph>left coclosed monoidal category</Emph>.
+
+If no operations involving left coduals are installed manually, the left codual objects will be derived as $a_\vee \coloneqq \mathrm{\underline{coHom}}(1,a)$.
+
+The corresponding GAP property is called
+<C>IsLeftCoclosedMonoidalCategory</C>.
+
+@Section Coclosed Monoidal Categories
+
+A monoidal category $\mathbf{C}$
+which has for each functor $- \otimes b: \mathbf{C} \rightarrow \mathbf{C}$
+a left adjoint (denoted by $\mathrm{\underline{coHom}}(-,b)$)
+is called a <Emph>coclosed monoidal category</Emph>.
+
+If no operations involving coduals are installed manually, the codual objects will be derived as $a_\vee \coloneqq \mathrm{\underline{coHom}}(1,a)$.
+
+The corresponding GAP property is called
+<C>IsCoclosedMonoidalCategory</C>.
+
+@Section Symmetric Closed Monoidal Categories
+
+A monoidal category $\mathbf{C}$
+which is symmetric and closed
+is called a <Emph>symmetric closed monoidal category</Emph>.
+
+The corresponding GAP property is given by
+<C>IsSymmetricClosedMonoidalCategory</C>.
+
+@Section Symmetric Coclosed Monoidal Categories
+
+A monoidal category $\mathbf{C}$
+which is symmetric and coclosed
+is called a <Emph>symmetric coclosed monoidal category</Emph>.
+
+The corresponding GAP property is given by
+<C>IsSymmetricCoclosedMonoidalCategory</C>.
+
+@Section Rigid Symmetric Closed Monoidal Categories
+
+A symmetric closed monoidal category $\mathbf{C}$ satisfying
+* the natural morphism
+ $\mathrm{\underline{Hom}_\ell}(a, a') \otimes \mathrm{\underline{Hom}_\ell}(b, b') \rightarrow \mathrm{\underline{Hom}_\ell}(a \otimes b, a' \otimes b')$
+ is an isomorphism,
+* the natural morphism
+ $a \rightarrow \mathrm{\underline{Hom}_\ell}(\mathrm{\underline{Hom}_\ell}(a, 1), 1)$
+ is an isomorphism
+is called a <Emph>rigid symmetric closed monoidal category</Emph>.
+
+If no operations involving the closed structure are installed manually, the internal hom objects will be derived as
+$\mathrm{\underline{Hom}_\ell}(a,b) \coloneqq a^\vee \otimes b$ and, in particular, $\mathrm{\underline{Hom}_\ell}(a,1) \coloneqq a^\vee \otimes 1$.
+
+The corresponding GAP property is given by
+<C>IsRigidSymmetricClosedMonoidalCategory</C>.
+
+@Section Rigid Symmetric Coclosed Monoidal Categories
+
+A symmetric coclosed monoidal category $\mathbf{C}$ satisfying
+* the natural morphism
+ $\mathrm{\underline{coHom}}(a \otimes a', b \otimes b') \rightarrow \mathrm{\underline{coHom}}(a, b) \otimes \mathrm{\underline{coHom}}(a', b')$
+ is an isomorphism,
+* the natural morphism
+ $\mathrm{\underline{coHom}}(1, \mathrm{\underline{coHom}}(1, a)) \rightarrow a$
+ is an isomorphism
+is called a <Emph>rigid symmetric coclosed monoidal category</Emph>.
+
+If no operations involving the coclosed structure are installed manually, the internal cohom objects will be derived as
+$\mathrm{\underline{coHom}}(a,b) \coloneqq a \otimes b_\vee$ and, in particular, $\mathrm{\underline{coHom}}(1,a) \coloneqq 1 \otimes a_\vee$.
+
+The corresponding GAP property is given by
+<C>IsRigidSymmetricCoclosedMonoidalCategory</C>.
+
+@Section Convenience Methods
+
+@Section Add-methods
+
+@Chapter Examples and Tests
+
+@Section Test functions
+
+@Chapter Code Generation for Monodial Categories
+
+@Section Monoidal Categories
+
+@Section Closed Monoidal Categories
+
+@Section Coclosed Monoidal Categories
+
+@Chapter The terminal category with multiple objects
+
+This is an example of a category which is created using <C>CategoryConstructor</C>
+out of no input.
+
+This category <Q>lies</Q> in all doctrines and can hence
+be used (in conjunction with <C>LazyCategory</C>)
+in order to check the type-correctness of the various derived methods
+provided by &CAP; or any &CAP;-based package.
+
+@Section Constructors
+
+@Section &GAP; Categories
+
+@Chapter Legacy Operations and Synonyms

@@ -1,0 +1,49 @@
+\GAPDocLabFile{toric}
+\makelabel{toric:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{toric:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{toric:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{toric:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{toric:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{toric:Introduction to the toric package}{1.1}{X7A77DB9F7E392A98}
+\makelabel{toric:Introduction to constructing toric varieties}{1.2}{X7C4637B9828E445B}
+\makelabel{toric:Generalities}{1.2.1}{X7AF8D94A7E56C049}
+\makelabel{toric:Basic combinatorial geometry constructions}{1.2.2}{X7A87B1F97D958BA9}
+\makelabel{toric:Basic affine toric variety constructions}{1.2.3}{X857707BA7D2336A0}
+\makelabel{toric:Riemann-Roch spaces and related constructions}{1.2.4}{X86627F4181E72808}
+\makelabel{toric:Cones and semigroups}{2}{X7D23D3CC7F0A06BA}
+\makelabel{toric:Cones}{2.1}{X8524A7567BA4FFA6}
+\makelabel{toric:Semigroups}{2.2}{X80AF5F307DBDC2B4}
+\makelabel{toric:Affine toric varieties}{3}{X82F418F483E4D0D6}
+\makelabel{toric:Ideals defining affine toric varieties}{3.1}{X7B54D98C7A1AC612}
+\makelabel{toric:Toric varieties X(∆)}{4}{X807434BE8602C8A5}
+\makelabel{toric:Riemann-Roch spaces}{4.1}{X7E9ACBE683770EAE}
+\makelabel{toric:Topological invariants}{4.2}{X7EE437E17C7331B7}
+\makelabel{toric:Points over a finite field}{4.3}{X80D0D8F07CF1BE07}
+\makelabel{toric:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{toric:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{toric:Index}{Ind}{X83A0356F839C696F}
+\makelabel{toric:cone}{1.2.2}{X7A87B1F97D958BA9}
+\makelabel{toric:ray}{1.2.2}{X7A87B1F97D958BA9}
+\makelabel{toric:dual cone}{1.2.2}{X7A87B1F97D958BA9}
+\makelabel{toric:semigroup associated to cone}{1.2.2}{X7A87B1F97D958BA9}
+\makelabel{toric:fan}{1.2.2}{X7A87B1F97D958BA9}
+\makelabel{toric:star}{1.2.2}{X7A87B1F97D958BA9}
+\makelabel{toric:affine toric variety}{1.2.3}{X857707BA7D2336A0}
+\makelabel{toric:cone, nonsingular}{1.2.3}{X857707BA7D2336A0}
+\makelabel{toric:Weil divisors}{1.2.4}{X86627F4181E72808}
+\makelabel{toric:polytope associated to divisor}{1.2.4}{X86627F4181E72808}
+\makelabel{toric:InsideCone}{2.1.1}{X7FEBB7547EEE8E2A}
+\makelabel{toric:InDualCone}{2.1.2}{X87566480802A161C}
+\makelabel{toric:PolytopeLatticePoints}{2.1.3}{X7B303CDE8729008F}
+\makelabel{toric:Faces}{2.1.4}{X872AD1E785C7EB03}
+\makelabel{toric:ConesOfFan}{2.1.5}{X7A2DA9B38507BDD3}
+\makelabel{toric:NumberOfConesOfFan}{2.1.6}{X7C923A4B785606D6}
+\makelabel{toric:ToricStar}{2.1.7}{X80C858E97E741B21}
+\makelabel{toric:DualSemigroupGenerators}{2.2.1}{X818998428722C3B5}
+\makelabel{toric:EmbeddingAffineToricVariety}{3.1.1}{X8139AACB7F0F44EE}
+\makelabel{toric:DivisorPolytope}{4.1.1}{X802CEF058114DF72}
+\makelabel{toric:DivisorPolytopeLatticePoints}{4.1.2}{X82A512AB7E8F897A}
+\makelabel{toric:RiemannRochBasis}{4.1.3}{X7F7ECE28858FE070}
+\makelabel{toric:EulerCharacteristic}{4.2.1}{X8307F8DB85F145AE}
+\makelabel{toric:BettiNumberToric}{4.2.2}{X87FB8EBC7FBD8B95}
+\makelabel{toric:CardinalityOfToricVariety}{4.3.1}{X8289500778E8DE0E}

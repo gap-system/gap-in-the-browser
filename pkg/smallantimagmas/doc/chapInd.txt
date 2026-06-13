@@ -1,0 +1,47 @@
+  
+  
+  [1XIndex[101X
+  
+  [2XAllSmallAntimagmas[102X 1.3-8 
+  [2XAllSubmagmas[102X 1.3-1 
+  [2XAnticommutativityIndex[102X, for IsMagma 1.2-4 
+  [2XAssociativityIndex[102X, for IsMagma 1.2-1 
+  [2XCommutativityIndex[102X, for IsMagma 1.2-3 
+  [2XDiagonalOfMultiplicationTable[102X, for IsMagma 1.2-2 
+  [2XIdSmallAntimagma[102X, for IsMagma 1.2-6 
+  [2XIsAntiassociative[102X, for IsMagma 1.1-1 
+  [2XIsCancellative[102X, for IsMagma 1.1-8 
+  [2XIsLeftAlternative[102X, for IsMagma 1.1-13 
+  [2XIsLeftCancellative[102X, for IsMagma 1.1-6 
+  [2XIsLeftCyclic[102X, for IsMagma 1.1-2 
+  [2XIsLeftDerangementInducted[102X, for IsMagma 1.1-11 
+  [2XIsLeftDistributive[102X, for IsMagma 1.1-4 
+  [2XIsLeftFPFInducted[102X, for IsMagma 1.1-9 
+  [2XIsMagmaAntiisomorphic[102X 1.3-4 
+  [2XIsMagmaIsomorphic[102X 1.3-3 
+  [2XIsRightAlternative[102X, for IsMagma 1.1-14 
+  [2XIsRightCancellative[102X, for IsMagma 1.1-7 
+  [2XIsRightCyclic[102X, for IsMagma 1.1-3 
+  [2XIsRightDerangementInducted[102X, for IsMagma 1.1-12 
+  [2XIsRightDistributive[102X, for IsMagma 1.1-5 
+  [2XIsRightFPFInducted[102X, for IsMagma 1.1-10 
+  [2XLeftOrder[102X, for IsExtLElement 1.2-7 
+  [2XLeftOrdersOfElements[102X, for IsMagma 1.2-9 
+  [2XLeftPower[102X 1.3-6 
+  License 0.0-1 
+  [2XMagmaAntiisomorphism[102X, for IsMagma, IsMagma 1.4-2 
+  [2XMagmaIsomorphism[102X, for IsMagma, IsMagma 1.4-1 
+  [2XMagmaIsomorphismInvariantsMatch[102X 1.3-2 
+  [2XNrSmallAntimagmas[102X 1.3-9 
+  [2XOneSmallAntimagma[102X 1.3-11 
+  [2XReallyAllSmallAntimagmas[102X 1.3-12 
+  [2XReallyNrSmallAntimagmas[102X 1.3-13 
+  [2XRightOrder[102X, for IsExtRElement 1.2-8 
+  [2XRightOrdersOfElements[102X, for IsMagma 1.2-10 
+  [2XRightPower[102X 1.3-7 
+  [2XSmallAntimagma[102X 1.3-10 
+  [2XSquaresIndex[102X, for IsMagma 1.2-5 
+  [2XTransposedMagma[102X 1.3-5 
+  
+  
+  -------------------------------------------------------

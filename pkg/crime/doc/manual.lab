@@ -1,0 +1,36 @@
+\GAPDocLabFile{crime}
+\makelabel{crime:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{crime:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{crime:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{crime:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{crime:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{crime:Installation and Loading}{1.1}{X86C437C47F3988E8}
+\makelabel{crime:For Further Information}{1.2}{X83499FE181F08DC9}
+\makelabel{crime:Usage}{2}{X86A9B6F87E619FFF}
+\makelabel{crime:Cohomology Objects}{2.1}{X85BF21B17BF76907}
+\makelabel{crime:Minimal Projective Resolutions}{2.2}{X7FEB30657DDEFE44}
+\makelabel{crime:Cohomology Generators and Relators}{2.3}{X78C37B2E7D297FC5}
+\makelabel{crime:Tests for Completion}{2.4}{X87C9251687CD4247}
+\makelabel{crime:Cohomology Rings}{2.5}{X80B6849C835B7F19}
+\makelabel{crime:What Happens if n Isn't Big Enough?}{2.6}{X7E21853583D6D86D}
+\makelabel{crime:Induced Maps}{2.7}{X837261007B39795C}
+\makelabel{crime:Massey Products}{2.8}{X7B541EB97BAB36D7}
+\makelabel{crime:Some Benchmarks}{A}{X82113B3184F76F58}
+\makelabel{crime:Leisure and Recreation: Cohomology Rings of all Groups of Size 16}{B}{X7BC2C62E7A8CC2B9}
+\makelabel{crime:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{crime:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{crime:Index}{Ind}{X83A0356F839C696F}
+\makelabel{crime:CohomologyObject}{2.1.1}{X8716E7657F9683B7}
+\makelabel{crime:CohomologyObject}{2.1.1}{X8716E7657F9683B7}
+\makelabel{crime:ProjectiveResolution}{2.2.1}{X8273999C7B352F22}
+\makelabel{crime:BoundaryMap}{2.2.2}{X7AF313D387F6BA22}
+\makelabel{crime:CohomologyGenerators}{2.3.1}{X81F141187B0EC653}
+\makelabel{crime:CohomologyRelators}{2.3.2}{X812BE8E983DC20BC}
+\makelabel{crime:CohomologyRing}{2.5.1}{X7B77337486380998}
+\makelabel{crime:CohomologyRing}{2.5.1}{X7B77337486380998}
+\makelabel{crime:IsHomogeneous}{2.5.2}{X7D8EA4528082A74D}
+\makelabel{crime:Degree}{2.5.3}{X826A861E7E7D944E}
+\makelabel{crime:LocateGeneratorsInCohomologyRing}{2.5.4}{X813A8E4C7D4C9FBD}
+\makelabel{crime:InducedHomomorphismOnCohomology}{2.7.1}{X8608BD148307390B}
+\makelabel{crime:SubgroupInclusion}{2.7.2}{X80798C0979D4E9DC}
+\makelabel{crime:MasseyProduct}{2.8.1}{X7E3023CE86641F9E}

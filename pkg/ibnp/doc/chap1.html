@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (IBNP) - Chapter 1: Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1_mj.html">[MathJax on]</a></p>
+<p><a id="X7DFB63A97E67C0A1" name="X7DFB63A97E67C0A1"></a></p>
+<div class="ChapSects"><a href="chap1.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X811375BC7CA25F51">1.1 <span class="Heading">History</span></a>
+</span>
+</div>
+</div>
+
+<h3>1 <span class="Heading">Introduction</span></h3>
+
+<p>The <strong class="pkg">IBNP</strong> package provides methods for computing an involutive (Gröbner) basis <span class="SimpleMath">B</span> for an ideal <span class="SimpleMath">J</span> over a polynomial ring <span class="SimpleMath">R</span> in both the commutative and noncommutative cases. Secondly, methods are provided to involutively reduce a given polynomial to its normal form in <span class="SimpleMath">R/J</span>.</p>
+
+<p>This package was started using <strong class="pkg">GAP</strong> 4.13.1 and first released with <strong class="pkg">GAP</strong> 4.15.0.</p>
+
+<p>The package is loaded with the command</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage( "ibnp" ); </span>
+
+</pre></div>
+
+<p>The package may be obtained as a compressed <code class="code">.tar</code> file <code class="file">IBNP-0.16.tar.gz</code> from the GitHub release site: <span class="URL"><a href="https://github.com/gap-packages/ibnp/releases/tag/v0.16">https://github.com/gap-packages/ibnp/releases/tag/v0.16</a></span>. The package also has a GitHub repository at: <span class="URL"><a href="https://github.com/gap-packages/ibnp">https://github.com/gap-packages/ibnp</a></span>.</p>
+
+<p>Once the package is loaded, the manual <code class="code">doc/manual.pdf</code> can be found in the documentation folder. The <code class="code">html</code> versions, with or without MathJax, may be rebuilt as follows:</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ReadPackage( "ibnp", "makedoc.g" ); </span>
+
+</pre></div>
+
+<p>It is possible to check that the package has been installed correctly by running the test files (this terminates the <strong class="pkg">GAP</strong> session):</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TestPackage( "ibnp" );</span>
+Architecture: . . . . . 
+testing: . . . . . 
+. . . 
+#I  No errors detected while testing
+
+</pre></div>
+
+<p><a id="X811375BC7CA25F51" name="X811375BC7CA25F51"></a></p>
+
+<h4>1.1 <span class="Heading">History</span></h4>
+
+<p>The theoretical basis behind this package is the Ph.D. thesis "Noncommutative Involutive Bases" of Gareth Evans in 2005 <a href="chapBib.html#biBgareth-thesis">[Eva05]</a>. (The main concepts and results may also be found in the papers <a href="chapBib.html#biBBeaumont">[Eva70]</a> and <a href="chapBib.html#biBEW-JSC">[EW07]</a>.) We quote here the summary from that thesis.</p>
+
+<p><em>The theory of Gröbner Bases originated in the work of Buchberger <a href="chapBib.html#biBbuchberger">[Buc98]</a> and is now considered to be one of the most important and useful areas of symbolic computation. A great deal of effort has been put into improving Buchberger's algorithm for computing a Gröbner Basis, and indeed in finding alternative methods of computing Gröbner Bases. Two of these methods include the Gröbner Walk method <a href="chapBib.html#biBonthewalk">[AGK97]</a> and the computation of Involutive Bases <a href="chapBib.html#biByuyu">[ZB96]</a>.</em></p>
+
+<p><em>By the mid 1980's, Buchberger's work had been generalised for noncommutative polynomial rings by Bergman <a href="chapBib.html#biBbergman">[Ber78]</a> and Mora <a href="chapBib.html#biBmora">[Mor86]</a>. This thesis provides the corresponding generalisation for Involutive Bases and (to a lesser extent) the Gröbner Walk, with the main results being as follows. </em></p>
+
+
+<ul>
+<li><p><em>Algorithms for several new noncommutative involutive divisions are given, including strong; weak; global and local divisions.</em></p>
+
+</li>
+<li><p><em>An algorithm for computing a noncommutative Involutive Basis is given. When used with one of the aforementioned involutive divisions, it is shown that this algorithm returns a noncommutative Gröbner Basis on termination.</em></p>
+
+</li>
+<li><p><em>An algorithm for a noncommutative Gröbner Walk is given, in the case of conversion between two harmonious monomial orderings. It is shown that this algorithm generalises to give an algorithm for performing a noncommutative Involutive Walk, again in the case of conversion between two harmonious monomial orderings.</em></p>
+
+</li>
+<li><p><em>Two new properties of commutative involutive divisions are introduced (stability and extendibility), respectively ensuring the termination of the Involutive Basis algorithm and the applicability (under certain conditions) of homogeneous methods of computing Involutive Bases.</em></p>
+
+</li>
+</ul>
+<p><em>Source code for an initial implementation of an algorithm to compute noncommutative Involutive Bases is provided in Appendix B. This source code, written using ANSI C and a series of libraries (AlgLib) provided by MSSRC forms part of a larger collection of programs providing examples for this thesis, including implementations of the commutative and noncommutative Gröbner Basis algorithms <a href="chapBib.html#biBbuchberger">[Buc98]</a>, <a href="chapBib.html#biBmora">[Mor86]</a>; the commutative Involutive Basis algorithm for the Pommaret and Janet involutive divisions <a href="chapBib.html#biByuyu">[ZB96]</a>; and the Knuth-Bendix critical pairs completion algorithm for monoid rewrite systems <a href="chapBib.html#biBknuth-bendix">[KB04]</a>.</em></p>
+
+<p>The implementations described in the last paragraph formed a package <em>Involutive</em> in 2005. This was based on libraries developed by the <em>Multidisciplinary Software Systems Research Corporation</em> (MSSRC) which apparently no longer exists. This software was provided for the research by Larry Lambe who was an Honorary Professor in the Mathematics Department at Bangor at that time. (For an example of his work, see <a href="chapBib.html#biBlambe-radford">[LR97]</a>.)</p>
+
+<p>It has long been our intention to make these algorithms available to the wider symbolic computation community, and this <strong class="pkg">GAP</strong> package is the result. Involutive Bases are constructed, but Gröbner Walks will have to wait until a later version. In place of the AlgLib library functions we use the noncommutative polynomial operations provided by the <strong class="pkg">GBNP</strong> <a href="chapBib.html#biBGBNP">[CK24]</a> package.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

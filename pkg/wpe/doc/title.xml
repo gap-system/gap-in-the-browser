@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    WPE
+  </Title>
+  <Subtitle>
+    Provides efficient methods for working with wreath product elements.
+  </Subtitle>
+  <Version>
+    0.8
+  </Version>
+  <Author>
+    Friedrich Rober<Alt Only="LaTeX"><Br/></Alt>
+<Email>friedrich.rober@rwth-aachen.de</Email>
+
+  </Author>
+  <Date>
+    21 October 2024
+  </Date>
+  </TitlePage>

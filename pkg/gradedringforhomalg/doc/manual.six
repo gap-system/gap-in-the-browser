@@ -1,0 +1,190 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "GradedRingForHomalg",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Table of Contents", "0.0-1", [ 0, 0, 1 ], 89, 2, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 3, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat is the Role of the \033[5XGradedRingForHomal\
+g\033[105X\033[101X\027\033[1X\027 Package in the \033[5Xhomalg\033[105X\033[1\
+01X\027\033[1X\027 Project?\033[133X\033[101X", "1.1", [ 1, 1, 0 ], 4, 3, 
+      "what is the role of the gradedringforhomalg package in the homalg proje\
+ct?", "X7F7255BA7A43157E" ], 
+  [ "\033[1X\033[33X\033[0;-2YFunctionality\033[133X\033[101X", "1.2", 
+      [ 1, 2, 0 ], 13, 3, "functionality", "X87F1120883F5B4D0" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YInstallation of the \033[5XGradedRingForHomalg\\
+033[105X\033[101X\027\033[1X\027 Package\033[133X\033[101X", "2", 
+      [ 2, 0, 0 ], 1, 4, "installation of the gradedringforhomalg package", 
+      "X83CA25F97F1EECDB" ], 
+  [ "\033[1X\033[33X\033[0;-2YGraded Rings\033[133X\033[101X", "3", 
+      [ 3, 0, 0 ], 1, 5, "graded rings", "X810D68A7794474F9" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGraded Rings: Category and Representations\033[13\
+3X\033[101X", "3.1", [ 3, 1, 0 ], 55, 6, 
+      "graded rings: category and representations", "X7A16AC227F0B7E6B" ], 
+  [ "\033[1X\033[33X\033[0;-2YGraded Rings: Constructors\033[133X\033[101X", 
+      "3.2", [ 3, 2, 0 ], 90, 6, "graded rings: constructors", 
+      "X8538A7C985FE0E46" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGraded Rings: Attributes and Properties\033[133X\\
+033[101X", "3.3", [ 3, 3, 0 ], 104, 6, 
+      "graded rings: attributes and properties", "X7CA805077B75EAAD" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGraded Rings: Operations and Functions\033[133X\\
+033[101X", "3.4", [ 3, 4, 0 ], 141, 7, 
+      "graded rings: operations and functions", "X7B86A3DD7D2CE35F" ], 
+  [ "\033[1X\033[33X\033[0;-2YHomogeneous Matrices\033[133X\033[101X", "4", 
+      [ 4, 0, 0 ], 1, 9, "homogeneous matrices", "X81274D247D293332" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YHomogeneous Matrices: Category and Representation\
+s\033[133X\033[101X", "4.1", [ 4, 1, 0 ], 55, 10, 
+      "homogeneous matrices: category and representations", 
+      "X7912A7EE7DD9C130" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YHomogeneous Matrices: Constructors\033[133X\033[1\
+01X", "4.2", [ 4, 2, 0 ], 73, 10, "homogeneous matrices: constructors", 
+      "X7E3D72117F84D517" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YHomogeneous Matrices: Attributes\033[133X\033[101\
+X", "4.3", [ 4, 3, 0 ], 84, 10, "homogeneous matrices: attributes", 
+      "X7C1C5AA2813F4F73" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YHomogeneous Matrices: Operations and Functions\\
+033[133X\033[101X", "4.4", [ 4, 4, 0 ], 123, 11, 
+      "homogeneous matrices: operations and functions", "X81897DD8835ACE8C" ],
+  [ "\033[1X\033[33X\033[0;-2YThe Matrix Tool Operations\033[133X\033[101X", 
+      "a", [ "A", 0, 0 ], 1, 13, "the matrix tool operations", 
+      "X7B2993CB7B012115" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Tool Operations \033[13Xwithout\033[113X\033[\
+101X\027\033[1X\027 a Fallback Method\033[133X\033[101X", "a.1", 
+      [ "A", 1, 0 ], 8, 13, "the tool operations without a fallback method", 
+      "X7988F0AF7D87FD23" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Tool Operations with a Fallback Method\033[13\
+3X\033[101X", "a.2", [ "A", 2, 0 ], 15, 13, 
+      "the tool operations with a fallback method", "X7912E42C81296637" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YOverview of the \033[5XGradedRingForHomalg\033[10\
+5X\033[101X\027\033[1X\027 Package Source Code\033[133X\033[101X", "b", 
+      [ "B", 0, 0 ], 1, 16, 
+      "overview of the gradedringforhomalg package source code", 
+      "X78C55DF7875560DD" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe generic Methods\033[133X\033[101X", "b.1", 
+      [ "B", 1, 0 ], 12, 16, "the generic methods", "X87807E467C364A00" ], 
+  [ "\033[1X\033[33X\033[0;-2YTools\033[133X\033[101X", "b.2", [ "B", 2, 0 ], 
+      61, 17, "tools", "X8508AEF8845565A1" ], 
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 19, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 19, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 20, "index", "X83A0356F839C696F" ], 
+  [ "\033[5XGradedRingForHomalg\033[105X", "0.0-1", [ 0, 0, 1 ], 89, 2, 
+      "gradedringforhomalg", "X8537FEB07AF2BEC8" ], 
+  [ "\033[2XIsHomalgGradedRingRep\033[102X", "3.1-1", [ 3, 1, 1 ], 58, 6, 
+      "ishomalggradedringrep", "X8025623B822D44AF" ], 
+  [ "\033[2XIsHomalgGradedRingElementRep\033[102X", "3.1-2", [ 3, 1, 2 ], 75, 
+      6, "ishomalggradedringelementrep", "X84BC7F817BF737F7" ], 
+  [ 
+      "\033[2XHomalgGradedRingElement\033[102X constructor for graded ring elemen\
+ts using numerator and denominator", "3.2-1", [ 3, 2, 1 ], 93, 6, 
+      "homalggradedringelement constructor for graded ring elements using nume\
+rator and denominator", "X823140CE8286BA90" ], 
+  [ 
+      "\033[2XHomalgGradedRingElement\033[102X constructor for graded ring elemen\
+ts using a given numerator and one as denominator", "3.2-1", [ 3, 2, 1 ], 93, 
+      6, 
+      "homalggradedringelement constructor for graded ring elements using a gi\
+ven numerator and one as denominator", "X823140CE8286BA90" ], 
+  [ "\033[2XDegreeGroup\033[102X", "3.3-1", [ 3, 3, 1 ], 107, 6, 
+      "degreegroup", "X79649FC47A744BD2" ], 
+  [ "\033[2XCommonNonTrivialWeightOfIndeterminates\033[102X", "3.3-2", 
+      [ 3, 3, 2 ], 114, 7, "commonnontrivialweightofindeterminates", 
+      "X826C131D83796CC5" ], 
+  [ "\033[2XWeightsOfIndeterminates\033[102X", "3.3-3", [ 3, 3, 3 ], 127, 7, 
+      "weightsofindeterminates", "X7E43637F8431FB69" ], 
+  [ "\033[2XIsHomogeneousRingElement\033[102X for homalg graded ring elements"
+        , "3.3-4", [ 3, 3, 4 ], 134, 7, 
+      "ishomogeneousringelement for homalg graded ring elements", 
+      "X807A4268816DD69D" ], 
+  [ "\033[2XUnderlyingNonGradedRing\033[102X for homalg graded rings", 
+      "3.4-1", [ 3, 4, 1 ], 144, 7, 
+      "underlyingnongradedring for homalg graded rings", "X7DA1D14F87DE72D8" ]
+    , 
+  [ "\033[2XUnderlyingNonGradedRing\033[102X for homalg graded ring elements",
+      "3.4-2", [ 3, 4, 2 ], 151, 7, 
+      "underlyingnongradedring for homalg graded ring elements", 
+      "X8708576B84997122" ], 
+  [ "\033[2XName\033[102X for homalg graded ring elements", "3.4-3", 
+      [ 3, 4, 3 ], 158, 7, "name for homalg graded ring elements", 
+      "X83971F1879017E3D" ], 
+  [ 
+      "\033[2XHomogeneousPartOfRingElement\033[102X for homalg graded ring elemen\
+ts and elements in degree groups", "3.4-4", [ 3, 4, 4 ], 165, 8, 
+      "homogeneouspartofringelement for homalg graded ring elements and elemen\
+ts in degree groups", "X840864B38184FF3E" ], 
+  [ "\033[2XIsHomalgMatrixOverGradedRingRep\033[102X", "4.1-1", [ 4, 1, 1 ], 
+      58, 10, "ishomalgmatrixovergradedringrep", "X860DABC0806C4064" ], 
+  [ 
+      "\033[2XMatrixOverGradedRing\033[102X constructor for matrices over graded \
+rings", "4.2-1", [ 4, 2, 1 ], 76, 10, 
+      "matrixovergradedring constructor for matrices over graded rings", 
+      "X7AC02E03868CB664" ], 
+  [ "\033[2XDegreesOfEntries\033[102X", "4.3-1", [ 4, 3, 1 ], 87, 10, 
+      "degreesofentries", "X8608086E82701204" ], 
+  [ "\033[2XNonTrivialDegreePerRow\033[102X", "4.3-2", [ 4, 3, 2 ], 94, 10, 
+      "nontrivialdegreeperrow", "X86C3DD8479FDDB36" ], 
+  [ "\033[2XNonTrivialDegreePerColumn\033[102X", "4.3-3", [ 4, 3, 3 ], 101, 
+      10, "nontrivialdegreepercolumn", "X801EBD4D7DAB0672" ], 
+  [ 
+      "\033[2XHomogeneousPartOfMatrix\033[102X for matrices over graded rings and\
+ listlist of degrees", "4.3-4", [ 4, 3, 4 ], 108, 11, 
+      "homogeneouspartofmatrix for matrices over graded rings and listlist of \
+degrees", "X7B109D738475FED4" ], 
+  [ 
+      "\033[2XIsMatrixOverGradedRingWithHomogeneousEntries\033[102X for matrices \
+over graded rings", "4.3-5", [ 4, 3, 5 ], 116, 11, 
+      "ismatrixovergradedringwithhomogeneousentries for matrices over graded r\
+ings", "X7B28E6B97D1A5E09" ], 
+  [ "\033[2XUnderlyingNonGradedRing\033[102X for matrices over graded rings", 
+      "4.4-1", [ 4, 4, 1 ], 126, 11, 
+      "underlyingnongradedring for matrices over graded rings", 
+      "X7DC25A5E83DC3E85" ], 
+  [ "\033[2XSetMatElm\033[102X for matrices over graded rings", "4.4-2", 
+      [ 4, 4, 2 ], 133, 11, "setmatelm for matrices over graded rings", 
+      "X7D0D1E1E784C3BC7" ], 
+  [ "\033[2XAddToMatElm\033[102X for matrices over graded rings", "4.4-3", 
+      [ 4, 4, 3 ], 140, 11, "addtomatelm for matrices over graded rings", 
+      "X7B56EC5E8545C1B6" ], 
+  [ "\033[2XMatElmAsString\033[102X for matrices over graded rings", "4.4-4", 
+      [ 4, 4, 4 ], 147, 11, "matelmasstring for matrices over graded rings", 
+      "X865E51967E6D0AD3" ], 
+  [ "\033[2XMatElm\033[102X for matrices over graded rings", "4.4-5", 
+      [ 4, 4, 5 ], 155, 12, "matelm for matrices over graded rings", 
+      "X8028986083BEC896" ], 
+  [ "\033[2XMonomialMatrix\033[102X", "a.2-1", [ "A", 2, 1 ], 22, 13, 
+      "monomialmatrix", "X84C78C6B7C0890BF" ], 
+  [ "\033[2XRandomMatrixBetweenGradedFreeLeftModules\033[102X", "a.2-2", 
+      [ "A", 2, 2 ], 48, 14, "randommatrixbetweengradedfreeleftmodules", 
+      "X7F9F9C978703E871" ], 
+  [ "\033[2XRandomMatrixBetweenGradedFreeRightModules\033[102X", "a.2-3", 
+      [ "A", 2, 3 ], 67, 14, "randommatrixbetweengradedfreerightmodules", 
+      "X82E813D982331C0B" ], 
+  [ "\033[2XDiff\033[102X", "a.2-4", [ "A", 2, 4 ], 85, 14, "diff", 
+      "X7EA1DC07822DE322" ], 
+  [ "\033[2XBasisOfRowModule\033[102X for graded rings", "b.1-1", 
+      [ "B", 1, 1 ], 17, 16, "basisofrowmodule for graded rings", 
+      "X7D9FBBDE794DE447" ], 
+  [ "\033[2XDecideZeroRows\033[102X for graded rings", "b.1-2", 
+      [ "B", 1, 2 ], 32, 16, "decidezerorows for graded rings", 
+      "X84C649FA7C820D49" ], 
+  [ "\033[2XSyzygiesGeneratorsOfRows\033[102X for graded rings", "b.1-3", 
+      [ "B", 1, 3 ], 47, 17, "syzygiesgeneratorsofrows for graded rings", 
+      "X87D2B8748076B5DD" ] ]
+);

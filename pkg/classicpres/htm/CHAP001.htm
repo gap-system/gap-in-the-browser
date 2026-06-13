@@ -1,0 +1,151 @@
+<html><head><title>[classicpres] 1 The classicpres package</title></head>
+<body text="#000000" bgcolor="#ffffff">
+[<a href = "chapters.htm">Up</a>] [<a href = "theindex.htm">Index</a>]
+<h1>1 The classicpres package</h1><p>
+<P>
+<H3>Sections</H3>
+<oL>
+<li> <A HREF="CHAP001.htm#SECT001">Functions Provided</a>
+<li> <A HREF="CHAP001.htm#SECT002">Isomorphism to finitely presented group</a>
+<li> <A HREF="CHAP001.htm#SECT003">Standard Generators</a>
+</ol><p>
+<p>
+This package provides functionality for presentations of classical groups
+as given in <a href="biblio.htm#lgo20"><cite>lgo20</cite></a>. It is a translation (with permission of the
+authors) of the corresponding code in the system
+Magma, and should -- short of arbitrary choices depending on internal
+ordering of finite field elements -- return the same data.
+<p>
+<p>
+Work on the translation was started at the <a href="badlink:classicpres:Summer School Matrix Group Recognition">Summer School Matrix Group Recognition</a> at RWTH Aachen in July 2019.
+<p>
+The work was supported in part by NSF Grant DMS-1720146, which is gratefully
+acknowledged.
+<p>
+<p>
+<h2><a name="SECT001">1.1 Functions Provided</a></h2>
+<p><p>
+There are only two user functions:
+<p>
+<a name = "SSEC001.1"></a>
+<li><code>ClassicalStandardPresentation(</code><var>type</var><code>, </code><var>d</var><code>, </code><var>q</var><code> )</code>
+<p>
+Given the specification <var>type</var>, <var>d</var>, <var>q</var> of a quasisimple group <var>G</var>, this
+operation constructs a presentation on the standard generators for <var>G</var>.
+The string <var>type</var> must be one of <code>"SL"</code>, <code>"Sp"</code>, <code>"SU"</code>, <code>"Omega"</code>,
+<code>"Omega-"</code>, or <code>"Omega+"</code>, while <var>d</var> is the dimension and <var>q</var> is the
+cardinality of the finite field. The presentations are described in
+<a href="biblio.htm#LGO20"><cite>LGO20</cite></a>.
+The presentation is returned as a finitely presented group, the relations
+being stored as its <code>RelatorsOfFpGroup</code>
+<p>
+If the option <code>Projective</code> is set to true, the operation constructs a
+presentation for the corresponding projective group (on the images of the
+same generators).
+<p>
+<pre>
+gap&gt; pres:=ClassicalStandardPresentation( "SL" , 4, 3);
+&lt;fp group on the generators [ f1, f2, f3, f4 ]&gt;
+gap&gt; RelatorsOfFpGroup(pres);
+[ f4*f1^-1*f3*f1*f3^2*f1^-1*f3*f1*f3^-1,
+  f3^-1*f2^-6*f1^-1*f2^6*f3*f2^-6*f1*f2^6,
+  f3^-1*f2^-3*f3^-1*f2^3*f3*f2^-3*f3*f1^-1*f2^3*f3^-1*f2^-3*f1*f2^3,
+  f3^-1*f2^-3*f1^-1*f2^3*f3^-1*f2^-3*f1*f2^3*f3*f2^-3*f1^-1*f2^3*f3*f2^-3*f1*f\
+2^3, f3^-1*f2^-3*f1^-1*f3^-1*f1*f2^3*f3*f2^-3*f1^-1*f3*f1*f2^3,
+  f3^-1*f2^-6*f3^-1*f2^6*f3*f2^-6*f3*f2^6, f1^4,
+  f1^-1*f2^-3*f1^2*f2^3*f1^3*f2^-3*f1^2*f2^3, (f1*f2^-3*f1*f2^3)^3,
+  f1^-1*f2^-6*f1^-1*f2^6*f1*f2^-6*f1*f2^6, f2^9*(f1^-1*f2^-3)^2*f1^-1,
+  f2^-12*f1^-1*f2^12*f1, f2^24, f1*(f3*f1^-1)^2*f3,
+  (f1^-1*f3^4*f1^-1*f3^2)^2*f3^3*f1^-2, f2^8 ]
+gap&gt; s:=Subgroup(pres,[pres.1,pres.2,pres.4]);
+Group([ f1, f2, f4 ])
+gap&gt; Index(pres,s);
+63180
+gap&gt; DisplayCompositionSeries(Image(FactorCosetAction(pres,s)));
+G (4 gens, size 6065280)
+ | A(3,3) = L(4,3) ~ D(3,3) = O+(6,3)
+1 (0 gens, size 1)
+</pre>
+<p>
+<a name = "SSEC001.2"></a>
+<li><code>ClassicalStandardGenerators(</code><var>type</var><code>, </code><var>d</var><code>, </code><var>q</var><code>)</code>
+<p>
+This operation produces the standard generators of Leedham-Green and O'Brien
+for the quasisimple classical group of specified type in dimension <var>d</var> over a
+field of size <var>q</var>. The type is designated by the argument <var>type</var> which must be
+one of the strings <code>"SL"</code>, <code>"Sp"</code>, <code>"SU"</code>, <code>"Omega"</code>, <code>"Omega-"</code>, or
+<code>"Omega+"</code>. The
+standard generators generate a specific copy of a classical group and are
+defined in <a href="biblio.htm#LGO09"><cite>LGO09</cite></a> and <a href="biblio.htm#DLLGO13"><cite>DLLGO13</cite></a>.
+<p>
+<pre>
+gap&gt; gens:=ClassicalStandardGenerators( "SL" , 4, 3);;
+[ &lt; immutable compressed matrix 4x4 over GF(3) &gt;,
+  &lt; immutable compressed matrix 4x4 over GF(3) &gt;,
+  &lt; immutable compressed matrix 4x4 over GF(3) &gt;,
+  &lt; immutable compressed matrix 6x4 over GF(3) &gt; ]
+gap&gt; List(gens,Order);
+[ 4, 8, 3, 2 ]
+gap&gt; Size(Group(gens));
+12130560
+gap&gt; List(RelatorsOfFpGroup(pres),x-&gt;Order(MappedWord(x,
+&gt; FreeGeneratorsOfFpGroup(pres),gens)));
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+</pre>
+<p>
+If the option <code>Projective</code> is set to true, the operation constructs a
+presentation for the corresponding projective group (on the images of the
+same generators).
+<p>
+<pre>
+gap&gt; pres:=ClassicalStandardPresentation( "SL" , 4, 3:Projective);
+&lt;fp group on the generators [ f1, f2, f3, f4 ]&gt;
+gap&gt; List(RelatorsOfFpGroup(pres),x-&gt;Order(MappedWord(x,
+&gt; FreeGeneratorsOfFpGroup(pres),gens)));
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1 ]
+</pre>
+<p>
+<p>
+<h2><a name="SECT002">1.2 Isomorphism to finitely presented group</a></h2>
+<p><p>
+In <font face="Gill Sans,Helvetica,Arial">GAP</font>, the canonical way of obtaining a presentation of (say) a
+permutation group is the operation <code>IsomorphismFpGroup</code>. This package thus
+also installs a method for <code>IsomorphismFpGroup</code> for groups that know that
+they are simple, and tests whether the groups are classical. If so, an
+isomorphism between the given group, and the permutation action of the
+classical groups on vectors is computed (this should be improved with
+constructive recognition in the future) and the presentation of
+<code>ClassicalStandardPresentation</code> is used.
+<p>
+Non-simple groups that construct a presentation through their composition
+factors will then automatically use these presentations for the simple
+factors when combining to a presentation of the group.
+<p>
+However be aware that the isomorphisms returned will use the generic
+permutation group mechanism for decomposition, and thus will not result in
+good or short words.
+<p>
+<p>
+<h2><a name="SECT003">1.3 Standard Generators</a></h2>
+<p><p>
+The generating sequences chosen (and on which the presentations are written)
+use the standard generators of classical groups as defined in
+<a href="biblio.htm#LGO09"><cite>LGO09</cite></a> and <a href="biblio.htm#DLLGO13"><cite>DLLGO13</cite></a>, since these generators also are used in the
+constructive recognition process.
+<p>
+The presentations in <a href="biblio.htm#LGO20"><cite>LGO20</cite></a> initially use slightly different generating
+sets, and a translation between these two generating sets is provided. If one
+of the two functions <code>ClassicalStandardGenerators</code> or
+<code>ClassicalStandardPresentation</code> is called with the option
+<code>PresentationGenerators</code>, this different generating set is used. (Its use
+could be to obtain a slightly shorter presentation in situations in which
+adherence to the standard generaors is not required.)
+<p>
+The method provided for <code>IsomorphismFpGroup</code> currently uses these
+<code>PresentationGenerators</code>, but this is not a guaranteed property.
+<p>
+<p>
+[<a href = "chapters.htm">Up</a>] [<a href = "theindex.htm">Index</a>]
+<P>
+<address>classicpres manual<br>November 2021
+</address></body></html>

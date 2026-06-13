@@ -1,0 +1,50 @@
+  
+  [1X1 [33X[0;0YIntroduction to [5XStandardFF[105X[101X[1X package[133X[101X
+  
+  
+  [1X1.1 [33X[0;0YAim[133X[101X
+  
+  [33X[0;0YThis  [5XGAP[105X-package  provides  a reference implementation for the standardized
+  constructions of finite fields and generators of cyclic subgroups defined in
+  the article [Lüb23].[133X
+  
+  [33X[0;0YThe main functions are [2XFF[102X ([14X2.2-1[114X) to construct the finite field of order [22Xp^n[122X
+  and [2XStandardCyclicGenerator[102X ([14X3.1-1[114X) to construct a standardized generator of
+  the  multiplicative  subgroup of a given order [22Xm[122X in such a finite field. The
+  condition  on  [22Xm[122X  is  that  it divides [22Xp^n-1[122X and that [5XGAP[105X can factorize this
+  number.  (The  factorization  of the multiplicative group order [22Xp^n-1[122X is not
+  needed.)[133X
+  
+  [33X[0;0YEach  field of order [22Xp^n[122X comes with a natural [22XF_p[122X-basis which is a subset of
+  the  natural basis of each extension field of order [22Xp^nm[122X. The union of these
+  bases  is  a  basis  of  the  algebraic  closure of [22XF_p[122X. Each element of the
+  algebraic closure can be identified by its degree [22Xd[122X over its prime field and
+  a  number  [22X0  ≤  k ≤ p^d-1[122X (see [2XSteinitzPair[102X ([14X2.4-1[114X)) or, equivalently, by a
+  certain  multivariate  polynomial  (see  [2XAsPolynomial[102X  ([14X2.3-1[114X)). This can be
+  useful for transferring finite field elements between programs which use the
+  same construction of finite fields.[133X
+  
+  [33X[0;0YThe  standardized  generators  of  multiplicative  cyclic groups have a nice
+  compatibility  property:  There  is  a  unique  group  isomorphism  from the
+  multiplicative  group  of  the  algebraic closure of the finite field with [22Xp[122X
+  elements  into  the  group  of  complex  roots  of  unity whose order is not
+  divisible by [22Xp[122X which maps a standard generator of order [22Xm[122X to [22Xexp(2π i/m)[122X. In
+  particular,  the  minimal  polynomials of standard generators of order [22Xp^n-1[122X
+  for  all  [22Xn[122X  fulfill the same compatibility conditions as Conway polynomials
+  (see  [2XConwayPolynomial[102X  ([14XReference:  ConwayPolynomial[114X)). This can provide an
+  alternative   for   the   lifts  used  by  [2XBrauerCharacterValue[102X  ([14XReference:
+  BrauerCharacterValue[114X)  which  works  for  a  much  wider set of finite field
+  elements  where  Conway  polynomials  are  very  difficult  or impossible to
+  compute.[133X
+  
+  [33X[0;0YA  translation  of  existing  Brauer  character  tables relative to the lift
+  defined    by    Conway   polynomials   to   the   lift   defined   by   our
+  [2XStandardCyclicGenerator[102X      ([14X3.1-1[114X)      can      be      computed     with
+  [2XStandardValuesBrauerCharacter[102X   ([14X4.7-1[114X),   provided   the   relevant  Conway
+  polynomials are known.[133X
+  
+  [33X[0;0YThe  article  [Lüb23]  also  defines a standardized embedding of [5XGAP[105Xs finite
+  fields constructed with [2XGF[102X ([14XReference: GF for field size[114X) into the algebraic
+  closure  of  the  prime  field  [22XF_p[122X constructed here. This is available with
+  [2XStandardIsomorphismGF[102X ([14X2.4-5[114X).[133X
+  

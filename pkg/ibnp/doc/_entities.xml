@@ -1,0 +1,4 @@
+<!ENTITY AutoDoc '<Package>AutoDoc</Package>'>
+<!ENTITY IBNP '<Package>IBNP</Package>'>
+<!ENTITY GBNP '<Package>GBNP</Package>'>
+<!ENTITY Grob 'Gröbner'>

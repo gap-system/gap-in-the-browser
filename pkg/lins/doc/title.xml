@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    LINS
+  </Title>
+  <Subtitle>
+    provides an algorithm for computing the normal subgroups of a finitely presented group up to some given index bound.
+  </Subtitle>
+  <Version>
+    0.9
+  </Version>
+  <Author>
+    Friedrich Rober<Alt Only="LaTeX"><Br/></Alt>
+<Email>friedrich.rober@rwth-aachen.de</Email>
+
+  </Author>
+  <Date>
+    15 March 2024
+  </Date>
+  </TitlePage>

@@ -1,0 +1,446 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%A  colour.tex              GRAPE documentation              Leonard Soicher
+%
+%
+%
+\def\GRAPE{\sf GRAPE}
+\def\nauty{\it nauty}
+\def\G{\Gamma}
+\def\Aut{{\rm Aut}\,}
+\def\x{\times}
+\Chapter{Vertex-Colouring and Complete Subgraphs}
+
+The following sections describe functions for (proper) vertex-colouring
+and determining complete subgraphs of a given simple graph. Included are
+functions for determining the chromatic number and the clique number of
+a simple graph. The methods used for proper vertex-colouring are described
+in \cite{Soi24a}.
+
+The function `CompleteSubgraphsOfGivenSize' can be used to determine
+the complete subgraphs with given vertex-weight sum in a vertex-weighted
+graph,
+\index{vertex-weighted graph}
+where the weights can be positive
+integers or non-zero vectors of non-negative integers.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{VertexColouring}
+
+\>VertexColouring( <gamma> )
+\>VertexColouring( <gamma>, <k> )
+\>VertexColouring( <gamma>, <k>, <m> )
+
+This function returns a proper vertex-colouring <C> for the graph
+<gamma>, which must be simple. A *proper vertex-colouring*
+\index{proper vertex-colouring} 
+of <gamma> is an assignment of colours to the vertices
+of <gamma>, such that, if $[i,j]$ is an edge, then vertices $i$ and $j$
+are assigned different colours.
+
+The returned proper vertex-colouring <C> is given as a list of positive
+integers (the *colours*), indexed by the vertices of <gamma>, with the
+property that $<C>[i]\not=<C>[j]$ whenever $[i,j]$ is an edge of <gamma>.
+
+If the optional parameter <k> is given, then <k> must be a non-negative
+integer. In this case, a proper vertex-colouring using at most <k>
+colours is returned, if such a colouring exists, and `fail' otherwise.
+
+If, in addition to <k>, the optional parameter <m> is given, then <m>
+must be a a non-negative integer, such that there is no monochromatic
+set of vertices of size greater than <m> in any proper vertex-colouring
+of <gamma> which uses at most <k> colours.  This information (which is
+not checked) may help to speed up the function.
+
+\beginexample
+gap> J:=JohnsonGraph(5,2);
+rec( adjacencies := [ [ 2, 3, 4, 5, 6, 7 ] ], group := Group([ (1,5,8,10,4)
+  (2,6,9,3,7), (2,5)(3,6)(4,7) ]), isGraph := true, isSimple := true, 
+  names := [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 1, 5 ], [ 2, 3 ], [ 2, 4 ], 
+      [ 2, 5 ], [ 3, 4 ], [ 3, 5 ], [ 4, 5 ] ], order := 10, 
+  representatives := [ 1 ], schreierVector := [ -1, 2, 2, 1, 1, 1, 2, 1, 1, 1 
+     ] )
+gap> VertexColouring(J);
+[ 1, 3, 5, 4, 2, 3, 6, 1, 5, 2 ]
+gap> VertexColouring(J,5);
+[ 1, 2, 3, 4, 5, 4, 2, 1, 3, 5 ]
+gap> VertexColouring(J,4);
+fail
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{IsVertexColouring}
+
+\>IsVertexColouring( <gamma>, <C> )
+\>IsVertexColouring( <gamma>, <C>, <k> )
+
+Suppose that <gamma> is a simple graph, <C> is a list of positive integers
+of length `OrderGraph(<gamma>)', and <k> is a non-negative integer
+(default: `OrderGraph(<gamma>)').
+
+Then this function returns `true' if <C> is a vertex <k>-colouring of
+<gamma>, that is, a proper vertex-colouring using at most <k>-colours (for
+which $<C>[i]$ is the colour of the $i$-th vertex), and `false' if not.
+
+See also "VertexColouring".
+
+\beginexample
+gap> gamma:=JohnsonGraph(7,3);;
+gap> C:=VertexColouring(gamma,6);;
+gap> IsVertexColouring(gamma,C);
+true
+gap> IsVertexColouring(gamma,C,7);
+true
+gap> IsVertexColouring(gamma,C,6);
+true
+gap> IsVertexColouring(gamma,C,5);
+false
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{MinimumVertexColouring}
+
+\>MinimumVertexColouring( <gamma> )
+
+This function returns a minimum vertex-colouring <C> for the graph
+<gamma>, which must be simple. A *minimum vertex-colouring*
+\index{minimum vertex-colouring} 
+is a proper vertex-colouring using as few colours as possible.
+
+The returned minimum vertex-colouring <C> is given as a list of positive
+integers (the *colours*), indexed by the vertices of <gamma>, with the
+property that $<C>[i]\not=<C>[j]$ whenever $[i,j]$ is an edge of <gamma>,
+and subject to this property, the number of distinct elements of <C>
+is as small as possible.
+
+See also "VertexColouring".
+
+\beginexample
+gap> J:=JohnsonGraph(5,2);
+rec( adjacencies := [ [ 2, 3, 4, 5, 6, 7 ] ], group := Group([ (1,5,8,10,4)
+  (2,6,9,3,7), (2,5)(3,6)(4,7) ]), isGraph := true, isSimple := true, 
+  names := [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 1, 5 ], [ 2, 3 ], [ 2, 4 ], 
+      [ 2, 5 ], [ 3, 4 ], [ 3, 5 ], [ 4, 5 ] ], order := 10, 
+  representatives := [ 1 ], schreierVector := [ -1, 2, 2, 1, 1, 1, 2, 1, 1, 1 
+     ] )
+gap> MinimumVertexColouring(J);
+[ 1, 2, 3, 4, 5, 4, 2, 1, 3, 5 ]
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{ChromaticNumber}
+
+\>ChromaticNumber( <gamma> )
+
+This function returns the chromatic number of the given graph <gamma>,
+which must be simple.  The *chromatic number*
+\index{chromatic number} 
+of <gamma> is the minimum number of colours needed to properly vertex-colour
+<gamma>, that is, the number of colours used in a minimum vertex-colouring
+of <gamma>.
+
+See also "MinimumVertexColouring".
+
+\beginexample
+gap> ChromaticNumber(JohnsonGraph(5,2));
+5
+gap> ChromaticNumber(JohnsonGraph(6,2));
+5
+gap> ChromaticNumber(JohnsonGraph(7,2));
+7
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{CompleteSubgraphs}
+
+\>CompleteSubgraphs( <gamma> )
+\>CompleteSubgraphs( <gamma>, <k> )
+\>CompleteSubgraphs( <gamma>, <k>, <alls> )
+\>CompleteSubgraphs( <G>, <gamma> )
+\>CompleteSubgraphs( <G>, <gamma>, <k> )
+\>CompleteSubgraphs( <G>, <gamma>, <k>, <alls> )
+
+Let <gamma> be a simple graph and <k> an integer. This function returns
+a set <K> of complete subgraphs of <gamma>, where a complete subgraph is
+represented by its vertex-set.  If <k> is non-negative then the elements
+of <K> each have size <k>, otherwise the elements of <K> represent maximal
+complete subgraphs of <gamma>. (A *maximal complete subgraph* of <gamma>
+is a complete subgraph of <gamma> which is not properly contained in
+another complete subgraph of <gamma>.) The default for <k> is $-1$,
+i.e. maximal complete subgraphs.  See also `CompleteSubgraphsOfGivenSize',
+which can be used to compute the maximal complete subgraphs of given
+size, and can also be used to determine the (maximal or otherwise)
+complete subgraphs with given vertex-weight sum in a vertex-weighted
+graph.
+
+The optional parameter <G> must be a subgroup of `<gamma>.group' and
+specifies the (often powerful) constraint that each returned complete
+subgraph must be <G>-invariant. The default for <G> is the trivial
+permutation group, which imposes no constraint.
+
+The optional parameter <alls> controls how many complete subgraphs are
+returned. The valid values for <alls> are 0, 1 (the default), and 2.
+
+*Warning:* Using the default value of 1 for <alls> (see below) means
+that the elements of the returned set need not be inequivalent under
+`<gamma>.group'. To obtain just one element from each `<gamma>.group'
+orbit of the required complete subgraphs, you must give the value 2 to
+the parameter <alls>.
+
+If <alls>=0 (or `false' for backward compatibility) then the returned
+set <K> will contain at most one element. In this case, if <k> is
+negative then <K> will contain just one <G>-invariant maximal complete
+subgraph of <gamma> if and only if such a subgraph exists, and if <k>
+is non-negative then <K> will contain a <G>-invariant complete subgraph
+of size <k> of <gamma> if and only if such a subgraph exists.
+
+If <alls>=1 (or `true' for backward compatibility) and <G> is *trivial*
+then <K> will contain (perhaps properly) a set of `<gamma>.group'
+orbit-representatives of the maximal (if <k> is negative) or size <k>
+(if <k> is non-negative) complete subgraphs of <gamma>.
+
+If <alls>=1 (or `true' for backward compatibility) and <G> is *non-trivial*
+then <K> will be a set of representatives for the orbits of the normalizer
+of <G> in `<gamma>.group', for its action on the <G>-invariant maximal
+(if <k> is negative) or <G>-invariant size <k> (if <k> is non-negative)
+complete subgraphs of <gamma>.
+
+If <alls>=2 then <K> will consist of a classification of the <G>-invariant
+maximal (if <k> is negative) or the <G>-invariant size <k> (if <k> is
+non-negative) complete subgraphs of <gamma>, classified up to the action
+of `<gamma>.group'.  (This option can be more costly than when <alls>=1.)
+In particular, if <alls>=2 and <G> is trivial then <K> will be a set of
+`<gamma>.group' orbit-representatives of the maximal (if <k> is negative)
+or size <k> (if <k> is non-negative) complete subgraphs of <gamma>.
+
+Before applying `CompleteSubgraphs', one may want to associate the full
+automorphism group of <gamma> with <gamma>, via `<gamma> :=
+NewGroupGraph( AutGroupGraph(<gamma>), <gamma> );'.
+
+An alternative name for this function is `Cliques'.
+\index{Cliques}
+
+See also "CompleteSubgraphsOfGivenSize".
+
+\beginexample
+gap> gamma := JohnsonGraph(5,2);
+rec( adjacencies := [ [ 2, 3, 4, 5, 6, 7 ] ], 
+  group := Group([ (1,5,8,10,4)(2,6,9,3,7), (2,5)(3,6)(4,7) ]), 
+  isGraph := true, isSimple := true, 
+  names := [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 1, 5 ], [ 2, 3 ], [ 2, 4 ], 
+      [ 2, 5 ], [ 3, 4 ], [ 3, 5 ], [ 4, 5 ] ], order := 10, 
+  representatives := [ 1 ], schreierVector := [ -1, 2, 2, 1, 1, 1, 2, 1, 1, 1 
+     ] )
+gap> CompleteSubgraphs(gamma);
+[ [ 1, 2, 3, 4 ], [ 1, 2, 5 ] ]
+gap> CompleteSubgraphs(gamma,3,2);
+[ [ 1, 2, 3 ], [ 1, 2, 5 ] ]
+gap> CompleteSubgraphs(gamma,-1,0);
+[ [ 1, 2, 5 ] ]
+gap> G:=Subgroup(gamma.group,[(2,5)(3,6)(4,7)]);;
+gap> CompleteSubgraphs(G,gamma,-1);
+[ [ 1, 2, 5 ], [ 2, 5, 8, 9 ], [ 8 .. 10 ] ]
+gap> CompleteSubgraphs(G,gamma,-1,2);
+[ [ 1, 2, 5 ], [ 2, 5, 8, 9 ] ]
+gap> CompleteSubgraphs(G,gamma,4);
+[ [ 2, 5, 8, 9 ] ]
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{CompleteSubgraphsOfGivenSize}
+
+\>CompleteSubgraphsOfGivenSize( <gamma>, <k> )
+\>CompleteSubgraphsOfGivenSize( <gamma>, <k>, <alls> )
+\>CompleteSubgraphsOfGivenSize( <gamma>, <k>, <alls>, <maxi> )
+\>CompleteSubgraphsOfGivenSize( <gamma>, <k>, <alls>, <maxi>, <col> )
+\>CompleteSubgraphsOfGivenSize( <gamma>, <k>, <alls>, <maxi>, <col>, <wts> ) 
+\>CompleteSubgraphsOfGivenSize( <G>, <gamma>, <k> )
+\>CompleteSubgraphsOfGivenSize( <G>, <gamma>, <k>, <alls> )
+\>CompleteSubgraphsOfGivenSize( <G>, <gamma>, <k>, <alls>, <maxi> )
+\>CompleteSubgraphsOfGivenSize( <G>, <gamma>, <k>, <alls>, <maxi>, <col> )
+\>CompleteSubgraphsOfGivenSize( <G>, <gamma>, <k>, <alls>, <maxi>, <col>, <wts> ) 
+
+Let <gamma> be a simple graph, and <k> a non-negative integer or vector
+of non-negative integers.  This function returns a set <K> (possibly
+empty) of complete subgraphs of size <k> of <gamma>.  The vertices may
+have weights, which should be non-zero integers if <k> is an integer and
+non-zero $d$-vectors of non-negative integers if <k> is a $d$-vector,
+and in these cases, a complete subgraph of *size* <k> means a complete
+subgraph whose vertex-weights sum to <k>.  The exact nature of the set
+<K> depends on the values of the parameters supplied to this function. A
+complete subgraph is represented by its vertex-set.
+
+The optional parameter <G> must be a subgroup of `<gamma>.group' and
+specifies the (often powerful) constraint that each returned complete
+subgraph must be <G>-invariant. The default for <G> is the trivial
+permutation group, which imposes no constraint. If <k> is a vector
+of dimension greater than 1, then <G> must be trivial.
+
+The optional parameter <maxi> controls whether only maximal complete
+subgraphs of size <k> are returned. (A *maximal complete subgraph* of 
+<gamma> is a complete subgraph of <gamma> which is not properly contained 
+in another complete subgraph of <gamma>.) The default is `false', which 
+means that non-maximal as well as maximal <G>-invariant complete subgraphs 
+of size <k> may be returned. If <maxi>=`true' then only <G>-invariant maximal
+complete subgraphs of size <k> are returned. (Previous to version 4.1
+of {\GRAPE}, <maxi>=`true' meant that it was assumed (but not checked)
+that all complete subgraphs of size <k> were maximal.)
+
+The optional parameter <alls> controls how many complete subgraphs are
+returned. The valid values for <alls> are 0, 1 (the default), and 2.
+
+*Warning:* Using the default value of 1 for <alls> (see below) means
+that the elements of the returned set need not be inequivalent under
+`<gamma>.group'. To obtain just one element from each `<gamma>.group'
+orbit of the required complete subgraphs, you must give the value 2 to
+the parameter <alls>.
+
+If <alls>=0 (or `false' for backward compatibility) then <K> will contain
+at most one element.  If <maxi>=`false' then <K> will contain one element
+if and only if <gamma> contains a <G>-invariant complete subgraph of
+size <k>.  If <maxi>=`true' then <K> will contain one element if and
+only if <gamma> contains a <G>-invariant maximal complete subgraph
+of size <k>, in which case <K> will contain (the vertex-set of) such
+a complete subgraph.  
+
+If <alls>=1 (or `true' for backward compatibility) and <G> is *trivial*
+then <K> will contain (perhaps properly) a set of `<gamma>.group'
+orbit-representatives of the size <k> (if <maxi>=`false') or the maximal
+size <k> (if <maxi>=`true') complete subgraphs of <gamma>.
+
+If <alls>=1 (or `true' for backward compatibility) and <G> is
+*non-trivial* then <K> will be a set of representatives for the orbits
+of the normalizer of <G> in `<gamma>.group', for its action on the
+<G>-invariant size <k> (if <maxi>=`false') or the <G>-invariant maximal
+size <k> (if <maxi>=`true') complete subgraphs of <gamma>.
+
+If <alls>=2 then <K> will consist of a classification of the <G>-invariant
+size <k> (if <maxi>=`false') or the <G>-invariant maximal size <k> (if
+<maxi>=`true') complete subgraphs of <gamma>, classified up to the action
+of `<gamma>.group'. (This option can be more costly than when <alls>=1.)
+In particular, if <alls>=2 and <G> is trivial then <K> will be a set of
+`<gamma>.group' orbit-representatives of the size <k> (if <maxi>=`false')
+or the maximal size <k> (if <maxi>=`true') complete subgraphs of <gamma>.
+
+The optional boolean parameter <col> is used to determine whether or not
+partial proper vertex-colouring is used to cut down the search tree. The
+default is `true', which says to use this partial colouring. This is
+usually the best choice. For backward compatibility, <col> a rational
+number means the same as <col>=`true'.
+
+The optional parameter <wts> should be a list of vertex-weights; the list
+should be of length `<gamma>.order', with the <i>-th element being the
+weight of vertex <i>. The weights must be all positive integers if <k>
+is an integer, and all non-zero $d$-vectors of non-negative integers
+if <k> is a $d$-vector. The default is that all weights are equal to~1.
+(Recall that, for this function, a complete subgraph of *size* <k> 
+means a complete subgraph whose vertex-weights sum to <k>.)
+
+If <wts> is a list of (positive) integers, then it is required that
+for all $g$ in `<gamma>.group' and all $v$ in `Vertices(<gamma>)',
+we have $<wts>[v^g]=<wts>[v]$.
+
+If <wts> is a list of $d$-vectors then we assume that there is some group
+$H$ and epimorphism $\theta$ from $H$ to `<gamma>.group', such that there
+is an action $\mu$ of $H$ on `[1..$d$]', giving an action of $H$ on the
+set of integer $d$-vectors, where if $w$ is an integer $d$-vector and
+$h$ in $H$ then $w^h$ is defined by $w^h[\mu(i,h)]=w[i]$ for all $i$
+in `[1..$d$]'. It is then required that for all $h$ in $H$, we have
+$<k>^h=<k>$ and for all $v$ in `Vertices(<gamma>)', $<wts>[v^{h\theta}]
+= <wts>[v]^h$.  These requirements are *not* checked by the function,
+and the use of vector-weights is primarily for the {\DESIGN} package
+and advanced users of {\GRAPE}.
+
+An alternative name for this function is 
+`CliquesOfGivenSize'.
+\index{CliquesOfGivenSize}
+
+See also "CompleteSubgraphs".
+
+\beginexample
+gap> gamma:=JohnsonGraph(6,2);                       
+rec( adjacencies := [ [ 2, 3, 4, 5, 6, 7, 8, 9 ] ], 
+  group := Group([ (1,6,10,13,15,5)(2,7,11,14,4,9)(3,8,12), (2,6)(3,7)(4,8)
+      (5,9) ]), isGraph := true, isSimple := true, 
+  names := [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 1, 5 ], [ 1, 6 ], [ 2, 3 ], 
+      [ 2, 4 ], [ 2, 5 ], [ 2, 6 ], [ 3, 4 ], [ 3, 5 ], [ 3, 6 ], [ 4, 5 ], 
+      [ 4, 6 ], [ 5, 6 ] ], order := 15, representatives := [ 1 ], 
+  schreierVector := [ -1, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1 ] )
+gap> CompleteSubgraphsOfGivenSize(gamma,4);
+[ [ 1, 2, 3, 4 ] ]
+gap> CompleteSubgraphsOfGivenSize(gamma,4,1,true);
+[  ]
+gap> CompleteSubgraphsOfGivenSize(gamma,5,2,true);
+[ [ 1, 2, 3, 4, 5 ] ]
+gap> G:=SylowSubgroup(gamma.group,3);;
+gap> Size(G);
+9
+gap> CompleteSubgraphsOfGivenSize(G,gamma,2);
+[  ]
+gap> CompleteSubgraphsOfGivenSize(gamma,2);
+[ [ 1, 2 ] ]
+gap> CompleteSubgraphsOfGivenSize(G,gamma,3,2);
+[ [ 2, 4, 11 ] ]
+gap> CompleteSubgraphsOfGivenSize(gamma,3,2);
+[ [ 1, 2, 3 ], [ 1, 2, 6 ] ]
+gap> delta:=NewGroupGraph(Group(()),gamma);;
+gap> CompleteSubgraphsOfGivenSize(delta,5,2,true);
+[ [ 1, 2, 3, 4, 5 ], [ 1, 6, 7, 8, 9 ], [ 2, 6, 10, 11, 12 ], 
+  [ 3, 7, 10, 13, 14 ], [ 4, 8, 11, 13, 15 ], [ 5, 9, 12, 14, 15 ] ]
+gap> CompleteSubgraphsOfGivenSize(delta,5,0);
+[ [ 1, 2, 3, 4, 5 ] ]
+gap> CompleteSubgraphsOfGivenSize(delta,5,1,false,true,
+>    [1,2,3,4,5,6,7,8,7,6,5,4,3,2,1]);
+[ [ 1, 4 ], [ 2, 3 ], [ 3, 14 ], [ 4, 15 ], [ 5 ], [ 11 ], [ 12, 15 ], 
+  [ 13, 14 ] ]
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{MaximumClique}
+
+\>MaximumClique( <gamma> )
+
+This function returns a maximum clique of the graph <gamma>, which must
+be simple.  A *maximum clique*
+\index{maximum clique} 
+of <gamma> is a
+set of pairwise adjacent vertices of <gamma> of the largest possible size.
+
+An alternative name for this function is
+`MaximumCompleteSubgraph'.
+\index{MaximumCompleteSubgraph} 
+
+See also "CompleteSubgraphsOfGivenSize".
+
+\beginexample
+gap> J:=JohnsonGraph(5,2);
+rec( adjacencies := [ [ 2, 3, 4, 5, 6, 7 ] ], group := Group([ (1,5,8,10,4)
+  (2,6,9,3,7), (2,5)(3,6)(4,7) ]), isGraph := true, isSimple := true, 
+  names := [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 1, 5 ], [ 2, 3 ], [ 2, 4 ], 
+      [ 2, 5 ], [ 3, 4 ], [ 3, 5 ], [ 4, 5 ] ], order := 10, 
+  representatives := [ 1 ], schreierVector := [ -1, 2, 2, 1, 1, 1, 2, 1, 1, 1 
+     ] )
+gap> MaximumClique(J);
+[ 1, 2, 3, 4 ]
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{CliqueNumber}
+
+\>CliqueNumber( <gamma> )
+
+This function returns the clique number of the given graph <gamma>,
+which must be simple.  The *clique number*
+\index{clique number} 
+of <gamma> is the size of a largest clique in <gamma>, where a *clique*
+is a set of pairwise adjacent vertices.
+
+\beginexample
+gap> CliqueNumber(JohnsonGraph(5,2));
+4
+gap> CliqueNumber(JohnsonGraph(6,2));
+5
+gap> CliqueNumber(JohnsonGraph(7,2));
+6
+\endexample

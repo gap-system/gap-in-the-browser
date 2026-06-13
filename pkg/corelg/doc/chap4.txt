@@ -1,0 +1,77 @@
+  
+  [1X4 [33X[0;0YReal nilpotent orbits[133X[101X
+  
+  
+  [1X4.1 [33X[0;0YNilpotent orbits in real Lie algebras[133X[101X
+  
+  [33X[0;0Y[5XCoReLG[105X  has  a  database  of  the  nilpotent orbits of the real forms of the
+  simple  Lie  algebras  of ranks up to 8. When called the first time in a GAP
+  session, [5XCoReLG[105X will first read the database of nilpotent orbits.[133X
+  
+  [1X4.1-1 NilpotentOrbitsOfRealForm[101X
+  
+  [33X[1;0Y[29X[2XNilpotentOrbitsOfRealForm[102X( [3XL[103X ) [32X attribute[133X
+  
+  [33X[0;0YHere  [3XL[103X is a real form of a complex simple Lie algebra of rank up to 8. This
+  function  returns  the  list  of  nilpotent  orbits (under the action of the
+  adjoint  group)  of  [3XL[103X.  For  this  function to work, [3XL[103X must be defined over
+  [3XSqrtField[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL:= RealFormById( "F", 4, 3 );;[127X[104X
+    [4X[25Xgap>[125X [27Xno:= NilpotentOrbitsOfRealForm( L );;[127X[104X
+    [4X[28X#I CoReLG: read database of real triples ... done[128X[104X
+    [4X[25Xgap>[125X [27Xno[1];[127X[104X
+    [4X[28X<nilpotent orbit in Lie algebra>[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-2 RealCayleyTriple[101X
+  
+  [33X[1;0Y[29X[2XRealCayleyTriple[102X( [3Xo[103X ) [32X attribute[133X
+  
+  [33X[0;0YHere [3Xo[103X is a nilpotent orbit constructed by [2XNilpotentOrbitsOfRealForm[102X ([14X4.1-1[114X)
+  of  a  simple real Lie algebra. This function returns a real Cayley triple [3X[
+  f,  h,  e  ][103X  corresponding  to  the  orbit  [3Xo[103X.  The  third  element  [3Xe[103X is a
+  representative of the orbit.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL:= RealFormById( "F", 4, 2 );;[127X[104X
+    [4X[25Xgap>[125X [27Xno:= NilpotentOrbitsOfRealForm( L );;[127X[104X
+    [4X[25Xgap>[125X [27Xo:= no[10];[127X[104X
+    [4X[28X<nilpotent orbit in Lie algebra>[128X[104X
+    [4X[25Xgap>[125X [27Xt:=RealCayleyTriple(o);;[127X[104X
+    [4X[25Xgap>[125X [27Xtheta:= CartanDecomposition(L).CartanInv;[127X[104X
+    [4X[28Xfunction( v ) ... end[128X[104X
+    [4X[25Xgap>[125X [27Xtheta(t[1]) = -t[3];[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xtheta(t[2]) = -t[2];[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xt[3]*t[1] = t[2];[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-3 WeightedDynkinDiagram[101X
+  
+  [33X[1;0Y[29X[2XWeightedDynkinDiagram[102X( [3Xo[103X ) [32X attribute[133X
+  
+  [33X[0;0YHere [3Xo[103X is a nilpotent orbit constructed by [2XNilpotentOrbitsOfRealForm[102X ([14X4.1-1[114X)
+  of  a  simple  real  Lie  algebra. This function returns the weighted Dynkin
+  diagram  of the orbit, which identifies its orbit in the complexification of
+  the real Lie algebra in which [3Xo[103X lies.[133X
+  
+  
+  [1X4.2 [33X[0;0YThe real Weyl group[133X[101X
+  
+  [1X4.2-1 RealWeylGroup[101X
+  
+  [33X[1;0Y[29X[2XRealWeylGroup[102X( [3XL[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XRealWeylGroup[102X( [3XL[103X, [3XH[103X ) [32X function[133X
+  
+  [33X[0;0YHere  [3XL[103X  is a real semisimple Lie algebra with Cartan subalgebra [3XH[103X. (If [3XH[103X is
+  not  given,  then  [3XCartanSubalgebra(L)[103X will be taken.) This function returns
+  the  real  Weyl  group  [22XN_G(H)/C_G(H)[122X  associated  with  [3XH[103X,  where  [22XG[122X is the
+  connected component of the group of real points of the complex adjoint group
+  of [3XL[103X. The real Weyl group will be stored in the Cartan subalgebra, so that a
+  new  call  to  this function, with the same input, will return the real Weyl
+  group immediately.[133X
+  

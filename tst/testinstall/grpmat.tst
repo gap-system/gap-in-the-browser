@@ -1,0 +1,111 @@
+#@local cl,g,gd,gens,hom,i,img,iso,pcgs,u,G,F,o,a,m,nice,H,G2,nice2
+gap> START_TEST("grpmat.tst");
+gap> i := E(4);; G := Group([[i,0],[0,-i]],[[0,1],[-1,0]]);;
+gap> gens := GeneratorsOfGroup( G );; IsSSortedList( gens );
+false
+gap> TypeObj( ShallowCopy( gens ) ) = false;
+false
+gap> SetName( G, "Q8" );
+gap> One( TrivialSubgroup( G ) );
+[ [ 1, 0 ], [ 0, 1 ] ]
+gap> Size( G );
+8
+gap> IsHandledByNiceMonomorphism( G );
+true
+gap> pcgs := Pcgs( G );;
+gap> Print(pcgs,"\n");
+Pcgs([ [ [ 0, 1 ], [ -1, 0 ] ], [ [ E(4), 0 ], [ 0, -E(4) ] ], 
+  [ [ -1, 0 ], [ 0, -1 ] ] ])
+gap> cl := ConjugacyClasses( G );;
+gap> Collected(List(cl,i->[Size(i),Order(Representative(i))]));
+[ [ [ 1, 1 ], 1 ], [ [ 1, 2 ], 1 ], [ [ 2, 4 ], 3 ] ]
+gap> Set(List( cl, c -> ExponentsOfPcElement( pcgs, Representative( c ) )));
+[ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 1 ], [ 1, 0, 1 ], [ 1, 1, 0 ] ]
+gap> Size( AutomorphismGroup( G ) );
+24
+gap> g:=GL(4,3);;
+gap> Length(ConjugacyClasses(g));
+78
+gap> gd:=DerivedSubgroup(g);;
+gap> Index(g,gd);
+2
+gap> Length(ConjugacyClasses(gd));
+51
+gap> hom:=NaturalHomomorphismByNormalSubgroup(gd,Centre(gd));;
+gap> u:=PreImage(hom,SylowSubgroup(Image(hom),3));;
+gap> Size(u);
+1458
+gap> Index(u,DerivedSubgroup(u));
+54
+gap> g:= DerivedSubgroup( SO( 1, 8, 4 ) );;
+gap> Collected( Factors( Size( g ) ) );
+[ [ 2, 24 ], [ 3, 5 ], [ 5, 4 ], [ 7, 1 ], [ 13, 1 ], [ 17, 2 ] ]
+gap> iso:= IsomorphismPermGroup( g );;
+gap> img:=Image( iso );;
+gap> Size(img);
+67010895544320000
+gap> IsNaturalGL( TrivialSubgroup( GL(2,2) ) );
+false
+gap> IsTransitive( Image( IsomorphismPermGroup( SO( 1, 8, 2 ) ) ) );
+true
+
+# a small matrix group over a large field
+gap> F:= GF(3, 16);;  Size( F );
+43046721
+gap> o:= PrimitiveElement(F);;
+gap> a:= o^15 + 2*o^13 + o^12 + o^11 + o^10 + o^8 + o^7 + 2*o^2 + o + 2;;
+gap> Order( a );
+17
+gap> G:= Group( [ [ a ] ] );;
+gap> Size( G );
+17
+
+# 'NiceMonomorphism' shall work for finite rational matrix groups,
+# also if they do not know yet that they are finite.
+gap> G:= Group( [ [ 0, 1 ], [ 1, 0 ] ] );;
+gap> NiceMonomorphism( G );;
+gap> G:= Group( [ [ 0, 1 ], [ 1, 0 ] ] );;
+gap> IsomorphismFpGroup( G );;
+
+# 'NiceMonomorphism' and 'NiceObject' are consistent.
+gap> m:= [ [ E(4) ] ];;
+gap> G:= Group( m );;                # not rational matrix group
+gap> nice:= NiceMonomorphism( G );;
+gap> H:= SubgroupNC( G, [ m^2 ] );;  # rational matrix group
+gap> HasNiceMonomorphism( H );
+true
+gap> IsIdenticalObj( NiceMonomorphism( H ), nice );
+true
+gap> IsFinite( H );
+true
+gap> NiceObject( H ) = Image( nice, H );
+true
+
+#
+gap> TrivialSubgroup( GL(2, 2) );
+<matrix group of size 1>
+
+# The following should take less than a second.
+#@if IsPackageMarkedForLoading( "primgrp", "" )
+gap> Length( LowIndexSubgroups( GL(2,5), 50 ) ) = 31;
+true
+#@fi
+
+# 'NiceMonomorphism' behaves well w.r.t. 'ConstructingFilter'
+gap> G:= SP( 4, 2 );;
+gap> nice:= NiceMonomorphism( G );;
+gap> G2:= SP( 4, 2 : ConstructingFilter:= IsPlistMatrixRep );;
+gap> nice2:= NiceMonomorphism( G2 );;
+gap> IsPlistMatrixRep( One( G ) );
+false
+gap> IsPlistMatrixRep( One( G2 ) );
+true
+gap> IsIdenticalObj( nice, nice2 );
+false
+gap> IsSubset( Source( nice ), G );
+true
+gap> IsSubset( Source( nice2 ), G2 );
+true
+
+#
+gap> STOP_TEST( "grpmat.tst" );

@@ -1,0 +1,90 @@
+  
+  [1X3 [33X[0;0YOther functionality[133X[101X
+  
+  
+  [1X3.1 [33X[0;0YThe Jordan-Chevalley decomposition[133X[101X
+  
+  [1X3.1-1 JordanChevalleyDecMat[101X
+  
+  [33X[1;0Y[29X[2XJordanChevalleyDecMat[102X( [3XA[103X, [3Xf[103X ) [32X function[133X
+  
+  [33X[0;0YReturns  the  unique pair of matrices [22XD[122X, [22XN[122X such that the matrix [3XA[103X is written
+  as  [22XA=D+N[122X,  where  [22XN[122X  is  a  nilpotent  matrix  and  [22XD[122X  is  a matrix that is
+  diagonalisable  (over  some extension field of the default field of [3XA[103X), such
+  that  [22XD.N=N.D[122X;  the  argument  [3Xf[103X is a polynomial such that [22Xf(A)=0[122X (e.g., the
+  minimal  polynomial of [3XA[103X). This is called the Jordan-Chevalley decomposition
+  of  [3XA[103X;  the algorithm is based on [Gec22]. Note that this algorithm does not
+  require  the  knowledge  of  the eigenvalues of [3XA[103X; it works over any perfect
+  field that is available in [5XGAP[105X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA:=[ [  6, -2,  6,  1,  1 ],[127X[104X
+    [4X[25X>[125X [27X        [  1, -1,  2,  1, -2 ],[127X[104X
+    [4X[25X>[125X [27X        [ -2,  0, -1,  0, -1 ],[127X[104X
+    [4X[25X>[125X [27X        [ -1,  0, -2,  2, -1 ],[127X[104X
+    [4X[25X>[125X [27X        [ -4,  4, -6, -2,  3 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xjc:=JordanChevalleyDecMat(A,MinimalPolynomial(A));[127X[104X
+    [4X[28X[ [ [  4,  0,  4, -1,  1 ], [128X[104X
+    [4X[28X    [  1,  0,  1,  1, -1 ], [128X[104X
+    [4X[28X    [ -1, -1,  0,  1, -1 ], [128X[104X
+    [4X[28X    [  0,  0, -2,  3,  0 ], [128X[104X
+    [4X[28X    [ -3,  2, -4, -1,  2 ] ], [128X[104X
+    [4X[28X  [ [  2, -2,  2,  2,  0 ], [128X[104X
+    [4X[28X    [  0, -1,  1,  0, -1 ], [128X[104X
+    [4X[28X    [ -1,  1, -1, -1,  0 ], [128X[104X
+    [4X[28X    [ -1,  0,  0, -1, -1 ], [128X[104X
+    [4X[28X    [ -1,  2, -2, -1,  1 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XMinimalPolynomial(jc[1]);[127X[104X
+    [4X[28Xx_1^3-5*x_1^2+9*x_1-5[128X[104X
+    [4X[25Xgap>[125X [27XFactors(last);[127X[104X
+    [4X[28X[ x_1-1, x_1^2-4*x_1+5 ]  [128X[104X
+    [4X[25Xgap>[125X [27XMinimalPolynomial(jc[2]);[127X[104X
+    [4X[28Xx_1^2                     [128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIf  the  input matrix is very large, then [2XJordanChevalleyDecMatF[102X ([14X3.1-2[114X) may
+  be more efficient; this function first computes the Frobenius normal form of
+  [3XA[103X and then applies [10XJordanChevalleyDecMat[110X to each diagonal block. (The result
+  will be the same as that of 'JordanChevalleyDecMat([3XA[103X);)'[133X
+  
+  [1X3.1-2 JordanChevalleyDecMatF[101X
+  
+  [33X[1;0Y[29X[2XJordanChevalleyDecMatF[102X( [3XA[103X ) [32X function[133X
+  
+  [33X[0;0YFirst    computes    the    Frobenius   normal   form   and   then   applies
+  [2XJordanChevalleyDecMat[102X ([14X3.1-1[114X) to each diagonal block.[133X
+  
+  
+  [1X3.2 [33X[0;0YThe primary decomposition[133X[101X
+  
+  [1X3.2-1 PrimaryDecomposition[101X
+  
+  [33X[1;0Y[29X[2XPrimaryDecomposition[102X( [3XA[103X ) [32X attribute[133X
+  
+  [33X[0;0YReturns a list containing three elements. The first element is a base change
+  matrix  [22XB[122X  such that [22XB[122X[3XA[103X[22XB^-1[122X is a primary form of the matrix [3XA[103X, i.e., a block
+  diagonal matrix where the minimal polynomials of the the diagonal blocks are
+  precisely  the powers of irreducible factors of the minimal polynomial of [3XA[103X,
+  in  descending  order. The second element is a list containing the collected
+  irreducible  factors  of the minimal polynomial of [3XA[103X, in the same order. The
+  last  element  is  a  list  containing the the size of each block. The exact
+  algorithm used in this function is described in [Bon26][133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA := [ [ Z(5)^2, 0*Z(5), Z(5)^2, Z(5)^3, Z(5) ], [127X[104X
+    [4X[25X>[125X [27X   [ 0*Z(5), 0*Z(5), Z(5)^3, Z(5), Z(5)^0 ],  [127X[104X
+    [4X[25X>[125X [27X   [ Z(5), Z(5)^0, 0*Z(5), Z(5)^0, 0*Z(5) ],[127X[104X
+    [4X[25X>[125X [27X   [ Z(5)^0, Z(5)^0, Z(5)^0, 0*Z(5), Z(5)^3 ],[127X[104X
+    [4X[25X>[125X [27X   [ Z(5), 0*Z(5), Z(5)^3, 0*Z(5), Z(5)^3 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XB := PrimaryDecomposition(A);;[127X[104X
+    [4X[25Xgap>[125X [27XDisplay(B[3]);[127X[104X
+    [4X[28X[ 1, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XFactors(MinimalPolynomial(A));[127X[104X
+    [4X[28X[ x_1-Z(5)^0, x_1^4-x_1^3+Z(5)^3*x_1+Z(5)^3 ][128X[104X
+    [4X[25Xgap>[125X [27XPrimA := A^Inverse(B[1]);;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalPolynomial(PrimA{[1..1]}{[1..1]});[127X[104X
+    [4X[28Xx_1-Z(5)^0[128X[104X
+    [4X[25Xgap>[125X [27XMinimalPolynomial(PrimA{[2..5]}{[2..5]});[127X[104X
+    [4X[28Xx_1^4-x_1^3+Z(5)^3*x_1+Z(5)^3[128X[104X
+  [4X[32X[104X
+  

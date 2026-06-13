@@ -1,0 +1,86 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "AutPGrp",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Abstract", "0.0-1", [ 0, 0, 1 ], 43, 2, "abstract", "X7AA6C5737B711C89" ]
+    , 
+  [ "Copyright", "0.0-2", [ 0, 0, 2 ], 58, 2, "copyright", 
+      "X81488B807F2A1CF1" ], 
+  [ "Acknowledgements", "0.0-3", [ 0, 0, 3 ], 69, 2, "acknowledgements", 
+      "X82A988D47DFAFCFA" ], 
+  [ "Table of Contents", "0.0-4", [ 0, 0, 4 ], 76, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 4, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 4, 4, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe automorphism group method\033[133X\033[101X"
+        , "2", [ 2, 0, 0 ], 1, 5, "the automorphism group method", 
+      "X858BB98D85D78C8C" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe automorphism group method\033[133X\033[101X"
+        , "2.1", [ 2, 1, 0 ], 4, 5, "the automorphism group method", 
+      "X858BB98D85D78C8C" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe underlying function\033[133X\033[101X", 
+      "3", [ 3, 0, 0 ], 1, 7, "the underlying function", "X79DCF7D9853381F3" ]
+    , [ "\033[1X\033[33X\033[0;-2YThe underlying function\033[133X\033[101X", 
+      "3.1", [ 3, 1, 0 ], 4, 7, "the underlying function", 
+      "X79DCF7D9853381F3" ], 
+  [ "\033[1X\033[33X\033[0;-2YInfluencing the algorithm\033[133X\033[101X", 
+      "4", [ 4, 0, 0 ], 1, 10, "influencing the algorithm", 
+      "X86240F237D909E1C" ], 
+  [ "\033[1X\033[33X\033[0;-2YOutline of the algorithm\033[133X\033[101X", 
+      "4.1", [ 4, 1, 0 ], 22, 10, "outline of the algorithm", 
+      "X85D2ECC779E3CF7D" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe initialisation step\033[133X\033[101X", 
+      "4.2", [ 4, 2, 0 ], 63, 11, "the initialisation step", 
+      "X87B27C1F810822F3" ], 
+  [ "\033[1X\033[33X\033[0;-2YStabilisers in matrix groups\033[133X\033[101X",
+      "4.3", [ 4, 3, 0 ], 104, 11, "stabilisers in matrix groups", 
+      "X869B678180AD5E21" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSearching for a small generating set\033[133X\\
+033[101X", "4.4", [ 4, 4, 0 ], 128, 12, "searching for a small generating set"
+        , "X859CF9757A1F51EB" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAn interactive version of the algorithm\033[133X\\
+033[101X", "4.5", [ 4, 5, 0 ], 151, 12, 
+      "an interactive version of the algorithm", "X81A0235D7E15DFBD" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAdditional features of the package\033[133X\033[1\
+01X", "5", [ 5, 0, 0 ], 1, 15, "additional features of the package", 
+      "X7C0BF58A85D48781" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAdditional features of the package\033[133X\033[1\
+01X", "5.1", [ 5, 1, 0 ], 4, 15, "additional features of the package", 
+      "X7C0BF58A85D48781" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 16, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XAutomorphismGroup\033[102X", "2.1-1", [ 2, 1, 1 ], 11, 5, 
+      "automorphismgroup", "X87677B0787B4461A" ], 
+  [ "\033[2XInfoAutGrp\033[102X", "2.1-2", [ 2, 1, 2 ], 24, 5, "infoautgrp", 
+      "X7D16AFE27E0B7133" ], 
+  [ "\033[2XAutomorphismGroupPGroup\033[102X", "3.1-1", [ 3, 1, 1 ], 12, 7, 
+      "automorphismgrouppgroup", "X83ABE66C83446A0B" ], 
+  [ "\033[2XConvertHybridAutGroup\033[102X", "3.1-2", [ 3, 1, 2 ], 55, 8, 
+      "converthybridautgroup", "X7DEE06CF79DC7A7C" ], 
+  [ "\033[2XPcGroupAutPGroup\033[102X", "3.1-3", [ 3, 1, 3 ], 101, 9, 
+      "pcgroupautpgroup", "X7ED1F7C6849CA658" ], 
+  [ "\033[2XCHOP_MULT\033[102X", "4.3-1", [ 4, 3, 1 ], 120, 12, "chop_mult", 
+      "X86529C2080159D8A" ], 
+  [ "\033[2XNICE_STAB\033[102X", "4.4-1", [ 4, 4, 1 ], 140, 12, "nice_stab", 
+      "X83C095D17D35A8DE" ], 
+  [ "\033[2XNumberOfPClass2PGroups\033[102X for 3 arguments", "5.1-1", 
+      [ 5, 1, 1 ], 11, 15, "numberofpclass2pgroups for 3 arguments", 
+      "X7E472D2579705246" ], 
+  [ "\033[2XNumberOfPClass2PGroups\033[102X for 2 arguments", "5.1-2", 
+      [ 5, 1, 2 ], 18, 15, "numberofpclass2pgroups for 2 arguments", 
+      "X825FC0D9796B0D97" ], 
+  [ "\033[2XNumberOfClass2LieAlgebras\033[102X for 3 arguments", "5.1-3", 
+      [ 5, 1, 3 ], 25, 15, "numberofclass2liealgebras for 3 arguments", 
+      "X8399B9137982EBAC" ], 
+  [ "\033[2XNumberOfClass2LieAlgbras\033[102X for 2 arguments", "5.1-4", 
+      [ 5, 1, 4 ], 32, 15, "numberofclass2liealgbras for 2 arguments", 
+      "X824DFC307CA9626E" ] ]
+);

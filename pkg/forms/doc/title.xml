@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    Forms
+  </Title>
+  <Subtitle>
+    Sesquilinear and Quadratic
+  </Subtitle>
+  <Version>
+    1.3.0
+  </Version>
+  <Author>
+    John Bamberg<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+School of Mathematics and Statistics<Br/>
+The University of Western Australia<Br/>
+35 Stirling Highway<Br/>
+Crawley WA 6009, Perth<Br/>
+Australia<Br/>
+</Address>
+<Email>john.bamberg@uwa.edu.au</Email>
+<Homepage>https://johnbamberg.github.io</Homepage>
+
+  </Author>
+  <Author>
+    Jan De Beule<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Mathematics and Data Science<Br/>
+Vrije Universiteit Brussel<Br/>
+Pleinlaan 2<Br/>
+B-1050 Brussel<Br/>
+Belgium<Br/>
+</Address>
+<Email>jan@debeule.eu</Email>
+<Homepage>http://www.debeule.eu</Homepage>
+
+  </Author>
+  <Date>
+    17 May 2026
+  </Date>
+  <Copyright>
+    &copyright; 2015-2026 by the authors<P/>
+
+This package may be distributed under the terms and conditions of the GNU Public License Version 2 or (at your option) any later version.
+  </Copyright>
+  </TitlePage>

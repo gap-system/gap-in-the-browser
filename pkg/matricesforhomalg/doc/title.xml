@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    MatricesForHomalg
+  </Title>
+  <Subtitle>
+    Matrices for the homalg project
+  </Subtitle>
+  <Version>
+    2026.04-01
+  </Version>
+  <Author>
+    Mohamed Barakat
+<Address>
+Walter-Flex-Str. 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>mohamed.barakat@uni-siegen.de</Email>
+<Homepage>https://mohamed-barakat.github.io</Homepage>
+  </Author>
+  <Author>
+    Markus Lange-Hegermann
+<Address>
+Markus Lange-Hegermann<Br/>
+Hochschule Ostwestfalen-Lippe<Br/>
+Liebigstraße 87<Br/>
+32657 Lemgo<Br/>
+Germany<Br/>
+</Address>
+<Email>markus.lange-hegermann@hs-owl.de</Email>
+<Homepage>https://www.th-owl.de/eecs/fachbereich/team/markus-lange-hegermann/</Homepage>
+  </Author>
+  <Author>
+    Martin Leuner
+<Address>
+Martin Leuner<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>leuner@momo.math.rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/Mitarbeiter/leuner.php</Homepage>
+  </Author>
+  <Author>
+    Vinay Wagh
+<Address>
+E-102, Department of Mathematics,<Br/>
+Indian Institute of Technology Guwahati,<Br/>
+Guwahati, Assam, India.<Br/>
+PIN: 781 039.<Br/>
+India<Br/>
+</Address>
+<Email>waghoba@gmail.com</Email>
+<Homepage>http://www.iitg.ernet.in/vinay.wagh/</Homepage>
+  </Author>
+  <Date>
+    10 April 2026
+  </Date>
+  </TitlePage>

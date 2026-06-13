@@ -1,0 +1,294 @@
+  
+  [1X2 [33X[0;0YNormal forms of matrices[133X[101X
+  
+  
+  [1X2.1 [33X[0;0YThe Frobenius normal form[133X[101X
+  
+  [33X[0;0YGiven  a field [22XK[122X and an [22Xn× n[122X-matrix [22XA[122X over [22XK[122X, the [13XFrobenius normal form[113X of [22XA[122X
+  is a block diagonal matrix, where the diagonal blocks are companion matrices
+  corresponding  to  the  invariant  factors  of  [22XA[122X.  It  reflects the minimal
+  decomposition of the vector space [22XK^n[122X into cyclic subspaces under the action
+  of [22XA[122X. The Frobenius normal form is also called the rational canonical form.[133X
+  
+  [1X2.1-1 FrobeniusNormalForm[101X
+  
+  [33X[1;0Y[29X[2XFrobeniusNormalForm[102X( [3XA[103X ) [32X function[133X
+  
+  [33X[0;0YReturns  the invariant factors of a matrix [3XA[103X and an invertible matrix [22XP[122X such
+  that  [22XPAP^-1[122X is the Frobenius normal form of [3XA[103X. The algorithm first computes
+  a   maximal   vector   and   an  [3XA[103X-invariant  complement  following  Jacob's
+  construction  (as  described  in  matrix  language  in  [Gec20]);  then  the
+  algorithm  continues  recursively. It works for matrices over any field that
+  is available in [5XGAP[105X. The output is a triple with[133X
+  
+  [30X    [33X[0;6Y1st component = list of invariant factors;[133X
+  
+  [30X    [33X[0;6Y2nd component = base change matrix [22XP[122X; and[133X
+  
+  [30X    [33X[0;6Y3rd  component  =  indices where the various blocks in the normal form
+        begin.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA:=[ [  2,  2,  0,  1,  0,  2,  1 ],[127X[104X
+    [4X[25X>[125X [27X        [  0,  4,  0,  0,  0,  1,  0 ],[127X[104X
+    [4X[25X>[125X [27X        [  0,  1,  1,  0,  0,  1,  1 ],[127X[104X
+    [4X[25X>[125X [27X        [  0, -1,  0,  1,  0, -1,  0 ],[127X[104X
+    [4X[25X>[125X [27X        [  0, -7,  0,  0,  1, -5,  0 ],[127X[104X
+    [4X[25X>[125X [27X        [  0, -2,  0,  0,  0,  1,  0 ],[127X[104X
+    [4X[25X>[125X [27X        [  0, -1,  0,  0,  0, -1,  1 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xf:=FrobeniusNormalForm(A);[127X[104X
+    [4X[28X[ [ x_1^4-7*x_1^3+17*x_1^2-17*x_1+6, x_1^2-3*x_1+2, x_1-1 ], [128X[104X
+    [4X[28X  [ [    1,   -2,    1,    1,    0,    0,    1 ],[128X[104X
+    [4X[28X    [    2,   -7,    1,    2,    0,   -1,    3 ],[128X[104X
+    [4X[28X    [    4,  -26,    1,    4,    0,   -8,    6 ],[128X[104X
+    [4X[28X    [    8,  -89,    1,    8,    0,  -35,   11 ],[128X[104X
+    [4X[28X    [ -1/2,   -2,    0,  1/2,    0,   -2, -3/2 ],[128X[104X
+    [4X[28X    [   -1,   -4,    0,    0,    0,   -4,   -2 ],[128X[104X
+    [4X[28X    [    0,  9/4,    0,   -3,    1,  5/4,  1/4 ] ],[128X[104X
+    [4X[28X  [ 1, 5, 7 ]  ]                 [128X[104X
+    [4X[25Xgap>[125X [27XPrintArray(f[2]*A*f[2]^-1);[127X[104X
+    [4X[28X[ [   0,   1,   0,   0,   0,   0,   0 ], [128X[104X
+    [4X[28X  [   0,   0,   1,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   1,   0,   0,   0 ],[128X[104X
+    [4X[28X  [  -6,  17, -17,   7,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   1,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,  -2,   3,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  the  Frobenius  normal  form  is  unique up to the choice of the
+  companion  matrices  and  the permutation of the blocks corresponding to the
+  invariant  factors.  So  while this function is significantly more efficient
+  than  the existing 'RationalCanonicalFormTransform', the two functions yield
+  slightly   different   results.   In  'RationalCanonicalFormTransform',  the
+  companion  matrices  are  consistent  with  the  output  of  'CompanionMat'.
+  However,  given  an  [22Xn× n[122X cyclic matrix [22XA[122X, along with a corresponding cyclic
+  vector  [22Xv[122X,  one  can  compute a change of basis matrix from A to a companion
+  matrix  of its minimal polynomial by computing [22Xv[122X multiplied with powers of [22XA[122X
+  (i.e., [22Xv[122X, [22XvA[122X, ...., [22XvA^n-1[122X). This approach follows GAP’s convention of right
+  multiplication   and   yields  a  companion  matrix  in  the  form  used  by
+  [2XFrobeniusNormalForm[102X.  Furthermore 'RationalCanonicalFormTransform' sorts the
+  invariant  factors  in ascending order, while [2XFrobeniusNormalForm[102X sorts them
+  in descending order.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA := [ [ 0*Z(5), Z(5)^3, 0*Z(5), Z(5)^0, Z(5)^3 ], [127X[104X
+    [4X[25X>[125X [27X  [ Z(5)^0, 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^2 ], [127X[104X
+    [4X[25X>[125X [27X  [ Z(5), Z(5), 0*Z(5), Z(5)^0, Z(5)^3 ], [127X[104X
+    [4X[25X>[125X [27X  [ 0*Z(5), Z(5), Z(5)^2, Z(5)^2, Z(5) ], [127X[104X
+    [4X[25X>[125X [27X  [ Z(5)^3, Z(5)^3, Z(5)^0, Z(5)^3, Z(5)^0 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XT:=RationalCanonicalFormTransform(A);;[127X[104X
+    [4X[25Xgap>[125X [27XS:=TransposedMat(FrobeniusNormalForm(TransposedMat(A))[2]);;[127X[104X
+    [4X[25Xgap>[125X [27XDisplay(A^T);[127X[104X
+    [4X[28X . . . . 3[128X[104X
+    [4X[28X 1 . . . 2[128X[104X
+    [4X[28X . 1 . . 3[128X[104X
+    [4X[28X . . 1 . 4[128X[104X
+    [4X[28X . . . 1 .[128X[104X
+    [4X[25Xgap>[125X [27XDisplay(A^S);[127X[104X
+    [4X[28X . . . . 3[128X[104X
+    [4X[28X 1 . . . 2[128X[104X
+    [4X[28X . 1 . . 3[128X[104X
+    [4X[28X . . 1 . 4[128X[104X
+    [4X[28X . . . 1 .[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YAdditionally,  [10XRationalCanonicalFormTransform[110X sorts the invariant factors in
+  ascending  order,  whereas  the [2XFrobeniusNormalForm[102X sorts them in descending
+  order.  Consequently,  the  outputs  of  the  two  functions  agree  up to a
+  permutation  of  blocks  and transposition. To get a drop in replacement for
+  'RationalCanonicalFormTransform', see [2XFrobeniusNormalFormLikeRCFT[102X ([14X2.1-2[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xaa:=[[  0, -8, 12, 40,-36,  4,  0, 59, 15, -9],[127X[104X
+    [4X[25X>[125X [27X        [ -2, -2, -2,  6,-11,  1, -1, 10,  1,  0],[127X[104X
+    [4X[25X>[125X [27X        [  1,  5,  0, -6, 12, -2,  0,-12, -4,  2],[127X[104X
+    [4X[25X>[125X [27X        [  0,  0,  0,  2,  0,  0,  0,  7,  0,  0],[127X[104X
+    [4X[25X>[125X [27X        [  0,  2, -3, -7,  8, -1,  0, -7, -3,  2],[127X[104X
+    [4X[25X>[125X [27X        [ -5, -4, -6, 18,-30,  2, -2, 35,  5, -1],[127X[104X
+    [4X[25X>[125X [27X        [ -1, -6,  6, 20,-28,  3,  0, 24, 10, -6],[127X[104X
+    [4X[25X>[125X [27X        [  0,  0,  0, -1,  0,  0,  0, -3,  0,  0],[127X[104X
+    [4X[25X>[125X [27X        [  0,  0, -1, -2, -2,  0, -1, -7,  0,  0],[127X[104X
+    [4X[25X>[125X [27X        [  0, -8,  9, 21,-36,  4, -2, 12, 12, -8]];;[127X[104X
+    [4X[25Xgap>[125X [27Xt:=RationalCanonicalFormTransform(aa);;[127X[104X
+    [4X[25Xgap>[125X [27XDisplay(aa^t);[127X[104X
+    [4X[28X[ [   0,   0,   0,   1,   0,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   1,   0,   0,   0,   0,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   1,   0,   0,   0,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   1,   0,   0,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   0,   0,   0,   1 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   1,   0,   0,   0,   0,   1 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   1,   0,   0,   0,   1 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   1,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   0,   1,   0,  -1 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   0,   0,   1,  -1 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xres:=FrobeniusNormalForm(aa);;[127X[104X
+    [4X[25Xgap>[125X [27XDisplay(aa^(res[2]^-1));[127X[104X
+    [4X[28X[ [   0,   1,   0,   0,   0,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   1,   0,   0,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   1,   0,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   1,   0,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   1,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   1,   1,   1,   0,  -1,  -1,   0,   0,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   0,   1,   0,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   0,   0,   1,   0 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   0,   0,   0,   1 ],[128X[104X
+    [4X[28X  [   0,   0,   0,   0,   0,   0,   1,   0,   0,   0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-2 FrobeniusNormalFormLikeRCFT[101X
+  
+  [33X[1;0Y[29X[2XFrobeniusNormalFormLikeRCFT[102X( [3XA[103X ) [32X function[133X
+  
+  [33X[0;0YThis function returns the same result as [2XFrobeniusNormalForm[102X ([14X2.1-1[114X), except
+  that  the invariant factors are sorted in descending order and the companion
+  matrices  on  the diagonal are transposed. Furthermore, if [22XP[122X is the computed
+  base change matrix, the Frobenius normal form is obtained by [22XP^-1AP[122X (instead
+  of  [22XPAP^-1[122X).  This  means that [22XP[122X can be used as a direct drop-in replacement
+  for RationalCanonicalFormTransform.[133X
+  
+  [33X[0;0YNote  that  this  function  works by calling [2XFrobeniusNormalForm[102X ([14X2.1-1[114X) and
+  then  modifying  the  computed transformation matrix and is thus potentially
+  less efficient than using the original function.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA := [ [ 0*Z(5), Z(5)^2, Z(5)^2, 0*Z(5), Z(5)^3, Z(5)^3, 0*Z(5), Z(5)^3, [127X[104X
+    [4X[25X>[125X [27X      0*Z(5), Z(5) ], [127X[104X
+    [4X[25X>[125X [27X  [ Z(5)^0, Z(5)^0, Z(5)^0, Z(5), Z(5)^3, Z(5), Z(5)^3, 0*Z(5), Z(5), [127X[104X
+    [4X[25X>[125X [27X      0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X  [ Z(5), 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^2, Z(5)^0, 0*Z(5), Z(5)^0, [127X[104X
+    [4X[25X>[125X [27X      Z(5), Z(5)^2 ], [127X[104X
+    [4X[25X>[125X [27X  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, [127X[104X
+    [4X[25X>[125X [27X      0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X  [ 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^0, Z(5)^0, Z(5)^3, 0*Z(5), Z(5)^0, [127X[104X
+    [4X[25X>[125X [27X      Z(5)^2, Z(5)^2 ], [127X[104X
+    [4X[25X>[125X [27X  [ 0*Z(5), Z(5), Z(5)^3, Z(5)^0, 0*Z(5), Z(5)^2, Z(5)^0, 0*Z(5), [127X[104X
+    [4X[25X>[125X [27X      0*Z(5), Z(5)^3 ], [127X[104X
+    [4X[25X>[125X [27X  [ Z(5)^3, Z(5)^3, Z(5), 0*Z(5), Z(5)^2, Z(5)^0, 0*Z(5), Z(5)^3, [127X[104X
+    [4X[25X>[125X [27X      0*Z(5), Z(5)^3 ], [127X[104X
+    [4X[25X>[125X [27X  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, [127X[104X
+    [4X[25X>[125X [27X      0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X  [ 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^0, Z(5)^0, 0*Z(5), Z(5)^3, Z(5)^0, [127X[104X
+    [4X[25X>[125X [27X      0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X  [ 0*Z(5), Z(5)^2, Z(5)^3, Z(5), Z(5)^3, Z(5)^3, Z(5)^0, Z(5)^2, [127X[104X
+    [4X[25X>[125X [27X      Z(5)^2, Z(5)^2 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xfrob := FrobeniusNormalFormLikeRCFT(A)[2];;[127X[104X
+    [4X[25Xgap>[125X [27Xrat := RationalCanonicalFormTransform(A);;[127X[104X
+    [4X[25Xgap>[125X [27XDisplay(A^rat);[127X[104X
+    [4X[28X . . . 1 . . . . . .[128X[104X
+    [4X[28X 1 . . . . . . . . .[128X[104X
+    [4X[28X . 1 . . . . . . . .[128X[104X
+    [4X[28X . . 1 . . . . . . .[128X[104X
+    [4X[28X . . . . . . . . . 4[128X[104X
+    [4X[28X . . . . 1 . . . . 2[128X[104X
+    [4X[28X . . . . . 1 . . . 1[128X[104X
+    [4X[28X . . . . . . 1 . . .[128X[104X
+    [4X[28X . . . . . . . 1 . 1[128X[104X
+    [4X[28X . . . . . . . . 1 3[128X[104X
+    [4X[25Xgap>[125X [27XDisplay(A^frob);[127X[104X
+    [4X[28X . . . 1 . . . . . .[128X[104X
+    [4X[28X 1 . . . . . . . . .[128X[104X
+    [4X[28X . 1 . . . . . . . .[128X[104X
+    [4X[28X . . 1 . . . . . . .[128X[104X
+    [4X[28X . . . . . . . . . 4[128X[104X
+    [4X[28X . . . . 1 . . . . 2[128X[104X
+    [4X[28X . . . . . 1 . . . 1[128X[104X
+    [4X[28X . . . . . . 1 . . .[128X[104X
+    [4X[28X . . . . . . . 1 . 1[128X[104X
+    [4X[28X . . . . . . . . 1 3[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-3 InvariantFactorsMat[101X
+  
+  [33X[1;0Y[29X[2XInvariantFactorsMat[102X( [3XA[103X ) [32X function[133X
+  
+  [33X[0;0YReturns the invariant factors of the matrix [3XA[103X, i.e., the minimal polynomials
+  of   the   diagonal  blocks  in  the  Frobenius  normal  form  of  [3XA[103X.  Thus,
+  'InvariantFactorsMat'  also  specifies the rational canonical form of [3XA[103X, but
+  without computing the base change.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA := [ [ 2,  2, 0, 1, 0,  2, 1 ],[127X[104X
+    [4X[25X>[125X [27X          [ 0,  4, 0, 0, 0,  1, 0 ],[127X[104X
+    [4X[25X>[125X [27X          [ 0,  1, 1, 0, 0,  1, 1 ],[127X[104X
+    [4X[25X>[125X [27X          [ 0, -1, 0, 1, 0, -1, 0 ],[127X[104X
+    [4X[25X>[125X [27X          [ 0, -7, 0, 0, 1, -5, 0 ],[127X[104X
+    [4X[25X>[125X [27X          [ 0, -2, 0, 0, 0,  1, 0 ],[127X[104X
+    [4X[25X>[125X [27X          [ 0, -1, 0, 0, 0, -1, 1 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XInvariantFactorsMat(A);[127X[104X
+    [4X[28X  [ x_1^4-7*x_1^3+17*x_1^2-17*x_1+6, x_1^2-3*x_1+2, x_1-1 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.2 [33X[0;0YThe Jordan normal form[133X[101X
+  
+  [33X[0;0YThe  Jordan  normal form of a matrix [22XA[122X is a block diagonal matrix, where the
+  diagonal  blocks  are Jordan blocks corresponding to the elementary divisors
+  of  [22XA[122X.  It  reflects  the maximal decomposition of the vector space [22XK^n[122X into
+  cyclic  subspaces  under  the action of [22XA[122X. For a more thorough definition of
+  the Jordan normal form and details about the algorithms used, see [Bon26].[133X
+  
+  [1X2.2-1 JordanNormalForm[101X
+  
+  [33X[1;0Y[29X[2XJordanNormalForm[102X( [3XA[103X ) [32X function[133X
+  
+  [33X[0;0YReturns  a  list containing two entries. The first is a base change matrix [22XB[122X
+  such  that  [22XB[122X[3XA[103X[22XB^-1[122X  is  the  Jordan  normal form of [3XA[103X, i.e. a block diagonal
+  matrix  where  the  diagonal  blocks  are Jordan blocks corresponding to the
+  elementary  divisors of [3XA[103X in descending order. The second entry is a list of
+  the  elementary divisors of [3XA[103X, also in descending order. The algorithm first
+  computes   a   primary  decomposition  of  [3XA[103X  and  then  computes  a  cyclic
+  decomposition  of  the  primary components. Finally it computes Jordan block
+  form  for  each of the cyclic components. The blocks are ordered in the same
+  order  as  in  the  list  containing  the  elementary divisors. It works for
+  matrices over finite fields.[133X
+  
+  [33X[0;0YSince  all of the blocks on the resulting transformed matrix are cyclic, one
+  can retrieve their size by the degrees of the respective elementary divisor.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA := [ [ 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^3, Z(5)^3, Z(5)^0 ], [127X[104X
+    [4X[25X>[125X [27X   [ 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^0, Z(5)^3, Z(5)^3 ], [127X[104X
+    [4X[25X>[125X [27X   [ Z(5)^0, Z(5)^0, Z(5)^3, Z(5)^2, Z(5)^0, Z(5) ], [127X[104X
+    [4X[25X>[125X [27X   [ 0*Z(5), Z(5)^3, Z(5), Z(5), 0*Z(5), Z(5)^2 ], [127X[104X
+    [4X[25X>[125X [27X   [ Z(5)^2, Z(5)^0, Z(5)^0, 0*Z(5), Z(5), Z(5) ], [127X[104X
+    [4X[25X>[125X [27X   [ 0*Z(5), Z(5)^0, Z(5)^2, Z(5), Z(5), Z(5) ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XB := JordanNormalForm(A);;[127X[104X
+    [4X[25Xgap>[125X [27XDisplay(A^Inverse(B[1]));[127X[104X
+    [4X[28X3 . . . . .[128X[104X
+    [4X[28X. 1 . . . .[128X[104X
+    [4X[28X. . . 1 . .[128X[104X
+    [4X[28X. . 2 . . .[128X[104X
+    [4X[28X. . . . . 1[128X[104X
+    [4X[28X. . . . 3 4[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThis function computes the Jordan normal form of [22XA[122X significantly faster if [22XA[122X
+  is either cyclic or has irreducible minimal polynomial.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XB:= [ [ Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X[ Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X[ 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X[ 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5) ], [127X[104X
+    [4X[25X>[125X [27X[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3 ], [127X[104X
+    [4X[25X>[125X [27X[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5) ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XFactors(MinimalPolynomial(B));[127X[104X
+    [4X[28X[ x_1^2+x_1+Z(5)^0 ][128X[104X
+    [4X[25Xgap>[125X [27XDisplay(B^Inverse(JordanNormalForm(B)[1]));[127X[104X
+    [4X[28X. 1 . . . . . . . .[128X[104X
+    [4X[28X4 4 . . . . . . . .[128X[104X
+    [4X[28X. . . 1 . . . . . .[128X[104X
+    [4X[28X. . 4 4 . . . . . .[128X[104X
+    [4X[28X. . . . . 1 . . . .[128X[104X
+    [4X[28X. . . . 4 4 . . . .[128X[104X
+    [4X[28X. . . . . . . 1 . .[128X[104X
+    [4X[28X. . . . . . 4 4 . .[128X[104X
+    [4X[28X. . . . . . . . . 1[128X[104X
+    [4X[28X. . . . . . . . 4 4[128X[104X
+  [4X[32X[104X
+  

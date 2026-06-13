@@ -1,0 +1,223 @@
+  
+  [1X4 [33X[0;0YFunctions for Noncommutative Monomials[133X[101X
+  
+  [33X[0;0YA  monomial,  such  as  [22Xab^2a[122X  is represented in [5XGBNP[105X as the list [22X[1,2,2,1][122X.
+  Polynomials  have  a  more complicated structure, for example [22X6ab^2a - 7ab +
+  8ba[122X  is  represented  in  [5XGBNP[105X by [22X[ [ [1,2,2,1], [1,2], [2,1] ], [6,-7,8] ][122X,
+  which  is  a  list  of  monomials  followed  by  the  corresponding  list of
+  coefficients. Polynomials are dealt with in the following chapter.[133X
+  
+  [33X[0;0YAs shown in Section [14X2.1[114X, [5XGBNP[105X has functions [10XPrintNP[110X and [10XPrintNPList[110X to print
+  a polynomial and a list of polynomials. Here we provide equivalent functions
+  for monomials.[133X
+  
+  
+  [1X4.1 [33X[0;0YBasic functions for monomials[133X[101X
+  
+  
+  [1X4.1-1 [33X[0;0YPredefined algebras[133X[101X
+  
+  [33X[0;0YFor  convenience  of  use  in  examples,  three algebras over the rationals,
+  [10XAlbebraIBNP[110X  and  [10XAlgebrakIBNP[110X  with  [22Xk  ∈  [2,3,4][122X,  are predefined in this
+  package.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XGeneratorsOfAlgebra( AlgebraIBNP );[127X[104X
+    [4X[28X[ (1)*<identity ...>, (1)*a, (1)*b ][128X[104X
+    [4X[25Xgap>[125X [27XAlgebra2IBNP = AlgebraIBNP;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XA3 := Algebra3IBNP;[127X[104X
+    [4X[28X<algebra-with-one over Rationals, with 3 generators>[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-2 PrintNM[101X
+  
+  [33X[1;0Y[29X[2XPrintNM[102X( [3Xmonomial[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XPrintNMList[102X( [3Xlist[103X ) [32X operation[133X
+  
+  [33X[0;0YRecall,  from  [5XGBNP[105X,  that  the actual letters printed are controlled by the
+  operation [10XGBNP.ConfigPrint[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XGBNP.ConfigPrint( "a", "b", "c" );[127X[104X
+    [4X[25Xgap>[125X [27Xmon := [2,1,1,1,3,3,1];;[127X[104X
+    [4X[25Xgap>[125X [27XPrintNM( mon );[127X[104X
+    [4X[28Xba^3c^2a[128X[104X
+    [4X[25Xgap>[125X [27XL := [ [1,2,2], [3,1,2], [3,3,3], [2], [ ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XPrintNMList( L );                            [127X[104X
+    [4X[28Xab^2[128X[104X
+    [4X[28Xcab[128X[104X
+    [4X[28Xc^3[128X[104X
+    [4X[28Xb[128X[104X
+    [4X[28X1[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-3 NM2GM[101X
+  
+  [33X[1;0Y[29X[2XNM2GM[102X( [3Xmonomial[103X, [3Xalgebra[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XNM2GMList[102X( [3Xlist[103X, [3Xalgebra[103X ) [32X operation[133X
+  
+  [33X[0;0YRecall,  from  [5XGBNP[105X,  that  the  functions  [10XNP2GP[110X  and  [10XNP2GPList[110X  convert a
+  polynomial  (or  list  of  polynomials)  in  NP-format  to an element of the
+  algebra.  This  package  provides  additional  functions [10XNM2GM[110X and [10XNM2GMList[110X
+  which do the equivalent conversion for monomials.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xm := NM2GM( mon, A3 );[127X[104X
+    [4X[28X(1)*b*a^3*c^2*a[128X[104X
+    [4X[25Xgap>[125X [27XNM2GMList( [ mon, Reversed(mon), Concatenation(mon,mon) ], A3 );[127X[104X
+    [4X[28X[ (1)*b*a^3*c^2*a, (1)*a*c^2*a^3*b, (1)*(b*a^3*c^2*a)^2 ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-4 GM2NM[101X
+  
+  [33X[1;0Y[29X[2XGM2NM[102X( [3Xmonomial[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XGM2NMList[102X( [3Xlist[103X ) [32X operation[133X
+  
+  [33X[0;0YRecall,  from  [5XGBNP[105X,  that  the  functions  [10XGP2NP[110X  and  [10XGP2NPList[110X  convert a
+  polynomial  (or  list  of  polynomials)  to  the  equivalent NP-format. This
+  package  provides  additional  functions  [10XGM2NM[110X  and  [10XGM2NMList[110X which do the
+  equivalent conversion for monomials.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xa:=A3.1;; b:=A3.2;; c:=A3.3;;[127X[104X
+    [4X[25Xgap>[125X [27Xp := (a*b*c)^2;;             [127X[104X
+    [4X[25Xgap>[125X [27XGM2NM(p);[127X[104X
+    [4X[28X[ 1, 2, 3, 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XGM2NMList( [ p, p^2, a^3, b^4, c^5 ] );[127X[104X
+    [4X[28X[ [ 1, 2, 3, 1, 2, 3 ], [ 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3 ], [ 1, 1, 1 ], [128X[104X
+    [4X[28X  [ 2, 2, 2, 2 ], [ 3, 3, 3, 3, 3 ] ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-5 PrefixNM[101X
+  
+  [33X[1;0Y[29X[2XPrefixNM[102X( [3Xmonomial[103X, [3Xposint[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XSubwordNM[102X( [3Xmonomial[103X, [3Xposint[103X, [3Xposint[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XSuffixNM[102X( [3Xmonomial[103X, [3Xposint[103X ) [32X operation[133X
+  
+  [33X[0;0YThese are the three operations which pick a sublist from a monomial list.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xmon := [2,1,1,1,3,3,1];;[127X[104X
+    [4X[25Xgap>[125X [27XPrefixNM( mon, 3 );[127X[104X
+    [4X[28X[ 2, 1, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XSubwordNM( mon, 3, 6 );[127X[104X
+    [4X[28X[ 1, 1, 3, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XSuffixNM( mon, 3 );[127X[104X
+    [4X[28X[ 3, 3, 1 ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-6 SuffixPrefixPosNM[101X
+  
+  [33X[1;0Y[29X[2XSuffixPrefixPosNM[102X( [3Xmonomial[103X, [3Xmonomial[103X, [3Xposint[103X, [3Xposint[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  operation  [10XSuffixPrefixPosNM(  left,  right,  start,  limit)[110X  looks for
+  overlaps  of type [13Xsuffix of left = prefix of right[113X. The size of the smallest
+  such  overlap  is returned. The overlaps which are considered are controlled
+  by  the third and fourth arguments. We commence by looking at the overlap of
+  size [13Xstart[113X and go no further than the overlap of size [13Xlimit[113X. When no overlap
+  exists,  [22X0[122X  is  returned.  To  test all possibilities, [13Xstart[113X should be [22X1[122X and
+  [13Xlimit[113X  should  be  [22Xmin(|left|,|right|)-1[122X. It is the user's responsibility to
+  make sure that these bounds are correct - no checks are made.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xm1 := [2,1,1,1,2,2,1,1];;           ## m1 = ba^3b^2a^2[127X[104X
+    [4X[25Xgap>[125X [27Xm2 := [1,1,2,2,1,1];;               ## m2 = a^2b^2a^2[127X[104X
+    [4X[25Xgap>[125X [27XSuffixPrefixPosNM( m1, m2, 1, 5 );  ## overlap is a                   [127X[104X
+    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27XSuffixPrefixPosNM( m1, m2, 2, 5 );  ## overlap is a^2[127X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27XSuffixPrefixPosNM( m1, m2, 3, 5 );  ## no longer an overlap[127X[104X
+    [4X[28X0[128X[104X
+    [4X[25Xgap>[125X [27XSuffixPrefixPosNM( m2, m1, 1, 5 );  ## overlap is ba^2[127X[104X
+    [4X[28X3[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-7 SubwordPosNM[101X
+  
+  [33X[1;0Y[29X[2XSubwordPosNM[102X( [3Xmonomial[103X, [3Xmonomial[103X, [3Xposint[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsSubwordNM[102X( [3Xmonomial[103X, [3Xmonomial[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  operation [10XSubwordPosNM( small, large, start );[110X answers the question for
+  monomials  [13XIs  small  a  subword  of large?[113X. The value returned is the start
+  position in [13Xlarge[113X of the first subword found. When no subword is found, [22X0[122X is
+  returned.  The  search  commences at position [13Xstart[113X in [13Xlarge[113X so, to test all
+  possibilities, the third argument should be [22X1[122X.[133X
+  
+  [33X[0;0YTo  just  ask  whether  or not [13Xsmall[113X is a subword of [13Xlarge[113X, use [10XIsSubwordNM(
+  small, large);[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xm3 := [ 1, 1, 2 ];;                 ## m3 = a^2b[127X[104X
+    [4X[25Xgap>[125X [27XSubwordPosNM( m3, m1, 1 );[127X[104X
+    [4X[28X3                                        ## m1 = ba(a^b)ba^2[128X[104X
+    [4X[25Xgap>[125X [27XSubwordPosNM( m3, m2, 1 );[127X[104X
+    [4X[28X1                                        ## m2 = (a^2b)ba^2[128X[104X
+    [4X[25Xgap>[125X [27XSubwordPosNM( m3, m2, 2 );[127X[104X
+    [4X[28X0[128X[104X
+    [4X[25Xgap>[125X [27XIsSubwordNM( [ 2, 1, 2 ], m1 );[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-8 LeadVarNM[101X
+  
+  [33X[1;0Y[29X[2XLeadVarNM[102X( [3Xmonomial[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XLeadExpNM[102X( [3Xmonomial[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XTailNM[102X( [3Xmonomial[103X ) [32X operation[133X
+  
+  [33X[0;0YGiven  the  word [22Xw = b^4a^3c^2[122X, represented by [22X[2,2,2,2,1,1,1,3,3][122X, the [13Xlead
+  variable[113X  is  [22Xb[122X or [22X2[122X, and the [13Xlead exponent[113X is [22X4[122X. Removing [22Xb^4[122X from [22Xw[122X leaves
+  the [13Xtail[113X [22Xa^3c^2[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xmon4 := [2,2,2,2,1,1,1,3,3];;[127X[104X
+    [4X[25Xgap>[125X [27XLeadVarNM( mon4 );           [127X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27XLeadExpNM( mon4 );           [127X[104X
+    [4X[28X4[128X[104X
+    [4X[25Xgap>[125X [27XTailNM( mon4 );           [127X[104X
+    [4X[28X[ 1, 1, 1, 3, 3 ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-9 DivNM[101X
+  
+  [33X[1;0Y[29X[2XDivNM[102X( [3Xmonomial[103X, [3Xmonomial[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  operation  [10XDivNM(large,  small);[110X for two monomials returns all the ways
+  that  [13Xsmall[113X  divides  [13Xlarge[113X  in  the  form  of  a list of pairs of monomials
+  [13X[left,right][113X  so that [13Xlarge = left*small*right[113X. In the example we search for
+  subwords [22Xab[122X of [22Xm = abcababc[122X, returning [22X[ [abcab,c], [abc,abc], [1,cababc] ][122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XGBNP.ConfigPrint( "a", "b", "c" );[127X[104X
+    [4X[25Xgap>[125X [27Xm := [ 1, 2, 3, 1, 2, 1, 2, 3 ];;[127X[104X
+    [4X[25Xgap>[125X [27Xd := [ 1, 2 ];;[127X[104X
+    [4X[25Xgap>[125X [27XPrintNMList( [ m, d ] );[127X[104X
+    [4X[28Xabcababc[128X[104X
+    [4X[28Xab                [128X[104X
+    [4X[25Xgap>[125X [27Xdivs := DivNM( m, d ); [127X[104X
+    [4X[28X[ [ [ 1, 2, 3, 1, 2 ], [ 3 ] ], [ [ 1, 2, 3 ], [ 1, 2, 3 ] ], [128X[104X
+    [4X[28X  [ [  ], [ 3, 1, 2, 1, 2, 3 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XPrintNMList( divs[1] );[127X[104X
+    [4X[28Xabcab[128X[104X
+    [4X[28Xc[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  

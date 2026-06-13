@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<Chapter Label="chap-monom">
+
+<Heading>Functions for Noncommutative Monomials</Heading>
+
+A monomial, such as <M>ab^2a</M> is represented in <Package>GBNP</Package> 
+as the list <M>[1,2,2,1]</M>. 
+Polynomials have a more complicated structure, for example 
+<M>6ab^2a - 7ab + 8ba</M> is represented in <Package>GBNP</Package> by 
+<M>[ [ [1,2,2,1], [1,2], [2,1] ], [6,-7,8] ]</M>, which is a list 
+of monomials followed by the corresponding list of coefficients. 
+Polynomials are dealt with in the following chapter.
+<P/>
+As shown in Section <Ref Sect="sec-nps"/>,
+<Package>GBNP</Package> has functions <C>PrintNP</C> and <C>PrintNPList</C> 
+to print a polynomial and a list of polynomials. 
+Here we provide equivalent functions for monomials. 
+
+<Section Label="sec-basic">
+<Heading>Basic functions for monomials</Heading>
+
+
+<Subsection Label="sub-inbuilt-alg">
+<Heading>Predefined algebras</Heading>
+For convenience of use in examples, three algebras over the rationals,
+<C>AlbebraIBNP</C> and <C>AlgebrakIBNP</C> with <M>k \in [2,3,4]</M>,
+are predefined in this package.
+<Index>AlgebraIBNP</Index>
+<Example>
+<![CDATA[
+gap> GeneratorsOfAlgebra( AlgebraIBNP );
+[ (1)*<identity ...>, (1)*a, (1)*b ]
+gap> Algebra2IBNP = AlgebraIBNP;
+true
+gap> A3 := Algebra3IBNP;
+<algebra-with-one over Rationals, with 3 generators>
+]]>
+</Example>
+</Subsection>
+
+<ManSection>
+   <Oper Name="PrintNM"
+         Arg="monomial" />
+   <Oper Name="PrintNMList"
+         Arg="list" />
+<Description>
+Recall, from <Package>GBNP</Package>, that the actual letters printed 
+are controlled by the operation <C>GBNP.ConfigPrint</C>. 
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> GBNP.ConfigPrint( "a", "b", "c" );
+gap> mon := [2,1,1,1,3,3,1];;
+gap> PrintNM( mon );
+ba^3c^2a
+gap> L := [ [1,2,2], [3,1,2], [3,3,3], [2], [ ] ];;
+gap> PrintNMList( L );                            
+ab^2
+cab
+c^3
+b
+1
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="NM2GM"
+         Arg="monomial algebra" />
+   <Oper Name="NM2GMList"
+         Arg="list algebra" />
+<Description>
+Recall, from <Package>GBNP</Package>, that the functions <C>NP2GP</C>
+and <C>NP2GPList</C> convert a polynomial (or list of polynomials)
+in NP-format to an element of the algebra.
+This package provides additional functions <C>NM2GM</C> and <C>NM2GMList</C>
+which do the equivalent conversion for monomials. 
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> m := NM2GM( mon, A3 );
+(1)*b*a^3*c^2*a
+gap> NM2GMList( [ mon, Reversed(mon), Concatenation(mon,mon) ], A3 );
+[ (1)*b*a^3*c^2*a, (1)*a*c^2*a^3*b, (1)*(b*a^3*c^2*a)^2 ]
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="GM2NM"
+         Arg="monomial" />
+   <Oper Name="GM2NMList"
+         Arg="list" />
+<Description>
+Recall, from <Package>GBNP</Package>, that the functions <C>GP2NP</C>
+and <C>GP2NPList</C> convert a polynomial (or list of polynomials)
+to the equivalent NP-format.
+This package provides additional functions <C>GM2NM</C> and <C>GM2NMList</C>
+which do the equivalent conversion for monomials. 
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> a:=A3.1;; b:=A3.2;; c:=A3.3;;
+gap> p := (a*b*c)^2;;             
+gap> GM2NM(p);
+[ 1, 2, 3, 1, 2, 3 ]
+gap> GM2NMList( [ p, p^2, a^3, b^4, c^5 ] );
+[ [ 1, 2, 3, 1, 2, 3 ], [ 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3 ], [ 1, 1, 1 ], 
+  [ 2, 2, 2, 2 ], [ 3, 3, 3, 3, 3 ] ]
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="PrefixNM"
+         Arg="monomial posint" />
+   <Oper Name="SubwordNM"
+         Arg="monomial posint posint" />
+   <Oper Name="SuffixNM"
+         Arg="monomial posint" />
+<Description>
+These are the three operations which pick a sublist from a monomial list.
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> mon := [2,1,1,1,3,3,1];;
+gap> PrefixNM( mon, 3 );
+[ 2, 1, 1 ]
+gap> SubwordNM( mon, 3, 6 );
+[ 1, 1, 3, 3 ]
+gap> SuffixNM( mon, 3 );
+[ 3, 3, 1 ]
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="SuffixPrefixPosNM"
+         Arg="monomial monomial posint posint" />
+<Description>
+The operation <C>SuffixPrefixPosNM( left, right, start, limit)</C> 
+looks for overlaps of type <E>suffix of left = prefix of right</E>. 
+The size of the smallest such overlap is returned. 
+The overlaps which are considered are controlled by the third and fourth
+arguments.
+We commence by looking at the overlap of size <E>start</E> 
+and go no further than the overlap of size <E>limit</E>.
+When no overlap exists, <M>0</M> is returned. 
+To test all possibilities, <E>start</E> should be <M>1</M> 
+and <E>limit</E> should be <M>min(|left|,|right|)-1</M>.
+It is the user's responsibility to make sure that these bounds
+are correct - no checks are made.
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> m1 := [2,1,1,1,2,2,1,1];;           ## m1 = ba^3b^2a^2
+gap> m2 := [1,1,2,2,1,1];;               ## m2 = a^2b^2a^2
+gap> SuffixPrefixPosNM( m1, m2, 1, 5 );  ## overlap is a                   
+1
+gap> SuffixPrefixPosNM( m1, m2, 2, 5 );  ## overlap is a^2
+2
+gap> SuffixPrefixPosNM( m1, m2, 3, 5 );  ## no longer an overlap
+0
+gap> SuffixPrefixPosNM( m2, m1, 1, 5 );  ## overlap is ba^2
+3
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="SubwordPosNM"
+         Arg="monomial monomial posint" />
+   <Oper Name="IsSubwordNM"
+         Arg="monomial monomial" />
+<Description>
+The operation <C>SubwordPosNM( small, large, start );</C> answers the 
+question for monomials <E>Is small a subword of large?</E>.
+The value returned is the start position in <E>large</E>
+of the first subword found. 
+When no subword is found, <M>0</M> is returned.
+The search commences at position <E>start</E> in <E>large</E> so, 
+to test all possibilities, the third argument should be <M>1</M>.
+<P/>
+To just ask whether or not <E>small</E> is a subword 
+of <E>large</E>, use <C>IsSubwordNM( small, large);</C>.
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> m3 := [ 1, 1, 2 ];;                 ## m3 = a^2b
+gap> SubwordPosNM( m3, m1, 1 );
+3                                        ## m1 = ba(a^b)ba^2
+gap> SubwordPosNM( m3, m2, 1 );
+1                                        ## m2 = (a^2b)ba^2
+gap> SubwordPosNM( m3, m2, 2 );
+0
+gap> IsSubwordNM( [ 2, 1, 2 ], m1 );
+false
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="LeadVarNM"
+         Arg="monomial" />
+   <Oper Name="LeadExpNM"
+         Arg="monomial" />
+   <Oper Name="TailNM"
+         Arg="monomial" />
+<Description>
+Given the word <M>w = b^4a^3c^2</M>, represented by 
+<M>[2,2,2,2,1,1,1,3,3]</M>, the <E>lead variable</E> is <M>b</M>
+or <M>2</M>, and the <E>lead exponent</E> is <M>4</M>.
+Removing <M>b^4</M> from <M>w</M> leaves the <E>tail</E> <M>a^3c^2</M>. 
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> mon4 := [2,2,2,2,1,1,1,3,3];;
+gap> LeadVarNM( mon4 );           
+2
+gap> LeadExpNM( mon4 );           
+4
+gap> TailNM( mon4 );           
+[ 1, 1, 1, 3, 3 ]
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="DivNM"
+         Arg="monomial monomial" />
+<Description>
+The operation <C>DivNM(large, small);</C> for two monomials 
+returns all the ways that <E>small</E> divides <E>large</E> 
+in the form of a list of pairs of monomials <E>[left,right]</E> 
+so that <E>large = left*small*right</E>.
+In the example we search for subwords <M>ab</M> of <M>m = abcababc</M>, 
+returning <M>[ [abcab,c], [abc,abc], [1,cababc] ]</M>.
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> GBNP.ConfigPrint( "a", "b", "c" );
+gap> m := [ 1, 2, 3, 1, 2, 1, 2, 3 ];;
+gap> d := [ 1, 2 ];;
+gap> PrintNMList( [ m, d ] );
+abcababc
+ab                
+gap> divs := DivNM( m, d ); 
+[ [ [ 1, 2, 3, 1, 2 ], [ 3 ] ], [ [ 1, 2, 3 ], [ 1, 2, 3 ] ], 
+  [ [  ], [ 3, 1, 2, 1, 2, 3 ] ] ]
+gap> PrintNMList( divs[1] );
+abcab
+c
+]]>
+</Example>
+
+
+
+
+</Section>
+
+</Chapter>

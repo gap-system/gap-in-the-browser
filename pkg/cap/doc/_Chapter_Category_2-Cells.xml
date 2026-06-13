@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Category_2-Cells">
+<Heading>Category 2-Cells</Heading>
+
+<P/>
+<Section Label="Chapter_Category_2-Cells_Section_Attributes_for_the_Type_of_2-Cells">
+<Heading>Attributes for the Type of 2-Cells</Heading>
+
+<ManSection>
+  <Attr Arg="c" Name="Source" Label="for IsCapCategoryTwoCell"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+ The argument is a <Math>2</Math>-cell <Math>c: \alpha \rightarrow \beta</Math>.
+ The output is its source <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="c" Name="Range" Label="for IsCapCategoryTwoCell"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+ The argument is a <Math>2</Math>-cell <Math>c: \alpha \rightarrow \beta</Math>.
+ The output is its range <Math>\beta</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="c" Name="Target" Label="for IsCapCategoryTwoCell"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+ The argument is a <Math>2</Math>-cell <Math>c: \alpha \rightarrow \beta</Math>.
+ The output is its target <Math>\beta</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Category_2-Cells_Section_Adding_2-Cells_to_a_Category">
+<Heading>Adding 2-Cells to a Category</Heading>
+
+<ManSection>
+  <Oper Arg="category, twocell" Name="Add" Label="for IsCapCategory, IsCapCategoryTwoCell"/>
+ <Description>
+  Adds <A>twocell</A> as a <Math>2</Math>-cell to <A>category</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="category, twocell" Name="AddTwoCell" Label="for IsCapCategory, IsAttributeStoringRep"/>
+ <Description>
+  Adds <A>twocell</A> as a <Math>2</Math>-cell to <A>category</A>.
+  If <A>twocell</A> already lies in the filter <C>IsCapCategoryTwoCell</C>,
+  the operation <Ref Oper="Add" Label="for IsCapCategory, IsCapCategoryTwoCell" />
+  can be used instead.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="category, source, range[, attr1, val1, attr2, val2, ...]" Name="CreateCapCategoryTwoCellWithAttributes" />
+ <Returns>a twocell
+</Returns>
+ <Description>
+  Creates a <Math>2</Math>-cell in <A>category</A> with the given attributes.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Section_id2cellsandcomp">
+<Heading>Identity 2-Cell and Composition of 2-Cells</Heading>
+
+<ManSection>
+  <Attr Arg="alpha" Name="IdentityTwoCell" Label="for IsCapCategoryMorphism"/>
+ <Returns>a <Math>2</Math>-cell
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is its identity <Math>2</Math>-cell <Math>\mathrm{id}_{\alpha}: \alpha \rightarrow \alpha</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="c,d" Name="HorizontalPreCompose" Label="for IsCapCategoryTwoCell, IsCapCategoryTwoCell"/>
+ <Returns>a <Math>2</Math>-cell
+</Returns>
+ <Description>
+ The arguments are two <Math>2</Math>-cells 
+ <Math>c: \alpha \rightarrow \beta</Math>,
+ <Math>d: \gamma \rightarrow \delta</Math>
+ between morphisms <Math>\alpha, \beta: a \rightarrow b</Math> and <Math>\gamma, \delta: b \rightarrow c</Math>.
+ The output is their horizontal composition
+ <Math>d \ast c: (\gamma \circ \alpha) \rightarrow (\delta \circ \beta)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="d,c" Name="HorizontalPostCompose" Label="for IsCapCategoryTwoCell, IsCapCategoryTwoCell"/>
+ <Returns>a <Math>2</Math>-cell
+</Returns>
+ <Description>
+ The arguments are two <Math>2</Math>-cells
+ <Math>d: \gamma \rightarrow \delta</Math>,
+ <Math>c: \alpha \rightarrow \beta</Math>
+ between morphisms <Math>\alpha, \beta: a \rightarrow b</Math> and <Math>\gamma, \delta: b \rightarrow c</Math>.
+ The output is their horizontal composition
+ <Math>d \ast c: (\gamma \circ \alpha) \rightarrow (\delta \circ \beta)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="c,d" Name="VerticalPreCompose" Label="for IsCapCategoryTwoCell, IsCapCategoryTwoCell"/>
+ <Returns>a <Math>2</Math>-cell
+</Returns>
+ <Description>
+ The arguments are two <Math>2</Math>-cells 
+ <Math>c: \alpha \rightarrow \beta</Math>,
+ <Math>d: \beta \rightarrow \gamma</Math>
+ between morphisms <Math>\alpha, \beta, \gamma: a \rightarrow b</Math>.
+ The output is their vertical composition
+ <Math>d \circ c: \alpha \rightarrow \gamma</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="d,c" Name="VerticalPostCompose" Label="for IsCapCategoryTwoCell, IsCapCategoryTwoCell"/>
+ <Returns>a <Math>2</Math>-cell
+</Returns>
+ <Description>
+ The arguments are two <Math>2</Math>-cells 
+ <Math>d: \beta \rightarrow \gamma</Math>,
+ <Math>c: \alpha \rightarrow \beta</Math>
+ between morphisms <Math>\alpha, \beta, \gamma: a \rightarrow b</Math>.
+ The output is their vertical composition
+ <Math>d \circ c: \alpha \rightarrow \gamma</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Category_2-Cells_Section_Well-Definedness_for_2-Cells">
+<Heading>Well-Definedness for 2-Cells</Heading>
+
+<ManSection>
+  <Oper Arg="c" Name="IsWellDefinedForTwoCells" Label="for IsCapCategoryTwoCell"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a <Math>2</Math>-cell <Math>c</Math>.
+ The output is <C>true</C> if <Math>c</Math> is well-defined,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

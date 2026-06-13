@@ -1,0 +1,41 @@
+\GAPDocLabFile{liering}
+\makelabel{liering:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{liering:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{liering:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{liering:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{liering:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{liering:Preliminaries}{1.1}{X8749E1888244CC3D}
+\makelabel{liering:The free Lie ring}{1.2}{X865892E97C9D1E6D}
+\makelabel{liering:The Lazard correspondence}{1.3}{X7994DA6587ABDA2D}
+\makelabel{liering:The functions}{2}{X8173135A7D187358}
+\makelabel{liering:The free Lie ring}{2.1}{X865892E97C9D1E6D}
+\makelabel{liering:Creating Lie rings}{2.2}{X7BDAF9F47EBC6C0E}
+\makelabel{liering:Working with Lie rings}{2.3}{X7876A08584CBABAE}
+\makelabel{liering:The Lazard correspondence}{2.4}{X7994DA6587ABDA2D}
+\makelabel{liering:The database of n-Engel Lie rings}{2.5}{X7CB9E82C84258435}
+\makelabel{liering:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{liering:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{liering:Index}{Ind}{X83A0356F839C696F}
+\makelabel{liering:FreeLieRing}{2.1.1}{X7E52D2B884457822}
+\makelabel{liering:FreeLieRing}{2.1.1}{X7E52D2B884457822}
+\makelabel{liering:FreeLieRing}{2.1.1}{X7E52D2B884457822}
+\makelabel{liering:FreeLieRing}{2.1.1}{X7E52D2B884457822}
+\makelabel{liering:Degree}{2.1.2}{X826A861E7E7D944E}
+\makelabel{liering:IsLieRing}{2.2.1}{X784B8B28809EAC37}
+\makelabel{liering:LieRingByStructureConstants}{2.2.2}{X7DEFFA797BB7E432}
+\makelabel{liering:FpLieRing}{2.2.3}{X7D58E7AB7B2788D2}
+\makelabel{liering:FpLieAlgebra}{2.2.4}{X7D2CC3FF80F73EF8}
+\makelabel{liering:Basis}{2.3.1}{X837BE54C80DE368E}
+\makelabel{liering:StructureConstantsTable}{2.3.2}{X804ADF0280F67CDC}
+\makelabel{liering:Torsion}{2.3.3}{X7BF95CA07861A1AF}
+\makelabel{liering:Coefficients}{2.3.4}{X80B32F667BF6AFD8}
+\makelabel{liering:SubLieRing}{2.3.5}{X7BC3398686B25634}
+\makelabel{liering:LieRingIdeal}{2.3.6}{X7E97DBD778358F19}
+\makelabel{liering:NaturalHomomorphismByIdeal}{2.3.7}{X83D53D98809EC461}
+\makelabel{liering:LieLowerCentralSeries}{2.3.8}{X7900D17E7BA26A48}
+\makelabel{liering:LieLowerPCentralSeries}{2.3.9}{X790A24857D0E559A}
+\makelabel{liering:LieCentre}{2.3.10}{X8111F58E7DE3E25C}
+\makelabel{liering:TensorWithField}{2.3.11}{X819C15027E16E335}
+\makelabel{liering:PGroupToLieRing}{2.4.1}{X81FC256983DC2A94}
+\makelabel{liering:LieRingToPGroup}{2.4.2}{X7E683E5F80B27375}
+\makelabel{liering:SmallNEngelLieRing}{2.5.1}{X7F6C2B1D82E381D0}

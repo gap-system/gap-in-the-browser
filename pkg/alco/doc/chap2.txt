@@ -1,0 +1,532 @@
+  
+  [1X2 [33X[0;0YOctonions[133X[101X
+  
+  [33X[0;0YLet  [23XC[123X  be  a  vector  space  over  field  [23Xk[123X  equipped with a non-degenerate
+  quadratic  form  [23XN:C  \rightarrow  k[123X. If [23XC[123X is also an algebra with a product
+  that  satifies the composition rule [23XN(x y) = N(x) N(y)[123X for all [23Xx,y[123X in [23XC[123X then
+  we  call  [23XC[123X a [13Xcomposition algebra[113X. Quaternions and octonions are examples of
+  composition algebras.[133X
+  
+  [33X[0;0YAs described in [SV00, Theorm 1.6.2], a composition algebra has dimension [23X1[123X,
+  [23X2[123X,  [23X  4[123X, or [23X8[123X. Compositions algebras of dimension [23X1[123X or [23X2[123X are commutative and
+  associative.  A  [13Xquaternion algebra[113X is a composition algebra of dimension [23X4[123X.
+  Quaternion  algebras are associative but noncommutative. An [13Xoctonion algebra[113X
+  is  a  composition  algebra  of  dimension  [23X8[123X.  Octonion  algebras  are both
+  noncommutative   and   nonassociative   but   still  have  many  interesting
+  properties.[133X
+  
+  [33X[0;0YThe  non-degenerate  quadratic form [23XN[123X of a composition algebra is called the
+  [13Xnorm[113X  of  that  algebra.  In fact, a composition algebra is determined up to
+  isomorphism  by  its norm so the task of classifying composition algebras is
+  equivalent  to  the  task  of  classifying the possible norms in that vector
+  space  [SV00,  chap.  1,  sec. 7]. A norm is either isotropic or anisotropic
+  according to whether or not there exists a non-zero element [23Xx[123X such that [23XN(x)
+  =  0[123X.  A  composition  algebra  with  a  isotropic  norm  is  called a [13Xsplit
+  composition  algebra[113X.  A  composition  algebra  with  an anisotropic norm is
+  called  a  [13Xdivision  composition  algebra[113X since each non-zero element has an
+  inverse.  An  important  theorem  [SV00,  Theorem 1.8.1] shows that for each
+  field  [23Xk[123X  there  exists  up  to isomorphism one split composition algebra of
+  dimension  [23X2[123X,  [23X  4[123X,  and  [23X8[123X.  The  built-in [10XOctaveAlgebra([3XF[103X[10X)[110X function in [5XGAP[105X
+  constructs the split-octonion algebra over the field given as the argument.[133X
+  
+  [33X[0;0YAs  described  in [SV00, chap. 1, sec. 10], there are precisely one division
+  composition  algebra  of  dimension  [23X4[123X and one of dimension [23X 8[123X over the real
+  number  field  (likewise  over  the  rationals).  The  [5XALCO[105X package provides
+  constructions  of  [13Xnon-split[113X octonion algebras, provided that the algebra is
+  constructed over a suitable field (e.g., octonions over any finite field are
+  split).[133X
+  
+  
+  [1X2.1 [33X[0;0YOctonion Algebras[133X[101X
+  
+  
+  [1X2.1-1 [33X[0;0YOctonion Filters[133X[101X
+  
+  [33X[1;0Y[29X[2XIsOctonion[102X [32X filter[133X
+  [33X[1;0Y[29X[2XIsOctonionCollection[102X [32X filter[133X
+  [33X[1;0Y[29X[2XIsOctonionAlgebra[102X [32X filter[133X
+  
+  [33X[0;0YThese  filters  determine  whether  an  element  is an octonion, an octonion
+  collection, or an octonion algebra.[133X
+  
+  [1X2.1-2 OctonionAlgebra[101X
+  
+  [33X[1;0Y[29X[2XOctonionAlgebra[102X( [3XF[103X ) [32X function[133X
+  
+  [33X[0;0YReturns  an  octonion  algebra  over field [3XF[103X in a standard orthonormal basis
+  [23X\{e_{i}, i = 1,...,8\}[123X such that [23X1 = e_8[123X is the identity element and [23Xe_{i} =
+  e_{i+1}e_{i+3}  =  -  e_{i+3}e_{i+1}[123X for [23Xi = 1,...,7[123X, with indices evaluated
+  modulo  7.  This  corresponds  to  the  basis provided in [Bae02] and [CS03]
+  (except that [10X e7[110X corresponds to [23Xe_0[123X in the literature, since the first entry
+  in  a  [5XGAP[105X  list  has  index 1). Whether or not the algebra constructed is a
+  division  algebra or a split-octonion algebra depends on the choice of field
+  [3XF[103X.   For  example,  [10XOctonionAlgebra(Rationals)[110X  is  a  division  composition
+  algebra,  but  [10XOctonionAlgebra(GF(3))[110X  is a split composition algebra. Other
+  examples are discussed in [SV00, chap. 1, sec. 10].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XO := OctonionAlgebra(Rationals);[127X[104X
+    [4X[28X<algebra-with-one of dimension 8 over Rationals>[128X[104X
+    [4X[25Xgap>[125X [27XLeftActingDomain(O);[127X[104X
+    [4X[28XRationals[128X[104X
+    [4X[25Xgap>[125X [27XIsAssociative(O);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xe := BasisVectors(Basis(O));[127X[104X
+    [4X[28X[ e1, e2, e3, e4, e5, e6, e7, e8 ][128X[104X
+    [4X[25Xgap>[125X [27XOne(O);[127X[104X
+    [4X[28Xe8[128X[104X
+    [4X[25Xgap>[125X [27Xe[1]*e[2];[127X[104X
+    [4X[28Xe4[128X[104X
+    [4X[25Xgap>[125X [27Xe[2]*e[1];[127X[104X
+    [4X[28X(-1)*e4[128X[104X
+    [4X[25Xgap>[125X [27XDerivations(Basis(O));[127X[104X
+    [4X[28X<Lie algebra of dimension 14 over Rationals>[128X[104X
+    [4X[25Xgap>[125X [27XSemiSimpleType(last);[127X[104X
+    [4X[28X"G2"[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.1-3 [33X[0;0YOctavian Integers[133X[101X
+  
+  [33X[1;0Y[29X[2XOctavianIntegers[102X [32X global variable[133X
+  [33X[1;0Y[29X[2XIsOctavianInt[102X( [3Xx[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  [10XOctavianIntegers[110X  are  a  subring of the octonion algebra with elements
+  that have the geometry of scaled [23XE_8[123X lattice. This ring is named and studied
+  in [CS03, p. 105]. [10X CanonicalBasis(OctavianIntegers)[110X returns [2XOctonionE8Basis[102X
+  ([14X2.1-4[114X).  We  can  test whether an octonion is in [10XOctavianIntegers[110X using the
+  operation [10XIsOctavianInt([3Xx[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xa := BasisVectors(Basis(OctavianIntegers));;[127X[104X
+    [4X[25Xgap>[125X [27Xfor x in a do Display(x); od;[127X[104X
+    [4X[28X(-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7[128X[104X
+    [4X[28X(-1/2)*e1+(-1/2)*e2+(-1/2)*e4+(-1/2)*e7[128X[104X
+    [4X[28X(1/2)*e2+(1/2)*e3+(-1/2)*e5+(-1/2)*e7[128X[104X
+    [4X[28X(1/2)*e1+(-1/2)*e3+(1/2)*e4+(1/2)*e5[128X[104X
+    [4X[28X(-1/2)*e2+(1/2)*e3+(-1/2)*e5+(1/2)*e7[128X[104X
+    [4X[28X(1/2)*e2+(-1/2)*e4+(1/2)*e5+(-1/2)*e6[128X[104X
+    [4X[28X(-1/2)*e1+(-1/2)*e3+(1/2)*e4+(-1/2)*e5[128X[104X
+    [4X[28X(1/2)*e1+(-1/2)*e4+(1/2)*e6+(-1/2)*e8[128X[104X
+    [4X[25Xgap>[125X [27XForAll(a, IsOctavianInt);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XForAll(a/2, IsOctavianInt);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-4 OctonionE8Basis[101X
+  
+  [33X[1;0Y[29X[2XOctonionE8Basis[102X [32X global variable[133X
+  
+  [33X[0;0YThe  [5XALCO[105X  package  also  loads a basis for [10XOctonionAlgebra([3XRationals[103X[10X)[110X which
+  also  serves  as  generators  for  [2XOctavianIntegers[102X  ([14X2.1-3[114X).  This octonion
+  integer  lattice has the geometry of a [23XE_8[123X (Gossett) lattice relative to the
+  inner product defined by the octonion norm.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XBasisVectors(OctonionE8Basis) = BasisVectors(Basis(OctavianIntegers));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xg := List(OctonionE8Basis, x -> List(OctonionE8Basis, y -> [127X[104X
+    [4X[25X>[125X [27XNorm(x+y) - Norm(x) - Norm(y)));;[127X[104X
+    [4X[25Xgap>[125X [27XIsGossetLatticeGramMatrix(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.2 [33X[0;0YProperties of Octonions[133X[101X
+  
+  [1X2.2-1 Norm[101X
+  
+  [33X[1;0Y[29X[2XNorm[102X( [3Xx[103X ) [32X method[133X
+  
+  [33X[0;0YReturns  the norm of octonion [3Xx[103X. Recall that an octonion algebra with norm [23XN[123X
+  satisfies  the composition property [23XN(xy) = N(x)N(y)[123X. In the canonical basis
+  for  [2XOctonionAlgebra[102X  ([14X2.1-2[114X),  the  norm  is  the sum of the squares of the
+  coefficients.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XOct := OctonionAlgebra(Rationals);;[127X[104X
+    [4X[25Xgap>[125X [27XList(Basis(Oct), Norm);[127X[104X
+    [4X[28X[ 1, 1, 1, 1, 1, 1, 1, 1 ][128X[104X
+    [4X[25Xgap>[125X [27Xx := Random(Oct);; y := Random(Oct);;[127X[104X
+    [4X[25Xgap>[125X [27XNorm(x*y) = Norm(x)*Norm(y);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-2 Trace[101X
+  
+  [33X[1;0Y[29X[2XTrace[102X( [3Xx[103X ) [32X method[133X
+  
+  [33X[0;0YReturns  the trace of octonion [3Xx[103X. In the canonical basis for [2XOctonionAlgebra[102X
+  ([14X2.1-2[114X),  the trace is twice the coefficient of the identity element [10Xe8[110X. The
+  trace  and  real  part are related via [10XRealPart([3Xx[103X[10X) = Trace([3Xx[103X[10X)*One([3Xx[103X[10X)/2[110X. Note
+  that  [10XTrace([3Xx[103X[10X)[110X is an element of [10XLeftActingDomain([3XA[103X[10X)[110X, where [3XA[103X is the octonion
+  algebra containing [3Xx[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xe := BasisVectors(Basis(OctonionAlgebra(Rationals)));[127X[104X
+    [4X[28X[ e1, e2, e3, e4, e5, e6, e7, e8 ][128X[104X
+    [4X[25Xgap>[125X [27XList(e, Trace);[127X[104X
+    [4X[28X[ 0, 0, 0, 0, 0, 0, 0, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XList(e, RealPart);[127X[104X
+    [4X[28X[ 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, e8 ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-3 ComplexConjugate[101X
+  
+  [33X[1;0Y[29X[2XComplexConjugate[102X( [3Xx[103X ) [32X method[133X
+  
+  [33X[0;0YReturns  the  octonion conjugate of octonion [3Xx[103X, defined by [10XOne(x)*Trace(x) -
+  x[110X.  In  the  canonical basis of [2XOctonionAlgebra[102X ([14X2.1-2[114X), this method negates
+  the coefficients of [23Xe_1, e_2, \ldots, e_7[123X but leaves the identity [23Xe_8[123X fixed.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xe := BasisVectors(Basis(OctonionAlgebra(Rationals)));[127X[104X
+    [4X[28X[ e1, e2, e3, e4, e5, e6, e7, e8 ][128X[104X
+    [4X[25Xgap>[125X [27XList(e, ComplexConjugate);[127X[104X
+    [4X[28X[ (-1)*e1, (-1)*e2, (-1)*e3, (-1)*e4, (-1)*e5, (-1)*e6, (-1)*e7, e8 ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-4 RealPart[101X
+  
+  [33X[1;0Y[29X[2XRealPart[102X( [3Xx[103X ) [32X method[133X
+  
+  [33X[0;0YReturns the real component of octonion [3Xx[103X, defined by [10X (1/2)*One(x)*Trace(x)[110X.
+  Note  that  [10XRealPart[110X  returns  an  octonion  in  the subspace spanned by the
+  octonion  identity element while [10XTrace[110X returns an element in the coefficient
+  field of the octonion algebra.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xe := BasisVectors(Basis(OctonionAlgebra(Rationals)));[127X[104X
+    [4X[28X[ e1, e2, e3, e4, e5, e6, e7, e8 ][128X[104X
+    [4X[25Xgap>[125X [27XList(e, RealPart);[127X[104X
+    [4X[28X[ 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, e8 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.3 [33X[0;0YOther Octonion Tools[133X[101X
+  
+  
+  [1X2.3-1 [33X[0;0YConverting Octonion Vectors[133X[101X
+  
+  [33X[1;0Y[29X[2XOctonionToRealVector[102X( [3XB[103X, [3Xx[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XRealToOctonionVector[102X( [3XB[103X, [3Xy[103X ) [32X function[133X
+  
+  [33X[0;0YLet  [3Xx[103X  be  an octonion vector of the form [23Xx = (x_1, x_2, ..., x_n)[123X, for [23Xx_i[123X
+  octonion  valued  coefficients.  Let  [3XB[103X  be a basis for the octonion algebra
+  containing coefficients [23Xx_i[123X. The function [10XOctonionToRealVector([3XB[103X[10X, [3Xx[103X[10X)[110X returns
+  a  vector [3Xy[103X of length [23X8n[123X containing the concatenation of the coefficients of
+  [23Xx_i[123X  in  the octonion basis given by [3XB[103X. The function [10XRealToOctonionVector([3XB[103X[10X,
+  [3Xy[103X[10X)[110X provides the inverse operation.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XO := UnderlyingLeftModule(OctonionE8Basis);[127X[104X
+    [4X[28X<algebra-with-one of dimension 8 over Rationals>[128X[104X
+    [4X[25Xgap>[125X [27XBasisVectors(CanonicalBasis(O));[127X[104X
+    [4X[28X[ e1, e2, e3, e4, e5, e6, e7, e8 ][128X[104X
+    [4X[25Xgap>[125X [27Xx := 2*OctonionE8Basis{[1,2]};[127X[104X
+    [4X[28X[ (-1)*e1+e5+e6+e7, (-1)*e1+(-1)*e2+(-1)*e4+(-1)*e7 ][128X[104X
+    [4X[25Xgap>[125X [27Xy := OctonionToRealVector(CanonicalBasis(O), x);[127X[104X
+    [4X[28X[ -1, 0, 0, 0, 1, 1, 1, 0, -1, -1, 0, -1, 0, 0, -1, 0 ][128X[104X
+    [4X[25Xgap>[125X [27XRealToOctonionVector(CanonicalBasis(O), y);[127X[104X
+    [4X[28X[ (-1)*e1+e5+e6+e7, (-1)*e1+(-1)*e2+(-1)*e4+(-1)*e7 ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.3-2 VectorToIdempotentMatrix[101X
+  
+  [33X[1;0Y[29X[2XVectorToIdempotentMatrix[102X( [3Xx[103X ) [32X function[133X
+  
+  [33X[0;0YLet  [3Xx[103X  be  a  vector  satisfying  [10XIsHomogeneousList[110X  and [10XIsAssociative[110X with
+  elements that satisfy [10XIsCyc[110X, [10XIsQuaternion[110X, or [10XIsOctonion[110X. Then this function
+  returns     the     idempotent     matrix     [10XM/Trace(M)[110X     where    [10XM    =
+  TransposedMat([ComplexConjugate([3Xx[103X[10X)])*[[3Xx[103X[10X][110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XOct := OctonionAlgebra(Rationals);;[127X[104X
+    [4X[25Xgap>[125X [27Xx := Basis(Oct){[8,1,2]};[127X[104X
+    [4X[28X[ e8, e1, e2 ][128X[104X
+    [4X[25Xgap>[125X [27Xy := VectorToIdempotentMatrix(x);; Display(y);[127X[104X
+    [4X[28X[ [   (1/3)*e8,   (1/3)*e1,   (1/3)*e2 ],[128X[104X
+    [4X[28X  [  (-1/3)*e1,   (1/3)*e8,  (-1/3)*e4 ],[128X[104X
+    [4X[28X  [  (-1/3)*e2,   (1/3)*e4,   (1/3)*e8 ] ][128X[104X
+    [4X[25Xgap>[125X [27XIsIdempotent(y);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.3-3 WeylReflection[101X
+  
+  [33X[1;0Y[29X[2XWeylReflection[102X( [3Xr[103X, [3Xx[103X ) [32X function[133X
+  
+  [33X[0;0YLet  [3Xr[103X  be  a  vector  satisfying  [10XIsHomogeneousList[110X and [10X IsAssociative[110X with
+  elements    in    [10XIsCyc[110X,    [10XIsQuaternion[110X,    or    [10X   IsOctonion[110X   and   let
+  [10XIsHomogeneousList(Flat([[3Xr[103X[10X,[3Xx[103X[10X]))[110X.   Then   this   function  returns  the  Weyl
+  reflection    of    vector    [3Xx[103X    using    the    projector    defined   by
+  [10XVectorToIdempotentMatrix([3Xr[103X[10X)[110X.    Specifically,    the    result    is   [10Xx   -
+  2*x*VectorToIdempotentMatrix(r)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XWeylReflection([1,0,1],[0,1,1]);[127X[104X
+    [4X[28X[ -1, 1, 0 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.4 [33X[0;0YQuaternion Tools[133X[101X
+  
+  [33X[0;0YThe  [5XALCO[105X  package  provides  some  additional tools for studying quaternion
+  algebras  in [5XGAP[105X. These tools include methods to compute the quaternion norm
+  and  trace,  certain  important  bases,  and the subrings generated by those
+  bases.  [5XGAP[105X  already provides some built-in tools to construct and study the
+  quaternion  algebra in the standard Hamiltonian basis. The following example
+  illustrates these tools:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XH := QuaternionAlgebra(Rationals);[127X[104X
+    [4X[28X<algebra-with-one of dimension 4 over Rationals>[128X[104X
+    [4X[25Xgap>[125X [27XIsQuaternion(Random(H));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsAssociative(H);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsCommutative(H);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOne(H);[127X[104X
+    [4X[28Xe[128X[104X
+    [4X[25Xgap>[125X [27Xb := BasisVectors(CanonicalBasis(H));[127X[104X
+    [4X[28X[ e, i, j, k ][128X[104X
+    [4X[25Xgap>[125X [27XList(b, ComplexConjugate);[127X[104X
+    [4X[28X[ e, (-1)*i, (-1)*j, (-1)*k ][128X[104X
+    [4X[25Xgap>[125X [27XList(b, Inverse);[127X[104X
+    [4X[28X[ e, (-1)*i, (-1)*j, (-1)*k ] [128X[104X
+    [4X[25Xgap>[125X [27XList(b, RealPart);[127X[104X
+    [4X[28X[ e, 0*e, 0*e, 0*e ][128X[104X
+    [4X[25Xgap>[125X [27XList(b, ImaginaryPart);[127X[104X
+    [4X[28X[ 0*e, e, k, (-1)*j ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  the  [5XGAP[105X  method  [10XImaginaryPart[110X  acting  on objects that satisfy
+  [10XIsQuaternion[110X  involves  dividing  by [10Xi[110X, which yields a different result than
+  the  [10Xx  -  RealPart(x)[110X that some users may expect. The [5XALCO[105X package does not
+  define  an  [10XImaginaryPart[110X  method  for octonions in order to avoid confusion
+  about the behaviour of that method when applied to quaternions or octonions.[133X
+  
+  [1X2.4-1 Norm[101X
+  
+  [33X[1;0Y[29X[2XNorm[102X( [3Xx[103X ) [32X method[133X
+  
+  [33X[0;0YReturns the norm of quaternion [3Xx[103X. Recall that a quaternion algebra with norm
+  [23XN[123X  satisfies  the  composition  property  [23XN(xy) = N(x)N(y)[123X. In the canonical
+  basis  of  [10XQuaternionAlgebra[110X,  the  norm  is  the  sum of the squares of the
+  coefficients.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XH := QuaternionAlgebra(Rationals);;[127X[104X
+    [4X[25Xgap>[125X [27Xb := BasisVectors(CanonicalBasis(H));[127X[104X
+    [4X[28X[ e, i, j, k ][128X[104X
+    [4X[25Xgap>[125X [27XList(b, Norm);[127X[104X
+    [4X[28X[ 1, 1, 1, 1 ][128X[104X
+    [4X[25Xgap>[125X [27Xx := Random(H);; y := Random(H);;[127X[104X
+    [4X[25Xgap>[125X [27XNorm(x*y) = Norm(x)*Norm(y);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.4-2 Trace[101X
+  
+  [33X[1;0Y[29X[2XTrace[102X( [3Xx[103X ) [32X method[133X
+  
+  [33X[0;0YReturns   the   trace   of   quaternion   [3Xx[103X,   such   that   [10XRealPart([3Xx[103X[10X)   =
+  Trace([3Xx[103X[10X)*One([3Xx[103X[10X)/2[110X. In the canonical basis of [10XQuaternionAlgebra[110X, the trace is
+  twice the coefficient of the identity element.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XH := QuaternionAlgebra(Rationals);;[127X[104X
+    [4X[25Xgap>[125X [27Xb := BasisVectors(CanonicalBasis(H));[127X[104X
+    [4X[28X[ e, i, j, k ][128X[104X
+    [4X[25Xgap>[125X [27XList(b, Trace);[127X[104X
+    [4X[28X[ 2, 0, 0, 0 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.4-3 [33X[0;0YHurwitz Integers[133X[101X
+  
+  [33X[1;0Y[29X[2XHurwitzIntegers[102X [32X global variable[133X
+  [33X[1;0Y[29X[2XIsHurwitzInt[102X( [3Xx[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  [10XHurwitzIntegers[110X  are  a subring of the quaternion algebra with elements
+  that have the geometry of scaled [23XD_4[123X lattice. This ring is named and studied
+  in  [CS03, p. 55]. [10XCanonicalBasis(HurwitzIntegers)[110X returns [2XQuaternionD4Basis[102X
+  ([14X2.4-4[114X).  We  can  test whether a quaternion is in [10XHurwitzIntegers[110X using the
+  operation [10XIsHurwitzInt([3Xx[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xf := BasisVectors(Basis(HurwitzIntegers));;[127X[104X
+    [4X[25Xgap>[125X [27Xfor x in f do Display(x); od;[127X[104X
+    [4X[28X(-1/2)*e+(-1/2)*i+(-1/2)*j+(1/2)*k[128X[104X
+    [4X[28X(-1/2)*e+(-1/2)*i+(1/2)*j+(-1/2)*k[128X[104X
+    [4X[28X(-1/2)*e+(1/2)*i+(-1/2)*j+(-1/2)*k[128X[104X
+    [4X[28Xe[128X[104X
+    [4X[25Xgap>[125X [27XForAll(f, IsHurwitzInt);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XForAll(f/2, IsHurwitzInt);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X2.4-4 QuaternionD4Basis[101X
+  
+  [33X[1;0Y[29X[2XQuaternionD4Basis[102X [32X global variable[133X
+  
+  [33X[0;0YThe  [5XALCO[105X  package  loads  a  basis for a quaternion algebra over ℚ with the
+  geometry  of  a  [23XD_4[123X  simple  root  system.  The ℤ-span of this basis is the
+  [2XHurwitzIntegers[102X  ([14X2.4-3[114X)  ring.  These  basis  vectors  close under pairwise
+  reflection or multiplication to form a [23X D_4[123X root system.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XB := QuaternionD4Basis;;[127X[104X
+    [4X[25Xgap>[125X [27Xfor x in BasisVectors(B) do Display(x); od;[127X[104X
+    [4X[28X(-1/2)*e+(-1/2)*i+(-1/2)*j+(1/2)*k[128X[104X
+    [4X[28X(-1/2)*e+(-1/2)*i+(1/2)*j+(-1/2)*k[128X[104X
+    [4X[28X(-1/2)*e+(1/2)*i+(-1/2)*j+(-1/2)*k[128X[104X
+    [4X[28Xe[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.5 [33X[0;0YIcosian Tools[133X[101X
+  
+  [33X[0;0YThe  icosian  ring  is  a subring of the quaternion algebra over the "golden
+  field" [23X\mathbb{Q}(\sqrt{5})[123X This ring is described and studied in [CS13, pp.
+  207-211]  and  [Wil09a, p. 220]. The icosian ring has [23X120[123X units, or elements
+  with  quaternion  norm  of  [23X1[123X.  These  units  are  closed  under  quaternion
+  multiplication. These icosian units also exhibit a [23XH_4[123X geometry in the sense
+  that  they  are  closed  under  Weyl  reflection  relative  to  the standard
+  Euclidean  inner  product  defined by the quaternion norm. The Coxeter group
+  generated  by  these reflections is the group [23XW(H_4)[123X. The coefficients of an
+  icosian  in  the  standard quaternion basis belong to the integer subring of
+  the  golden  field,  meaning  that  these  coefficients  have the form [23Xa + b
+  \sigma[123X,  where  [23Xa,b[123X  are  rational integers and [23X\sigma = (1-\sqrt{5})/2[123X. The
+  Euclidean  inner  product  between  any  two icosians will be a golden field
+  integer.  As  described  in  the  references given above, if we define a new
+  inner  product  between icosians that discards the [23X\sigma[123X-coefficient [23Xb[123X then
+  the  icosian  ring  will  exhibit the geometry of an [23XE_8[123X lattice relative to
+  this  new  inner  product.  It  is  also  possible to define a Leech lattice
+  geometry on icosian triples.[133X
+  
+  [33X[0;0YThe  [5XALCO[105X  package  provides  tools  to explore these icosian properties and
+  construct  certain  important  lattices using icosians. Note that the golden
+  field  can  be  constructed  in [5XGAP[105X as [10XNF(5, [ 1, 4 ])[110X or [10XField(Sqrt(5))[110X and
+  that [23X\sigma[123X is given by [10X-EB(5)[110X.[133X
+  
+  
+  [1X2.5-1 [33X[0;0YIcosian Ring[133X[101X
+  
+  [33X[1;0Y[29X[2XIcosianRing[102X [32X global variable[133X
+  [33X[1;0Y[29X[2XIsIcosian[102X( [3Xx[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  [10XIcosianRing[110X is a subring of the the quaternion algebra over [10XNF(5,[1,4])[110X
+  generated  by  a set of vectors with an [23XH_4[123X geometry. This ring is described
+  well    in    [Wil09a,    p.   220].   [10XCanonicalBasis(IcosianRing)[110X   returns
+  [2XIcosianH4Generators[102X  ([14X2.5-2[114X).  We  can  test  whether  a  quaternion  is  in
+  [10XIcosianRing[110X  using  the operation [10XIsIcosian([3Xx[103X[10X)[110X. Note that a quaternion is an
+  icosian when it is a ℤ-linear combination of the union of [10XBasis(IcosianRing)[110X
+  and [10XBasis(IcosianRing)*EB(5)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xf := BasisVectors(Basis(IcosianRing));;[127X[104X
+    [4X[25Xgap>[125X [27Xfor x in f do Display(x); od;[127X[104X
+    [4X[28X(-1)*i[128X[104X
+    [4X[28X(-1/2*E(5)^2-1/2*E(5)^3)*i+(1/2)*j+(-1/2*E(5)-1/2*E(5)^4)*k[128X[104X
+    [4X[28X(-1)*j[128X[104X
+    [4X[28X(-1/2*E(5)-1/2*E(5)^4)*e+(1/2)*j+(-1/2*E(5)^2-1/2*E(5)^3)*k[128X[104X
+    [4X[25Xgap>[125X [27XForAll(f, IsIcosian);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XForAll(f/2, IsIcosian);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XForAll(f*EB(5), IsIcosian);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XForAll(f*Sqrt(5), IsIcosian);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XForAll(f*(1-Sqrt(5))/2, IsIcosian);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XForAll(f*(1+Sqrt(5))/2, IsIcosian);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.5-2 IcosianH4Generators[101X
+  
+  [33X[1;0Y[29X[2XIcosianH4Generators[102X [32X global variable[133X
+  
+  [33X[0;0YThe  [5XALCO[105X  package  loads  this variable as a basis for a quaternion algebra
+  over [10XNF(5,[1,4])[110X. Note that a quaternion is an icosian when it is a ℤ-linear
+  combination     of     the     union    of    [10X    IcosianH4Generators[110X    and
+  [10XIcosianH4Generators*EB(5)[110X.   These   basis   vectors  close  under  pairwise
+  reflection or multiplication to form a [23XH_4[123X set of vectors.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xf := BasisVectors(IcosianH4Generators);;[127X[104X
+    [4X[25Xgap>[125X [27Xfor x in f do Display(x); od;[127X[104X
+    [4X[28X(-1)*i[128X[104X
+    [4X[28X(-1/2*E(5)^2-1/2*E(5)^3)*i+(1/2)*j+(-1/2*E(5)-1/2*E(5)^4)*k[128X[104X
+    [4X[28X(-1)*j[128X[104X
+    [4X[28X(-1/2*E(5)-1/2*E(5)^4)*e+(1/2)*j+(-1/2*E(5)^2-1/2*E(5)^3)*k[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.5-3 [33X[0;0YGoldenModSigma[133X[101X
+  
+  [33X[1;0Y[29X[2XGoldenModSigma[102X( [3Xx[103X ) [32X function[133X
+  
+  [33X[0;0YFor [3Xx[103X in the golden field [10XNF(5,[ 1, 4 ])[110X, this function returns the rational
+  coefficient of [10X1[110X in the basis [10XBasis(NF(5,[ 1, 4 ]), [1, (1-Sqrt(5))/2])[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xsigma := (1-Sqrt(5))/2;; tau := (1+Sqrt(5))/2;;[127X[104X
+    [4X[25Xgap>[125X [27Xx := 5 + 3*sigma;; GoldenModSigma(x);[127X[104X
+    [4X[28X5[128X[104X
+    [4X[25Xgap>[125X [27XGoldenModSigma(sigma);[127X[104X
+    [4X[28X0[128X[104X
+    [4X[25Xgap>[125X [27XGoldenModSigma(tau);[127X[104X
+    [4X[28X1[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.6 [33X[0;0YOther Integer Rings[133X[101X
+  
+  [33X[0;0YCertain  addition  integer  subrings  of  elements satisfying [10XIsCyc[110X are also
+  included  in  the [5XALCO[105X package. The rings constructed below are described in
+  [CS03, pp. 16-18].[133X
+  
+  [1X2.6-1 EisensteinIntegers[101X
+  
+  [33X[1;0Y[29X[2XEisensteinIntegers[102X [32X global variable[133X
+  [33X[1;0Y[29X[2XIsEisenInt[102X( [3Xx[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  [10XEisensteinIntegers[110X  is  a subring of the complex numbers generated by [10X1[110X
+  and  [10XE(3)[110X.  This  subring  has  the geometry of an [23XA_2[123X lattice. This ring is
+  described  well in [CS03, p. 16]. We can test whether an element in [10XIsCyc[110X is
+  an Eisenstein integer using the operation [10XIsEisenInt([3Xx[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xf := BasisVectors(Basis(EisensteinIntegers));[127X[104X
+    [4X[28X[ 1, E(3) ][128X[104X
+    [4X[25Xgap>[125X [27XIsEisenInt(E(4));[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsEisenInt(1+E(3)^2);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.6-2 KleinianIntegers[101X
+  
+  [33X[1;0Y[29X[2XKleinianIntegers[102X [32X global variable[133X
+  [33X[1;0Y[29X[2XIsKleinInt[102X( [3Xx[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  [10XKleinianIntegers[110X is a subring of the complex numbers generated by [10X1[110X and
+  [10X(1/2)*(-1+Sqrt(-7))[110X.  This  ring  is described in [CS03, p. 18]. We can test
+  whether  an  element  in  [10XIsCyc[110X  is  an Kleinian integer using the operation
+  [10XIsKleinInt([3Xx[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xf := BasisVectors(Basis(KleinianIntegers));[127X[104X
+    [4X[28X[ 1, E(7)+E(7)^2+E(7)^4 ][128X[104X
+    [4X[25Xgap>[125X [27XIsKleinInt(E(4));[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsKleinInt(1+E(7)+E(7)^2+E(7)^4);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  

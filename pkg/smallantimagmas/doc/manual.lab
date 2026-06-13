@@ -1,0 +1,51 @@
+\GAPDocLabFile{smallantimagmas}
+\makelabel{smallantimagmas:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{smallantimagmas:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{smallantimagmas:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{smallantimagmas:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{smallantimagmas:smallantimagmas automatic generated documentation}{1}{X7EB7BB817CC15891}
+\makelabel{smallantimagmas:smallantimagmas automatic generated documentation of properties}{1.1}{X78F902077A6714C4}
+\makelabel{smallantimagmas:smallantimagmas automatic generated documentation of attributes}{1.2}{X839C88FC81394B14}
+\makelabel{smallantimagmas:smallantimagmas automatic generated documentation of global functions}{1.3}{X7A4C95527CCD8524}
+\makelabel{smallantimagmas:smallantimagmas automatic generated documentation of methods}{1.4}{X8553DA53796C81EA}
+\makelabel{smallantimagmas:Index}{Ind}{X83A0356F839C696F}
+\makelabel{smallantimagmas:License}{}{X81488B807F2A1CF1}
+\makelabel{smallantimagmas:IsAntiassociative for IsMagma}{1.1.1}{X7B8537C57970AE37}
+\makelabel{smallantimagmas:IsLeftCyclic for IsMagma}{1.1.2}{X8392BFEE78284DE1}
+\makelabel{smallantimagmas:IsRightCyclic for IsMagma}{1.1.3}{X7BE3D1C0801AE7EA}
+\makelabel{smallantimagmas:IsLeftDistributive for IsMagma}{1.1.4}{X7D377A068350EE46}
+\makelabel{smallantimagmas:IsRightDistributive for IsMagma}{1.1.5}{X856E2BBA7B87F209}
+\makelabel{smallantimagmas:IsLeftCancellative for IsMagma}{1.1.6}{X7D994F7382127E77}
+\makelabel{smallantimagmas:IsRightCancellative for IsMagma}{1.1.7}{X85C01ECF83CD5484}
+\makelabel{smallantimagmas:IsCancellative for IsMagma}{1.1.8}{X7E58570787350F43}
+\makelabel{smallantimagmas:IsLeftFPFInducted for IsMagma}{1.1.9}{X7965D94579F05D6F}
+\makelabel{smallantimagmas:IsRightFPFInducted for IsMagma}{1.1.10}{X866768408460130D}
+\makelabel{smallantimagmas:IsLeftDerangementInducted for IsMagma}{1.1.11}{X7B55200A7A734759}
+\makelabel{smallantimagmas:IsRightDerangementInducted for IsMagma}{1.1.12}{X7E0D0CD780550E81}
+\makelabel{smallantimagmas:IsLeftAlternative for IsMagma}{1.1.13}{X83147660820830E8}
+\makelabel{smallantimagmas:IsRightAlternative for IsMagma}{1.1.14}{X7C16C7657F8B5A61}
+\makelabel{smallantimagmas:AssociativityIndex for IsMagma}{1.2.1}{X809A477180F2A0F6}
+\makelabel{smallantimagmas:DiagonalOfMultiplicationTable for IsMagma}{1.2.2}{X802DA9B083E7F4A3}
+\makelabel{smallantimagmas:CommutativityIndex for IsMagma}{1.2.3}{X87FED7267EB0A068}
+\makelabel{smallantimagmas:AnticommutativityIndex for IsMagma}{1.2.4}{X7D32B8F780294AEC}
+\makelabel{smallantimagmas:SquaresIndex for IsMagma}{1.2.5}{X85904967802C27B4}
+\makelabel{smallantimagmas:IdSmallAntimagma for IsMagma}{1.2.6}{X783C01BD7B931A12}
+\makelabel{smallantimagmas:LeftOrder for IsExtLElement}{1.2.7}{X78BF96667D805695}
+\makelabel{smallantimagmas:RightOrder for IsExtRElement}{1.2.8}{X850894387AD0E717}
+\makelabel{smallantimagmas:LeftOrdersOfElements for IsMagma}{1.2.9}{X7CDCE61679BFD1F7}
+\makelabel{smallantimagmas:RightOrdersOfElements for IsMagma}{1.2.10}{X84D8A5D88790F870}
+\makelabel{smallantimagmas:AllSubmagmas}{1.3.1}{X8011AFA47C662D53}
+\makelabel{smallantimagmas:MagmaIsomorphismInvariantsMatch}{1.3.2}{X7BA7BE44861A8C51}
+\makelabel{smallantimagmas:IsMagmaIsomorphic}{1.3.3}{X7F7EAF23807EE984}
+\makelabel{smallantimagmas:IsMagmaAntiisomorphic}{1.3.4}{X807BD59180325341}
+\makelabel{smallantimagmas:TransposedMagma}{1.3.5}{X79BF9EB48562EF6C}
+\makelabel{smallantimagmas:LeftPower}{1.3.6}{X7FD21A58851687DF}
+\makelabel{smallantimagmas:RightPower}{1.3.7}{X788005DE7947D914}
+\makelabel{smallantimagmas:AllSmallAntimagmas}{1.3.8}{X7DDB92C284197B0B}
+\makelabel{smallantimagmas:NrSmallAntimagmas}{1.3.9}{X7E5054007A985873}
+\makelabel{smallantimagmas:SmallAntimagma}{1.3.10}{X7903CEEA79DEBA73}
+\makelabel{smallantimagmas:OneSmallAntimagma}{1.3.11}{X804A623879A9AC7F}
+\makelabel{smallantimagmas:ReallyAllSmallAntimagmas}{1.3.12}{X7D0A720279246D45}
+\makelabel{smallantimagmas:ReallyNrSmallAntimagmas}{1.3.13}{X796637787C216BA1}
+\makelabel{smallantimagmas:MagmaIsomorphism for IsMagma, IsMagma}{1.4.1}{X87F3EA827FF3D302}
+\makelabel{smallantimagmas:MagmaAntiisomorphism for IsMagma, IsMagma}{1.4.2}{X7AB3F3E37D8A5687}

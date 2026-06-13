@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_otherlibraries">
+<Heading>Conversion to other group libraries</Heading>
+
+<P/>
+<Section Label="Chapter_otherlibraries_Section_smallgrp">
+<Heading>The Small Groups Library</Heading>
+
+This library is provided by the &SmallGrp; package.
+<P/>
+<ManSection>
+  <Func Arg="k, i" Name="IdClassNrToIdGroup" />
+ <Returns>a pair of integers <C>[x, y]</C> such that <C>SmallGroup(x, y)</C>  is isomorphic to <C>SmallClassNrGroup(<A>k</A>, <A>i</A>)</C>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<#Include Label="example_smallgrp">
+</Section>
+
+<Section Label="Chapter_otherlibraries_Section_perfgrp">
+<Heading>The Library of Finite Perfect Groups</Heading>
+
+This library is provided by &GAP; itself.
+<P/>
+<ManSection>
+  <Func Arg="k, i" Name="IdClassNrToPerfGrp" />
+ <Returns>a pair of integers <C>[x, y]</C> such that  <C>PerfectGroup(x, y)</C> is isomorphic to
+  <C>SmallClassNrGroup(<A>k</A>, <A>i</A>)</C>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<#Include Label="example_perfgrp">
+</Section>
+
+<Section Label="Chapter_otherlibraries_Section_primgrp">
+<Heading>The Primitive Permutation Groups Library</Heading>
+
+This library is provided by the &PrimGrp; package.
+<P/>
+<ManSection>
+  <Func Arg="k, i" Name="IdClassNrToPrimGrp" />
+ <Returns>a pair of integers <C>[x, y]</C> such that  <C>PrimitiveGroup(x, y)</C> is isomorphic to
+  <C>SmallClassNrGroup(<A>k</A>, <A>i</A>)</C>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<#Include Label="example_primgrp">
+</Section>
+
+<Section Label="Chapter_otherlibraries_Section_transgrp">
+<Heading>The Library of Transitive Groups</Heading>
+
+This library is provided by the &TransGrp; package.
+<P/>
+<ManSection>
+  <Func Arg="k, i" Name="IdClassNrToTransGrp" />
+ <Returns>a pair of integers <C>[x, y]</C> such that  <C>TransitiveGroup(x, y)</C> is isomorphic to
+  <C>SmallClassNrGroup(<A>k</A>, <A>i</A>)</C>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<#Include Label="example_transgrp">
+</Section>
+
+<Section Label="Chapter_otherlibraries_Section_atlasrep">
+<Heading>The ATLAS of Group Representations</Heading>
+
+This library is provided by the &AtlasRep; package.
+<ManSection>
+  <Func Arg="k, i" Name="IdClassNrToAtlasName" />
+ <Returns>a string <C>name</C> such that <C>AtlasGroup(name)</C> is  isomorphic to <C>SmallClassNrGroup(<A>k</A>, <A>i</A>)</C>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<#Include Label="example_atlasrep">
+</Section>
+
+</Chapter>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+  [	<!ENTITY SpinSym "<Package>SpinSym</Package>"> 
+   ]>
+
+
+<Book Name="SpinSym"> 
+
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+
+<Body>
+
+<#Include SYSTEM "chap1.xml">
+<#Include SYSTEM "chap2.xml">
+
+</Body>
+
+<Bibliography Databases="biblio.xml" Style="plain"/>
+
+<TheIndex/>
+
+</Book>

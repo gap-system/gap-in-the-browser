@@ -1,0 +1,181 @@
+  
+  
+  [1XIndex[101X
+  
+  [2X\[\][102X, for IsZFunction, IsInt 10.2-5 
+  [2X_AddElmPObj_ForHomalg[102X 7.2-4 
+  [2X_AddElmWPObj_ForHomalg[102X 7.1-4 
+  [2X_AddTwoElmPObj_ForHomalg[102X 7.2-5 
+  [2X_AddTwoElmWPObj_ForHomalg[102X 7.1-5 
+  [2X_ElmPObj_ForHomalg[102X, for IsContainerForPointers, IsObject, IsObject 7.2-6 
+  [2X_ElmWPObj_ForHomalg[102X, for IsContainerForWeakPointers, IsObject, IsObject 7.1-6 
+  [2XActivateToDoList[102X 5.8-2 
+      for IsObject 5.8-1 
+  [2XActivateWhereInfosInEntries[102X 5.8-5 
+  [2XAdd[102X, for IsTree, IsTree 9.1-9 
+  [2XAddLeftRightLogicalImplicationsForHomalg[102X 8.1-2 
+  [2XAddToToDoList[102X, for IsToDoListEntry 5.2-1 
+  [2XAppendToAhomalgTable[102X 8.1-32 
+  [2XAppliedMap[102X, for IsZFunction 10.2-19 
+  [2XApplyMap[102X, for IsDenseList, IsFunction 10.2-17 
+      for IsZFunction, IsFunction 10.2-16 
+  [2XApplyShift[102X, for IsZFunction, IsInt 10.2-15 
+  [2XAsZFunction[102X, for IsFunction 10.2-2 
+  [2XBaseZFunctions[102X, for IsZFunction 10.2-18 
+  [2XBreakpoint[102X 8.1-53 
+  [2XCacheValue[102X, for IsCachingObject, IsObject 1.2-1 
+  [2XCachingObject[102X 1.1-1 
+      for IsObject 1.1-1 
+      for IsObject, IsObject 1.1-1 
+      for IsObject, IsObject, IsInt 1.1-2 
+      for IsObject, IsObject, IsInt, IsBool 1.1-2 
+  [2XCollectEntries[102X 8.1-44 
+  [2XCombineZFunctions[102X, for IsDenseList 10.2-20 
+  [2XCompareFunction[102X, for IsZFunctionWithInductiveSides 10.2-7 
+  [2XContainerForPointers[102X 7.2-2 
+  [2XContainerForWeakPointers[102X 7.1-2 
+  [2XContent[102X, for IsTree 9.1-2 
+  [2XContentListFromSentinelToHead[102X, for IsTree 9.1-10 
+  [2XDeactivateCachingObject[102X 1.3-3 
+  [2XDeactivateToDoList[102X 5.8-4 
+      for IsObject 5.8-3 
+  [2XDeactivateWhereInfosInEntries[102X 5.8-6 
+  [2XDeclareAttributeWithCustomGetter[102X 8.1-31 
+  [2XDescriptionOfImplication[102X, for IsToDoListEntry 5.2-10 
+  [2XDisplayTimer[102X 8.1-51 
+  [2XExamplesForHomalg[102X 8.2-1 
+      for IsInt 8.2-2 
+  [2XFunctionWithCache[102X 1.4-4 
+  [2XHOMALG_TOOLS[102X 6.1-1 
+  [2XhomalgLaTeX[102X, for IsObject 8.1-40 
+  [2XhomalgNamesOfComponentsToIntLists[102X 8.1-33 
+  [2XhomalgTotalRuntimes[102X 8.1-1 
+  [2XIdenticalPosition[102X, for IsList, IsObject 8.1-41 
+  [2XIncreaseCounterInObject[102X 8.1-36 
+  [2XIncreaseExistingCounterInObject[102X 8.1-34 
+  [2XIncreaseExistingCounterInObjectWithTiming[102X 8.1-35 
+  [2XIndexOfStableLowerValue[102X, for IsZFunction 10.2-12 
+  [2XIndexOfStableUpperValue[102X, for IsZFunction 10.2-9 
+  [2XInstallImmediateMethodToConditionallyPullFalseProperty[102X 8.1-18 
+  [2XInstallImmediateMethodToConditionallyPullPropertyOrAttribute[102X 8.1-10 
+  [2XInstallImmediateMethodToConditionallyPullTrueProperty[102X 8.1-14 
+  [2XInstallImmediateMethodToConditionallyPushPropertyOrAttribute[102X 8.1-22 
+  [2XInstallImmediateMethodToPullFalseProperties[102X 8.1-20 
+  [2XInstallImmediateMethodToPullFalseProperty[102X 8.1-17 
+  [2XInstallImmediateMethodToPullFalsePropertyWithDifferentName[102X 8.1-19 
+  [2XInstallImmediateMethodToPullPropertiesOrAttributes[102X 8.1-12 
+  [2XInstallImmediateMethodToPullPropertyOrAttribute[102X 8.1-9 
+  [2XInstallImmediateMethodToPullPropertyOrAttributeWithDifferentName[102X 8.1-11 
+  [2XInstallImmediateMethodToPullTrueProperties[102X 8.1-16 
+  [2XInstallImmediateMethodToPullTrueProperty[102X 8.1-13 
+  [2XInstallImmediateMethodToPullTruePropertyWithDifferentName[102X 8.1-15 
+  [2XInstallImmediateMethodToPushFalseProperties[102X 8.1-30 
+  [2XInstallImmediateMethodToPushFalseProperty[102X 8.1-28 
+  [2XInstallImmediateMethodToPushFalsePropertyWithDifferentName[102X 8.1-29 
+  [2XInstallImmediateMethodToPushPropertiesOrAttributes[102X 8.1-24 
+  [2XInstallImmediateMethodToPushPropertyOrAttribute[102X 8.1-21 
+  [2XInstallImmediateMethodToPushPropertyOrAttributeWithDifferentName[102X 8.1-23 
+  [2XInstallImmediateMethodToPushTrueProperties[102X 8.1-27 
+  [2XInstallImmediateMethodToPushTrueProperty[102X 8.1-25 
+  [2XInstallImmediateMethodToPushTruePropertyWithDifferentName[102X 8.1-26 
+  [2XInstallLeftRightAttributesForHomalg[102X 8.1-7 
+  [2XInstallLogicalImplicationsForHomalgBasicObjects[102X 8.1-5 
+  [2XInstallMethodWithCache[102X 1.4-1 
+  [2XInstallMethodWithCacheFromObject[102X 1.4-3 
+  [2XInstallMethodWithCrispCache[102X 1.4-2 
+  [2XIsContainerForPointers[102X, for IsComponentObjectRep 7.2-1 
+  [2XIsContainerForWeakPointers[102X, for IsComponentObjectRep 7.1-1 
+  [2XIsEqualForCache[102X, for IsObject, IsObject 1.2-3 
+  [2XIsHomalgSemiringOrModule[102X, for IsStructureObjectOrObject 6.2-5 
+  [2XIsLazyArray[102X, for IsComponentObjectRep and IsList 2.1-1 
+  [2XIsLazyHList[102X, for IsComponentObjectRep and IsList 3.1-1 
+  [2XIsListWithAttributes[102X, for IsAttributeStoringRep and IsList 4.1-1 
+  [2XIsStructureObject[102X, for IsStructureObjectOrObject 6.2-3 
+  [2XIsStructureObjectMorphism[102X, for IsAttributeStoringRep 6.2-4 
+  [2XIsStructureObjectOrObject[102X, for IsStructureObjectOrObjectOrMorphism 6.2-2 
+  [2XIsStructureObjectOrObjectOrMorphism[102X, for IsAttributeStoringRep 6.2-1 
+  [2XIsToDoList[102X, for IsObject 5.3-1 
+  [2XIsTree[102X, for IsObject 9.1-1 
+  [2XIsZFunction[102X, for IsObject 10.1-1 
+  [2XIsZFunctionWithInductiveSides[102X, for IsZFunction 10.1-2 
+  [2XLazyArray[102X 2.2-1 
+  [2XLazyArrayFromList[102X 2.2-1 
+  [2XLazyArrayWithValues[102X 2.2-1 
+  [2XLazyConstantArray[102X 2.2-1 
+  [2XLazyHList[102X 3.2-1 
+  [2XLazyInterval[102X 2.2-1 
+  [2XLazyStandardInterval[102X 2.2-1 
+  [2XLeftRightAttributesForHomalg[102X 8.1-6 
+  [2XListImpliedFilters[102X 8.1-52 
+  [2XListOfSentinels[102X, for IsTree 9.1-5 
+  [2XListOfSuccessors[102X, for IsTree 9.1-3 
+  [2XListWithAttributes[102X 4.2-2 
+  [2XLogicalImplicationsForOneHomalgObject[102X 8.1-3 
+  [2XLogicalImplicationsForTwoHomalgBasicObjects[102X 8.1-4 
+  [2XLowerFunction[102X, for IsZFunctionWithInductiveSides 10.2-7 
+  [2XMakeShowable[102X 8.1-45 
+  [2XMakeShowableWithLaTeX[102X 8.1-46 
+  [2XMatchPropertiesAndAttributes[102X 8.1-8 
+  [2XMaximalObjects[102X, for IsList, IsFunction 8.1-43 
+  [2XMemoryToString[102X 8.1-37 
+  [2XNewToDoList[102X 5.4-1 
+  [2XPositionsOfMaximalObjects[102X, for IsList, IsFunction 8.1-42 
+  [2XPostOrder[102X, for IsTree 9.1-11 
+  [2XPredecessor[102X, for IsTree 9.1-4 
+  [2XPrimePowerExponent[102X 8.1-38 
+  [2XProcess_A_ToDo_List_Entry[102X 5.5-1 
+  [2XProcessAToDoListEntry[102X, for IsToDoListEntry 5.2-4 
+  [2XProcessToDoList[102X, for IsObject 5.5-2 
+  [2XReadPackageOnce[102X 8.1-54 
+  [2XReflection[102X, for IsZFunction 10.2-14 
+  [2XRemoveHead[102X, for IsTree 9.1-6 
+  [2XReplace[102X, for IsZFunction, IsInt, IsDenseList 10.2-21 
+  [2XReplacedStringViaRecord[102X 8.1-47 
+  [2XResetTimer[102X 8.1-50 
+  [2XSemiringElementFilter[102X, for IsRing 6.3-4 
+      for IsSemiringElement 6.3-2 
+  [2XSemiringFilter[102X, for IsRing 6.3-3 
+      for IsSemiring 6.3-1 
+  [2XSetCacheValue[102X, for IsCachingObject, IsObject, IsObject 1.2-2 
+  [2XSetCachingObjectCrisp[102X 1.3-1 
+  [2XSetCachingObjectWeak[102X 1.3-2 
+  [2XSetStableLowerValue[102X, for IsZFunction, IsInt, IsObject 10.2-13 
+  [2XSetStableUpperValue[102X, for IsZFunction, IsInt, IsObject 10.2-10 
+  [2XSetTargetObject[102X, for IsToDoListEntry, IsObject 5.2-8 
+  [2XSetTargetValueObject[102X, for IsToDoListEntry, IsObject 5.2-7 
+  [2XSourcePart[102X, for IsToDoListEntry 5.2-2 
+  [2XStableLowerValue[102X, for IsZFunction 10.2-11 
+  [2XStableUpperValue[102X, for IsZFunction 10.2-8 
+  [2XStartingIndex[102X, for IsZFunctionWithInductiveSides 10.2-7 
+  [2XStartingValue[102X, for IsZFunctionWithInductiveSides 10.2-7 
+  [2XStartTimer[102X 8.1-48 
+  [2XStopTimer[102X 8.1-49 
+  [2XTargetPart[102X, for IsToDoListEntry 5.2-3 
+  [2XToDoList[102X, for IsObject 5.6-1 
+  [2XToDoList_this_object[102X 5.1-4 
+  [2XToDoListEntry[102X, for IsList, IsFunction 5.2-6 
+      for IsList, IsList 5.1-3 
+      for IsList, IsObject, IsString, IsObject 5.2-5 
+  [2XToDoListEntryBlueprint[102X, for IsObject, IsList, IsList 5.1-7 
+  [2XToDoListEntryForEqualAttributes[102X, for IsObject, IsString, IsObject, IsString 5.2-11 
+  [2XToDoListEntryForEquivalentAttributes[102X, for IsObject, IsString, IsObject, IsObject, IsString, IsObject 5.2-12 
+  [2XToDoListEntryToMaintainEqualAttributes[102X, for IsList, IsList, IsList 5.1-1 
+  [2XToDoListEntryToMaintainEqualAttributesBlueprint[102X, for IsObject, IsList, IsList, IsList 5.1-5 
+  [2XToDoListEntryToMaintainFollowingAttributes[102X, for IsList, IsList, IsList 5.1-2 
+  [2XToDoListEntryToMaintainFollowingAttributesBlueprint[102X, for IsObject, IsList, IsList, IsList 5.1-6 
+  [2XToDoListEntryWithContraposition[102X, for IsObject, IsString, IsBool, IsObject, IsString, IsBool 5.2-9 
+  [2XTraceProof[102X, for IsObject, IsString, IsObject 5.7-1 
+  [2XTree[102X 9.1-7 
+      for IsObject 9.1-8 
+  [2XTypedListWithAttributes[102X 4.2-1 
+  [2XUnderlyingFunction[102X, for IsZFunction 10.2-3 
+  [2XUpdateContainerOfPointers[102X, for IsContainerForPointers 7.2-3 
+  [2XUpdateContainerOfWeakPointers[102X, for IsContainerForWeakPointers 7.1-3 
+  [2XUpperFunction[102X, for IsZFunctionWithInductiveSides 10.2-7 
+  [2XViewList[102X, for IsList 8.1-39 
+  [2XVoidZFunction[102X 10.2-1 
+  [2XZFunctionValue[102X, for IsZFunction, IsInt 10.2-4 
+  [2XZFunctionWithInductiveSides[102X, for IsInt, IsObject, IsFunction, IsFunction, IsFunction 10.2-6 
+  
+  
+  -------------------------------------------------------

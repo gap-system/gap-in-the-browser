@@ -1,0 +1,27 @@
+  
+  
+  [1XReferences[101X
+  
+  [[20XCdGS11[120X]  [16XCical\`o,  S.,  de Graaf, W. A. and Schneider, C.[116X, [17XSix-dimensional
+  nilpotent  Lie  algebras[117X,  [18XLinear  Algebra  and its Applications (to appear)[118X
+  (2011).
+  
+  [[20XdG05[120X] [16Xde Graaf, W. A.[116X, [17XClassification of solvable Lie algebras[117X, [18XExperiment.
+  Math.[118X, [19X14[119X, 1 (2005), 15--25.
+  
+  [[20XdG07[120X]  [16Xde  Graaf,  W.  A.[116X,  [17XClassification  of  6-dimensional nilpotent Lie
+  algebras  over  fields  of  characteristic not 2[117X, [18XJ. Algebra[118X, [19X309[119X, 2 (2007),
+  640--653.
+  
+  [[20XSch05[120X]  [16XSchneider,  C.[116X,  [17XA computer-based approach to the classification of
+  nilpotent Lie algebras[117X, [18XExperiment. Math.[118X, [19X14[119X, 2 (2005), 153--160.
+  
+  [[20XStr[120X]     [16XStrade,     H.[116X,     [17XLie     algebras     of    small    dimension[117X,
+  (arxiv.org/abs/math/0601413).
+  
+  [[20XVau06[120X]  [16XVaughan-Lee,  M.[116X,  [17XSimple Lie algebras of low dimension over GF(2)[117X,
+  [18XLMS J. Comput. Math.[118X, [19X9[119X (2006), 174--192 (electronic).
+  
+  
+  
+  [32X

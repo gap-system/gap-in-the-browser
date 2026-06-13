@@ -1,0 +1,208 @@
+  
+  [1X4 [33X[0;0YAuxiliary functions[133X[101X
+  
+  
+  [1X4.1 [33X[0;0YVectors and matrices and their associated polynomials[133X[101X
+  
+  [1X4.1-1 GcdCoprimeSplit[101X
+  
+  [33X[1;0Y[29X[2XGcdCoprimeSplit[102X( [3Xa[103X, [3Xb[103X ) [32X function[133X
+  
+  [33X[0;0YComputes  a  divisor  [22Xa_1[122X  of  the  polynomial  [3Xa[103X  and  a divisor [22Xb_1[122X of the
+  polynomial  [3Xb[103X  such  that  [22Xa_1[122X  and  [22Xb_1[122X  are coprime and the lcm of [3Xa[103X, [3Xb[103X is
+  [22Xa_1*b_1[122X.  This  is  based  on  Lemma  5  in  [Bon14]. (See also Lemma 4.3 in
+  [Gec20]).[133X
+  
+  [33X[0;0Y(Note  that  it does not use the prime factorisation of polynomials but only
+  gcd computations.)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals);;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=x^2*(x-1)^3*(x-2)*(x-3);[127X[104X
+    [4X[28Xx_1^7-8*x_1^6+24*x_1^5-34*x_1^4+23*x_1^3-6*x_1^2[128X[104X
+    [4X[25Xgap>[125X [27Xb:=x^2*(x-1)^2*(x-2)^4*(x-4);[127X[104X
+    [4X[28Xx_1^9-14*x_1^8+81*x_1^7-252*x_1^6+456*x_1^5-480*x_1^4+272*x_1^3-64*x_1^2[128X[104X
+    [4X[25Xgap>[125X [27XGcdCoprimeSplit(a,b);[127X[104X
+    [4X[28X[ x_1^5-4*x_1^4+5*x_1^3-2*x_1^2, x_1^4-6*x_1^3+12*x_1^2-10*x_1+3, [128X[104X
+    [4X[28X  x_1^7-12*x_1^6+56*x_1^5-128*x_1^4+144*x_1^3-64*x_1^2 ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-2 PolynomialToMatVec[101X
+  
+  [33X[1;0Y[29X[2XPolynomialToMatVec[102X( [3XA[103X, [3Xpol[103X, [3Xv[103X ) [32X function[133X
+  
+  [33X[0;0YReturns  the  row  vector  obtained by multiplying the row vector [3Xv[103X with the
+  matrix  [3Xpol[103X([3XA[103X),  where  p  is  a  polynomial. The actual computation is more
+  efficient than this naive approach.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA:=[ [ 0, 1, 0, 1 ],[127X[104X
+    [4X[25X>[125X [27X        [ 0, 0, 0, 0 ],[127X[104X
+    [4X[25X>[125X [27X        [ 0, 1, 0, 1 ],[127X[104X
+    [4X[25X>[125X [27X        [ 1, 1, 1, 1 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals);;[127X[104X
+    [4X[25Xgap>[125X [27Xpol:=x^6-6*x^5+12*x^4-10*x^3+3*x^2;;[127X[104X
+    [4X[25Xgap>[125X [27Xv:=[ 1, 1, 1, 1 ];;[127X[104X
+    [4X[25Xgap>[125X [27XPolynomialToMatVec(A,pol,v);[127X[104X
+    [4X[28X[ 8, -16, 8, -16 ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-3 LcmMaximalVectorMat[101X
+  
+  [33X[1;0Y[29X[2XLcmMaximalVectorMat[102X( [3XA[103X, [3Xv1[103X, [3Xv2[103X, [3Xpol1[103X, [3Xpol2[103X ) [32X function[133X
+  
+  [33X[0;0YReturns,  given  a  matrix  [3XA[103X, vectors [3Xv1[103X, [3Xv2[103X with minimal polynomials [3Xpol1[103X,
+  [3Xpol2[103X, a new pair [[22Xv[122X,[22Xpol[122X], where [22Xv[122X has minimal polynomial [22Xpol[122X, and [22Xpol[122X is the
+  least   common   multiple  of  [3Xpol1[103X  and  [3Xpol2[103X.  This  crucially  relies  on
+  [2XGcdCoprimeSplit[102X ([14X4.1-1[114X) to avoid factorisation of polynomials.[133X
+  
+  [1X4.1-4 SpinMatVector[101X
+  
+  [33X[1;0Y[29X[2XSpinMatVector[102X( [3XA[103X, [3Xv[103X ) [32X function[133X
+  
+  [33X[0;0YComputes  the  smallest  subspace  containing the vector [3Xv[103X that is invariant
+  under the matrix [3XA[103X. The output is a quadruple, with[133X
+  
+  [30X    [33X[0;6Y1st component = basis of that subspace in row echelon form;[133X
+  
+  [30X    [33X[0;6Y2nd  component = matrix with rows [22X[3Xv[103X, [3Xv[103X.[3XA[103X, [3Xv[103X.[3XA[103X^2, ..., [3Xv[103X.[3XA[103X^{d-1}[122X (where
+        [22Xd[122X is the degree of the local minimal polynomial of [3Xv[103X);[133X
+  
+  [30X    [33X[0;6Y3rd  component  =  the  coefficients  [22Xa_0[122X,  [22Xa_1[122X, ..., [22Xa_d[122X of the local
+        minimal polynomial; and[133X
+  
+  [30X    [33X[0;6Y4th component = the positions of the pivots of the first component.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA:=[ [   5,   2,  -4,   2 ],[127X[104X
+    [4X[25X>[125X [27X        [  -1,   0,   2,  -1 ],[127X[104X
+    [4X[25X>[125X [27X        [  -1,  -1,   3,  -1 ],[127X[104X
+    [4X[25X>[125X [27X        [ -13,  -7,  14,  -6 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XSpinMatVector(A,[1,0,0,0]);[127X[104X
+    [4X[28X[ [ [ 1, 0, 0, 0 ], [ 0, 1, -2, 1 ] ],[128X[104X
+    [4X[28X  [ [ 1, 0, 0, 0 ], [ 5, 2, -4, 2 ] ],[128X[104X
+    [4X[28X  [ -1, 0, 1 ],[128X[104X
+    [4X[28X  [ 1, 2 ] ][128X[104X
+    [4X[25Xgap>[125X [27XSpinMatVector(A,[0,1,0,0]);[127X[104X
+    [4X[28X[ [ [ 0, 1, 0, 0 ], [ 1, 0, -2, 1 ], [ 0, 0, 1, -1/2 ] ],[128X[104X
+    [4X[28X  [ [ 0, 1, 0, 0 ], [ -1, 0, 2, -1 ], [ 6, 3, -4, 2 ] ],[128X[104X
+    [4X[28X  [ 1, -1, -1, 1 ],[128X[104X
+    [4X[28X  [ 2, 1, 3 ] ][128X[104X
+    [4X[25Xgap>[125X [27XSpinMatVector(A,[1,1,0,0]);[127X[104X
+    [4X[28X[ [ [ 1, 1, 0, 0 ], [ 0, 1, 1, -1/2 ] ],[128X[104X
+    [4X[28X  [ [ 1, 1, 0, 0 ], [ 4, 2, -2, 1 ] ],[128X[104X
+    [4X[28X  [ 1, -2, 1 ],[128X[104X
+    [4X[28X  [ 1, 2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-5 CyclicChainMat[101X
+  
+  [33X[1;0Y[29X[2XCyclicChainMat[102X( [3XA[103X ) [32X function[133X
+  
+  [33X[0;0YRepeatedly  computes  the  smallest invariant subspaces containing different
+  vectors  to  compute  a  chain  of  cyclic subspaces. The output is a triple
+  [10X[B,C,svec][110X  where  [22XC[122X  is  such that [22XC[3XA[103XC^-1[122X has a block triangular shape with
+  companion  matrices  along the diagonal), [22XB[122X is the row echelon form of C and
+  svec is the list of indices where the blocks begin.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA:=[ [ 0, 1, 0, 1 ],[127X[104X
+    [4X[25X>[125X [27X        [ 0, 0, 1, 0 ],[127X[104X
+    [4X[25X>[125X [27X        [ 0, 1, 0, 1 ],[127X[104X
+    [4X[25X>[125X [27X        [ 1, 1, 1, 1 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xsp:=CyclicChainMat(A);[127X[104X
+    [4X[28X[ [ [ 1, 0, 0, 0 ], [ 0, 1, 0, 1 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ],[128X[104X
+    [4X[28X  [ [ 1, 0, 0, 0 ], [ 0, 1, 0, 1 ], [ 1, 1, 2, 1 ], [ 0, 0, 0, 1 ] ],[128X[104X
+    [4X[28X  [ 1, 4, 5 ] ][128X[104X
+    [4X[25Xgap>[125X [27XPrintArray(sp[2]*A*sp[2]^-1);[127X[104X
+    [4X[28X[ [    0,    1,    0,    0 ],[128X[104X
+    [4X[28X  [    0,    0,    1,    0 ],[128X[104X
+    [4X[28X  [    0,    3,    1,    0 ],[128X[104X
+    [4X[28X  [  1/2,  1/2,  1/2,    0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-6 MaximalVectorMat[101X
+  
+  [33X[1;0Y[29X[2XMaximalVectorMat[102X( [3XA[103X ) [32X function[133X
+  
+  [33X[0;0YReturns  the  minimal  polynomial and a maximal vector of the matrix [3XA[103X, that
+  is,  a  vector  whose local minimal polynomial is that of [3XA[103X. This is done by
+  repeatedly  spinning  up  vectors  until  a  maximal one is found. The exact
+  algorithm is a combination of[133X
+  
+  [30X    [33X[0;6Ythe  minimal  polynomial algorithm by Neunhoeffer-Praeger; see [NP08];
+        and[133X
+  
+  [30X    [33X[0;6Ythe  method  described by Bongartz (see [Bon14]) for computing maximal
+        vectors.[133X
+  
+  [33X[0;0YSee also the article by Geck at [Gec20].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XA:=[ [  2,  2,  0,  1,  0,  2,  1 ],[127X[104X
+    [4X[25X>[125X [27X        [  0,  4,  0,  0,  0,  1,  0 ],[127X[104X
+    [4X[25X>[125X [27X        [  0,  1,  1,  0,  0,  1,  1 ],[127X[104X
+    [4X[25X>[125X [27X        [  0, -1,  0,  1,  0, -1,  0 ],[127X[104X
+    [4X[25X>[125X [27X        [  0, -7,  0,  0,  1, -5,  0 ],[127X[104X
+    [4X[25X>[125X [27X        [  0, -2,  0,  0,  0,  1,  0 ],[127X[104X
+    [4X[25X>[125X [27X        [  0, -1,  0,  0,  0, -1,  1 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XMaximalVectorMat(A);[127X[104X
+    [4X[28X[ [ 1, -2, 1, 1, 0, 0, 1 ], x_1^4-7*x_1^3+17*x_1^2-17*x_1+6 ][128X[104X
+    [4X[25Xgap>[125X [27Xv:=last[1];;[127X[104X
+    [4X[25Xgap>[125X [27XSpinMatVector(A,v)[3];[127X[104X
+    [4X[28X[ 6, -17, 17, -7, 1 ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIn  the  following  example,  [22XM_2[122X  is the (challenging) test matrix from the
+  paper by Neunhoeffer-Praeger:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("AtlasRep");; g:=AtlasGroup("B",1); M2:=g.1+g.2+g.1*g.2;[127X[104X
+    [4X[28X<matrix group of size 4154781481226426191177580544000000 with 2 generators>[128X[104X
+    [4X[28X<an immutable 4370x4370 matrix over GF2>[128X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(Infonofoma,1);[127X[104X
+    [4X[25Xgap>[125X [27XMaximalVectorMat(M2);;time;[127X[104X
+    [4X[28X#I Degree of minimal polynomial is 2097[128X[104X
+    [4X[28X6725[128X[104X
+    [4X[25Xgap>[125X [27XMinimalPolynomial(M2);;time;[127X[104X
+    [4X[28X13415[128X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("cvec");[127X[104X
+    [4X[25Xgap>[125X [27XMinimalPolynomial(CMat(M2));;time;[127X[104X
+    [4X[28X9721[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-7 JacobMatComplement[101X
+  
+  [33X[1;0Y[29X[2XJacobMatComplement[102X( [3XT[103X, [3Xd[103X ) [32X function[133X
+  
+  [33X[0;0YModifies  an  already  given  complementary  subspace  to  the complementary
+  subspace  defined  by Jacob; concretely, this is realized by assuming that [3XT[103X
+  is  a  matrix in block triangular shape, where the upper left diagonal block
+  is  a  companion matrix (as returned by [2XRatFormStep1[102X ([14X4.1-8[114X); the variable [3Xd[103X
+  gives  the  size  of that block. (If [3XT[103X gives a maximal cyclic subspace, then
+  Jacob's  complement  is  also [3XT[103X-invariant; but even if not, it appears to be
+  very useful because it produces many zeroes.)[133X
+  
+  [1X4.1-8 RatFormStep1[101X
+  
+  [33X[1;0Y[29X[2XRatFormStep1[102X( [3XA[103X, [3Xv[103X ) [32X function[133X
+  
+  [33X[0;0YSpins  up  a  vector  [3Xv[103X  under a matrix [3XA[103X, computes a complementary subspace
+  (using  Jacob's construction), and performs the base change. The output is a
+  quadruple  [10X[A1,P,pol,str][110X  where [22XA1[122X is the new matrix, [22XP[122X is the base change,
+  [22Xpol[122X  is the minimal polynomial and [22Xstr[122X is either 'split' or 'not', according
+  to whether the extension is split or not.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xv:=[ 1, 1, 1, 1 ];;[127X[104X
+    [4X[25Xgap>[125X [27XA:=[ [ 0, 1, 0, 1 ],[127X[104X
+    [4X[25X>[125X [27X        [ 0, 0, 1, 0 ],[127X[104X
+    [4X[25X>[125X [27X        [ 0, 1, 0, 1 ],[127X[104X
+    [4X[25X>[125X [27X        [ 1, 1, 1, 1 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XPrintArray(RatFormStep1(A,v)[1]);[127X[104X
+    [4X[28X[ [  0,  1,  0,  0 ],[128X[104X
+    [4X[28X  [  0,  0,  1,  0 ],[128X[104X
+    [4X[28X  [  0,  3,  1,  0 ],[128X[104X
+    [4X[28X  [  1,  0,  0,  0 ] ][128X[104X
+  [4X[32X[104X
+  

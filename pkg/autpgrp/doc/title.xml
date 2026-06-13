@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    AutPGrp
+  </Title>
+  <Subtitle>
+    Computing the Automorphism Group of a p-Group
+  </Subtitle>
+  <Version>
+    1.12.0
+  </Version>
+  <Author>
+    Bettina Eick
+<Address>
+Institut Analysis und Algebra<Br/>
+TU Braunschweig<Br/>
+Universitätsplatz 2<Br/>
+D-38106 Braunschweig<Br/>
+Germany<Br/>
+</Address>
+<Email>beick@tu-bs.de</Email>
+<Homepage>http://www.iaa.tu-bs.de/beick</Homepage>
+  </Author>
+  <Author>
+    Eamonn O'Brien
+<Address>
+Department of Mathematics<Br/>
+University of Auckland<Br/>
+Private Bag 92019<Br/>
+ Auckland<Br/>
+ New Zealand<Br/>
+</Address>
+<Email>obrien@math.auckland.ac.nz</Email>
+<Homepage>http://www.math.auckland.ac.nz/~obrien</Homepage>
+  </Author>
+  <Date>
+    17 May 2026
+  </Date>
+  <Abstract>
+              The &AUTPGRP; package introduces a new
+          function to compute the automorphism group of a finite
+          <M>p</M>-group. The underlying algorithm is a refinement of the
+          methods described in O'Brien (1995). In particular, this
+          implementation is more efficient in both time and space requirements
+          and hence has a wider range of applications than the ANUPQ method.
+          Our package is written in &GAP; code and it makes use of a number of
+          methods from the &GAP; library such as the MeatAxe for matrix groups
+          and permutation group functions. We have compared our method to the
+          others available in &GAP;. Our package usually out-performs all but
+          the method designed for finite abelian groups. We note that our
+          method uses the small groups library in certain cases and hence our
+          algorithm is more effective if the small groups library is
+          installed.
+  </Abstract>
+  <Copyright>
+              Bettina Eick and Eamonn O'Brien.<P/>
+
+          AutPGrp is free software; you can redistribute it and/or modify
+          it under the terms of the <URL Text="GNU General Public License">
+          https://www.fsf.org/licenses/gpl.html</URL> as published by the
+          Free Software Foundation; either version 2 of the License, or (at
+          your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+              We thank Alexander Hulpke for helping us with efficiency
+          problems. Werner Nickel provided some functions from
+          the &GAP; <C>PQuotient</C> which are used in this package.
+        
+  </Acknowledgements>
+  </TitlePage>

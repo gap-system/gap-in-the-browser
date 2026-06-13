@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_reidemeisterzeta">
+<Heading>Reidemeister zeta and generating functions</Heading>
+
+<P/>
+Please note that the functions in this chapter are only implemented for endomorphisms
+of finite groups.
+<P/>
+<Section Label="Chapter_reidemeisterzeta_Section_decomposingreidnr">
+<Heading>Decomposing Reidemeister number sequences</Heading>
+
+<P/>
+For a finite group, the sequence of Reidemeister numbers of the iterates of
+<A>endo1</A> and <A>endo2</A>, i.e. the sequence
+<C>R(<A>endo1</A>,<A>endo2</A>)</C>,
+<C>R(<A>endo1</A>^2,<A>endo2</A>^2)</C>, ..., is eventually periodic.
+Thus there exist a periodic sequence <Math>(P_n)_{n \in \mathbb{N}}</Math> and an
+eventually zero sequence <Math>(Q_n)_{n \in \mathbb{N}}</Math> such that
+<Display>\forall n \in \mathbb{N}: R(\varphi^n,\psi^n) = P_n + Q_n.</Display>
+<P/>
+<ManSection>
+  <Func Arg="endo1[, endo2]" Name="IteratedReidemeisterNumberDecomposition" />
+ <Returns>two lists of integers: the first list contains one period of the  sequence <Math>(P_n)_{n \in \mathbb{N}}</Math>, the second list contains
+  <Math>(Q_n)_{n \in \mathbb{N}}</Math> up to the part where it becomes the constant zero
+  sequence.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> G := PcGroupCode( 3913, 12 );;
+gap> phi := GroupHomomorphismByImages( G, G, [ G.1, G.3 ],
+>  [ One( G ), One( G ) ] );;
+gap> psi := GroupHomomorphismByImages( G, G, [ G.1, G.3 ],
+>  [ G.2, One( G ) ] );;
+gap> IteratedReidemeisterNumberDecomposition( phi );
+[ [ 1 ], [  ] ]
+gap> IteratedReidemeisterNumberDecomposition( phi, psi );
+[ [ 12 ], [ -6 ] ]
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_reidemeisterzeta_Section_reidemeisterzeta">
+<Heading>Reidemeister zeta functions</Heading>
+
+<P/>
+Let <Math>\varphi,\psi\colon G \to G</Math> be endomorphisms such that
+<Math>R(\varphi^n,\psi^n) &lt; \infty</Math> for all <Math>n \in \mathbb{N}</Math>. Then the
+<Emph>Reidemeister zeta function</Emph> <Math>Z_{\varphi,\psi}(s)</Math> of the pair
+<Math>(\varphi,\psi)</Math> is defined as
+<Display>Z_{\varphi,\psi}(s) := \exp \sum_{n=1}^\infty \frac{R(\varphi^n,\psi^n)}{n} s^n.</Display>
+<P/>
+<P/>
+<ManSection>
+  <Func Arg="endo1[, endo2]" Name="IsRationalReidemeisterZetaFunction" />
+ <Returns><K>true</K> if the Reidemeister zeta function of <A>endo1</A> and  <A>endo2</A> is rational, otherwise <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="endo1[, endo2]" Name="ReidemeisterZetaFunction" />
+ <Returns>the Reidemeister zeta function of <A>endo1</A> and <A>endo2</A> if  it is rational, otherwise <K>fail</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="endo1[, endo2]" Name="PrintReidemeisterZetaFunction" />
+ <Returns>a string describing the Reidemeister zeta function of <A>endo1</A>  and <A>endo2</A>.
+</Returns>
+ <Description>
+ This is often more readable than evaluating
+ <Ref Func="ReidemeisterZetaFunction" Style="Number"/> in an indeterminate,
+ and does not require rationality.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> IsRationalReidemeisterZetaFunction( phi );
+true
+gap> IsRationalReidemeisterZetaFunction( phi, psi );
+false
+gap> s := Indeterminate( Rationals, "s" );;
+gap> ReidemeisterZetaFunction( phi )( s );
+(1)/(-s+1)
+gap> PrintReidemeisterZetaFunction( phi, psi );
+"exp(-6*s)*(1-s)^(-12)"
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_reidemeisterzeta_Section_reidemeistergen">
+<Heading>Reidemeister generating functions</Heading>
+
+<P/>
+Let <Math>\varphi,\psi\colon G \to G</Math> be endomorphisms such that
+<Math>R(\varphi^n,\psi^n) &lt; \infty</Math> for all <Math>n \in \mathbb{N}</Math>. Then the
+<Emph>Reidemeister generating function</Emph> <Math>Z^*_{\varphi,\psi}(s)</Math> of the pair
+<Math>(\varphi,\psi)</Math> is defined as
+<Display>Z^*_{\varphi,\psi}(s) := \sum_{n=1}^\infty R(\varphi^n,\psi^n) s^n.</Display>
+<P/>
+<ManSection>
+  <Func Arg="endo1[, endo2]" Name="IsRationalReidemeisterGeneratingFunction" />
+ <Returns><K>true</K> if the Reidemeister generating function of <A>endo1</A>  and <A>endo2</A> is rational, otherwise <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="endo1[, endo2]" Name="ReidemeisterGeneratingFunction" />
+ <Returns>the Reidemeister generating function of <A>endo1</A> and  <A>endo2</A> if it is rational, otherwise <K>fail</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="endo1[, endo2]" Name="PrintReidemeisterGeneratingFunction" />
+ <Returns>a string describing the Reidemeister generating function of  <A>endo1</A> and <A>endo2</A>.
+</Returns>
+ <Description>
+ This is often more readable than evaluating
+ <Ref Func="ReidemeisterGeneratingFunction" Style="Number"/> in an
+ indeterminate, and does not require rationality.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> IsRationalReidemeisterGeneratingFunction( phi, psi );
+true
+gap> ReidemeisterGeneratingFunction( phi, psi )( 2 );
+-36
+gap> PrintReidemeisterGeneratingFunction( phi, psi );
+"(6*s^2+6*s)/(-s+1)"
+]]></Example>
+
+</Section>
+
+</Chapter>
+

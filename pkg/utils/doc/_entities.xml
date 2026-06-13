@@ -1,0 +1,11 @@
+<!ENTITY AutoDoc '<Package>AutoDoc</Package>'>
+<!ENTITY Home '<Package>Home</Package>'>
+<!ENTITY Magma '<M>{\sf Magma}</M>'>
+<!ENTITY MathJax '<M>{\sf MathJax}</M>'>
+<!ENTITY RCWA '<Package>RCWA</Package>'>
+<!ENTITY RELEASEDATE '6 June 2026'>
+<!ENTITY RELEASEYEAR '2026'>
+<!ENTITY ResClasses '<Package>ResClasses</Package>'>
+<!ENTITY Utils '<Package>Utils</Package>'>
+<!ENTITY VERSION '0.96'>
+<!ENTITY XMod '<Package>XMod</Package>'>

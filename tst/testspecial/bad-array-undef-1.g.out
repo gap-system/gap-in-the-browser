@@ -1,0 +1,15 @@
+gap> f := function()
+>     local l,m;
+>     l := [];
+>     return l[m];
+> end;
+function(  ) ... end
+gap> f();
+Error, Variable: 'm' must have an assigned value
+Stack trace:
+*[1] return l[m];
+   @ *stdin*:5
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:7
+you can enter 'quit;' to quit to outer loop
+brk> QUIT;

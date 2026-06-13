@@ -1,0 +1,93 @@
+  
+  [1X4 [33X[0;0YConversion to other group libraries[133X[101X
+  
+  
+  [1X4.1 [33X[0;0YThe Small Groups Library[133X[101X
+  
+  [33X[0;0YThis library is provided by the [5XSmallGrp[105X package.[133X
+  
+  [1X4.1-1 IdClassNrToIdGroup[101X
+  
+  [33X[1;0Y[29X[2XIdClassNrToIdGroup[102X( [3Xk[103X, [3Xi[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya pair of integers [10X[x, y][110X such that [10XSmallGroup(x, y)[110X is isomorphic
+            to [10XSmallClassNrGroup([3Xk[103X[10X, [3Xi[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIdClassNrToIdGroup( 9, 19 );[127X[104X
+    [4X[28X[ 192, 1025 ][128X[104X
+    [4X[25Xgap>[125X [27XIdClassNr( SmallGroup( 192, 1025 ) );[127X[104X
+    [4X[28X[ 9, 19 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.2 [33X[0;0YThe Library of Finite Perfect Groups[133X[101X
+  
+  [33X[0;0YThis library is provided by [5XGAP[105X itself.[133X
+  
+  [1X4.2-1 IdClassNrToPerfGrp[101X
+  
+  [33X[1;0Y[29X[2XIdClassNrToPerfGrp[102X( [3Xk[103X, [3Xi[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya  pair  of  integers  [10X[x,  y][110X  such  that  [10XPerfectGroup(x,  y)[110X is
+            isomorphic to [10XSmallClassNrGroup([3Xk[103X[10X, [3Xi[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIdClassNrToPerfGrp( 10, 36 );[127X[104X
+    [4X[28X[ 14520, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XIdClassNr( PerfectGroup( 14520, 1 ) );[127X[104X
+    [4X[28X[ 10, 36 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.3 [33X[0;0YThe Primitive Permutation Groups Library[133X[101X
+  
+  [33X[0;0YThis library is provided by the [5XPrimGrp[105X package.[133X
+  
+  [1X4.3-1 IdClassNrToPrimGrp[101X
+  
+  [33X[1;0Y[29X[2XIdClassNrToPrimGrp[102X( [3Xk[103X, [3Xi[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya  pair  of  integers  [10X[x,  y][110X  such  that [10XPrimitiveGroup(x, y)[110X is
+            isomorphic to [10XSmallClassNrGroup([3Xk[103X[10X, [3Xi[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIdClassNrToPrimGrp( 9, 25 );[127X[104X
+    [4X[28X[ 49, 25 ][128X[104X
+    [4X[25Xgap>[125X [27XIdClassNr( PrimitiveGroup( 49, 25 ) );[127X[104X
+    [4X[28X[ 9, 25 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.4 [33X[0;0YThe Library of Transitive Groups[133X[101X
+  
+  [33X[0;0YThis library is provided by the [5XTransGrp[105X package.[133X
+  
+  [1X4.4-1 IdClassNrToTransGrp[101X
+  
+  [33X[1;0Y[29X[2XIdClassNrToTransGrp[102X( [3Xk[103X, [3Xi[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya  pair  of  integers  [10X[x,  y][110X  such that [10XTransitiveGroup(x, y)[110X is
+            isomorphic to [10XSmallClassNrGroup([3Xk[103X[10X, [3Xi[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIdClassNrToTransGrp( 12, 46 );[127X[104X
+    [4X[28X[ 45, 314 ][128X[104X
+    [4X[25Xgap>[125X [27XIdClassNr( TransitiveGroup( 45, 314 ) );[127X[104X
+    [4X[28X[ 12, 46 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.5 [33X[0;0YThe ATLAS of Group Representations[133X[101X
+  
+  [33X[0;0YThis library is provided by the [5XAtlasRep[105X package.[133X
+  
+  [1X4.5-1 IdClassNrToAtlasName[101X
+  
+  [33X[1;0Y[29X[2XIdClassNrToAtlasName[102X( [3Xk[103X, [3Xi[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya   string  [10Xname[110X  such  that  [10XAtlasGroup(name)[110X  is  isomorphic  to
+            [10XSmallClassNrGroup([3Xk[103X[10X, [3Xi[103X[10X)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIdClassNrToAtlasName( 11, 34 );[127X[104X
+    [4X[28X"L2(17)"[128X[104X
+    [4X[25Xgap>[125X [27XIdClassNr( AtlasGroup( "L2(17)" ) );[127X[104X
+    [4X[28X[ 11, 34 ][128X[104X
+  [4X[32X[104X
+  

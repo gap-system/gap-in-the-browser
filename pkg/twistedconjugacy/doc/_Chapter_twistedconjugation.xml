@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_twistedconjugation">
+<Heading>Twisted conjugation</Heading>
+
+<P/>
+<Section Label="Chapter_twistedconjugation_Section_twistedconjugationaction">
+<Heading>The twisted conjugation action</Heading>
+
+<P/>
+Let <Math>G</Math> and <Math>H</Math> be groups and let <Math>\varphi</Math> and <Math>\psi</Math> be group
+homomorphisms from <Math>H</Math> to <Math>G</Math>. The pair <Math>(\varphi,\psi)</Math> induces a
+(right) group action of <Math>H</Math> on <Math>G</Math> given by the map <Display>G \times H \to G
+\colon (g,h) \mapsto \varphi(h)^{-1} g\,\psi(h).</Display>
+This group action is called <Emph><Math>(\varphi,\psi)</Math>-twisted conjugation</Emph>.
+<P/>
+<P/>
+<P/>
+If <Math>G = H</Math>, <Math>\varphi</Math> is an endomorphism of <Math>G</Math> and
+<Math>\psi = \operatorname{id}_G</Math>, then the action is usually called
+<Emph><Math>\varphi</Math>-twisted conjugation</Emph>.
+In general, for the &PACKAGENAME; package, many functions will take
+two homomorphisms <A>hom1</A> and <A>hom2</A> as arguments. However, if
+<A>hom1</A> is an endomorphism, <A>hom2</A> can be omitted, in which case it
+is automatically taken to be the identity map.
+Similarly, some functions will take two elements <A>g1</A> and <A>g2</A> as
+arguments. If <A>g2</A> is omitted, it is automatically taken to be the
+identity element.
+<P/>
+<ManSection>
+  <Func Arg="hom1[, hom2]" Name="TwistedConjugation" />
+ <Returns>a function that maps the pair <C>(g,h)</C> to  <A>hom1</A><C>(h)⁻¹</C> <C>g</C> <A>hom2</A><C>(h)</C>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> G := AlternatingGroup( 6 );;
+gap> H := SymmetricGroup( 5 );;
+gap> phi := GroupHomomorphismByImages( H, G, [ (1,2)(3,5,4), (2,3)(4,5) ],
+>  [ (1,4)(3,6), () ] );;
+gap> psi := GroupHomomorphismByImages( H, G, [ (1,2)(3,5,4), (2,3)(4,5) ],
+>  [ (1,2)(3,4), () ] );;
+gap> tc := TwistedConjugation( phi, psi );;
+gap> g1 := (4,6,5);;
+gap> h1 := (1,3,2)(4,5);;
+gap> tc( g1, h1 );
+(1,6,4,2)(3,5)
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_twistedconjugation_Section_tcp">
+<Heading>The twisted conjugacy (search) problem</Heading>
+
+<P/>
+Given groups <Math>G</Math> and <Math>H</Math>, group homomorphisms <Math>\varphi</Math> and <Math>\psi</Math> from <Math>H</Math>
+to <Math>G</Math> and elements <Math>g_1, g_2 \in G</Math>, the <Emph>twisted conjugacy problem</Emph> is
+the decision problem that asks whether <Math>g_1</Math> and <Math>g_2</Math> are
+<Math>(\varphi,\psi)</Math>-twisted conjugate.
+The <Emph>twisted conjugacy search problem</Emph> is the problem of determining
+an explicit <Math>h</Math> such that <Math>\varphi(h)^{-1}g_1\psi(h) = g_2</Math> (under the
+assumption that such <Math>h</Math> exists).
+<P/>
+<ManSection>
+  <Func Arg="hom1[, hom2], g1[, g2]" Name="IsTwistedConjugate" />
+ <Returns><K>true</K> if <A>g1</A> and <A>g2</A> are  <C>(<A>hom1</A>,<A>hom2</A>)</C>-twisted conjugate, otherwise <K>false</K>.
+</Returns>
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="hom1[, hom2], g1[, g2]" Name="RepresentativeTwistedConjugation" />
+ <Returns>an element that maps <A>g1</A> to <A>g2</A> under the  <C>(<A>hom1</A>,<A>hom2</A>)</C>-twisted conjugacy action, or <K>fail</K> if
+  no such element exists.
+</Returns>
+ <Description>
+ If the source group is finite, this function relies on orbit-stabiliser
+ algorithms provided by &GAP;. Otherwise, it relies on a mixture of the
+ algorithms described in <Cite Key='roma16-a' Where='Thm. 3'/>,
+ <Cite Key='bkl20-a' Where='Sec. 5.4'/>,
+ <Cite Key='roma21-a' Where='Sec. 7'/> and <Cite Key='dt21-a'/>.
+ </Description>
+</ManSection>
+
+<Example><![CDATA[
+gap> g2 := (1,6,4,2)(3,5);;
+gap> IsTwistedConjugate( psi, phi, g1, g2 );
+false
+gap> h2 := RepresentativeTwistedConjugation( phi, psi, g1, g2 );
+(1,2)
+gap> tc( g1, h2 ) = g2;
+true
+]]></Example>
+
+</Section>
+
+<Section Label="Chapter_twistedconjugation_Section_mtcp">
+<Heading>The multiple twisted conjugacy (search) problem</Heading>
+
+<P/>
+Let <Math>H</Math> and <Math>G_1, \ldots, G_n</Math> be groups. For each <Math>i \in \{1,\ldots,n\}</Math>,
+let <Math>g_i,g_i' \in G_i</Math> and let <Math>\varphi_i,\psi_i\colon H \to G_i</Math> be group
+homomorphisms.
+The <Emph>multiple twisted conjugacy problem</Emph> is
+the decision problem that asks whether there exists some <Math>h \in H</Math> such that
+<Math>\varphi_i(h)^{-1}g_i\psi_i(h) = g_i'</Math> for all <Math>i \in \{1,\ldots,n\}</Math>.
+The <Emph>multiple twisted conjugacy search problem</Emph> is the problem of
+determining an explicit <Math>h</Math> such that <Math>\varphi_i(h)^{-1}g_i\psi_i(h) = g_i'</Math>
+for all <Math>i \in \{1,\ldots,n\}</Math> (under the assumption that such <Math>h</Math> exists).
+<P/>
+<P/>
+<P/>
+<Ref Func="IsTwistedConjugate" Style="Number"/> and
+<Ref Func="RepresentativeTwistedConjugation" Style="Number"/> can take lists
+instead of their usual arguments to solve these problems.
+<Example><![CDATA[
+gap> tau := GroupHomomorphismByImages( H, G, [ (1,2)(3,5,4), (2,3)(4,5) ],
+>  [ (1,2)(3,6), () ] );;
+gap> khi := GroupHomomorphismByImages( H, G, [ (1,2)(3,5,4), (2,3)(4,5) ],
+>  [ (1,3)(4,6), () ] );;
+gap> IsTwistedConjugate( [ phi, psi ], [ khi, tau ],
+>  [ (1,5)(4,6), (1,4)(3,5) ], [ (1,4,5,3,6), (2,4,5,6,3) ] );
+true
+gap> RepresentativeTwistedConjugation( [ phi, psi ], [ khi, tau ],
+>  [ (1,5)(4,6), (1,4)(3,5) ], [ (1,4,5,3,6), (2,4,5,6,3) ] );
+(1,2)
+]]></Example>
+
+</Section>
+
+</Chapter>
+

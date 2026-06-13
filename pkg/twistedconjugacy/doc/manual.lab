@@ -1,0 +1,167 @@
+\GAPDocLabFile{twistedconjugacy}
+\makelabel{twistedconjugacy:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{twistedconjugacy:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{twistedconjugacy:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{twistedconjugacy:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{twistedconjugacy:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{twistedconjugacy:The TwistedConjugacy package}{1}{X78FCE1F07D997CB7}
+\makelabel{twistedconjugacy:Installation}{1.1}{X8360C04082558A12}
+\makelabel{twistedconjugacy:Loading}{1.2}{X861ED1338181C66D}
+\makelabel{twistedconjugacy:Citing}{1.3}{X7A178B0587668C3E}
+\makelabel{twistedconjugacy:Support}{1.4}{X7B689C0284AC4296}
+\makelabel{twistedconjugacy:Mathematical background}{2}{X7EF1B6708069B0C7}
+\makelabel{twistedconjugacy:Twisted conjugation}{3}{X817EF43C7DCB4AF1}
+\makelabel{twistedconjugacy:The twisted conjugation action}{3.1}{X86BE54A080E991A8}
+\makelabel{twistedconjugacy:The twisted conjugacy (search) problem}{3.2}{X7838A5A678158C68}
+\makelabel{twistedconjugacy:The multiple twisted conjugacy (search) problem}{3.3}{X8554A80A7A7430C4}
+\makelabel{twistedconjugacy:Twisted conjugacy classes}{4}{X78F9595B78DAC70D}
+\makelabel{twistedconjugacy:Creating a twisted conjugacy class}{4.1}{X7CACD3337A7C90F0}
+\makelabel{twistedconjugacy:Operations on twisted conjugacy classes}{4.2}{X7FA74F8E7BB7915D}
+\makelabel{twistedconjugacy:Representative}{4.2.1}{X865507568182424E}
+\makelabel{twistedconjugacy:ActingDomain}{4.2.2}{X7B9DB15D80CE28B4}
+\makelabel{twistedconjugacy:FunctionAction}{4.2.3}{X86153CB087394DC1}
+\makelabel{twistedconjugacy:IsFinite}{4.2.5}{X808A4061809A6E67}
+\makelabel{twistedconjugacy:Size}{4.2.6}{X858ADA3B7A684421}
+\makelabel{twistedconjugacy:StabiliserOfExternalSet}{4.2.7}{X867840C67C990840}
+\makelabel{twistedconjugacy:List}{4.2.8}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:Random}{4.2.9}{X79730D657AB219DB}
+\makelabel{twistedconjugacy:Calculating all twisted conjugacy classes}{4.3}{X8238998382FE372A}
+\makelabel{twistedconjugacy:Reidemeister numbers and spectra}{5}{X7B27E1F98083C837}
+\makelabel{twistedconjugacy:Reidemeister numbers}{5.1}{X7FE8086286A91524}
+\makelabel{twistedconjugacy:Reidemeister spectra}{5.2}{X7CED57E379712C3A}
+\makelabel{twistedconjugacy:Reidemeister zeta and generating functions}{6}{X7E82F3067F87436B}
+\makelabel{twistedconjugacy:Decomposing Reidemeister number sequences}{6.1}{X7AFEF82081BCE78E}
+\makelabel{twistedconjugacy:Reidemeister zeta functions}{6.2}{X862C248A828A2C4A}
+\makelabel{twistedconjugacy:Reidemeister generating functions}{6.3}{X86EF23C586585292}
+\makelabel{twistedconjugacy:Cosets of PcpGroups}{7}{X86AB2EC37E2F6C19}
+\makelabel{twistedconjugacy:Right cosets}{7.1}{X7A16782E7B3F98F6}
+\makelabel{twistedconjugacy:Intersection}{7.1.1}{X851069107CACF98E}
+\makelabel{twistedconjugacy:Double cosets}{7.2}{X78B98B257E981046}
+\makelabel{twistedconjugacy:IsFinite}{7.2.2}{X808A4061809A6E67}
+\makelabel{twistedconjugacy:Size}{7.2.3}{X858ADA3B7A684421}
+\makelabel{twistedconjugacy:List}{7.2.4}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:DoubleCosets}{7.2.6}{X7A5EFABB86E6D4D5}
+\makelabel{twistedconjugacy:DoubleCosetRepsAndSizes}{7.2.7}{X7A25B1C886CF8C6A}
+\makelabel{twistedconjugacy:DoubleCosetIndex}{7.2.8}{X805F0F1E803BE255}
+\makelabel{twistedconjugacy:Group homomorphisms}{8}{X83702FC27B3C3098}
+\makelabel{twistedconjugacy:Representatives of homomorphisms between groups}{8.1}{X80DDEC8C82E2A4F1}
+\makelabel{twistedconjugacy:Coincidence and fixed point groups}{8.2}{X8164A34A86155DFB}
+\makelabel{twistedconjugacy:Induced and restricted group homomorphisms}{8.3}{X8084A06782AE362E}
+\makelabel{twistedconjugacy:Group derivations}{9}{X7B8C20A9826087E1}
+\makelabel{twistedconjugacy:Creating group derivations}{9.1}{X7AAB25B587D3DF70}
+\makelabel{twistedconjugacy:Operations for group derivations}{9.2}{X7AE626D685C68CF0}
+\makelabel{twistedconjugacy:IsInjective}{9.2.1}{X7F065FD7822C0A12}
+\makelabel{twistedconjugacy:IsSurjective}{9.2.2}{X784ECE847E005B8F}
+\makelabel{twistedconjugacy:IsBijective}{9.2.3}{X878F56AB7B342767}
+\makelabel{twistedconjugacy:Kernel}{9.2.4}{X7DCD99628504B810}
+\makelabel{twistedconjugacy:Image}{9.2.5}{X87F4D35A826599C6}
+\makelabel{twistedconjugacy:PreImagesRepresentative}{9.2.6}{X7AE24A1586B7DE79}
+\makelabel{twistedconjugacy:PreImages}{9.2.7}{X85C8590E832002EF}
+\makelabel{twistedconjugacy:Images of group derivations}{9.3}{X801FDEFE8155D0B1}
+\makelabel{twistedconjugacy:IsFinite}{9.3.2}{X808A4061809A6E67}
+\makelabel{twistedconjugacy:Size}{9.3.3}{X858ADA3B7A684421}
+\makelabel{twistedconjugacy:List}{9.3.4}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:Affine actions}{10}{X87A5683C7B645EA1}
+\makelabel{twistedconjugacy:Creating an affine action}{10.1}{X7E00F3E17A88ED4B}
+\makelabel{twistedconjugacy:Operations for affine actions}{10.2}{X86DD85AA827068A2}
+\makelabel{twistedconjugacy:OrbitAffineAction}{10.2.1}{X84AFABF98784C123}
+\makelabel{twistedconjugacy:OrbitsAffineAction}{10.2.2}{X7E8F571A83D951B0}
+\makelabel{twistedconjugacy:NrOrbitsAffineAction}{10.2.3}{X8020B50487227359}
+\makelabel{twistedconjugacy:StabiliserAffineAction}{10.2.4}{X860FBE2378E0696D}
+\makelabel{twistedconjugacy:RepresentativeAffineAction}{10.2.5}{X7B111FAB7D2A8C99}
+\makelabel{twistedconjugacy:Operations on orbits of affine actions}{10.3}{X81B54C657AE4B06F}
+\makelabel{twistedconjugacy:Representative}{10.3.1}{X865507568182424E}
+\makelabel{twistedconjugacy:ActingDomain}{10.3.2}{X7B9DB15D80CE28B4}
+\makelabel{twistedconjugacy:FunctionAction}{10.3.3}{X86153CB087394DC1}
+\makelabel{twistedconjugacy:IsFinite}{10.3.5}{X808A4061809A6E67}
+\makelabel{twistedconjugacy:Size}{10.3.6}{X858ADA3B7A684421}
+\makelabel{twistedconjugacy:StabiliserOfExternalSet}{10.3.7}{X867840C67C990840}
+\makelabel{twistedconjugacy:List}{10.3.8}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:Random}{10.3.9}{X79730D657AB219DB}
+\makelabel{twistedconjugacy:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{twistedconjugacy:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{twistedconjugacy:Index}{Ind}{X83A0356F839C696F}
+\makelabel{twistedconjugacy:TwistedConjugation}{3.1.1}{X79CF6BDA7851496D}
+\makelabel{twistedconjugacy:IsTwistedConjugate}{3.2.1}{X809D34107CFE8082}
+\makelabel{twistedconjugacy:RepresentativeTwistedConjugation}{3.2.2}{X8493E3818276A562}
+\makelabel{twistedconjugacy:TwistedConjugacyClass}{4.1.1}{X79690F4D7F2660B3}
+\makelabel{twistedconjugacy:ReidemeisterClass}{4.1.1}{X79690F4D7F2660B3}
+\makelabel{twistedconjugacy:Representative of a twisted conjugacy class}{4.2.1}{X865507568182424E}
+\makelabel{twistedconjugacy:ActingDomain of a twisted conjugacy class}{4.2.2}{X7B9DB15D80CE28B4}
+\makelabel{twistedconjugacy:FunctionAction of a twisted conjugacy class}{4.2.3}{X86153CB087394DC1}
+\makelabel{twistedconjugacy:IsFinite for a twisted conjugacy class}{4.2.5}{X808A4061809A6E67}
+\makelabel{twistedconjugacy:Size of a twisted conjugacy class}{4.2.6}{X858ADA3B7A684421}
+\makelabel{twistedconjugacy:StabiliserOfExternalSet of a twisted conjugacy class}{4.2.7}{X867840C67C990840}
+\makelabel{twistedconjugacy:StabilizerOfExternalSet of a twisted conjugacy class}{4.2.7}{X867840C67C990840}
+\makelabel{twistedconjugacy:List of a twisted conjugacy class}{4.2.8}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:AsList for a twisted conjugacy class}{4.2.8}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:Random in a twisted conjugacy class}{4.2.9}{X79730D657AB219DB}
+\makelabel{twistedconjugacy:TwistedConjugacyClasses}{4.3.1}{X797192EA7D30C78F}
+\makelabel{twistedconjugacy:ReidemeisterClasses}{4.3.1}{X797192EA7D30C78F}
+\makelabel{twistedconjugacy:RepresentativesTwistedConjugacyClasses}{4.3.2}{X862C49C0834E01D7}
+\makelabel{twistedconjugacy:RepresentativesReidemeisterClasses}{4.3.2}{X862C49C0834E01D7}
+\makelabel{twistedconjugacy:ReidemeisterNumber}{5.1.1}{X8330E244852075A7}
+\makelabel{twistedconjugacy:NrTwistedConjugacyClasses}{5.1.1}{X8330E244852075A7}
+\makelabel{twistedconjugacy:ReidemeisterSpectrum}{5.2.1}{X8777B3F77DBF01AF}
+\makelabel{twistedconjugacy:ExtendedReidemeisterSpectrum}{5.2.2}{X8122B246860C1617}
+\makelabel{twistedconjugacy:CoincidenceReidemeisterSpectrum}{5.2.3}{X78839C0886EBDB71}
+\makelabel{twistedconjugacy:TotalReidemeisterSpectrum}{5.2.4}{X7DB417F182B155C5}
+\makelabel{twistedconjugacy:IteratedReidemeisterNumberDecomposition}{6.1.1}{X783C0BFB7F0E1482}
+\makelabel{twistedconjugacy:IsRationalReidemeisterZetaFunction}{6.2.1}{X87044CE5875527C0}
+\makelabel{twistedconjugacy:ReidemeisterZetaFunction}{6.2.2}{X8241C6E683F807B8}
+\makelabel{twistedconjugacy:PrintReidemeisterZetaFunction}{6.2.3}{X7F38E27B859E2B1A}
+\makelabel{twistedconjugacy:IsRationalReidemeisterGeneratingFunction}{6.3.1}{X84EFD6D27AFD7E30}
+\makelabel{twistedconjugacy:ReidemeisterGeneratingFunction}{6.3.2}{X7E33247E86DEA4DB}
+\makelabel{twistedconjugacy:PrintReidemeisterGeneratingFunction}{6.3.3}{X81C6F3AA825BE327}
+\makelabel{twistedconjugacy:Intersection of right cosets of a PcpGroup}{7.1.1}{X851069107CACF98E}
+\makelabel{twistedconjugacy:Intersection of a list of right cosets of a PcpGroup}{7.1.1}{X851069107CACF98E}
+\makelabel{twistedconjugacy:IsFinite for a double coset of a PcpGroup}{7.2.2}{X808A4061809A6E67}
+\makelabel{twistedconjugacy:Size of a double coset of a PcpGroup}{7.2.3}{X858ADA3B7A684421}
+\makelabel{twistedconjugacy:List of a double coset of a PcpGroup}{7.2.4}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:AsList for a double coset of a PcpGroup}{7.2.4}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:DoubleCosets for PcpGroups}{7.2.6}{X7A5EFABB86E6D4D5}
+\makelabel{twistedconjugacy:DoubleCosetsNC for PcpGroups}{7.2.6}{X7A5EFABB86E6D4D5}
+\makelabel{twistedconjugacy:DoubleCosetRepsAndSizes for PcpGroups}{7.2.7}{X7A25B1C886CF8C6A}
+\makelabel{twistedconjugacy:DoubleCosetIndex}{7.2.8}{X805F0F1E803BE255}
+\makelabel{twistedconjugacy:DoubleCosetIndexNC}{7.2.8}{X805F0F1E803BE255}
+\makelabel{twistedconjugacy:RepresentativesAutomorphismClasses}{8.1.1}{X78ADEE0C83819159}
+\makelabel{twistedconjugacy:RepresentativesEndomorphismClasses}{8.1.2}{X7A7935B286050886}
+\makelabel{twistedconjugacy:RepresentativesHomomorphismClasses}{8.1.3}{X81E5CF92816BF199}
+\makelabel{twistedconjugacy:FixedPointGroup}{8.2.1}{X799546928394FF8B}
+\makelabel{twistedconjugacy:CoincidenceGroup}{8.2.2}{X780DF6247E3E9190}
+\makelabel{twistedconjugacy:InducedHomomorphism}{8.3.1}{X7F6D0625837B7B94}
+\makelabel{twistedconjugacy:RestrictedHomomorphism}{8.3.2}{X7DBA352982923900}
+\makelabel{twistedconjugacy:GroupDerivationByImages}{9.1.1}{X8303ADE37FFAA109}
+\makelabel{twistedconjugacy:GroupDerivationByImagesNC}{9.1.1}{X8303ADE37FFAA109}
+\makelabel{twistedconjugacy:GroupDerivationByFunction}{9.1.2}{X7C9D096A7B996E89}
+\makelabel{twistedconjugacy:GroupDerivationByAffineAction}{9.1.3}{X8341EA2B7FBAE696}
+\makelabel{twistedconjugacy:IsInjective for a group derivation}{9.2.1}{X7F065FD7822C0A12}
+\makelabel{twistedconjugacy:IsSurjective for a group derivation}{9.2.2}{X784ECE847E005B8F}
+\makelabel{twistedconjugacy:IsBijective for a group derivation}{9.2.3}{X878F56AB7B342767}
+\makelabel{twistedconjugacy:Kernel of a group derivation}{9.2.4}{X7DCD99628504B810}
+\makelabel{twistedconjugacy:Image of a group derivation}{9.2.5}{X87F4D35A826599C6}
+\makelabel{twistedconjugacy:Image of an element under a group derivation}{9.2.5}{X87F4D35A826599C6}
+\makelabel{twistedconjugacy:Image of a subgroup under a group derivation}{9.2.5}{X87F4D35A826599C6}
+\makelabel{twistedconjugacy:PreImagesRepresentative of an element under a group derivation}{9.2.6}{X7AE24A1586B7DE79}
+\makelabel{twistedconjugacy:PreImages of an element under a group derivation}{9.2.7}{X85C8590E832002EF}
+\makelabel{twistedconjugacy:IsFinite for a group derivation image}{9.3.2}{X808A4061809A6E67}
+\makelabel{twistedconjugacy:Size of a group derivation image}{9.3.3}{X858ADA3B7A684421}
+\makelabel{twistedconjugacy:List of a group derivation image}{9.3.4}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:AsList for a group derivation image}{9.3.4}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:AffineActionByGroupDerivation}{10.1.1}{X8116545B7DBE00AC}
+\makelabel{twistedconjugacy:OrbitAffineAction}{10.2.1}{X84AFABF98784C123}
+\makelabel{twistedconjugacy:OrbitsAffineAction}{10.2.2}{X7E8F571A83D951B0}
+\makelabel{twistedconjugacy:NrOrbitsAffineAction}{10.2.3}{X8020B50487227359}
+\makelabel{twistedconjugacy:StabiliserAffineAction}{10.2.4}{X860FBE2378E0696D}
+\makelabel{twistedconjugacy:StabilizerAffineAction}{10.2.4}{X860FBE2378E0696D}
+\makelabel{twistedconjugacy:RepresentativeAffineAction}{10.2.5}{X7B111FAB7D2A8C99}
+\makelabel{twistedconjugacy:Representative of an orbit of an affine action}{10.3.1}{X865507568182424E}
+\makelabel{twistedconjugacy:ActingDomain of an orbit of an affine action}{10.3.2}{X7B9DB15D80CE28B4}
+\makelabel{twistedconjugacy:FunctionAction of an orbit of an affine action}{10.3.3}{X86153CB087394DC1}
+\makelabel{twistedconjugacy:IsFinite for an orbit of an affine action}{10.3.5}{X808A4061809A6E67}
+\makelabel{twistedconjugacy:Size of an orbit of an affine action}{10.3.6}{X858ADA3B7A684421}
+\makelabel{twistedconjugacy:StabiliserOfExternalSet of an orbit of an affine action}{10.3.7}{X867840C67C990840}
+\makelabel{twistedconjugacy:StabilizerOfExternalSet of an orbit of an affine action}{10.3.7}{X867840C67C990840}
+\makelabel{twistedconjugacy:List of an orbit of an affine action}{10.3.8}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:AsList for an orbit of an affine action}{10.3.8}{X7EBA57FC7CCF8449}
+\makelabel{twistedconjugacy:Random in an orbit of an affine action}{10.3.9}{X79730D657AB219DB}

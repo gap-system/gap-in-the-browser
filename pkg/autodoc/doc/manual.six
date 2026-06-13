@@ -1,0 +1,343 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "AutoDoc",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Abstract", "0.0-1", [ 0, 0, 1 ], 43, 2, "abstract", "X7AA6C5737B711C89" ]
+    , 
+  [ "Copyright", "0.0-2", [ 0, 0, 2 ], 49, 2, "copyright", 
+      "X81488B807F2A1CF1" ], 
+  [ "Acknowledgements", "0.0-3", [ 0, 0, 3 ], 57, 2, "acknowledgements", 
+      "X82A988D47DFAFCFA" ], 
+  [ "Table of Contents", "0.0-4", [ 0, 0, 4 ], 62, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat \033[5XAutoDoc\033[105X\033[101X\027\033[1X\\
+027 offers\033[133X\033[101X", "1", [ 1, 0, 0 ], 1, 4, "what autodoc offers", 
+      "X786190217AE14EBF" ], 
+  [ "\033[1X\033[33X\033[0;-2YCore features\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 11, 4, "core features", "X7A835D9779307F98" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAdopting \033[5XAutoDoc\033[105X\033[101X\027\\
+033[1X\027 incrementally\033[133X\033[101X", "1.2", [ 1, 2, 0 ], 32, 4, 
+      "adopting autodoc incrementally", "X8081E3BA7B3EC702" ], 
+  [ "\033[1X\033[33X\033[0;-2YWhere to continue\033[133X\033[101X", "1.3", 
+      [ 1, 3, 0 ], 57, 5, "where to continue", "X83D6D8B481C07CD8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGetting started using \033[5XAutoDoc\033[105X\\
+033[101X\027\033[1X\027\033[133X\033[101X", "2", [ 2, 0, 0 ], 1, 6, 
+      "getting started using autodoc", "X7A0D7AA484F466E1" ], 
+  [ "\033[1X\033[33X\033[0;-2YChoose your workflow\033[133X\033[101X", "2.1", 
+      [ 2, 1, 0 ], 7, 6, "choose your workflow", "X7BEF736283D2A7A9" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCreating a package manual from scratch\033[133X\\
+033[101X", "2.2", [ 2, 2, 0 ], 22, 6, "creating a package manual from scratch"
+        , "X7BFBC6907B26AA95" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YDocumenting code with \033[5XAutoDoc\033[105X\\
+033[101X\027\033[1X\027\033[133X\033[101X", "2.3", [ 2, 3, 0 ], 97, 7, 
+      "documenting code with autodoc", "X87A00EED866E22E8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YUsing \033[5XAutoDoc\033[105X\033[101X\027\033[1X\
+\027 in an existing \033[5XGAPDoc\033[105X\033[101X\027\033[1X\027 manual\033[\
+133X\033[101X", "2.4", [ 2, 4, 0 ], 190, 9, 
+      "using autodoc in an existing gapdoc manual", "X7FA614637B807F4D" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YUsing \033[5XAutoDoc\033[105X\033[101X\027\033[1X\
+\027 on a complete \033[5XGAPDoc\033[105X\033[101X\027\033[1X\027 manual\033[1\
+33X\033[101X", "2.4-1", [ 2, 4, 1 ], 212, 9, 
+      "using autodoc on a complete gapdoc manual", "X7F3CEB097AF47C1E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSetting different \033[5XGAPDoc\033[105X\033[101X\
+\027\033[1X\027 options\033[133X\033[101X", "2.4-2", [ 2, 4, 2 ], 252, 10, 
+      "setting different gapdoc options", "X7D0DDF2284F2D24A" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YChecklist for converting an existing \033[5XGAPDo\
+c\033[105X\033[101X\027\033[1X\027 manual to use \033[5XAutoDoc\033[105X\033[1\
+01X\027\033[1X\027\033[133X\033[101X", "2.4-3", [ 2, 4, 3 ], 364, 11, 
+      "checklist for converting an existing gapdoc manual to use autodoc", 
+      "X83448D91868D7994" ], 
+  [ "\033[1X\033[33X\033[0;-2YScaffolds\033[133X\033[101X", "2.5", 
+      [ 2, 5, 0 ], 433, 12, "scaffolds", "X8524193D824CDE0D" ], 
+  [ "\033[1X\033[33X\033[0;-2YGenerating a title page\033[133X\033[101X", 
+      "2.5-1", [ 2, 5, 1 ], 436, 12, "generating a title page", 
+      "X7CF22DE28478316F" ], 
+  [ "\033[1X\033[33X\033[0;-2YGenerating the main XML file\033[133X\033[101X",
+      "2.5-2", [ 2, 5, 2 ], 487, 13, "generating the main xml file", 
+      "X7CD72CC780874FD5" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat data is used from \033[11XPackageInfo.g\033[\
+111X\033[101X\027\033[1X\027?\033[133X\033[101X", "2.5-3", [ 2, 5, 3 ], 514, 
+      13, "what data is used from packageinfo.g?", "X799956EA85D3FC15" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YEntities from \033[11XPackageInfo.g\033[111X\033[\
+101X\027\033[1X\027 and scaffold options\033[133X\033[101X", "2.5-4", 
+      [ 2, 5, 4 ], 572, 14, "entities from packageinfo.g and scaffold options"
+        , "X79EAEF277DD1FAE1" ], 
+  [ "\033[1X\033[33X\033[0;-2YWorksheets\033[133X\033[101X", "2.6", 
+      [ 2, 6, 0 ], 589, 15, "worksheets", "X801D4A2F8292704C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[5XAutoDoc\033[105X\033[101X\027\033[1X\027 d\
+ocumentation comments\033[133X\033[101X", "3", [ 3, 0, 0 ], 1, 16, 
+      "autodoc documentation comments", "X87668C487B1A2094" ], 
+  [ "\033[1X\033[33X\033[0;-2YDocumenting declarations\033[133X\033[101X", 
+      "3.1", [ 3, 1, 0 ], 46, 16, "documenting declarations", 
+      "X871482CE838C68F6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Description \033[3Xdescr\033[103X\033[10\
+1X\027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[10\
+1X", "3.1-1", [ 3, 1, 1 ], 54, 17, "description descr", "X7F1D85188262A827" ],
+  [ "\033[1X\033[33X\033[0;-2Y\033[10X@Returns \033[3Xret val\033[103X\033[101\
+X\027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101\
+X", "3.1-2", [ 3, 1, 2 ], 61, 17, "returns ret val", "X7EFF79F47BE24F78" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Arguments \033[3Xargs\033[103X\033[101X\\
+027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X"
+        , "3.1-3", [ 3, 1, 3 ], 68, 17, "arguments args", "X81DAA454857F7971" 
+     ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@ItemType \033[3Xkind\033[103X\033[101X\\
+027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X"
+        , "3.1-4", [ 3, 1, 4 ], 82, 17, "itemtype kind", "X852A9FCA7AB6EC4E" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Group \033[3Xgrpname\033[103X\033[101X\\
+027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X"
+        , "3.1-5", [ 3, 1, 5 ], 115, 17, "group grpname", "X8677FE8F80C00B14" 
+     ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Label \033[3Xlabel\033[103X\033[101X\\
+027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X"
+        , "3.1-6", [ 3, 1, 6 ], 121, 18, "label label", "X7B0E20A27D64DF6F" ],
+  [ "\033[1X\033[33X\033[0;-2Y\033[10X@ChapterInfo \033[3Xchapter\033[103X\033\
+[101X\027\033[1X\027\033[10X\027, \033[3Xsection\033[103X\033[101X\027\033[1X\
+\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X", 
+      "3.1-7", [ 3, 1, 7 ], 168, 18, "chapterinfo chapter section", 
+      "X78938EE37A532FFA" ], 
+  [ "\033[1X\033[33X\033[0;-2YOther documentation comments\033[133X\033[101X",
+      "3.2", [ 3, 2, 0 ], 190, 19, "other documentation comments", 
+      "X8152FEF9844B1ACD" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Chapter \033[3Xname\033[103X\033[101X\\
+027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X"
+        , "3.2-1", [ 3, 2, 1 ], 197, 19, "chapter name", "X823E613385D09F6F" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Appendix \033[3Xname\033[103X\033[101X\\
+027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X"
+        , "3.2-2", [ 3, 2, 2 ], 234, 19, "appendix name", "X83163DA586882825" 
+     ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Section \033[3Xname\033[103X\033[101X\\
+027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X"
+        , "3.2-3", [ 3, 2, 3 ], 250, 19, "section name", "X78AA98BA7E0635D0" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Subsection \033[3Xname\033[103X\033[101X\
+\027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\033[101X\
+", "3.2-4", [ 3, 2, 4 ], 267, 20, "subsection name", "X7FD77434802A3580" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@BeginGroup \033[3X[grpname]\033[103X\\
+033[101X\027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[133X\
+\033[101X", "3.2-5", [ 3, 2, 5 ], 287, 20, "begingroup [grpname]", 
+      "X7D3060C17EDBCED1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@EndGroup\033[110X\033[101X\027\033[1X\\
+027\033[133X\033[101X", "3.2-6", [ 3, 2, 6 ], 297, 20, "endgroup", 
+      "X7C17EB007FD42C87" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y@GroupTitle \033[3Xtitle\033[103X\033[101X\027\\
+033[1X\027\033[133X\033[101X", "3.2-7", [ 3, 2, 7 ], 317, 21, 
+      "grouptitle title", "X82FB96F37FAE8167" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@BeginExample\033[110X\033[101X\027\033[1\
+X\027 and \033[10X@EndExample\033[110X\033[101X\027\033[1X\027\033[133X\033[10\
+1X", "3.2-8", [ 3, 2, 8 ], 324, 21, "beginexample and endexample", 
+      "X83D6DA3B83D3436C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@BeginExampleSession\033[110X\033[101X\\
+027\033[1X\027 and \033[10X@EndExampleSession\033[110X\033[101X\027\033[1X\027\
+\033[133X\033[101X", "3.2-9", [ 3, 2, 9 ], 359, 21, 
+      "beginexamplesession and endexamplesession", "X861E2E778510CAF7" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@BeginLog\033[110X\033[101X\027\033[1X\\
+027 and \033[10X@EndLog\033[110X\033[101X\027\033[1X\027\033[133X\033[101X", 
+      "3.2-10", [ 3, 2, 10 ], 396, 22, "beginlog and endlog", 
+      "X81A2D44D834C0A17" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@BeginLogSession\033[110X\033[101X\027\\
+033[1X\027 and \033[10X@EndLogSession\033[110X\033[101X\027\033[1X\027\033[133\
+X\033[101X", "3.2-11", [ 3, 2, 11 ], 403, 22, 
+      "beginlogsession and endlogsession", "X7BADE876794FF309" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@DoNotReadRestOfFile\033[110X\033[101X\\
+027\033[1X\027\033[133X\033[101X", "3.2-12", [ 3, 2, 12 ], 411, 22, 
+      "donotreadrestoffile", "X78DC644E8519280C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@BeginChunk \033[3Xname\033[103X\033[101X\
+\027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027, \033[10X@EndChun\
+k\033[110X\033[101X\027\033[1X\027, and \033[10X@InsertChunk \033[3Xname\033[1\
+03X\033[101X\027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027\033[1\
+33X\033[101X", "3.2-13", [ 3, 2, 13 ], 425, 22, 
+      "beginchunk name endchunk and insertchunk name", "X83C01F9B7FA1C973" ], 
+  [ "\033[1X\033[33X\033[0;-2Y\033[10X@BeginCode \033[3Xname\033[103X\033[101X\
+\027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027, @EndCode, and \
+\033[10X@InsertCode \033[3Xname\033[103X\033[101X\027\033[1X\027\033[10X\027\
+\033[110X\033[101X\027\033[1X\027\033[133X\033[101X", "3.2-14", [ 3, 2, 14 ], 
+      465, 23, "begincode name endcode and insertcode name", 
+      "X7D3671AF86B995B9" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@LatexOnly \033[3Xtext\033[103X\033[101X\\
+027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027, \033[10X@BeginLat\
+exOnly\033[110X\033[101X\027\033[1X\027, and \033[10X@EndLatexOnly\033[110X\
+\033[101X\027\033[1X\027\033[133X\033[101X", "3.2-15", [ 3, 2, 15 ], 481, 23, 
+      "latexonly text beginlatexonly and endlatexonly", "X8033B34F80A12A10" ],
+  [ "\033[1X\033[33X\033[0;-2Y\033[10X@NotLatex \033[3Xtext\033[103X\033[101X\
+\027\033[1X\027\033[10X\027\033[110X\033[101X\027\033[1X\027, \033[10X@BeginNo\
+tLatex\033[110X\033[101X\027\033[1X\027, and \033[10X@EndNotLatex\033[110X\033\
+[101X\027\033[1X\027\033[133X\033[101X", "3.2-16", [ 3, 2, 16 ], 496, 23, 
+      "notlatex text beginnotlatex and endnotlatex", "X7EF303147F1BCC22" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X@Index \033[3Xkey\033[103X\033[101X\027\\
+033[1X\027\033[10X\027 [\033[3Xentry text\033[103X\033[101X\027\033[1X\027\033\
+[10X\027]\033[110X\033[101X\027\033[1X\027\033[133X\033[101X", "3.2-17", 
+      [ 3, 2, 17 ], 511, 24, "index key [entry text]", "X82FD2EEB788E76F1" ], 
+  [ "\033[1X\033[33X\033[0;-2YTitle page commands\033[133X\033[101X", "3.3", 
+      [ 3, 3, 0 ], 521, 24, "title page commands", "X841E3AD584F5385C" ], 
+  [ "\033[1X\033[33X\033[0;-2YPlain text files\033[133X\033[101X", "3.4", 
+      [ 3, 4, 0 ], 556, 24, "plain text files", "X828AE38F80CB02E7" ], 
+  [ "\033[1X\033[33X\033[0;-2YGrouping\033[133X\033[101X", "3.5", 
+      [ 3, 5, 0 ], 648, 26, "grouping", "X7D7A38F87BC40C48" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YMarkdown-like formatting of text in \033[5XAutoDo\
+c\033[105X\033[101X\027\033[1X\027\033[133X\033[101X", "3.6", [ 3, 6, 0 ], 
+      710, 27, "markdown-like formatting of text in autodoc", 
+      "X79558A2F7FE187B4" ], 
+  [ "\033[1X\033[33X\033[0;-2YLists\033[133X\033[101X", "3.6-1", [ 3, 6, 1 ], 
+      719, 27, "lists", "X7B256AE5780F140A" ], 
+  [ "\033[1X\033[33X\033[0;-2YMath modes\033[133X\033[101X", "3.6-2", 
+      [ 3, 6, 2 ], 757, 28, "math modes", "X871412737A0E12E2" ], 
+  [ "\033[1X\033[33X\033[0;-2YEmphasize\033[133X\033[101X", "3.6-3", 
+      [ 3, 6, 3 ], 778, 28, "emphasize", "X7ED0330479146EFC" ], 
+  [ "\033[1X\033[33X\033[0;-2YInline code\033[133X\033[101X", "3.6-4", 
+      [ 3, 6, 4 ], 796, 28, "inline code", "X838CCDEB7E0ECEE2" ], 
+  [ "\033[1X\033[33X\033[0;-2YFenced code blocks\033[133X\033[101X", "3.6-5", 
+      [ 3, 6, 5 ], 809, 28, "fenced code blocks", "X7C0629B183765575" ], 
+  [ "\033[1X\033[33X\033[0;-2YDeprecated commands\033[133X\033[101X", "3.7", 
+      [ 3, 7, 0 ], 851, 29, "deprecated commands", "X78CA9E5C7F494C19" ], 
+  [ "\033[1X\033[33X\033[0;-2YReference\033[133X\033[101X", "4", [ 4, 0, 0 ], 
+      1, 30, "reference", "X782AAE4E86411FF4" ], 
+  [ "\033[1X\033[33X\033[0;-2YAutoDoc worksheets\033[133X\033[101X", "4.1", 
+      [ 4, 1, 0 ], 4, 30, "autodoc worksheets", "X80ED3C2A78146AD1" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe AutoDoc() function\033[133X\033[101X", 
+      "4.2", [ 4, 2, 0 ], 37, 30, "the autodoc function", "X863584DB8497D8BA" 
+     ], [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 37, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 37, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 38, "index", "X83A0356F839C696F" ], 
+  [ "\033[11Xmakedoc.g\033[111X", "2.2", [ 2, 2, 0 ], 22, 6, "makedoc.g", 
+      "X7BFBC6907B26AA95" ], 
+  [ "", "2.4-3", [ 2, 4, 3 ], 364, 11, "", "X83448D91868D7994" ], 
+  [ "", "2.4-3", [ 2, 4, 3 ], 364, 11, "", "X83448D91868D7994" ], 
+  [ "", "2.4-3", [ 2, 4, 3 ], 364, 11, "", "X83448D91868D7994" ], 
+  [ "", "2.4-3", [ 2, 4, 3 ], 364, 11, "", "X83448D91868D7994" ], 
+  [ "", "2.4-3", [ 2, 4, 3 ], 364, 11, "", "X83448D91868D7994" ], 
+  [ "", "2.4-3", [ 2, 4, 3 ], 364, 11, "", "X83448D91868D7994" ], 
+  [ "", "2.4-3", [ 2, 4, 3 ], 364, 11, "", "X83448D91868D7994" ], 
+  [ "\033[10X@Description \033[3Xdescr\033[103X\033[10X\027\033[110X", 
+      "3.1-1", [ 3, 1, 1 ], 54, 17, "description descr", "X7F1D85188262A827" ]
+    , [ "\033[10X@Returns \033[3Xret_val\033[103X\033[10X\027\033[110X", 
+      "3.1-2", [ 3, 1, 2 ], 61, 17, "returns ret_val", "X7EFF79F47BE24F78" ], 
+  [ "\033[10X@Arguments \033[3Xargs\033[103X\033[10X\027\033[110X", "3.1-3", 
+      [ 3, 1, 3 ], 68, 17, "arguments args", "X81DAA454857F7971" ], 
+  [ "\033[10X@ItemType \033[3Xkind\033[103X\033[10X\027\033[110X", "3.1-4", 
+      [ 3, 1, 4 ], 82, 17, "itemtype kind", "X852A9FCA7AB6EC4E" ], 
+  [ "\033[10X@Group \033[3Xgrpname\033[103X\033[10X\027\033[110X", "3.1-5", 
+      [ 3, 1, 5 ], 115, 17, "group grpname", "X8677FE8F80C00B14" ], 
+  [ "\033[10X@Label \033[3Xlabel\033[103X\033[10X\027\033[110X", "3.1-6", 
+      [ 3, 1, 6 ], 121, 18, "label label", "X7B0E20A27D64DF6F" ], 
+  [ "\033[10X@ChapterInfo\033[110X", "3.1-7", [ 3, 1, 7 ], 168, 18, 
+      "chapterinfo", "X78938EE37A532FFA" ], 
+  [ "\033[10X@Chapter\033[110X", "3.2-1", [ 3, 2, 1 ], 197, 19, "chapter", 
+      "X823E613385D09F6F" ], 
+  [ "\033[10X@ChapterLabel\033[110X", "3.2-1", [ 3, 2, 1 ], 197, 19, 
+      "chapterlabel", "X823E613385D09F6F" ], 
+  [ "\033[10X@ChapterTitle\033[110X", "3.2-1", [ 3, 2, 1 ], 197, 19, 
+      "chaptertitle", "X823E613385D09F6F" ], 
+  [ "\033[10X@Appendix\033[110X", "3.2-2", [ 3, 2, 2 ], 234, 19, "appendix", 
+      "X83163DA586882825" ], 
+  [ "\033[10X@Section\033[110X", "3.2-3", [ 3, 2, 3 ], 250, 19, "section", 
+      "X78AA98BA7E0635D0" ], 
+  [ "\033[10X@SectionLabel\033[110X", "3.2-3", [ 3, 2, 3 ], 250, 19, 
+      "sectionlabel", "X78AA98BA7E0635D0" ], 
+  [ "\033[10X@SectionTitle\033[110X", "3.2-3", [ 3, 2, 3 ], 250, 19, 
+      "sectiontitle", "X78AA98BA7E0635D0" ], 
+  [ "\033[10X@Subsection\033[110X", "3.2-4", [ 3, 2, 4 ], 267, 20, 
+      "subsection", "X7FD77434802A3580" ], 
+  [ "\033[10X@SubsectionLabel\033[110X", "3.2-4", [ 3, 2, 4 ], 267, 20, 
+      "subsectionlabel", "X7FD77434802A3580" ], 
+  [ "\033[10X@SubsectionTitle\033[110X", "3.2-4", [ 3, 2, 4 ], 267, 20, 
+      "subsectiontitle", "X7FD77434802A3580" ], 
+  [ "\033[10X@BeginGroup\033[110X", "3.2-5", [ 3, 2, 5 ], 287, 20, 
+      "begingroup", "X7D3060C17EDBCED1" ], 
+  [ "\033[10X@EndGroup\033[110X", "3.2-6", [ 3, 2, 6 ], 297, 20, "endgroup", 
+      "X7C17EB007FD42C87" ], 
+  [ "\033[10X@GroupTitle\033[110X", "3.2-7", [ 3, 2, 7 ], 317, 21, 
+      "grouptitle", "X82FB96F37FAE8167" ], 
+  [ "\033[10X@BeginExample\033[110X", "3.2-8", [ 3, 2, 8 ], 324, 21, 
+      "beginexample", "X83D6DA3B83D3436C" ], 
+  [ "\033[10X@EndExample\033[110X", "3.2-8", [ 3, 2, 8 ], 324, 21, 
+      "endexample", "X83D6DA3B83D3436C" ], 
+  [ "\033[10X@BeginExampleSession\033[110X", "3.2-9", [ 3, 2, 9 ], 359, 21, 
+      "beginexamplesession", "X861E2E778510CAF7" ], 
+  [ "\033[10X@EndExampleSession\033[110X", "3.2-9", [ 3, 2, 9 ], 359, 21, 
+      "endexamplesession", "X861E2E778510CAF7" ], 
+  [ "\033[10X@BeginLog\033[110X", "3.2-10", [ 3, 2, 10 ], 396, 22, 
+      "beginlog", "X81A2D44D834C0A17" ], 
+  [ "\033[10X@EndLog\033[110X", "3.2-10", [ 3, 2, 10 ], 396, 22, "endlog", 
+      "X81A2D44D834C0A17" ], 
+  [ "\033[10X@BeginLogSession\033[110X", "3.2-11", [ 3, 2, 11 ], 403, 22, 
+      "beginlogsession", "X7BADE876794FF309" ], 
+  [ "\033[10X@EndLogSession\033[110X", "3.2-11", [ 3, 2, 11 ], 403, 22, 
+      "endlogsession", "X7BADE876794FF309" ], 
+  [ "\033[10X@DoNotReadRestOfFile\033[110X", "3.2-12", [ 3, 2, 12 ], 411, 22, 
+      "donotreadrestoffile", "X78DC644E8519280C" ], 
+  [ "\033[10X@BeginChunk \033[3Xname\033[103X\033[10X\027\033[110X", 
+      "3.2-13", [ 3, 2, 13 ], 425, 22, "beginchunk name", "X83C01F9B7FA1C973" 
+     ], [ "\033[10X@EndChunk\033[110X", "3.2-13", [ 3, 2, 13 ], 425, 22, 
+      "endchunk", "X83C01F9B7FA1C973" ], 
+  [ "\033[10X@InsertChunk \033[3Xname\033[103X\033[10X\027\033[110X", 
+      "3.2-13", [ 3, 2, 13 ], 425, 22, "insertchunk name", 
+      "X83C01F9B7FA1C973" ], 
+  [ "\033[10X@BeginCode \033[3Xname\033[103X\033[10X\027\033[110X", "3.2-14", 
+      [ 3, 2, 14 ], 465, 23, "begincode name", "X7D3671AF86B995B9" ], 
+  [ "\033[10X@EndCode\033[110X", "3.2-14", [ 3, 2, 14 ], 465, 23, "endcode", 
+      "X7D3671AF86B995B9" ], 
+  [ "\033[10X@InsertCode \033[3Xname\033[103X\033[10X\027\033[110X", 
+      "3.2-14", [ 3, 2, 14 ], 465, 23, "insertcode name", "X7D3671AF86B995B9" 
+     ], [ "\033[10X@LatexOnly \033[3Xtext\033[103X\033[10X\027\033[110X", 
+      "3.2-15", [ 3, 2, 15 ], 481, 23, "latexonly text", "X8033B34F80A12A10" ]
+    , [ "\033[10X@BeginLatexOnly\033[110X", "3.2-15", [ 3, 2, 15 ], 481, 23, 
+      "beginlatexonly", "X8033B34F80A12A10" ], 
+  [ "\033[10X@EndLatexOnly\033[110X", "3.2-15", [ 3, 2, 15 ], 481, 23, 
+      "endlatexonly", "X8033B34F80A12A10" ], 
+  [ "\033[10X@NotLatex \033[3Xtext\033[103X\033[10X\027\033[110X", "3.2-16", 
+      [ 3, 2, 16 ], 496, 23, "notlatex text", "X7EF303147F1BCC22" ], 
+  [ "\033[10X@BeginNotLatex\033[110X", "3.2-16", [ 3, 2, 16 ], 496, 23, 
+      "beginnotlatex", "X7EF303147F1BCC22" ], 
+  [ "\033[10X@EndNotLatex\033[110X", "3.2-16", [ 3, 2, 16 ], 496, 23, 
+      "endnotlatex", "X7EF303147F1BCC22" ], 
+  [ 
+      "\033[10X@Index \033[3Xkey\033[103X\033[10X\027 [\033[3Xentry text\033[103X\
+\033[10X\027]\033[110X", "3.2-17", [ 3, 2, 17 ], 511, 24, 
+      "index key [entry text]", "X82FD2EEB788E76F1" ], 
+  [ "\033[2XAutoDocWorksheet\033[102X", "4.1-1", [ 4, 1, 1 ], 7, 30, 
+      "autodocworksheet", "X809FE4137C08B28D" ], 
+  [ "\033[2XAutoDoc\033[102X", "4.2-1", [ 4, 2, 1 ], 40, 30, "autodoc", 
+      "X7CBD8AAF7DCEF352" ], 
+  [ "\033[2XInfoAutoDoc\033[102X", "4.2-2", [ 4, 2, 2 ], 443, 36, 
+      "infoautodoc", "X81F946A785BA3D6E" ] ]
+);

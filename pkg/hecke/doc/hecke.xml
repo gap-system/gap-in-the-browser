@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+  [<!ENTITY Specht "<Package>Hecke</Package>">,
+   <!ENTITY specht "<Package>hecke</Package>">,
+   <!ENTITY OldSpecht "<Package>Specht</Package> <M>2.4</M>">]>
+
+<!--
+
+      hecke.xml          hecke package documentation
+                                                              Dmitriy Traytel
+
+  Copyright (C) 2010-2013, Dmitriy Traytel
+
+-->
+
+<Book Name="hecke">
+
+<#Include SYSTEM "title.xml">
+
+<TableOfContents/>
+
+<Body>
+<#Include SYSTEM "intro.xml">
+<#Include SYSTEM "install.xml">
+<#Include SYSTEM "functionality.xml">
+</Body>
+
+<Bibliography Databases="hecke"/>
+
+<TheIndex/>
+
+</Book>
+

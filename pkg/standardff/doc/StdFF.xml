@@ -1,0 +1,80 @@
+<!--  StdFF.xml                                          Frank Lübeck  -->
+
+<Chapter Label="ch:StdFF">
+<Heading>Standard finite fields</Heading>
+
+<Section Label="sec:StdFFIntro">
+<Heading>Definition of standard finite fields</Heading>
+
+In <Cite Key="StdFFCyc" /> we define  for each prime <M>p</M> and positive
+integer <M>n</M> a standardized model for the finite field with <M>p^n</M>
+elements. This is done by defining  for each prime <M>r</M> polynomials of
+degree <M>r</M> which define  recursively <M>r</M>-power extensions of the
+prime field <M>GF(p)</M> and by combining these  for all <M>r | n</M> in a
+unique tower of  extensions of finite fields where  the successive degrees
+are non-decreasing primes.
+<P/>
+Relative  to this  tower of  prime degree  extensions the  resulting field
+comes with a natural basis over the prime field which we call the <E>tower
+basis</E>. This  construction has the  nice property that whenever  <M>n |
+m</M> then  the tower  basis of  the field with  <M>p^n</M> elements  is a
+subset of  the tower  basis of  the field  with <M>p^m</M>  elements. (See
+<Cite Key="StdFFCyc" /> for more details.)
+<P/>
+Expressing elements as linear combination of the tower basis we define
+a bijection from the elements in the field of order <M>p^n</M> to the
+range <C>[0..p^n-1]</C>; we call the number assigned to an element its
+<E>Steinitz number</E>.
+<P/>
+Via  this   construction  each  element   in  the  algebraic   closure  of
+<M>GF(p)</M> can be identified by its degree <M>d</M> over the prime field
+and its  Steinitz number in  the field  with <M>p^d</M> elements  (we call
+this a <E>Steinitz pair</E>).
+<P/>
+Since arithmetic  in simple  algebraic extensions  is more  efficient than
+in  iterated extensions  we  construct the  fields  recursively as  simple
+extensions, and  including information about  the base change  between the
+tower basis and the basis given by the powers of the generator.
+</Section>
+
+<Section Label="sec:CreateFF">
+<Heading>Creating standard finite fields</Heading>
+
+<#Include Label="FF">
+<#Include Label="IsFF">
+
+</Section>
+
+<Section Label="sec:ElementsFF">
+<Heading>Elements in standard finite fields</Heading>
+
+For fields in <Ref  Filt="IsStandardFiniteField"/> we provide functions to
+map elements  to their  linear combination  of the  tower basis,  to their
+Steinitz number and  Steinitz pair, or to  their representing multivariate
+polynomial with respect to all prime degree extensions, and vice versa.
+<P/>
+
+<#Include Label="FFElmConv">
+
+</Section>
+
+<Section Label="sec:FFEmbed">
+<Heading>Embeddings of standard finite fields</Heading>
+
+The tower  basis of a  standard finite  field <C>F</C> contains  the tower
+basis of any subfield. This  yields a construction of canonical embeddings
+of  all subfields  of  <C>F</C> into  <C>F</C>. And  one  can easily  read
+off  the smallest  subfield containing  an  element in  <C>F</C> from  its
+coefficient vector  with respect to the  tower basis. Each element  of the
+algebraic closure of  <C>FF(p,1)</C> is uniquely determined  by its degree
+<C>d</C> and its Steinitz number in <C>FF(p, d)</C>.
+
+<#Include Label="SteinitzPair">
+<#Include Label="FFEmbedding">
+<#Include Label="FFArith">
+<#Include Label="StandardIsomorphismGF">
+
+</Section>
+
+</Chapter>
+

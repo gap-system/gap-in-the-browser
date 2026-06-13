@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Morphisms">
+<Heading>Morphisms</Heading>
+
+<P/>
+  Any GAP object satisfying <C>IsCapCategoryMorphism</C> can be added to a category
+  and then becomes a morphism in this category.
+  Any morphism can belong to one or no category.
+  After a GAP object is added to the category, it knows which things can be
+  computed in its category and to which category it belongs.
+  It knows categorical properties and attributes, and the functions for existential quantifiers
+  can be applied to the morphism.
+<Section Label="Chapter_Morphisms_Section_Attributes_for_the_Type_of_Morphisms">
+<Heading>Attributes for the Type of Morphisms</Heading>
+
+<ManSection>
+  <Attr Arg="alpha" Name="CapCategory" Label="for IsCapCategoryMorphism"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is the category <Math>\mathbf{C}</Math>
+ to which <Math>\alpha</Math> was added.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="Source" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is its source <Math>a</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="Range" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is its range <Math>b</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="Target" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is its target <Math>b</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Section_Adding_Morphisms_to_a_Category">
+<Heading>Adding Morphisms to a Category</Heading>
+
+<ManSection>
+  <Oper Arg="category, morphism" Name="Add" Label="for IsCapCategory, IsCapCategoryMorphism"/>
+ <Description>
+  Adds <A>morphism</A> as a morphism to <A>category</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="category, morphism" Name="AddMorphism" Label="for IsCapCategory, IsAttributeStoringRep"/>
+ <Description>
+  Adds <A>morphism</A> as a morphism to <A>category</A>.
+  If <A>morphism</A> already lies in the filter <C>IsCapCategoryMorphism</C>,
+  the operation <Ref Oper="Add" Label="for IsCapCategory, IsCapCategoryMorphism" />
+  can be used instead.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="category, source, range[, attr1, val1, attr2, val2, ...]" Name="CreateCapCategoryMorphismWithAttributes" />
+ <Returns>a morphism
+</Returns>
+ <Description>
+  Creates a morphism in <A>category</A> with the given attributes.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="category, source, value, range" Name="AsCapCategoryMorphism" />
+ <Returns>a morphism
+</Returns>
+ <Description>
+  EXPERIMENTAL: This specification might change any time without prior notice.
+  Views <A>value</A> as a morphism from <A>source</A> to <A>range</A> in <A>category</A>.
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group12">
+  <Attr Arg="morphism" Name="AsPrimitiveValue" Label="for IsCapCategoryMorphism"/>
+  <Attr Arg="morphism" Name="AsInteger" Label="for IsCapCategoryMorphism"/>
+  <Attr Arg="morphism" Name="AsHomalgMatrix" Label="for IsCapCategoryMorphism"/>
+ <Returns>a value
+</Returns>
+ <Description>
+  EXPERIMENTAL: This specification might change any time without prior notice.
+  Views a morphism obtained via <Ref Func="AsCapCategoryMorphism" /> as a primitive value again.
+  Here, the word <Emph>primitive</Emph> means <Emph>primitive from the perspective of the category</Emph>.
+  For example, from the perspective of an opposite category, morphisms of the underlying category
+  are primitive values.
+  The attribute is chosen according to the morphism datum type:
+<List>
+<Item>
+For <Code>IsInt</Code>, the attribute <Code>AsInteger</Code> is used.
+</Item>
+<Item>
+For <Code>IsHomalgMatrix</Code>, the attribute <Code>AsHomalgMatrix</Code> is used.
+</Item>
+</List>
+<P/>
+  In all other cases or if no morphism datum type is given, the attribute <Code>AsPrimitiveValue</Code> is used.
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Morphism_constructors">
+<Heading>Morphism constructors</Heading>
+
+<ManSection>
+  <Oper Arg="S, a, T" Name="MorphismConstructor" Label="for IsCapCategoryObject, IsObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(S,T)</Math>
+</Returns>
+ <Description>
+ The arguments are two objects <Math>S</Math> and <Math>T</Math> in a category,
+ and a morphism datum <Math>a</Math> (type and semantics of the morphism datum depend on the category).
+ The output is a morphism in <Math>\mathrm{Hom}(S,T)</Math> defined by <Math>a</Math>.
+ Note that by default this CAP operation is not cached. You can change this behaviour
+ by calling <Code>SetCachingToWeak( C, &quot;MorphismConstructor&quot; )</Code> resp. <Code>SetCachingToCrisp( C, &quot;MorphismConstructor&quot; )</Code>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="mor" Name="MorphismDatum" Label="for IsCapCategoryMorphism"/>
+ <Returns>depends on the category
+</Returns>
+ <Description>
+ The argument is a CAP category morphism <A>mor</A>.
+ The output is a datum which can be used to construct <A>mor</A>, that is,
+ <Code>IsEqualForMorphisms( </Code><A>mor</A><Code>, MorphismConstructor( Source( </Code><A>mor</A><Code> ), MorphismDatum( </Code><A>mor</A><Code> ), Range( </Code><A>mor</A><Code> ) ) )</Code>.
+ Note that by default this CAP operation is not cached. You can change this behaviour
+ by calling <Code>SetCachingToWeak( C, &quot;MorphismDatum&quot; )</Code> resp. <Code>SetCachingToCrisp( C, &quot;MorphismDatum&quot; )</Code>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Categorical_Properties_of_Morphisms">
+<Heading>Categorical Properties of Morphisms</Heading>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsMonomorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is a monomorphism,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsEpimorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is an epimorphism,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsIsomorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is an isomorphism,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsSplitMonomorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is a split monomorphism,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsSplitEpimorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is a split epimorphism,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsOne" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow a</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is congruent to the identity of <Math>a</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsIdempotent" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow a</Math>.
+ The output is <C>true</C> if <Math>\alpha^2 \sim_{a,a} \alpha</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Random_Morphisms">
+<Heading>Random Morphisms</Heading>
+
+ CAP provides two principal methods to generate random morphisms with or without fixed source and range:
+<List>
+<Item>
+<E>By integers</E>: The integer is simply a parameter that can be used to create a random morphism.
+</Item>
+<Item>
+<E>By lists</E>: The list is used when creating a random morphism would need more than one parameter. Lists offer more
+    flexibility at the expense of the genericity of the methods. This happens because lists that are valid as input in
+    some category may be not valid for other categories. Hence, these operations are not thought to be used in
+    generic categorical algorithms.
+</Item>
+</List>
+<ManSection>
+  <Oper Arg="a, n" Name="RandomMorphismWithFixedSourceByInteger" Label="for IsCapCategoryObject, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>a</Math> in a category <Math>C</Math> and an integer <Math>n</Math>.
+ The output is a random morphism <Math>\alpha: a \rightarrow b</Math> for some object <Math>b</Math> in <Math>C</Math>.
+ If <Math>C</Math> is equipped with the methods <C>RandomObjectByInteger</C> and <C>RandomMorphismWithFixedSourceAndRangeByInteger</C>
+ and <Math>C</Math> is an Ab-category, then <C>RandomMorphismWithFixedSourceByInteger</C><Math>(C,a,n)</Math> can be derived as
+ <C>RandomMorphismWithFixedSourceAndRangeByInteger</C>(<Math>C</Math>,<Math>a</Math>,<Math>b</Math>,<Math>1</Math>+<C>Log2Int</C>(<Math>n</Math>)) where
+ <Math>b</Math> is computed via <C>RandomObjectByInteger</C>(<Math>C</Math>,<Math>n</Math>).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, L" Name="RandomMorphismWithFixedSourceByList" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>a</Math> in a category <Math>C</Math> and a list <Math>L</Math>.
+ The output is a random morphism <Math>\alpha: a \rightarrow b</Math> for some object <Math>b</Math> in <Math>C</Math>.
+ If <Math>C</Math> is equipped with the methods <C>RandomObjectByList</C> and <C>RandomMorphismWithFixedSourceAndRangeByList</C>
+ and <Math>C</Math> is an Ab-category, then <C>RandomMorphismWithFixedSourceByList</C><Math>(C,a,L)</Math> can be derived as
+ <C>RandomMorphismWithFixedSourceAndRangeByList</C>(<Math>C,a,b,L[2]</Math>) where
+ <Math>b</Math> is computed via <C>RandomObjectByList</C>(<Math>C,L[1]</Math>).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="b, n" Name="RandomMorphismWithFixedRangeByInteger" Label="for IsCapCategoryObject, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>b</Math> in a category <Math>C</Math> and an integer <Math>n</Math>.
+ The output is a random morphism <Math>\alpha: a \rightarrow b</Math> for some object <Math>a</Math> in <Math>C</Math>.
+ If <Math>C</Math> is equipped with the methods <C>RandomObjectByInteger</C> and <C>RandomMorphismWithFixedSourceAndRangeByInteger</C>
+ and <Math>C</Math> is an Ab-category, then <C>RandomMorphismWithFixedRangeByInteger</C><Math>(C,b,n)</Math> can be derived as
+ <C>RandomMorphismWithFixedSourceAndRangeByInteger</C>(<Math>C</Math>,<Math>a</Math>,<Math>b</Math>,<Math>1</Math>+<C>Log2Int</C>(<Math>n</Math>)) where
+ <Math>a</Math> is computed via <C>RandomObjectByInteger</C>(<Math>C</Math>,<Math>n</Math>).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="b, L" Name="RandomMorphismWithFixedRangeByList" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>b</Math> in a category <Math>C</Math> and a list <Math>L</Math>.
+ The output is a random morphism <Math>\alpha: a \rightarrow b</Math> for some object <Math>a</Math> in <Math>C</Math>.
+ If <Math>C</Math> is equipped with the methods <C>RandomObjectByList</C> and <C>RandomMorphismWithFixedSourceAndRangeByList</C>
+ and <Math>C</Math> is an Ab-category, then <C>RandomMorphismWithFixedRangeByList</C><Math>(C,b,L)</Math> can be derived as
+ <C>RandomMorphismWithFixedSourceAndRangeByList</C>(<Math>C,a,b,L[2]</Math>) where
+ <Math>a</Math> is computed via <C>RandomObjectByList</C>(<Math>C,L[1]</Math>).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b, n" Name="RandomMorphismWithFixedSourceAndRangeByInteger" Label="for IsCapCategoryObject, IsCapCategoryObject, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are two objects <Math>a</Math> and <Math>b</Math> in a category <Math>C</Math> and an integer <Math>n</Math>.
+ The output is a random morphism <Math>\alpha: a \rightarrow b</Math> in <Math>C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b, L" Name="RandomMorphismWithFixedSourceAndRangeByList" Label="for IsCapCategoryObject, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ This operation is not a CAP basic operation
+ The arguments are two objects <Math>a</Math> and <Math>b</Math> in a category <Math>C</Math> and a list <Math>L</Math>.
+ The output is a random morphism <Math>\alpha: a \rightarrow b</Math> in <Math>C</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, n" Name="RandomMorphismByInteger" Label="for IsCapCategory, IsInt"/>
+ <Returns>a morphism in <Math>C</Math>
+</Returns>
+ <Description>
+ The arguments are a category <Math>C</Math> and an integer <Math>n</Math>.
+ The output is a random morphism in <Math>C</Math>.
+ The operation can be derived in three different ways:
+<List>
+<Item>
+If <Math>C</Math> is equipped with the methods <C>RandomObjectByInteger</C> and <C>RandomMorphismWithFixedSourceAndRangeByInteger</C>
+   and <Math>C</Math> is an Ab-category, then <C>RandomMorphism</C><Math>(C,n)</Math> can be derived as
+   <C>RandomMorphismWithFixedSourceAndRangeByInteger</C>(<Math>C,a,b</Math>,<Math>1</Math>+<C>Log2Int</C>(<Math>n</Math>)) where
+   <Math>a</Math> and <Math>b</Math> are computed via <C>RandomObjectByInteger</C>(<Math>C,n</Math>).
+</Item>
+<Item>
+If <Math>C</Math> is equipped with the methods <C>RandomObjectByInteger</C> and <C>RandomMorphismWithFixedSourceByInteger</C>,
+   then <C>RandomMorphism</C><Math>(C,n)</Math> can be derived as
+   <C>RandomMorphismWithFixedSourceByInteger</C>(<Math>C,a,1</Math>+<C>Log2Int</C>(<Math>n</Math>)) where
+   <Math>a</Math> is computed via <C>RandomObjectByInteger</C>(<Math>C,n</Math>).
+</Item>
+<Item>
+If <Math>C</Math> is equipped with the methods <C>RandomObjectByInteger</C> and <C>RandomMorphismWithFixedRangeByInteger</C>,
+   then <C>RandomMorphism</C><Math>(C,n)</Math> can be derived as
+   <C>RandomMorphismWithFixedRangeByInteger</C>(<Math>C,b,1</Math>+<C>Log2Int</C>(<Math>n</Math>)) where
+   <Math>b</Math> is computed via <C>RandomObjectByInteger</C>(<Math>C,n</Math>).
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C, L" Name="RandomMorphismByList" Label="for IsCapCategory, IsList"/>
+ <Returns>a morphism in <Math>C</Math>
+</Returns>
+ <Description>
+ The arguments are a category <Math>C</Math> and a list <Math>L</Math>.
+ The output is a random morphism in <Math>C</Math>.
+ The operation can be derived in three different ways:
+<List>
+<Item>
+If <Math>C</Math> is equipped with the methods <C>RandomObjectByList</C> and <C>RandomMorphismWithFixedSourceAndRangeByList</C>
+   and <Math>C</Math> is an Ab-category, then <C>RandomMorphism</C><Math>(C,L)</Math> can be derived as
+   <C>RandomMorphismWithFixedSourceAndRangeByList</C>(<Math>C,a,b,L[3]</Math>)) where
+   <Math>a</Math> and <Math>b</Math> are computed via <C>RandomObjectByList</C>(<Math>C,L[i]</Math>) for <Math>i=1,2</Math> respectively.
+</Item>
+<Item>
+If <Math>C</Math> is equipped with the methods <C>RandomObjectByList</C> and <C>RandomMorphismWithFixedSourceByList</C>,
+   then <C>RandomMorphism</C><Math>(C,L)</Math> can be derived as
+   <C>RandomMorphismWithFixedSourceByList</C>(<Math>C,a,L[2]</Math>) where
+   <Math>a</Math> is computed via <C>RandomObjectByList</C>(<Math>C,L[1]</Math>).
+</Item>
+<Item>
+If <Math>C</Math> is equipped with the methods <C>RandomObjectByList</C> and <C>RandomMorphismWithFixedRangeByList</C>,
+   then <C>RandomMorphism</C><Math>(C,L)</Math> can be derived as
+   <C>RandomMorphismWithFixedRangeByList</C>(<Math>C,b,L[2]</Math>) where
+   <Math>b</Math> is computed via <C>RandomObjectByList</C>(<Math>C,L[1]</Math>).
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group13">
+  <Oper Arg="a, n" Name="RandomMorphismWithFixedSource" Label="for IsCapCategoryObject, IsInt"/>
+  <Oper Arg="a, L" Name="RandomMorphismWithFixedSource" Label="for IsCapCategoryObject, IsList"/>
+  <Oper Arg="b, n" Name="RandomMorphismWithFixedRange" Label="for IsCapCategoryObject, IsInt"/>
+  <Oper Arg="b, L" Name="RandomMorphismWithFixedRange" Label="for IsCapCategoryObject, IsList"/>
+  <Oper Arg="a, b, n" Name="RandomMorphismWithFixedSourceAndRange" Label="for IsCapCategoryObject, IsCapCategoryObject, IsInt"/>
+  <Oper Arg="a, b, L" Name="RandomMorphismWithFixedSourceAndRange" Label="for IsCapCategoryObject, IsCapCategoryObject, IsList"/>
+  <Oper Arg="a, b, n" Name="RandomMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject, IsInt"/>
+  <Oper Arg="a, b, L" Name="RandomMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject, IsList"/>
+  <Oper Arg="C, n" Name="RandomMorphism" Label="for IsCapCategory, IsInt"/>
+  <Oper Arg="C, L" Name="RandomMorphism" Label="for IsCapCategory, IsList"/>
+ <Description>
+ These are convenient methods and they, depending on the input, delegate to one of the above methods.
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Non-Categorical_Properties_of_Morphisms">
+<Heading>Non-Categorical Properties of Morphisms</Heading>
+
+ Non-categorical properties are not stable under equivalences of categories.
+<ManSection>
+  <Prop Arg="alpha" Name="IsEqualToIdentityMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is <C>true</C> if <Math>\alpha = \mathrm{id}_a</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsEqualToZeroMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is <C>true</C> if <Math>\alpha = 0</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsEndomorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is an endomorphism,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsAutomorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is an automorphism,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Equality_and_Congruence_for_Morphisms">
+<Heading>Equality and Congruence for Morphisms</Heading>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsCongruentForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha, \beta: a \rightarrow b</Math>.
+ The output is <C>true</C> if <Math>\alpha \sim_{a,b} \beta</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsEqualForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha, \beta: a \rightarrow b</Math>.
+ The output is <C>true</C> if <Math>\alpha = \beta</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsEqualForMorphismsOnMor" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: a \rightarrow b, \beta: c \rightarrow d</Math>.
+ The output is <C>true</C> if <Math>\alpha = \beta</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Basic_Operations_for_Morphisms_in_Ab-Categories">
+<Heading>Basic Operations for Morphisms in Ab-Categories</Heading>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsZeroForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is <C>true</C> if <Math>\alpha \sim_{a,b} 0</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="AdditionForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha, \beta: a \rightarrow b</Math>.
+ The output is the addition <Math>\alpha + \beta</Math>.
+ Note: The addition has to be compatible with the congruence of morphisms.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="SubtractionForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha, \beta: a \rightarrow b</Math>.
+ The output is the addition <Math>\alpha - \beta</Math>.
+ Note: The addition has to be compatible with the congruence of morphisms.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="AdditiveInverseForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is its additive inverse <Math>-\alpha</Math>.
+ Note: The addition has to be compatible with the congruence of morphisms.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="r, alpha" Name="MultiplyWithElementOfCommutativeSemiringForMorphisms" Label="for IsSemiringElement, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are an element <Math>r</Math> of a commutative semiring
+ and a morphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is the multiplication with the semiring element <Math>r \cdot \alpha</Math>.
+ Note: The multiplication has to be compatible with the congruence of morphisms.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="r, alpha" Name="*" Label="for IsSemiringElement, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ This is a convenience method. It has two arguments.
+ The first argument is either a rational number <Math>q</Math>
+ or an element <Math>r</Math> of a commutative semiring <Math>R</Math>.
+ The second argument is a morphism <Math>\alpha: a \rightarrow b</Math> in a linear category
+ over the commutative semiring <Math>R</Math>.
+ In the case where the first element is a rational number, this method tries to interpret <Math>q</Math> as an element <Math>r</Math> of <Math>R</Math> via
+ <C>R!.interpret_rationals_func</C>. If no such interpretation
+ exists, this method throws an error.
+ The output is the multiplication with the semiring element <Math>r \cdot \alpha</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b" Name="ZeroMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are two objects <Math>a</Math> and <Math>b</Math>.
+ The output is the zero morphism <Math>0: a \rightarrow b</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Subobject_and_Factorobject_Operations">
+<Heading>Subobject and Factorobject Operations</Heading>
+
+ Subobjects of an object <Math>c</Math> are monomorphisms
+ with range <Math>c</Math> and a special function for comparision.
+ Similarly, factorobjects of an object <Math>c</Math> are epimorphisms
+ with source <Math>c</Math> and a special function for comparision.
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsEqualAsSubobjects" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two subobjects <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>.
+ The output is <C>true</C> if there exists an isomorphism <Math>\iota: a \rightarrow b</Math>
+ such that <Math>\beta \circ \iota \sim_{a,c} \alpha</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsEqualAsFactorobjects" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two factorobjects <Math>\alpha: c \rightarrow a</Math>, <Math>\beta: c \rightarrow b</Math>.
+ The output is <C>true</C> if there exists an isomorphism <Math>\iota: b \rightarrow a</Math>
+ such that <Math>\iota \circ \beta \sim_{c,a} \alpha</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsDominating" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \def\h{1}
+ \node (a) at (0,\h) {$a$};
+ \node (b) at (0,-\h) {$b$};
+ \node (c) at (\w,0) {$c$};
+ \draw[right hook-latex] (a) to node[pos=0.45, above] {$\alpha$} (c);
+ \draw[right hook-latex] (b) to node[pos=0.45, below] {$\beta$} (c);
+ \draw[-latex, dashed] (a) to node[pos=0.45, left] {$\exists \iota$} (b);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+ In short: Returns <C>true</C> iff <Math>\alpha</Math> is smaller than <Math>\beta</Math>.
+ Full description: The arguments are two subobjects <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>.
+ The output is <C>true</C> if there exists a morphism <Math>\iota: a \rightarrow b</Math>
+ such that <Math>\beta \circ \iota \sim_{a,c} \alpha</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsCodominating" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \def\h{1}
+ \node (c) at (0,0) {$c$};
+ \node (a) at (\w,\h) {$a$};
+ \node (b) at (\w,-\h) {$b$};
+ \draw[-twohead] (c) to node[pos=0.45, above] {$\alpha$} (a);
+ \draw[-twohead] (c) to node[pos=0.45, below] {$\beta$} (b);
+ \draw[-latex, dashed] (b) to node[pos=0.45, right] {$\exists \iota$} (a);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+ In short: Returns <C>true</C> iff <Math>\alpha</Math> is smaller than <Math>\beta</Math>.
+ Full description: 
+ The arguments are two factorobjects <Math>\alpha: c \rightarrow a</Math>, <Math>\beta: c \rightarrow b</Math>.
+ The output is <C>true</C> if there exists a morphism <Math>\iota: b \rightarrow a</Math>
+ such that <Math>\iota \circ \beta \sim_{c,a} \alpha</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Identity_Morphism_and_Composition_of_Morphisms">
+<Heading>Identity Morphism and Composition of Morphisms</Heading>
+
+<ManSection>
+  <Attr Arg="a" Name="IdentityMorphism" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,a)</Math>
+</Returns>
+ <Description>
+ The argument is an object <Math>a</Math>.
+ The output is its identity morphism <Math>\mathrm{id}_a</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="PreCompose" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, c )</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: a \rightarrow b</Math>, <Math>\beta: b \rightarrow c</Math>.
+ The output is the composition <Math>\beta \circ \alpha: a \rightarrow c</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L" Name="PreCompose" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a_1, a_{n+1})</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a list of morphisms
+ <Math>L = ( \alpha_1: a_1 \rightarrow a_2, \alpha_2: a_2 \rightarrow a_3, \dots, \alpha_n: a_n \rightarrow a_{n+1} )</Math>.
+ The output is the composition
+ <Math>\alpha_{n} \circ ( \alpha_{n-1} \circ ( \dots ( \alpha_2 \circ \alpha_1 ) ) )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, L, r" Name="PreComposeList" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are two objects <A>s</A> = <Math>a_1</Math>, <A>r</A> = <Math>a_{n+1}</Math>, and a list of morphisms
+ <Math>L = ( \alpha_1: a_1 \rightarrow a_2, \alpha_2: a_2 \rightarrow a_3, \dots, \alpha_n: a_n \rightarrow a_{n+1} )</Math> in <Math>C</Math>.
+ The output is the composition
+ <Math>\alpha_{n} \circ ( \alpha_{n-1} \circ ( \dots ( \alpha_2 \circ \alpha_1 ) ) )</Math>.
+ If <Math>L</Math> is empty, then <Math>s</Math> must be equal to <Math>r</Math> and the output is congruent to the identity morphism of <Math>s</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="beta, alpha" Name="PostCompose" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, c )</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\beta: b \rightarrow c</Math>, <Math>\alpha: a \rightarrow b</Math>.
+ The output is the composition <Math>\beta \circ \alpha: a \rightarrow c</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="L" Name="PostCompose" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a_1, a_{n+1})</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a list of morphisms
+ <Math>L = ( \alpha_n: a_n \rightarrow a_{n+1}, \alpha_{n-1}: a_{n-1} \rightarrow a_n, \dots, \alpha_1: a_1 \rightarrow a_2 )</Math>.
+ The output is the composition
+ <Math>((\alpha_{n} \circ  \alpha_{n-1}) \circ \dots  \alpha_2) \circ \alpha_1</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, L, r" Name="PostComposeList" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s, r)</Math>
+</Returns>
+ <Description>
+ The arguments are two objects <A>s</A> = <Math>a_1</Math>, <A>r</A> = <Math>a_{n+1}</Math>, and a list of morphisms
+ <Math>L = ( \alpha_n: a_n \rightarrow a_{n+1}, \alpha_{n-1}: a_{n-1} \rightarrow a_n, \dots, \alpha_1: a_1 \rightarrow a_2 )</Math>.
+ The output is the composition
+ <Math>((\alpha_{n} \circ  \alpha_{n-1}) \circ \dots  \alpha_2) \circ \alpha_1</Math>.
+ If <Math>L</Math> is empty, then <Math>s</Math> must be equal to <Math>r</Math> and the output is congruent to the identity morphism of <Math>s</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, morphisms, r" Name="SumOfMorphisms" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s,r)</Math>
+</Returns>
+ <Description>
+ The arguments are two objects <A>s</A>, <A>r</A> and a list <A>morphisms</A> of morphisms from <A>s</A> to <A>r</A>.
+ The output is the sum of all elements in <A>morphisms</A>, or the zero-morphism from <A>s</A> to <A>r</A> 
+ if <A>morphisms</A> is empty.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, coeffs, mors, r" Name="LinearCombinationOfMorphisms" Label="for IsCapCategoryObject, IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(s,r)</Math>
+</Returns>
+ <Description>
+ The arguments are two objects <A>s</A>, <A>r</A> in some linear category over a semiring <Math>R</Math>,
+ a list <A>coeffs</A> of semiring elements in <Math>R</Math> and a list <A>mors</A> of morphisms from <A>s</A> to <A>r</A>.
+ The output is the linear combination of the morphisms in <A>mors</A> with respect to the coefficients list <A>coeffs</A>,
+ or the zero morphism from <A>s</A> to <A>r</A> if <A>coeffs</A> and <A>mors</A> are the empty lists.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Well-Definedness_of_Morphisms">
+<Heading>Well-Definedness of Morphisms</Heading>
+
+<ManSection>
+  <Oper Arg="alpha" Name="IsWellDefinedForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is well-defined,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="source, alpha, range" Name="IsWellDefinedForMorphismsWithGivenSourceAndRange" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two well-defined objects <Math>S</Math> and <Math>T</Math> and a morphism <Math>\alpha</Math>.
+ The output is <C>true</C> if <Math>\alpha</Math> is a well-defined morphism from <Math>S</Math> to <Math>T</Math>,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_LiftColift">
+<Heading>Lift/Colift</Heading>
+
+<List>
+<Item>
+For any pair of morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>,
+  we call each morphism <Math>\alpha / \beta: a \rightarrow b</Math> such that
+  <Math>\beta \circ (\alpha / \beta) \sim_{a,c} \alpha</Math> a <Emph>lift of <Math>\alpha</Math> along <Math>\beta</Math></Emph>.
+</Item>
+</List>
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \def\h{1}
+ \node (a) at (0,\h) {$a$};
+ \node (b) at (0,-\h) {$b$};
+ \node (c) at (\w,0) {$c$};
+ \draw[-latex] (a) to node[pos=0.45, above] {$\alpha$} (c);
+ \draw[-latex] (b) to node[pos=0.45, below] {$\beta$} (c);
+ \draw[-latex, dashed] (a) to node[pos=0.45, left] {$\alpha/\beta$} (b);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<List>
+<Item>
+For any pair of morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: a \rightarrow b</Math>,
+  we call each morphism <Math>\alpha \backslash \beta: c \rightarrow b</Math> such that
+  <Math>(\alpha \backslash \beta) \circ \alpha \sim_{a,b} \beta</Math> a <Emph> colift of <Math>\beta</Math> along <Math>\alpha</Math></Emph>.
+</Item>
+</List>
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \def\h{1}
+ \node (a) at (0,0) {$a$};
+ \node (c) at (\w,\h) {$c$};
+ \node (b) at (\w,-\h) {$b$};
+ \draw[-latex] (a) to node[pos=0.45, above] {$\alpha$} (c);
+ \draw[-latex] (a) to node[pos=0.45, below] {$\beta$} (b);
+ \draw[-latex, dashed] (c) to node[pos=0.45, right] {$\alpha \backslash \beta$} (b);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+ Note that such lifts (or colifts) do not have to be unique. So in general,
+ we do not expect that algorithms computing lifts (or colifts) do this in a functorial way.
+ Thus the operations <Math>\mathtt{Lift}</Math> and <Math>\mathtt{Colift}</Math> are not regarded as 
+ categorical operations, but only as set-theoretic operations.
+<ManSection>
+  <Oper Arg="iota, tau" Name="LiftAlongMonomorphism" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(t,k)</Math>
+</Returns>
+ <Description>
+ The arguments are a monomorphism <Math>\iota: k \hookrightarrow a</Math>
+ and a morphism <Math>\tau: t \rightarrow a</Math>
+ such that there is a morphism <Math>u: t \rightarrow k</Math> with
+ <Math>\iota \circ u \sim_{t,a} \tau</Math>.
+ The output is such a <Math>u</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="epsilon, tau" Name="ColiftAlongEpimorphism" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(c,t)</Math>
+</Returns>
+ <Description>
+ The arguments are an epimorphism <Math>\epsilon: a \rightarrow c</Math>
+ and a morphism <Math>\tau: a \rightarrow t</Math>
+ such that there is a morphism <Math>u: c \rightarrow t</Math> with
+ <Math>u \circ \epsilon \sim_{a,t} \tau</Math>.
+ The output is such a <Math>u</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="iota, tau" Name="IsLiftableAlongMonomorphism" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are a monomorphism <Math>\iota: k \hookrightarrow a</Math>
+ and a morphism <Math>\tau: t \rightarrow a</Math>.
+ The output is <C>true</C> if there exists
+ a morphism <Math>u: t \rightarrow k</Math> with
+ <Math>\iota \circ u \sim_{t,a} \tau</Math>.
+ Otherwise, the output is  <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="epsilon, tau" Name="IsColiftableAlongEpimorphism" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are an epimorphism <Math>\epsilon: a \rightarrow c</Math>
+ and a morphism <Math>\tau: a \rightarrow t</Math>.
+ The output is <C>true</C> if there exists
+ a morphism <Math>u: c \rightarrow t</Math> with
+ <Math>u \circ \epsilon \sim_{a,t} \tau</Math>.
+ Otherwise, the output is  <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="Lift" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>
+ such that a lift <Math>\alpha / \beta: a \rightarrow b</Math> of <Math>\alpha</Math> along <Math>\beta</Math> exists.
+ The output is such a lift <Math>\alpha / \beta: a \rightarrow b</Math>.
+ Recall that a lift <Math>\alpha / \beta: a \rightarrow b</Math> of <Math>\alpha</Math> along <Math>\beta</Math> is
+ a morphism such that <Math>\beta \circ (\alpha / \beta) \sim_{a,c} \alpha</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="LiftOrFail" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b) + \{ \mathtt{fail} \}</Math>
+</Returns>
+ <Description>
+ This is a convenience operation.
+ The arguments are two morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>.
+ The output is a lift <Math>\alpha / \beta: a \rightarrow b</Math> of <Math>\alpha</Math> along <Math>\beta</Math>
+ if such a lift exists or <Math>\mathtt{fail}</Math> if it doesn't.
+ Recall that a lift <Math>\alpha / \beta: a \rightarrow b</Math> of <Math>\alpha</Math> along <Math>\beta</Math> is
+ a morphism such that <Math>\beta \circ (\alpha / \beta) \sim_{a,c} \alpha</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsLiftable" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>.
+ The output is <C>true</C> if there exists
+  a lift <Math>\alpha / \beta: a \rightarrow b</Math> of <Math>\alpha</Math> along <Math>\beta</Math>, i.e.,
+ a morphism such that <Math>\beta \circ (\alpha / \beta) \sim_{a,c} \alpha</Math>.
+ Otherwise, the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="Colift" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(c,b)</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: a \rightarrow b</Math>
+ such that a colift <Math>\alpha \backslash \beta: c \rightarrow b</Math> of <Math>\beta</Math> along <Math>\alpha</Math> exists.
+ The output is such a colift <Math>\alpha \backslash \beta: c \rightarrow b</Math>.
+ Recall that a colift <Math>\alpha \backslash \beta: c \rightarrow b</Math> of <Math>\beta</Math> along <Math>\alpha</Math> is
+ a morphism such that <Math>(\alpha \backslash \beta) \circ \alpha \sim_{a,b} \beta</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="ColiftOrFail" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(c,b) + \{ \mathtt{fail} \}</Math>
+</Returns>
+ <Description>
+ This is a convenience operation.
+ The arguments are two morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: a \rightarrow b</Math>.
+ The output is a colift <Math>\alpha \backslash \beta: c \rightarrow b</Math> of <Math>\beta</Math> along <Math>\alpha</Math>
+ if such a colift exists or <Math>\mathtt{fail}</Math> if it doesn't.
+ Recall that a colift <Math>\alpha \backslash \beta: c \rightarrow b</Math> of <Math>\beta</Math> along <Math>\alpha</Math> is
+ a morphism such that <Math>(\alpha \backslash \beta) \circ \alpha \sim_{a,b} \beta</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsColiftable" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: a \rightarrow b</Math>.
+ The output is <C>true</C> if there exists
+ a colift <Math>\alpha \backslash \beta: c \rightarrow b</Math> of <Math>\beta</Math> along <Math>\alpha</Math>., i.e.,
+ a morphism such that <Math>(\alpha \backslash \beta) \circ \alpha \sim_{a,b} \beta</Math>.
+ Otherwise, the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Inverses">
+<Heading>Inverses</Heading>
+
+ Let <Math>\alpha: a \rightarrow b</Math> be a morphism. An inverse of <Math>\alpha</Math>
+ is a morphism <Math>\alpha^{-1}: b \rightarrow a</Math> such that
+ <Math>\alpha \circ \alpha^{-1} \sim_{b,b} \mathrm{id}_b</Math>
+ and <Math>\alpha^{-1} \circ \alpha \sim_{a,a} \mathrm{id}_a</Math>.
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{2}
+ \def\h{1}
+ \node (a) at (0,0) {$a$};
+ \node (b) at (\w,0) {$b$};
+ \draw[-latex] (a) to node[pos=0.45, above] {$\alpha$} (b);
+ \draw[-latex] (b) to [out = -135, in = -45] node[pos=0.45, below] {$\alpha^{-1}$} (a);
+ \draw [-latex] (a.135) arc (45:45+280:4mm) node[pos=0.5,left] {$\mathrm{id}_a$} (a);
+ \draw [-latex] (b.45) arc (-240:-240-280:4mm) node[pos=0.5,right] {$\mathrm{id}_b$} (b);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Oper Arg="alpha" Name="InverseForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(b,a)</Math>
+</Returns>
+ <Description>
+ The argument is an isomorphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is its inverse <Math>\alpha^{-1}: b \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha" Name="PreInverseForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(b,a)</Math>
+</Returns>
+ <Description>
+ The argument is a split-epimorphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is a pre-inverse <Math>\iota: b \rightarrow a</Math> of <Math>\alpha</Math>,
+ i.e., <Math>\iota</Math> satisfies <Math>\alpha \circ \iota \sim_{b,b} \mathrm{id}_b</Math>.
+ The morphism <Math>\iota</Math> is also known as a section or a right-inverse of <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha" Name="PostInverseForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(b,a)</Math>
+</Returns>
+ <Description>
+ The argument is a split-monomorphism <Math>\alpha: a \rightarrow b</Math>.
+ The output is a post-inverse <Math>\pi: b \rightarrow a</Math> of <Math>\alpha</Math>,
+ i.e., <Math>\pi</Math> satisfies <Math>\pi \circ \alpha \sim_{a,a} \mathrm{id}_a</Math>.
+ The morphism <Math>\pi</Math> is also known as a contraction or a left-inverse of <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Tool_functions_for_caches">
+<Heading>Tool functions for caches</Heading>
+
+<ManSection>
+  <Oper Arg="phi, psi" Name="IsEqualForCacheForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>true or false
+</Returns>
+ <Description>
+  By default, CAP uses caches to store the values of Categorical operations.
+  To get a value out of the cache, one needs to compare the input of a basic operation
+  with its previous input. To compare morphisms in the category, IsEqualForCacheForMorphisms is
+  used. By default, IsEqualForCacheForMorphisms falls back to IsEqualForCache (see ToolsForHomalg),
+  which in turn defaults to recursive comparison for lists and <Code>IsIdenticalObj</Code> in all other cases.
+  If you add a function via <Code>AddIsEqualForCacheForMorphisms</Code>, that function is used instead.
+  A function <Math>F: a,b \mapsto bool</Math> is expected there. The output has to be
+  true or false. Fail is not allowed in this context.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_IsHomSetInhabited">
+<Heading>IsHomSetInhabited</Heading>
+
+<ManSection>
+  <Oper Arg="A, B" Name="IsHomSetInhabited" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+  The arguments are two objects <A>A</A> and <A>B</A>.
+  The output is <C>true</C> if there exists a morphism from <A>A</A> to <A>B</A>,
+  otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_SetOfMorphisms">
+<Heading>SetOfMorphisms</Heading>
+
+<ManSection>
+  <Attr Arg="C" Name="SetOfMorphismsOfFiniteCategory" Label="for IsCapCategory"/>
+ <Returns>a list of a &CAP; category morphisms
+</Returns>
+ <Description>
+  Return a duplicate free list of morphisms of the finite category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="SetOfMorphisms" Label="for IsCapCategory"/>
+ <Returns>a list of &CAP; category objects
+</Returns>
+ <Description>
+  Return a duplicate free list of morphisms of the finite category <A>C</A>.
+  The corresponding &CAP; operation is <C>SetOfMorphismsOfFiniteCategory</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_SetOfGeneratingMorphisms">
+<Heading>SetOfGeneratingMorphisms</Heading>
+
+<ManSection>
+  <Attr Arg="C" Name="SetOfGeneratingMorphismsOfCategory" Label="for IsCapCategory"/>
+ <Returns>a list of a &CAP; category morphisms
+</Returns>
+ <Description>
+  Return a list of generating morphisms of the finitely generated category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="SetOfGeneratingMorphisms" Label="for IsCapCategory"/>
+ <Returns>a list of a &CAP; category morphisms
+</Returns>
+ <Description>
+  Return a list of generating morphisms of the finitely generated category <A>C</A>.
+  The corresponding &CAP; operation is <C>SetOfGeneratingMorphismsOfCategory</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Homomorphism_structures">
+<Heading>Homomorphism structures</Heading>
+
+ Homomorphism structures are way to "oversee" the homomorphisms between two given objects.
+ Let <Math>C</Math>, <Math>D</Math> be categories.
+ A <Math>D</Math>-homomorphism structure for <Math>C</Math> consists of the following data:
+<List>
+<Item>
+a functor <Math>H: C^{\mathrm{op}} \times C \rightarrow D</Math> (when <Math>C</Math> and <Math>D</Math> are Ab-categories, <Math>H</Math> is assumed to be bilinear).
+</Item>
+<Item>
+an object <Math>1 \in D</Math>, called the distinguished object,
+</Item>
+<Item>
+a bijection <Math>\nu: \mathrm{Hom}_{C}(a,b) \simeq \mathrm{Hom}_{D}(1, H(a,b))</Math> natural in <Math>a,b \in C</Math>.
+</Item>
+</List>
+<ManSection>
+  <Oper Arg="a,b" Name="HomomorphismStructureOnObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an object in <Math>D</Math>
+</Returns>
+ <Description>
+ The arguments are two objects <Math>a, b</Math> in <Math>C</Math>.
+ The output is the value of the homomorphism structure on objects <Math>H(a,b)</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="HomomorphismStructureOnMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{D}(H(a',b), H(a,b'))</Math>
+</Returns>
+ <Description>
+ The arguments are two morphisms <Math>\alpha: a \rightarrow a', \beta: b \rightarrow b'</Math> in <Math>C</Math>.
+ The output is the value of the homomorphism structure on morphisms <Math>H(\alpha, \beta )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, alpha, beta, r" Name="HomomorphismStructureOnMorphismsWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{D}(H(a',b), H(a,b'))</Math>
+</Returns>
+ <Description>
+ The arguments are an object <Math>s = H(a',b)</Math> in <Math>D</Math>,
+ two morphisms <Math>\alpha: a \rightarrow a', \beta: b \rightarrow b'</Math> in <Math>C</Math>,
+ and an object <Math>r = H(a,b')</Math> in <Math>D</Math>.
+ The output is the value of the homomorphism structure on morphisms <Math>H(\alpha, \beta )</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="DistinguishedObjectOfHomomorphismStructure" Label="for IsCapCategory"/>
+ <Returns>an object in <Math>D</Math>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the distinguished object <Math>1</Math> in <Math>D</Math> of the homomorphism structure.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{D}(1, H(a,a'))</Math>
+</Returns>
+ <Description>
+ The argument is a morphism  <Math>\alpha: a \rightarrow a'</Math> in <Math>C</Math>.
+ The output is the corresponding morphism
+ <Math>\nu( \alpha ): 1 \rightarrow H(a,a')</Math> in <Math>D</Math> of the homomorphism structure.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="distinguished_object, alpha, r" Name="InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{D}(1, r)</Math>
+</Returns>
+ <Description>
+ The arguments are the distinguished object <Math>1</Math>, a morphism  <Math>\alpha: a \rightarrow a'</Math>, and the object <Math>r = H(a,a')</Math>.
+ The output is the corresponding morphism
+ <Math>\nu( \alpha ): 1 \rightarrow r</Math> in <Math>D</Math> of the homomorphism structure.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a,a',iota" Name="InterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{C}(a,a')</Math>
+</Returns>
+ <Description>
+ The arguments are
+ objects <Math>a,a'</Math> in <Math>C</Math>
+ and a morphism <Math>\iota: 1 \rightarrow H(a,a')</Math> in <Math>D</Math>.
+ The output is the corresponding morphism
+ <Math>\nu^{-1}(\iota): a \rightarrow a'</Math> in <Math>C</Math> of the homomorphism structure.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta, gamma" Name="SolveLinearSystemInAbCategory" Label="for IsList, IsList, IsList"/>
+ <Returns>a list of morphisms <Math>[X_1, \dots, X_n]</Math>
+</Returns>
+ <Description>
+ The arguments are three lists <Math>\alpha</Math>, <Math>\beta</Math>, and <Math>\gamma</Math>.
+ The first list <Math>\alpha</Math> (the left coefficients) is a list of list of morphisms <Math>\alpha_{ij}: A_i \rightarrow B_j</Math>,
+ where <Math>i = 1 \dots m</Math> and <Math>j = 1 \dots n</Math> for integers <Math>m,n \geq 1</Math>.
+ The second list <Math>\beta</Math> (the right coefficients) is a list of list of morphisms <Math>\beta_{ij}: C_j \rightarrow D_i</Math>,
+ where <Math>i = 1 \dots m</Math> and <Math>j = 1 \dots n</Math>.
+ The third list <Math>\gamma</Math> (the right side) is a list of morphisms <Math>\gamma_i: A_i \rightarrow D_i</Math>,
+ where <Math>i = 1, \dots, m</Math>.
+ Assumes that a solution to the linear system defined by <Math>\alpha</Math>, <Math>\beta</Math>, <Math>\gamma</Math> exists, i.e.,
+ there exist morphisms <Math>X_j: B_j \rightarrow C_j</Math> for <Math>j=1\dots n</Math> such that
+ <Math>\sum_{j = 1}^n \alpha_{ij}\cdot X_j \cdot \beta_{ij} = \gamma_i</Math>
+ for all <Math>i = 1 \dots m</Math>.
+ The output is list of such morphisms <Math>X_j: B_j \rightarrow C_j</Math> for <Math>j=1\dots n</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta, gamma" Name="SolveLinearSystemInAbCategoryOrFail" Label="for IsList, IsList, IsList"/>
+ <Returns>a list of morphisms <Math>[X_1, \dots, X_n]</Math> or <Code>fail</Code>
+</Returns>
+ <Description>
+ This is a convenience operation.
+ Like <C>SolveLinearSystemInAbCategory</C>,
+ but without the assumption that a solution exists.
+ If no solution exists, <Code>fail</Code> is returned.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta, gamma" Name="MereExistenceOfSolutionOfLinearSystemInAbCategory" Label="for IsList, IsList, IsList"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ Like <C>SolveLinearSystemInAbCategory</C>,
+ but the output is simply <C>true</C> if a solution exists,
+ <C>false</C> otherwise.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta, gamma" Name="MereExistenceOfUniqueSolutionOfLinearSystemInAbCategory" Label="for IsList, IsList, IsList"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ Like <C>SolveLinearSystemInAbCategory</C>,
+ but the output is simply <C>true</C> if a unique solution exists,
+ and <C>false</C> otherwise.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="MereExistenceOfUniqueSolutionOfHomogeneousLinearSystemInAbCategory" Label="for IsList, IsList"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ Like <C>SolveLinearSystemInAbCategory</C>
+ but the output is <C>true</C> if the homogeneous system has only the trivial zero solution,
+ and <C>false</C> otherwise.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="BasisOfSolutionsOfHomogeneousLinearSystemInLinearCategory" Label="for IsList, IsList"/>
+ <Returns>a list of lists of morphisms <Math>[X^1, \dots, X^t]</Math>
+</Returns>
+ <Description>
+ The arguments are two lists of lists <Math>\alpha</Math> and <Math>\beta</Math> of morphisms in a linear category over a commutative ring <Math>k</Math>.
+ The first list <Math>\alpha</Math> (the left coefficients) is a list of list of morphisms <Math>\alpha_{ij}: A_i \rightarrow B_j</Math>,
+ where <Math>i = 1, \dots, m</Math> and <Math>j = 1, \dots, n</Math> for integers <Math>m,n \geq 1</Math>.
+ The second list <Math>\beta</Math> (the right coefficients) is a list of list of morphisms <Math>\beta_{ij}: C_j \rightarrow D_i</Math>,
+ where <Math>i = 1, \dots, m</Math> and <Math>j = 1, \dots, n</Math>.
+ The output is a generating set <Math>[X^1,\dots,X^t]</Math> for the solutions of the homogeneous linear system:
+ <Math>\sum_{j = 1}^n \alpha_{ij}\cdot X_{j} \cdot \beta_{ij} = 0, ~i = 1, \dots, m</Math>.
+ Particularly, each <Math>X^k</Math> is a list (of length <Math>n</Math>) of morphisms <Math>X^k_j:B_j \to C_j, j=1,\dots,n</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta, gamma, delta" Name="BasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory" Label="for IsList, IsList, IsList, IsList"/>
+ <Returns>a list of lists of morphisms <Math>[X^1, \dots, X^t]</Math>
+</Returns>
+ <Description>
+ The arguments are four lists of lists <Math>\alpha</Math>, <Math>\beta</Math>, <Math>\gamma</Math>, <Math>\delta</Math> of morphisms in some linear category over commutative ring.
+ Each of <Math>\alpha</Math> and <Math>\gamma</Math> is a list of list of morphisms <Math>\alpha_{ij}, \gamma_{ij}: A_i \rightarrow B_j</Math>,
+ where <Math>i = 1, \dots, m</Math> and <Math>j = 1, \dots, n</Math> for integers <Math>m,n \geq 1</Math>.
+ Each of <Math>\beta</Math> and <Math>\delta</Math> is also a list of list of morphisms <Math>\beta_{ij}, \delta_{ij}: C_j \rightarrow D_i</Math>,
+ where <Math>i = 1, \dots, m</Math> and <Math>j = 1, \dots, n</Math>.
+ The output is a generating set <Math>[X^1,\dots,X^t]</Math> for the solutions of the homogeneous linear system
+ defined by <Math>\alpha</Math>, <Math>\beta</Math>, <Math>\gamma</Math> and <Math>\delta</Math>, i.e.,
+ <Math>\sum_{j = 1}^n \alpha_{ij}\cdot X^{k}_{j} \cdot \beta_{ij} = \sum_{j = 1}^n \gamma_{ij}\cdot X^{k}_{j} \cdot \delta_{ij}</Math>
+ for all <Math>i = 1, \dots, m</Math> and all <Math>k = 1, \dots, t</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, delta" Name="BasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory" Label="for IsList, IsList"/>
+ <Returns>a list of lists of morphisms <Math>[X^1, \dots, X^t]</Math>
+</Returns>
+ <Description>
+ The arguments are two lists of lists <Math>\alpha</Math>, <Math>\delta</Math> morphisms in some linear category
+ over commutative ring.
+ <Math>\alpha</Math> is a list of list of morphisms <Math>\alpha_{ij}:A_i \rightarrow B_j</Math> and
+ <Math>\delta</Math> is a list of list of morphisms <Math>\delta_{ij}:C_j \rightarrow D_i</Math>,
+ where <Math>i = 1, \dots, m</Math> and <Math>j = 1, \dots, n</Math> for integers <Math>m,n \geq 1</Math>.
+ The method delegates to <C>BasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory</C> applied on <Math>\alpha</Math>, <Math>\beta</Math>, <Math>\gamma</Math>, <Math>\delta</Math> where
+<List>
+<Item>
+<Math>\beta_{ij}</Math> equals <C>IdentityMorphism</C>(<C>Source</C>(<Math>\delta_{ij}</Math>)) if <Math>\delta_{ij}</Math> is an endomorphism,
+   and <C>ZeroMorphism</C>(<C>Source</C>(<Math>\delta_{ij}</Math>), <C>Range</C>(<Math>\delta_{ij}</Math>)) otherwise,
+</Item>
+<Item>
+<Math>\gamma_{ij}</Math> equals <C>IdentityMorphism</C>(<C>Source</C>(<Math>\alpha_{ij}</Math>)) if <Math>\alpha_{ij}</Math> is an endomorphism,
+    and <C>ZeroMorphism</C>(<C>Source</C>(<Math>\alpha_{ij}</Math>), <C>Range</C>(<Math>\alpha_{ij}</Math>)) otherwise;
+</Item>
+</List>
+ for all <Math>i = 1, \dots, m</Math> and <Math>j = 1, \dots, n</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="HomStructure" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{D}(H(a',b), H(a,b'))</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The arguments are two morphisms <Math>\alpha: a \rightarrow a', \beta: b \rightarrow b'</Math> in <Math>C</Math>.
+ The output is <C>HomomorphismStructureOnMorphisms</C> called on <Math>\alpha</Math>, <Math>\beta</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="alpha, b" Name="HomStructure" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{D}(H(a',b), H(a,b))</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The arguments are a morphism <Math>\alpha: a \rightarrow a'</Math> and an object <Math>b</Math> in <Math>C</Math>.
+ The output is <C>HomomorphismStructureOnMorphisms</C> called on <Math>\alpha</Math>, <Math>\mathrm{id}_b</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, beta" Name="HomStructure" Label="for IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{D}(H(a,b), H(a,b'))</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The arguments are an object <Math>a</Math> and a morphism <Math>\beta: b \rightarrow b'</Math> in <Math>C</Math>.
+ The output is <C>HomomorphismStructureOnMorphisms</C> called on <Math>\mathrm{id}_a</Math>, <Math>\beta</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b" Name="HomStructure" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+ This is a convenience method.
+ The arguments are two objects <Math>a</Math> and <Math>b</Math> in <Math>C</Math>.
+ The output is <C>HomomorphismStructureOnObjects</C> called on <Math>a,b</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="HomStructure" Label="for IsCapCategoryMorphism"/>
+ <Description>
+ This is a convenience method for
+ <C>InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3" Name="HomStructure" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Description>
+ This is a convenience method for
+ <C>InterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="arg" Name="HomStructure" Label="for IsCapCategory"/>
+ <Description>
+ This is a convenience method for
+ <C>DistinguishedObjectOfHomomorphismStructure</C>.
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group14">
+  <Oper Arg="C, E, object_function, morphism_function, object_function_inverse, morphism_function_inverse" Name="ExtendRangeOfHomomorphismStructureByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsFunction, IsFunction, IsFunction, IsFunction"/>
+  <Oper Arg="C, E, a, b" Name="HomomorphismStructureOnObjectsExtendedByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsCapCategoryObject, IsCapCategoryObject"/>
+  <Oper Arg="C, E, alpha, beta" Name="HomomorphismStructureOnMorphismsExtendedByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+  <Oper Arg="C, E, s, alpha, beta, r" Name="HomomorphismStructureOnMorphismsWithGivenObjectsExtendedByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+  <Oper Arg="C, E" Name="DistinguishedObjectOfHomomorphismStructureExtendedByFullEmbedding" Label="for IsCapCategory, IsCapCategory"/>
+  <Oper Arg="C, E, alpha" Name="InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureExtendedByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsCapCategoryMorphism"/>
+  <Oper Arg="C, E, distinguished_object, alpha, r" Name="InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureWithGivenObjectsExtendedByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+  <Oper Arg="C, E, a, a', iota" Name="InterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphismExtendedByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+ If <Math>\iota\colon D \to E</Math> is a full embedding of categories, every <Math>D</Math>-homomorphism structure for a category <Math>C</Math>
+ extends to a <Math>E</Math>-homomorphism structure for <Math>C</Math>. This operations accepts four functions
+ and installs operations <Code>DistinguishedObjectOfHomomorphismStructureExtendedByFullEmbedding</Code>,
+ <Code>HomomorphismStructureOnObjectsExtendedByFullEmbedding</Code> etc. which correspond to the <Math>E</Math>-homomorphism structure for <Math>C</Math>.
+ Note: To distinguish embeddings in different categories, in addition to <Math>C</Math> also <Math>E</Math> is passed to the operations.
+ When using this with different embeddings with the range category <Math>E</Math>, only the last embedding will be used.
+ The arguments are:
+<List>
+<Item>
+<Code>object_function</Code> gets the categories <Math>C</Math> and <Math>E</Math> and an object in <Math>D</Math>.
+</Item>
+<Item>
+<Code>morphism_function</Code> gets the categories <Math>C</Math> and <Math>E</Math>, an object in <Math>E</Math>, a morphism in <Math>D</Math> and another object in <Math>E</Math>.
+   The objects are the results of <Code>object_function</Code> applied to the source and range of the morphism.
+</Item>
+<Item>
+<Code>object_function_inverse</Code> gets the categories <Math>C</Math> and <Math>E</Math> and an object in <Math>E</Math>.
+</Item>
+<Item>
+<Code>morphism_function_inverse</Code> gets the categories <Math>C</Math> and <Math>E</Math>, an object in <Math>D</Math>, a morphism in <Math>E</Math> and another object in <Math>D</Math>.
+   The objects are the results of <Code>object_function_inverse</Code> applied to the source and range of the morphism.
+</Item>
+</List>
+ <Code>object_function</Code> and <Code>morphism_function</Code> define the embedding. <Code>object_function_inverse</Code> and <Code>morphism_function_inverse</Code> define
+ the inverse of the embedding on its image.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C" Name="ExtendRangeOfHomomorphismStructureByIdentityAsFullEmbedding" Label="for IsCapCategory"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+ Chooses the identity on <Math>D</Math> as the full embedding in
+ <Ref Oper="ExtendRangeOfHomomorphismStructureByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsFunction, IsFunction, IsFunction, IsFunction" />.
+ This is useful to handle this case as a degenerate case of
+ <Ref Oper="ExtendRangeOfHomomorphismStructureByFullEmbedding" Label="for IsCapCategory, IsCapCategory, IsFunction, IsFunction, IsFunction, IsFunction" />.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b" Name="MorphismsOfExternalHom" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a list of morphisms in <Math>\mathrm{Hom}( a, b )</Math>
+</Returns>
+ <Description>
+ The argument are two objects <A>a</A>, <A>b</A>.
+ The output is a list of all morphisms from <A>a</A> to <A>b</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="a, b" Name="BasisOfExternalHom" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a list of morphisms in <Math>\mathrm{Hom}_{C}(a,b)</Math>
+</Returns>
+ <Description>
+ The arguments are objects <Math>a,b</Math> in a <Math>k</Math>-linear category <Math>C</Math>.
+ The output is a list <Math>L</Math> of morphisms which is a basis of <Math>\mathrm{Hom}_{C}(a,b)</Math> in
+ the sense that any given morphism <Math>\alpha: a \to b</Math> can uniquely be written as a
+ linear combination of <Math>L</Math> with the coefficients in
+ <C>CoefficientsOfMorphism</C>(<Math>\alpha</Math>).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="CoefficientsOfMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a list of elements in <Math>k</Math>
+</Returns>
+ <Description>
+ This is a convenience method.
+ The argument is a morphism  <Math>\alpha: a \to b</Math> in a <Math>k</Math>-linear category <Math>C</Math>.
+ The output is a list of coefficients of <Math>\alpha</Math> with respect to the list
+ <C>BasisOfExternalHom</C>(<A>a</A>,<A>b</A>).
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Simplified_Morphisms">
+<Heading>Simplified Morphisms</Heading>
+
+ Let <Math>\phi: A \rightarrow B</Math> be a morphism.
+ There are several different natural ways to look at <Math>\phi</Math> as an object in an ambient category:
+<List>
+<Item>
+<Math>\mathrm{Hom}( A, B )</Math>, the set of homomorphisms with the equivalence relation <Math>\mathtt{IsCongruentForMorphisms}</Math> regarded as a category,
+</Item>
+<Item>
+<Math>\sum_{A}\mathrm{Hom}( A, B )</Math>, the category of morphisms where the range is fixed,
+</Item>
+<Item>
+<Math>\sum_{B}\mathrm{Hom}( A, B )</Math>, the category of morphisms where the source is fixed,
+</Item>
+<Item>
+<Math>\sum_{A,B}\mathrm{Hom}( A, B )</Math>, the category of morphisms where neither source nor range is fixed,
+</Item>
+</List>
+ and furthermore, if <Math>\phi</Math> happens to be an endomorphism <Math>A \rightarrow A</Math>,
+ we also have
+<List>
+<Item>
+<Math>\sum_{A}\mathrm{Hom}(A,A)</Math>, the category of endomorphisms.
+</Item>
+</List>
+ Let <Math>\mathbf{C}</Math> be one of the categories above in which <Math>\phi</Math> may reside as an object,
+ and let <Math>i</Math> be a non-negative integer or <Math>\infty</Math>.
+ CAP provides commands for passing from <Math>\phi</Math> to <Math>\phi_i</Math>, where <Math>\phi_i</Math> is isomorphic to <Math>\phi</Math>
+ in <Math>\mathbf{C}</Math>, but "simpler".
+ The idea is that the greater the <Math>i</Math>, the "simpler" the <Math>\phi_i</Math> (but this could mean the harder the computation),
+ with <Math>\infty</Math> as a possible value.
+ The case <Math>i = 0</Math> defaults to the identity operator for all simplifications.
+ For the Add-operatations, only the cases <Math>i \geq 1</Math> have to be given as functions.
+<P/>
+ <Math>\ </Math>
+<P/>
+ If we regard <Math>\phi</Math> as an object in the category <Math>\mathrm{Hom}( A, B )</Math>,
+ <Math>\phi_i</Math> is again in <Math>\mathrm{Hom}( A, B )</Math> such that <Math>\phi \sim_{A,B} \phi_i</Math>.
+ This case is handled by the following commands:
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifyMorphism" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A,B)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is a simplified morphism <Math>\phi_i</Math>.
+ </Description>
+</ManSection>
+
+ <Math>\ </Math>
+<P/>
+ If we regard <Math>\phi</Math> as an object in the category <Math>\sum_{A}\mathrm{Hom}( A, B )</Math>,
+ then <Math>\phi_i</Math> is a morphism of type <Math>A_i \rightarrow B</Math> and there is an isomorphism
+ <Math>\sigma_i: A \rightarrow A_i</Math> such that
+ <Math>\phi_i \circ \sigma_i \sim_{A,B} \phi</Math>.
+ This case is handled by the following commands:
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifySource" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A_i,B)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is a simplified morphism with simplified source <Math>\phi_i: A_i \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifySource_IsoToInputObject" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A_i,A)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>(\sigma_i)^{-1}: A_i \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifySource_IsoFromInputObject" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A,A_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>\sigma_i: A \rightarrow A_i</Math>.
+ </Description>
+</ManSection>
+
+ <Math>\ </Math>
+<P/>
+ If we regard <Math>\phi</Math> as an object in the category <Math>\sum_{B}\mathrm{Hom}( A, B )</Math>,
+ then <Math>\phi_i</Math> is a morphism of type <Math>A \rightarrow B_i</Math> and there is an isomorphism
+ <Math>\rho_i: B \rightarrow B_i</Math> such that
+ <Math> \rho_i^{-1} \circ \phi_i\sim_{A,B} \phi</Math>.
+ This case is handled by the following commands:
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifyRange" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A,B_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is a simplified morphism with simplified range <Math>\phi_i: A \rightarrow B_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifyRange_IsoToInputObject" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B_i,B)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>(\rho_i)^{-1}: B_i \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifyRange_IsoFromInputObject" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B,B_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>\rho_i: B \rightarrow B_i</Math>.
+ </Description>
+</ManSection>
+
+ <Math>\ </Math>
+<P/>
+ If we regard <Math>\phi</Math> as an object in the category <Math>\sum_{A, B}\mathrm{Hom}( A, B )</Math>,
+ then <Math>\phi_i</Math> is a morphism of type <Math>A_i \rightarrow B_i</Math> and there is are isomorphisms
+ <Math>\sigma_i: A \rightarrow A_i</Math> and
+ <Math>\rho_i: B \rightarrow B_i</Math> such that
+ <Math> \rho_i^{-1} \circ \phi_i \circ \sigma_i \sim_{A,B} \phi</Math>.
+ This case is handled by the following commands:
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifySourceAndRange" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A_i,B_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is a simplified morphism with simplified source and range <Math>\phi_i: A_i \rightarrow B_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifySourceAndRange_IsoToInputRange" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B_i,B)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>(\rho_i)^{-1}: B_i \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifySourceAndRange_IsoFromInputRange" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B,B_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>\rho_i: B \rightarrow B_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifySourceAndRange_IsoToInputSource" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A_i,A)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>(\sigma_i)^{-1}: A_i \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifySourceAndRange_IsoFromInputSource" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A,A_i)</Math>
+</Returns>
+ <Description>
+ The arguments are a morphism <Math>\phi: A \rightarrow B</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>\sigma_i: A \rightarrow A_i</Math>.
+ </Description>
+</ManSection>
+
+ <Math>\ </Math>
+<P/>
+ If <Math>\phi:A \rightarrow A</Math> is an endomorphism, we may regard it as an object in the category <Math>\sum_{A}\mathrm{Hom}( A, A )</Math>.
+ In this case
+ <Math>\phi_i</Math> is a morphism of type <Math>A_i \rightarrow A_i</Math> and there is an isomorphism
+ <Math>\sigma_i: A \rightarrow A_i</Math> such that
+ <Math> \sigma_i^{-1} \circ \phi_i \circ \sigma_i \sim_{A,A} \phi</Math>.
+ This case is handled by the following commands:
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifyEndo" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A_i,A_i)</Math>
+</Returns>
+ <Description>
+ The arguments are an endomorphism <Math>\phi: A \rightarrow A</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is a simplified endomorphism <Math>\phi_i: A_i \rightarrow A_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifyEndo_IsoToInputObject" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A_i,A)</Math>
+</Returns>
+ <Description>
+ The arguments are an endomorphism <Math>\phi: A \rightarrow A</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>(\sigma_i)^{-1}: A_i \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="phi, i" Name="SimplifyEndo_IsoFromInputObject" Label="for IsCapCategoryMorphism, IsObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A,A_i)</Math>
+</Returns>
+ <Description>
+ The arguments are an endomorphism <Math>\phi: A \rightarrow A</Math> and a non-negative integer <Math>i</Math> or <C>infinity</C>.
+ The output is the isomorphism <Math>\sigma_i: A \rightarrow A_i</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="phi" Name="Simplify" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A_{\infty},B_{\infty})</Math>
+</Returns>
+ <Description>
+ This is a convenient method.
+ The argument is a morphism <Math>\phi: A \rightarrow B</Math>.
+ The output is a "simplified" version of <Math>\phi</Math> that may change the
+ source and range of <Math>\phi</Math> (up to isomorphism).
+ To be precise, the output is an <Math>\infty</Math>-th simplified morphism
+ of <Math>(\iota_A^{\infty})^{-1}\circ \phi \circ \iota_A^{\infty}</Math>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Morphisms_Section_Reduction_by_split_epi_summands">
+<Heading>Reduction by split epi summands</Heading>
+
+ Let <Math>\alpha: A \rightarrow B</Math> be a morphism in an additive category.
+ Suppose we are given direct sum decompositions
+ of <Math>A \simeq A' \oplus A''</Math> and <Math>B \simeq B' \oplus B''</Math>
+ such that
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{4}
+ \def\h{2}
+ \node (A) at (0,0) {$A$};
+ \node (B) at (\w,0) {$B$};
+ \node (Ap) at (0,\h) {$A' \oplus A''$};
+ \node (Bp) at (\w,\h) {$B' \oplus B''$};
+ \draw[-latex] (A) to node[pos=0.45, above] {$\alpha$} (B);
+ \draw[-latex] (Ap) to node[pos=0.45, above] {$\alpha' \oplus \alpha''$} (Bp);
+ \draw[-latex] (A) to (Ap);
+ \draw[-latex] (B) to (Bp);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+ If <Math>\alpha''</Math> is a split epimorphism, then we call <Math>\alpha': A' \rightarrow B'</Math>
+ <Emph>some reduction of <Math>\alpha</Math> by split epi summands</Emph>.
+ The inclusions/projections of the decompositions into direct sums
+ induce commutative diagrams
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{4}
+ \def\h{2}
+ \node (A) at (0,0) {$A$};
+ \node (B) at (\w,0) {$B$};
+ \node (Ap) at (0,\h) {$A'$};
+ \node (Bp) at (\w,\h) {$B'$};
+ \draw[-latex] (A) to node[pos=0.45, above] {$\alpha$} (B);
+ \draw[-latex] (Ap) to node[pos=0.45, above] {$\alpha'$} (Bp);
+ \draw[-latex] (A) to (Ap);
+ \draw[-latex] (B) to node[pos=0.45, right] {$\beta$} (Bp);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+ and
+<Alt Only="LaTeX"><![CDATA[
+ \begin{center}
+ \begin{tikzpicture}
+ \def\w{4}
+ \def\h{2}
+ \node (A) at (0,0) {$A$};
+ \node (B) at (\w,0) {$B$};
+ \node (Ap) at (0,\h) {$A'$};
+ \node (Bp) at (\w,\h) {$B'$};
+ \draw[-latex] (A) to node[pos=0.45, above] {$\alpha$} (B);
+ \draw[-latex] (Ap) to node[pos=0.45, above] {$\alpha'$} (Bp);
+ \draw[-latex] (Ap) to (A);
+ \draw[-latex] (Bp) to node[pos=0.45, right] {$\beta'$} (B);
+ \end{tikzpicture}
+ \end{center}
+]]></Alt>
+<ManSection>
+  <Attr Arg="alpha" Name="SomeReductionBySplitEpiSummand" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A',B')</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is some reduction of <Math>\alpha</Math> by split epi summands <Math>\alpha': A' \rightarrow B'</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="SomeReductionBySplitEpiSummand_MorphismToInputRange" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B',B)</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the morphism <Math>\beta': B' \rightarrow B</Math>
+ linking <Math>\alpha</Math> with some reduction by split epi summands.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="alpha" Name="SomeReductionBySplitEpiSummand_MorphismFromInputRange" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B,B')</Math>
+</Returns>
+ <Description>
+ The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+ The output is the morphism <Math>\beta: B \rightarrow B'</Math>
+ linking <Math>\alpha</Math> with some reduction by split epi summands.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

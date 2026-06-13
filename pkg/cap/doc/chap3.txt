@@ -1,0 +1,1422 @@
+  
+  [1X3 [33X[0;0YMorphisms[133X[101X
+  
+  [33X[0;0YAny  GAP  object satisfying [10XIsCapCategoryMorphism[110X can be added to a category
+  and then becomes a morphism in this category. Any morphism can belong to one
+  or  no category. After a GAP object is added to the category, it knows which
+  things  can be computed in its category and to which category it belongs. It
+  knows   categorical   properties  and  attributes,  and  the  functions  for
+  existential quantifiers can be applied to the morphism.[133X
+  
+  
+  [1X3.1 [33X[0;0YAttributes for the Type of Morphisms[133X[101X
+  
+  [1X3.1-1 CapCategory[101X
+  
+  [33X[1;0Y[29X[2XCapCategory[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya category[133X
+  
+  [33X[0;0YThe  argument is a morphism [23X\alpha[123X. The output is the category [23X\mathbf{C}[123X to
+  which [23X\alpha[123X was added.[133X
+  
+  [1X3.1-2 Source[101X
+  
+  [33X[1;0Y[29X[2XSource[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThe argument is a morphism [23X\alpha: a \rightarrow b[123X. The output is its source
+  [23Xa[123X.[133X
+  
+  [1X3.1-3 Range[101X
+  
+  [33X[1;0Y[29X[2XRange[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThe  argument is a morphism [23X\alpha: a \rightarrow b[123X. The output is its range
+  [23Xb[123X.[133X
+  
+  [1X3.1-4 Target[101X
+  
+  [33X[1;0Y[29X[2XTarget[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThe argument is a morphism [23X\alpha: a \rightarrow b[123X. The output is its target
+  [23Xb[123X.[133X
+  
+  
+  [1X3.2 [33X[0;0YAdding Morphisms to a Category[133X[101X
+  
+  [1X3.2-1 Add[101X
+  
+  [33X[1;0Y[29X[2XAdd[102X( [3Xcategory[103X, [3Xmorphism[103X ) [32X operation[133X
+  
+  [33X[0;0YAdds [3Xmorphism[103X as a morphism to [3Xcategory[103X.[133X
+  
+  [1X3.2-2 AddMorphism[101X
+  
+  [33X[1;0Y[29X[2XAddMorphism[102X( [3Xcategory[103X, [3Xmorphism[103X ) [32X operation[133X
+  
+  [33X[0;0YAdds  [3Xmorphism[103X  as  a  morphism to [3Xcategory[103X. If [3Xmorphism[103X already lies in the
+  filter [10XIsCapCategoryMorphism[110X, the operation [2XAdd[102X ([14X3.2-1[114X) can be used instead.[133X
+  
+  [1X3.2-3 CreateCapCategoryMorphismWithAttributes[101X
+  
+  [33X[1;0Y[29X[2XCreateCapCategoryMorphismWithAttributes[102X( [3Xcategory[103X, [3Xsource[103X, [3Xrange[103X[, [3Xattr1[103X, [3Xval1[103X, [3Xattr2[103X, [3Xval2[103X, [3X...[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism[133X
+  
+  [33X[0;0YCreates a morphism in [3Xcategory[103X with the given attributes.[133X
+  
+  [1X3.2-4 AsCapCategoryMorphism[101X
+  
+  [33X[1;0Y[29X[2XAsCapCategoryMorphism[102X( [3Xcategory[103X, [3Xsource[103X, [3Xvalue[103X, [3Xrange[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism[133X
+  
+  [33X[0;0YEXPERIMENTAL: This specification might change any time without prior notice.
+  Views [3Xvalue[103X as a morphism from [3Xsource[103X to [3Xrange[103X in [3Xcategory[103X.[133X
+  
+  [1X3.2-5 AsPrimitiveValue[101X
+  
+  [33X[1;0Y[29X[2XAsPrimitiveValue[102X( [3Xmorphism[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XAsInteger[102X( [3Xmorphism[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XAsHomalgMatrix[102X( [3Xmorphism[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya value[133X
+  
+  [33X[0;0YEXPERIMENTAL: This specification might change any time without prior notice.
+  Views  a  morphism obtained via [2XAsCapCategoryMorphism[102X ([14X3.2-4[114X) as a primitive
+  value  again.  Here, the word [13Xprimitive[113X means [13Xprimitive from the perspective
+  of  the category[113X. For example, from the perspective of an opposite category,
+  morphisms  of the underlying category are primitive values. The attribute is
+  chosen according to the morphism datum type:[133X
+  
+  [30X    [33X[0;6YFor [10XIsInt[110X, the attribute [10XAsInteger[110X is used.[133X
+  
+  [30X    [33X[0;6YFor [10XIsHomalgMatrix[110X, the attribute [10XAsHomalgMatrix[110X is used.[133X
+  
+  [33X[0;0YIn  all  other  cases  or  if no morphism datum type is given, the attribute
+  [10XAsPrimitiveValue[110X is used.[133X
+  
+  
+  [1X3.3 [33X[0;0YMorphism constructors[133X[101X
+  
+  [1X3.3-1 MorphismConstructor[101X
+  
+  [33X[1;0Y[29X[2XMorphismConstructor[102X( [3XS[103X, [3Xa[103X, [3XT[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(S,T)[123X[133X
+  
+  [33X[0;0YThe  arguments are two objects [23XS[123X and [23XT[123X in a category, and a morphism datum [23Xa[123X
+  (type  and  semantics  of  the  morphism  datum depend on the category). The
+  output is a morphism in [23X\mathrm{Hom}(S,T)[123X defined by [23Xa[123X. Note that by default
+  this  CAP  operation is not cached. You can change this behaviour by calling
+  [10XSetCachingToWeak(  C,  "MorphismConstructor"  )[110X  resp. [10XSetCachingToCrisp( C,
+  "MorphismConstructor" )[110X.[133X
+  
+  [1X3.3-2 MorphismDatum[101X
+  
+  [33X[1;0Y[29X[2XMorphismDatum[102X( [3Xmor[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ydepends on the category[133X
+  
+  [33X[0;0YThe argument is a CAP category morphism [3Xmor[103X. The output is a datum which can
+  be   used   to   construct   [3Xmor[103X,   that   is,   [10XIsEqualForMorphisms(   [110X[3Xmor[103X[10X,
+  MorphismConstructor(  Source( [110X[3Xmor[103X[10X ), MorphismDatum( [110X[3Xmor[103X[10X ), Range( [110X[3Xmor[103X[10X ) ) )[110X.
+  Note  that  by default this CAP operation is not cached. You can change this
+  behaviour   by   calling   [10XSetCachingToWeak(   C,  "MorphismDatum"  )[110X  resp.
+  [10XSetCachingToCrisp( C, "MorphismDatum" )[110X.[133X
+  
+  
+  [1X3.4 [33X[0;0YCategorical Properties of Morphisms[133X[101X
+  
+  [1X3.4-1 IsMonomorphism[101X
+  
+  [33X[1;0Y[29X[2XIsMonomorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha[123X.  The  output  is [10Xtrue[110X if [23X\alpha[123X is a
+  monomorphism, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.4-2 IsEpimorphism[101X
+  
+  [33X[1;0Y[29X[2XIsEpimorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha[123X.  The  output is [10Xtrue[110X if [23X\alpha[123X is an
+  epimorphism, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.4-3 IsIsomorphism[101X
+  
+  [33X[1;0Y[29X[2XIsIsomorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha[123X.  The  output is [10Xtrue[110X if [23X\alpha[123X is an
+  isomorphism, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.4-4 IsSplitMonomorphism[101X
+  
+  [33X[1;0Y[29X[2XIsSplitMonomorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is a morphism [23X\alpha[123X. The output is [10Xtrue[110X if [23X\alpha[123X is a split
+  monomorphism, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.4-5 IsSplitEpimorphism[101X
+  
+  [33X[1;0Y[29X[2XIsSplitEpimorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is a morphism [23X\alpha[123X. The output is [10Xtrue[110X if [23X\alpha[123X is a split
+  epimorphism, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.4-6 IsOne[101X
+  
+  [33X[1;0Y[29X[2XIsOne[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a morphism [23X\alpha: a \rightarrow a[123X. The output is [10Xtrue[110X if
+  [23X\alpha[123X is congruent to the identity of [23Xa[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.4-7 IsIdempotent[101X
+  
+  [33X[1;0Y[29X[2XIsIdempotent[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a morphism [23X\alpha: a \rightarrow a[123X. The output is [10Xtrue[110X if
+  [23X\alpha^2 \sim_{a,a} \alpha[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  
+  [1X3.5 [33X[0;0YRandom Morphisms[133X[101X
+  
+  [33X[0;0YCAP  provides  two  principal  methods  to generate random morphisms with or
+  without fixed source and range:[133X
+  
+  [30X    [33X[0;6Y[13XBy  integers[113X:  The  integer  is simply a parameter that can be used to
+        create a random morphism.[133X
+  
+  [30X    [33X[0;6Y[13XBy  lists[113X: The list is used when creating a random morphism would need
+        more  than  one parameter. Lists offer more flexibility at the expense
+        of  the genericity of the methods. This happens because lists that are
+        valid as input in some category may be not valid for other categories.
+        Hence,  these  operations  are  not  thought  to  be  used  in generic
+        categorical algorithms.[133X
+  
+  [1X3.5-1 RandomMorphismWithFixedSourceByInteger[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedSourceByInteger[102X( [3Xa[103X, [3Xn[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments  are an object [23Xa[123X in a category [23XC[123X and an integer [23Xn[123X. The output
+  is a random morphism [23X\alpha: a \rightarrow b[123X for some object [23Xb[123X in [23XC[123X. If [23XC[123X is
+  equipped      with      the      methods      [10XRandomObjectByInteger[110X      and
+  [10XRandomMorphismWithFixedSourceAndRangeByInteger[110X and [23XC[123X is an Ab-category, then
+  [10XRandomMorphismWithFixedSourceByInteger[110X[23X(C,a,n)[123X     can    be    derived    as
+  [10XRandomMorphismWithFixedSourceAndRangeByInteger[110X([23XC[123X,[23Xa[123X,[23Xb[123X,[23X1[123X+[10XLog2Int[110X([23Xn[123X))  where  [23Xb[123X
+  is computed via [10XRandomObjectByInteger[110X([23XC[123X,[23Xn[123X).[133X
+  
+  [1X3.5-2 RandomMorphismWithFixedSourceByList[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedSourceByList[102X( [3Xa[103X, [3XL[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments are an object [23Xa[123X in a category [23XC[123X and a list [23XL[123X. The output is a
+  random  morphism  [23X\alpha:  a  \rightarrow  b[123X for some object [23Xb[123X in [23XC[123X. If [23XC[123X is
+  equipped       with       the       methods      [10XRandomObjectByList[110X      and
+  [10XRandomMorphismWithFixedSourceAndRangeByList[110X  and  [23XC[123X  is an Ab-category, then
+  [10XRandomMorphismWithFixedSourceByList[110X[23X(C,a,L)[123X     can     be     derived     as
+  [10XRandomMorphismWithFixedSourceAndRangeByList[110X([23XC,a,b,L[2][123X)  where [23Xb[123X is computed
+  via [10XRandomObjectByList[110X([23XC,L[1][123X).[133X
+  
+  [1X3.5-3 RandomMorphismWithFixedRangeByInteger[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedRangeByInteger[102X( [3Xb[103X, [3Xn[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments  are an object [23Xb[123X in a category [23XC[123X and an integer [23Xn[123X. The output
+  is a random morphism [23X\alpha: a \rightarrow b[123X for some object [23Xa[123X in [23XC[123X. If [23XC[123X is
+  equipped      with      the      methods      [10XRandomObjectByInteger[110X      and
+  [10XRandomMorphismWithFixedSourceAndRangeByInteger[110X and [23XC[123X is an Ab-category, then
+  [10XRandomMorphismWithFixedRangeByInteger[110X[23X(C,b,n)[123X     can     be    derived    as
+  [10XRandomMorphismWithFixedSourceAndRangeByInteger[110X([23XC[123X,[23Xa[123X,[23Xb[123X,[23X1[123X+[10XLog2Int[110X([23Xn[123X))  where  [23Xa[123X
+  is computed via [10XRandomObjectByInteger[110X([23XC[123X,[23Xn[123X).[133X
+  
+  [1X3.5-4 RandomMorphismWithFixedRangeByList[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedRangeByList[102X( [3Xb[103X, [3XL[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments are an object [23Xb[123X in a category [23XC[123X and a list [23XL[123X. The output is a
+  random  morphism  [23X\alpha:  a  \rightarrow  b[123X for some object [23Xa[123X in [23XC[123X. If [23XC[123X is
+  equipped       with       the       methods      [10XRandomObjectByList[110X      and
+  [10XRandomMorphismWithFixedSourceAndRangeByList[110X  and  [23XC[123X  is an Ab-category, then
+  [10XRandomMorphismWithFixedRangeByList[110X[23X(C,b,L)[123X      can     be     derived     as
+  [10XRandomMorphismWithFixedSourceAndRangeByList[110X([23XC,a,b,L[2][123X)  where [23Xa[123X is computed
+  via [10XRandomObjectByList[110X([23XC,L[1][123X).[133X
+  
+  [1X3.5-5 RandomMorphismWithFixedSourceAndRangeByInteger[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedSourceAndRangeByInteger[102X( [3Xa[103X, [3Xb[103X, [3Xn[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments are two objects [23Xa[123X and [23Xb[123X in a category [23XC[123X and an integer [23Xn[123X. The
+  output is a random morphism [23X\alpha: a \rightarrow b[123X in [23XC[123X.[133X
+  
+  [1X3.5-6 RandomMorphismWithFixedSourceAndRangeByList[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedSourceAndRangeByList[102X( [3Xa[103X, [3Xb[103X, [3XL[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThis  operation is not a CAP basic operation The arguments are two objects [23Xa[123X
+  and  [23Xb[123X in a category [23XC[123X and a list [23XL[123X. The output is a random morphism [23X\alpha:
+  a \rightarrow b[123X in [23XC[123X.[133X
+  
+  [1X3.5-7 RandomMorphismByInteger[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismByInteger[102X( [3XC[103X, [3Xn[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23XC[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  category  [23XC[123X and an integer [23Xn[123X. The output is a random
+  morphism in [23XC[123X. The operation can be derived in three different ways:[133X
+  
+  [30X    [33X[0;6YIf   [23XC[123X   is   equipped  with  the  methods  [10XRandomObjectByInteger[110X  and
+        [10XRandomMorphismWithFixedSourceAndRangeByInteger[110X    and    [23XC[123X    is    an
+        Ab-category,    then    [10XRandomMorphism[110X[23X(C,n)[123X    can   be   derived   as
+        [10XRandomMorphismWithFixedSourceAndRangeByInteger[110X([23XC,a,b[123X,[23X1[123X+[10XLog2Int[110X([23Xn[123X))
+        where [23Xa[123X and [23Xb[123X are computed via [10XRandomObjectByInteger[110X([23XC,n[123X).[133X
+  
+  [30X    [33X[0;6YIf   [23XC[123X   is   equipped  with  the  methods  [10XRandomObjectByInteger[110X  and
+        [10XRandomMorphismWithFixedSourceByInteger[110X,  then  [10XRandomMorphism[110X[23X(C,n)[123X can
+        be derived as [10XRandomMorphismWithFixedSourceByInteger[110X([23XC,a,1[123X+[10XLog2Int[110X([23Xn[123X))
+        where [23Xa[123X is computed via [10XRandomObjectByInteger[110X([23XC,n[123X).[133X
+  
+  [30X    [33X[0;6YIf   [23XC[123X   is   equipped  with  the  methods  [10XRandomObjectByInteger[110X  and
+        [10XRandomMorphismWithFixedRangeByInteger[110X, then [10XRandomMorphism[110X[23X(C,n)[123X can be
+        derived   as   [10XRandomMorphismWithFixedRangeByInteger[110X([23XC,b,1[123X+[10XLog2Int[110X([23Xn[123X))
+        where [23Xb[123X is computed via [10XRandomObjectByInteger[110X([23XC,n[123X).[133X
+  
+  [1X3.5-8 RandomMorphismByList[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismByList[102X( [3XC[103X, [3XL[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23XC[123X[133X
+  
+  [33X[0;0YThe arguments are a category [23XC[123X and a list [23XL[123X. The output is a random morphism
+  in [23XC[123X. The operation can be derived in three different ways:[133X
+  
+  [30X    [33X[0;6YIf   [23XC[123X   is   equipped   with   the   methods  [10XRandomObjectByList[110X  and
+        [10XRandomMorphismWithFixedSourceAndRangeByList[110X  and  [23XC[123X is an Ab-category,
+        then       [10XRandomMorphism[110X[23X(C,L)[123X       can       be      derived      as
+        [10XRandomMorphismWithFixedSourceAndRangeByList[110X([23XC,a,b,L[3][123X)) where [23Xa[123X and [23Xb[123X
+        are computed via [10XRandomObjectByList[110X([23XC,L[i][123X) for [23Xi=1,2[123X respectively.[133X
+  
+  [30X    [33X[0;6YIf   [23XC[123X   is   equipped   with   the   methods  [10XRandomObjectByList[110X  and
+        [10XRandomMorphismWithFixedSourceByList[110X,  then  [10XRandomMorphism[110X[23X(C,L)[123X can be
+        derived  as  [10XRandomMorphismWithFixedSourceByList[110X([23XC,a,L[2][123X)  where [23Xa[123X is
+        computed via [10XRandomObjectByList[110X([23XC,L[1][123X).[133X
+  
+  [30X    [33X[0;6YIf   [23XC[123X   is   equipped   with   the   methods  [10XRandomObjectByList[110X  and
+        [10XRandomMorphismWithFixedRangeByList[110X,  then  [10XRandomMorphism[110X[23X(C,L)[123X  can be
+        derived  as  [10XRandomMorphismWithFixedRangeByList[110X([23XC,b,L[2][123X)  where  [23Xb[123X is
+        computed via [10XRandomObjectByList[110X([23XC,L[1][123X).[133X
+  
+  [1X3.5-9 RandomMorphismWithFixedSource[101X
+  
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedSource[102X( [3Xa[103X, [3Xn[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedSource[102X( [3Xa[103X, [3XL[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedRange[102X( [3Xb[103X, [3Xn[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedRange[102X( [3Xb[103X, [3XL[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedSourceAndRange[102X( [3Xa[103X, [3Xb[103X, [3Xn[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphismWithFixedSourceAndRange[102X( [3Xa[103X, [3Xb[103X, [3XL[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphism[102X( [3Xa[103X, [3Xb[103X, [3Xn[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphism[102X( [3Xa[103X, [3Xb[103X, [3XL[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphism[102X( [3XC[103X, [3Xn[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XRandomMorphism[102X( [3XC[103X, [3XL[103X ) [32X operation[133X
+  
+  [33X[0;0YThese  are  convenient methods and they, depending on the input, delegate to
+  one of the above methods.[133X
+  
+  
+  [1X3.6 [33X[0;0YNon-Categorical Properties of Morphisms[133X[101X
+  
+  [33X[0;0YNon-categorical properties are not stable under equivalences of categories.[133X
+  
+  [1X3.6-1 IsEqualToIdentityMorphism[101X
+  
+  [33X[1;0Y[29X[2XIsEqualToIdentityMorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a morphism [23X\alpha: a \rightarrow b[123X. The output is [10Xtrue[110X if
+  [23X\alpha = \mathrm{id}_a[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.6-2 IsEqualToZeroMorphism[101X
+  
+  [33X[1;0Y[29X[2XIsEqualToZeroMorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a morphism [23X\alpha: a \rightarrow b[123X. The output is [10Xtrue[110X if
+  [23X\alpha = 0[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.6-3 IsEndomorphism[101X
+  
+  [33X[1;0Y[29X[2XIsEndomorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha[123X.  The  output is [10Xtrue[110X if [23X\alpha[123X is an
+  endomorphism, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.6-4 IsAutomorphism[101X
+  
+  [33X[1;0Y[29X[2XIsAutomorphism[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha[123X.  The  output is [10Xtrue[110X if [23X\alpha[123X is an
+  automorphism, otherwise the output is [10Xfalse[110X.[133X
+  
+  
+  [1X3.7 [33X[0;0YEquality and Congruence for Morphisms[133X[101X
+  
+  [1X3.7-1 IsCongruentForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XIsCongruentForMorphisms[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are two morphisms [23X\alpha, \beta: a \rightarrow b[123X. The output
+  is [10Xtrue[110X if [23X\alpha \sim_{a,b} \beta[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.7-2 IsEqualForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XIsEqualForMorphisms[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are two morphisms [23X\alpha, \beta: a \rightarrow b[123X. The output
+  is [10Xtrue[110X if [23X\alpha = \beta[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.7-3 IsEqualForMorphismsOnMor[101X
+  
+  [33X[1;0Y[29X[2XIsEqualForMorphismsOnMor[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe   arguments  are  two  morphisms  [23X\alpha:  a  \rightarrow  b,  \beta:  c
+  \rightarrow d[123X. The output is [10Xtrue[110X if [23X\alpha = \beta[123X, otherwise the output is
+  [10Xfalse[110X.[133X
+  
+  
+  [1X3.8 [33X[0;0YBasic Operations for Morphisms in Ab-Categories[133X[101X
+  
+  [1X3.8-1 IsZeroForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XIsZeroForMorphisms[102X( [3Xalpha[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a morphism [23X\alpha: a \rightarrow b[123X. The output is [10Xtrue[110X if
+  [23X\alpha \sim_{a,b} 0[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.8-2 AdditionForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XAdditionForMorphisms[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments  are two morphisms [23X\alpha, \beta: a \rightarrow b[123X. The output
+  is the addition [23X\alpha + \beta[123X. Note: The addition has to be compatible with
+  the congruence of morphisms.[133X
+  
+  [1X3.8-3 SubtractionForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XSubtractionForMorphisms[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments  are two morphisms [23X\alpha, \beta: a \rightarrow b[123X. The output
+  is the addition [23X\alpha - \beta[123X. Note: The addition has to be compatible with
+  the congruence of morphisms.[133X
+  
+  [1X3.8-4 AdditiveInverseForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XAdditiveInverseForMorphisms[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha:  a  \rightarrow b[123X. The output is its
+  additive  inverse  [23X-\alpha[123X. Note: The addition has to be compatible with the
+  congruence of morphisms.[133X
+  
+  [1X3.8-5 MultiplyWithElementOfCommutativeSemiringForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XMultiplyWithElementOfCommutativeSemiringForMorphisms[102X( [3Xr[103X, [3Xalpha[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  an  element  [23Xr[123X of a commutative semiring and a morphism
+  [23X\alpha:  a \rightarrow b[123X. The output is the multiplication with the semiring
+  element  [23Xr  \cdot \alpha[123X. Note: The multiplication has to be compatible with
+  the congruence of morphisms.[133X
+  
+  [1X3.8-6 *[101X
+  
+  [33X[1;0Y[29X[2X*[102X( [3Xr[103X, [3Xalpha[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThis  is  a  convenience method. It has two arguments. The first argument is
+  either  a rational number [23Xq[123X or an element [23Xr[123X of a commutative semiring [23XR[123X. The
+  second  argument  is a morphism [23X\alpha: a \rightarrow b[123X in a linear category
+  over  the  commutative  semiring [23XR[123X. In the case where the first element is a
+  rational  number,  this method tries to interpret [23Xq[123X as an element [23Xr[123X of [23XR[123X via
+  [10XR!.interpret_rationals_func[110X.  If  no such interpretation exists, this method
+  throws  an error. The output is the multiplication with the semiring element
+  [23Xr \cdot \alpha[123X.[133X
+  
+  [1X3.8-7 ZeroMorphism[101X
+  
+  [33X[1;0Y[29X[2XZeroMorphism[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe  arguments are two objects [23Xa[123X and [23Xb[123X. The output is the zero morphism [23X0: a
+  \rightarrow b[123X.[133X
+  
+  
+  [1X3.9 [33X[0;0YSubobject and Factorobject Operations[133X[101X
+  
+  [33X[0;0YSubobjects  of  an  object  [23Xc[123X  are  monomorphisms with range [23Xc[123X and a special
+  function  for  comparision.  Similarly,  factorobjects  of  an  object [23Xc[123X are
+  epimorphisms with source [23Xc[123X and a special function for comparision.[133X
+  
+  [1X3.9-1 IsEqualAsSubobjects[101X
+  
+  [33X[1;0Y[29X[2XIsEqualAsSubobjects[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are  two  subobjects  [23X\alpha:  a  \rightarrow  c[123X,  [23X\beta:  b
+  \rightarrow  c[123X.  The  output is [10Xtrue[110X if there exists an isomorphism [23X\iota: a
+  \rightarrow  b[123X  such that [23X\beta \circ \iota \sim_{a,c} \alpha[123X, otherwise the
+  output is [10Xfalse[110X.[133X
+  
+  [1X3.9-2 IsEqualAsFactorobjects[101X
+  
+  [33X[1;0Y[29X[2XIsEqualAsFactorobjects[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are  two  factorobjects  [23X\alpha:  c  \rightarrow a[123X, [23X\beta: c
+  \rightarrow  b[123X.  The  output is [10Xtrue[110X if there exists an isomorphism [23X\iota: b
+  \rightarrow  a[123X  such that [23X\iota \circ \beta \sim_{c,a} \alpha[123X, otherwise the
+  output is [10Xfalse[110X.[133X
+  
+  [1X3.9-3 IsDominating[101X
+  
+  [33X[1;0Y[29X[2XIsDominating[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YIn  short:  Returns [10Xtrue[110X iff [23X\alpha[123X is smaller than [23X\beta[123X. Full description:
+  The  arguments  are  two  subobjects  [23X\alpha:  a  \rightarrow  c[123X,  [23X\beta:  b
+  \rightarrow  c[123X.  The  output  is  [10Xtrue[110X  if  there exists a morphism [23X\iota: a
+  \rightarrow  b[123X  such that [23X\beta \circ \iota \sim_{a,c} \alpha[123X, otherwise the
+  output is [10Xfalse[110X.[133X
+  
+  [1X3.9-4 IsCodominating[101X
+  
+  [33X[1;0Y[29X[2XIsCodominating[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YIn  short:  Returns [10Xtrue[110X iff [23X\alpha[123X is smaller than [23X\beta[123X. Full description:
+  The  arguments  are  two  factorobjects  [23X\alpha:  c  \rightarrow a[123X, [23X\beta: c
+  \rightarrow  b[123X.  The  output  is  [10Xtrue[110X  if  there exists a morphism [23X\iota: b
+  \rightarrow  a[123X  such that [23X\iota \circ \beta \sim_{c,a} \alpha[123X, otherwise the
+  output is [10Xfalse[110X.[133X
+  
+  
+  [1X3.10 [33X[0;0YIdentity Morphism and Composition of Morphisms[133X[101X
+  
+  [1X3.10-1 IdentityMorphism[101X
+  
+  [33X[1;0Y[29X[2XIdentityMorphism[102X( [3Xa[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,a)[123X[133X
+  
+  [33X[0;0YThe   argument  is  an  object  [23Xa[123X.  The  output  is  its  identity  morphism
+  [23X\mathrm{id}_a[123X.[133X
+  
+  [1X3.10-2 PreCompose[101X
+  
+  [33X[1;0Y[29X[2XPreCompose[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}( a, c )[123X[133X
+  
+  [33X[0;0YThe   arguments  are  two  morphisms  [23X\alpha:  a  \rightarrow  b[123X,  [23X\beta:  b
+  \rightarrow  c[123X.  The  output  is  the  composition  [23X\beta  \circ  \alpha:  a
+  \rightarrow c[123X.[133X
+  
+  [1X3.10-3 PreCompose[101X
+  
+  [33X[1;0Y[29X[2XPreCompose[102X( [3XL[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a_1, a_{n+1})[123X[133X
+  
+  [33X[0;0YThis  is  a  convenience  method.  The argument is a list of morphisms [23XL = (
+  \alpha_1:  a_1  \rightarrow  a_2,  \alpha_2:  a_2  \rightarrow  a_3,  \dots,
+  \alpha_n:   a_n  \rightarrow  a_{n+1}  )[123X.  The  output  is  the  composition
+  [23X\alpha_{n}  \circ ( \alpha_{n-1} \circ ( \dots ( \alpha_2 \circ \alpha_1 ) )
+  )[123X.[133X
+  
+  [1X3.10-4 PreComposeList[101X
+  
+  [33X[1;0Y[29X[2XPreComposeList[102X( [3Xs[103X, [3XL[103X, [3Xr[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(s, r)[123X[133X
+  
+  [33X[0;0YThe  arguments are two objects [3Xs[103X = [23Xa_1[123X, [3Xr[103X = [23Xa_{n+1}[123X, and a list of morphisms
+  [23XL  =  ( \alpha_1: a_1 \rightarrow a_2, \alpha_2: a_2 \rightarrow a_3, \dots,
+  \alpha_n:  a_n  \rightarrow  a_{n+1}  )[123X  in [23XC[123X. The output is the composition
+  [23X\alpha_{n}  \circ ( \alpha_{n-1} \circ ( \dots ( \alpha_2 \circ \alpha_1 ) )
+  )[123X.  If  [23XL[123X is empty, then [23Xs[123X must be equal to [23Xr[123X and the output is congruent to
+  the identity morphism of [23Xs[123X.[133X
+  
+  [1X3.10-5 PostCompose[101X
+  
+  [33X[1;0Y[29X[2XPostCompose[102X( [3Xbeta[103X, [3Xalpha[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}( a, c )[123X[133X
+  
+  [33X[0;0YThe   arguments  are  two  morphisms  [23X\beta:  b  \rightarrow  c[123X,  [23X\alpha:  a
+  \rightarrow  b[123X.  The  output  is  the  composition  [23X\beta  \circ  \alpha:  a
+  \rightarrow c[123X.[133X
+  
+  [1X3.10-6 PostCompose[101X
+  
+  [33X[1;0Y[29X[2XPostCompose[102X( [3XL[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a_1, a_{n+1})[123X[133X
+  
+  [33X[0;0YThis  is  a  convenience  method.  The argument is a list of morphisms [23XL = (
+  \alpha_n:  a_n  \rightarrow  a_{n+1}, \alpha_{n-1}: a_{n-1} \rightarrow a_n,
+  \dots,  \alpha_1:  a_1  \rightarrow  a_2  )[123X.  The  output is the composition
+  [23X((\alpha_{n} \circ \alpha_{n-1}) \circ \dots \alpha_2) \circ \alpha_1[123X.[133X
+  
+  [1X3.10-7 PostComposeList[101X
+  
+  [33X[1;0Y[29X[2XPostComposeList[102X( [3Xs[103X, [3XL[103X, [3Xr[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(s, r)[123X[133X
+  
+  [33X[0;0YThe  arguments are two objects [3Xs[103X = [23Xa_1[123X, [3Xr[103X = [23Xa_{n+1}[123X, and a list of morphisms
+  [23XL  =  ( \alpha_n: a_n \rightarrow a_{n+1}, \alpha_{n-1}: a_{n-1} \rightarrow
+  a_n,  \dots,  \alpha_1: a_1 \rightarrow a_2 )[123X. The output is the composition
+  [23X((\alpha_{n}  \circ \alpha_{n-1}) \circ \dots \alpha_2) \circ \alpha_1[123X. If [23XL[123X
+  is  empty,  then  [23Xs[123X  must  be  equal to [23Xr[123X and the output is congruent to the
+  identity morphism of [23Xs[123X.[133X
+  
+  [1X3.10-8 SumOfMorphisms[101X
+  
+  [33X[1;0Y[29X[2XSumOfMorphisms[102X( [3Xs[103X, [3Xmorphisms[103X, [3Xr[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(s,r)[123X[133X
+  
+  [33X[0;0YThe  arguments are two objects [3Xs[103X, [3Xr[103X and a list [3Xmorphisms[103X of morphisms from [3Xs[103X
+  to  [3Xr[103X.  The  output  is  the  sum  of  all  elements  in  [3Xmorphisms[103X,  or the
+  zero-morphism from [3Xs[103X to [3Xr[103X if [3Xmorphisms[103X is empty.[133X
+  
+  [1X3.10-9 LinearCombinationOfMorphisms[101X
+  
+  [33X[1;0Y[29X[2XLinearCombinationOfMorphisms[102X( [3Xs[103X, [3Xcoeffs[103X, [3Xmors[103X, [3Xr[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(s,r)[123X[133X
+  
+  [33X[0;0YThe  arguments  are two objects [3Xs[103X, [3Xr[103X in some linear category over a semiring
+  [23XR[123X, a list [3Xcoeffs[103X of semiring elements in [23XR[123X and a list [3Xmors[103X of morphisms from
+  [3Xs[103X  to  [3Xr[103X. The output is the linear combination of the morphisms in [3Xmors[103X with
+  respect to the coefficients list [3Xcoeffs[103X, or the zero morphism from [3Xs[103X to [3Xr[103X if
+  [3Xcoeffs[103X and [3Xmors[103X are the empty lists.[133X
+  
+  
+  [1X3.11 [33X[0;0YWell-Definedness of Morphisms[133X[101X
+  
+  [1X3.11-1 IsWellDefinedForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XIsWellDefinedForMorphisms[102X( [3Xalpha[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha[123X.  The  output  is  [10Xtrue[110X  if [23X\alpha[123X is
+  well-defined, otherwise the output is [10Xfalse[110X.[133X
+  
+  [1X3.11-2 IsWellDefinedForMorphismsWithGivenSourceAndRange[101X
+  
+  [33X[1;0Y[29X[2XIsWellDefinedForMorphismsWithGivenSourceAndRange[102X( [3Xsource[103X, [3Xalpha[103X, [3Xrange[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are  two well-defined objects [23XS[123X and [23XT[123X and a morphism [23X\alpha[123X.
+  The  output  is  [10Xtrue[110X  if  [23X\alpha[123X  is  a  well-defined morphism from [23XS[123X to [23XT[123X,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  
+  [1X3.12 [33X[0;0YLift/Colift[133X[101X
+  
+  [30X    [33X[0;6YFor   any  pair  of  morphisms  [23X\alpha:  a  \rightarrow  c[123X,  [23X\beta:  b
+        \rightarrow  c[123X,  we call each morphism [23X\alpha / \beta: a \rightarrow b[123X
+        such  that  [23X\beta  \circ  (\alpha / \beta) \sim_{a,c} \alpha[123X a [13Xlift of
+        [23X\alpha[123X along [23X\beta[123X[113X.[133X
+  
+  [30X    [33X[0;6YFor   any  pair  of  morphisms  [23X\alpha:  a  \rightarrow  c[123X,  [23X\beta:  a
+        \rightarrow  b[123X,  we  call  each  morphism  [23X\alpha  \backslash \beta: c
+        \rightarrow  b[123X  such  that  [23X(\alpha  \backslash  \beta)  \circ  \alpha
+        \sim_{a,b} \beta[123X a [13X colift of [23X\beta[123X along [23X\alpha[123X[113X.[133X
+  
+  [33X[0;0YNote  that  such lifts (or colifts) do not have to be unique. So in general,
+  we  do  not expect that algorithms computing lifts (or colifts) do this in a
+  functorial  way.  Thus  the operations [23X\mathtt{Lift}[123X and [23X\mathtt{Colift}[123X are
+  not   regarded   as   categorical  operations,  but  only  as  set-theoretic
+  operations.[133X
+  
+  [1X3.12-1 LiftAlongMonomorphism[101X
+  
+  [33X[1;0Y[29X[2XLiftAlongMonomorphism[102X( [3Xiota[103X, [3Xtau[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(t,k)[123X[133X
+  
+  [33X[0;0YThe  arguments  are a monomorphism [23X\iota: k \hookrightarrow a[123X and a morphism
+  [23X\tau:  t \rightarrow a[123X such that there is a morphism [23Xu: t \rightarrow k[123X with
+  [23X\iota \circ u \sim_{t,a} \tau[123X. The output is such a [23Xu[123X.[133X
+  
+  [1X3.12-2 ColiftAlongEpimorphism[101X
+  
+  [33X[1;0Y[29X[2XColiftAlongEpimorphism[102X( [3Xepsilon[103X, [3Xtau[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(c,t)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  an epimorphism [23X\epsilon: a \rightarrow c[123X and a morphism
+  [23X\tau:  a \rightarrow t[123X such that there is a morphism [23Xu: c \rightarrow t[123X with
+  [23Xu \circ \epsilon \sim_{a,t} \tau[123X. The output is such a [23Xu[123X.[133X
+  
+  [1X3.12-3 IsLiftableAlongMonomorphism[101X
+  
+  [33X[1;0Y[29X[2XIsLiftableAlongMonomorphism[102X( [3Xiota[103X, [3Xtau[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are a monomorphism [23X\iota: k \hookrightarrow a[123X and a morphism
+  [23X\tau:  t  \rightarrow  a[123X. The output is [10Xtrue[110X if there exists a morphism [23Xu: t
+  \rightarrow  k[123X  with [23X\iota \circ u \sim_{t,a} \tau[123X. Otherwise, the output is
+  [10Xfalse[110X.[133X
+  
+  [1X3.12-4 IsColiftableAlongEpimorphism[101X
+  
+  [33X[1;0Y[29X[2XIsColiftableAlongEpimorphism[102X( [3Xepsilon[103X, [3Xtau[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are  an epimorphism [23X\epsilon: a \rightarrow c[123X and a morphism
+  [23X\tau:  a  \rightarrow  t[123X. The output is [10Xtrue[110X if there exists a morphism [23Xu: c
+  \rightarrow  t[123X  with [23Xu \circ \epsilon \sim_{a,t} \tau[123X. Otherwise, the output
+  is [10Xfalse[110X.[133X
+  
+  [1X3.12-5 Lift[101X
+  
+  [33X[1;0Y[29X[2XLift[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b)[123X[133X
+  
+  [33X[0;0YThe   arguments  are  two  morphisms  [23X\alpha:  a  \rightarrow  c[123X,  [23X\beta:  b
+  \rightarrow  c[123X  such  that  a lift [23X\alpha / \beta: a \rightarrow b[123X of [23X\alpha[123X
+  along  [23X\beta[123X exists. The output is such a lift [23X\alpha / \beta: a \rightarrow
+  b[123X.  Recall that a lift [23X\alpha / \beta: a \rightarrow b[123X of [23X\alpha[123X along [23X\beta[123X
+  is a morphism such that [23X\beta \circ (\alpha / \beta) \sim_{a,c} \alpha[123X.[133X
+  
+  [1X3.12-6 LiftOrFail[101X
+  
+  [33X[1;0Y[29X[2XLiftOrFail[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(a,b) + \{ \mathtt{fail} \}[123X[133X
+  
+  [33X[0;0YThis  is  a convenience operation. The arguments are two morphisms [23X\alpha: a
+  \rightarrow  c[123X, [23X\beta: b \rightarrow c[123X. The output is a lift [23X\alpha / \beta:
+  a \rightarrow b[123X of [23X\alpha[123X along [23X\beta[123X if such a lift exists or [23X\mathtt{fail}[123X
+  if  it doesn't. Recall that a lift [23X\alpha / \beta: a \rightarrow b[123X of [23X\alpha[123X
+  along  [23X\beta[123X is a morphism such that [23X\beta \circ (\alpha / \beta) \sim_{a,c}
+  \alpha[123X.[133X
+  
+  [1X3.12-7 IsLiftable[101X
+  
+  [33X[1;0Y[29X[2XIsLiftable[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe   arguments  are  two  morphisms  [23X\alpha:  a  \rightarrow  c[123X,  [23X\beta:  b
+  \rightarrow  c[123X.  The output is [10Xtrue[110X if there exists a lift [23X\alpha / \beta: a
+  \rightarrow  b[123X of [23X\alpha[123X along [23X\beta[123X, i.e., a morphism such that [23X\beta \circ
+  (\alpha / \beta) \sim_{a,c} \alpha[123X. Otherwise, the output is [10Xfalse[110X.[133X
+  
+  [1X3.12-8 Colift[101X
+  
+  [33X[1;0Y[29X[2XColift[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(c,b)[123X[133X
+  
+  [33X[0;0YThe   arguments  are  two  morphisms  [23X\alpha:  a  \rightarrow  c[123X,  [23X\beta:  a
+  \rightarrow b[123X such that a colift [23X\alpha \backslash \beta: c \rightarrow b[123X of
+  [23X\beta[123X  along  [23X\alpha[123X  exists.  The output is such a colift [23X\alpha \backslash
+  \beta:  c  \rightarrow  b[123X.  Recall  that a colift [23X\alpha \backslash \beta: c
+  \rightarrow  b[123X  of  [23X\beta[123X  along  [23X\alpha[123X  is  a  morphism  such that [23X(\alpha
+  \backslash \beta) \circ \alpha \sim_{a,b} \beta[123X.[133X
+  
+  [1X3.12-9 ColiftOrFail[101X
+  
+  [33X[1;0Y[29X[2XColiftOrFail[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(c,b) + \{ \mathtt{fail} \}[123X[133X
+  
+  [33X[0;0YThis  is  a convenience operation. The arguments are two morphisms [23X\alpha: a
+  \rightarrow  c[123X,  [23X\beta:  a  \rightarrow  b[123X.  The  output  is a colift [23X\alpha
+  \backslash  \beta:  c  \rightarrow  b[123X of [23X\beta[123X along [23X\alpha[123X if such a colift
+  exists  or  [23X\mathtt{fail}[123X  if  it  doesn't.  Recall  that  a  colift  [23X\alpha
+  \backslash  \beta:  c \rightarrow b[123X of [23X\beta[123X along [23X\alpha[123X is a morphism such
+  that [23X(\alpha \backslash \beta) \circ \alpha \sim_{a,b} \beta[123X.[133X
+  
+  [1X3.12-10 IsColiftable[101X
+  
+  [33X[1;0Y[29X[2XIsColiftable[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe   arguments  are  two  morphisms  [23X\alpha:  a  \rightarrow  c[123X,  [23X\beta:  a
+  \rightarrow b[123X. The output is [10Xtrue[110X if there exists a colift [23X\alpha \backslash
+  \beta:  c  \rightarrow  b[123X of [23X\beta[123X along [23X\alpha[123X., i.e., a morphism such that
+  [23X(\alpha  \backslash  \beta)  \circ  \alpha  \sim_{a,b} \beta[123X. Otherwise, the
+  output is [10Xfalse[110X.[133X
+  
+  
+  [1X3.13 [33X[0;0YInverses[133X[101X
+  
+  [33X[0;0YLet  [23X\alpha:  a  \rightarrow  b[123X  be  a  morphism.  An inverse of [23X\alpha[123X is a
+  morphism  [23X\alpha^{-1}:  b  \rightarrow  a[123X such that [23X\alpha \circ \alpha^{-1}
+  \sim_{b,b}   \mathrm{id}_b[123X   and   [23X\alpha^{-1}   \circ   \alpha   \sim_{a,a}
+  \mathrm{id}_a[123X.[133X
+  
+  [1X3.13-1 InverseForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XInverseForMorphisms[102X( [3Xalpha[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(b,a)[123X[133X
+  
+  [33X[0;0YThe  argument  is  an isomorphism [23X\alpha: a \rightarrow b[123X. The output is its
+  inverse [23X\alpha^{-1}: b \rightarrow a[123X.[133X
+  
+  [1X3.13-2 PreInverseForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XPreInverseForMorphisms[102X( [3Xalpha[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(b,a)[123X[133X
+  
+  [33X[0;0YThe argument is a split-epimorphism [23X\alpha: a \rightarrow b[123X. The output is a
+  pre-inverse  [23X\iota:  b \rightarrow a[123X of [23X\alpha[123X, i.e., [23X\iota[123X satisfies [23X\alpha
+  \circ  \iota \sim_{b,b} \mathrm{id}_b[123X. The morphism [23X\iota[123X is also known as a
+  section or a right-inverse of [23X\alpha[123X.[133X
+  
+  [1X3.13-3 PostInverseForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XPostInverseForMorphisms[102X( [3Xalpha[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(b,a)[123X[133X
+  
+  [33X[0;0YThe  argument is a split-monomorphism [23X\alpha: a \rightarrow b[123X. The output is
+  a post-inverse [23X\pi: b \rightarrow a[123X of [23X\alpha[123X, i.e., [23X\pi[123X satisfies [23X\pi \circ
+  \alpha  \sim_{a,a}  \mathrm{id}_a[123X.  The  morphism  [23X\pi[123X  is  also  known as a
+  contraction or a left-inverse of [23X\alpha[123X.[133X
+  
+  
+  [1X3.14 [33X[0;0YTool functions for caches[133X[101X
+  
+  [1X3.14-1 IsEqualForCacheForMorphisms[101X
+  
+  [33X[1;0Y[29X[2XIsEqualForCacheForMorphisms[102X( [3Xphi[103X, [3Xpsi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ytrue or false[133X
+  
+  [33X[0;0YBy  default,  CAP uses caches to store the values of Categorical operations.
+  To  get  a value out of the cache, one needs to compare the input of a basic
+  operation  with  its  previous  input. To compare morphisms in the category,
+  IsEqualForCacheForMorphisms is used. By default, IsEqualForCacheForMorphisms
+  falls  back  to IsEqualForCache (see ToolsForHomalg), which in turn defaults
+  to  recursive comparison for lists and [10XIsIdenticalObj[110X in all other cases. If
+  you add a function via [10XAddIsEqualForCacheForMorphisms[110X, that function is used
+  instead. A function [23XF: a,b \mapsto bool[123X is expected there. The output has to
+  be true or false. Fail is not allowed in this context.[133X
+  
+  
+  [1X3.15 [33X[0;0YIsHomSetInhabited[133X[101X
+  
+  [1X3.15-1 IsHomSetInhabited[101X
+  
+  [33X[1;0Y[29X[2XIsHomSetInhabited[102X( [3XA[103X, [3XB[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments are two objects [3XA[103X and [3XB[103X. The output is [10Xtrue[110X if there exists a
+  morphism from [3XA[103X to [3XB[103X, otherwise the output is [10Xfalse[110X.[133X
+  
+  
+  [1X3.16 [33X[0;0YSetOfMorphisms[133X[101X
+  
+  [1X3.16-1 SetOfMorphismsOfFiniteCategory[101X
+  
+  [33X[1;0Y[29X[2XSetOfMorphismsOfFiniteCategory[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya list of a CAP category morphisms[133X
+  
+  [33X[0;0YReturn a duplicate free list of morphisms of the finite category [3XC[103X.[133X
+  
+  [1X3.16-2 SetOfMorphisms[101X
+  
+  [33X[1;0Y[29X[2XSetOfMorphisms[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya list of CAP category objects[133X
+  
+  [33X[0;0YReturn  a  duplicate  free  list  of morphisms of the finite category [3XC[103X. The
+  corresponding CAP operation is [10XSetOfMorphismsOfFiniteCategory[110X.[133X
+  
+  
+  [1X3.17 [33X[0;0YSetOfGeneratingMorphisms[133X[101X
+  
+  [1X3.17-1 SetOfGeneratingMorphismsOfCategory[101X
+  
+  [33X[1;0Y[29X[2XSetOfGeneratingMorphismsOfCategory[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya list of a CAP category morphisms[133X
+  
+  [33X[0;0YReturn a list of generating morphisms of the finitely generated category [3XC[103X.[133X
+  
+  [1X3.17-2 SetOfGeneratingMorphisms[101X
+  
+  [33X[1;0Y[29X[2XSetOfGeneratingMorphisms[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya list of a CAP category morphisms[133X
+  
+  [33X[0;0YReturn  a list of generating morphisms of the finitely generated category [3XC[103X.
+  The corresponding CAP operation is [10XSetOfGeneratingMorphismsOfCategory[110X.[133X
+  
+  
+  [1X3.18 [33X[0;0YHomomorphism structures[133X[101X
+  
+  [33X[0;0YHomomorphism  structures  are way to "oversee" the homomorphisms between two
+  given  objects.  Let  [23XC[123X,  [23XD[123X  be categories. A [23XD[123X-homomorphism structure for [23XC[123X
+  consists of the following data:[133X
+  
+  [30X    [33X[0;6Ya  functor [23XH: C^{\mathrm{op}} \times C \rightarrow D[123X (when [23XC[123X and [23XD[123X are
+        Ab-categories, [23XH[123X is assumed to be bilinear).[133X
+  
+  [30X    [33X[0;6Yan object [23X1 \in D[123X, called the distinguished object,[133X
+  
+  [30X    [33X[0;6Ya  bijection  [23X\nu:  \mathrm{Hom}_{C}(a,b)  \simeq  \mathrm{Hom}_{D}(1,
+        H(a,b))[123X natural in [23Xa,b \in C[123X.[133X
+  
+  [1X3.18-1 HomomorphismStructureOnObjects[101X
+  
+  [33X[1;0Y[29X[2XHomomorphismStructureOnObjects[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan object in [23XD[123X[133X
+  
+  [33X[0;0YThe  arguments  are  two  objects  [23Xa, b[123X in [23XC[123X. The output is the value of the
+  homomorphism structure on objects [23XH(a,b)[123X.[133X
+  
+  [1X3.18-2 HomomorphismStructureOnMorphisms[101X
+  
+  [33X[1;0Y[29X[2XHomomorphismStructureOnMorphisms[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}_{D}(H(a',b), H(a,b'))[123X[133X
+  
+  [33X[0;0YThe  arguments  are  two  morphisms  [23X\alpha:  a  \rightarrow  a',  \beta:  b
+  \rightarrow  b'[123X  in [23XC[123X. The output is the value of the homomorphism structure
+  on morphisms [23XH(\alpha, \beta )[123X.[133X
+  
+  [1X3.18-3 HomomorphismStructureOnMorphismsWithGivenObjects[101X
+  
+  [33X[1;0Y[29X[2XHomomorphismStructureOnMorphismsWithGivenObjects[102X( [3Xs[103X, [3Xalpha[103X, [3Xbeta[103X, [3Xr[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}_{D}(H(a',b), H(a,b'))[123X[133X
+  
+  [33X[0;0YThe  arguments  are  an  object  [23Xs  =  H(a',b)[123X in [23XD[123X, two morphisms [23X\alpha: a
+  \rightarrow  a',  \beta: b \rightarrow b'[123X in [23XC[123X, and an object [23Xr = H(a,b')[123X in
+  [23XD[123X.  The  output  is  the  value  of  the homomorphism structure on morphisms
+  [23XH(\alpha, \beta )[123X.[133X
+  
+  [1X3.18-4 DistinguishedObjectOfHomomorphismStructure[101X
+  
+  [33X[1;0Y[29X[2XDistinguishedObjectOfHomomorphismStructure[102X( [3XC[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan object in [23XD[123X[133X
+  
+  [33X[0;0YThe  argument is a category [23XC[123X. The output is the distinguished object [23X1[123X in [23XD[123X
+  of the homomorphism structure.[133X
+  
+  [1X3.18-5 InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure[101X
+  
+  [33X[1;0Y[29X[2XInterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}_{D}(1, H(a,a'))[123X[133X
+  
+  [33X[0;0YThe  argument is a morphism [23X\alpha: a \rightarrow a'[123X in [23XC[123X. The output is the
+  corresponding  morphism  [23X\nu(  \alpha  ):  1 \rightarrow H(a,a')[123X in [23XD[123X of the
+  homomorphism structure.[133X
+  
+  [1X3.18-6 InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureWithGivenObjects[101X
+  
+  [33X[1;0Y[29X[2XInterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureWithGivenObjects[102X( [3Xdistinguished_object[103X, [3Xalpha[103X, [3Xr[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}_{D}(1, r)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  the  distinguished  object  [23X1[123X,  a  morphism  [23X\alpha:  a
+  \rightarrow  a'[123X, and the object [23Xr = H(a,a')[123X. The output is the corresponding
+  morphism [23X\nu( \alpha ): 1 \rightarrow r[123X in [23XD[123X of the homomorphism structure.[133X
+  
+  [1X3.18-7 InterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism[101X
+  
+  [33X[1;0Y[29X[2XInterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism[102X( [3Xa[103X, [3Xa'[103X, [3Xiota[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}_{C}(a,a')[123X[133X
+  
+  [33X[0;0YThe  arguments  are  objects  [23Xa,a'[123X  in [23XC[123X and a morphism [23X\iota: 1 \rightarrow
+  H(a,a')[123X  in  [23XD[123X.  The output is the corresponding morphism [23X\nu^{-1}(\iota): a
+  \rightarrow a'[123X in [23XC[123X of the homomorphism structure.[133X
+  
+  [1X3.18-8 SolveLinearSystemInAbCategory[101X
+  
+  [33X[1;0Y[29X[2XSolveLinearSystemInAbCategory[102X( [3Xalpha[103X, [3Xbeta[103X, [3Xgamma[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya list of morphisms [23X[X_1, \dots, X_n][123X[133X
+  
+  [33X[0;0YThe  arguments  are  three  lists  [23X\alpha[123X, [23X\beta[123X, and [23X\gamma[123X. The first list
+  [23X\alpha[123X  (the  left coefficients) is a list of list of morphisms [23X\alpha_{ij}:
+  A_i  \rightarrow B_j[123X, where [23Xi = 1 \dots m[123X and [23Xj = 1 \dots n[123X for integers [23Xm,n
+  \geq  1[123X. The second list [23X\beta[123X (the right coefficients) is a list of list of
+  morphisms  [23X\beta_{ij}:  C_j  \rightarrow  D_i[123X, where [23Xi = 1 \dots m[123X and [23Xj = 1
+  \dots  n[123X.  The  third  list  [23X\gamma[123X  (the right side) is a list of morphisms
+  [23X\gamma_i:  A_i  \rightarrow  D_i[123X,  where  [23Xi  =  1,  \dots, m[123X. Assumes that a
+  solution to the linear system defined by [23X\alpha[123X, [23X\beta[123X, [23X\gamma[123X exists, i.e.,
+  there  exist  morphisms  [23XX_j:  B_j  \rightarrow C_j[123X for [23Xj=1\dots n[123X such that
+  [23X\sum_{j  = 1}^n \alpha_{ij}\cdot X_j \cdot \beta_{ij} = \gamma_i[123X for all [23Xi =
+  1 \dots m[123X. The output is list of such morphisms [23XX_j: B_j \rightarrow C_j[123X for
+  [23Xj=1\dots n[123X.[133X
+  
+  [1X3.18-9 SolveLinearSystemInAbCategoryOrFail[101X
+  
+  [33X[1;0Y[29X[2XSolveLinearSystemInAbCategoryOrFail[102X( [3Xalpha[103X, [3Xbeta[103X, [3Xgamma[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya list of morphisms [23X[X_1, \dots, X_n][123X or [10Xfail[110X[133X
+  
+  [33X[0;0YThis  is  a  convenience  operation. Like [10XSolveLinearSystemInAbCategory[110X, but
+  without  the  assumption that a solution exists. If no solution exists, [10Xfail[110X
+  is returned.[133X
+  
+  [1X3.18-10 MereExistenceOfSolutionOfLinearSystemInAbCategory[101X
+  
+  [33X[1;0Y[29X[2XMereExistenceOfSolutionOfLinearSystemInAbCategory[102X( [3Xalpha[103X, [3Xbeta[103X, [3Xgamma[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YLike  [10XSolveLinearSystemInAbCategory[110X,  but  the  output  is  simply [10Xtrue[110X if a
+  solution exists, [10Xfalse[110X otherwise.[133X
+  
+  [1X3.18-11 MereExistenceOfUniqueSolutionOfLinearSystemInAbCategory[101X
+  
+  [33X[1;0Y[29X[2XMereExistenceOfUniqueSolutionOfLinearSystemInAbCategory[102X( [3Xalpha[103X, [3Xbeta[103X, [3Xgamma[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YLike  [10XSolveLinearSystemInAbCategory[110X,  but  the  output  is  simply [10Xtrue[110X if a
+  unique solution exists, and [10Xfalse[110X otherwise.[133X
+  
+  [1X3.18-12 MereExistenceOfUniqueSolutionOfHomogeneousLinearSystemInAbCategory[101X
+  
+  [33X[1;0Y[29X[2XMereExistenceOfUniqueSolutionOfHomogeneousLinearSystemInAbCategory[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YLike [10XSolveLinearSystemInAbCategory[110X but the output is [10Xtrue[110X if the homogeneous
+  system has only the trivial zero solution, and [10Xfalse[110X otherwise.[133X
+  
+  [1X3.18-13 BasisOfSolutionsOfHomogeneousLinearSystemInLinearCategory[101X
+  
+  [33X[1;0Y[29X[2XBasisOfSolutionsOfHomogeneousLinearSystemInLinearCategory[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya list of lists of morphisms [23X[X^1, \dots, X^t][123X[133X
+  
+  [33X[0;0YThe  arguments  are  two  lists  of lists [23X\alpha[123X and [23X\beta[123X of morphisms in a
+  linear  category  over a commutative ring [23Xk[123X. The first list [23X\alpha[123X (the left
+  coefficients)  is  a  list of list of morphisms [23X\alpha_{ij}: A_i \rightarrow
+  B_j[123X,  where [23Xi = 1, \dots, m[123X and [23Xj = 1, \dots, n[123X for integers [23Xm,n \geq 1[123X. The
+  second  list  [23X\beta[123X  (the right coefficients) is a list of list of morphisms
+  [23X\beta_{ij}:  C_j \rightarrow D_i[123X, where [23Xi = 1, \dots, m[123X and [23Xj = 1, \dots, n[123X.
+  The  output  is  a  generating  set [23X[X^1,\dots,X^t][123X for the solutions of the
+  homogeneous  linear  system:  [23X\sum_{j  =  1}^n  \alpha_{ij}\cdot X_{j} \cdot
+  \beta_{ij}  =  0,  ~i  =  1,  \dots, m[123X. Particularly, each [23XX^k[123X is a list (of
+  length [23Xn[123X) of morphisms [23XX^k_j:B_j \to C_j, j=1,\dots,n[123X.[133X
+  
+  [1X3.18-14 BasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory[101X
+  
+  [33X[1;0Y[29X[2XBasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory[102X( [3Xalpha[103X, [3Xbeta[103X, [3Xgamma[103X, [3Xdelta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya list of lists of morphisms [23X[X^1, \dots, X^t][123X[133X
+  
+  [33X[0;0YThe  arguments  are  four  lists  of  lists [23X\alpha[123X, [23X\beta[123X, [23X\gamma[123X, [23X\delta[123X of
+  morphisms  in some linear category over commutative ring. Each of [23X\alpha[123X and
+  [23X\gamma[123X  is  a  list  of  list  of  morphisms  [23X\alpha_{ij},  \gamma_{ij}: A_i
+  \rightarrow  B_j[123X, where [23Xi = 1, \dots, m[123X and [23Xj = 1, \dots, n[123X for integers [23Xm,n
+  \geq  1[123X.  Each  of  [23X\beta[123X  and  [23X\delta[123X  is  also a list of list of morphisms
+  [23X\beta_{ij},  \delta_{ij}: C_j \rightarrow D_i[123X, where [23Xi = 1, \dots, m[123X and [23Xj =
+  1,  \dots,  n[123X.  The  output  is  a  generating  set  [23X[X^1,\dots,X^t][123X for the
+  solutions  of the homogeneous linear system defined by [23X\alpha[123X, [23X\beta[123X, [23X\gamma[123X
+  and [23X\delta[123X, i.e., [23X\sum_{j = 1}^n \alpha_{ij}\cdot X^{k}_{j} \cdot \beta_{ij}
+  = \sum_{j = 1}^n \gamma_{ij}\cdot X^{k}_{j} \cdot \delta_{ij}[123X for all [23Xi = 1,
+  \dots, m[123X and all [23Xk = 1, \dots, t[123X.[133X
+  
+  [1X3.18-15 BasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory[101X
+  
+  [33X[1;0Y[29X[2XBasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory[102X( [3Xalpha[103X, [3Xdelta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya list of lists of morphisms [23X[X^1, \dots, X^t][123X[133X
+  
+  [33X[0;0YThe arguments are two lists of lists [23X\alpha[123X, [23X\delta[123X morphisms in some linear
+  category  over  commutative  ring.  [23X\alpha[123X  is  a  list of list of morphisms
+  [23X\alpha_{ij}:A_i  \rightarrow  B_j[123X  and [23X\delta[123X is a list of list of morphisms
+  [23X\delta_{ij}:C_j  \rightarrow  D_i[123X, where [23Xi = 1, \dots, m[123X and [23Xj = 1, \dots, n[123X
+  for     integers     [23Xm,n     \geq     1[123X.    The    method    delegates    to
+  [10XBasisOfSolutionsOfHomogeneousDoubleLinearSystemInLinearCategory[110X  applied  on
+  [23X\alpha[123X, [23X\beta[123X, [23X\gamma[123X, [23X\delta[123X where[133X
+  
+  [30X    [33X[0;6Y[23X\beta_{ij}[123X equals [10XIdentityMorphism[110X([10XSource[110X([23X\delta_{ij}[123X)) if [23X\delta_{ij}[123X
+        is     an    endomorphism,    and    [10XZeroMorphism[110X([10XSource[110X([23X\delta_{ij}[123X),
+        [10XRange[110X([23X\delta_{ij}[123X)) otherwise,[133X
+  
+  [30X    [33X[0;6Y[23X\gamma_{ij}[123X     equals     [10XIdentityMorphism[110X([10XSource[110X([23X\alpha_{ij}[123X))    if
+        [23X\alpha_{ij}[123X  is an endomorphism, and [10XZeroMorphism[110X([10XSource[110X([23X\alpha_{ij}[123X),
+        [10XRange[110X([23X\alpha_{ij}[123X)) otherwise;[133X
+  
+  [33X[0;0Yfor all [23Xi = 1, \dots, m[123X and [23Xj = 1, \dots, n[123X.[133X
+  
+  [1X3.18-16 HomStructure[101X
+  
+  [33X[1;0Y[29X[2XHomStructure[102X( [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}_{D}(H(a',b), H(a,b'))[123X[133X
+  
+  [33X[0;0YThis  is  a  convenience  method.  The arguments are two morphisms [23X\alpha: a
+  \rightarrow   a',   \beta:   b   \rightarrow   b'[123X   in   [23XC[123X.  The  output  is
+  [10XHomomorphismStructureOnMorphisms[110X called on [23X\alpha[123X, [23X\beta[123X.[133X
+  
+  [1X3.18-17 HomStructure[101X
+  
+  [33X[1;0Y[29X[2XHomStructure[102X( [3Xalpha[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}_{D}(H(a',b), H(a,b))[123X[133X
+  
+  [33X[0;0YThis  is  a  convenience  method.  The  arguments  are  a morphism [23X\alpha: a
+  \rightarrow    a'[123X    and    an    object    [23Xb[123X    in   [23XC[123X.   The   output   is
+  [10XHomomorphismStructureOnMorphisms[110X called on [23X\alpha[123X, [23X\mathrm{id}_b[123X.[133X
+  
+  [1X3.18-18 HomStructure[101X
+  
+  [33X[1;0Y[29X[2XHomStructure[102X( [3Xa[103X, [3Xbeta[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}_{D}(H(a,b), H(a,b'))[123X[133X
+  
+  [33X[0;0YThis  is  a convenience method. The arguments are an object [23Xa[123X and a morphism
+  [23X\beta: b \rightarrow b'[123X in [23XC[123X. The output is [10XHomomorphismStructureOnMorphisms[110X
+  called on [23X\mathrm{id}_a[123X, [23X\beta[123X.[133X
+  
+  [1X3.18-19 HomStructure[101X
+  
+  [33X[1;0Y[29X[2XHomStructure[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan object[133X
+  
+  [33X[0;0YThis  is  a  convenience method. The arguments are two objects [23Xa[123X and [23Xb[123X in [23XC[123X.
+  The output is [10XHomomorphismStructureOnObjects[110X called on [23Xa,b[123X.[133X
+  
+  [1X3.18-20 HomStructure[101X
+  
+  [33X[1;0Y[29X[2XHomStructure[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [33X[0;0YThis          is          a          convenience          method         for
+  [10XInterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure[110X.[133X
+  
+  [1X3.18-21 HomStructure[101X
+  
+  [33X[1;0Y[29X[2XHomStructure[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X ) [32X operation[133X
+  
+  [33X[0;0YThis          is          a          convenience          method         for
+  [10XInterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism[110X.[133X
+  
+  [1X3.18-22 HomStructure[101X
+  
+  [33X[1;0Y[29X[2XHomStructure[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [33X[0;0YThis is a convenience method for [10XDistinguishedObjectOfHomomorphismStructure[110X.[133X
+  
+  [1X3.18-23 ExtendRangeOfHomomorphismStructureByFullEmbedding[101X
+  
+  [33X[1;0Y[29X[2XExtendRangeOfHomomorphismStructureByFullEmbedding[102X( [3XC[103X, [3XE[103X, [3Xobject_function[103X, [3Xmorphism_function[103X, [3Xobject_function_inverse[103X, [3Xmorphism_function_inverse[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XHomomorphismStructureOnObjectsExtendedByFullEmbedding[102X( [3XC[103X, [3XE[103X, [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XHomomorphismStructureOnMorphismsExtendedByFullEmbedding[102X( [3XC[103X, [3XE[103X, [3Xalpha[103X, [3Xbeta[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XHomomorphismStructureOnMorphismsWithGivenObjectsExtendedByFullEmbedding[102X( [3XC[103X, [3XE[103X, [3Xs[103X, [3Xalpha[103X, [3Xbeta[103X, [3Xr[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XDistinguishedObjectOfHomomorphismStructureExtendedByFullEmbedding[102X( [3XC[103X, [3XE[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XInterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureExtendedByFullEmbedding[102X( [3XC[103X, [3XE[103X, [3Xalpha[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XInterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructureWithGivenObjectsExtendedByFullEmbedding[102X( [3XC[103X, [3XE[103X, [3Xdistinguished_object[103X, [3Xalpha[103X, [3Xr[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XInterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphismExtendedByFullEmbedding[102X( [3XC[103X, [3XE[103X, [3Xa[103X, [3Xa'[103X, [3Xiota[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ynothing[133X
+  
+  [33X[0;0YIf   [23X\iota\colon   D  \to  E[123X  is  a  full  embedding  of  categories,  every
+  [23XD[123X-homomorphism  structure  for  a  category  [23XC[123X  extends  to a [23XE[123X-homomorphism
+  structure  for  [23XC[123X.  This  operations  accepts  four  functions  and installs
+  operations
+  [10XDistinguishedObjectOfHomomorphismStructureExtendedByFullEmbedding[110X,
+  [10XHomomorphismStructureOnObjectsExtendedByFullEmbedding[110X  etc. which correspond
+  to  the  [23XE[123X-homomorphism  structure for [23XC[123X. Note: To distinguish embeddings in
+  different  categories,  in addition to [23XC[123X also [23XE[123X is passed to the operations.
+  When  using  this  with different embeddings with the range category [23XE[123X, only
+  the last embedding will be used. The arguments are:[133X
+  
+  [30X    [33X[0;6Y[10Xobject_function[110X gets the categories [23XC[123X and [23XE[123X and an object in [23XD[123X.[133X
+  
+  [30X    [33X[0;6Y[10Xmorphism_function[110X  gets  the  categories  [23XC[123X  and  [23XE[123X, an object in [23XE[123X, a
+        morphism  in [23XD[123X and another object in [23XE[123X. The objects are the results of
+        [10Xobject_function[110X applied to the source and range of the morphism.[133X
+  
+  [30X    [33X[0;6Y[10Xobject_function_inverse[110X  gets  the categories [23XC[123X and [23XE[123X and an object in
+        [23XE[123X.[133X
+  
+  [30X    [33X[0;6Y[10Xmorphism_function_inverse[110X gets the categories [23XC[123X and [23XE[123X, an object in [23XD[123X,
+        a  morphism  in [23XE[123X and another object in [23XD[123X. The objects are the results
+        of  [10Xobject_function_inverse[110X  applied  to  the  source and range of the
+        morphism.[133X
+  
+  [33X[0;0Y[10Xobject_function[110X     and     [10Xmorphism_function[110X    define    the    embedding.
+  [10Xobject_function_inverse[110X  and [10Xmorphism_function_inverse[110X define the inverse of
+  the embedding on its image.[133X
+  
+  [1X3.18-24 ExtendRangeOfHomomorphismStructureByIdentityAsFullEmbedding[101X
+  
+  [33X[1;0Y[29X[2XExtendRangeOfHomomorphismStructureByIdentityAsFullEmbedding[102X( [3XC[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ynothing[133X
+  
+  [33X[0;0YChooses    the    identity    on    [23XD[123X    as    the    full    embedding   in
+  [2XExtendRangeOfHomomorphismStructureByFullEmbedding[102X  ([14X3.18-23[114X). This is useful
+  to      handle     this     case     as     a     degenerate     case     of
+  [2XExtendRangeOfHomomorphismStructureByFullEmbedding[102X ([14X3.18-23[114X).[133X
+  
+  [1X3.18-25 MorphismsOfExternalHom[101X
+  
+  [33X[1;0Y[29X[2XMorphismsOfExternalHom[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya list of morphisms in [23X\mathrm{Hom}( a, b )[123X[133X
+  
+  [33X[0;0YThe  argument  are  two  objects [3Xa[103X, [3Xb[103X. The output is a list of all morphisms
+  from [3Xa[103X to [3Xb[103X.[133X
+  
+  [1X3.18-26 BasisOfExternalHom[101X
+  
+  [33X[1;0Y[29X[2XBasisOfExternalHom[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya list of morphisms in [23X\mathrm{Hom}_{C}(a,b)[123X[133X
+  
+  [33X[0;0YThe arguments are objects [23Xa,b[123X in a [23Xk[123X-linear category [23XC[123X. The output is a list
+  [23XL[123X  of  morphisms which is a basis of [23X\mathrm{Hom}_{C}(a,b)[123X in the sense that
+  any  given  morphism  [23X\alpha:  a  \to  b[123X can uniquely be written as a linear
+  combination of [23XL[123X with the coefficients in [10XCoefficientsOfMorphism[110X([23X\alpha[123X).[133X
+  
+  [1X3.18-27 CoefficientsOfMorphism[101X
+  
+  [33X[1;0Y[29X[2XCoefficientsOfMorphism[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya list of elements in [23Xk[123X[133X
+  
+  [33X[0;0YThis  is a convenience method. The argument is a morphism [23X\alpha: a \to b[123X in
+  a  [23Xk[123X-linear  category [23XC[123X. The output is a list of coefficients of [23X\alpha[123X with
+  respect to the list [10XBasisOfExternalHom[110X([3Xa[103X,[3Xb[103X).[133X
+  
+  
+  [1X3.19 [33X[0;0YSimplified Morphisms[133X[101X
+  
+  [33X[0;0YLet [23X\phi: A \rightarrow B[123X be a morphism. There are several different natural
+  ways to look at [23X\phi[123X as an object in an ambient category:[133X
+  
+  [30X    [33X[0;6Y[23X\mathrm{Hom}(  A,  B  )[123X, the set of homomorphisms with the equivalence
+        relation [23X\mathtt{IsCongruentForMorphisms}[123X regarded as a category,[133X
+  
+  [30X    [33X[0;6Y[23X\sum_{A}\mathrm{Hom}(  A,  B  )[123X,  the  category of morphisms where the
+        range is fixed,[133X
+  
+  [30X    [33X[0;6Y[23X\sum_{B}\mathrm{Hom}(  A,  B  )[123X,  the  category of morphisms where the
+        source is fixed,[133X
+  
+  [30X    [33X[0;6Y[23X\sum_{A,B}\mathrm{Hom}(  A,  B  )[123X,  the  category  of  morphisms where
+        neither source nor range is fixed,[133X
+  
+  [33X[0;0Yand  furthermore,  if [23X\phi[123X happens to be an endomorphism [23XA \rightarrow A[123X, we
+  also have[133X
+  
+  [30X    [33X[0;6Y[23X\sum_{A}\mathrm{Hom}(A,A)[123X, the category of endomorphisms.[133X
+  
+  [33X[0;0YLet [23X\mathbf{C}[123X be one of the categories above in which [23X\phi[123X may reside as an
+  object, and let [23Xi[123X be a non-negative integer or [23X\infty[123X. CAP provides commands
+  for  passing  from  [23X\phi[123X  to  [23X\phi_i[123X,  where [23X\phi_i[123X is isomorphic to [23X\phi[123X in
+  [23X\mathbf{C}[123X, but "simpler". The idea is that the greater the [23Xi[123X, the "simpler"
+  the  [23X\phi_i[123X (but this could mean the harder the computation), with [23X\infty[123X as
+  a  possible  value. The case [23Xi = 0[123X defaults to the identity operator for all
+  simplifications.  For  the Add-operatations, only the cases [23Xi \geq 1[123X have to
+  be given as functions.[133X
+  
+  [33X[0;0Y[23X\ [123X[133X
+  
+  [33X[0;0YIf  we regard [23X\phi[123X as an object in the category [23X\mathrm{Hom}( A, B )[123X, [23X\phi_i[123X
+  is again in [23X\mathrm{Hom}( A, B )[123X such that [23X\phi \sim_{A,B} \phi_i[123X. This case
+  is handled by the following commands:[133X
+  
+  [1X3.19-1 SimplifyMorphism[101X
+  
+  [33X[1;0Y[29X[2XSimplifyMorphism[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A,B)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer [23Xi[123X or [10Xinfinity[110X. The output is a simplified morphism [23X\phi_i[123X.[133X
+  
+  [33X[0;0Y[23X\ [123X[133X
+  
+  [33X[0;0YIf we regard [23X\phi[123X as an object in the category [23X\sum_{A}\mathrm{Hom}( A, B )[123X,
+  then  [23X\phi_i[123X  is  a  morphism  of  type  [23XA_i  \rightarrow  B[123X and there is an
+  isomorphism  [23X\sigma_i:  A  \rightarrow  A_i[123X  such that [23X\phi_i \circ \sigma_i
+  \sim_{A,B} \phi[123X. This case is handled by the following commands:[133X
+  
+  [1X3.19-2 SimplifySource[101X
+  
+  [33X[1;0Y[29X[2XSimplifySource[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A_i,B)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or [10Xinfinity[110X. The output is a simplified morphism with simplified
+  source [23X\phi_i: A_i \rightarrow B[123X.[133X
+  
+  [1X3.19-3 SimplifySource_IsoToInputObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifySource_IsoToInputObject[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A_i,A)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or  [10Xinfinity[110X. The output is the isomorphism [23X(\sigma_i)^{-1}: A_i
+  \rightarrow A[123X.[133X
+  
+  [1X3.19-4 SimplifySource_IsoFromInputObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifySource_IsoFromInputObject[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A,A_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer [23Xi[123X or [10Xinfinity[110X. The output is the isomorphism [23X\sigma_i: A \rightarrow
+  A_i[123X.[133X
+  
+  [33X[0;0Y[23X\ [123X[133X
+  
+  [33X[0;0YIf we regard [23X\phi[123X as an object in the category [23X\sum_{B}\mathrm{Hom}( A, B )[123X,
+  then  [23X\phi_i[123X  is  a  morphism  of  type  [23XA  \rightarrow  B_i[123X and there is an
+  isomorphism   [23X\rho_i:  B  \rightarrow  B_i[123X  such  that  [23X  \rho_i^{-1}  \circ
+  \phi_i\sim_{A,B} \phi[123X. This case is handled by the following commands:[133X
+  
+  [1X3.19-5 SimplifyRange[101X
+  
+  [33X[1;0Y[29X[2XSimplifyRange[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A,B_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or [10Xinfinity[110X. The output is a simplified morphism with simplified
+  range [23X\phi_i: A \rightarrow B_i[123X.[133X
+  
+  [1X3.19-6 SimplifyRange_IsoToInputObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifyRange_IsoToInputObject[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(B_i,B)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or  [10Xinfinity[110X.  The  output is the isomorphism [23X(\rho_i)^{-1}: B_i
+  \rightarrow B[123X.[133X
+  
+  [1X3.19-7 SimplifyRange_IsoFromInputObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifyRange_IsoFromInputObject[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(B,B_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or [10Xinfinity[110X. The output is the isomorphism [23X\rho_i: B \rightarrow
+  B_i[123X.[133X
+  
+  [33X[0;0Y[23X\ [123X[133X
+  
+  [33X[0;0YIf we regard [23X\phi[123X as an object in the category [23X\sum_{A, B}\mathrm{Hom}( A, B
+  )[123X,  then  [23X\phi_i[123X  is a morphism of type [23XA_i \rightarrow B_i[123X and there is are
+  isomorphisms  [23X\sigma_i: A \rightarrow A_i[123X and [23X\rho_i: B \rightarrow B_i[123X such
+  that  [23X \rho_i^{-1} \circ \phi_i \circ \sigma_i \sim_{A,B} \phi[123X. This case is
+  handled by the following commands:[133X
+  
+  [1X3.19-8 SimplifySourceAndRange[101X
+  
+  [33X[1;0Y[29X[2XSimplifySourceAndRange[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A_i,B_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or [10Xinfinity[110X. The output is a simplified morphism with simplified
+  source and range [23X\phi_i: A_i \rightarrow B_i[123X.[133X
+  
+  [1X3.19-9 SimplifySourceAndRange_IsoToInputRange[101X
+  
+  [33X[1;0Y[29X[2XSimplifySourceAndRange_IsoToInputRange[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(B_i,B)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or  [10Xinfinity[110X.  The  output is the isomorphism [23X(\rho_i)^{-1}: B_i
+  \rightarrow B[123X.[133X
+  
+  [1X3.19-10 SimplifySourceAndRange_IsoFromInputRange[101X
+  
+  [33X[1;0Y[29X[2XSimplifySourceAndRange_IsoFromInputRange[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(B,B_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or [10Xinfinity[110X. The output is the isomorphism [23X\rho_i: B \rightarrow
+  B_i[123X.[133X
+  
+  [1X3.19-11 SimplifySourceAndRange_IsoToInputSource[101X
+  
+  [33X[1;0Y[29X[2XSimplifySourceAndRange_IsoToInputSource[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A_i,A)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer  [23Xi[123X  or  [10Xinfinity[110X. The output is the isomorphism [23X(\sigma_i)^{-1}: A_i
+  \rightarrow A[123X.[133X
+  
+  [1X3.19-12 SimplifySourceAndRange_IsoFromInputSource[101X
+  
+  [33X[1;0Y[29X[2XSimplifySourceAndRange_IsoFromInputSource[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A,A_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are  a  morphism  [23X\phi:  A  \rightarrow B[123X and a non-negative
+  integer [23Xi[123X or [10Xinfinity[110X. The output is the isomorphism [23X\sigma_i: A \rightarrow
+  A_i[123X.[133X
+  
+  [33X[0;0Y[23X\ [123X[133X
+  
+  [33X[0;0YIf [23X\phi:A \rightarrow A[123X is an endomorphism, we may regard it as an object in
+  the category [23X\sum_{A}\mathrm{Hom}( A, A )[123X. In this case [23X\phi_i[123X is a morphism
+  of  type  [23XA_i  \rightarrow  A_i[123X  and  there  is  an  isomorphism [23X\sigma_i: A
+  \rightarrow  A_i[123X  such  that  [23X  \sigma_i^{-1}  \circ  \phi_i  \circ \sigma_i
+  \sim_{A,A} \phi[123X. This case is handled by the following commands:[133X
+  
+  [1X3.19-13 SimplifyEndo[101X
+  
+  [33X[1;0Y[29X[2XSimplifyEndo[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A_i,A_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are an endomorphism [23X\phi: A \rightarrow A[123X and a non-negative
+  integer  [23Xi[123X  or [10Xinfinity[110X. The output is a simplified endomorphism [23X\phi_i: A_i
+  \rightarrow A_i[123X.[133X
+  
+  [1X3.19-14 SimplifyEndo_IsoToInputObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifyEndo_IsoToInputObject[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A_i,A)[123X[133X
+  
+  [33X[0;0YThe  arguments  are an endomorphism [23X\phi: A \rightarrow A[123X and a non-negative
+  integer  [23Xi[123X  or  [10Xinfinity[110X. The output is the isomorphism [23X(\sigma_i)^{-1}: A_i
+  \rightarrow A[123X.[133X
+  
+  [1X3.19-15 SimplifyEndo_IsoFromInputObject[101X
+  
+  [33X[1;0Y[29X[2XSimplifyEndo_IsoFromInputObject[102X( [3Xphi[103X, [3Xi[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A,A_i)[123X[133X
+  
+  [33X[0;0YThe  arguments  are an endomorphism [23X\phi: A \rightarrow A[123X and a non-negative
+  integer [23Xi[123X or [10Xinfinity[110X. The output is the isomorphism [23X\sigma_i: A \rightarrow
+  A_i[123X.[133X
+  
+  [1X3.19-16 Simplify[101X
+  
+  [33X[1;0Y[29X[2XSimplify[102X( [3Xphi[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A_{\infty},B_{\infty})[123X[133X
+  
+  [33X[0;0YThis  is a convenient method. The argument is a morphism [23X\phi: A \rightarrow
+  B[123X.  The  output is a "simplified" version of [23X\phi[123X that may change the source
+  and  range  of  [23X\phi[123X  (up  to  isomorphism). To be precise, the output is an
+  [23X\infty[123X-th  simplified  morphism  of  [23X(\iota_A^{\infty})^{-1}\circ \phi \circ
+  \iota_A^{\infty}[123X.[133X
+  
+  
+  [1X3.20 [33X[0;0YReduction by split epi summands[133X[101X
+  
+  [33X[0;0YLet  [23X\alpha:  A \rightarrow B[123X be a morphism in an additive category. Suppose
+  we  are  given  direct  sum  decompositions  of [23XA \simeq A' \oplus A''[123X and [23XB
+  \simeq  B'  \oplus B''[123X such that If [23X\alpha''[123X is a split epimorphism, then we
+  call  [23X\alpha':  A'  \rightarrow  B'[123X  [13Xsome  reduction  of [23X\alpha[123X by split epi
+  summands[113X.  The inclusions/projections of the decompositions into direct sums
+  induce commutative diagrams and[133X
+  
+  [1X3.20-1 SomeReductionBySplitEpiSummand[101X
+  
+  [33X[1;0Y[29X[2XSomeReductionBySplitEpiSummand[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(A',B')[123X[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha:  A \rightarrow B[123X. The output is some
+  reduction of [23X\alpha[123X by split epi summands [23X\alpha': A' \rightarrow B'[123X.[133X
+  
+  [1X3.20-2 SomeReductionBySplitEpiSummand_MorphismToInputRange[101X
+  
+  [33X[1;0Y[29X[2XSomeReductionBySplitEpiSummand_MorphismToInputRange[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(B',B)[123X[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha:  A  \rightarrow B[123X. The output is the
+  morphism  [23X\beta':  B'  \rightarrow  B[123X  linking [23X\alpha[123X with some reduction by
+  split epi summands.[133X
+  
+  [1X3.20-3 SomeReductionBySplitEpiSummand_MorphismFromInputRange[101X
+  
+  [33X[1;0Y[29X[2XSomeReductionBySplitEpiSummand_MorphismFromInputRange[102X( [3Xalpha[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya morphism in [23X\mathrm{Hom}(B,B')[123X[133X
+  
+  [33X[0;0YThe  argument  is  a  morphism  [23X\alpha:  A  \rightarrow B[123X. The output is the
+  morphism [23X\beta: B \rightarrow B'[123X linking [23X\alpha[123X with some reduction by split
+  epi summands.[133X
+  

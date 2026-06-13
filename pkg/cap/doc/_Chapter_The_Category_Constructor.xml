@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_The_Category_Constructor">
+<Heading>The Category Constructor</Heading>
+
+<P/>
+<Section Label="Chapter_The_Category_Constructor_Section_Info_class">
+<Heading>Info class</Heading>
+
+<ManSection>
+  <InfoClass Name="InfoCategoryConstructor" />
+ <Description>
+  Info class controlling the debugging output of <Ref Oper="CategoryConstructor" Label="for IsRecord" />.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_The_Category_Constructor_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Oper Arg="options" Name="CategoryConstructor" Label="for IsRecord"/>
+ <Returns>a &CAP; category
+</Returns>
+ <Description>
+  Creates a &CAP; category subject to the options given via <A>options</A>,
+  which is a record with the following keys:
+<List>
+<Item>
+<Code>name</Code> (optional): name of the category
+</Item>
+<Item>
+<Code>category_filter</Code>, <Code>category_object_filter</Code>, <Code>category_morphism_filter</Code> (mandatory): passed to <Ref Func="CreateCapCategoryWithDataTypes" />
+</Item>
+<Item>
+<Code>object_datum_type</Code>, <Code>morphism_datum_type</Code> (optional): passed to <Ref Func="CreateCapCategoryWithDataTypes" />
+</Item>
+<Item>
+<Code>commutative_semiring_of_linear_category</Code> (optional): ring attached as <Ref Attr="CommutativeSemiringOfLinearCategory" Label="for IsCapCategory" /> to the category
+</Item>
+<Item>
+<Code>range_category_of_homomorphism_structure</Code> (optional): category attached as <Ref Attr="RangeCategoryOfHomomorphismStructure" Label="for IsCapCategory" /> to the category (or the string "self" to attach the category to itself)
+</Item>
+<Item>
+<Code>properties</Code> (optional): list of categorical properties the category will have, see <Code>CAP_INTERNAL_CATEGORICAL_PROPERTIES_LIST</Code>
+</Item>
+<Item>
+<Code>object_constructor</Code> (optional): function added as an installation of <Ref Oper="ObjectConstructor" Label="for IsCapCategory, IsObject" /> to the category
+</Item>
+<Item>
+<Code>object_datum</Code> (optional): function added as an installation of <Ref Oper="ObjectDatum" Label="for IsCapCategoryObject" /> to the category
+</Item>
+<Item>
+<Code>morphism_constructor</Code> (optional): function added as an installation of <Ref Oper="MorphismConstructor" Label="for IsCapCategoryObject, IsObject, IsCapCategoryObject" /> to the category
+</Item>
+<Item>
+<Code>morphism_datum</Code> (optional): function added as an installation of <Ref Oper="MorphismDatum" Label="for IsCapCategoryMorphism" /> to the category
+</Item>
+<Item>
+<Code>list_of_operations_to_install</Code> (mandatory): a list of names of &CAP; operations which should be installed for the category
+</Item>
+<Item>
+<Code>is_computable</Code> (optional): whether the category can decide <Code>IsCongruentForMorphisms</Code>
+</Item>
+<Item>
+<Code>supports_empty_limits</Code> (optional): whether the category supports empty lists in inputs to operations of limits and colimits
+</Item>
+<Item>
+<Code>underlying_category_getter_string</Code> (optional): see below
+</Item>
+<Item>
+<Code>underlying_category</Code> (optional): see below
+</Item>
+<Item>
+<Code>underlying_object_getter_string</Code> (optional): see below
+</Item>
+<Item>
+<Code>underlying_morphism_getter_string</Code> (optional): see below
+</Item>
+<Item>
+<Code>top_object_getter_string</Code> (optional): see below
+</Item>
+<Item>
+<Code>top_morphism_getter_string</Code> (optional): see below
+</Item>
+<Item>
+<Code>generic_output_source_getter_string</Code> (optional): see below
+</Item>
+<Item>
+<Code>generic_output_range_getter_string</Code> (optional): see below
+</Item>
+<Item>
+<Code>create_func_bool</Code>: see below
+</Item>
+<Item>
+<Code>create_func_object</Code>: see below
+</Item>
+<Item>
+<Code>create_func_morphism</Code>: see below
+</Item>
+<Item>
+<Code>create_func_list_of_objects</Code>: see below
+</Item>
+</List>
+<P/>
+  The values of the keys <Code>create_func_*</Code> should be either the string <Code>&quot;default</Code>" or functions which accept the category and the name of a &CAP; operation
+  of the corresponding <Code>return_type</Code>. Values for return types occuring for operations in <Code>list_of_operations_to_install</Code> are mandatory.
+  The functions must return either strings or pairs of a string and an integer:
+  The strings (after some replacements described below) will be evaluated and added as installations of the corresponding operations to the category with weights given by the integer (if provided).
+  The value <Code>&quot;default&quot;</Code> chooses a suitable default string (see the implementation for details) and gets the weights from <Code>underlying_category</Code>.
+  The following placeholders may be used in the strings and are replaced automatically:
+<List>
+<Item>
+<Code>operation_name</Code> will be replaced by the name of the operation
+</Item>
+<Item>
+<Code>input_arguments...</Code> will be replaced by the <Code>input_arguments_names</Code> specified in the method name record (see <Ref Sect="Section_method_name_record_entries" />)
+</Item>
+<Item>
+<Code>underlying_arguments...</Code>: If the constructed category is created from another category, <Code>underlying_category_getter_string</Code>, <Code>underlying_object_getter_string</Code>, and
+    <Code>underlying_morphism_getter_string</Code> may be strings of functions computing the underlying category (when applied to the constructed category) and
+    the underlying object resp. morphism (when applied to the constructed category and an object resp. morphism in the constructed category).
+    These functions are applied to <Code>input_arguments</Code> and <Code>underlying_arguments</Code> is replaced by the result.
+</Item>
+<Item>
+<Code>number_of_arguments</Code> will be replaced by the number of input/underlying arguments
+</Item>
+<Item>
+<Code>top_source</Code> and <Code>top_range</Code>: If the return type is <Code>morphism</Code>, source and range are computed if possible and <Code>top_source</Code> and <Code>top_range</Code> are replaced by the results.
+    For computing source and range, the <Code>output_source_getter_string</Code> and <Code>output_range_getter_string</Code> from the method name record are used if available (see <Ref Sect="Section_method_name_record_entries" />).
+    In some categories, source and range can always be obtained in a generic way (e.g. from the morphism datum). In this case, <Code>generic_output_source_getter_string</Code> and <Code>generic_output_range_getter_string</Code>
+    can be set and are used if the required information is not available in the method name record.
+</Item>
+<Item>
+<Code>top_object_getter</Code> and <Code>top_morphism_getter</Code> are used in the <Code>&quot;default&quot;</Code> strings and are replaced by <Code>top_object_getter_string</Code> and <Code>top_morphism_getter_string</Code>, respectively.
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

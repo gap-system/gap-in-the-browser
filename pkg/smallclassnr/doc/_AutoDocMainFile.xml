@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<#Include SYSTEM "_Chapter_package.xml">
+<#Include SYSTEM "_Chapter_classification.xml">
+<#Include SYSTEM "_Chapter_library.xml">
+<#Include SYSTEM "_Chapter_otherlibraries.xml">

@@ -1,0 +1,52 @@
+\GAPDocLabFile{qdistrnd}
+\makelabel{qdistrnd:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{qdistrnd:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{qdistrnd:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{qdistrnd:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{qdistrnd:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{qdistrnd:Examples}{2}{X7A489A5D79DA9E5C}
+\makelabel{qdistrnd:The 5-qubit code}{2.1}{X7B229D2B7E58ED2E}
+\makelabel{qdistrnd:Hyperbolic codes from a file}{2.2}{X87244D1D7FAA03A1}
+\makelabel{qdistrnd:Randomly generated cyclic codes}{2.3}{X7A1DF21D8626DA84}
+\makelabel{qdistrnd:Description of the algorithm}{3}{X7E421FAB7D974939}
+\makelabel{qdistrnd:Elementary version}{3.1}{X7DDF42DF7D7F87EF}
+\makelabel{qdistrnd:What it does?}{3.1.1}{X7AE39C5583A02936}
+\makelabel{qdistrnd:The algorithm}{3.1.2}{X7C198D417DA58DFD}
+\makelabel{qdistrnd:Intuition}{3.1.3}{X7C37FBD078DDC0D5}
+\makelabel{qdistrnd:CSS version of the algorithm}{3.1.4}{X7A291E1E7CD313AB}
+\makelabel{qdistrnd:Generic version of the algorithm}{3.1.5}{X7D97C75283D26EE5}
+\makelabel{qdistrnd:Some more details}{3.2}{X7DA7BD6F7A61E553}
+\makelabel{qdistrnd:Quantum stabilizer codes}{3.2.1}{X78810FD98017EB84}
+\makelabel{qdistrnd:The algorithm}{3.2.2}{X7C198D417DA58DFD}
+\makelabel{qdistrnd:Empirical estimate of the success probability}{3.3}{X7CCA4B9B834960EE}
+\makelabel{qdistrnd:All Functions}{4}{X7C6522597D7E72FE}
+\makelabel{qdistrnd:Functions for computing the distance}{4.1}{X826856C47F9890F3}
+\makelabel{qdistrnd:Examples}{4.1.3}{X7A489A5D79DA9E5C}
+\makelabel{qdistrnd:Helper Functions}{4.3}{X7BD4785D8488BAD5}
+\makelabel{qdistrnd:Examples}{4.3.10}{X7A489A5D79DA9E5C}
+\makelabel{qdistrnd:Extended MTX (MTXE) File Format}{5}{X7D0187B5831B764D}
+\makelabel{qdistrnd:General information}{5.1}{X7E294E8678035D23}
+\makelabel{qdistrnd:Representation of field elements via integers}{5.1.1}{X8269F2367856BB1E}
+\makelabel{qdistrnd:Matrix storage format}{5.1.2}{X86FBB72C7BC3B8D2}
+\makelabel{qdistrnd:Explicit format of each line}{5.1.3}{X80B886F0796AF0D5}
+\makelabel{qdistrnd:Matrix Storage Implementation Details}{5.1.4}{X80F0F8AB7FD73B0E}
+\makelabel{qdistrnd:Example MTXE files}{5.2}{X7F2C657F869D90AD}
+\makelabel{qdistrnd:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{qdistrnd:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{qdistrnd:Index}{Ind}{X83A0356F839C696F}
+\makelabel{qdistrnd:License}{}{X81488B807F2A1CF1}
+\makelabel{qdistrnd:DistRandCSS}{4.1.1}{X83CF58308216037F}
+\makelabel{qdistrnd:DistRandStab}{4.1.2}{X7894F0027B144AB8}
+\makelabel{qdistrnd:ReadMTXE}{4.2.1}{X86210A658573655F}
+\makelabel{qdistrnd:WriteMTXE}{4.2.2}{X82F72B6082EEDDF9}
+\makelabel{qdistrnd:QDRAverageCalc}{4.3.1}{X80975EC07BDC757B}
+\makelabel{qdistrnd:QDRSymplVecWeight}{4.3.2}{X8615F38C79B4684C}
+\makelabel{qdistrnd:QDRWeightMat}{4.3.3}{X80BB67727F7F99C3}
+\makelabel{qdistrnd:QDRDoProbOut}{4.3.4}{X8441E8807AE9C477}
+\makelabel{qdistrnd:QDRParseFieldStr}{4.3.5}{X7B6713FC7A5124A8}
+\makelabel{qdistrnd:QDRParsePolyStr}{4.3.6}{X810D9FD7796AD286}
+\makelabel{qdistrnd:QDRFieldHeaderStr}{4.3.7}{X8638277B86B97B56}
+\makelabel{qdistrnd:QDRProcessFieldHeader}{4.3.8}{X8388DFBC816EF47D}
+\makelabel{qdistrnd:QDRProcEntry}{4.3.9}{X82A75836794421A8}
+\makelabel{qdistrnd:QDRMakeH}{4.3.11}{X8020FCA787C830FE}
+\makelabel{qdistrnd:QDRDoCirc}{4.3.12}{X819DC3247F3F7B4F}

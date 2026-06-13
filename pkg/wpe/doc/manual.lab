@@ -1,0 +1,54 @@
+\GAPDocLabFile{wpe}
+\makelabel{wpe:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{wpe:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{wpe:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{wpe:Overview}{1.1}{X8389AD927B74BA4A}
+\makelabel{wpe:Intuitive Research}{1.2}{X7950ED88879EE36F}
+\makelabel{wpe:The Power of Component-wise Representation}{1.2.1}{X83C9D5E6846B299E}
+\makelabel{wpe:Efficient Computing}{1.3}{X7D96C25680814773}
+\makelabel{wpe:Notation}{2}{X7DD31B407B9402A3}
+\makelabel{wpe:Wreath Products}{2.1}{X7DF2AEBC8518FFA4}
+\makelabel{wpe:Wreath Cycles}{2.2}{X83A8F3308644ACFA}
+\makelabel{wpe:Sparse Wreath Cycles}{2.3}{X872BE72F7B2BBD6B}
+\makelabel{wpe:Tutorial}{3}{X81932F777898AD72}
+\makelabel{wpe:Creating Wreath Product Elements}{3.1}{X820D3CEF8368DB04}
+\makelabel{wpe:Displaying Wreath Product Elements}{3.2}{X7C85A3718343D842}
+\makelabel{wpe:Computing in Wreath Products}{3.3}{X8345CC25855C9406}
+\makelabel{wpe:Conjugacy Problem}{3.4}{X8017E4AF7EBB72D2}
+\makelabel{wpe:Conjugacy Classes}{3.5}{X7D474F8F87E4E5D9}
+\makelabel{wpe:Centralizer}{3.6}{X7A2BF4527E08803C}
+\makelabel{wpe:Cycle Index Polynomial}{3.7}{X87A59E867A83A798}
+\makelabel{wpe:Functions}{4}{X86FA580F8055B274}
+\makelabel{wpe:Generic Wreath Product Representation}{4.1}{X794F3F697C476F75}
+\makelabel{wpe:Accessing Components}{4.2}{X7C29594383022EDB}
+\makelabel{wpe:Properties of Wreath Product Elements}{4.3}{X7BD2554F7FE49C2E}
+\makelabel{wpe:Printing, Viewing and Displaying}{4.4}{X8227AD6B7FC637DE}
+\makelabel{wpe:Cycle Index of Wreath Products}{4.5}{X82513F74863B77AE}
+\makelabel{wpe:Operations}{5}{X7DE8E16C7C2D387B}
+\makelabel{wpe:Operations List}{5.1}{X8730A88E7DEB09F2}
+\makelabel{wpe:Wreath Product Representations}{5.1.1}{X787C52A28302EB30}
+\makelabel{wpe:Operations for all Representations}{5.1.2}{X80E9B35E7B9B7D98}
+\makelabel{wpe:Operations for Permutation Representations}{5.1.3}{X803D92AC7A29E51F}
+\makelabel{wpe:Operations for Generic Representation}{5.1.4}{X802ECAC97D3DA99E}
+\makelabel{wpe:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{wpe:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{wpe:Index}{Ind}{X83A0356F839C696F}
+\makelabel{wpe:IsomorphismWreathProduct}{4.1.1}{X7DBA9EFB82F64741}
+\makelabel{wpe:ComponentsOfWreathProduct}{4.2.1}{X7A13B6B47BA67183}
+\makelabel{wpe:TopGroupOfWreathProduct}{4.2.2}{X84D9A60E8614F35E}
+\makelabel{wpe:BaseGroupOfWreathProduct}{4.2.3}{X7E1A2F01848423EA}
+\makelabel{wpe:TopComponentOfWreathProductElement}{4.2.4}{X7F1EB294829E86E5}
+\makelabel{wpe:BaseComponentOfWreathProductElement}{4.2.5}{X86B4BB78813D437E}
+\makelabel{wpe:Territory}{4.3.1}{X7C57D9497D8BBC23}
+\makelabel{wpe:IsWreathCycle}{4.3.2}{X7F7DF936839FE1C7}
+\makelabel{wpe:IsSparseWreathCycle}{4.3.3}{X85C1618F78451F65}
+\makelabel{wpe:WreathCycleDecomposition}{4.3.4}{X82BDC56A7B4298CE}
+\makelabel{wpe:Yade}{4.3.5}{X7ED422DB79830AF7}
+\makelabel{wpe:ViewObj for a wreath product element}{4.4.1}{X7CA684548407A756}
+\makelabel{wpe:PrintObj for a wreath product element}{4.4.1}{X7CA684548407A756}
+\makelabel{wpe:Display for a wreath product element}{4.4.1}{X7CA684548407A756}
+\makelabel{wpe:DisplayOptionsForWreathProductElements}{4.4.2}{X827699E287C25991}
+\makelabel{wpe:SetDisplayOptionsForWreathProductElements}{4.4.3}{X7F900588870902F7}
+\makelabel{wpe:ResetDisplayOptionsForWreathProductElements}{4.4.4}{X7D1989B185F184F8}
+\makelabel{wpe:CycleIndexWreathProductImprimitiveAction}{4.5.1}{X871F79767C6BC7C0}
+\makelabel{wpe:CycleIndexWreathProductProductAction}{4.5.2}{X799B029E79EACCC3}

@@ -1,0 +1,1273 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+classification of items:
+-1 release critical, under no circumstances to be published in this form
+-2 still embarrassing to publish this
+-3 requires decision/discussion:
+   please think about such an item, add a comment how to work on it,
+   and assign the item to another class
+-4 something missing (so feature does not exist because of lack of doc.)
+-5 should be improved in the long run
+-6 nice to have, usually cosmetic
+
+% items with a star (*) behind the number involve global changes
+% throughout the manual
+
+% items are assigned to a person by putting the initials behind the number
+
+% for items that have been done, replace "-" by "+" and put your initials
+
+% to produce some statistics, use the following command:
+% grep "^-" manualchapters | cut -f 1 -d " " | sort | uniq -c
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  When you intend to work on improving a manual chapter then
+%%  put your name under the ``Who'' line for this chapter
+%%  (initials should suffice),
+%%  and enter the date when you started under the ``Started'' line;
+%%  when you have finished the work on this chapter then enter the date
+%%  under the ``Finished'' line,
+%%  and enter comments concerning improvements that are still possible or
+%%  necessary under the ``Comments'' line.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Reference Manual
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 1: Preface
+% File: ./preface.xml (line 13)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+-6 Should the references to the Reference Manuals and to the web site
+  (for example section ``Release history and Prefaces'') be turned
+  into hyperlinks in the HTML version?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 2: About the GAP Reference Manual - REMOVED
+% File: ./about.xml (line 10)
+% Who: Thomas Breuer
+% Started: July 27, 2009
+% Finished: July 27, 2009
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 2: The Help System
+% File: ./help.xml (line 12)
+% Who: Thomas Breuer
+% Started: July 23, 2009
+% Finished: July 24, 2009
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 3: Running GAP
+% File: ./run.xml (line 18)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 04, 2008
+% Comments:
+-6* unified kilobytes vs. KBytes vs. Kilobytes (same for mega and giga),
+  should be consistent throughout the manual (semi-automatic)
+  What's the preferred form??? kB, Kb, Kbytes? Not KB=Knuth-Bendix, of course.
+-5 In the future, the Example package may also contain an example of the
+   kernel module and the documentation of the parts of the kernel interface
+   (some of which is already documented in the GAP.dev manual)
+-5 cross-ref. to undocumented `READ_GAP_ROOT'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 4: The Programming Language
+% File: ./language.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: November 09, 2008
+% Comments:
+-6 Turn the various lists of special words into tables?
+  Or better make them accessible as lists of GAP strings?
+-5 What exactly is a keyword?  The statement that this is ``a reserved word''
+  in section ``Symbols'' does not say anything.
+  And after an explicit list of ``the'' keywords,
+  another list of ``keywords because of technical reasons'' is shown,
+  which is confusing.
+  Also confusing is the statement:  ``The only consequence of this is that
+  those identifiers cannot be re-assigned, and ...''
+  However, we have also the feature that ordinary identifiers can be
+  protected from overwriting, so this is not a meaningful criterion.
+-5 In section ``Identifiers'', it is emphasized that `\*' is an identifier
+  and not a keyword.
+  This suggests that `*' in fact is a keyword. Is it?
+-5 Once again identifiers:
+  ``An identifier usually consists ...'' is not a sensible formulation for a
+  definition, which one expects in the section ``Identifiers''.
+  (There are several such vague formulations where precise statements would
+  be desirable.)
+-6 Several sections show syntax constructs which cannot be expressed using
+  <ManSection> (and <A>) elements, for example `<A>function-var</A>()',
+  `<A>left-expr</A> = <A>right-expr</A>', `<A>procedure-var</A>();'.
+  How to deal with this?
+  (Moreover, there are some cases where the ``declaration line'' does not
+  fit onto one line.)
+-6 Section ``For'' contained a piece of pseudo code, distinguishing
+  keywords and constants from variable names.
+  How to write this in GAPDoc?
+-5 What is the `continue' statement good for?
+  (At least the example shown is not striking.)
+-5 The section ``The Syntax in BNF'' was commented out.
+  (``A few recent additions to the syntax may be missing from this definition.''
+  What is a definition good for that is by definition not correct?
+  And the table in this section is too long; the lower part is not visible,
+  and one gets a lot of LaTeX error messages when processing the manual.)
+  It would still be desirable to have a correct definition of the GAP syntax.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 5: Functions
+% File: ./function.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 24, 2008
+% Comments:
+-4 missing: STARTLINE_FUNC etc.
+  AK: StartlineFunc is already documented. What else is missing?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 6: Main Loop and Break Loop
+% File: ./mloop.xml (line 10)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 21, 2008
+% Comments:
+-6* read-eval-print or read-eval-view?
+-5MN We provide `ViewObj', `PrintObj', `Display', `String';
+  where do we state which of these operations may delegate to others?
+  (There is also the undocumented function `DisplayString'.)
+
+ TODO: write the proposal and discuss in gap-dev:
+   Display > ViewObj > PrintObj > DisplayString > ViewString > String
+   may delegate only to things after you in this order. For very large objects
+   makes sense have a PrintObj method as well as String to save memory.
+ --> This is done and documented. Discussion on gap-dev needed.
+ --> Proposal sent.
+ --> Additional question: Do we really want that a name of an object
+     overwrites the PrintObj methods??? Perhaps it should overwrite ViewObj
+     and not PrintObj
+
+-5AK Section ``View and Print'' ends with a paragraph on `SetName'.
+  But this function is documented in Chapter ``Objects and Elements''.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 7: Debugging and Profiling Facilities
+% File: ./debug.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 21, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 8: Options Stack
+% File: ./options.xml (line 11)
+% Who: Thomas Breuer
+% Started: July 23, 2009
+% Finished: July 23, 2009
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 9: Files and Filenames
+% File: ./files.xml (line 17)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 24, 2008
+% Comments:
+-6* unify ``read-eval-print loop'' vs. ``read eval view loop''
+-6* unify ``an error is signalled'' etc.
+-3*TB Document GAPInfo. -- Suggest in Chapter 3 (but not necessarily all
+  the fields)
+  Here, `Directory' mentions `GAPInfo.UserHome'
+  -- turn this into a <Ref> as soon as the component gets documented.
+  Which components shall be documented?
+-6  Maybe do GAPInfo thing as well.
+  AK: not clear what does this comment mean.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 10: Streams
+% File: ./streams.xml (line 18)
+% Who: AK
+% Started: January 25, 2008
+% Finished: January 27, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 11: Processes
+% File: ./process.xml (line 16)
+% Who: AK
+% Started: January 28, 2008
+% Finished: January 28, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 12: Objects and Elements
+% File: ./objects.xml (line 15)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 24, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 13: Types of Objects
+% File: ./types.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 05, 2008
+% Comments:
+-5 cross-ref. to undocumented variable `FamilyOfFamilies'
+-5 How to introduce a `ManSection' for the `and' of filters?
+  (see also chapter `Booleans')
+-5* Many <Ref> elements use "Func" instead of "Filt", "Oper", "Attr" etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 14: Integers
+% File: ./integers.xml (line 12)
+% Who: AK
+% Started: 8 January 2008
+% Finished: 21 January 2008
+% Comments:
+-4AK There are undocumented variables mentioned in <C> elements:
+  FactorsRho, MAXSIZE_GF_INTERNAL, and well described but not documented
+  in separate ManSections variables Primes2, ProbablePrimes2,
+  IsZmodnZObjNonprimeFamily, IsFFEFamily, RandomSourcesFamily
+-5 The documentation of IsPrimeInt should be adjusted to the current
+   implementation (the bounds should be updated to the actual state-of art)
+-4* There are ManSections combining several definitions. I added labels where
+  applicable to avoid multiply defined labels, and it was enough for that
+  purpose; however, names of such ManSections might be revised (for example),
+  14.6.3 "State" unites definitions of "State", "Reset" and "Init".
+  GAPDoc offers optional "Heading" element for such ManSections.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 15: Number Theory
+% File: ./numtheor.xml (line 12)
+% Who: AK
+% Started: 14 January 2008
+% Finished: 21 January 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 16: Combinatorics
+% File: ./combinat.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 05, 2008
+% Comments:
+-6 Perhaps the sections should be reorganized (join the `NrSomething' stuff
+  with the `Something' stuff).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 17: Rational Numbers
+% File: ./rational.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 05, 2008
+% Comments:
+-5 I still think that having numerator and denominator separately is
+  conceptually not clean, one should have an operation that returns a pair.
+  Yes, one should add an operation NumeratorDenominatorRat returning
+  a pair.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 18: Cyclotomic Numbers
+% File: ./cyclotom.xml (line 17)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 05, 2008
+% Comments:
+-6AK `Int' and `RoundCyc' should be nearer to each other,
+  with a cross-ref. if necessary
+-4 section ``Internally Represented Cyclotomics'' mentions that
+  the conductors of internal cyclotomics are restricted to small integers,
+  and refers to `IsSmallIntRep', which is undocumented;
+  also, an example demonstrates that 2^28 is not a small integer,
+  which is not necessarily true
+  Yes: IsSmallIntRep should be documented in the integers chapter.
+       Maximal values for both 32bit and 64bit should be given.
+       Here, there should the statement that the conductor is a
+       IsSmallIntRep and a reference but no example.
+  AK: IsSmallIntRep is no longer mentioned anywhere in GAP manuals. If we
+  want, we may document it later, but this is not urgent at the moment.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 19: Floats
+% File: ./floats.xml (line 12)
+% Who:
+% Started:
+% Finished:
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 20: Booleans
+% File: ./boolean.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 05, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 21: Lists
+% File: ./lists.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 19th, 2008
+% Comments:
+-4 `IsInternalRep' is mentioned but not documented.
+-6   These and the next point could be done with Subsections  and some
+     sensible Index entries.
+     Actually, 'list[ pos ]' is a shortcut for '\[\](list, pos)'  which
+     can be documented with a standard ManSection. (Similar for the other
+     cases below.) (FL)
+     Looking at that Chapter, maybe this point can be marked +?
+  GAPDoc issue:
+  In the section ``List Elements'', the notation `list[ pos ]' is
+  introduced, which cannot be used in `ManSection';
+  how to write this down?.
+  Similar questions arise with `list{ poss }', `list[ pos ] := object',
+  or `list1 = list2', `list1 <> list2', `list1 < list2', `list1 <= list2'.
+-6 GAPDoc issue:
+  The `ManSections' about `IsBound' and `Unbind' for lists show the argument
+  `list[n]', which can be interpreted as a contradiction to the syntax for
+  optional arguments.
+  (GAPDoc turns this into list[, n] --viewed as optional argument!)
+  (The optimal solution would be to introduce, recommend, and document
+  a two-argument syntax for these operations.)
+-5 There is a section title ``Comparisons of Lists'' and an index entry
+  ``comparisons!of lists'' (i.e., ``of lists'' is a subkey);
+  the idea behind the index entry is that several subkeys will appear
+  under the index entry ``comparisons''.
+  A side-effect is that the online help finds two matches, one for the
+  section and one for the index entry, which point to the same place.
+  How to deal with this?
+-5 If ranges will be generalized in GAP 4.5,
+  the restrictions on bounds and length of ranges have to be dropped.
+  Yes, adjust the documentation once this is actually implemented.
+-6 `ListX' documentation:
+  how to write down formatted/indented pseudo code, with comments
+  in ordinary text, with <M> and <A> elements etc.
+-3 `lists.xml' contains a section ``More about Sets'' from the GAP 3.4 manual
+  that was commented out already in the 4.4 manual.
+  What to do with this text?
+  --> Take out the relevant parts of this and put it into section
+      "Sorted Lists and Sets"
+      However: Do we want to document the TNUM business storing
+      denseness and sortedness???
+-5 Mentioned undocumented functions `UnionSet', `IntersectionSet' from
+   coll.gi, which are also methods for more general operations `Union' and
+   `Intersection'. It may be worth to document them properly.
+-3 why is IsRange a category not a property?
+  (clean up IsRange vs. ConvertToRangeRep?)
+  --> Fix together with the ranges.
+      Note that IsRange on Plain lists works and can silently change
+      the representation to range representation.
+  --> Rethink when we have more general ranges.
+-4 ``cross-references'' to undocumented variables `IsGF2VectorRep',
+  `Is8BitVectorRep', `IsGF2MatrixRep', `Is8BitMatrixRep' in the docum. of
+  `IsListDefault'
+-4 ``cross-reference'' to undocumented variable `IsZeroCyc' in the docum. of
+  `Position'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 22: Boolean Lists
+% File: ./blist.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 19th, 2008
+% Comments:
+-3 missing description of the internal representation of *plain* lists;
+  only compared to this, the description of blists is meaningful.
+  (There is a comment on this in `blist.xml'.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 23: Row Vectors
+% File: ./vector.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 19th, 2008
+% Comments:
+-4 crossref. to undocumented `IsLockedRepresentationVector'
+-6 (cf. chapter ``Lists'')
+  several descriptions of infix operators that cannot be handled with
+  <ManSection>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 24: Matrices
+% File: ./matrix.xml (line 12)
+% Who: AK
+% Started: February 01, 2008
+% Finished:
+% Comments:
+-5 In section ``Duplication of Lists'', introduce subsections about
+  ``ShallowCopy for lists'' and ``StructuralCopy for lists'';
+  then the respective section for matrices (and others) can refer to these
+  subsections.
+-4 IsBlockMatrixRep is not documented, only included into index
+-4 IsLockedRepresentationVector is neither documented nor indexed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 25: Integral matrices and lattices
+% File: ./matint.xml (line 13)
+% Who: Thomas Breuer
+% Started: November 09, 2008
+% Finished: November 09, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 26: Vector and matrix objects
+% File: ./matobj.xml
+% Who: Max Neunhoeffer
+% Started: February 16, 2011
+% Finished: ???
+% Comments:
+  This is a completely new chapter.
+-4MN needs to be completed from stuff in lib/matobj1.gd and lib/matobj2.gd
+-2MN has 5 empty subsections and contains:  `FIXME: Collect all rules here.'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 27: Strings and Characters
+% File: ./string.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 19th, 2008
+% Comments:
+-4 Section ``Printing Strings'': document the special characters \<, \>
+-4 crossref to undocumented `IsPlistRep'
+-6 (cf. chapter ``Lists'')
+  descriptions of infix operators `=' and `<>' that cannot be handled with
+  <ManSection>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 28: Dictionaries and General Hash Tables
+% File: ./hash2.xml (line 13)
+% Who: Max Neunhöffer
+% Started: January 29, 2008
+% Finished: February 8, 2008
+% Comments:
+(This chapter was moved from the "new" manual to the "ref" manual since
+the last release.)
+-5 This chapter needs some polishing of the formulations.
+-3 Turn the inline reference in ManSection for IntegerHashFunction to
+  a proper reference to the bibliography. AK: The book by Cormen, Leiserson
+  and Rivest was added to the bibliography, but IntegerHashFunction is
+  not documented at the moment - should it be?
+-5 This chapter has no examples at all, would be useful to add them eventually.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 29: Records
+% File: ./record.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 19th, 2008
+% Comments:
+-6 (cf. chapter ``Lists'')
+  description of `rec.name', `rec.( name )', `rec.name:= obj',
+  `rec.( name ):= obj', `rec1 = rec2', `rec1 <> rec2', `rec1 < rec2',
+  `rec1 <= rec2',
+  which cannot be handled with <ManSection>;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 30: Collections
+% File: ./coll.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 25th, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 31: Domains and their Elements
+% File: ./domain.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 25th, 2008
+% Comments:
+-4 cross-reference to undocumented function `NormalizerInParent'
+  (There is already a comment whether the section ``In Parent Attributes''
+  should be moved from the `ext' manual to the Reference Manual.
+  This would make it easy to document the `SomethingInParent' functions
+  that actually exist.)
+-4 cross-ref. to undocumented function `ParentAttr'
+-4 ``Comparison Operations for Elements'':
+  Make explicit how <>, <=, >, >= are implemented, i.e., how they are
+  related to \= and \<.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 32: Mappings
+% File: ./mapping.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 25th, 2008
+% Comments:
+-3 Section ``Magma Homomorphisms'' defines magma homomorphisms as mappings
+  that respect multiplication,
+  and the next section is called ``Mappings that Respect Multiplication''.
+  Does that make sense?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 33: Relations
+% File: ./relation.xml (line 11)
+% Who: Thomas Breuer
+% Started: November 16, 2008
+% Finished: November 16, 2008
+% Comments:
+-5 The whole chapter contains not a single example!
+-3 What is the difference between `BinaryRelationByElements' and
+  `GeneralMappingByElements'?
+-3 Why are unary operations such as `ReflexiveClosureBinaryRelation' not
+  attributes?
+-3 `IsHasseDiagram': Is it a sensible definition of a property
+   that the return value is `true' if the argument was constructed
+   with `HasseDiagramBinaryRelation'?
+-5AK `AsBinaryRelationOnPoints' is not in line with the convention about
+  As<Something> functions.
+  AK: should we have BinaryRelationByObject operation???
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 34: Orderings
+% File: ./orders.xml (line 11)
+% Who: Thomas Breuer
+% Started: November 16, 2008
+% Finished: November 16, 2008
+% Comments:
+-3 IsShortLexLessThanOrEqual: Is ``short less ordering'' meaningful?
+-4 IsBasicWreathProductOrdering: no definition, just an example
+-4 IsWreathProductOrdering: neither definition nor example
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 35: Magmas
+% File: ./magma.xml (line 11)
+% Who: Thomas Breuer
+% Started: November 16, 2008
+% Finished: November 16, 2008
+% Comments:
+-4 MagmaByGenerators, MagmaWithOneByGenerators, MagmaWithInversesByGenerators:
+  no definitions, no examples
+-3 ``If a magma M has also an additive structure, e.g., if M is a ring,
+  then the addition is always assumed to be associative and commutative.''
+  Really?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 36: Words
+% File: ./word.xml (line 11)
+% Who: Thomas Breuer
+% Started: November 09, 2008
+% Finished: November 09, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 37: Associative Words
+% File: ./wordass.xml (line 11)
+% Who: Thomas Breuer
+% Started: November 09, 2008
+% Finished: November 09, 2008
+% Comments:
+-6 The chapter structure is still not logical.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 38: Rewriting Systems
+% File: ./rws.xml (line 11)
+% Who: Thomas Breuer
+% Started: November 16, 2008
+% Finished: November 16, 2008
+% Comments:
+-4AK cross-ref to the undocumented functions `IsomorphismFpMonoid',
+  `CreateKnuthBendixRewritingSystem'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 39: Groups
+% File: ./groups.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 02, 2009
+% Comments:
+-5 `IsGroup': The sentence ``See 13.3 for details about categories.''
+  is not very helpful.
+-3 `Subgroup( G )': I think this is not a clean concept.
+-6AK `EpimorphismFromFreeGroup': Is the word found in the example ``as short as
+  possible'' (i.e., of minimal length)?
+-3 `Factorization': ``computes all elements of the group to ensure a short
+  word is found'' --doesn't this approach in fact guarantee *minimal* length?
+-3 `Centralizer' for a conjugacy class states that this ``is a slight abuse
+   of notation''. So should the definition of `Centralizer' for this case
+   (as an attribute) be made explicit?
+-4 `Omega: remark ``@At the moment methods exist only for abelian G and n=1.@''
+-3 `ConjugacyClassSubgroups': Is this name needed at all--why not simply use
+   `ConjugacyClass'? (Do not forget to remove the `[]' method, as promised.)
+-3 What is the recommended way to compute representatives of classes of
+  maximal subgroups?
+  (Note that `ConjugacyClassesMaximalSubgroups' refers to
+  `MaximalSubgroupClassReps' for direct computation,
+  and `MaximalSubgroups' refers to `ConjugacyClassesMaximalSubgroups'.)
+-6* Are distinguishing labels "operation" and "attribute" (as for `Orbits')
+  useful for the online help? Yes, they are useful, and should be added to
+  other identifiers which are both operations and attributes.
+-4 Cross-references to undocumented functions `LeftActingGroup',
+  `RightActingGroup'.
+  TODO: there is a stub mansection at csetgrp.gd, extend it and link to the doc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 40: Group Homomorphisms
+% File: ./grphomom.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 03, 2009
+% Comments:
+-5* Formulations of the form ``The `NiceObject' of <obj> is the image of <obj>
+  under its `NiceMonomorphism'.'' are confusing.
+  Note that `NiceObject' and `NiceMonomorphism' are GAP functions, which
+  are not the same as the words from which they are composed.
+  (One could say something like ``The value of `NiceObject' for <obj> is the
+  image of <obj> under the mapping returned by `NiceMonomorphism' when this
+  is called with <obj>.'')
+  How to proceed in such cases?
+  They occur also in other chapters.
+-4 Cross-reference to undocumented function `SetIsMapping'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 41: Group Actions
+% File: ./grpoper.xml (line 12)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: December 05, 2008
+% Comments:
+-3 `OnLines' and other action functions promise an error when the argument
+  point is not normalized,
+  but this is not true for `OnLines'.
+  `OnSets' does not tell what happens if the argument set is not a set,
+  but runs into an error in this case.
+  1. I think that the predefined action functions should behave the same
+     with respect to tests of the conditions on their arguments,
+     and this should be documented consistently.
+     (Currently there is a section ``Action on canonical representatives''
+     *behind* the introduction of the action functions.)
+  2. Aren't such tests an unnecessary overhead?
+     (If we really want to have foolproof behaviour here, we could introcude
+     `NC' variants, and change all the occurrences in the library ...)
+-5* `Orbit': The action function is optional - this is now clear.
+    (The whole chapter should be checked for consistency.)
+    We checked and stated the default value of action. May be improved by
+    cross-ref to the place where all other optional arguments (Omega, pnt,
+    gens, acts) are explained.
+-4 `OrbitStabilizer' and `StabilizerOfExternalSet':
+  What does the statement ``The stabilizer must have G as its parent.'' mean?
+  The function *constructs* this stabilizer, so there is no requirement on
+  the arguments, or?
+  (And for `OrbitStabilizer', there is no description what the return value
+  is ...)
+  I have replaced the ``must'' by ``will'', as is used in the `Stabilizer'
+  description.
+  TODO: document the return value of OrbitStabilizer.
+-6* GAPDoc issue:
+  When a declaration line is too long, such as the first one for
+  `ActionHomomorphism', then it is not left aligned in the PDF version.
+  Can this be fixed easily?
+-3 Is it really needed to call `ActionHomomorphism' with a result of
+  `Action' (``for GAP 3 compatibility'')?
+  In other words, is `Action' really required to store information about
+  the arguments in its return value?
+-3 `SparseActionHomomorphism': What does the sentence ``If G acts on a
+   very large domain Omega not surjectively'' mean?
+  Is surjective here the same as transitive?
+  (Several formulations in this chapter sound strange.)
+-3 `ActorOfExternalSet': This works only if
+   `CanonicalRepresentativeDeterminatorOfExternalSet' is available, or?
+-3 `IsTransitive': The definition does not assume that the group really
+  acts on the domain given. So for example the ``action on'' any singleton
+  set is always regarded as transitive. Is this a meaningful definition?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 42: Permutations
+% File: ./permutat.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 08, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 43: Permutation Groups
+% File: ./grpperm.xml (line 13)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 10, 2009
+% Comments:
+-4AK ``Working with large degree permutation groups'':
+  Does it make sense to show a fake ``example'' of ``a group of degree
+  231000'', where the input data (the generators) are not described?
+  Would it be sensible to have the full example somewhere on the GAP
+  web pages, and to refer to this from the Reference Manual?
+  (This would be possible also in other cases.)
+  TODO: add a sentence about the file structure. If possible, provide
+  the file on the GAP pages and put URL in the manual. The concept makes
+  sense, it shows straight line programs, so it's really useful example.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 44: Matrix Groups
+% File: ./grpmat.xml (line 11)
+% Who: Thomas Breuer
+% Started: February 06, 2009
+% Finished: February 07, 2009
+% Comments:
+-5*c There is a statement about changed line length in some examples.
+  (What shall be the default, how to deal with such cases?)
+-3 `(Default)FieldOfMatrixGroup': The fact that the domain must be a field
+  suggests that matrix groups over non-fields are not supported. On the
+  other hand, the description of `IsGeneralLinearGroup' etc. talks about
+  rings. What is the status here, what has to be documented?
+-4 cross-references to undocumented variables `LeftAction', `RightAction'.
+-3 Section ``Matrix Groups in Characteristic 0'' says:
+  ``Most of the functions described in this and the following section have
+  implementations which use functions from the &GAP; package Carat.
+  If Carat is not installed or not compiled, no suitable methods are
+  available.''
+  So why are the functions in question documented at all in the main manual?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 45: Polycyclic Groups
+% File: ./pcgs.xml (line 12)
+% Who: Thomas Breuer
+% Started: May 25, 2009
+% Finished: May 25, 2009
+% Comments:
+-4AK Section ``Elementary Operations for a Pcgs'' (and other sections):
+  common example for several subsections; split this?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 46: Pc Groups
+% File: ./grppc.xml (line 12)
+% Who: Thomas Breuer
+% Started: May 25, 2009
+% Finished: June 14, 2009
+% Comments:
+-4 empty description for `FamilyPcgs' and the following functions,
+  but there are several cross-references to `FamilyPcgs'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 47: Finitely Presented Groups
+% File: ./grpfp.xml (line 12)
+% Who: Thomas Breuer
+% Started: June 14, 2009
+% Finished: June 14, 2009
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 48: Presentations and Tietze Transformations
+% File: ./pres.xml (line 12)
+% Who: Thomas Breuer
+% Started: July 03, 2009
+% Finished: July 05, 2009
+% Comments:
+-3 Does it make sense to document the synonyms `TzGo' and
+  `SimplifyPresentation' in two different subsections?
+  (same for `PresentationSubgroup' and `PresentationSubgroupRrs',
+  for `PresentationNormalClosure' and `PresentationNormalClosureRrs')
+-6*AK AddRelator:
+  One sentence ends with the argument P, the following sentence starts with
+  the argument word.
+  This should be reformulated.
+  (Find all such situations automatically?)
+-5AK TzSearch:
+  Default values for the Tietze parameters `SaveLimit' and
+  `searchSimultaneous' are described in this section,
+  and there is a cross-reference to section 46.11;
+  better the defaults would be described only there! (only in one place)
+-4 The terms ``abstract word'' and ``Tietze word'' are used in several places;
+  at least they should be explained.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 49: Group Products
+% File: ./grpprod.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 10, 2009
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 50: Group Libraries
+% File: ./grplib.xml (line 15)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 25, 2008
+% Comments:
+-5 under `GeneralLinearGroup', there is an example how to construct PGL;
+  why not simply a cross-reference?
+-4 cross-references to undocumented functions `DegreeOfMatrixGroup',
+  `IsPrimitiveMatrixGroup', `IsLinearlyPrimitive', `MinimalBlockDimension',
+  `IsSolvable', `IsImfMatrixGroup', `ImfRecord',
+  `FrattinifactorSize', `FrattinifactorId'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 51: Semigroups
+% File: ./semigrp.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 10, 2009
+% Comments:
+-3JM `FreeSemigroup': examples involve also `FreeGroup' (move them away?)
+-4JM empty definition for `IsFullTransformationSemigroup'
+-3JM What are semigroup ideals?
+-3JM strange definition of `ReesCongruenceOfSemigroupIdeal'
+  (in particular, does an ideal know the semigroup in which it is an ideal?
+  Note that there is only one argument.)
+-3JM `HomomorphismQuotientSemigroup': one or two arguments?
+  (The whole chapter looks dubious w.r.t. the relation of the given arguments
+  and the text.)
+-3JM `Rees Matrix Semigroups': (s, i, \lambda) or (i, s, \lambda)?
+-4JM almost no examples in the whole chapter!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 52: Monoids
+% File: ./monoid.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 10, 2009
+% Comments:
+-4JM no examples in the whole chapter!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 53: Finitely Presented Semigroups and Monoids
+% File: ./fpsemi.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 10, 2009
+% Comments:
+-3JM What is the difference between `FactorFreeSemigroupByRelations' and the
+  infix `/'?
+-3JM Is there no `FactorFreeMonoidByRelations'?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 54: Transformations
+% File: ./trans.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 11, 2009
+% Comments:
+-3JM Is it a good idea to define the relevant notation in the beginning of the
+  chapter, and to use this notation in the later sections, in particular
+  without cross-references to the definitions
+-4JM `RestrictedTransformation': should be defined; give an example
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 55: Additive Magmas
+% File: ./addmagma.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 11, 2009
+% Comments:
+(removed ``preliminary'' from the chapter title, this chapter does not
+look worse than others)
+-5 better discuss the various categories together in one section?
+  (this would reduce the text, and make clearer what the differences are)
+-5 no examples: either add them or explain why they are unnecessary
+  (for example because interesting additive magmas in GAP have more
+  structure and are explained in other chapters)
+-4 `AsAdditiveMagma', `AsSubadditiveMagma':
+  commented out, so not yet supported officially
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 56: Rings
+% File: ./rings.xml (line 11)
+% Who: Thomas Breuer
+% Started: December 01, 2008
+% Finished: January 11, 2009
+% Comments:
+-4 `AsRing': commented out, so not yet supported officially
+-3 what about sums and products of ideals?
+-4 cross-reference to undocumented `RightActingDomain'
+-4 empty description of `LeftActingRingOfIdeal', `RightActingRingOfIdeal'
+-4 only few examples
+-5 ideals:
+  Currently we seem to have no support for the closure under the action of
+  two different rings from the left and from the right.
+  Is there need for such a generalization?
+-3 Should fields lie in the filters `IsUniqueFactorizationRing',
+  `IsEuclideanRing'?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 57: Modules
+% File: ./module.xml (line 11)
+% Who: Thomas Breuer
+% Started: February 06, 2009
+% Finished: February 07, 2009
+% Comments:
+-5 The whole chapter is suitable at most for the case of (left) vector spaces,
+  and all examples deal with that context.
+  In fact there is few support for more general situations,
+  even for Z-modules.
+  GAP is almost useless for dealing with R-modules where R is a ring that
+  is not a field and not Z.
+  And the distinction between left modules w.r.t. scalar action and right
+  modules w.r.t. an algebra action (e.g., via matrices on row vectors)
+  is not described.
+  All this should be sorted out.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 58: Fields and Division Rings
+% File: ./fields.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 59: Finite Fields
+% File: ./fieldfin.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 20, 2008
+% Comments:
+-5 Generalize `IntFFE' to vectors and matrices of FFEs,
+  analogous to `DegreeFEE', and get rid of `IntVecFFE'!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 60: Abelian Number Fields
+% File: ./fldabnum.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 20, 2008
+% Comments:
+-5 missing: rings of integers in abelian number fields
+  (something for GAP 4.6)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 61: Vector Spaces
+% File: ./vspc.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 62: Algebras
+% File: ./algebra.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 63: Finitely Presented Algebras
+% File: ./algfp.xml (line 11)
+% Who: Thomas Breuer
+% Started: September 20, 2008
+% Finished: September 20, 2008
+% Comments:
+-4 TODO: extend algfp.xml documenting data structures, categories, properties
+  etc. at a basic level.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 64: Lie Algebras
+% File: ./alglie.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 65: Magma Rings
+% File: ./mgmring.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: October 08, 2008
+% Comments:
+-6* (not only in this chapter) some cross-references point to both a subsection
+  and the corresponding section or chapter (which is unnecessary)
+  AK: I did not find any of these in this chapter.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 66: Polynomials and Rational Functions
+% File: ./ratfun.xml (line 12)
+% Who: Thomas Breuer
+% Started: February 06, 2009
+% Finished: February 07, 2009
+% Comments:
+-5AK In the sections "Operations for Rational Functions",
+  "Comparisons of Rational Functions", the <C> lines should be turned into
+   <ManSection> structures.
+-5 Are `NumeratorOfRationalFunction', `DenominatorOfRationalFunction' as
+  independent attributes a meaningful concept,
+  that is, shouldn't the information better be stored in a pair?
+  Indeed, but for compatibility we must retain the existing setup.
+-5 `LeadingMonomial':
+  ``returns the leading monomial (with respect to the ordering given by
+  MonomialExtGrlexLess''
+  Wouldn't it be more sensible to admit an ordering as optional second
+  argument?
+-5 Cryptic abbreviations, unnecessary or inappropriate notation,
+  lots of parentheses especially in this chapter
+  make it hard to understand
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 67: Algebraic extensions of fields
+% File: ./algfld.xml (line 11)
+% Who: Thomas Breuer
+% Started: April 19, 2009
+% Finished: April 19, 2009
+% Comments:
+-3 Why is no iterated Kronecker construction allowed?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 68: p-adic Numbers (preliminary)
+% File: ./padics.xml (line 11)
+% Who: Thomas Breuer
+% Started: April 19, 2009
+% Finished: April 19, 2009
+% Comments:
+-4AK It should be made precise what precision means.
+-4 Useless definition, and no example:
+  ``The valuation is the p-part of the p-adic number.''
+-4 `IsPurePadicNumber', `IsPurePadicNumberFamily', `IsPadicExtensionNumber',
+  `IsPadicExtensionNumberFamily': empty description
+-5AK The description of extensions of the p-adic number fields (Section 66.2)
+  should be moved to the beginning of the chapter,
+  or at least a link should be given at the beginning of the chapter;
+  otherwise the introduction of the chapter suggests that only ``pure
+  p-adic numbers'' are supported.
+-5AK `PadicNumber' is explained in two sections; after rearrangement of the
+  material (see above), this can be unified.
+  Can we ask AH? So far AK at least put cross-references between both sections.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 69: The MeatAxe
+% File: ./meataxe.xml (line 12)
+% Who: Thomas Breuer
+% Started: April 19, 2009
+% Finished: April 19, 2009
+% Comments:
+-4MN The only reference given is [Par84]; cite also Holt-Rees and Ivanyos-Lux!
+-4 State over which fields the tool works.
+-3 Are the matrices entered in `GModuleByMats' really required to be group
+  elements?
+  (And why does the first sentence emphasize ``submodules of a group
+  algebra''? --The MeatAxe does not deal with group algebras!)
+-4 There are no examples for the functions in this chapter!
+-3 SMTX.MinimalSubGModule: ``It assumes `Distinguish' has been called already.''
+  Should this read as ``assumes that `MTX.Distinguish' has been called''
+  or ``assumes that `SMTX.Distinguish' has been called''?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 70: Tables of Marks
+% File: ./tom.xml (line 16)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 20, 2008
+% Comments:
+-3TB Should the section on ``Technical Details about Tables of Marks'' perhaps
+  be moved to the end of the chapter?
+-3TB Isn't there a better place for the section on standard generators?
+-4TB In section ``The Library of Tables of Marks'', it is said that one can
+  call `TableOfMarks' with argument a (library) character table.
+  This should be documented either in the manual of the Character Table
+  Library or in the ``Interface ...'' section of the current chapter,
+  and then a proper link can be installed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 71: Character Tables
+% File: ./ctbl.xml (line 16)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 20, 2008
+% Comments:
+-4TB cross-references to undocumented functions ...
+-3TB IrreducibleRepresentations: refer to the GAP package in question!
+  (also crossref to GAP's MeatAxe functions?)
+-4TB There are disclaimers about features that are not yet available.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 72: Class Functions
+% File: ./ctblfuns.xml (line 14)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 73: Maps Concerning Character Tables
+% File: ./ctblmaps.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 74: Unknowns
+% File: ./unknown.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 20, 2008
+% Comments:
+-4 cross-reference to undocumented variable `CyclotomicsFamily'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 75: Monomiality Questions
+% File: ./ctblmono.xml (line 12)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 20, 2008
+% Comments:
+-3TB better document `IsMonomial', already because of the implicit reference
+  from ``IsMonomial for character tables'' to ``IsMonomial for groups''
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Former Chapter 77: Installing GAP - REMOVED
+% File: ./install.xml (line 21)
+% Who: Thomas Breuer
+% Started: September 20, 2008
+% Finished: September 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 76: GAP Packages
+% File: ./gappkg.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 77: Replaced and Removed Command Names
+% File: ./obsolete.xml (line 10)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: September 20, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 78: Method Selection
+% File: ./methsel.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+-5 cross-references to undocumented functions Degree, Rank, RankOperation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 79: Creating New Objects
+% File: ./create.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+-4 cross-references to undocumented functions IsInternalRep, IsDataObjectRep,
+  IsComponentObjectRep, IsPositionalObjectRep, ComputedSylowSubgroups.
+  IsAttributeStoringRep, IsCollsElms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 80: Examples of Extending the System
+% File: ./intrfc.xml (line 13)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+-5* In ``Enforcing Property Tests'', one finds ``As mentioned above''.
+  This is not very useful if one does not assume that someone reads the
+  whole book.  So we should try to avoid such formulations, and to give
+  explicit references instead.
+  (This is of course a general statement for the whole documentation.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 81: An Example -- Residue Class Rings
+% File: ./xtndxmpl.xml (line 10)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+-4 cross-references to undocumented functions IsGeneratorsOfMagmaWithInverses
+  and IsInternalRep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 82: An Example -- Designing Arithmetic Operations
+% File: ./arith.xml (line 10)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 83: Library Files
+% File: ./libform.xml (line 10)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Former chapter 85: Writing a GAP Package - REMOVED
+% now moved to the Appendix for the "Example" package.
+% Chapters listed below renumbered (1--);
+% File: ./gappkg.xml (line 11)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 84: Interface to the GAP Help System
+% File: ./helpintf.xml (line 15)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 85: Function-Operation-Attribute Triples
+% File: ./foa.xml (line 10)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+-4 Lots of undocumented variables are referenced,
+  such as `SylowSubgroupOp', `ComputedSylowSubgroups' and `BlocksAttr'.
+  Should these variables be documented?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 86: Weak Pointers
+% File: ./weakptr.xml (line 14)
+% Who: Thomas Breuer
+% Started: August 10, 2008
+% Finished: August 10, 2008
+% Comments:
+-4 cross-references to the undocumented functions MarkBagWeakly, MARK_BAG,
+  IsWeakDeadBag, ListsFamily.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 87: Stabilizer Chains (preliminary)
+% File: ./stbchain.xml (line 10)
+% Who: Thomas Breuer
+% Started: August 10, 2008
+% Finished: August 10, 2008
+% Comments:
+-4 lots of references to undocumented functions,
+  even examples involving the undocumented function `Partition'
+-5 Section ``Stabilizer Chains for Automorphisms Acting on Enumerators''
+  mentions that the code ``is not yet included in the GAP library''.
+  What is the status of this code?
+  AK: Alexander H. told me: "This is not in the library (as it always was
+  experimental and had a lot of rough ends). The proper framework now would
+  be to use the genss package and it should be limited not only to p groups"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix A: Changes from Earlier Versions - REMOVED
+% File: ./changes.xml
+% Who: Thomas Breuer (when it was part of the tutorial's preface), then AK
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+-5 Put a proper URL referring to the "Migrating to GAP4" document on the
+ GAP website.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Tutorial
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 1: Preface
+% File: ./preface.xml (line 13)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 2: A First Session with GAP
+% File: ./introduc.xml (line 18)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+-6 Should we replace ``Read Evaluate Print'' by ``Read Evaluate View''?
+  (In the preface, this term actually ors.)
+-5AK For three summary paragraphs, the heading ``Summary'' is commented out.
+  In the chapters about groups and operations, ``Summary'' headings
+  appear.
+  The other chapters have no summary paragraphs.
+  Is this o.k.?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 3: Lists and Records
+% File: ./lists.xml (line 18)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 4: Functions
+% File: ./function.xml (line 18)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 5: Groups and Homomorphisms
+% File: ./group.xml (line 18)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+-4 reference to undocumented function ComputedSylowSubgroups
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 6: Vector Spaces and Algebras
+% File: ./algvspc.xml (line 10)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 7: Domains
+% File: ./domain.xml (line 18)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 8: Operations and Methods
+% File: ./opers.xml (line 15)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Removed from the manual
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 9 (Tutorial): Migrating to GAP 4
+% File: ./migrat.xml (line 10)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 06, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter 2 (Extending GAP): The gapmacro.tex Manual Format
+% File: ./document.xml (line 36)
+% Who: Thomas Breuer
+% Started: January 24, 2008
+% Finished: August 10, 2008
+% Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

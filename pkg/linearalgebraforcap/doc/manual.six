@@ -1,0 +1,92 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "LinearAlgebraForCAP",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Table of Contents", "0.0-1", [ 0, 0, 1 ], 53, 2, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YCategory of Matrices\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 3, "category of matrices", "X79A2BF518637FFB7" ], 
+  [ "\033[1X\033[33X\033[0;-2YConstructors\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 4, 3, "constructors", "X86EC0F0A78ECBC10" ], 
+  [ "\033[1X\033[33X\033[0;-2YAttributes\033[133X\033[101X", "1.2", 
+      [ 1, 2, 0 ], 53, 4, "attributes", "X7C701DBF7BAE649A" ], 
+  [ "\033[1X\033[33X\033[0;-2YGAP Categories\033[133X\033[101X", "1.3", 
+      [ 1, 3, 0 ], 88, 4, "gap categories", "X7D03633A7D98026B" ], 
+  [ "\033[1X\033[33X\033[0;-2YExamples and Tests\033[133X\033[101X", "2", 
+      [ 2, 0, 0 ], 1, 6, "examples and tests", "X7967FE8E7BBDF485" ], 
+  [ "\033[1X\033[33X\033[0;-2YBasic Commands\033[133X\033[101X", "2.1", 
+      [ 2, 1, 0 ], 4, 6, "basic commands", "X8104A77D7B5CCD4F" ], 
+  [ "\033[1X\033[33X\033[0;-2YFunctors\033[133X\033[101X", "2.2", 
+      [ 2, 2, 0 ], 266, 11, "functors", "X78D1062D78BE08C1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSolving (Homogeneous) Linear Systems\033[133X\\
+033[101X", "2.3", [ 2, 3, 0 ], 312, 12, "solving homogeneous linear systems", 
+      "X85B1F5077BE75340" ], 
+  [ "\033[1X\033[33X\033[0;-2YHomology object\033[133X\033[101X", "2.4", 
+      [ 2, 4, 0 ], 392, 13, "homology object", "X852F59737EC57965" ], 
+  [ "\033[1X\033[33X\033[0;-2YLiftable\033[133X\033[101X", "2.5", 
+      [ 2, 5, 0 ], 468, 14, "liftable", "X7CDB7FF27D734D2D" ], 
+  [ "\033[1X\033[33X\033[0;-2YMonoidal structure\033[133X\033[101X", "2.6", 
+      [ 2, 6, 0 ], 497, 15, "monoidal structure", "X797080CE873BB56D" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YMorphismFromSourceToPushout and MorphismFromFiber\
+ProductToSink\033[133X\033[101X", "2.7", [ 2, 7, 0 ], 555, 16, 
+      "morphismfromsourcetopushout and morphismfromfiberproducttosink", 
+      "X8218390A785F1EDB" ], 
+  [ "\033[1X\033[33X\033[0;-2YOpposite category\033[133X\033[101X", "2.8", 
+      [ 2, 8, 0 ], 601, 17, "opposite category", "X84410C637B3C1D0E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YPreComposeList and PostComposeList\033[133X\033[1\
+01X", "2.9", [ 2, 9, 0 ], 675, 18, "precomposelist and postcomposelist", 
+      "X7F34E29281DF3FCE" ], 
+  [ "\033[1X\033[33X\033[0;-2YSplit epi summand\033[133X\033[101X", "2.10", 
+      [ 2, 10, 0 ], 702, 19, "split epi summand", "X87F5609A7B33C58C" ], 
+  [ "\033[1X\033[33X\033[0;-2YKernel\033[133X\033[101X", "2.11", 
+      [ 2, 11, 0 ], 735, 19, "kernel", "X7DCD99628504B810" ], 
+  [ "\033[1X\033[33X\033[0;-2YFiberProduct\033[133X\033[101X", "2.12", 
+      [ 2, 12, 0 ], 809, 21, "fiberproduct", "X7DE20941803BFBD9" ], 
+  [ "\033[1X\033[33X\033[0;-2YWrapperCategory\033[133X\033[101X", "2.13", 
+      [ 2, 13, 0 ], 833, 21, "wrappercategory", "X8245BF297DF9A3E7" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 22, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XMatrixCategory\033[102X for IsFieldForHomalg", "1.1-1", 
+      [ 1, 1, 1 ], 7, 3, "matrixcategory for isfieldforhomalg", 
+      "X79D9727280354457" ], 
+  [ 
+      "\033[2XVectorSpaceMorphism\033[102X for IsVectorSpaceObject, IsHomalgMatri\
+x, IsVectorSpaceObject", "1.1-2", [ 1, 1, 2 ], 17, 3, 
+      "vectorspacemorphism for isvectorspaceobject ishomalgmatrix isvectorspac\
+eobject", "X7C6DB0457A656406" ], 
+  [ "\033[2XVectorSpaceObject\033[102X for IsInt, IsFieldForHomalg", "1.1-3", 
+      [ 1, 1, 3 ], 27, 3, "vectorspaceobject for isint isfieldforhomalg", 
+      "X7EB162887B8F8708" ], 
+  [ "\033[2XMatrixCategoryObject\033[102X for IsMatrixCategory, IsInt", 
+      "1.1-4", [ 1, 1, 4 ], 36, 3, 
+      "matrixcategoryobject for ismatrixcategory isint", "X818AE01E7C9D21A5" ]
+    , 
+  [ "\033[2XMatrixCategory_as_CategoryOfRows\033[102X for IsFieldForHomalg", 
+      "1.1-5", [ 1, 1, 5 ], 44, 4, 
+      "matrixcategory_as_categoryofrows for isfieldforhomalg", 
+      "X7A0CAF7F7CE754E7" ], 
+  [ "\033[2XUnderlyingFieldForHomalg\033[102X for IsVectorSpaceMorphism", 
+      "1.2-1", [ 1, 2, 1 ], 56, 4, 
+      "underlyingfieldforhomalg for isvectorspacemorphism", 
+      "X7A25998E79499AE8" ], 
+  [ "\033[2XUnderlyingMatrix\033[102X for IsVectorSpaceMorphism", "1.2-2", 
+      [ 1, 2, 2 ], 64, 4, "underlyingmatrix for isvectorspacemorphism", 
+      "X8513433F7DA84E66" ], 
+  [ "\033[2XUnderlyingFieldForHomalg\033[102X for IsVectorSpaceObject", 
+      "1.2-3", [ 1, 2, 3 ], 72, 4, 
+      "underlyingfieldforhomalg for isvectorspaceobject", "X83D0E5BD8763C8FD" 
+     ], [ "\033[2XDimension\033[102X for IsVectorSpaceObject", "1.2-4", 
+      [ 1, 2, 4 ], 80, 4, "dimension for isvectorspaceobject", 
+      "X81C6A5F382A1D4F5" ], 
+  [ "\033[2XIsVectorSpaceMorphism\033[102X for IsCapCategoryMorphism", 
+      "1.3-1", [ 1, 3, 1 ], 91, 4, 
+      "isvectorspacemorphism for iscapcategorymorphism", "X7DAEE1D67CDFA35A" ]
+    , [ "\033[2XIsVectorSpaceObject\033[102X for IsCapCategoryObject", 
+      "1.3-2", [ 1, 3, 2 ], 98, 5, 
+      "isvectorspaceobject for iscapcategoryobject", "X7EF7321D794F9050" ] ]
+);

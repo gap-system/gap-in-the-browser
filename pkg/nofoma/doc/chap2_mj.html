@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (nofoma) - Chapter 2: Normal forms of matrices</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
+<p><a id="X7CB17C628017D2B2" name="X7CB17C628017D2B2"></a></p>
+<div class="ChapSects"><a href="chap2_mj.html#X7CB17C628017D2B2">2 <span class="Heading">Normal forms of matrices</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X872D4005810328D8">2.1 <span class="Heading">The Frobenius normal form</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X831DC8FD82FB92CE">2.1-1 FrobeniusNormalForm</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X81D3D6CC7E704CE7">2.1-2 FrobeniusNormalFormLikeRCFT</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7B675811827CBCEC">2.1-3 InvariantFactorsMat</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8617E70787358AAD">2.2 <span class="Heading">The Jordan normal form</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86D2B8A98222AC4C">2.2-1 JordanNormalForm</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Normal forms of matrices</span></h3>
+
+<p><a id="X872D4005810328D8" name="X872D4005810328D8"></a></p>
+
+<h4>2.1 <span class="Heading">The Frobenius normal form</span></h4>
+
+<p>Given a field <span class="SimpleMath">\(K\)</span> and an <span class="SimpleMath">\(n\times n\)</span>-matrix <span class="SimpleMath">\(A\)</span> over <span class="SimpleMath">\(K\)</span>, the <em>Frobenius normal form</em> of <span class="SimpleMath">\(A\)</span> is a block diagonal matrix, where the diagonal blocks are companion matrices corresponding to the invariant factors of <span class="SimpleMath">\(A\)</span>. It reflects the minimal decomposition of the vector space <span class="SimpleMath">\(K^n\)</span> into cyclic subspaces under the action of <span class="SimpleMath">\(A\)</span>. The Frobenius normal form is also called the rational canonical form.</p>
+
+<p><a id="X831DC8FD82FB92CE" name="X831DC8FD82FB92CE"></a></p>
+
+<h5>2.1-1 FrobeniusNormalForm</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FrobeniusNormalForm</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns the invariant factors of a matrix <var class="Arg">A</var> and an invertible matrix <span class="SimpleMath">\(P\)</span> such that <span class="SimpleMath">\(PAP^{-1}\)</span> is the Frobenius normal form of <var class="Arg">A</var>. The algorithm first computes a maximal vector and an <var class="Arg">A</var>-invariant complement following Jacob's construction (as described in matrix language in <a href="chapBib_mj.html#biBGec20">[Gec20]</a>); then the algorithm continues recursively. It works for matrices over any field that is available in <strong class="pkg">GAP</strong>. The output is a triple with</p>
+
+
+<ul>
+<li><p>1st component = list of invariant factors;</p>
+
+</li>
+<li><p>2nd component = base change matrix <span class="SimpleMath">\(P\)</span>; and</p>
+
+</li>
+<li><p>3rd component = indices where the various blocks in the normal form begin.</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A:=[ [  2,  2,  0,  1,  0,  2,  1 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0,  4,  0,  0,  0,  1,  0 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0,  1,  1,  0,  0,  1,  1 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0, -1,  0,  1,  0, -1,  0 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0, -7,  0,  0,  1, -5,  0 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0, -2,  0,  0,  0,  1,  0 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0, -1,  0,  0,  0, -1,  1 ] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=FrobeniusNormalForm(A);</span>
+[ [ x_1^4-7*x_1^3+17*x_1^2-17*x_1+6, x_1^2-3*x_1+2, x_1-1 ], 
+  [ [    1,   -2,    1,    1,    0,    0,    1 ],
+    [    2,   -7,    1,    2,    0,   -1,    3 ],
+    [    4,  -26,    1,    4,    0,   -8,    6 ],
+    [    8,  -89,    1,    8,    0,  -35,   11 ],
+    [ -1/2,   -2,    0,  1/2,    0,   -2, -3/2 ],
+    [   -1,   -4,    0,    0,    0,   -4,   -2 ],
+    [    0,  9/4,    0,   -3,    1,  5/4,  1/4 ] ],
+  [ 1, 5, 7 ]  ]                 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintArray(f[2]*A*f[2]^-1);</span>
+[ [   0,   1,   0,   0,   0,   0,   0 ], 
+  [   0,   0,   1,   0,   0,   0,   0 ],
+  [   0,   0,   0,   1,   0,   0,   0 ],
+  [  -6,  17, -17,   7,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   1,   0 ],
+  [   0,   0,   0,   0,  -2,   3,   0 ],
+  [   0,   0,   0,   0,   0,   0,   1 ] ]
+</pre></div>
+
+<p>Note that the Frobenius normal form is unique up to the choice of the companion matrices and the permutation of the blocks corresponding to the invariant factors. So while this function is significantly more efficient than the existing 'RationalCanonicalFormTransform', the two functions yield slightly different results. In 'RationalCanonicalFormTransform', the companion matrices are consistent with the output of 'CompanionMat'. However, given an <span class="SimpleMath">\(n\times n\)</span> cyclic matrix <span class="SimpleMath">\(A\)</span>, along with a corresponding cyclic vector <span class="SimpleMath">\(v\)</span>, one can compute a change of basis matrix from A to a companion matrix of its minimal polynomial by computing <span class="SimpleMath">\(v\)</span> multiplied with powers of <span class="SimpleMath">\(A\)</span> (i.e., <span class="SimpleMath">\(v\)</span>, <span class="SimpleMath">\(vA\)</span>, ...., <span class="SimpleMath">\(vA^{n-1}\)</span>). This approach follows GAP’s convention of right multiplication and yields a companion matrix in the form used by <code class="func">FrobeniusNormalForm</code>. Furthermore 'RationalCanonicalFormTransform' sorts the invariant factors in ascending order, while <code class="func">FrobeniusNormalForm</code> sorts them in descending order.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := [ [ 0*Z(5), Z(5)^3, 0*Z(5), Z(5)^0, Z(5)^3 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ Z(5)^0, 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^2 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ Z(5), Z(5), 0*Z(5), Z(5)^0, Z(5)^3 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ 0*Z(5), Z(5), Z(5)^2, Z(5)^2, Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ Z(5)^3, Z(5)^3, Z(5)^0, Z(5)^3, Z(5)^0 ] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=RationalCanonicalFormTransform(A);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:=TransposedMat(FrobeniusNormalForm(TransposedMat(A))[2]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(A^T);</span>
+ . . . . 3
+ 1 . . . 2
+ . 1 . . 3
+ . . 1 . 4
+ . . . 1 .
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(A^S);</span>
+ . . . . 3
+ 1 . . . 2
+ . 1 . . 3
+ . . 1 . 4
+ . . . 1 .
+</pre></div>
+
+<p>Additionally, <code class="code">RationalCanonicalFormTransform</code> sorts the invariant factors in ascending order, whereas the <code class="func">FrobeniusNormalForm</code> sorts them in descending order. Consequently, the outputs of the two functions agree up to a permutation of blocks and transposition. To get a drop in replacement for 'RationalCanonicalFormTransform', see <code class="func">FrobeniusNormalFormLikeRCFT</code> (<a href="chap2_mj.html#X81D3D6CC7E704CE7"><span class="RefLink">2.1-2</span></a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">aa:=[[  0, -8, 12, 40,-36,  4,  0, 59, 15, -9],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [ -2, -2, -2,  6,-11,  1, -1, 10,  1,  0],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  1,  5,  0, -6, 12, -2,  0,-12, -4,  2],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0,  0,  0,  2,  0,  0,  0,  7,  0,  0],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0,  2, -3, -7,  8, -1,  0, -7, -3,  2],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [ -5, -4, -6, 18,-30,  2, -2, 35,  5, -1],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [ -1, -6,  6, 20,-28,  3,  0, 24, 10, -6],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0,  0,  0, -1,  0,  0,  0, -3,  0,  0],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0,  0, -1, -2, -2,  0, -1, -7,  0,  0],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        [  0, -8,  9, 21,-36,  4, -2, 12, 12, -8]];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=RationalCanonicalFormTransform(aa);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(aa^t);</span>
+[ [   0,   0,   0,   1,   0,   0,   0,   0,   0,   0 ],
+  [   1,   0,   0,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   1,   0,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   1,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,   0,   1,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,   0,   0,   1,   0,   0,   0,   1 ],
+  [   0,   0,   0,   0,   0,   0,   1,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   1,   0,  -1 ],
+  [   0,   0,   0,   0,   0,   0,   0,   0,   1,  -1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">res:=FrobeniusNormalForm(aa);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(aa^(res[2]^-1));</span>
+[ [   0,   1,   0,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   1,   0,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   0,   1,   0,   0,   0,   0,   0,   0 ],
+  [   0,   0,   0,   0,   1,   0,   0,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   1,   0,   0,   0,   0 ],
+  [   1,   1,   1,   0,  -1,  -1,   0,   0,   0,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   1,   0,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   0,   1,   0 ],
+  [   0,   0,   0,   0,   0,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,   0,   0,   0,   1,   0,   0,   0 ] ]
+</pre></div>
+
+<p><a id="X81D3D6CC7E704CE7" name="X81D3D6CC7E704CE7"></a></p>
+
+<h5>2.1-2 FrobeniusNormalFormLikeRCFT</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FrobeniusNormalFormLikeRCFT</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function returns the same result as <code class="func">FrobeniusNormalForm</code> (<a href="chap2_mj.html#X831DC8FD82FB92CE"><span class="RefLink">2.1-1</span></a>), except that the invariant factors are sorted in descending order and the companion matrices on the diagonal are transposed. Furthermore, if <span class="SimpleMath">\(P\)</span> is the computed base change matrix, the Frobenius normal form is obtained by <span class="SimpleMath">\(P^{-1}AP\)</span> (instead of <span class="SimpleMath">\(PAP^{-1}\)</span>). This means that <span class="SimpleMath">\(P\)</span> can be used as a direct drop-in replacement for RationalCanonicalFormTransform.</p>
+
+<p>Note that this function works by calling <code class="func">FrobeniusNormalForm</code> (<a href="chap2_mj.html#X831DC8FD82FB92CE"><span class="RefLink">2.1-1</span></a>) and then modifying the computed transformation matrix and is thus potentially less efficient than using the original function.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := [ [ 0*Z(5), Z(5)^2, Z(5)^2, 0*Z(5), Z(5)^3, Z(5)^3, 0*Z(5), Z(5)^3, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      0*Z(5), Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ Z(5)^0, Z(5)^0, Z(5)^0, Z(5), Z(5)^3, Z(5), Z(5)^3, 0*Z(5), Z(5), </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ Z(5), 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^2, Z(5)^0, 0*Z(5), Z(5)^0, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      Z(5), Z(5)^2 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^0, Z(5)^0, Z(5)^3, 0*Z(5), Z(5)^0, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      Z(5)^2, Z(5)^2 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ 0*Z(5), Z(5), Z(5)^3, Z(5)^0, 0*Z(5), Z(5)^2, Z(5)^0, 0*Z(5), </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      0*Z(5), Z(5)^3 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ Z(5)^3, Z(5)^3, Z(5), 0*Z(5), Z(5)^2, Z(5)^0, 0*Z(5), Z(5)^3, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      0*Z(5), Z(5)^3 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^2, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^0, Z(5)^0, 0*Z(5), Z(5)^3, Z(5)^0, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  [ 0*Z(5), Z(5)^2, Z(5)^3, Z(5), Z(5)^3, Z(5)^3, Z(5)^0, Z(5)^2, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      Z(5)^2, Z(5)^2 ] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">frob := FrobeniusNormalFormLikeRCFT(A)[2];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">rat := RationalCanonicalFormTransform(A);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(A^rat);</span>
+ . . . 1 . . . . . .
+ 1 . . . . . . . . .
+ . 1 . . . . . . . .
+ . . 1 . . . . . . .
+ . . . . . . . . . 4
+ . . . . 1 . . . . 2
+ . . . . . 1 . . . 1
+ . . . . . . 1 . . .
+ . . . . . . . 1 . 1
+ . . . . . . . . 1 3
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(A^frob);</span>
+ . . . 1 . . . . . .
+ 1 . . . . . . . . .
+ . 1 . . . . . . . .
+ . . 1 . . . . . . .
+ . . . . . . . . . 4
+ . . . . 1 . . . . 2
+ . . . . . 1 . . . 1
+ . . . . . . 1 . . .
+ . . . . . . . 1 . 1
+ . . . . . . . . 1 3
+</pre></div>
+
+<p><a id="X7B675811827CBCEC" name="X7B675811827CBCEC"></a></p>
+
+<h5>2.1-3 InvariantFactorsMat</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InvariantFactorsMat</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns the invariant factors of the matrix <var class="Arg">A</var>, i.e., the minimal polynomials of the diagonal blocks in the Frobenius normal form of <var class="Arg">A</var>. Thus, 'InvariantFactorsMat' also specifies the rational canonical form of <var class="Arg">A</var>, but without computing the base change.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := [ [ 2,  2, 0, 1, 0,  2, 1 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">          [ 0,  4, 0, 0, 0,  1, 0 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">          [ 0,  1, 1, 0, 0,  1, 1 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">          [ 0, -1, 0, 1, 0, -1, 0 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">          [ 0, -7, 0, 0, 1, -5, 0 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">          [ 0, -2, 0, 0, 0,  1, 0 ],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">          [ 0, -1, 0, 0, 0, -1, 1 ] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">InvariantFactorsMat(A);</span>
+  [ x_1^4-7*x_1^3+17*x_1^2-17*x_1+6, x_1^2-3*x_1+2, x_1-1 ]
+</pre></div>
+
+<p><a id="X8617E70787358AAD" name="X8617E70787358AAD"></a></p>
+
+<h4>2.2 <span class="Heading">The Jordan normal form</span></h4>
+
+<p>The Jordan normal form of a matrix <span class="SimpleMath">\(A\)</span> is a block diagonal matrix, where the diagonal blocks are Jordan blocks corresponding to the elementary divisors of <span class="SimpleMath">\(A\)</span>. It reflects the maximal decomposition of the vector space <span class="SimpleMath">\(K^n\)</span> into cyclic subspaces under the action of <span class="SimpleMath">\(A\)</span>. For a more thorough definition of the Jordan normal form and details about the algorithms used, see <a href="chapBib_mj.html#biBBon26">[Bon26]</a>.</p>
+
+<p><a id="X86D2B8A98222AC4C" name="X86D2B8A98222AC4C"></a></p>
+
+<h5>2.2-1 JordanNormalForm</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JordanNormalForm</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns a list containing two entries. The first is a base change matrix <span class="SimpleMath">\(B\)</span> such that <span class="SimpleMath">\(B\)</span><var class="Arg">A</var><span class="SimpleMath">\(B^{-1}\)</span> is the Jordan normal form of <var class="Arg">A</var>, i.e. a block diagonal matrix where the diagonal blocks are Jordan blocks corresponding to the elementary divisors of <var class="Arg">A</var> in descending order. The second entry is a list of the elementary divisors of <var class="Arg">A</var>, also in descending order. The algorithm first computes a primary decomposition of <var class="Arg">A</var> and then computes a cyclic decomposition of the primary components. Finally it computes Jordan block form for each of the cyclic components. The blocks are ordered in the same order as in the list containing the elementary divisors. It works for matrices over finite fields.</p>
+
+<p>Since all of the blocks on the resulting transformed matrix are cyclic, one can retrieve their size by the degrees of the respective elementary divisor.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := [ [ 0*Z(5), 0*Z(5), Z(5)^3, Z(5)^3, Z(5)^3, Z(5)^0 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">   [ 0*Z(5), Z(5)^2, Z(5)^2, Z(5)^0, Z(5)^3, Z(5)^3 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">   [ Z(5)^0, Z(5)^0, Z(5)^3, Z(5)^2, Z(5)^0, Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">   [ 0*Z(5), Z(5)^3, Z(5), Z(5), 0*Z(5), Z(5)^2 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">   [ Z(5)^2, Z(5)^0, Z(5)^0, 0*Z(5), Z(5), Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">   [ 0*Z(5), Z(5)^0, Z(5)^2, Z(5), Z(5), Z(5) ] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B := JordanNormalForm(A);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(A^Inverse(B[1]));</span>
+3 . . . . .
+. 1 . . . .
+. . . 1 . .
+. . 2 . . .
+. . . . . 1
+. . . . 3 4
+</pre></div>
+
+<p>This function computes the Jordan normal form of <span class="SimpleMath">\(A\)</span> significantly faster if <span class="SimpleMath">\(A\)</span> is either cyclic or has irreducible minimal polynomial.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B:= [ [ Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3, 0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5), 0*Z(5), 0*Z(5) ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5), Z(5)^3 ], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, Z(5) ] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Factors(MinimalPolynomial(B));</span>
+[ x_1^2+x_1+Z(5)^0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(B^Inverse(JordanNormalForm(B)[1]));</span>
+. 1 . . . . . . . .
+4 4 . . . . . . . .
+. . . 1 . . . . . .
+. . 4 4 . . . . . .
+. . . . . 1 . . . .
+. . . . 4 4 . . . .
+. . . . . . . 1 . .
+. . . . . . 4 4 . .
+. . . . . . . . . 1
+. . . . . . . . 4 4
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

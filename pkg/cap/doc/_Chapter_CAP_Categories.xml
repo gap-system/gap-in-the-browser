@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_CAP_Categories">
+<Heading>CAP Categories</Heading>
+
+<P/>
+  Categories are the main GAP objects in CAP.
+  They are used to associate GAP objects which represent objects and
+  morphisms with their category. By associating a GAP object to the
+  category, one of two filters belonging to the category (ObjectFilter/MorphismFilter)
+  are set to true.
+  Via Add methods, functions for specific existential quantifiers can be
+  associated to the category and after that can be applied to GAP objects in the category.
+  A GAP category object also knows which constructions
+  are currently possible in this category.
+<P/>
+ Classically, a category consists of a class of objects, a set of morphisms, identity morphisms, and a composition function
+ satisfying some simple axioms. In CAP, we use a slightly different notion of a category.
+<P/>
+ A CAP category <Math>\mathbf{C}</Math> consists of the following data:
+<List>
+<Item>
+A set <Math>\mathrm{Obj}_{\mathbf{C}}</Math> of <Emph>objects</Emph>.
+</Item>
+<Item>
+For every pair <Math>a,b \in \mathrm{Obj}_{\mathbf{C}}</Math>, a set <Math>\mathrm{Hom}_{\mathbf{C}}( a, b )</Math> of <Emph>morphisms</Emph>.
+</Item>
+<Item>
+For every pair <Math>a,b \in \mathrm{Obj}_{\mathbf{C}}</Math>, an equivalence relation <Math>\sim_{a,b}</Math> on <Math>\mathrm{Hom}_{\mathbf{C}}( a, b )</Math>
+   called <Emph>congruence for morphisms</Emph>.
+</Item>
+<Item>
+For every <Math>a \in \mathrm{Obj}_{\mathbf{C}}</Math>, an <Emph>identity morphism</Emph> <Math>\mathrm{id}_a \in \mathrm{Hom}_{\mathbf{C}}( a, a )</Math>.
+</Item>
+<Item>
+For every triple <Math>a, b, c \in \mathrm{Obj}_{\mathbf{C}}</Math>, a <Emph>composition function</Emph>
+   <Display>\circ: \mathrm{Hom}_{\mathbf{C}}( b, c ) \times \mathrm{Hom}_{\mathbf{C}}( a, b ) \rightarrow \mathrm{Hom}_{\mathbf{C}}( a, c )</Display>
+   compatible with the congruence, i.e.,
+   if <Math>\alpha, \alpha' \in \mathrm{Hom}_{\mathbf{C}}( a, b )</Math>,
+   <Math>\beta, \beta' \in \mathrm{Hom}_{\mathbf{C}}( b, c )</Math>,
+   <Math>\alpha \sim_{a,b} \alpha'</Math>
+   and <Math>\beta \sim_{b,c} \beta'</Math>,
+   then <Math>\beta \circ \alpha \sim_{a,c} \beta' \circ \alpha'</Math>.
+</Item>
+<Item>
+For all <Math>a, b \in \mathrm{Obj}_{\mathbf{C}}</Math>,
+   <Math>\alpha \in \mathrm{Hom}_{\mathbf{C}}( a, b )</Math>,
+   we have <Display>\left( \mathrm{id}_{b} \circ \alpha \right) \sim_{a,b} \alpha</Display>
+   and
+   <Display>\alpha \sim_{a,b} \left( \alpha \circ \mathrm{id}_{a} \right).</Display>
+</Item>
+<Item>
+For all <Math>a,b,c,d \in \mathrm{Obj}_{\mathbf{C}}</Math>,
+   <Math>\alpha \in \mathrm{Hom}_{\mathbf{C}}( a, b )</Math>,
+   <Math>\beta \in \mathrm{Hom}_{\mathbf{C}}( b, c )</Math>,
+   <Math>\gamma \in \mathrm{Hom}_{\mathbf{C}}( c, d )</Math>,
+   we have <Display>\left(( \gamma \circ \beta ) \circ \alpha \right) \sim_{a,d} \left( \gamma \circ ( \beta \circ \alpha ) \right)</Display>
+</Item>
+</List>
+<Section Label="Chapter_CAP_Categories_Section_Categories">
+<Heading>Categories</Heading>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsCapCategory" Label="for IsAttributeStoringRep"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The GAP category of CAP categories. Objects of this type handle
+  the CAP category information, the caching, and filters for objects in the CAP category.
+  Please note that the object itself is not related to methods, you only need it
+  as a handler and a presentation of the CAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsCapCategoryCell" Label="for IsAttributeStoringRep"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of CAP category cells.
+ Every object, morphism, and <Math>2</Math>-cell
+ of a CAP category lies in this GAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsCapCategoryObject" Label="for IsCapCategoryCell"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of CAP category objects.
+ Every object of a CAP category lies in
+ this GAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsCapCategoryMorphism" Label="for IsCapCategoryCell"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of CAP category morphisms.
+ Every morphism of a CAP category lies in
+ this GAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="object" Type="Category" Name="IsCapCategoryTwoCell" Label="for IsCapCategoryCell"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ The GAP category of CAP category <Math>2</Math>-cells.
+ Every <Math>2</Math>-cell of a CAP category lies in
+ this GAP category.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_CAP_Categories_Section_Categorical_properties">
+<Heading>Categorical properties</Heading>
+
+<ManSection>
+  <Func Arg="list" Name="AddCategoricalProperty" />
+ <Description>
+  Adds a categorical property to the list of CAP
+  categorical properties. <A>list</A> must be a list
+  containing one entry, if the property is self dual,
+  or two, if the dual property has a different name.
+  If the first entry of the list is empty and the second
+  is a property name, the property is assumed to have no
+  dual.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsObjectFiniteCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The (evil) property of <A>C</A> being a category with finitely many objects.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsFiniteCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The (evil) property of <A>C</A> being a finite category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsFinite" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  Synonym for <C>IsFiniteCategory</C>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsEquivalentToFiniteCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of <A>C</A> being equivalent to a finite category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsFinitelyPresentedCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The (evil) property of <A>C</A> being a finitely presented.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsEquippedWithHomomorphismStructure" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being equipped with a homomorphism structure.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithDecidableLifts" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having decidable lifts.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithDecidableColifts" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having decidable colifts.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithInitialObject" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having an initial object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithTerminalObject" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having a terminal object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithZeroObject" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having a zero object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithEqualizers" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having all equalizers.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithCoequalizers" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having all coequalizers.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithCoequalizersOfIdentityAndAutomorphisms" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having all coequalizers of an identity and automorphisms.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithEqualizersOfIdentityAndAutomorphisms" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having all equalizers of an identity and automorphisms.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsEnrichedOverCommutativeRegularSemigroup" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being enriched over a commutative regular semigroup.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsSkeletalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being skeletal, that is, whether <Code>IsEqualForObjects</Code> and <Code>IsIsomorphicForObjects</Code> coincide.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsAbCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being preadditive.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsLinearCategoryOverCommutativeSemiring" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being linear over a commutative semiring.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsLinearCategoryOverCommutativeSemiringWithFinitelyGeneratedFreeExternalHoms" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being linear over a commutative semiring <Math>k</Math>
+  such that all external homs are finitely generated free <Math>k</Math>-modules.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsLinearCategoryOverCommutativeRing" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being linear over a commutative ring.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsLinearCategoryOverCommutativeRingWithFinitelyGeneratedFreeExternalHoms" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being linear over a commutative ring <Math>k</Math>
+  such that all external homs are finitely generated free <Math>k</Math>-modules.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithKernels" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having all kernels.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsCategoryWithCokernels" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> having all cokernels.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsAdditiveCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being additive.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsPreAbelianCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being preabelian.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsAbelianCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being abelian.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsAbelianCategoryWithEnoughProjectives" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being abelian with enough projectives.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsAbelianCategoryWithEnoughInjectives" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being abelian with enough injectives.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsLocallyOfFiniteProjectiveDimension" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being locally of finite projective dimension.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsLocallyOfFiniteInjectiveDimension" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being locally of finite injective dimension.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="categorical_property" Name="ListOfDefiningOperations" />
+ <Returns>a list
+</Returns>
+ <Description>
+ The input <A>categorical_property</A> is the name of a valid categorical property.
+ The output is the list of names of the CAP operations needed to make this categorical property constructive.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_CAP_Categories_Section_Constructor">
+<Heading>Constructor</Heading>
+
+<ManSection>
+  <Oper Arg="" Name="CreateCapCategory" />
+ <Returns>a category
+</Returns>
+ <Description>
+ Creates a new CAP category from scratch.
+ It gets a generic name.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s" Name="CreateCapCategory" Label="for IsString"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a string <Math>s</Math>.
+ This operation creates a new CAP category from scratch.
+ Its name is set to <Math>s</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="s, category_filter, object_filter, morphism_filter, two_cell_filter" Name="CreateCapCategory" Label="for IsString, IsFunction, IsFunction, IsFunction, IsFunction"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a string <Math>s</Math>.
+ This operation creates a new CAP category from scratch.
+ Its name is set to <Math>s</Math>.
+ The category, its objects, its morphisms, and its two cells will lie in the corresponding given filters.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="s, category_filter, object_filter, morphism_filter, two_cell_filter, object_datum_type, morphism_datum_type, two_cell_datum_type" Name="CreateCapCategoryWithDataTypes" />
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a string <Math>s</Math>.
+ This operation creates a new CAP category from scratch.
+ Its name is set to <Math>s</Math>.
+ The category, its objects, its morphisms, and its two cells will lie in the corresponding given filters.
+ The data types of the object/morphism/two cell datum can be given as described in <Ref BookName="CompilerForCAP" Func="CapJitInferredDataTypes" />.
+ As a convenience, simply a filter can be given if this suffices to fully determine the data type.
+ If a data type is not specified, pass <Code>fail</Code> instead.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_CAP_Categories_Section_Internal_Attributes">
+<Heading>Internal Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="C" Name="Name" Label="for IsCapCategory"/>
+ <Returns>a string
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is its name.
+ </Description>
+</ManSection>
+
+ Each category <Math>C</Math> stores various filters.
+ They are used to apply the right functions in the method selection.
+<ManSection>
+  <Attr Arg="C" Name="CategoryFilter" Label="for IsCapCategory"/>
+ <Returns>a filter
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is a filter in which <Math>C</Math> lies.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="ObjectFilter" Label="for IsCapCategory"/>
+ <Returns>a filter
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is a filter in which all objects
+ of <Math>C</Math> shall lie.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="MorphismFilter" Label="for IsCapCategory"/>
+ <Returns>a filter
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is a filter in which all morphisms
+ of <Math>C</Math> shall lie.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="TwoCellFilter" Label="for IsCapCategory"/>
+ <Returns>a filter
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is a filter in which all <Math>2</Math>-cells
+ of <Math>C</Math> shall lie.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="ObjectDatumType" Label="for IsCapCategory"/>
+ <Returns>a data type or <Code>fail</Code>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the data type (see <Ref BookName="CompilerForCAP" Func="CapJitInferredDataTypes" />)
+ of object data of <Math>C</Math> (or <Code>fail</Code> if this data type is not specified).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="MorphismDatumType" Label="for IsCapCategory"/>
+ <Returns>a data type or <Code>fail</Code>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the data type (see <Ref BookName="CompilerForCAP" Func="CapJitInferredDataTypes" />)
+ of morphism data of <Math>C</Math> (or <Code>fail</Code> if this data type is not specified).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="TwoCellDatumType" Label="for IsCapCategory"/>
+ <Returns>a data type or <Code>fail</Code>
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is the data type (see <Ref BookName="CompilerForCAP" Func="CapJitInferredDataTypes" />)
+ of two cell data of <Math>C</Math> (or <Code>fail</Code> if this data type is not specified).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="CommutativeSemiringOfLinearCategory" Label="for IsCapCategory"/>
+ <Returns>a ring
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math> which is expected to lie in the
+ filter <C>IsLinearCategoryOverCommutativeRing</C>.
+ The output is a commutative ring over which the category is linear.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="RangeCategoryOfHomomorphismStructure" Label="for IsCapCategory"/>
+ <Returns>a category
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math> which is expected to lie in the
+ filter <C>IsEquippedWithHomomorphismStructure</C>.
+ The output is the range category <Math>D</Math> of the defining functor
+ <Math>H: C^{\mathrm{op}} \times C \rightarrow D</Math> of the homomorphism structure.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="AdditiveGenerators" Label="for IsCapCategory"/>
+ <Returns>a list of objects
+</Returns>
+ <Description>
+ The argument is an additive category <Math>C</Math>.
+ The output is a list <Math>L</Math> of objects in <Math>C</Math> such that every object in <Math>C</Math> is a finite direct sum of objects in <Math>L</Math>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="IndecomposableProjectiveObjects" Label="for IsCapCategory"/>
+ <Returns>a list of objects
+</Returns>
+ <Description>
+  The argument is an Abelian category <Math>C</Math> with enough projectives.
+  The output is the set of indecomposable projective objects in <Math>C</Math> up to isomorphism.
+  That is every projective object in <Math>C</Math> is isomorphic to a finite direct sum over these objects.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="C" Name="IndecomposableInjectiveObjects" Label="for IsCapCategory"/>
+ <Returns>a list of objects
+</Returns>
+ <Description>
+  The argument is an Abelian category <Math>C</Math> with enough injectives.
+  The output is the set of indecomposable injective objects in <Math>C</Math> up to isomorphism.
+  That is every injective object in <Math>C</Math> is isomorphic to a finite direct sum over these objects.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Section_Logic_switcher">
+<Heading>Logic switcher</Heading>
+
+<ManSection>
+  <Func Arg="C" Name="CapCategorySwitchLogicPropagationForObjectsOn" />
+ <Description>
+  Activates the predicate logic propagation between equal objects for the category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="C" Name="CapCategorySwitchLogicPropagationForObjectsOff" />
+ <Description>
+  Deactivates the predicate logic propagation between equal objects for the category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="C" Name="CapCategorySwitchLogicPropagationForMorphismsOn" />
+ <Description>
+  Activates the predicate logic propagation between equal morphisms for the category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="C" Name="CapCategorySwitchLogicPropagationForMorphismsOff" />
+ <Description>
+  Deactivates the predicate logic propagation between equal morphisms for the category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="C" Name="CapCategorySwitchLogicPropagationOn" />
+ <Description>
+  Activates the predicate logic propagation between equal cells for the category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="C" Name="CapCategorySwitchLogicPropagationOff" />
+ <Description>
+  Deactivates the predicate logic propagation between equal cells for the category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="C" Name="CapCategorySwitchLogicOn" />
+ <Description>
+  Activates the predicate implication logic for the category <A>C</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="C" Name="CapCategorySwitchLogicOff" />
+ <Description>
+  Deactivates the predicate implication logic for the category <A>C</A>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_CAP_Categories_Section_Tool_functions">
+<Heading>Tool functions</Heading>
+
+<ManSection Label="AutoDoc_generated_group1">
+  <Oper Arg="C, string" Name="CanCompute" Label="for IsCapCategory, IsString"/>
+  <Oper Arg="C, operation" Name="CanCompute" Label="for IsCapCategory, IsFunction"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+ The argument is a category <A>C</A> and a string <A>string</A>,
+ which should be the name of a CAP operation, e.g., PreCompose.
+ If applying this method is possible in <Math>C</Math>, the method returns <C>true</C>, <C>false</C> otherwise.
+ If the string is not the name of a CAP operation, an error is raised.
+ For debugging purposes one can also pass the CAP operation instead of its name.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="cat, op_name" Name="OperationWeight" Label="for IsCapCategory, IsString"/>
+ <Returns>an integer
+</Returns>
+ <Description>
+  Returns the weight of the operation currently installed as <A>op_name</A> in <A>cat</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C,s" Name="MissingOperationsForConstructivenessOfCategory" Label="for IsCapCategory, IsStringRep"/>
+ <Returns>a list
+</Returns>
+ <Description>
+ The arguments are a category <Math>C</Math> and a string <Math>s</Math>.
+ If <Math>s</Math> is a categorical property (e.g. <C>"IsAbelianCategory"</C>),
+ the output is a list of strings with CAP operations
+ which are missing in <Math>C</Math> to have the categorical property
+ constructively.
+ If <Math>s</Math> is not a categorical property, an error is raised.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_CAP_Categories_Section_Well-Definedness_of_Cells">
+<Heading>Well-Definedness of Cells</Heading>
+
+<ManSection>
+  <Prop Arg="c" Name="IsWellDefined" Label="for IsCapCategoryCell"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+ The argument is a cell <Math>c</Math>.
+ The output is <C>true</C> if <Math>c</Math> is well-defined,
+ otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_CAP_Categories_Section_Unpacking_data_structures">
+<Heading>Unpacking data structures</Heading>
+
+<ManSection>
+  <Attr Arg="x" Name="Down" Label="for IsObject"/>
+ <Returns>a GAP object
+</Returns>
+ <Description>
+ The argument is a GAP object <Math>x</Math>.
+ If <Math>x</Math> is an object in a CAP category, the output consists of data which are needed to reconstruct <Math>x</Math>
+ (e.g., by passing them to an appropriate constructor).
+ If <Math>x</Math> is a morphism in a CAP category, the output consists of a triple whose first entry is the source of <Math>x</Math>,
+ the third entry is the range of <Math>x</Math>, and the second entry consists of data which are needed to reconstruct <Math>x</Math>
+ (e.g., by passing them to an appropriate constructor, possibly together with the source and range of <Math>x</Math>).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="x" Name="DownOnlyMorphismData" Label="for IsCapCategoryMorphism"/>
+ <Returns>a GAP object
+</Returns>
+ <Description>
+ The argument is a morphism in a CAP category, the output consists of data which are needed to reconstruct <Math>x</Math>
+ (e.g., by passing it to an appropriate constructor, possibly together with its source and range).
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="x" Name="DownToBottom" Label="for IsObject"/>
+ <Returns>a GAP object
+</Returns>
+ <Description>
+ The argument is a GAP object <Math>x</Math>.
+ This function iteratively calls <C>Down</C> until it becomes stable.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Section_Caching">
+<Heading>Caching</Heading>
+
+<ManSection>
+  <Func Arg="category, type" Name="SetCachingOfCategory" />
+ <Description>
+  Sets the caching of <A>category</A> to <A>type</A>.
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group2">
+  <Func Arg="category" Name="SetCachingOfCategoryWeak" />
+  <Func Arg="category" Name="SetCachingOfCategoryCrisp" />
+  <Func Arg="category" Name="DeactivateCachingOfCategory" />
+ <Description>
+  Sets the caching of <A>category</A> to <C>weak</C>, <C>crisp</C> or <C>none</C>, respectively.
+<P/>
+ </Description>
+</ManSection>
+
+<ManSection Label="AutoDoc_generated_group3">
+  <Func Arg="type" Name="SetDefaultCaching" />
+  <Func Arg="" Name="SetDefaultCachingWeak" />
+  <Func Arg="" Name="SetDefaultCachingCrisp" />
+  <Func Arg="" Name="DeactivateDefaultCaching" />
+ <Description>
+  Sets the default caching behaviour, all new categories will have their caching set to either
+  <C>weak</C>, <C>crisp</C>, or <C>none</C>. The default at startup is <C>weak</C>.
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Section_Sanity_checks">
+<Heading>Sanity checks</Heading>
+
+<ManSection Label="AutoDoc_generated_group4">
+  <Func Arg="category" Name="DisableInputSanityChecks" />
+  <Func Arg="category" Name="DisableOutputSanityChecks" />
+  <Func Arg="category" Name="EnablePartialInputSanityChecks" />
+  <Func Arg="category" Name="EnablePartialOutputSanityChecks" />
+  <Func Arg="category" Name="EnableFullInputSanityChecks" />
+  <Func Arg="category" Name="EnableFullOutputSanityChecks" />
+  <Func Arg="category" Name="DisableSanityChecks" />
+  <Func Arg="category" Name="EnablePartialSanityChecks" />
+  <Func Arg="category" Name="EnableFullSanityChecks" />
+ <Description>
+  Most operations can perform optional sanity checks on their arguments and results.
+  The checks can either be partial (set by default), full, or disabled.
+  With the following commands you can either enable the full checks, the partial checks or, for performance, disable the checks altogether.
+  You can do this for input checks, output checks or for both at once.
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Section_Timing_statistics">
+<Heading>Timing statistics</Heading>
+
+<ManSection Label="AutoDoc_generated_group5">
+  <Func Arg="category" Name="EnableTimingStatistics" />
+  <Func Arg="category" Name="DisableTimingStatistics" />
+  <Func Arg="category" Name="ResetTimingStatistics" />
+  <Func Arg="category" Name="DisplayTimingStatistics" />
+  <Func Arg="category" Name="BrowseTimingStatistics" />
+ <Description>
+   Enable, disable, reset, display, or browse timing statistics of the primitive operations of <A>category</A>.
+   Caution: If a primitive operation calls another primitive operation, the runtime
+   of the later (including sanity checks etc.) is also included in the runtime of the former.
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Section_Automatic_adds">
+<Heading>Enable automatic calls of <C>Add</C></Heading>
+
+<ManSection Label="AutoDoc_generated_group6">
+  <Func Arg="C" Name="EnableAddForCategoricalOperations" />
+  <Func Arg="C" Name="DisableAddForCategoricalOperations" />
+ <Description>
+  Enables/disables the automatic call of <C>Add</C> for the output
+  of primitively added functions for the category <A>C</A>.
+  If the automatic call of <C>Add</C> is disabled (default),
+  the output of primitively added functions must belong to the correct category.
+  If the automatic call of <C>Add</C> is enabled,
+  the output of primitively added functions only has to be a GAP object
+  lying in <C>IsAttributeStoringRep</C> (with suitable attributes <C>Source</C> and <C>Range</C>
+  if the output should be a morphism or a twocell).
+<P/>
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_CAP_Categories_Section_Performance_tweaks">
+<Heading>Performance tweaks</Heading>
+
+  For finding performance issues in primitive operations, you can collect timing statistics, see <Ref Sect="Section_Timing_statistics" />.
+  You can use the package <Code>CompilerForCAP</Code> to compile your code.
+  Additionally, CAP has several settings which can improve the performance.
+  In the following some of these are listed.
+<List>
+<Item>
+<C>DeactivateCachingOfCategory</C> or <C>DeactivateDefaultCaching</C>: see <Ref Sect="Section_Caching" />.
+        This can either improve or degrade the performance depending on the concrete example.
+</Item>
+<Item>
+<C>CapCategorySwitchLogicOff</C> (on by default) or <C>CapCategorySwitchLogicPropagationOff</C> (off by default): see <Ref Sect="Section_Logic_switcher" />.
+        This can either improve or degrade the performance depending on the concrete example.
+</Item>
+<Item>
+<C>DisableSanityChecks</C>: see <Ref Sect="Section_Sanity_checks" />.
+</Item>
+<Item>
+<C>DisableAddForCategoricalOperations</C>: see <Ref Sect="Section_Automatic_adds" />.
+</Item>
+<Item>
+<C>DeactivateToDoList</C>: see the package <C>ToolsForHomalg</C>.
+</Item>
+<Item>
+Use <C>CreateCapCategoryObjectWithAttributes</C> (<Ref Sect="Section_Adding_Objects_to_a_Category" />)
+        instead of <C>AddObject</C> and
+        <C>CreateCapCategoryMorphismWithAttributes</C> (<Ref Sect="Section_Adding_Morphisms_to_a_Category" />)
+        instead of <C>AddMorphism</C>.
+</Item>
+<Item>
+Pass the option <C>overhead := false</C> to <C>CreateCapCategory</C>.
+        Note: this may have unintended effects. Use with care!
+</Item>
+</List>
+</Section>
+
+<Section Label="Chapter_CAP_Categories_Section_LaTeX">
+<Heading>LaTeX</Heading>
+
+<ManSection>
+  <Oper Arg="c" Name="LaTeXOutput" Label="for IsCapCategoryCell"/>
+ <Returns>a string
+</Returns>
+ <Description>
+ The argument is a cell <Math>c</Math>.
+ The output is a LaTeX string <Math>s</Math> (without enclosing dollar signs) that may be used to print out <Math>c</Math> nicely.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="C" Name="LaTeXOutput" Label="for IsCapCategory"/>
+ <Returns>a string
+</Returns>
+ <Description>
+ The argument is a category <Math>C</Math>.
+ The output is a LaTeX string <Math>s</Math> (without enclosing dollar signs) that may be used to print out <Math>C</Math> nicely.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

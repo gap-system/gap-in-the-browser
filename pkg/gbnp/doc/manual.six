@@ -1,0 +1,432 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "GBNP",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Abstract", "0.0-1", [ 0, 0, 1 ], 32, 2, "abstract", "X7AA6C5737B711C89" ]
+    , 
+  [ "Copyright", "0.0-2", [ 0, 0, 2 ], 51, 2, "copyright", 
+      "X81488B807F2A1CF1" ], 
+  [ "Acknowledgements", "0.0-3", [ 0, 0, 3 ], 58, 2, "acknowledgements", 
+      "X82A988D47DFAFCFA" ], 
+  [ "Table of Contents", "0.0-4", [ 0, 0, 4 ], 85, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 5, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ "\033[1X\033[33X\033[0;-2YInstallation\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 16, 5, "installation", "X8360C04082558A12" ], 
+  [ "\033[1X\033[33X\033[0;-2YUsing the package\033[133X\033[101X", "1.2", 
+      [ 1, 2, 0 ], 31, 5, "using the package", "X78629CD778BE8C5D" ], 
+  [ "\033[1X\033[33X\033[0;-2YFurther documentation\033[133X\033[101X", 
+      "1.3", [ 1, 3, 0 ], 63, 6, "further documentation", "X7DDEF24284C861D8" 
+     ], [ "\033[1X\033[33X\033[0;-2YDescription\033[133X\033[101X", "2", 
+      [ 2, 0, 0 ], 1, 7, "description", "X7BBCB13F82ACC213" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YNon-commutative Polynomials (NPs)\033[133X\033[10\
+1X", "2.1", [ 2, 1, 0 ], 4, 7, "non-commutative polynomials nps", 
+      "X7FDF3E5E7F33D3A2" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YNon-commutative Polynomials for Modules (NPMs)\\
+033[133X\033[101X", "2.2", [ 2, 2, 0 ], 70, 8, 
+      "non-commutative polynomials for modules npms", "X7B27E2D1784538DE" ], 
+  [ "\033[1X\033[33X\033[0;-2YCore functions\033[133X\033[101X", "2.3", 
+      [ 2, 3, 0 ], 91, 8, "core functions", "X84BD98F5811EAC45" ], 
+  [ "\033[1X\033[33X\033[0;-2YAbout the implementation\033[133X\033[101X", 
+      "2.4", [ 2, 4, 0 ], 154, 9, "about the implementation", 
+      "X7EEE260680A64013" ], 
+  [ "\033[1X\033[33X\033[0;-2YTracing variant\033[133X\033[101X", "2.5", 
+      [ 2, 5, 0 ], 180, 9, "tracing variant", "X8739B6547BC89505" ], 
+  [ "\033[1X\033[33X\033[0;-2YTruncation variant\033[133X\033[101X", "2.6", 
+      [ 2, 6, 0 ], 200, 10, "truncation variant", "X78CF5C44879D34B6" ], 
+  [ "\033[1X\033[33X\033[0;-2YModule variant\033[133X\033[101X", "2.7", 
+      [ 2, 7, 0 ], 227, 10, "module variant", "X86F1F4EE7D4D06B7" ], 
+  [ "\033[1X\033[33X\033[0;-2YGr\303\266bner basis records\033[133X\033[101X",
+      "2.8", [ 2, 8, 0 ], 247, 11, "gra\266bner basis records", 
+      "X80DAE0A97CFC95DD" ], 
+  [ "\033[1X\033[33X\033[0;-2YQuotient algebras\033[133X\033[101X", "2.9", 
+      [ 2, 9, 0 ], 259, 11, "quotient algebras", "X85A91A467FF1DE45" ], 
+  [ "\033[1X\033[33X\033[0;-2YFunctions\033[133X\033[101X", "3", [ 3, 0, 0 ], 
+      1, 13, "functions", "X86FA580F8055B274" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YConverting polynomials into different formats\\
+033[133X\033[101X", "3.1", [ 3, 1, 0 ], 4, 13, 
+      "converting polynomials into different formats", "X81ABB91B79E00229" ], 
+  [ "\033[1X\033[33X\033[0;-2YPrinting polynomials in NP format\033[133X\033[1\
+01X", "3.2", [ 3, 2, 0 ], 227, 16, "printing polynomials in np format", 
+      "X78F44B01851B1020" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCalculating with polynomials in NP format\033[133\
+X\033[101X", "3.3", [ 3, 3, 0 ], 403, 19, 
+      "calculating with polynomials in np format", "X83DE3F817EA74727" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGr\303\266bner functions, standard variant\033[13\
+3X\033[101X", "3.4", [ 3, 4, 0 ], 769, 25, 
+      "gra\266bner functions standard variant", "X81381B2D83D2B9A9" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YFinite-dimensional quotient algebras\033[133X\\
+033[101X", "3.5", [ 3, 5, 0 ], 1078, 29, 
+      "finite-dimensional quotient algebras", "X7F387F7780425B9A" ], 
+  [ "\033[1X\033[33X\033[0;-2YFiniteness and Hilbert series\033[133X\033[101X"
+        , "3.6", [ 3, 6, 0 ], 1375, 34, "finiteness and hilbert series", 
+      "X79FE4A3983E2329F" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YFunctions of the trace variant\033[133X\033[101X"
+        , "3.7", [ 3, 7, 0 ], 1572, 37, "functions of the trace variant", 
+      "X7BA5CAA07890F7AA" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YFunctions of the truncated variant\033[133X\033[1\
+01X", "3.8", [ 3, 8, 0 ], 1735, 39, "functions of the truncated variant", 
+      "X7E4E3AD07B2465F9" ], 
+  [ "\033[1X\033[33X\033[0;-2YExamples\033[133X\033[101X", "3.8-1", 
+      [ 3, 8, 1 ], 1738, 39, "examples", "X7A489A5D79DA9E5C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YFunctions of the module variant\033[133X\033[101X\
+", "3.9", [ 3, 9, 0 ], 2010, 44, "functions of the module variant", 
+      "X8706DD3287E82019" ], 
+  [ "\033[1X\033[33X\033[0;-2YInfo Level\033[133X\033[101X", "4", 
+      [ 4, 0, 0 ], 1, 49, "info level", "X79C5DF3782576D98" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "4.1", 
+      [ 4, 1, 0 ], 4, 49, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ "\033[1X\033[33X\033[0;-2YInfoGBNP\033[133X\033[101X", "4.2", 
+      [ 4, 2, 0 ], 19, 49, "infogbnp", "X82D40B0E84383BBC" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat will be printed at level 0\033[133X\033[101X\
+", "4.2-2", [ 4, 2, 2 ], 30, 49, "what will be printed at level 0", 
+      "X8222A2F67E4CC62B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat will be printed at level 1\033[133X\033[101X\
+", "4.2-3", [ 4, 2, 3 ], 40, 49, "what will be printed at level 1", 
+      "X8552D1FF7EA2B8A6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat will be printed at level 2\033[133X\033[101X\
+", "4.2-4", [ 4, 2, 4 ], 53, 50, "what will be printed at level 2", 
+      "X7CC244E47F903B31" ], 
+  [ "\033[1X\033[33X\033[0;-2YInfoGBNPTime\033[133X\033[101X", "4.3", 
+      [ 4, 3, 0 ], 66, 50, "infogbnptime", "X7FAE244E80397B9A" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat will be printed at level 0\033[133X\033[101X\
+", "4.3-2", [ 4, 3, 2 ], 80, 50, "what will be printed at level 0", 
+      "X8222A2F67E4CC62B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat will be printed at level 1\033[133X\033[101X\
+", "4.3-3", [ 4, 3, 3 ], 86, 50, "what will be printed at level 1", 
+      "X8552D1FF7EA2B8A6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat will be printed at level 2\033[133X\033[101X\
+", "4.3-4", [ 4, 3, 4 ], 99, 50, "what will be printed at level 2", 
+      "X7CC244E47F903B31" ], 
+  [ "\033[1X\033[33X\033[0;-2YNMO Manual\033[133X\033[101X", "5", 
+      [ 5, 0, 0 ], 1, 51, "nmo manual", "X8107DEB279100E13" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "5.1", 
+      [ 5, 1, 0 ], 4, 51, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ "\033[1X\033[33X\033[0;-2YNMO Files within GBNP\033[133X\033[101X", 
+      "5.2", [ 5, 2, 0 ], 61, 52, "nmo files within gbnp", 
+      "X8282EFF97FA1752A" ], 
+  [ "\033[1X\033[33X\033[0;-2YQuickstart\033[133X\033[101X", "5.3", 
+      [ 5, 3, 0 ], 103, 52, "quickstart", "X7F83DF528480AEA3" ], 
+  [ "\033[1X\033[33X\033[0;-2YNMO Example 1\033[133X\033[101X", "5.3-1", 
+      [ 5, 3, 1 ], 120, 53, "nmo example 1", "X7B44E73581910347" ], 
+  [ "\033[1X\033[33X\033[0;-2YNMO Example 2\033[133X\033[101X", "5.3-2", 
+      [ 5, 3, 2 ], 218, 54, "nmo example 2", "X82D4722E7A4DA58B" ], 
+  [ "\033[1X\033[33X\033[0;-2YNMO Example 3\033[133X\033[101X", "5.3-3", 
+      [ 5, 3, 3 ], 298, 55, "nmo example 3", "X85A401278794C813" ], 
+  [ "\033[1X\033[33X\033[0;-2YNMO Example 4\033[133X\033[101X", "5.3-4", 
+      [ 5, 3, 4 ], 338, 56, "nmo example 4", "X7C42487D8043F876" ], 
+  [ "\033[1X\033[33X\033[0;-2YOrderings - Internals\033[133X\033[101X", 
+      "5.4", [ 5, 4, 0 ], 391, 57, "orderings - internals", 
+      "X86BAEB0C80A24491" ], 
+  [ "\033[1X\033[33X\033[0;-2YProvided Orderings\033[133X\033[101X", "5.5", 
+      [ 5, 5, 0 ], 592, 60, "provided orderings", "X7CDF05BD85AA0EE6" ], 
+  [ "\033[1X\033[33X\033[0;-2YOrderings - Externals\033[133X\033[101X", 
+      "5.6", [ 5, 6, 0 ], 644, 61, "orderings - externals", 
+      "X8374E7B780EEE873" ], 
+  [ "\033[1X\033[33X\033[0;-2YFlexibility vs. Efficiency\033[133X\033[101X", 
+      "5.6-5", [ 5, 6, 5 ], 730, 63, "flexibility vs. efficiency", 
+      "X8528D2528613E9A2" ], 
+  [ "\033[1X\033[33X\033[0;-2YUtility Routines\033[133X\033[101X", "5.7", 
+      [ 5, 7, 0 ], 751, 63, "utility routines", "X79B90CCE7A05DEEB" ], 
+  [ "\033[1X\033[33X\033[0;-2YGBNP Patching Routines\033[133X\033[101X", 
+      "5.7-1", [ 5, 7, 1 ], 754, 63, "gbnp patching routines", 
+      "X7B758C747AD2344B" ], 
+  [ "\033[1X\033[33X\033[0;-2YExamples\033[133X\033[101X", "a", 
+      [ "A", 0, 0 ], 1, 64, "examples", "X7A489A5D79DA9E5C" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "a.1", 
+      [ "A", 1, 0 ], 4, 64, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YA simple commutative Gr\303\266bner basis computa\
+tion\033[133X\033[101X", "a.2", [ "A", 2, 0 ], 75, 65, 
+      "a simple commutative gra\266bner basis computation", 
+      "X784586E47E2739E3" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YA truncated Gr\303\266bner basis for Leonard pair\
+s\033[133X\033[101X", "a.3", [ "A", 3, 0 ], 186, 67, 
+      "a truncated gra\266bner basis for leonard pairs", "X7E1B57AA85C2BA70" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe truncated variant on two weighted homogeneous\
+ polynomials\033[133X\033[101X", "a.4", [ "A", 4, 0 ], 349, 69, 
+      "the truncated variant on two weighted homogeneous polynomials", 
+      "X79AC59C482A2E4C1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe order of the Weyl group of type E\033[22X_6\\
+033[122X\033[101X\027\033[1X\027\033[133X\033[101X", "a.5", [ "A", 5, 0 ], 
+      560, 73, "the order of the weyl group of type e_6", "X7C7742957CEC6E7B" 
+     ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe gcd of some univariate polynomials\033[133X\\
+033[101X", "a.6", [ "A", 6, 0 ], 743, 76, 
+      "the gcd of some univariate polynomials", "X7E39C9738509A036" ], 
+  [ "\033[1X\033[33X\033[0;-2YFrom the Tapas book\033[133X\033[101X", "a.7", 
+      [ "A", 7, 0 ], 839, 78, "from the tapas book", "X7F5A6ABA85CDB6E2" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Birman-Murakami-Wenzl algebra of type A\033[2\
+2X_3\033[122X\033[101X\027\033[1X\027\033[133X\033[101X", "a.8", 
+      [ "A", 8, 0 ], 1007, 80, "the birman-murakami-wenzl algebra of type a_3"
+        , "X7C2CD4FA838EEE64" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Birman-Murakami-Wenzl algebra of type A\033[2\
+2X_2\033[122X\033[101X\027\033[1X\027\033[133X\033[101X", "a.9", 
+      [ "A", 9, 0 ], 1220, 84, "the birman-murakami-wenzl algebra of type a_2"
+        , "X7B5CA7F379B78CE0" ], 
+  [ "\033[1X\033[33X\033[0;-2YA commutative example by Mora\033[133X\033[101X"
+        , "a.10", [ "A", 10, 0 ], 1424, 88, "a commutative example by mora", 
+      "X83C81C987A4DE15F" ], 
+  [ "\033[1X\033[33X\033[0;-2YTracing an example by Mora\033[133X\033[101X", 
+      "a.11", [ "A", 11, 0 ], 1551, 90, "tracing an example by mora", 
+      "X7CAB94A37D580C4A" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YFiniteness of the Weyl group of type E\033[22X_6\\
+033[122X\033[101X\027\033[1X\027\033[133X\033[101X", "a.12", [ "A", 12, 0 ], 
+      1644, 91, "finiteness of the weyl group of type e_6", 
+      "X8599AE8F7E9E0368" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YPreprocessing for Weyl group computations\033[133\
+X\033[101X", "a.13", [ "A", 13, 0 ], 1735, 93, 
+      "preprocessing for weyl group computations", "X7B1822C67CF83041" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YA quotient algebra with exponential growth\033[13\
+3X\033[101X", "a.14", [ "A", 14, 0 ], 1842, 94, 
+      "a quotient algebra with exponential growth", "X7BE4A97886B0930E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YA commutative quotient algebra of polynomial grow\
+th\033[133X\033[101X", "a.15", [ "A", 15, 0 ], 1942, 96, 
+      "a commutative quotient algebra of polynomial growth", 
+      "X78679D7D80CD8822" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAn algebra over a finite field\033[133X\033[101X"
+        , "a.16", [ "A", 16, 0 ], 2107, 98, "an algebra over a finite field", 
+      "X7CE3005580EF632D" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe dihedral group of order 8\033[133X\033[101X"
+        , "a.17", [ "A", 17, 0 ], 2221, 100, "the dihedral group of order 8", 
+      "X7E4CEC577A18C8ED" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe dihedral group of order 8 on another module\\
+033[133X\033[101X", "a.18", [ "A", 18, 0 ], 2370, 103, 
+      "the dihedral group of order 8 on another module", "X83328C357FB33D17" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe dihedral group on a non-cyclic module\033[133\
+X\033[101X", "a.19", [ "A", 19, 0 ], 2453, 104, 
+      "the dihedral group on a non-cyclic module", "X85DBF3967C4DF5FE" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe icosahedral group\033[133X\033[101X", 
+      "a.20", [ "A", 20, 0 ], 2622, 106, "the icosahedral group", 
+      "X78FCAC347D9D607E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe symmetric inverse monoid for a set of size fo\
+ur\033[133X\033[101X", "a.21", [ "A", 21, 0 ], 2793, 109, 
+      "the symmetric inverse monoid for a set of size four", 
+      "X780C4B777FEA9080" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YA module of the Hecke algebra of type A\033[22X_3\
+\033[122X\033[101X\027\033[1X\027 over GF(3)\033[133X\033[101X", "a.22", 
+      [ "A", 22, 0 ], 2978, 112, 
+      "a module of the hecke algebra of type a_3 over gf 3", 
+      "X84C07DC479FBBCD5" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGeneralized Temperley-Lieb algebras\033[133X\033[\
+101X", "a.23", [ "A", 23, 0 ], 3118, 115, 
+      "generalized temperley-lieb algebras", "X78C01D1987FEF3FE" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe universal enveloping algebra of a Lie algebra\
+\033[133X\033[101X", "a.24", [ "A", 24, 0 ], 3233, 116, 
+      "the universal enveloping algebra of a lie algebra", 
+      "X85A9CEF087F3936B" ], 
+  [ "\033[1X\033[33X\033[0;-2YSerre's exercise\033[133X\033[101X", "a.25", 
+      [ "A", 25, 0 ], 3388, 119, "serres exercise", "X8498D69D8160E5FF" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YBaur and Draisma's transformations\033[133X\033[1\
+01X", "a.26", [ "A", 26, 0 ], 3477, 120, "baur and draismas transformations", 
+      "X8116448A84D69022" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe cola gene puzzle\033[133X\033[101X", 
+      "a.27", [ "A", 27, 0 ], 3567, 122, "the cola gene puzzle", 
+      "X7912E411867E5F8B" ], 
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 130, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 130, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 132, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XGP2NP\033[102X", "3.1-1", [ 3, 1, 1 ], 7, 13, "gp2np", 
+      "X7B0EBCBC7857F1AE" ], 
+  [ "\033[2XGP2NPList\033[102X", "3.1-2", [ 3, 1, 2 ], 65, 14, "gp2nplist", 
+      "X7CF0ED937DDA5A7E" ], 
+  [ "\033[2XNP2GP\033[102X", "3.1-3", [ 3, 1, 3 ], 107, 14, "np2gp", 
+      "X86C3912F781ABEDC" ], 
+  [ "\033[2XNP2GPList\033[102X", "3.1-4", [ 3, 1, 4 ], 175, 15, "np2gplist", 
+      "X844A23EA7D97150C" ], 
+  [ "\033[2XPrintNP\033[102X", "3.2-1", [ 3, 2, 1 ], 230, 16, "printnp", 
+      "X7B63BEA87A8D6162" ], 
+  [ "\033[2XGBNP.ConfigPrint\033[102X", "3.2-2", [ 3, 2, 2 ], 255, 17, 
+      "gbnp.configprint", "X7F7510A878045D3A" ], 
+  [ "\033[2XPrintNPList\033[102X", "3.2-3", [ 3, 2, 3 ], 368, 18, 
+      "printnplist", "X832103DC79A9E9D0" ], 
+  [ "\033[2XNumAlgGensNP\033[102X", "3.3-1", [ 3, 3, 1 ], 406, 19, 
+      "numalggensnp", "X7DB3792385AAA805" ], 
+  [ "\033[2XNumAlgGensNPList\033[102X", "3.3-2", [ 3, 3, 2 ], 427, 19, 
+      "numalggensnplist", "X865548F07C74AB0A" ], 
+  [ "\033[2XNumModGensNP\033[102X", "3.3-3", [ 3, 3, 3 ], 450, 20, 
+      "nummodgensnp", "X782647C57D148379" ], 
+  [ "\033[2XNumModGensNPList\033[102X", "3.3-4", [ 3, 3, 4 ], 471, 20, 
+      "nummodgensnplist", "X8119282084CA8076" ], 
+  [ "\033[2XAddNP\033[102X", "3.3-5", [ 3, 3, 5 ], 494, 20, "addnp", 
+      "X788E1ACA82A833A8" ], 
+  [ "\033[2XBimulNP\033[102X", "3.3-6", [ 3, 3, 6 ], 516, 21, "bimulnp", 
+      "X84FC611A822D808F" ], 
+  [ "\033[2XCleanNP\033[102X", "3.3-7", [ 3, 3, 7 ], 542, 21, "cleannp", 
+      "X855F3D4C783000E3" ], 
+  [ "\033[2XGtNP\033[102X", "3.3-8", [ 3, 3, 8 ], 580, 22, "gtnp", 
+      "X7D05B60E83FDA567" ], 
+  [ "\033[2XLtNP\033[102X", "3.3-9", [ 3, 3, 9 ], 605, 22, "ltnp", 
+      "X8075AE7E7A8088FF" ], 
+  [ "\033[2XLMonNP\033[102X", "3.3-10", [ 3, 3, 10 ], 629, 22, "lmonnp", 
+      "X7A42AE79811CC5D7" ], 
+  [ "\033[2XLMonsNP\033[102X", "3.3-10", [ 3, 3, 10 ], 629, 22, "lmonsnp", 
+      "X7A42AE79811CC5D7" ], 
+  [ "\033[2XLTermNP\033[102X", "3.3-11", [ 3, 3, 11 ], 663, 23, "ltermnp", 
+      "X80CD462F794A8095" ], 
+  [ "\033[2XLTermsNP\033[102X", "3.3-11", [ 3, 3, 11 ], 663, 23, "ltermsnp", 
+      "X80CD462F794A8095" ], 
+  [ "\033[2XMkMonicNP\033[102X", "3.3-12", [ 3, 3, 12 ], 686, 23, 
+      "mkmonicnp", "X878A8C027DA25196" ], 
+  [ "\033[2XFactorOutGcdNP\033[102X", "3.3-13", [ 3, 3, 13 ], 710, 24, 
+      "factoroutgcdnp", "X818147CD841BD490" ], 
+  [ "\033[2XMulNP\033[102X", "3.3-14", [ 3, 3, 14 ], 739, 24, "mulnp", 
+      "X7ABA720E87EFF040" ], 
+  [ "\033[2XGrobner\033[102X", "3.4-1", [ 3, 4, 1 ], 772, 25, "grobner", 
+      "X7CD9F9C97B2563E2" ], 
+  [ "\033[2XSGrobner\033[102X", "3.4-2", [ 3, 4, 2 ], 848, 26, "sgrobner", 
+      "X7FEDA29E78B0CEED" ], 
+  [ "\033[2XIsGrobnerBasis\033[102X", "3.4-3", [ 3, 4, 3 ], 914, 27, 
+      "isgrobnerbasis", "X80D4D22C7E643C7B" ], 
+  [ "\033[2XIsStrongGrobnerBasis\033[102X", "3.4-4", [ 3, 4, 4 ], 948, 27, 
+      "isstronggrobnerbasis", "X7D17F9027F08CF0B" ], 
+  [ "\033[2XIsGrobnerPair\033[102X", "3.4-5", [ 3, 4, 5 ], 999, 28, 
+      "isgrobnerpair", "X7E0105ED7FF4210F" ], 
+  [ "\033[2XMakeGrobnerPair\033[102X", "3.4-6", [ 3, 4, 6 ], 1039, 29, 
+      "makegrobnerpair", "X8752DA1A7CAF77D3" ], 
+  [ "\033[2XBaseQA\033[102X", "3.5-1", [ 3, 5, 1 ], 1081, 29, "baseqa", 
+      "X7EAA04247B2C6330" ], 
+  [ "\033[2XDimQA\033[102X", "3.5-2", [ 3, 5, 2 ], 1142, 30, "dimqa", 
+      "X81A50EEE7B56C723" ], 
+  [ "\033[2XMatrixQA\033[102X", "3.5-3", [ 3, 5, 3 ], 1179, 31, "matrixqa", 
+      "X7DFA841A8425DD94" ], 
+  [ "\033[2XMatricesQA\033[102X", "3.5-4", [ 3, 5, 4 ], 1249, 32, 
+      "matricesqa", "X78E4BF2F7F0D5E74" ], 
+  [ "\033[2XMulQA\033[102X", "3.5-5", [ 3, 5, 5 ], 1303, 33, "mulqa", 
+      "X80C4D0E882B05FDF" ], 
+  [ "\033[2XStrongNormalFormNP\033[102X", "3.5-6", [ 3, 5, 6 ], 1340, 33, 
+      "strongnormalformnp", "X8563683E7FA604F8" ], 
+  [ "\033[2XDetermineGrowthQA\033[102X", "3.6-1", [ 3, 6, 1 ], 1378, 34, 
+      "determinegrowthqa", "X83C57C3A7DCF0471" ], 
+  [ "\033[2XFinCheckQA\033[102X", "3.6-2", [ 3, 6, 2 ], 1455, 35, 
+      "fincheckqa", "X792E39A98717D779" ], 
+  [ "\033[2XHilbertSeriesQA\033[102X", "3.6-3", [ 3, 6, 3 ], 1499, 35, 
+      "hilbertseriesqa", "X7CFD47367CF309EB" ], 
+  [ "\033[2XPreprocessAnalysisQA\033[102X", "3.6-4", [ 3, 6, 4 ], 1530, 36, 
+      "preprocessanalysisqa", "X863124677B933CEE" ], 
+  [ "\033[2XEvalTrace\033[102X", "3.7-1", [ 3, 7, 1 ], 1575, 37, "evaltrace", 
+      "X813454F6799B1D57" ], 
+  [ "\033[2XPrintTraceList\033[102X", "3.7-2", [ 3, 7, 2 ], 1605, 37, 
+      "printtracelist", "X83D1560C7F2A04BA" ], 
+  [ "\033[2XPrintTracePol\033[102X", "3.7-3", [ 3, 7, 3 ], 1625, 37, 
+      "printtracepol", "X8039BEE77C070FB1" ], 
+  [ "\033[2XPrintNPListTrace\033[102X", "3.7-4", [ 3, 7, 4 ], 1646, 38, 
+      "printnplisttrace", "X7DD0B56D7BD6CD98" ], 
+  [ "\033[2XSGrobnerTrace\033[102X", "3.7-5", [ 3, 7, 5 ], 1666, 38, 
+      "sgrobnertrace", "X78AE6EED83B97595" ], 
+  [ "\033[2XStrongNormalFormTraceDiff\033[102X", "3.7-6", [ 3, 7, 6 ], 1695, 
+      39, "strongnormalformtracediff", "X8219059A86A54130" ], 
+  [ "\033[2XSGrobnerTrunc\033[102X", "3.8-2", [ 3, 8, 2 ], 1743, 39, 
+      "sgrobnertrunc", "X7CD043E081BF2302" ], 
+  [ "\033[2XCheckHomogeneousNPs\033[102X", "3.8-3", [ 3, 8, 3 ], 1780, 40, 
+      "checkhomogeneousnps", "X83C9E598798D5809" ], 
+  [ "\033[2XBaseQATrunc\033[102X", "3.8-4", [ 3, 8, 4 ], 1813, 40, 
+      "baseqatrunc", "X7E33C064875D95CA" ], 
+  [ "\033[2XDimsQATrunc\033[102X", "3.8-5", [ 3, 8, 5 ], 1889, 42, 
+      "dimsqatrunc", "X7C6882DB837A9F5A" ], 
+  [ "\033[2XFreqsQATrunc\033[102X", "3.8-6", [ 3, 8, 6 ], 1922, 42, 
+      "freqsqatrunc", "X7FBA7F1D79DA883F" ], 
+  [ "\033[2XSGrobnerModule\033[102X", "3.9-1", [ 3, 9, 1 ], 2013, 44, 
+      "sgrobnermodule", "X860966487ED88A43" ], 
+  [ "\033[2XBaseQM\033[102X", "3.9-2", [ 3, 9, 2 ], 2066, 45, "baseqm", 
+      "X7E3160E67C504F37" ], 
+  [ "\033[2XDimQM\033[102X", "3.9-3", [ 3, 9, 3 ], 2156, 46, "dimqm", 
+      "X813E6A2C8709C9F3" ], 
+  [ "\033[2XMulQM\033[102X", "3.9-4", [ 3, 9, 4 ], 2215, 47, "mulqm", 
+      "X805FB42A7EEF510F" ], 
+  [ "\033[2XStrongNormalFormNPM\033[102X", "3.9-5", [ 3, 9, 5 ], 2273, 48, 
+      "strongnormalformnpm", "X87D51A8379C50A80" ], 
+  [ "\033[2XInfoGBNP\033[102X", "4.2-1", [ 4, 2, 1 ], 22, 49, "infogbnp", 
+      "X82D40B0E84383BBC" ], 
+  [ "\033[2XInfoGBNPTime\033[102X", "4.3-1", [ 4, 3, 1 ], 69, 50, 
+      "infogbnptime", "X7FAE244E80397B9A" ], 
+  [ "\033[2XInstallNoncommutativeMonomialOrdering\033[102X", "5.4-1", 
+      [ 5, 4, 1 ], 453, 58, "installnoncommutativemonomialordering", 
+      "X867E06688761CB24" ], 
+  [ "\033[2XIsNoncommutativeMonomialOrdering\033[102X", "5.4-2", [ 5, 4, 2 ], 
+      500, 58, "isnoncommutativemonomialordering", "X804F724282FBA063" ], 
+  [ "\033[2XLtFunctionListRep\033[102X", "5.4-3", [ 5, 4, 3 ], 508, 59, 
+      "ltfunctionlistrep", "X7939A8DF8662C60C" ], 
+  [ "\033[2XNextOrdering\033[102X", "5.4-4", [ 5, 4, 4 ], 516, 59, 
+      "nextordering", "X7E74196084AE9036" ], 
+  [ "\033[2XParentAlgebra\033[102X", "5.4-5", [ 5, 4, 5 ], 524, 59, 
+      "parentalgebra", "X7B593F517FF63CDD" ], 
+  [ "\033[2XLexicographicTable\033[102X", "5.4-6", [ 5, 4, 6 ], 530, 59, 
+      "lexicographictable", "X850E1F2583F6E2A4" ], 
+  [ "\033[2XLexicographicIndexTable\033[102X", "5.4-7", [ 5, 4, 7 ], 537, 59, 
+      "lexicographicindextable", "X82F2AD2583B3CD48" ], 
+  [ "\033[2XLexicographicPermutation\033[102X", "5.4-8", [ 5, 4, 8 ], 564, 
+      60, "lexicographicpermutation", "X7E1C8F05791E283E" ], 
+  [ "\033[2XAuxilliaryTable\033[102X", "5.4-9", [ 5, 4, 9 ], 573, 60, 
+      "auxilliarytable", "X7EBBF4A07F46E0DD" ], 
+  [ "\033[2XOrderingLtFunctionListRep\033[102X", "5.4-10", [ 5, 4, 10 ], 580, 
+      60, "orderingltfunctionlistrep", "X8228458B86A85279" ], 
+  [ "\033[2XOrderingGtFunctionListRep\033[102X", "5.4-10", [ 5, 4, 10 ], 580, 
+      60, "orderinggtfunctionlistrep", "X8228458B86A85279" ], 
+  [ "\033[2XNCMonomialLeftLengthLexicographicOrdering\033[102X", "5.5-1", 
+      [ 5, 5, 1 ], 595, 60, "ncmonomialleftlengthlexicographicordering", 
+      "X784587377CC4D41F" ], 
+  [ "\033[2XNCMonomialLengthOrdering\033[102X", "5.5-2", [ 5, 5, 2 ], 609, 
+      60, "ncmonomiallengthordering", "X7996C01681EC5585" ], 
+  [ "\033[2XNCMonomialLeftLexicographicOrdering\033[102X", "5.5-3", 
+      [ 5, 5, 3 ], 617, 61, "ncmonomialleftlexicographicordering", 
+      "X7BD70B9C7998C0A7" ], 
+  [ "\033[2XNCMonomialCommutativeLexicographicOrdering\033[102X", "5.5-4", 
+      [ 5, 5, 4 ], 625, 61, "ncmonomialcommutativelexicographicordering", 
+      "X7E06DFFA7C4E50C1" ], 
+  [ "\033[2XNCMonomialWeightOrdering\033[102X", "5.5-5", [ 5, 5, 5 ], 635, 
+      61, "ncmonomialweightordering", "X7B3183F67AEF3C67" ], 
+  [ "\033[2XNCLessThanByOrdering\033[102X", "5.6-1", [ 5, 6, 1 ], 653, 61, 
+      "nclessthanbyordering", "X7C81894D7A9E9E92" ], 
+  [ "\033[2XNCGreaterThanByOrdering\033[102X", "5.6-2", [ 5, 6, 2 ], 662, 61, 
+      "ncgreaterthanbyordering", "X84BC0A8478272486" ], 
+  [ "\033[2XNCEquivalentByOrdering\033[102X", "5.6-3", [ 5, 6, 3 ], 671, 62, 
+      "ncequivalentbyordering", "X817144A57BF6865A" ], 
+  [ "\033[2XNCSortNP\033[102X", "5.6-4", [ 5, 6, 4 ], 720, 62, "ncsortnp", 
+      "X86A2533780F2BC8C" ], 
+  [ "\033[2XPatchGBNP\033[102X", "5.7-1", [ 5, 7, 1 ], 754, 63, "patchgbnp", 
+      "X7B758C747AD2344B" ], 
+  [ "\033[2XUnpatchGBNP\033[102X", "5.7-1", [ 5, 7, 1 ], 754, 63, 
+      "unpatchgbnp", "X7B758C747AD2344B" ] ]
+);

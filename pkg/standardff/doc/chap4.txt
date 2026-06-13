@@ -1,0 +1,500 @@
+  
+  [1X4 [33X[0;0YUtilities from the [5XStandardFF[105X[101X[1X package[133X[101X
+  
+  
+  [1X4.1 [33X[0;0YA simple bijection on a range[133X[101X
+  
+  [1X4.1-1 StandardAffineShift[101X
+  
+  [33X[1;0Y[29X[2XStandardAffineShift[102X( [3Xq[103X, [3Xi[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Yan integer in range [10X[0..q-1][110X[133X
+  
+  [33X[0;0YThis  function returns [22X(m [3Xi[103X + a) mod [3Xq[103X[122X, where [22Xm[122X is the largest integer prime
+  to [3Xq[103X and [22X≤ 4 [3Xq[103X / 5[122X, and a is the largest integer [22X≤ 2 [3Xq[103X / 3[122X.[133X
+  
+  [33X[0;0YFor fixed [22Xq[122X this function provides a bijection on the range [10X[0..q-1][110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XList([0..10], i-> StandardAffineShift(11, i));[127X[104X
+    [4X[28X[ 7, 4, 1, 9, 6, 3, 0, 8, 5, 2, 10 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.2 [33X[0;0YFinding linear combinations[133X[101X
+  
+  [1X4.2-1 FindLinearCombination[101X
+  
+  [33X[1;0Y[29X[2XFindLinearCombination[102X( [3Xv[103X, [3Xstart[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya pair [10X[serec, lk][110X of a record and vector or [9Xfail[109X[133X
+  
+  [33X[0;0YRepeated  calls of this function build up a semiechelon basis from the given
+  arguments  [3Xv[103X  which  must  be  row  vectors. To initialize a computation the
+  function  is  called with a start vector [3Xv[103X and [9Xfalse[109X as second argument. The
+  return  value  is  a pair [10X[serec, lk][110X where [10Xserec[110X is a record which collects
+  data  from  the  previous calls of the function and [10Xlk[110X is a row vector which
+  expresses  [3Xv[103X  as  linear  combination of the vectors from previous calls, or
+  [9Xfail[109X  if there is no such linear combination. In the latter case the data in
+  the record is extended with the linearly independent vector [10Xv[110X.[133X
+  
+  [33X[0;0YIn  the  following  example  we show how to compute a divisor of the minimal
+  polynomial of a matrix.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xmat := Product(GeneratorsOfGroup(Sp(30,5)));;[127X[104X
+    [4X[25Xgap>[125X [27Xx := Indeterminate(GF(5), "x");;[127X[104X
+    [4X[25Xgap>[125X [27Xv := (mat^0)[1];;[127X[104X
+    [4X[25Xgap>[125X [27Xb := FindLinearCombination(v, false);;[127X[104X
+    [4X[25Xgap>[125X [27Xrepeat[127X[104X
+    [4X[25X>[125X [27X  v := v*mat;[127X[104X
+    [4X[25X>[125X [27X  l := FindLinearCombination(v, b[1]);[127X[104X
+    [4X[25X>[125X [27Xuntil IsList(l[2]);[127X[104X
+    [4X[25Xgap>[125X [27Xmp := Value(UnivariatePolynomial(GF(5),[127X[104X
+    [4X[25X>[125X [27X        Concatenation(-l[2], [One(GF(5))])), x);[127X[104X
+    [4X[28Xx^30+Z(5)^3*x^29+Z(5)^3*x+Z(5)^0[128X[104X
+    [4X[25Xgap>[125X [27X# equal to minimal polynomial because of degree[127X[104X
+    [4X[25Xgap>[125X [27Xmp = Value(MinimalPolynomial(GF(5), mat), x);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.3 [33X[0;0YIrreducibility over finite fields[133X[101X
+  
+  [1X4.3-1 IsIrreducibleCoeffList[101X
+  
+  [33X[1;0Y[29X[2XIsIrreducibleCoeffList[102X( [3Xcoeffs[103X, [3Xq[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YThe  argument  [3Xcoeffs[103X  must  be  a list of elements in a finite field with [3Xq[103X
+  elements (or some subfield of it).[133X
+  
+  [33X[0;0YThe  function  checks  if  the univariate polynomial [22Xf[122X with coefficient list
+  [3Xcoeffs[103X  (ending  with the leading coefficient) is irreducible over the field
+  with [3Xq[103X elements.[133X
+  
+  [33X[0;0YThe algorithm computes the greatest common divisor of [22Xf[122X with [22XX^{q^i} - X[122X for
+  [22Xi = 1, 2, ...[122X up to half of the degree of [22Xf[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xcs := Z(3)^0 * ConwayPol(3,8);[127X[104X
+    [4X[28X[ Z(3), Z(3), Z(3), 0*Z(3), Z(3)^0, Z(3), 0*Z(3), 0*Z(3), Z(3)^0 ][128X[104X
+    [4X[25Xgap>[125X [27XIsIrreducibleCoeffList(cs, 3);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XF := FF(17,4);; x := PrimitiveElement(F);;[127X[104X
+    [4X[25Xgap>[125X [27Xcs := [x, x+x^0, 0*x, x^0];[127X[104X
+    [4X[28X[ ZZ(17,4,[0,1,0,0]), ZZ(17,4,[1,1,0,0]), ZZ(17,4,[0]), ZZ(17,4,[1]) ][128X[104X
+    [4X[25Xgap>[125X [27Xwhile not IsIrreducibleCoeffList(cs, 17^4) do[127X[104X
+    [4X[25X>[125X [27X   cs[1] := cs[1] + One(F);[127X[104X
+    [4X[25X>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xcs;[127X[104X
+    [4X[28X[ ZZ(17,4,[8,1,0,0]), ZZ(17,4,[1,1,0,0]), ZZ(17,4,[0]), ZZ(17,4,[1]) ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.4 [33X[0;0YConnection to Conway polynomials[133X[101X
+  
+  [1X4.4-1 FindConjugateZeroes[101X
+  
+  [33X[1;0Y[29X[2XFindConjugateZeroes[102X( [3XK[103X, [3Xcpol[103X, [3Xqq[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya list of field elements[133X
+  
+  [33X[0;0YThe  arguments  must  be  a finite field [3XK[103X, a polynomial [3Xcpol[103X over [3XK[103X (or its
+  coefficient  list)  and the order [3Xqq[103X of a subfield of [3XK[103X. The polynomial must
+  have  coeffcients in the subfield with [3Xqq[103X elements, must be irreducible over
+  this   subfield   and  split  into  linear  factors  over  [3XK[103X.  The  function
+  [2XFindConjugateZeroes[102X returns the list of zeroes of [3Xcpol[103X in [3XK[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XK := GF(67,18);[127X[104X
+    [4X[28XGF(67^18)[128X[104X
+    [4X[25Xgap>[125X [27XF := FF(67,18);[127X[104X
+    [4X[28XFF(67, 18)[128X[104X
+    [4X[25Xgap>[125X [27Xp1 := DefiningPolynomial(K);;[127X[104X
+    [4X[25Xgap>[125X [27Xp2 := DefiningPolynomial(F);;[127X[104X
+    [4X[25Xgap>[125X [27XlK := FindConjugateZeroes(K, p2, 67);;[127X[104X
+    [4X[25Xgap>[125X [27XlF := FindConjugateZeroes(F, p1, 67);;[127X[104X
+    [4X[25Xgap>[125X [27XMinimum(List(lF, SteinitzNumber));[127X[104X
+    [4X[28X12274789318154414216760893584069[128X[104X
+  [4X[32X[104X
+  
+  [1X4.4-2 ZeroesConway[101X
+  
+  [33X[1;0Y[29X[2XZeroesConway[102X( [3XF[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya list of field elements[133X
+  
+  [33X[0;0YHere,  [3XF[103X  must  be  a  standard finite field, say of degree [22Xn[122X over the prime
+  field    with    [22Xp[122X   elements.   This   function   returns   the   same   as
+  [10XFindConjugateZeroes(F,   One(F)*ConwayPol(p,   n),   p)[110X  (using  a  specific
+  implementation).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(23,29);[127X[104X
+    [4X[28XFF(23, 29)[128X[104X
+    [4X[25Xgap>[125X [27Xl := Set(FindConjugateZeroes(F, One(F)*ConwayPol(23,29), 23));;[127X[104X
+    [4X[25Xgap>[125X [27Xl = Set(ZeroesConway(F));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X4.4-3 SteinitzPairConwayGenerator[101X
+  
+  [33X[1;0Y[29X[2XSteinitzPairConwayGenerator[102X( [3XF[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya pair of integers[133X
+  
+  [33X[0;0YFor  a standard finite field [3XF[103X of order [22Xq[122X for which a Conway polynomial (see
+  [2XConwayPolynomial[102X  ([14XReference:  ConwayPolynomial[114X))  is  known  this  function
+  returns  the [2XSteinitzPair[102X ([14X2.4-1[114X) for the element of [3XF[103X corresponding to [10XZ(q)[110X
+  (which  is  by  definition  the  zero of the Conway polynomial in [3XF[103X with the
+  smallest  Steinitz  number which is compatible with the choice in all proper
+  subfields).[133X
+  
+  [33X[0;0YThis is used to construct the [2XStandardIsomorphismGF[102X ([14X2.4-5[114X) for [3XF[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(23,18);[127X[104X
+    [4X[28XFF(23, 18)[128X[104X
+    [4X[25Xgap>[125X [27Xst := SteinitzPairConwayGenerator(F);[127X[104X
+    [4X[28X[ 18, 1362020736983803830549380 ][128X[104X
+    [4X[25Xgap>[125X [27Xst9 := SteinitzPairConwayGenerator(FF(23,9));[127X[104X
+    [4X[28X[ 9, 206098743447 ][128X[104X
+    [4X[25Xgap>[125X [27Xst6 := SteinitzPairConwayGenerator(FF(23,6));[127X[104X
+    [4X[28X[ 6, 45400540 ][128X[104X
+    [4X[25Xgap>[125X [27Xz  := ElementSteinitzNumber(F, st[2]);;[127X[104X
+    [4X[25Xgap>[125X [27Xz9 := ElementSteinitzNumber(F, SteinitzNumber(F, st9));;[127X[104X
+    [4X[25Xgap>[125X [27Xz6 := ElementSteinitzNumber(F, SteinitzNumber(F, st6));;[127X[104X
+    [4X[25Xgap>[125X [27Xe9 := (Size(F)-1)/(23^9-1);[127X[104X
+    [4X[28X1801152661464[128X[104X
+    [4X[25Xgap>[125X [27Xe6 := (Size(F)-1)/(23^6-1);[127X[104X
+    [4X[28X21914624580056211[128X[104X
+    [4X[25Xgap>[125X [27Xz9 = z^e9;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xz6 = z^e6;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xl := Filtered(ZeroesConway(F), x-> x^e9 = z9 and x^e6 = z6);;[127X[104X
+    [4X[25Xgap>[125X [27XList(l, SteinitzNumber);[127X[104X
+    [4X[28X[ 1362020736983803830549380 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.5 [33X[0;0YDiscrete logarithms[133X[101X
+  
+  [1X4.5-1 DLog[101X
+  
+  [33X[1;0Y[29X[2XDLog[102X( [3Xbase[103X, [3Xx[103X[, [3Xm[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Yan integer[133X
+  
+  [33X[0;0YThe  argument  [3Xbase[103X  must  be a multiplicative element and [3Xx[103X must lie in the
+  cyclic  group  generated  by [3Xbase[103X. The third argument [3Xm[103X must be the order of
+  [3Xbase[103X  or  its  factorization.  If [3Xm[103X is not given, it is computed first. This
+  function  returns  the  discrete  logarithm,  that is an integer [22Xe[122X such that
+  [3Xbase[103X[22X^e =[122X [3Xx[103X.[133X
+  
+  [33X[0;0YIf [3Xm[103X is prime then Shanks' algorithm is used (which needs [22XO(sqrt[3Xm[103X)[122X space and
+  time).  Otherwise  let  [3Xm[103X  [22X=  r  l[122X  and [22Xe = a + b r[122X with [22X0 ≤ a < r[122X. Then [22Xa =[122X
+  [10XDLog[110X[22X([3Xbase[103X^l, [3Xx[103X^l, r)[122X and [22Xb =[122X [10XDLog[110X[22X([3Xbase[103X^r, [3Xx[103X/[3Xbase[103X^a, l)[122X.[133X
+  
+  [33X[0;0YThis function is used for a method of [2XLogFFE[102X ([14XReference: LogFFE[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XF := FF(67, 12);[127X[104X
+    [4X[28XFF(67, 12)[128X[104X
+    [4X[25Xgap>[125X [27Xst := SteinitzPairConwayGenerator(F);[127X[104X
+    [4X[28X[ 12, 5118698034368952035290 ][128X[104X
+    [4X[25Xgap>[125X [27Xz := ElementSteinitzNumber(F, st[2]);;[127X[104X
+    [4X[25Xgap>[125X [27Xx := StandardPrimitiveRoot(F);;[127X[104X
+    [4X[25Xgap>[125X [27XDLog(z, x, Size(F)-1);[127X[104X
+    [4X[28X231901568073107448223[128X[104X
+    [4X[25Xgap>[125X [27XK := GF(67,12);[127X[104X
+    [4X[28XGF(67^12)[128X[104X
+    [4X[25Xgap>[125X [27Xzz := Z(67^12);[127X[104X
+    [4X[28Xz[128X[104X
+    [4X[25Xgap>[125X [27XLogFFE(zz^2+1, zz);[127X[104X
+    [4X[28X1667375214152688471247[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.6 [33X[0;0YMinimal polynomials of sequences[133X[101X
+  
+  [1X4.6-1 InvModCoeffs[101X
+  
+  [33X[1;0Y[29X[2XInvModCoeffs[102X( [3Xfcoeffs[103X, [3Xgcoeffs[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya list of [9Xfail[109X[133X
+  
+  [33X[0;0YThe  arguments  [3Xfcoeffs[103X and [3Xgcoeffs[103X are coeffient lists of two polynomials [22Xf[122X
+  and  [22Xg[122X.  This  operation  returns  the  coefficient list of the inverse [22Xf^-1[122X
+  modulo [22Xg[122X, if [22Xf[122X and [22Xg[122X are coprime, and [9Xfail[109X otherwise.[133X
+  
+  [33X[0;0YThe default method computes the inverse by the extended Euclidean algorithm.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xf := Z(13)^0*[ 1, 10, 1, 11, 0, 1 ];;[127X[104X
+    [4X[25Xgap>[125X [27Xg := Z(13)^0*[ 5, 12, 5, 12, 2, 0, 2 ];;[127X[104X
+    [4X[25Xgap>[125X [27XInvModCoeffs(f, g);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XGcdCoeffs(f, g);[127X[104X
+    [4X[28X[ Z(13)^0, 0*Z(13), Z(13)^0 ][128X[104X
+    [4X[25Xgap>[125X [27Xf[1]:=f[1]+1;;[127X[104X
+    [4X[25Xgap>[125X [27Xfinv := InvModCoeffs(f, g);[127X[104X
+    [4X[28X[ Z(13)^9, Z(13)^10, Z(13)^10, Z(13)^8, Z(13)^5, Z(13)^6 ][128X[104X
+    [4X[25Xgap>[125X [27Xpr := ProductCoeffs(finv, f);;[127X[104X
+    [4X[25Xgap>[125X [27XReduceCoeffs(pr, g);; ShrinkRowVector(pr);; pr;[127X[104X
+    [4X[28X[ Z(13)^0 ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.6-2 BerlekampMassey[101X
+  
+  [33X[1;0Y[29X[2XBerlekampMassey[102X( [3Xu[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya list of field elements[133X
+  
+  [33X[0;0YThe  argument [3Xu[103X is a list of elements in a field [22XF[122X. This function implements
+  the  Berlekamp-Massey  algorithm  which  returns  the shortest sequence [22Xc[122X of
+  elements  in  [22XF[122X  such  that  for each [22Xi > l[122X, the length of [22Xc[122X, we have [22Xu[i] =
+  ∑_{j=1}^l [3Xu[103X[i-j] c[j][122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx := Indeterminate(GF(23), "x");;[127X[104X
+    [4X[25Xgap>[125X [27Xf := x^5 + Z(23)^16*x + Z(23)^12;;[127X[104X
+    [4X[25Xgap>[125X [27Xu := List([1..50], i-> Value(x^i mod f, 0));;[127X[104X
+    [4X[25Xgap>[125X [27Xc := BerlekampMassey(u);;[127X[104X
+    [4X[25Xgap>[125X [27XForAll([6..50], i-> u[i] = Sum([1..5], j-> u[i-j]*c[j]));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X-c;[127X[104X
+    [4X[28X[ 0*Z(23), 0*Z(23), 0*Z(23), Z(23)^16, Z(23)^12 ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.6-3 MinimalPolynomialByBerlekampMassey[101X
+  
+  [33X[1;0Y[29X[2XMinimalPolynomialByBerlekampMassey[102X( [3Xx[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XMinimalPolynomialByBerlekampMasseyShoup[102X( [3Xx[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ythe minimal polynomial of [3Xx[103X[133X
+  
+  [33X[0;0YHere  [22Xx[122X  must  be an element of an algebraic extension field [22XF/K[122X. ([22XK[122X must be
+  the  [2XLeftActingDomain[102X  ([14XReference:  LeftActingDomain[114X)  of  [22XF[122X). This function
+  computes the minimal polynomial of [3Xx[103X over [22XK[122X by applying the Berlekamp-Massey
+  algorithm to the list of traces of [22X[3Xx[103X^i[122X.[133X
+  
+  [33X[0;0YThe second variant uses the algorithm by Shoup in [Sho99].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx := Indeterminate(GF(23), "x");;[127X[104X
+    [4X[25Xgap>[125X [27Xf := x^5 + Z(23)^16*x + Z(23)^12;;[127X[104X
+    [4X[25Xgap>[125X [27XF := AlgebraicExtension(GF(23), f);;[127X[104X
+    [4X[25Xgap>[125X [27Xmp := MinimalPolynomialByBerlekampMassey(PrimitiveElement(F));;[127X[104X
+    [4X[25Xgap>[125X [27XValue(mp, x) = f;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xmp = MinimalPolynomialByBerlekampMasseyShoup(PrimitiveElement(F));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.7 [33X[0;0YBrauer characters with respect to different lifts[133X[101X
+  
+  [33X[0;0YLet  [22XG[122X  be  a  finite group, [22Xg ∈ G[122X, and [22Xρ: G -> GL(d,p^n)[122Xbe a representation
+  over a finite field. The Brauer character value [22Xχ(g)[122X of [22Xρ[122X at [22Xg[122X is defined as
+  the sum of the eigenvalues of [22Xρ(g)[122X in the algebraic closure of [22XF_p[122X lifted to
+  complex roots of unity.[133X
+  
+  [33X[0;0YThe  lift used by [2XBrauerCharacterValue[102X ([14XReference: BrauerCharacterValue[114X) and
+  in  the  computation  of many Brauer character tables (available through the
+  [5XCTblLib[105X  package)  is  defined  by  Conway polynomials (see [2XConwayPolynomial[102X
+  ([14XReference: ConwayPolynomial[114X)): They define the primitive root [10XZ(q)[110X in [10XGF(q)[110X
+  which is mapped to [22Xexp(2 π i / (q-1))[122X (that is [10XE(q-1)[110X in [5XGAP[105X).[133X
+  
+  [33X[0;0YAnother  lift  is  defined  by  the function [2XStandardCyclicGenerator[102X ([14X3.1-1[114X)
+  provided  by  this package. Here, [10XStandardCyclicGenerator(F, m)[110X is mapped to
+  [22Xexp(2 π i / m)[122X (that is [10XE(m)[110X in [5XGAP[105X).[133X
+  
+  [33X[0;0YThe following function translates between these two lifts.[133X
+  
+  [1X4.7-1 StandardValuesBrauerCharacter[101X
+  
+  [33X[1;0Y[29X[2XStandardValuesBrauerCharacter[102X( [3Xtab[103X, [3Xbch[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya Brauer character[133X
+  
+  [33X[1;0Y[29X[2XIsGaloisInvariant[102X( [3Xtab[103X, [3Xbch[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YThe  argument  [3Xtab[103X  must  be  a  Brauer character table for which the Brauer
+  characters are defined with respect to the lift given by Conway polynomials.
+  And [3Xbch[103X must be an irreducible Brauer character of this table.[133X
+  
+  [33X[0;0YThe    function    [2XStandardValuesBrauerCharacter[102X   recomputes   the   values
+  corresponding to the lift given by [2XStandardCyclicGenerator[102X ([14X3.1-1[114X), provided
+  that  the Conway polynomials for computing the Frobenius character values of
+  [3Xbch[103X  are  available.  If  Conway  polynomials  are missing the corresponding
+  character  values  are  substituted  by [9Xfail[109X. If the result does not contain
+  [9Xfail[109X  it is a class function which is Galois conjugate to [3Xbch[103X (see [2XGaloisCyc[102X
+  ([14XReference: GaloisCyc for a class function[114X)).[133X
+  
+  [33X[0;0YThe  utility  [2XIsGaloisInvariant[102X returns [9Xtrue[109X if all Galois conjugates of [3Xbch[103X
+  are  Brauer characters in [3Xtab[103X. If this is the case then different lifts will
+  permute  the  Galois  conjugates  and all of them are Brauer characters with
+  respect to any lift.[133X
+  
+  [33X[0;0YWARNING: The result of this function may not be a valid Brauer character for
+  the  table  [3Xtab[103X (that is an integer linear combination of irreducible Brauer
+  characters  in  [3Xtab[103X).  For  a  proper  handling  of  several  lifts the data
+  structure  of Brauer character tables needs to be extended (it must refer to
+  the  lift),  and  then  the  result  of this function should return a Brauer
+  character of another table that refers to another lift.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xtab := BrauerTable("M", 19);[127X[104X
+    [4X[28XBrauerTable( "M", 19 )[128X[104X
+    [4X[25Xgap>[125X [27X# cannot translate some values to different lift[127X[104X
+    [4X[25Xgap>[125X [27Xfail in AsList(StandardValuesBrauerCharacter(tab, Irr(tab)[16]));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X# but table contains the irreducible Brauer characters for any lift[127X[104X
+    [4X[25Xgap>[125X [27XForAll(Irr(tab), bch-> IsGaloisInvariant(tab, bch));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xtab := BrauerTable("A18", 3);[127X[104X
+    [4X[28XBrauerTable( "A18", 3 )[128X[104X
+    [4X[25Xgap>[125X [27X# here different lifts lead to different Brauer character tables[127X[104X
+    [4X[25Xgap>[125X [27Xbch := Irr(tab)[38];;[127X[104X
+    [4X[25Xgap>[125X [27XIsGaloisInvariant(tab, bch);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xnew := StandardValuesBrauerCharacter(tab, bch);;[127X[104X
+    [4X[25Xgap>[125X [27Xfail in AsList(new);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XPosition(Irr(tab), new);[127X[104X
+    [4X[28Xfail[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe inverse of a lift is used to reduce character values in characteristic [22X0[122X
+  modulo  a  prime  [22Xp[122X.  Choosing  a lift is equivalent to choosing a [22Xp[122X-modular
+  system.   [5XGAP[105X   has   the   function   [2XFrobeniusCharacterValue[102X   ([14XReference:
+  FrobeniusCharacterValue[114X)  which  computes this reduction with respect to the
+  lift defined by Conway polynomials.[133X
+  
+  [33X[0;0YHere  is  the corresponding function with respect to the lift constructed in
+  this package.[133X
+  
+  
+  [1X4.7-2 [33X[0;0YFrobenius character values[133X[101X
+  
+  [33X[1;0Y[29X[2XSmallestDegreeFrobeniusCharacterValue[102X( [3Xcyc[103X, [3Xp[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya positive integer or [9Xfail[109X[133X
+  
+  [33X[1;0Y[29X[2XStandardFrobeniusCharacterValue[102X( [3Xcyc[103X, [3XF[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Yan element of [3XF[103X or [9Xfail[109X[133X
+  
+  [33X[0;0YThe  argument  [3Xcyc[103X  must be a cyclotomic whose conductor and denominator are
+  not  divisible  by the prime integer [3Xp[103X or the characteristic of the standard
+  finite field [3XF[103X.[133X
+  
+  [33X[0;0YThe  order  of  the  multiplicative  group  of  [3XF[103X  must  be divisible by the
+  conductor of [3Xcyc[103X.[133X
+  
+  [33X[0;0YThen [2XStandardFrobeniusCharacterValue[102X returns the image of [3Xcyc[103X in [3XF[103X under the
+  homomorphism    which    maps    the    root    of   unity   [10XE(n)[110X   to   the
+  [2XStandardCyclicGenerator[102X  ([14X3.1-1[114X)  of order [10Xn[110X in [3XF[103X. If the conditions are not
+  fulfilled the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YThe  function  [2XSmallestDegreeFrobeniusCharacterValue[102X  returns  the  smallest
+  degree  of  a  field over the prime field of order [3Xp[103X containing the image of
+  [3Xcyc[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSmallestDegreeFrobeniusCharacterValue(E(13), 19);[127X[104X
+    [4X[28X12[128X[104X
+    [4X[25Xgap>[125X [27XF := FF(19,12);[127X[104X
+    [4X[28XFF(19, 12)[128X[104X
+    [4X[25Xgap>[125X [27Xx := StandardFrobeniusCharacterValue(E(13),F);;[127X[104X
+    [4X[25Xgap>[125X [27Xx^13;[127X[104X
+    [4X[28XZZ(19,12,[1])[128X[104X
+    [4X[25Xgap>[125X [27Xx = StandardCyclicGenerator(F, 13);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xcc := (E(13)+1/3)^4;;[127X[104X
+    [4X[25Xgap>[125X [27Xxx := StandardFrobeniusCharacterValue(cc, F);;[127X[104X
+    [4X[25Xgap>[125X [27Xxx = StandardFrobeniusCharacterValue(E(13)+1/3, F)^4;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.8 [33X[0;0YKnown factorizations of multiplicative group orders[133X[101X
+  
+  [1X4.8-1 CANFACT[101X
+  
+  [33X[1;0Y[29X[2XCANFACT[102X [32X global variable[133X
+  
+  [33X[0;0YThis  variable  contains  a  list  where  for each prime [22Xp < 10000[122X the entry
+  [10XCANFACT[p][110X  holds a list of integers [22Xi[122X such that the number [22Xp^i-1[122X (the order
+  of  the multiplicative group of the finite field [10XFF(p,i)[110X) can be factored by
+  [5XGAP[105X  in  a short time. This is based on the enormous efforts to find factors
+  of numbers of this form, see [Cro].[133X
+  
+  [33X[0;0YFor  [22Xp  < 10[122X the range of considered exponents is [22X2 ≤ i ≤ 2000[122X, for [22X10 < p <
+  100[122X it is [22X2 ≤ i ≤ 500[122X, and for [22X100 < p < 10000[122X it is [22X2 ≤ i ≤ 100[122X.[133X
+  
+  [33X[0;0YThese   data   describe   (in   May  2022)  [22X112968[122X  pairs  [10Xp,  i[110X  such  that
+  [10XStandardPrimitiveRoot(FF(p,i))[110X  can be computed in reasonable time. Only for
+  [22X10858[122X  of  these  cases  [5XGAP[105X  knows  or can easily compute the corresponding
+  Conway polynomial (see [2XConwayPolynomial[102X ([14XReference: ConwayPolynomial[114X)).[133X
+  
+  [33X[0;0YThe  current content of [10XCANFACT[110X was generated after updating the data in the
+  [5XFactInt[105X  package  concerning  factors of numbers of the form [22Xa^n ± 1[122X. If you
+  want to use that list you should also update your [5XGAP[105X installation with:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28XFetchMoreFactors([128X[104X
+    [4X[28X  "https://maths-people.anu.edu.au/~brent/ftp/factors/factors.gz",[128X[104X
+    [4X[28X  false);[128X[104X
+    [4X[28XFetchMoreFactors([128X[104X
+    [4X[28X  "http://myfactorcollection.mooo.com:8090/brentdata/May31_2022/factors.gz",[128X[104X
+    [4X[28X  true);[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.9 [33X[0;0YSome loops for [5XStandardFF[105X[101X[1X[133X[101X
+  
+  
+  [1X4.9-1 [33X[0;0YComputing all fields in various ranges[133X[101X
+  
+  [33X[1;0Y[29X[2XAllPrimeDegreePolynomials[102X( [3Xp[103X, [3Xbound[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAllFF[102X( [3Xp[103X, [3Xbound[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAllPrimitiveRoots[102X( [3Xp[103X, [3Xbound[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAllPrimitiveRootsCANFACT[102X(  ) [32X function[133X
+  [33X[1;0Y[29X[2XAllFieldsWithConwayPolynomial[102X( [[3X"ConwayGen"[103X][,] [[3X"MiPo"[103X] ) [32X function[133X
+  
+  [33X[0;0YThese  function  compute  all  fields  in some range, sometimes with further
+  data.  All functions return a list with some timings and print a log-file in
+  the current directory.[133X
+  
+  [33X[0;0Y[2XAllPrimeDegreePolynomials[102X  computes  all  irreducible  polynomials  of prime
+  degree  needed for the construction of all finite fields of order [22X[3Xp[103X^i[122X, [22X1 ≤ i
+  ≤  [3Xbound[103X[122X.  This  is  the most time consuming part in the construction of the
+  fields.[133X
+  
+  [33X[0;0Y[2XAllFF[102X computes all [10XFF(p,i)[110X for [22X1 ≤ i ≤ [3Xbound[103X[122X. When the previous function was
+  called  before  for the same range, this function spends most of its time by
+  computing  the minimal polynomials of the standardized primitive elements of
+  [10XFF(p,i)[110X.[133X
+  
+  [33X[0;0Y[2XAllPrimitiveRoots[102X computes the standardized primitive roots in [10XFF(p,i)[110X for [22X1
+  ≤  i ≤ [3Xbound[103X[122X. The most time consuming cases are when a large prime divisor [22Xr[122X
+  of  [22Xp^i-1[122X  already  divides  [22Xp^j-1[122X  for some [22Xj < i[122X (but then [22Xr[122X divides [22Xi/j[122X).
+  Cases  where  [5XGAP[105X  cannot  factorize  [22Xp^i-1[122X  (that  is [22Xi[122X is not contained in
+  [10XCANFACT[p][110X) are skipped.[133X
+  
+  [33X[0;0Y[2XAllPrimitiveRootsCANFACT[102X  does  the  same  as  the previous function for all
+  pairs [22Xp, i[122X stored in [2XCANFACT[102X ([14X4.8-1[114X).[133X
+  
+  [33X[0;0Y[2XAllFieldsWithConwayPolynomial[102X  computes  all [10XFF(p,i)[110X for the cases where [5XGAP[105X
+  knows  the  precomputed  [10XConwayPolynomial(p,i)[110X.  With  the optional argument
+  [10X"ConwayGen[110X     the     function     computes     for    all    fields    the
+  [2XSteinitzPairConwayGenerator[102X    ([14X4.4-3[114X)   and   writes   it   into   a   file
+  [11XSteinitzPairConway[111X.  With  the  optional  argument  [10X"MiPo"[110X the function also
+  computes  the  minimal  polynomials of the [2XStandardPrimitiveRoot[102X ([14X3.1-1[114X) and
+  writes  it  to  a  file  [11XMiPoPrimitiveRoots[111X (these polynomials have the same
+  compatibility properties as Conway polynomials).[133X
+  
+  
+  [1X4.10 [33X[0;0YUndocumented features[133X[101X
+  
+  [33X[0;0YWe  mention  some features of this package which may be temporary, vanish or
+  changed.[133X
+  
+  [33X[0;0YA  directory  [11Xntl[111X  contains  some  simple  standalone programs which use the
+  library NTL [Sho]. There is a function [10XStandardIrreducibleCoeffListNTL(K, d,
+  a)[110X  which  can  be  used instead of [10XStandardIrreducibleCoeffListNTL(K, d, a)[110X
+  when  [10XK[110X is a prime field. This gives a good speedup for not too small [10Xd[110X, say
+  [10Xd[110X [22X>500[122X.[133X
+  

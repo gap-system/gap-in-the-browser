@@ -1,0 +1,85 @@
+  
+  
+                                   [1X[5XStandardFF[105X[101X
+  
+  
+                                ( Version 1.0 )
+  
+  
+                                 September 2023
+  
+  
+                                  Frank Lübeck
+  
+  
+  
+  Frank Lübeck
+      Email:    [7Xmailto:Frank.Luebeck@Math.RWTH-Aachen.De[107X
+      Homepage: [7Xhttps://www.math.rwth-aachen.de/~Frank.Luebeck[107X
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2020- by Frank Lübeck[133X
+  
+  [33X[0;0YThis  package  may  be distributed under the terms and conditions of the GNU
+  Public License Version 3 or later, see [7Xhttps://www.gnu.org/licenses[107X.[133X
+  
+  
+  -------------------------------------------------------
+  [1XColophon[101X
+  [33X[0;0YThis  package  implements the constructions in the paper [Lüb23], that is it
+  provides  relatively  easy  to  reproduce  generators  of  finite fields and
+  compatible generators of their multiplicative cyclic subgroups.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (StandardFF)[101X
+  
+  1 [33X[0;0YIntroduction to [5XStandardFF[105X package[133X
+    1.1 [33X[0;0YAim[133X
+  2 [33X[0;0YStandard finite fields[133X
+    2.1 [33X[0;0YDefinition of standard finite fields[133X
+    2.2 [33X[0;0YCreating standard finite fields[133X
+      2.2-1 [33X[0;0YConstructing standard finite fields[133X
+      2.2-2 [33X[0;0YFilters for standard fields[133X
+    2.3 [33X[0;0YElements in standard finite fields[133X
+      2.3-1 [33X[0;0YMaps for elements of standard finite fields[133X
+    2.4 [33X[0;0YEmbeddings of standard finite fields[133X
+      2.4-1 SteinitzPair
+      2.4-2 Embedding
+      2.4-3 ZZ
+      2.4-4 MoveToSmallestStandardField
+      2.4-5 StandardIsomorphismGF
+  3 [33X[0;0YStandard generators of cyclic groups[133X
+    3.1 [33X[0;0YGenerators of multiplicative groups[133X
+      3.1-1 StandardCyclicGenerator
+  4 [33X[0;0YUtilities from the [5XStandardFF[105X package[133X
+    4.1 [33X[0;0YA simple bijection on a range[133X
+      4.1-1 StandardAffineShift
+    4.2 [33X[0;0YFinding linear combinations[133X
+      4.2-1 FindLinearCombination
+    4.3 [33X[0;0YIrreducibility over finite fields[133X
+      4.3-1 IsIrreducibleCoeffList
+    4.4 [33X[0;0YConnection to Conway polynomials[133X
+      4.4-1 FindConjugateZeroes
+      4.4-2 ZeroesConway
+      4.4-3 SteinitzPairConwayGenerator
+    4.5 [33X[0;0YDiscrete logarithms[133X
+      4.5-1 DLog
+    4.6 [33X[0;0YMinimal polynomials of sequences[133X
+      4.6-1 InvModCoeffs
+      4.6-2 BerlekampMassey
+      4.6-3 MinimalPolynomialByBerlekampMassey
+    4.7 [33X[0;0YBrauer characters with respect to different lifts[133X
+      4.7-1 StandardValuesBrauerCharacter
+      4.7-2 [33X[0;0YFrobenius character values[133X
+    4.8 [33X[0;0YKnown factorizations of multiplicative group orders[133X
+      4.8-1 CANFACT
+    4.9 [33X[0;0YSome loops for [5XStandardFF[105X[133X
+      4.9-1 [33X[0;0YComputing all fields in various ranges[133X
+    4.10 [33X[0;0YUndocumented features[133X
+  
+  
+  [32X

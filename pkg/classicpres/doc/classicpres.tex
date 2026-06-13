@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%A  classicpres.tex  
+%
+%
+%
+
+\Chapter{The classicpres package}
+
+This package provides functionality for presentations of classical groups
+as given in \cite{lgo20}. It is a translation (with permission of the
+authors) of the corresponding code in the system
+Magma, and should -- short of arbitrary choices depending on internal
+ordering of finite field elements -- return the same data.
+\medskip
+
+Work on the translation was started at the "Summer School
+Matrix Group Recognition" at RWTH Aachen in July 2019.
+
+The work was supported in part by NSF Grant DMS-1720146, which is gratefully
+acknowledged.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{Functions Provided}
+
+There are only two user functions:
+
+\>ClassicalStandardPresentation(<type>, <d>, <q> )
+
+Given the specification <type>, <d>, <q> of a quasisimple group $G$, this
+operation constructs a presentation on the standard generators for $G$.
+The string <type> must be one of `"SL"', `"Sp"', `"SU"', `"Omega"',
+`"Omega-"', or `"Omega+"', while <d> is the dimension and <q> is the
+cardinality of the finite field. The presentations are described in
+\cite{LGO20}.
+The presentation is returned as a finitely presented group, the relations
+being stored as its `RelatorsOfFpGroup'
+
+If the option `Projective' is set to true, the operation constructs a
+presentation for the corresponding projective group (on the images of the
+same generators).
+
+\beginexample
+gap> pres:=ClassicalStandardPresentation( "SL" , 4, 3);
+<fp group on the generators [ f1, f2, f3, f4 ]>
+gap> RelatorsOfFpGroup(pres);
+[ f4*f1^-1*f3*f1*f3^2*f1^-1*f3*f1*f3^-1,
+  f3^-1*f2^-6*f1^-1*f2^6*f3*f2^-6*f1*f2^6,
+  f3^-1*f2^-3*f3^-1*f2^3*f3*f2^-3*f3*f1^-1*f2^3*f3^-1*f2^-3*f1*f2^3,
+  f3^-1*f2^-3*f1^-1*f2^3*f3^-1*f2^-3*f1*f2^3*f3*f2^-3*f1^-1*f2^3*f3*f2^-3*f1*f\
+2^3, f3^-1*f2^-3*f1^-1*f3^-1*f1*f2^3*f3*f2^-3*f1^-1*f3*f1*f2^3,
+  f3^-1*f2^-6*f3^-1*f2^6*f3*f2^-6*f3*f2^6, f1^4,
+  f1^-1*f2^-3*f1^2*f2^3*f1^3*f2^-3*f1^2*f2^3, (f1*f2^-3*f1*f2^3)^3,
+  f1^-1*f2^-6*f1^-1*f2^6*f1*f2^-6*f1*f2^6, f2^9*(f1^-1*f2^-3)^2*f1^-1,
+  f2^-12*f1^-1*f2^12*f1, f2^24, f1*(f3*f1^-1)^2*f3,
+  (f1^-1*f3^4*f1^-1*f3^2)^2*f3^3*f1^-2, f2^8 ]
+gap> s:=Subgroup(pres,[pres.1,pres.2,pres.4]);
+Group([ f1, f2, f4 ])
+gap> Index(pres,s);
+63180
+gap> DisplayCompositionSeries(Image(FactorCosetAction(pres,s)));
+G (4 gens, size 6065280)
+ | A(3,3) = L(4,3) ~ D(3,3) = O+(6,3)
+1 (0 gens, size 1)
+\endexample
+
+\>ClassicalStandardGenerators(<type>, <d>, <q>)
+
+This operation produces the standard generators of Leedham-Green and O'Brien
+for the quasisimple classical group of specified type in dimension <d> over a
+field of size <q>. The type is designated by the argument <type> which must be
+one of the strings `"SL"', `"Sp"', `"SU"', `"Omega"', `"Omega-"', or
+`"Omega+"'. The
+standard generators generate a specific copy of a classical group and are
+defined in \cite{LGO09} and \cite{DLLGO13}.
+
+\beginexample
+gap> gens:=ClassicalStandardGenerators( "SL" , 4, 3);;
+[ < immutable compressed matrix 4x4 over GF(3) >,
+  < immutable compressed matrix 4x4 over GF(3) >,
+  < immutable compressed matrix 4x4 over GF(3) >,
+  < immutable compressed matrix 6x4 over GF(3) > ]
+gap> List(gens,Order);
+[ 4, 8, 3, 2 ]
+gap> Size(Group(gens));
+12130560
+gap> List(RelatorsOfFpGroup(pres),x->Order(MappedWord(x,
+> FreeGeneratorsOfFpGroup(pres),gens)));
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+\endexample
+
+If the option `Projective' is set to true, the operation constructs a
+presentation for the corresponding projective group (on the images of the
+same generators).
+
+\beginexample
+gap> pres:=ClassicalStandardPresentation( "SL" , 4, 3:Projective);
+<fp group on the generators [ f1, f2, f3, f4 ]>
+gap> List(RelatorsOfFpGroup(pres),x->Order(MappedWord(x,
+> FreeGeneratorsOfFpGroup(pres),gens)));
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1 ]
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{Isomorphism to finitely presented group}
+
+In {\GAP}, the canonical way of obtaining a presentation of (say) a
+permutation group is the operation `IsomorphismFpGroup'. This package thus
+also installs a method for `IsomorphismFpGroup' for groups that know that
+they are simple, and tests whether the groups are classical. If so, an
+isomorphism between the given group, and the permutation action of the
+classical groups on vectors is computed (this should be improved with
+constructive recognition in the future) and the presentation of
+`ClassicalStandardPresentation' is used.
+
+Non-simple groups that construct a presentation through their composition
+factors will then automatically use these presentations for the simple
+factors when combining to a presentation of the group.
+
+However be aware that the isomorphisms returned will use the generic
+permutation group mechanism for decomposition, and thus will not result in
+good or short words.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{Standard Generators}
+
+The generating sequences chosen (and on which the presentations are written)
+use the standard generators of classical groups as defined in
+\cite{LGO09} and \cite{DLLGO13}, since these generators also are used in the
+constructive recognition process.
+
+The presentations in \cite{LGO20} initially use slightly different generating
+sets, and a translation between these two generating sets is provided. If one
+of the two functions `ClassicalStandardGenerators' or
+`ClassicalStandardPresentation' is called with the option
+`PresentationGenerators', this different generating set is used. (Its use
+could be to obtain a slightly shorter presentation in situations in which
+adherence to the standard generaors is not required.)
+
+The method provided for `IsomorphismFpGroup' currently uses these
+`PresentationGenerators', but this is not a guaranteed property.
+
+

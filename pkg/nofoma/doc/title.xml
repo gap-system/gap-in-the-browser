@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    nofoma
+  </Title>
+  <Subtitle>
+    Normal forms of matrices
+  </Subtitle>
+  <Version>
+    1.0.1
+  </Version>
+  <Author>
+    Meinolf Geck
+<Address>
+Fachbereich Mathematik, Pfaffenwaldring 57, 70569 Stuttgart, Germany<Br/>
+</Address>
+<Email>meinolf.geck@mathematik.uni-stuttgart.de</Email>
+<Homepage>https://pnp.mathematik.uni-stuttgart.de/idsr/idsr1/geckmf/</Homepage>
+  </Author>
+  <Author>
+    Alia Bonnet
+<Email>alia.bonnet@rwth.aachen.de</Email>
+  </Author>
+  <Date>
+    17 May 2026
+  </Date>
+  <Abstract>
+    This package computes the Frobenius normal form and  the Jordan-Chevalley decomposition of a (square) matrix over any field  that is available in GAP. It also computes the Jordan normal form  of matrices over finite fields.
+            <P/>
+            Bug reports, suggestions and comments are, welcome.
+            Please submit them to our issue tracker
+            <URL>https://github.com/gap-packages/nofoma/issues</URL>.
+  </Abstract>
+  <Copyright>
+                &copyright; 2026 by Meinolf Geck.
+            The &nofoma; package is free software; you can redistribute it and/or
+            modify it under the terms of the GNU General Public License as published
+            by the Free Software Foundation; either version 2 of the License, or (at
+            your option) any later version.
+        
+  </Copyright>
+  <Acknowledgements>
+                The original code by Meinolf Geck was cleaned up and made ready for inclusion
+            in the &GAP; package distribution Alia Bonnet in 2025, with some assistance
+            by Max Horn.
+        
+  </Acknowledgements>
+  </TitlePage>

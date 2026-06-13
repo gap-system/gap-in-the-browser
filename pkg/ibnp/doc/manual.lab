@@ -1,0 +1,95 @@
+\GAPDocLabFile{ibnp}
+\makelabel{ibnp:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{ibnp:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{ibnp:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{ibnp:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{ibnp:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{ibnp:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{ibnp:History}{1.1}{X811375BC7CA25F51}
+\makelabel{ibnp:Using the packages GBNP and NMO}{2}{X86057870803DCA93}
+\makelabel{ibnp:Noncommutative polynomials (NPs)}{2.1}{X783C6EC87988B533}
+\makelabel{ibnp:Gröbner Bases}{2.2}{X7E4277497D877661}
+\makelabel{ibnp:Orderings for monomials}{2.3}{X7F82A3608248CD31}
+\makelabel{ibnp:Commutative Involutive Bases}{3}{X780AAD6F8095AE49}
+\makelabel{ibnp:Reduction Paths}{3.1}{X7BBDABD3799443BB}
+\makelabel{ibnp:An Example}{3.1.1}{X7B5623E3821CC0D0}
+\makelabel{ibnp:Commutative Involutive Divisions}{3.2}{X7E43F2087BC8B4F9}
+\makelabel{ibnp:Example}{3.2.1}{X85861B017AEEC50B}
+\makelabel{ibnp:Selecting a Division}{3.2.2}{X83A3B3F77C712DA1}
+\makelabel{ibnp:Selecting an Ordering}{3.2.3}{X785D706A86DD7343}
+\makelabel{ibnp:Computing a Commutative Involutive Basis}{3.3}{X864907F987701716}
+\makelabel{ibnp:Prolongations and Autoreduction}{3.3.1}{X7ACAA0847CC0DBCC}
+\makelabel{ibnp:The process may abort}{3.3.3}{X86A1B0998692BA00}
+\makelabel{ibnp:A more detailed example}{3.3.4}{X831D45437DE37177}
+\makelabel{ibnp:Using homogeneous polynomials}{3.3.5}{X791740DF84B742A2}
+\makelabel{ibnp:Functions for Noncommutative Monomials}{4}{X872783907DFA29B7}
+\makelabel{ibnp:Basic functions for monomials}{4.1}{X846C3B0F79265278}
+\makelabel{ibnp:Predefined algebras}{4.1.1}{X84F106BB8093FCAE}
+\makelabel{ibnp:Functions for Noncommutative Polynomials}{5}{X7BD27C5585EF8629}
+\makelabel{ibnp:Basic functions for polynomials}{5.1}{X80FC94957D03EEA6}
+\makelabel{ibnp:Noncommutative Involutive Bases}{6}{X797E483A84214975}
+\makelabel{ibnp:Noncommutative Involutive Divisions}{6.1}{X7A86C2437F6EB83D}
+\makelabel{ibnp:Selecting a Division}{6.1.5}{X83A3B3F77C712DA1}
+\makelabel{ibnp:Computing a Noncommutative Involutive Basis}{6.2}{X80C3BE018688AFB7}
+\makelabel{ibnp:The Disjoint Cones Conditions}{6.3}{X7DB2608C86CA3B04}
+\makelabel{ibnp:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{ibnp:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{ibnp:Index}{Ind}{X83A0356F839C696F}
+\makelabel{ibnp:GitHub repository}{1}{X7DFB63A97E67C0A1}
+\makelabel{ibnp:NP2GP}{2.1}{X783C6EC87988B533}
+\makelabel{ibnp:GP2NP}{2.1}{X783C6EC87988B533}
+\makelabel{ibnp:conventional divisor}{3.2}{X7E43F2087BC8B4F9}
+\makelabel{ibnp:involutive divisor}{3.2}{X7E43F2087BC8B4F9}
+\makelabel{ibnp:CommutativeDivision}{3.2.2}{X83A3B3F77C712DA1}
+\makelabel{ibnp:orderings}{3.2.3}{X785D706A86DD7343}
+\makelabel{ibnp:PommaretDivision}{3.2.4}{X82712BA57EBE9170}
+\makelabel{ibnp:ThomasDivision}{3.2.5}{X8756720A86A6B125}
+\makelabel{ibnp:JanetDivision}{3.2.6}{X7E214DDF794BB14D}
+\makelabel{ibnp:DivisionRecord}{3.2.7}{X8781FDB7865FA48B}
+\makelabel{ibnp:DivisionRecordCP}{3.2.7}{X8781FDB7865FA48B}
+\makelabel{ibnp:IPolyReduce}{3.2.8}{X79F5892C80AE2667}
+\makelabel{ibnp:IPolyReduceCP}{3.2.8}{X79F5892C80AE2667}
+\makelabel{ibnp:LoggedIPolyReduce}{3.2.9}{X7A36AE827C4012FF}
+\makelabel{ibnp:LoggedIPolyReduceCP}{3.2.9}{X7A36AE827C4012FF}
+\makelabel{ibnp:IAutoreduce}{3.2.10}{X7C58A339832877E9}
+\makelabel{ibnp:IAutoreduceCP}{3.2.10}{X7C58A339832877E9}
+\makelabel{ibnp:InvolutiveBasis}{3.3.2}{X7B60A306820D4ED2}
+\makelabel{ibnp:InvolutiveBasisCP}{3.3.2}{X7B60A306820D4ED2}
+\makelabel{ibnp:InvolutiveAbortLimit}{3.3.3}{X86A1B0998692BA00}
+\makelabel{ibnp:homogeneous polynomials}{3.3.5}{X791740DF84B742A2}
+\makelabel{ibnp:AlgebraIBNP}{4.1.1}{X84F106BB8093FCAE}
+\makelabel{ibnp:PrintNM}{4.1.2}{X7D53D8657AEDFEB2}
+\makelabel{ibnp:PrintNMList}{4.1.2}{X7D53D8657AEDFEB2}
+\makelabel{ibnp:NM2GM}{4.1.3}{X7AD4CF167E6B7D2E}
+\makelabel{ibnp:NM2GMList}{4.1.3}{X7AD4CF167E6B7D2E}
+\makelabel{ibnp:GM2NM}{4.1.4}{X8719E2857E26325C}
+\makelabel{ibnp:GM2NMList}{4.1.4}{X8719E2857E26325C}
+\makelabel{ibnp:PrefixNM}{4.1.5}{X7F72641C8441204E}
+\makelabel{ibnp:SubwordNM}{4.1.5}{X7F72641C8441204E}
+\makelabel{ibnp:SuffixNM}{4.1.5}{X7F72641C8441204E}
+\makelabel{ibnp:SuffixPrefixPosNM}{4.1.6}{X8046DF397ACA0E5E}
+\makelabel{ibnp:SubwordPosNM}{4.1.7}{X82916CB37D346978}
+\makelabel{ibnp:IsSubwordNM}{4.1.7}{X82916CB37D346978}
+\makelabel{ibnp:LeadVarNM}{4.1.8}{X83CF80DD7CD5F166}
+\makelabel{ibnp:LeadExpNM}{4.1.8}{X83CF80DD7CD5F166}
+\makelabel{ibnp:TailNM}{4.1.8}{X83CF80DD7CD5F166}
+\makelabel{ibnp:DivNM}{4.1.9}{X7CECFE0C86895946}
+\makelabel{ibnp:MaxDegreeNP}{5.1.1}{X7A1E54F279CCCF65}
+\makelabel{ibnp:ScalarMulNP}{5.1.2}{X7903A443865A3471}
+\makelabel{ibnp:LtNPoly}{5.1.3}{X7996395279064998}
+\makelabel{ibnp:GtNPoly}{5.1.3}{X7996395279064998}
+\makelabel{ibnp:LowestLeadMonomialPosNP}{5.1.4}{X79B2E02082C8799E}
+\makelabel{ibnp:LeftDivision}{6.1.1}{X8593BCDB8402C46C}
+\makelabel{ibnp:RightDivision}{6.1.2}{X784AF6B87B2B5E5D}
+\makelabel{ibnp:LeftOverlapDivision}{6.1.3}{X7A979BF38311024C}
+\makelabel{ibnp:RightOverlapDivision}{6.1.4}{X83CE05CF7CB18611}
+\makelabel{ibnp:NoncommutativeDivision}{6.1.5}{X83A3B3F77C712DA1}
+\makelabel{ibnp:DivisionRecordNP}{6.1.6}{X86FAAD527E20A573}
+\makelabel{ibnp:IPolyReduceNP}{6.1.7}{X828DA2AE844847E9}
+\makelabel{ibnp:LoggedIPolyReduceNP}{6.1.8}{X78935EBD85A02F3F}
+\makelabel{ibnp:VerifyLoggedRecordNP}{6.1.9}{X7EBFCE307BE928BA}
+\makelabel{ibnp:IAutoreduceNP}{6.1.10}{X8189DEDD87CE1667}
+\makelabel{ibnp:InvolutiveBasisNP}{6.2.1}{X7A71E4CD7B43726B}
+\makelabel{ibnp:disjoint cones}{6.3}{X7DB2608C86CA3B04}
+\makelabel{ibnp:StrongLeftOverlapDivision}{6.3.1}{X7D87860878548EF2}
+\makelabel{ibnp:StrongRightOverlapDivision}{6.3.2}{X819FE8F87ACDB19C}

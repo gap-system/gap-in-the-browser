@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    LieRing
+  </Title>
+  <Subtitle>
+    Computing with finitely presented Lie rings
+  </Subtitle>
+  <Version>
+    Version 2.4.2
+  </Version>
+  <Author>
+    Serena Cicalò<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Serena Cicalò<Br/>
+Dipartimento di Matematica e Informatica<Br/>
+Via Ospedale 72<Br/>
+Italy<Br/>
+</Address>
+<Email>cicalo@science.unitn.it</Email>
+
+  </Author>
+  <Author>
+    Willem Adriaan de Graaf<Alt Only="LaTeX"><Br/></Alt>
+<Email>degraaf@science.unitn.it</Email>
+<Homepage>http://www.science.unitn.it/~degraaf</Homepage>
+
+  </Author>
+  <Date>
+    10 February 2022
+  </Date>
+  <Abstract>
+    
+            This package provides functions for constructing and working with Lie
+            rings. There are functions for dealing with finitely-presented Lie
+            rings, and for performing the Lazard correspondence. The package also
+            contains a small database of finitely-generated Lie rings satisfying
+            an Engel condition.
+            
+  </Abstract>
+  <Copyright>
+    &copyright; 2016 Serena Cicalò and Willem de Graaf
+  </Copyright>
+  </TitlePage>

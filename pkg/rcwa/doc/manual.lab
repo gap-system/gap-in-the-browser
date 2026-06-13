@@ -1,0 +1,481 @@
+\GAPDocLabFile{rcwa}
+\makelabel{rcwa:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{rcwa:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{rcwa:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{rcwa:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{rcwa:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{rcwa:About the RCWA Package}{1}{X83A8C2927FAE2C23}
+\makelabel{rcwa:Residue-Class-Wise Affine Mappings}{2}{X7FD73FCB8510050E}
+\makelabel{rcwa:Basic definitions}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:Entering residue-class-wise affine mappings}{2.2}{X86BC55648302D643}
+\makelabel{rcwa:RcwaMapping (the general constructor)}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:Basic arithmetic for residue-class-wise affine mappings}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:Attributes and properties of residue-class-wise affine mappings}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:Factoring residue-class-wise affine permutations}{2.5}{X8475F844869DD060}
+\makelabel{rcwa:Extracting roots of residue-class-wise affine mappings}{2.6}{X8141065381B0942B}
+\makelabel{rcwa:Special functions for non-bijective mappings}{2.7}{X8322C6848305EC4C}
+\makelabel{rcwa:On trajectories and cycles of residue-class-wise affine mappings}{2.8}{X7A34724386A2E9F3}
+\makelabel{rcwa:Trajectory (methods for rcwa mappings)}{2.8.1}{X7C72174D7CCB6348}
+\makelabel{rcwa:Trajectory (methods for rcwa mappings -- "accumulated coefficients")}{2.8.2}{X7FFD09837E934853}
+\makelabel{rcwa:IncreasingOn  DecreasingOn (for an rcwa mapping)}{2.8.3}{X7E0244A386744185}
+\makelabel{rcwa:Sources  Sinks (of an rcwa mapping)}{2.8.8}{X81DBA2D58526BE7E}
+\makelabel{rcwa:Saving memory -- the sparse representation of rcwa mappings}{2.9}{X86F0E0D17E6A9663}
+\makelabel{rcwa:The categories and families of rcwa mappings}{2.10}{X83FA71DD842377F0}
+\makelabel{rcwa:Residue-Class-Wise Affine Groups}{3}{X874A3BB684F0639A}
+\makelabel{rcwa:Constructing residue-class-wise affine groups}{3.1}{X81242A6586A604A3}
+\makelabel{rcwa:Restriction (of an rcwa mapping or -group, by an injective rcwa mapping)}{3.1.6}{X852EF2C079E4D7FF}
+\makelabel{rcwa:Induction (of an rcwa mapping or -group, by an injective rcwa mapping)}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Basic routines for investigating residue-class-wise affine groups}{3.2}{X80C042BE82EE0F9A}
+\makelabel{rcwa:The natural action of an rcwa group on the underlying ring}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:Orbit (for an rcwa group and either a point or a set)}{3.3.1}{X7C046BE97EE53692}
+\makelabel{rcwa:ShortOrbits (for rcwa groups)  ShortCycles (for rcwa permutations)}{3.3.4}{X78F145197F63A25D}
+\makelabel{rcwa:ShortResidueClassOrbits  ShortResidueClassCycles}{3.3.5}{X80D18D0778A96C16}
+\makelabel{rcwa:Ball (for group, element and radius or group, point, radius and action)}{3.3.9}{X8735855587CC029F}
+\makelabel{rcwa:Special attributes of tame residue-class-wise affine groups}{3.4}{X781CBEFA7F39B58D}
+\makelabel{rcwa:RespectedPartition (of a tame rcwa group or -permutation)}{3.4.1}{X7F523A6B87825AB8}
+\makelabel{rcwa:ActionOnRespectedPartition  KernelOfActionOnRespectedPartition}{3.4.2}{X831ADC1584DE6113}
+\makelabel{rcwa:Generating pseudo-random elements of RCWA(R) and CT(R)}{3.5}{X81941A247942FB99}
+\makelabel{rcwa:The categories of residue-class-wise affine groups}{3.6}{X86327F6C83D09798}
+\makelabel{rcwa:Residue-Class-Wise Affine Monoids}{4}{X81C90F7C7BA25BDF}
+\makelabel{rcwa:Constructing residue-class-wise affine monoids}{4.1}{X83D42E26849D5580}
+\makelabel{rcwa:Computing with residue-class-wise affine monoids}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:Ball (for monoid, element and radius or monoid, point, radius and action)}{4.2.2}{X787848137DF1C245}
+\makelabel{rcwa:Residue-Class-Wise Affine Mappings, Groups and Monoids over ℤ2}{5}{X788EB00B82897762}
+\makelabel{rcwa:The definition of residue-class-wise affine mappings of ℤd}{5.1}{X781907CA785CC7AC}
+\makelabel{rcwa:Entering residue-class-wise affine mappings of ℤ2}{5.2}{X7A39FCF08030AB9B}
+\makelabel{rcwa:RcwaMapping (the general constructor; methods for ℤ2)}{5.2.1}{X790649618012C606}
+\makelabel{rcwa:ClassTransposition (for ℤ2)}{5.2.2}{X7B450EE17B465E02}
+\makelabel{rcwa:ClassRotation (for ℤ2)}{5.2.3}{X828438127DDAEBB4}
+\makelabel{rcwa:ClassShift (for ℤ2)}{5.2.4}{X7A14A8F48247E651}
+\makelabel{rcwa:Methods for residue-class-wise affine mappings of ℤ2}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Methods for residue-class-wise affine groups and -monoids over ℤ2}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:IsomorphismRcwaGroup (Embeddings of SL(2,ℤ) and GL(2,ℤ))}{5.4.1}{X79A8F9AD7E839862}
+\makelabel{rcwa:DrawGrid}{5.4.2}{X812135EB87527F01}
+\makelabel{rcwa:Databases of Residue-Class-Wise Affine Groups and -Mappings}{6}{X81BA344979567342}
+\makelabel{rcwa:The collection of examples}{6.1}{X86CCBF017A746F50}
+\makelabel{rcwa:Databases of rcwa groups}{6.2}{X85DD85DF87DE47C9}
+\makelabel{rcwa:Databases of rcwa mappings}{6.3}{X78A1A8E587C7FFD5}
+\makelabel{rcwa:Examples}{7}{X7A489A5D79DA9E5C}
+\makelabel{rcwa:Thompson's group V}{7.1}{X84A058CF7C65A908}
+\makelabel{rcwa:Factoring Collatz' permutation of the integers}{7.2}{X86C2BAE3876985A6}
+\makelabel{rcwa:A group with huge finite orbits}{7.4}{X7DCFDC797FF213C5}
+\makelabel{rcwa:A group which acts 4-transitively on the positive integers}{7.5}{X7968C1DF7EF0BD8E}
+\makelabel{rcwa:A group which acts 3-transitively, but not 4-transitively on ℤ}{7.6}{X85C529088050BEA3}
+\makelabel{rcwa:An rcwa mapping which seems to be contracting, but very slow}{7.7}{X878499AF7889FD9E}
+\makelabel{rcwa:Checking a result by P. Andaloro}{7.8}{X84A915BA833E0BDE}
+\makelabel{rcwa:Two examples by Matthews and Leigh}{7.9}{X7E8CD9B67ED78735}
+\makelabel{rcwa:Orders of commutators}{7.10}{X854E9F65817E4F63}
+\makelabel{rcwa:An infinite subgroup of CT(GF(2)[x]) with many torsion elements}{7.11}{X7F085B867D799293}
+\makelabel{rcwa:An abelian rcwa group over a polynomial ring}{7.12}{X7A8605E680F664BF}
+\makelabel{rcwa:Checking for solvability}{7.13}{X78DFE4B4821E07A6}
+\makelabel{rcwa:Some examples over (semi)localizations of the integers}{7.14}{X783D54DC7A646273}
+\makelabel{rcwa:Twisting 257-cycles into an rcwa mapping with modulus 32}{7.15}{X846D7D087861E0AC}
+\makelabel{rcwa:The behaviour of the moduli of powers}{7.16}{X78D5DC93845CA6A0}
+\makelabel{rcwa:Images and preimages under the Collatz mapping}{7.17}{X855A3CD88459958B}
+\makelabel{rcwa:An extension of the Collatz mapping T to a permutation of ℤ2}{7.18}{X84B6A498838A5509}
+\makelabel{rcwa:Finite quotients of Grigorchuk groups}{7.19}{X81EB8D397898C6B2}
+\makelabel{rcwa:Forward orbits of a monoid with 2 generators}{7.20}{X7DD9502F80364631}
+\makelabel{rcwa:The free group of rank 2 and the modular group PSL(2,ℤ)}{7.21}{X815800ED820C6ECF}
+\makelabel{rcwa:The Algorithms Implemented in RCWA}{8}{X79EA0B717B045756}
+\makelabel{rcwa:Installation and Auxiliary Functions}{9}{X859F6BF88754E5CC}
+\makelabel{rcwa:Requirements}{9.1}{X85A08CF187A6D986}
+\makelabel{rcwa:Installation}{9.2}{X8360C04082558A12}
+\makelabel{rcwa:The testing routines}{9.3}{X865D6A49826B92EC}
+\makelabel{rcwa:The Info class of the package}{9.4}{X7A31FA44791E93C5}
+\makelabel{rcwa:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{rcwa:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{rcwa:Index}{Ind}{X83A0356F839C696F}
+\makelabel{rcwa:Collatz conjecture}{1}{X83A8C2927FAE2C23}
+\makelabel{rcwa:Collatz mapping}{1}{X83A8C2927FAE2C23}
+\makelabel{rcwa:rcwa mapping definition}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:rcwa group definition}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:modulus definition}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:rcwa mapping modulus}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:multiplier definition}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:rcwa mapping multiplier}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:divisor definition}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:rcwa mapping divisor}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:tame rcwa mapping}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:tame rcwa group}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:wild rcwa mapping}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:wild rcwa group}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:rcwa mapping tame}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:rcwa group tame}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:rcwa mapping wild}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:rcwa group wild}{2.1}{X78ED07E37FC2BD46}
+\makelabel{rcwa:ClassShift r, m}{2.2.1}{X86B611BD7EED62A1}
+\makelabel{rcwa:ClassShift cl}{2.2.1}{X86B611BD7EED62A1}
+\makelabel{rcwa:ClassReflection r, m}{2.2.2}{X7896C5417E3692B4}
+\makelabel{rcwa:ClassReflection cl}{2.2.2}{X7896C5417E3692B4}
+\makelabel{rcwa:ClassTransposition r1, m1, r2, m2}{2.2.3}{X8716A75F7DD1C46B}
+\makelabel{rcwa:ClassTransposition cl1, cl2}{2.2.3}{X8716A75F7DD1C46B}
+\makelabel{rcwa:TransposedClasses of a class transposition}{2.2.3}{X8716A75F7DD1C46B}
+\makelabel{rcwa:ClassPairs m}{2.2.3}{X8716A75F7DD1C46B}
+\makelabel{rcwa:NrClassPairs m}{2.2.3}{X8716A75F7DD1C46B}
+\makelabel{rcwa:ExtRepOfObj for a class transposition}{2.2.3}{X8716A75F7DD1C46B}
+\makelabel{rcwa:SplittedClassTransposition for a class transposition and a number of factors}{2.2.3}{X8716A75F7DD1C46B}
+\makelabel{rcwa:ClassRotation r, m, u}{2.2.4}{X87EB8C1C87F78A17}
+\makelabel{rcwa:ClassRotation cl, u}{2.2.4}{X87EB8C1C87F78A17}
+\makelabel{rcwa:RotationFactor of a class rotation}{2.2.4}{X87EB8C1C87F78A17}
+\makelabel{rcwa:IsClassShift for an rcwa mapping}{2.2.4}{X87EB8C1C87F78A17}
+\makelabel{rcwa:IsClassReflection for an rcwa mapping}{2.2.4}{X87EB8C1C87F78A17}
+\makelabel{rcwa:IsClassRotation for an rcwa mapping}{2.2.4}{X87EB8C1C87F78A17}
+\makelabel{rcwa:IsClassTransposition for an rcwa mapping}{2.2.4}{X87EB8C1C87F78A17}
+\makelabel{rcwa:IsGeneralizedClassTransposition for an rcwa mapping}{2.2.4}{X87EB8C1C87F78A17}
+\makelabel{rcwa:RcwaMapping by ring, modulus and list of coefficients}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by ring and list of coefficients}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by list of coefficients}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by permutation and range}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by modulus and list of values}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by set of non-invertible primes and list of coefficients}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by finite field size, modulus and list of coefficients}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by two partitions of a ring into residue classes}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by residue class cycles}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:RcwaMapping by arithmetical expression}{2.2.5}{X8799551B83644B37}
+\makelabel{rcwa:LocalizedRcwaMapping for an rcwa mapping of Z and a prime}{2.2.6}{X7F1A559387D0226E}
+\makelabel{rcwa:SemilocalizedRcwaMapping for an rcwa mapping of Z and a set of primes}{2.2.6}{X7F1A559387D0226E}
+\makelabel{rcwa:View for an rcwa mapping}{2.2.6}{X7F1A559387D0226E}
+\makelabel{rcwa:Display for an rcwa mapping}{2.2.6}{X7F1A559387D0226E}
+\makelabel{rcwa:Print for an rcwa mapping}{2.2.6}{X7F1A559387D0226E}
+\makelabel{rcwa:String for an rcwa mapping}{2.2.6}{X7F1A559387D0226E}
+\makelabel{rcwa:LaTeXStringRcwaMapping for an rcwa mapping}{2.2.6}{X7F1A559387D0226E}
+\makelabel{rcwa:LaTeXAndXDVI for an rcwa mapping}{2.2.6}{X7F1A559387D0226E}
+\makelabel{rcwa:rcwa mapping arithmetic operations}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:Order of an rcwa permutation}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:IsTame for an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:IsInjective for an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:IsSurjective for an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:IsBijective for an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:Image of an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:rcwa mapping images under}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:PreImageElm of a ring element under an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:PreImagesElm of a ring element under an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:PreImage of a set of ring elements under an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:PreImage of a residue class union under an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:Support of an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:MovedPoints of an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:RestrictedPerm for an rcwa permutation and a residue class union}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:DensityOfSupport of an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:DensityOfSetOfFixedPoints of an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:Modulus of an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:Mod for an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:Coefficients of an rcwa mapping}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:rcwa mapping coercion}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:rcwa group coercion}{2.3}{X78E796B8824C4FC8}
+\makelabel{rcwa:class-wise translating definition}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:integral definition}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:balanced definition}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:sign-preserving definition}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:maximal shift definition}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:rcwa mapping prime set}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:rcwa mapping maximal shift}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:rcwa mapping class-wise translating}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:rcwa mapping integral}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:rcwa mapping balanced}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:rcwa mapping class-wise order-preserving}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:rcwa mapping sign-preserving}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:Multiplier of an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:Mult for an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:Divisor of an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:Div for an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:PrimeSet of an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:MaximalShift of an rcwa mapping of Z}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:IsClassWiseTranslating for an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:IsIntegral for an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:IsBalanced for an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:IsClassWiseOrderPreserving for an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:IsSignPreserving for an rcwa mapping}{2.4}{X7C16D22C7BD40FDC}
+\makelabel{rcwa:LargestSourcesOfAffineMappings for an rcwa mapping}{2.4.1}{X7C21406085B69C30}
+\makelabel{rcwa:FixedPointsOfAffinePartialMappings for an rcwa mapping}{2.4.2}{X7D6D0F2783AD02F4}
+\makelabel{rcwa:Multpk for an rcwa mapping, a prime and an exponent}{2.4.3}{X7A2E308C860B46E3}
+\makelabel{rcwa:ClassWiseOrderPreservingOn}{2.4.3}{X7A2E308C860B46E3}
+\makelabel{rcwa:ClassWiseConstantOn}{2.4.3}{X7A2E308C860B46E3}
+\makelabel{rcwa:ClassWiseOrderReversingOn}{2.4.3}{X7A2E308C860B46E3}
+\makelabel{rcwa:ShiftsUpOn}{2.4.3}{X7A2E308C860B46E3}
+\makelabel{rcwa:ShiftsDownOn}{2.4.3}{X7A2E308C860B46E3}
+\makelabel{rcwa:Determinant of an rcwa mapping of Z}{2.4.4}{X7B1E53127D9AE52F}
+\makelabel{rcwa:Sign of an rcwa permutation of Z}{2.4.5}{X8365EEEB82C946FD}
+\makelabel{rcwa:CTCSCRSplit for an rcwa permutation of Z}{2.5.1}{X829BA0537F2372FF}
+\makelabel{rcwa:FactorizationIntoCSCRCT for an rcwa permutation of Z}{2.5.2}{X853885A182EC5104}
+\makelabel{rcwa:Factorization for an rcwa permutation of Z}{2.5.2}{X853885A182EC5104}
+\makelabel{rcwa:PrimeSwitch p}{2.5.3}{X861C74E97AE5DA3B}
+\makelabel{rcwa:PrimeSwitch p, k}{2.5.3}{X861C74E97AE5DA3B}
+\makelabel{rcwa:PrimeSwitch p, r, m}{2.5.3}{X861C74E97AE5DA3B}
+\makelabel{rcwa:PrimeSwitch p, cl}{2.5.3}{X861C74E97AE5DA3B}
+\makelabel{rcwa:IsPrimeSwitch for an rcwa mapping}{2.5.3}{X861C74E97AE5DA3B}
+\makelabel{rcwa:mKnot for an odd integer}{2.5.4}{X789CB69C7D97B0C4}
+\makelabel{rcwa:Root k-th root of an rcwa mapping}{2.6.1}{X873692CE78433859}
+\makelabel{rcwa:RightInverse of an injective rcwa mapping}{2.7.1}{X7AEFF16E86533633}
+\makelabel{rcwa:CommonRightInverse of two injective rcwa mappings}{2.7.2}{X87C5B9CA7E319233}
+\makelabel{rcwa:ImageDensity of an rcwa mapping}{2.7.3}{X808D9EDF7BA27467}
+\makelabel{rcwa:InjectiveAsMappingFrom for an rcwa mapping}{2.7.3}{X808D9EDF7BA27467}
+\makelabel{rcwa:Trajectory for rcwa mapping, starting point, length}{2.8.1}{X7C72174D7CCB6348}
+\makelabel{rcwa:Trajectory for rcwa mapping, starting point, length, modulus}{2.8.1}{X7C72174D7CCB6348}
+\makelabel{rcwa:Trajectory for rcwa mapping, starting point, set of end points}{2.8.1}{X7C72174D7CCB6348}
+\makelabel{rcwa:Trajectory for rcwa mapping, starting point, set of end points, modulus}{2.8.1}{X7C72174D7CCB6348}
+\makelabel{rcwa:Trajectory for rcwa mapping, starting point, length, coeff.-spec.}{2.8.2}{X7FFD09837E934853}
+\makelabel{rcwa:Trajectory for rcwa mapping, starting point, set of end points, coeff.-spec.}{2.8.2}{X7FFD09837E934853}
+\makelabel{rcwa:IncreasingOn for an rcwa mapping}{2.8.3}{X7E0244A386744185}
+\makelabel{rcwa:DecreasingOn for an rcwa mapping}{2.8.3}{X7E0244A386744185}
+\makelabel{rcwa:TransitionGraph for an rcwa mapping and a modulus}{2.8.4}{X780841E07CAE7543}
+\makelabel{rcwa:rcwa mapping transition graph}{2.8.4}{X780841E07CAE7543}
+\makelabel{rcwa:OrbitsModulo for an rcwa mapping and a modulus}{2.8.5}{X7F03CC4179424AA9}
+\makelabel{rcwa:FactorizationOnConnectedComponents for an rcwa mapping and a modulus}{2.8.6}{X7F11051E866C197F}
+\makelabel{rcwa:TransitionMatrix for an rcwa mapping and a modulus}{2.8.7}{X7B6833D67D916EF9}
+\makelabel{rcwa:Sources of an rcwa mapping}{2.8.8}{X81DBA2D58526BE7E}
+\makelabel{rcwa:Sinks of an rcwa mapping}{2.8.8}{X81DBA2D58526BE7E}
+\makelabel{rcwa:Loops of an rcwa mapping}{2.8.9}{X80221A4D81AF7453}
+\makelabel{rcwa:GluckTaylorInvariant of a trajectory}{2.8.10}{X8773152E81A30123}
+\makelabel{rcwa:LikelyContractionCentre of an rcwa mapping}{2.8.11}{X84F6A29280E2F925}
+\makelabel{rcwa:GuessedDivergence of an rcwa mapping}{2.8.12}{X81E0D8E3817B3D16}
+\makelabel{rcwa:rcwa mapping sparse representation}{2.9}{X86F0E0D17E6A9663}
+\makelabel{rcwa:RcwaMapping by list of coefficients, sparse representation}{2.9}{X86F0E0D17E6A9663}
+\makelabel{rcwa:SparseRepresentation of an rcwa mapping}{2.9.1}{X879451B17AD78B07}
+\makelabel{rcwa:SparseRep of an rcwa mapping}{2.9.1}{X879451B17AD78B07}
+\makelabel{rcwa:StandardRepresentation of an rcwa mapping}{2.9.1}{X879451B17AD78B07}
+\makelabel{rcwa:StandardRep of an rcwa mapping}{2.9.1}{X879451B17AD78B07}
+\makelabel{rcwa:IsRcwaMapping}{2.10.1}{X7927C13782729CE9}
+\makelabel{rcwa:IsRcwaMappingOfZ}{2.10.1}{X7927C13782729CE9}
+\makelabel{rcwa:IsRcwaMappingOfZpi}{2.10.1}{X7927C13782729CE9}
+\makelabel{rcwa:IsRcwaMappingOfGFqx}{2.10.1}{X7927C13782729CE9}
+\makelabel{rcwa:IsRcwaMappingOfZOrZpi}{2.10.1}{X7927C13782729CE9}
+\makelabel{rcwa:IsRcwaMappingStandardRep}{2.10.1}{X7927C13782729CE9}
+\makelabel{rcwa:ExtRepOfObj}{2.10.1}{X7927C13782729CE9}
+\makelabel{rcwa:ObjByExtRep}{2.10.1}{X7927C13782729CE9}
+\makelabel{rcwa:RcwaMappingsFamily of a ring}{2.10.2}{X825DD365822934AF}
+\makelabel{rcwa:Group}{3.1}{X81242A6586A604A3}
+\makelabel{rcwa:GroupByGenerators}{3.1}{X81242A6586A604A3}
+\makelabel{rcwa:GroupWithGenerators}{3.1}{X81242A6586A604A3}
+\makelabel{rcwa:IsomorphismRcwaGroup for a group, over a given ring}{3.1.1}{X7EB8A301790290C7}
+\makelabel{rcwa:IsomorphismRcwaGroup for a group}{3.1.1}{X7EB8A301790290C7}
+\makelabel{rcwa:DirectProduct for rcwa groups over Z}{3.1.2}{X79CAE48981C11FE8}
+\makelabel{rcwa:WreathProduct for an rcwa group over Z and a permutation group}{3.1.3}{X80D13D2A7AD73C2C}
+\makelabel{rcwa:WreathProduct for an rcwa group over Z and the infinite cyclic group}{3.1.3}{X80D13D2A7AD73C2C}
+\makelabel{rcwa:MergerExtension for finite permutation groups}{3.1.4}{X8794913B878DD5C4}
+\makelabel{rcwa:GroupByResidueClasses the group `permuting a given list of residue classes'}{3.1.5}{X8143AB647801F438}
+\makelabel{rcwa:Restriction of an rcwa mapping, by an injective rcwa mapping}{3.1.6}{X852EF2C079E4D7FF}
+\makelabel{rcwa:Restriction of an rcwa group, by an injective rcwa mapping}{3.1.6}{X852EF2C079E4D7FF}
+\makelabel{rcwa:Induction of an rcwa mapping, by an injective rcwa mapping}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Induction of an rcwa group, by an injective rcwa mapping}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:SmallGeneratingSet}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:View for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Display for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Print for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:String for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:rcwa group modulus}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:rcwa group multiplier}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:rcwa group divisor}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:rcwa group prime set}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:rcwa group class-wise translating}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:rcwa group integral}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:rcwa group class-wise order-preserving}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:rcwa group sign-preserving}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Modulus of an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Mod for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:ModulusOfRcwaMonoid for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Multiplier of an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Mult for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Divisor of an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:Div for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:PrimeSet of an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:IsClassWiseTranslating for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:IsIntegral for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:IsClassWiseOrderPreserving for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:IsSignPreserving for an rcwa group}{3.1.7}{X82171D7287CBED95}
+\makelabel{rcwa:RCWA the group formed by all rcwa permutations of a ring}{3.1.8}{X79450C1C8756FEB3}
+\makelabel{rcwa:NrConjugacyClassesOfRCWAZOfOrder}{3.1.8}{X79450C1C8756FEB3}
+\makelabel{rcwa:CT the group generated by all class transpositions of a ring}{3.1.9}{X7BD42D8481300E25}
+\makelabel{rcwa:CT subgroup of CT(Z)}{3.1.9}{X7BD42D8481300E25}
+\makelabel{rcwa:Mirrored}{3.1.9}{X7BD42D8481300E25}
+\makelabel{rcwa:AllElementsOfCTZWithGivenModulus}{3.1.9}{X7BD42D8481300E25}
+\makelabel{rcwa:NrElementsOfCTZWithGivenModulus}{3.1.9}{X7BD42D8481300E25}
+\makelabel{rcwa:NrConjugacyClassesOfCTZOfOrder}{3.1.9}{X7BD42D8481300E25}
+\makelabel{rcwa:StructureDescription for an rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:Size for an rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:IsomorphismPermGroup for a finite rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:rcwa group membership test}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:OrbitLengthBound}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:rcwa group conjugacy problem}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:IsConjugate for elements of RCWA(R)}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:IsConjugate for elements of CT(R)}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:IsTame for an rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:IsSolvableGroup for an rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:IsPerfectGroup for an rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:DerivedSubgroup of an rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:Index for rcwa groups}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:IsomorphismMatrixGroup for an rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:Exponent of an rcwa group}{3.2.1}{X864A7E3E87F366A8}
+\makelabel{rcwa:EpimorphismFromFpGroup for an rcwa group and a search radius}{3.2.2}{X83527DA37C5CB2C7}
+\makelabel{rcwa:EpimorphismFromFpGroup for rcwa group, search radius and bound on number of affine parts}{3.2.2}{X83527DA37C5CB2C7}
+\makelabel{rcwa:PreImagesRepresentative for an epi. from a free group to an rcwa group}{3.2.3}{X8463E34286344F06}
+\makelabel{rcwa:PreImagesRepresentatives for an epi. from a free group to an rcwa group}{3.2.3}{X8463E34286344F06}
+\makelabel{rcwa:Support of an rcwa group}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:MovedPoints of an rcwa group}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:IsTransitive for an rcwa group, on its underlying ring}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:IsTransitiveOnNonnegativeIntegersInSupport for an rcwa group over Z}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:TryIsTransitiveOnNonnegativeIntegersInSupport for an rcwa group over Z and a search limit}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:TransitivityCertificate for an rcwa group over Z and a search limit}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:TryToComputeTransitivityCertificate for an rcwa group over Z and a search limit}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:SimplifiedCertificate for a transitivity certificate of an rcwa groups over Z}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:LowerBoundOnDegreeOfTransitivity for an rcwa group over Z, a time- and a search limit}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:SupersetOfOrbitRepresentatives for an rcwa group over Z and search limits}{3.3}{X8151BE577FFDCE87}
+\makelabel{rcwa:Orbit for an rcwa group and a point}{3.3.1}{X7C046BE97EE53692}
+\makelabel{rcwa:Orbit for an rcwa group and a set}{3.3.1}{X7C046BE97EE53692}
+\makelabel{rcwa:GrowthFunctionOfOrbit for an rcwa group, a point and bounds on radius and sphere size}{3.3.2}{X7B7A3AF97D195E33}
+\makelabel{rcwa:GrowthFunctionOfOrbit for an rcwa group orbit and bounds on radius and sphere size}{3.3.2}{X7B7A3AF97D195E33}
+\makelabel{rcwa:DistanceToNextSmallerPointInOrbit}{3.3.2}{X7B7A3AF97D195E33}
+\makelabel{rcwa:DrawOrbitPicture G, p0, bound, h, w, colored, palette, filename}{3.3.3}{X7D9DFAC97F9F0891}
+\makelabel{rcwa:ShortOrbits for rcwa group, set of points and bound on length}{3.3.4}{X78F145197F63A25D}
+\makelabel{rcwa:ShortOrbits for rcwa group, set of points and bounds on length and points}{3.3.4}{X78F145197F63A25D}
+\makelabel{rcwa:ShortCycles for rcwa permutation, set of points and bound on length}{3.3.4}{X78F145197F63A25D}
+\makelabel{rcwa:ShortCycles for rcwa permutation, set of points and bounds on length and points}{3.3.4}{X78F145197F63A25D}
+\makelabel{rcwa:ShortCycles for rcwa permutation and bound on length}{3.3.4}{X78F145197F63A25D}
+\makelabel{rcwa:CyclesOnFiniteOrbit}{3.3.4}{X78F145197F63A25D}
+\makelabel{rcwa:ShortResidueClassOrbits for rcwa group and bounds on modulus and length}{3.3.5}{X80D18D0778A96C16}
+\makelabel{rcwa:ShortResidueClassCycles for rcwa permutation and bounds on modulus and length}{3.3.5}{X80D18D0778A96C16}
+\makelabel{rcwa:ResidueClassCyclesThroughResidueClass for rcwa permutation, residue class and bound on modulus}{3.3.5}{X80D18D0778A96C16}
+\makelabel{rcwa:ComputeCycleLength for an rcwa permutation and a point}{3.3.6}{X80C080287A355EFF}
+\makelabel{rcwa:CycleRepresentativesAndLengths for rcwa permutation and set of seed points}{3.3.7}{X7F76B04E86C77B94}
+\makelabel{rcwa:FixedResidueClasses for rcwa mapping and bound on modulus}{3.3.8}{X8777A62286597D53}
+\makelabel{rcwa:FixedResidueClasses for rcwa group and bound on modulus}{3.3.8}{X8777A62286597D53}
+\makelabel{rcwa:Ball for group, element and radius}{3.3.9}{X8735855587CC029F}
+\makelabel{rcwa:Ball for group, point, radius and action}{3.3.9}{X8735855587CC029F}
+\makelabel{rcwa:Ball for group, point and radius}{3.3.9}{X8735855587CC029F}
+\makelabel{rcwa:RestrictedBall G, g, r, modulusbound}{3.3.9}{X8735855587CC029F}
+\makelabel{rcwa:RepresentativeAction G, source, destination, action}{3.3.10}{X87A3462C82FD376E}
+\makelabel{rcwa:RepresentativeActionPreImage G, source, destination, action, F}{3.3.10}{X87A3462C82FD376E}
+\makelabel{rcwa:ProjectionsToInvariantUnionsOfResidueClasses for rcwa group and modulus}{3.3.11}{X8587246A7F890849}
+\makelabel{rcwa:OrbitsModulo for an rcwa group and a modulus}{3.3.11}{X8587246A7F890849}
+\makelabel{rcwa:RepresentativeAction for RCWA(R) and 2 partitions of R into residue classes}{3.3.12}{X866843D08213067E}
+\makelabel{rcwa:CollatzLikeMappingByOrbitTree for rcwa group, root point and range of radii}{3.3.13}{X82DBAF35788FA239}
+\makelabel{rcwa:RespectedPartition of a tame rcwa group}{3.4.1}{X7F523A6B87825AB8}
+\makelabel{rcwa:RespectedPartition of a tame rcwa permutation}{3.4.1}{X7F523A6B87825AB8}
+\makelabel{rcwa:RespectsPartition for an rcwa group}{3.4.1}{X7F523A6B87825AB8}
+\makelabel{rcwa:RespectsPartition for an rcwa permutation}{3.4.1}{X7F523A6B87825AB8}
+\makelabel{rcwa:PermutationOpNC g, P, OnPoints}{3.4.1}{X7F523A6B87825AB8}
+\makelabel{rcwa:ActionOnRespectedPartition for a tame rcwa group}{3.4.2}{X831ADC1584DE6113}
+\makelabel{rcwa:KernelOfActionOnRespectedPartition for a tame rcwa group}{3.4.2}{X831ADC1584DE6113}
+\makelabel{rcwa:RankOfKernelOfActionOnRespectedPartition for a tame rcwa group}{3.4.2}{X831ADC1584DE6113}
+\makelabel{rcwa:IntegralConjugate of a tame rcwa group}{3.4.2}{X831ADC1584DE6113}
+\makelabel{rcwa:IntegralConjugate of a tame rcwa permutation}{3.4.2}{X831ADC1584DE6113}
+\makelabel{rcwa:IntegralizingConjugator of a tame rcwa group}{3.4.2}{X831ADC1584DE6113}
+\makelabel{rcwa:IntegralizingConjugator of a tame rcwa permutation}{3.4.2}{X831ADC1584DE6113}
+\makelabel{rcwa:Random RCWA(R)}{3.5}{X81941A247942FB99}
+\makelabel{rcwa:Random CT(R)}{3.5}{X81941A247942FB99}
+\makelabel{rcwa:IsRcwaGroup}{3.6.1}{X84AFBB997B694A3D}
+\makelabel{rcwa:IsRcwaGroupOverZ}{3.6.1}{X84AFBB997B694A3D}
+\makelabel{rcwa:IsRcwaGroupOverZpi}{3.6.1}{X84AFBB997B694A3D}
+\makelabel{rcwa:IsRcwaGroupOverGFqx}{3.6.1}{X84AFBB997B694A3D}
+\makelabel{rcwa:IsRcwaGroupOverZOrZpi}{3.6.1}{X84AFBB997B694A3D}
+\makelabel{rcwa:IsNaturalRCWA}{3.6.1}{X84AFBB997B694A3D}
+\makelabel{rcwa:IsNaturalCT}{3.6.1}{X84AFBB997B694A3D}
+\makelabel{rcwa:rcwa monoid definition}{4}{X81C90F7C7BA25BDF}
+\makelabel{rcwa:Monoid}{4.1}{X83D42E26849D5580}
+\makelabel{rcwa:MonoidByGenerators}{4.1}{X83D42E26849D5580}
+\makelabel{rcwa:View for an rcwa monoid}{4.1}{X83D42E26849D5580}
+\makelabel{rcwa:Display for an rcwa monoid}{4.1}{X83D42E26849D5580}
+\makelabel{rcwa:Print for an rcwa monoid}{4.1}{X83D42E26849D5580}
+\makelabel{rcwa:String for an rcwa monoid}{4.1}{X83D42E26849D5580}
+\makelabel{rcwa:Rcwa the monoid formed by all rcwa mappings of a ring}{4.1.1}{X7B95FCA279E0D6CC}
+\makelabel{rcwa:Restriction for an rcwa monoid, by an injective rcwa mapping}{4.1.1}{X7B95FCA279E0D6CC}
+\makelabel{rcwa:Induction for an rcwa monoid, by an injective rcwa mapping}{4.1.1}{X7B95FCA279E0D6CC}
+\makelabel{rcwa:Size for an rcwa monoid}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:rcwa monoids membership test}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:IsSubset for two rcwa monoids}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:Support of an rcwa monoid}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:Modulus of an rcwa monoid}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:IsTame for an rcwa monoid}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:PrimeSet of an rcwa monoid}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:IsIntegral for an rcwa monoid}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:IsClassWiseOrderPreserving for an rcwa monoid}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:IsSignPreserving for an rcwa monoid}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:rcwa monoid modulus}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:rcwa monoid tame}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:rcwa monoid wild}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:rcwa monoid prime set}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:rcwa monoid integral}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:rcwa monoid class-wise order-preserving}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:rcwa monoid sign-preserving}{4.2}{X8759954F7EB1A658}
+\makelabel{rcwa:ShortOrbits for rcwa monoid, set of points and bound on length}{4.2.1}{X87DB896687475084}
+\makelabel{rcwa:Ball for monoid, element and radius}{4.2.2}{X787848137DF1C245}
+\makelabel{rcwa:Ball for monoid, point, radius and action}{4.2.2}{X787848137DF1C245}
+\makelabel{rcwa:rcwa mapping of Z x Z, definition}{5.1}{X781907CA785CC7AC}
+\makelabel{rcwa:rcwa mapping modulus}{5.1}{X781907CA785CC7AC}
+\makelabel{rcwa:rcwa mapping class-wise translating}{5.1}{X781907CA785CC7AC}
+\makelabel{rcwa:class-wise translating definition}{5.1}{X781907CA785CC7AC}
+\makelabel{rcwa:prime set definition}{5.1}{X781907CA785CC7AC}
+\makelabel{rcwa:RcwaMapping by two partitions of Z x Z into residue classes}{5.2.1}{X790649618012C606}
+\makelabel{rcwa:RcwaMapping of Z x Z, by residue class cycles}{5.2.1}{X790649618012C606}
+\makelabel{rcwa:RcwaMapping of Z x Z, by projections to coordinates}{5.2.1}{X790649618012C606}
+\makelabel{rcwa:ClassTransposition r1, L1, r2, L2 (for Z x Z)}{5.2.2}{X7B450EE17B465E02}
+\makelabel{rcwa:ClassTransposition cl1, cl2 (for Z x Z)}{5.2.2}{X7B450EE17B465E02}
+\makelabel{rcwa:TransposedClasses of a class transposition of Z x Z}{5.2.2}{X7B450EE17B465E02}
+\makelabel{rcwa:SplittedClassTransposition for a class transposition of Z x Z}{5.2.2}{X7B450EE17B465E02}
+\makelabel{rcwa:ClassRotation r, L, u; for Z x Z}{5.2.3}{X828438127DDAEBB4}
+\makelabel{rcwa:ClassRotation cl, u; for Z x Z}{5.2.3}{X828438127DDAEBB4}
+\makelabel{rcwa:RotationFactor of a class rotation of Z x Z}{5.2.3}{X828438127DDAEBB4}
+\makelabel{rcwa:ClassShift r, L, k; for Z x Z}{5.2.4}{X7A14A8F48247E651}
+\makelabel{rcwa:ClassShift cl, k; for Z x Z}{5.2.4}{X7A14A8F48247E651}
+\makelabel{rcwa:IsClassTransposition for an rcwa mapping of Z x Z}{5.2.4}{X7A14A8F48247E651}
+\makelabel{rcwa:IsClassRotation for an rcwa mapping of Z x Z}{5.2.4}{X7A14A8F48247E651}
+\makelabel{rcwa:IsClassShift for an rcwa mapping of Z x Z}{5.2.4}{X7A14A8F48247E651}
+\makelabel{rcwa:View for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Display for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Print for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:String for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:LaTeXStringRcwaMapping for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:LaTeXAndXDVI for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Modulus of an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Coefficients of an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Support of an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:MovedPoints of an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Order of an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Multiplier of an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Divisor of an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:PrimeSet of an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:One for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Zero for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsInjective for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsSurjective for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsBijective for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsTame for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsIntegral for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsBalanced for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsClassWiseOrderPreserving for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsOne for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:IsZero for an rcwa mapping of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Trajectory for rcwa mappings of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:ShortCycles for rcwa perm. of Z x Z, set of points and max. length}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:Multpk for rcwa mapping of Z x Z, prime and exponent}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:ClassWiseOrderPreservingOn for rcwa mappings of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:ClassWiseOrderReversingOn for rcwa mappings of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:ClassWiseConstantOn for rcwa mappings of Z x Z}{5.3}{X8531E39785FFF8A7}
+\makelabel{rcwa:ProjectionsToCoordinates for an rcwa mapping of Z x Z}{5.3.1}{X8408B7837C9EED36}
+\makelabel{rcwa:Rcwa the monoid formed by all rcwa permutations of Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:RCWA the group formed by all rcwa permutations of Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:CT the group generated by all class transpositions of Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:Size for an rcwa group over Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:IsIntegral for an rcwa group over Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:IsClassWiseTranslating for an rcwa group over Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:IsTame for an rcwa group over Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:Modulus of an rcwa group over Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:Multiplier of an rcwa group over Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:Divisor of an rcwa group over Z x Z}{5.4}{X83A1752F7BE9CE85}
+\makelabel{rcwa:IsomorphismRcwaGroup for SL(2,Z) and a residue class}{5.4.1}{X79A8F9AD7E839862}
+\makelabel{rcwa:IsomorphismRcwaGroup for GL(2,Z) and a residue class}{5.4.1}{X79A8F9AD7E839862}
+\makelabel{rcwa:DrawOrbitPicture for rcwa groups over Z x Z}{5.4.1}{X79A8F9AD7E839862}
+\makelabel{rcwa:DrawGrid U, yrange, xrange, filename}{5.4.2}{X812135EB87527F01}
+\makelabel{rcwa:DrawGrid P, yrange, xrange, filename}{5.4.2}{X812135EB87527F01}
+\makelabel{rcwa:LoadRCWAExamples}{6.1.1}{X8714254784AFD64B}
+\makelabel{rcwa:LoadDatabaseOfGroupsGeneratedBy3ClassTranspositions small database}{6.2.1}{X793E2C5C7FC935B8}
+\makelabel{rcwa:LoadDatabaseOfGroupsGeneratedBy3ClassTranspositions both databases}{6.2.2}{X7A77F7D57B08E4A5}
+\makelabel{rcwa:LoadDatabaseOfGroupsGeneratedBy4ClassTranspositions}{6.2.3}{X792C90B48692D0D7}
+\makelabel{rcwa:LoadDatabaseOfProductsOf2ClassTranspositions}{6.3.1}{X843E94467A1BB86C}
+\makelabel{rcwa:LoadDatabaseOfNonbalancedProductsOfClassTranspositions}{6.3.2}{X85B492697ACC4A54}
+\makelabel{rcwa:LoadRCWAExamples}{7}{X7A489A5D79DA9E5C}
+\makelabel{rcwa:AssignGlobals}{7}{X7A489A5D79DA9E5C}
+\makelabel{rcwa:RCWATestInstall}{9.3.1}{X8314E1597BF1555B}
+\makelabel{rcwa:RCWATestAll}{9.3.2}{X877DDD787E4ABDC2}
+\makelabel{rcwa:RCWATestExamples}{9.3.3}{X799793987AA3F34C}
+\makelabel{rcwa:InfoRCWA}{9.4.1}{X7BAF5F4986288983}
+\makelabel{rcwa:RCWAInfo}{9.4.1}{X7BAF5F4986288983}

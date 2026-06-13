@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    GradedModules
+  </Title>
+  <Subtitle>
+    A homalg based package for the Abelian category of finitely presented graded modules over computable graded rings
+  </Subtitle>
+  <Version>
+    2026.04-01
+  </Version>
+  <Author>
+    Mohamed Barakat
+<Address>
+Walter-Flex-Str. 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>mohamed.barakat@uni-siegen.de</Email>
+<Homepage>https://mohamed-barakat.github.io</Homepage>
+  </Author>
+  <Author>
+    Sebastian Gutsche
+<Address>
+Department Mathematik<Br/>
+Universität Siegen<Br/>
+Walter-Flex-Straße 3<Br/>
+57072 Siegen<Br/>
+Germany<Br/>
+</Address>
+<Email>gutsche@mathematik.uni-siegen.de</Email>
+<Homepage>https://sebasguts.github.io</Homepage>
+  </Author>
+  <Author>
+    Sebastian Jambor
+<Address>
+Sebastian Jambor<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>sebastian.jambor@rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~sebastian/</Homepage>
+  </Author>
+  <Author>
+    Markus Lange-Hegermann
+<Address>
+Markus Lange-Hegermann<Br/>
+Hochschule Ostwestfalen-Lippe<Br/>
+Liebigstraße 87<Br/>
+32657 Lemgo<Br/>
+Germany<Br/>
+</Address>
+<Email>markus.lange-hegermann@hs-owl.de</Email>
+<Homepage>https://www.th-owl.de/eecs/fachbereich/team/markus-lange-hegermann/</Homepage>
+  </Author>
+  <Author>
+    Arne Lorenz
+<Address>
+Arne Lorenz<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>arne.lorenz@rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~arne/</Homepage>
+  </Author>
+  <Author>
+    Oleksandr Motsak
+<Address>
+Department of Mathematics<Br/>
+University of Kaiserslautern<Br/>
+67653 Kaiserslautern<Br/>
+Germany<Br/>
+</Address>
+<Email>motsak@mathematik.uni-kl.de</Email>
+<Homepage>http://www.mathematik.uni-kl.de/~motsak/</Homepage>
+  </Author>
+  <Date>
+    10 April 2026
+  </Date>
+  <Copyright>
+    &copyright; 2008-2015 by Mohamed Barakat, Sebastian Gutsche, and Markus Lange-Hegermann
+
+This package may be distributed under the terms and conditions of the GNU Public License Version 2 or (at your option) any later version.
+  </Copyright>
+  </TitlePage>

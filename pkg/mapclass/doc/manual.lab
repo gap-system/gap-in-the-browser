@@ -1,0 +1,34 @@
+\GAPDocLabFile{mapclass}
+\makelabel{mapclass:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{mapclass:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{mapclass:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{mapclass:Introduction and Main Functions}{1}{X7B9EBA44836A7F7D}
+\makelabel{mapclass:Background Material}{1.1}{X7929306C7A98029D}
+\makelabel{mapclass:Overview of Main Functions}{1.2}{X7D47DF997A20A44A}
+\makelabel{mapclass:Key Data Structures}{1.3}{X83EB578D85D98DF5}
+\makelabel{mapclass:The Orbit Record}{1.3.1}{X84FDC7BD82227DA8}
+\makelabel{mapclass:The Tuple Table}{1.3.2}{X7CEE3F9180497635}
+\makelabel{mapclass:A Sample Session}{1.4}{X81D1E049865AE89E}
+\makelabel{mapclass:An Application}{1.5}{X7A3C63AC854BCF4C}
+\makelabel{mapclass:Installation}{A}{X8360C04082558A12}
+\makelabel{mapclass:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{mapclass:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{mapclass:Index}{Ind}{X83A0356F839C696F}
+\makelabel{mapclass:Overview}{1.1}{X7929306C7A98029D}
+\makelabel{mapclass:AllMCOrbits}{1.2.1}{X7820883E8607F7AF}
+\makelabel{mapclass:AllMCOrbitsCore}{1.2.2}{X791C18967E0DFC70}
+\makelabel{mapclass:GeneratingMCOrbits}{1.2.3}{X7EFE8AF479347734}
+\makelabel{mapclass:GeneratingMCOrbitsCore}{1.2.4}{X8383CA687FFFC2EF}
+\makelabel{mapclass:MappingClassOrbit}{1.2.5}{X84D605BD79533A1E}
+\makelabel{mapclass:PrepareMinTree}{1.2.6}{X7E26117582BDD678}
+\makelabel{mapclass:MinimizeTuple}{1.2.7}{X7D9564417E8C1A00}
+\makelabel{mapclass:EasyMinimizeTuple}{1.2.8}{X7CA1E3A07A4F6270}
+\makelabel{mapclass:IsInOrbit}{1.2.9}{X8469F8DC845C902D}
+\makelabel{mapclass:FindTupleInOrbit}{1.2.10}{X7930B90F8572763B}
+\makelabel{mapclass:IsEqualOrbit}{1.2.11}{X7975937984C559FC}
+\makelabel{mapclass:SelectTuple}{1.2.12}{X815C513B789565CF}
+\makelabel{mapclass:NumberGeneratingTuples}{1.2.13}{X7B772B3C8275F5DD}
+\makelabel{mapclass:TotalNumberTuples}{1.2.14}{X7D054A867DC96522}
+\makelabel{mapclass:CalculateTuplePartition}{1.2.15}{X855F49457DC386AF}
+\makelabel{mapclass:RestoreOrbitFromFile}{1.2.16}{X86EA79C9873E3141}
+\makelabel{mapclass:SaveOrbitToFile}{1.2.17}{X82F6093885ECD889}

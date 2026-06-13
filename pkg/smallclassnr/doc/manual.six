@@ -1,0 +1,104 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "SmallClassNr",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" 
+     ], 
+  [ "Abstract", "0.0-1", [ 0, 0, 1 ], 31, 2, "abstract", "X7AA6C5737B711C89" ]
+    , 
+  [ "Copyright", "0.0-2", [ 0, 0, 2 ], 37, 2, "copyright", 
+      "X81488B807F2A1CF1" ], 
+  [ "Acknowledgements", "0.0-3", [ 0, 0, 3 ], 47, 2, "acknowledgements", 
+      "X82A988D47DFAFCFA" ], 
+  [ "Table of Contents", "0.0-4", [ 0, 0, 4 ], 52, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe SmallClassNr package\033[133X\033[101X", 
+      "1", [ 1, 0, 0 ], 1, 4, "the smallclassnr package", "X7EC4E71A8078695B" 
+     ], [ "\033[1X\033[33X\033[0;-2YInstallation\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 7, 4, "installation", "X8360C04082558A12" ], 
+  [ "\033[1X\033[33X\033[0;-2YLoading\033[133X\033[101X", "1.2", [ 1, 2, 0 ], 
+      38, 4, "loading", "X861ED1338181C66D" ], 
+  [ "\033[1X\033[33X\033[0;-2YCiting\033[133X\033[101X", "1.3", [ 1, 3, 0 ], 
+      50, 5, "citing", "X7A178B0587668C3E" ], 
+  [ "\033[1X\033[33X\033[0;-2YSupport\033[133X\033[101X", "1.4", [ 1, 4, 0 ], 
+      86, 5, "support", "X7B689C0284AC4296" ], 
+  [ "\033[1X\033[33X\033[0;-2YClassification\033[133X\033[101X", "2", 
+      [ 2, 0, 0 ], 1, 6, "classification", "X8053C9E57C4C5F94" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Small Class Number Library\033[133X\033[101X"
+        , "3", [ 3, 0, 0 ], 1, 7, "the small class number library", 
+      "X7D2B74F9802686C1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSelecting groups by their ID's\033[133X\033[101X"
+        , "3.1", [ 3, 1, 0 ], 4, 7, "selecting groups by their ids", 
+      "X7F2B2BB683990EC7" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSelecting groups by their properties\033[133X\\
+033[101X", "3.2", [ 3, 2, 0 ], 40, 7, "selecting groups by their properties", 
+      "X840A70BF809216FD" ], 
+  [ "\033[1X\033[33X\033[0;-2YAvailability of the library\033[133X\033[101X", 
+      "3.3", [ 3, 3, 0 ], 128, 9, "availability of the library", 
+      "X7D59559682A4BAC1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YConversion to other group libraries\033[133X\033[\
+101X", "4", [ 4, 0, 0 ], 1, 10, "conversion to other group libraries", 
+      "X87EC7E9C8792446D" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Small Groups Library\033[133X\033[101X", 
+      "4.1", [ 4, 1, 0 ], 4, 10, "the small groups library", 
+      "X7C16EA1580AC7586" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Library of Finite Perfect Groups\033[133X\\
+033[101X", "4.2", [ 4, 2, 0 ], 22, 10, "the library of finite perfect groups",
+      "X8660CD057B7BBD7F" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Primitive Permutation Groups Library\033[133X\
+\033[101X", "4.3", [ 4, 3, 0 ], 40, 10, 
+      "the primitive permutation groups library", "X7FB77CB979750C5D" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Library of Transitive Groups\033[133X\033[101\
+X", "4.4", [ 4, 4, 0 ], 58, 11, "the library of transitive groups", 
+      "X7B8DBD3E86B96782" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe ATLAS of Group Representations\033[133X\033[1\
+01X", "4.5", [ 4, 5, 0 ], 76, 11, "the atlas of group representations", 
+      "X7A76DF957E7AF8AE" ], 
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 12, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 12, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 13, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XSmallClassNrGroup\033[102X", "3.1-1", [ 3, 1, 1 ], 7, 7, 
+      "smallclassnrgroup", "X7F0BD3117CA1B4FE" ], 
+  [ "\033[2XSmallClassNrGroup\033[102X with AsPermGroup", "3.1-1", 
+      [ 3, 1, 1 ], 7, 7, "smallclassnrgroup with aspermgroup", 
+      "X7F0BD3117CA1B4FE" ], 
+  [ "\033[2XIdClassNr\033[102X", "3.1-2", [ 3, 1, 2 ], 29, 7, "idclassnr", 
+      "X8651368082BCE413" ], 
+  [ "\033[2XAllSmallClassNrGroups\033[102X", "3.2-1", [ 3, 2, 1 ], 52, 8, 
+      "allsmallclassnrgroups", "X87052993834D10C5" ], 
+  [ "\033[2XAllSmallClassNrGroups\033[102X with AsPermGroup", "3.2-1", 
+      [ 3, 2, 1 ], 52, 8, "allsmallclassnrgroups with aspermgroup", 
+      "X87052993834D10C5" ], 
+  [ "\033[2XOneSmallClassNrGroup\033[102X", "3.2-2", [ 3, 2, 2 ], 83, 8, 
+      "onesmallclassnrgroup", "X7AD22E3083C09796" ], 
+  [ "\033[2XOneSmallClassNrGroup\033[102X with AsPermGroup", "3.2-2", 
+      [ 3, 2, 2 ], 83, 8, "onesmallclassnrgroup with aspermgroup", 
+      "X7AD22E3083C09796" ], 
+  [ "\033[2XNrSmallClassNrGroups\033[102X", "3.2-3", [ 3, 2, 3 ], 98, 8, 
+      "nrsmallclassnrgroups", "X84004D087859AF4F" ], 
+  [ "\033[2XIteratorSmallClassNrGroups\033[102X", "3.2-4", [ 3, 2, 4 ], 113, 
+      9, "iteratorsmallclassnrgroups", "X7D2BB4B379563D9A" ], 
+  [ "\033[2XSmallClassNrGroupsAvailable\033[102X", "3.3-1", [ 3, 3, 1 ], 131, 
+      9, "smallclassnrgroupsavailable", "X79C6FA9D850D3AB1" ], 
+  [ "\033[2XIdClassNrToIdGroup\033[102X", "4.1-1", [ 4, 1, 1 ], 9, 10, 
+      "idclassnrtoidgroup", "X7C5BB3197F5351D8" ], 
+  [ "\033[2XIdClassNrToPerfGrp\033[102X", "4.2-1", [ 4, 2, 1 ], 27, 10, 
+      "idclassnrtoperfgrp", "X7CA882467C69C584" ], 
+  [ "\033[2XIdClassNrToPrimGrp\033[102X", "4.3-1", [ 4, 3, 1 ], 45, 11, 
+      "idclassnrtoprimgrp", "X8146A37D7F89659B" ], 
+  [ "\033[2XIdClassNrToTransGrp\033[102X", "4.4-1", [ 4, 4, 1 ], 63, 11, 
+      "idclassnrtotransgrp", "X7990925C84FD0365" ], 
+  [ "\033[2XIdClassNrToAtlasName\033[102X", "4.5-1", [ 4, 5, 1 ], 81, 11, 
+      "idclassnrtoatlasname", "X7FD9F8DC7F7679EE" ] ]
+);

@@ -1,0 +1,210 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "dev",
+entries :=
+[ [ "Title page", "0.0", [ 0, 0, 0 ], 1,, "title page", "X7D2C85EC87DD46E5" ],
+  [ "Abstract", "0.0-1", [ 0, 0, 1 ], 21,, "abstract", "X7AA6C5737B711C89" ], 
+  [ "Copyright", "0.0-2", [ 0, 0, 2 ], 39,, "copyright", "X81488B807F2A1CF1" ]
+    , [ "Table of Contents", "0.0-3", [ 0, 0, 3 ], 44,, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YStructure of the \033[5XGAP\033[105X\033[101X\\
+027\033[1X\027 distribution\033[133X\033[101X", "1", [ 1, 0, 0 ], 1,, 
+      "structure of the gap distribution", "X7A2465B67D8E59B6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YKernel, library, documentation, package interface\
+, development part\033[133X\033[101X", "1.1", [ 1, 1, 0 ], 7,, 
+      "kernel library documentation package interface development part", 
+      "X7B27E71B7AA26F31" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe directories of the \033[5XGAP\033[105X\033[10\
+1X\027\033[1X\027 distribution and repository\033[133X\033[101X", "1.2", 
+      [ 1, 2, 0 ], 12,, 
+      "the directories of the gap distribution and repository", 
+      "X7C387B4C84A76B5B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe \033[5XGAP\033[105X\033[101X\027\033[1X\027 k\
+ernel programming\033[133X\033[101X", "2", [ 2, 0, 0 ], 1,, 
+      "the gap kernel programming", "X810D56CE7BC6031F" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YOverview of the \033[5XGAP\033[105X\033[101X\027\\
+033[1X\027 kernel\033[133X\033[101X", "2.1", [ 2, 1, 0 ], 4,, 
+      "overview of the gap kernel", "X8071E6CA7A9CF5DF" ], 
+  [ "\033[1X\033[33X\033[0;-2Y\"Hello World\" example\033[133X\033[101X", 
+      "2.2", [ 2, 2, 0 ], 48,, "hello world example", "X7F9BD7A37B142C23" ], 
+  [ "\033[1X\033[33X\033[0;-2YStructure of the \033[5XGAP\033[105X\033[101X\
+\027\033[1X\027 kernel\033[133X\033[101X", "2.3", [ 2, 3, 0 ], 110,, 
+      "structure of the gap kernel", "X78D70F927B947A2C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGarbage collection in \033[5XGAP\033[105X\033[101\
+X\027\033[1X\027\033[133X\033[101X", "2.4", [ 2, 4, 0 ], 156,, 
+      "garbage collection in gap", "X86BA4BA17AA4F56C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[5XGASMAN\033[105X\033[101X\027\033[1X\027\\
+033[133X\033[101X", "2.4-1", [ 2, 4, 1 ], 159,, "gasman", "X86E038D8796AECA3" 
+     ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[5XGASMAN\033[105X\033[101X\027\033[1X\027 In\
+terface\033[133X\033[101X", "2.4-2", [ 2, 4, 2 ], 189,, "gasman interface", 
+      "X7AA6E6517ED276FA" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe GASMAN Interface for Weak Pointer Objects\\
+033[133X\033[101X", "2.4-3", [ 2, 4, 3 ], 319,, 
+      "the gasman interface for weak pointer objects", "X7C1EFEEB8071E0A2" ], 
+  [ "\033[1X\033[33X\033[0;-2YInterfaces\033[133X\033[101X", "2.5", 
+      [ 2, 5, 0 ], 338,, "interfaces", "X815C2D007A090300" ], 
+  [ "\033[1X\033[33X\033[0;-2YObjects and API\033[133X\033[101X", "2.6", 
+      [ 2, 6, 0 ], 429,, "objects and api", "X849901607E91AC92" ], 
+  [ "\033[1X\033[33X\033[0;-2YImmediate Integers and FFEs\033[133X\033[101X", 
+      "2.6-1", [ 2, 6, 1 ], 500,, "immediate integers and ffes", 
+      "X7B314E837FD109B1" ], 
+  [ "\033[1X\033[33X\033[0;-2YArithmetics\033[133X\033[101X", "2.6-2", 
+      [ 2, 6, 2 ], 574,, "arithmetics", "X87FF26F4878230FB" ], 
+  [ "\033[1X\033[33X\033[0;-2YFunctions\033[133X\033[101X", "2.6-3", 
+      [ 2, 6, 3 ], 615,, "functions", "X86FA580F8055B274" ], 
+  [ "\033[1X\033[33X\033[0;-2YLists\033[133X\033[101X", "2.6-4", [ 2, 6, 4 ], 
+      678,, "lists", "X7B256AE5780F140A" ], 
+  [ "\033[1X\033[33X\033[0;-2YData objects\033[133X\033[101X", "2.6-5", 
+      [ 2, 6, 5 ], 704,, "data objects", "X789D77787E3527D4" ], 
+  [ "\033[1X\033[33X\033[0;-2YRules of Kernel Programming\033[133X\033[101X", 
+      "2.7", [ 2, 7, 0 ], 717,, "rules of kernel programming", 
+      "X7A547AB487DA5FA9" ], 
+  [ "\033[1X\033[33X\033[0;-2YThree golden rules\033[133X\033[101X", "2.7-1", 
+      [ 2, 7, 1 ], 720,, "three golden rules", "X861B9EB587F6B238" ], 
+  [ "\033[1X\033[33X\033[0;-2YCommon kernel traps\033[133X\033[101X", 
+      "2.7-2", [ 2, 7, 2 ], 735,, "common kernel traps", "X8055D4158291EAA2" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2YOne More Bit of GASMAN interface\033[133X\033[101\
+X", "2.7-3", [ 2, 7, 3 ], 758,, "one more bit of gasman interface", 
+      "X7FC1A0FA7B0E8554" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe \033[5XGAP\033[105X\033[101X\027\033[1X\027 c\
+ompiler\033[133X\033[101X", "2.8", [ 2, 8, 0 ], 769,, "the gap compiler", 
+      "X82DBFB18873C8E8F" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCompiling \033[5XGAP\033[105X\033[101X\027\033[1X\
+\027 Code\033[133X\033[101X", "2.8-1", [ 2, 8, 1 ], 772,, 
+      "compiling gap code", "X7AFA67497FA81DCD" ], 
+  [ "\033[1X\033[33X\033[0;-2YSuitability for Compilation\033[133X\033[101X", 
+      "2.8-2", [ 2, 8, 2 ], 851,, "suitability for compilation", 
+      "X7FBB45C17D3F3B0B" ], 
+  [ "\033[1X\033[33X\033[0;-2YGlobal Variables\033[133X\033[101X", "2.9", 
+      [ 2, 9, 0 ], 867,, "global variables", "X7D9044767BEB1523" ], 
+  [ "\033[1X\033[33X\033[0;-2YGlobal variables\033[133X\033[101X", "2.9-1", 
+      [ 2, 9, 1 ], 870,, "global variables", "X7D9044767BEB1523" ], 
+  [ "\033[1X\033[33X\033[0;-2YTracking global variables\033[133X\033[101X", 
+      "2.9-2", [ 2, 9, 2 ], 882,, "tracking global variables", 
+      "X7A106F327F75851A" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe Kernel Module Structure and interface\033[133\
+X\033[101X", "2.10", [ 2, 10, 0 ], 903,, 
+      "the kernel module structure and interface", "X7B6775AC8609D5AB" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Kernel Module Structure\033[133X\033[101X", 
+      "2.10-1", [ 2, 10, 1 ], 906,, "the kernel module structure", 
+      "X82E5407283B16176" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Kernel Module Interface\033[133X\033[101X", 
+      "2.10-2", [ 2, 10, 2 ], 936,, "the kernel module interface", 
+      "X875A1DC186FEC3C5" ], 
+  [ "\033[1X\033[33X\033[0;-2YSequences of Events\033[133X\033[101X", 
+      "2.10-3", [ 2, 10, 3 ], 960,, "sequences of events", 
+      "X7FBC8CDB82C7A500" ], 
+  [ "\033[1X\033[33X\033[0;-2YSaving a Workspace\033[133X\033[101X", 
+      "2.10-4", [ 2, 10, 4 ], 983,, "saving a workspace", "X80CAC88A7E9561E3" 
+     ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YExcerpts from InitKernel from integer.c\033[133X\\
+033[101X", "2.10-5", [ 2, 10, 5 ], 997,, 
+      "excerpts from initkernel from integer.c", "X809F94777E699351" ], 
+  [ "\033[1X\033[33X\033[0;-2YCommentary\033[133X\033[101X", "2.10-6", 
+      [ 2, 10, 6 ], 1030,, "commentary", "X7EA36574819CE9AD" ], 
+  [ "\033[1X\033[33X\033[0;-2YOther Similar Functions\033[133X\033[101X", 
+      "2.10-7", [ 2, 10, 7 ], 1063,, "other similar functions", 
+      "X802173687AD2C3FD" ], 
+  [ "\033[1X\033[33X\033[0;-2YImporting from the Library\033[133X\033[101X", 
+      "2.10-8", [ 2, 10, 8 ], 1075,, "importing from the library", 
+      "X781C432386ED9C00" ], 
+  [ "\033[1X\033[33X\033[0;-2YInitKernel\033[133X\033[101X", "2.10-9", 
+      [ 2, 10, 9 ], 1098,, "initkernel", "X797D02CD7AC39FE6" ], 
+  [ "\033[1X\033[33X\033[0;-2YinitLibrary and postRestore\033[133X\033[101X", 
+      "2.10-10", [ 2, 10, 10 ], 1133,, "initlibrary and postrestore", 
+      "X7FDA1F307BC45E44" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YMaintaining the \033[5XGAP\033[105X\033[101X\027\\
+033[1X\027 kernel and library\033[133X\033[101X", "3", [ 3, 0, 0 ], 1,, 
+      "maintaining the gap kernel and library", "X87069A9C7F80F2F6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YDebugging the \033[5XGAP\033[105X\033[101X\027\\
+033[1X\027 Kernel\033[133X\033[101X", "3.1", [ 3, 1, 0 ], 4,, 
+      "debugging the gap kernel", "X8429278B82F8422F" ], 
+  [ "\033[1X\033[33X\033[0;-2Y...\033[133X\033[101X", "3.2", [ 3, 2, 0 ], 61,
+      , "...", "X872B5589872B5589" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YMaintaining the \033[5XGAP\033[105X\033[101X\027\\
+033[1X\027 documentation\033[133X\033[101X", "4", [ 4, 0, 0 ], 1,, 
+      "maintaining the gap documentation", "X7C24E045841932FE" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YThe source of the \033[5XGAP\033[105X\033[101X\\
+027\033[1X\027 documentation\033[133X\033[101X", "4.1", [ 4, 1, 0 ], 7,, 
+      "the source of the gap documentation", "X7C846E267C02DAC1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YHow to compile the \033[5XGAP\033[105X\033[101X\\
+027\033[1X\027 manuals from the sources\033[133X\033[101X", "4.2", 
+      [ 4, 2, 0 ], 14,, "how to compile the gap manuals from the sources", 
+      "X7F00F57B860D4BCB" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YTesting \033[5XGAP\033[105X\033[101X\027\033[1X\\
+027\033[133X\033[101X", "5", [ 5, 0, 0 ], 1,, "testing gap", 
+      "X7E322F907A91E93C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[10X.tst\033[110X\033[101X\027\033[1X\027-fil\
+es\033[133X\033[101X", "5.1", [ 5, 1, 0 ], 15,, ".tst-files", 
+      "X7A8164FA845633C4" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YChecking examples in the main manuals\033[133X\\
+033[101X", "5.2", [ 5, 2, 0 ], 46,, "checking examples in the main manuals", 
+      "X7C3CA111819C3B70" ], 
+  [ "\033[1X\033[33X\033[0;-2YTests for packages\033[133X\033[101X", "5.3", 
+      [ 5, 3, 0 ], 60,, "tests for packages", "X86A3BA8286875488" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YChecking references and cross-references of manua\
+ls\033[133X\033[101X", "5.4", [ 5, 4, 0 ], 97,, 
+      "checking references and cross-references of manuals", 
+      "X7C9AC516810C5B9B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YDetecting potential naming conflicts\033[133X\\
+033[101X", "5.5", [ 5, 5, 0 ], 113,, "detecting potential naming conflicts", 
+      "X81532DCF84DF5130" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe standard test suite\033[133X\033[101X", 
+      "5.6", [ 5, 6, 0 ], 118,, "the standard test suite", 
+      "X7A7205ED7D3C47E5" ], 
+  [ "\033[1X\033[33X\033[0;-2YTest evaluation\033[133X\033[101X", "5.7", 
+      [ 5, 7, 0 ], 189,, "test evaluation", "X7E3E6D44826B524E" ], 
+  [ "\033[1X\033[33X\033[0;-2YTest Issues for Releases\033[133X\033[101X", 
+      "5.8", [ 5, 8, 0 ], 229,, "test issues for releases", 
+      "X7D745E5F7EC8BF06" ], 
+  [ "\033[1X\033[33X\033[0;-2YOpen items concerning tests\033[133X\033[101X", 
+      "5.9", [ 5, 9, 0 ], 237,, "open items concerning tests", 
+      "X864F14B185FDD394" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YDistributing packages via the \033[5XGAP\033[105X\
+\033[101X\027\033[1X\027 sites\033[133X\033[101X", "6", [ 6, 0, 0 ], 1,, 
+      "distributing packages via the gap sites", "X83A4D48480312567" ], 
+  [ "\033[1X\033[33X\033[0;-2Y...\033[133X\033[101X", "6.1", [ 6, 1, 0 ], 7,, 
+      "...", "X872B5589872B5589" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YMaintaining the \033[5XGAP\033[105X\033[101X\027\\
+033[1X\027 website\033[133X\033[101X", "7", [ 7, 0, 0 ], 1,, 
+      "maintaining the gap website", "X83EA107F8604BF05" ], 
+  [ "\033[1X\033[33X\033[0;-2YOverview\033[133X\033[101X", "7.1", 
+      [ 7, 1, 0 ], 8,, "overview", "X8389AD927B74BA4A" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YHints and conventions for writing \033[5XGAP\033[\
+105X\033[101X\027\033[1X\027 programs\033[133X\033[101X", "8", [ 8, 0, 0 ], 1,
+      , "hints and conventions for writing gap programs", "X84B46A8F8558362E" 
+     ], [ "\033[1X\033[33X\033[0;-2YNaming conventions\033[133X\033[101X", 
+      "8.1", [ 8, 1, 0 ], 14,, "naming conventions", "X81F732457F7BC851" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1,, "index", "X83A0356F839C696F" ], 
+  [ "modules", "3.1", [ 3, 1, 0 ], 4,, "modules", "X8429278B82F8422F" ] ]
+);

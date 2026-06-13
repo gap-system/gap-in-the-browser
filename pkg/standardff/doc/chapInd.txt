@@ -1,0 +1,54 @@
+  
+  
+  [1XIndex[101X
+  
+  [2X\*[102X, for standard finite field elements 2.4-4 
+  [2X\+[102X, for standard finite field elements 2.4-4 
+  [2X\-[102X, for standard finite field elements 2.4-4 
+  [2X\/[102X, for standard finite field elements 2.4-4 
+  [2XAllFF[102X 4.9-1 
+  [2XAllFieldsWithConwayPolynomial[102X 4.9-1 
+  [2XAllPrimeDegreePolynomials[102X 4.9-1 
+  [2XAllPrimitiveRoots[102X 4.9-1 
+  [2XAllPrimitiveRootsCANFACT[102X 4.9-1 
+  [2XAsPolynomial[102X, for elements in standard finite fields 2.3-1 
+  [2XAsVector[102X, for elements in standard finite fields 2.3-1 
+  [2XBerlekampMassey[102X 4.6-2 
+  [2XCANFACT[102X 4.8-1 
+  [2XDLog[102X 4.5-1 
+  [2XElementPolynomial[102X 2.3-1 
+  [2XElementSteinitzNumber[102X 2.3-1 
+  [2XElementVector[102X 2.3-1 
+  [2XEmbedding[102X, for standard finite fields 2.4-2 
+  [2XFF[102X 2.2-1 
+  [2XFindConjugateZeroes[102X 4.4-1 
+  [2XFindLinearCombination[102X 4.2-1 
+  [2XInvModCoeffs[102X 4.6-1 
+  [2XIsGaloisInvariant[102X 4.7-1 
+  [2XIsIrreducibleCoeffList[102X 4.3-1 
+  [2XIsStandardFiniteField[102X 2.2-2 
+  [2XIsStandardFiniteFieldElement[102X 2.2-2 
+  [2XIsStandardPrimeField[102X 2.2-2 
+  [2XMinimalPolynomialByBerlekampMassey[102X 4.6-3 
+  [2XMinimalPolynomialByBerlekampMasseyShoup[102X 4.6-3 
+  [2XMoveToSmallestStandardField[102X 2.4-4 
+  [2XSmallestDegreeFrobeniusCharacterValue[102X 4.7-2 
+  [2XStandardAffineShift[102X 4.1-1 
+  [2XStandardCyclicGenerator[102X 3.1-1 
+  [2XStandardFiniteField[102X 2.2-1 
+  [2XStandardFrobeniusCharacterValue[102X 4.7-2 
+  [2XStandardIsomorphismGF[102X 2.4-5 
+  [2XStandardPrimeDegreePolynomial[102X 2.2-1 
+  [2XStandardPrimitiveRoot[102X 3.1-1 
+  [2XStandardValuesBrauerCharacter[102X 4.7-1 
+  [2XSteinitzNumber[102X 2.3-1 
+      for Steinitz pair 2.4-1 
+  [2XSteinitzPair[102X 2.4-1 
+      for Steinitz number 2.4-1 
+  [2XSteinitzPairConwayGenerator[102X 4.4-3 
+  [2XZeroesConway[102X 4.4-2 
+  [2XZZ[102X 2.4-3 
+      for IsFFE 2.4-3 
+  
+  
+  -------------------------------------------------------

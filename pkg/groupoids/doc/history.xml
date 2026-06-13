@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-history">
+<Heading>Development History</Heading>
+
+
+<Section Label="sec-versions">
+<Heading>Versions of the Package</Heading>
+
+The first version, <Package>GraphGpd</Package> 1.001, 
+formed part of Emma Moore's thesis <Cite Key="emma-thesis" /> in December 2000,
+but was not made generally available.
+<P/>
+Version 1.002 of <Package>GraphGpd</Package> 
+was prepared to run under &GAP; 4.4 in January 2004; 
+was submitted to the &GAP; council to be considered as an accepted package; 
+but suggestions from the referee were not followed up.
+<P/>
+In April 2006 the manual was converted to <Package>GAPDoc</Package> format.
+Variables <C>Star</C>, <C>Costar</C> and <C>CoveringGroup</C> were
+found to conflict with usage in other packages, and were renamed 
+<C>VertexStar</C>, <C>VertexCostar</C> and 
+<C>CoveringGroupOfGroupoid</C> respectively. 
+Similarly, the <C>Vertices</C> and <C>Arcs</C> of an <C>FpWeightedDigraph</C> 
+were changed from attributes to record components.
+<P/>
+In the spring of 2006 the package was extensively rewritten 
+and renamed <Package>Gpd</Package>. 
+Version 1.01 was submitted as a deposited package in June 2006.
+Version 1.03, of October 2007, fixed some file protections, 
+and introduced the test file <F>gpd_manual.tst</F>. 
+<P/>
+Version 1.05, of November 2008, was released when the website 
+at Bangor changed. 
+<P/>
+Since then, the package has been rewritten again, 
+introducing magmas with objects and their mappings. 
+Functions to implement constructions contained in <Cite Key="AlWe" /> 
+have been added, but this is ongoing work. 
+<P/> 
+Versions 1.09 to 1.15 were prepared for the anticipated release of &GAP; 4.5 
+in June 2012. 
+<P/> 
+<Package>Gpd</Package> became an accepted &GAP; package in May 2015. 
+<P/>
+In April 2017 the package was renamed again, as <Package>groupoids</Package>. 
+<P/>
+In August 2017 the implementation of groupoid homomorphisms was completely 
+revised with the emphasis now on a mapping from a set of generating arrows 
+to their images. 
+<P/>
+In September 2017 various functions were revised so that, at last, 
+the operation <C>DiscreteNormalPreXModWithObjects</C> 
+in <Package>XMod</Package> works again. 
+This constructs a crossed module of groupoids with a connected range 
+and a homogeneous, discrete source. 
+<P/>
+In recent versions there have been a number of changes of function 
+name, such as <C>IsDigraph</C> becoming <C>IsGroupoidDigraph</C>. 
+This is in order to avoid conflicts with the 
+<Package>Digraphs</Package> package.
+<P/>
+In version 1.62 of October 2018 there were significant changes to the 
+operations constructing free products with amalgamation and HNN extensions. 
+There was a plan to move this material to a new package 
+<Package>Rewriting</Package>, but that has not happened. 
+<P/> 
+Version 1.71 of August 2022 contains a complete revision of right, 
+left and double cosets of groupoids.  
+(The initial declaration of LeftCoset was moved to the 
+<Package>Utils</Package> package.) 
+<P/> 
+Version 1.73 of February 2023 contained a first attempt at an implementation
+of double groupoids, as described in Chapter <Ref Chap='chap-double' />.
+This was then extensively revised in version 1.77 of July 2025.
+This experimental material is liable to be changed and extended. 
+A more general version of double groupoids has been introduced in the 
+<Package>XMod</Package> package. 
+
+</Section>
+
+
+<Section Label="sec-whatnext">
+<Heading>What needs to be done next?</Heading>
+
+<List>
+<Item>
+more work on automorphism groups of groupoids; 
+</Item>
+<Item>
+normal subgroupoids and quotient groupoids;
+</Item>
+<Item>
+more methods for morphisms of groupoids, 
+particularly when the range is not connected; 
+</Item>
+<Item>
+<C>ImageElm</C> and <C>ImagesSource</C> 
+for the cases of groupoid morphisms not yet covered;
+</Item>
+<Item>
+<C>Enumerator</C> for <C>IsHomsetCosetsRep</C>;
+</Item>
+<Item>
+free groupoid on a graph;
+</Item>
+<Item>
+convert <C>GraphOfGroupsRewritingSystem</C> to the category 
+<C>IsRewritingSystem</C>;
+</Item>
+<Item>
+in <Package>XMod</Package>, continue to work on crossed modules over groupoids;
+</Item>
+</List>
+
+</Section>
+</Chapter>

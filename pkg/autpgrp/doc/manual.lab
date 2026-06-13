@@ -1,0 +1,32 @@
+\GAPDocLabFile{autpgrp}
+\makelabel{autpgrp:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{autpgrp:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{autpgrp:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{autpgrp:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{autpgrp:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{autpgrp:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{autpgrp:Introduction}{1.1}{X7DFB63A97E67C0A1}
+\makelabel{autpgrp:The automorphism group method}{2}{X858BB98D85D78C8C}
+\makelabel{autpgrp:The automorphism group method}{2.1}{X858BB98D85D78C8C}
+\makelabel{autpgrp:The underlying function}{3}{X79DCF7D9853381F3}
+\makelabel{autpgrp:The underlying function}{3.1}{X79DCF7D9853381F3}
+\makelabel{autpgrp:Influencing the algorithm}{4}{X86240F237D909E1C}
+\makelabel{autpgrp:Outline of the algorithm}{4.1}{X85D2ECC779E3CF7D}
+\makelabel{autpgrp:The initialisation step}{4.2}{X87B27C1F810822F3}
+\makelabel{autpgrp:Stabilisers in matrix groups}{4.3}{X869B678180AD5E21}
+\makelabel{autpgrp:Searching for a small generating set}{4.4}{X859CF9757A1F51EB}
+\makelabel{autpgrp:An interactive version of the algorithm}{4.5}{X81A0235D7E15DFBD}
+\makelabel{autpgrp:Additional features of the package}{5}{X7C0BF58A85D48781}
+\makelabel{autpgrp:Additional features of the package}{5.1}{X7C0BF58A85D48781}
+\makelabel{autpgrp:Index}{Ind}{X83A0356F839C696F}
+\makelabel{autpgrp:AutomorphismGroup}{2.1.1}{X87677B0787B4461A}
+\makelabel{autpgrp:InfoAutGrp}{2.1.2}{X7D16AFE27E0B7133}
+\makelabel{autpgrp:AutomorphismGroupPGroup}{3.1.1}{X83ABE66C83446A0B}
+\makelabel{autpgrp:ConvertHybridAutGroup}{3.1.2}{X7DEE06CF79DC7A7C}
+\makelabel{autpgrp:PcGroupAutPGroup}{3.1.3}{X7ED1F7C6849CA658}
+\makelabel{autpgrp:CHOPMULT}{4.3.1}{X86529C2080159D8A}
+\makelabel{autpgrp:NICESTAB}{4.4.1}{X83C095D17D35A8DE}
+\makelabel{autpgrp:NumberOfPClass2PGroups for 3 arguments}{5.1.1}{X7E472D2579705246}
+\makelabel{autpgrp:NumberOfPClass2PGroups for 2 arguments}{5.1.2}{X825FC0D9796B0D97}
+\makelabel{autpgrp:NumberOfClass2LieAlgebras for 3 arguments}{5.1.3}{X8399B9137982EBAC}
+\makelabel{autpgrp:NumberOfClass2LieAlgbras for 2 arguments}{5.1.4}{X824DFC307CA9626E}

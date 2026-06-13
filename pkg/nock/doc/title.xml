@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    NoCK
+  </Title>
+  <Subtitle>
+    Computing obstruction for the existence of compact Clifford-Klein form
+  </Subtitle>
+  <Version>
+    1.5
+  </Version>
+  <Author>
+    Maciej Bocheński<Alt Only="LaTeX"><Br/></Alt>
+<Email>mabo@matman.uwm.edu.pl</Email>
+
+  </Author>
+  <Author>
+    Piotr Jastrzębski<Alt Only="LaTeX"><Br/></Alt>
+<Email>piojas@matman.uwm.edu.pl</Email>
+<Homepage>http://wmii.uwm.edu.pl/~piojas/</Homepage>
+
+  </Author>
+  <Author>
+    Anna Szczepkowska<Alt Only="LaTeX"><Br/></Alt>
+<Email>anna.szczepkowska@matman.uwm.edu.pl</Email>
+
+  </Author>
+  <Author>
+    Aleksy Tralle<Alt Only="LaTeX"><Br/></Alt>
+<Email>tralle@matman.uwm.edu.pl</Email>
+<Homepage>http://wmii.uwm.edu.pl/~tralle/</Homepage>
+
+  </Author>
+  <Author>
+    Artur Woike<Alt Only="LaTeX"><Br/></Alt>
+<Email>awoike@matman.uwm.edu.pl</Email>
+<Homepage>http://wmii.uwm.edu.pl/~awoike</Homepage>
+
+  </Author>
+  <Date>
+    30 March 2022
+  </Date>
+  <Abstract>
+            In this package we develop functions for an algorithm designed
+        to find homogeneous spaces of semisimple non-compact Lie groups
+        which do not admit compact Clifford-Klein forms.
+        
+  </Abstract>
+  <Copyright>
+            NoCK Package is free software;  you can redistribute it and/or modify it under the terms of the
+        <URL Text="GNU General Public License">https://www.fsf.org/licenses/gpl.html</URL>
+        as published by the Free Software Foundation; either version 2 of the License,
+        or (at your option) any later version.
+        
+  </Copyright>
+  <Acknowledgements>
+            We thank Willem de Graaf for his help in getting some literature sources.
+        
+  </Acknowledgements>
+  </TitlePage>

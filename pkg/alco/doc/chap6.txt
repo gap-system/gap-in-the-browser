@@ -1,0 +1,111 @@
+  
+  [1X6 [33X[0;0YClosure Tools[133X[101X
+  
+  [33X[0;0YThe  [5XALCO[105X  package provides some basic tools to compute the closure of a set
+  with  respect to a binary operation. Some of these tools compute the closure
+  by  brute  force,  while  others use random selection of pairs to attempt to
+  find new members not in the set.[133X
+  
+  
+  [1X6.1 [33X[0;0YBrute Force Method[133X[101X
+  
+  [1X6.1-1 Closure[101X
+  
+  [33X[1;0Y[29X[2XClosure[102X( [3Xgens[103X, [3Xop[103X[, [3Xoption[103X] ) [32X function[133X
+  
+  [33X[0;0YFor [3Xgens[103X satisfying [10XIsHomogeneousList[110X, this function computes the closure of
+  [3Xgens[103X  by addition of all elements of the form [10X[3Xop[103X[10X(x,y)[110X, starting with [10Xx[110X and [10Xy[110X
+  any  elements  in [3Xgens[103X. The function will not terminate until no new members
+  are  produced  when  applying [3Xop[103X to all ordered pairs of generated elements.
+  The  argument  [3Xoption[103X, if supplied, ensures that the function treats [3Xop[103X as a
+  commutative operation.[133X
+  
+  [33X[0;0YCaution  must be exercised when using this function to prevent attempting to
+  compute the closure of large or possibly infinite sets.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XClosure([1,E(7)], \*);[127X[104X
+    [4X[28X[ 1, E(7)^6, E(7)^5, E(7)^4, E(7)^3, E(7)^2, E(7) ][128X[104X
+    [4X[25Xgap>[125X [27XQuaternionD4Basis;[127X[104X
+    [4X[28XBasis( <algebra-with-one of dimension 4 over Rationals>,[128X[104X
+    [4X[28X[ (-1/2)*e+(-1/2)*i+(-1/2)*j+(1/2)*k, (-1/2)*e+(-1/2)*i+(1/2)*j+(-1/2)*k,[128X[104X
+    [4X[28X  (-1/2)*e+(1/2)*i+(-1/2)*j+(-1/2)*k, e ] )[128X[104X
+    [4X[25Xgap>[125X [27XClosure(QuaternionD4Basis,\*);[127X[104X
+    [4X[28X[ (-1)*e, (-1/2)*e+(-1/2)*i+(-1/2)*j+(-1/2)*k,[128X[104X
+    [4X[28X  (-1/2)*e+(-1/2)*i+(-1/2)*j+(1/2)*k, (-1/2)*e+(-1/2)*i+(1/2)*j+(-1/2)*k,[128X[104X
+    [4X[28X  (-1/2)*e+(-1/2)*i+(1/2)*j+(1/2)*k, (-1/2)*e+(1/2)*i+(-1/2)*j+(-1/2)*k,[128X[104X
+    [4X[28X  (-1/2)*e+(1/2)*i+(-1/2)*j+(1/2)*k, (-1/2)*e+(1/2)*i+(1/2)*j+(-1/2)*k,[128X[104X
+    [4X[28X  (-1/2)*e+(1/2)*i+(1/2)*j+(1/2)*k, (-1)*i, (-1)*j, (-1)*k, k, j, i,[128X[104X
+    [4X[28X  (1/2)*e+(-1/2)*i+(-1/2)*j+(-1/2)*k, (1/2)*e+(-1/2)*i+(-1/2)*j+(1/2)*k,[128X[104X
+    [4X[28X  (1/2)*e+(-1/2)*i+(1/2)*j+(-1/2)*k, (1/2)*e+(-1/2)*i+(1/2)*j+(1/2)*k,[128X[104X
+    [4X[28X  (1/2)*e+(1/2)*i+(-1/2)*j+(-1/2)*k, (1/2)*e+(1/2)*i+(-1/2)*j+(1/2)*k,[128X[104X
+    [4X[28X  (1/2)*e+(1/2)*i+(1/2)*j+(-1/2)*k, (1/2)*e+(1/2)*i+(1/2)*j+(1/2)*k, e ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X6.2 [33X[0;0YRandom Choice Methods[133X[101X
+  
+  [33X[0;0YIn  many cases the [2XClosure[102X ([14X6.1-1[114X) function is impractical to use due to the
+  long  computation  time  of  the brute force method. The following functions
+  provide  tools  to  generate more elements of a set under a binary operation
+  without directly proving closure.[133X
+  
+  [1X6.2-1 RandomElementClosure[101X
+  
+  [33X[1;0Y[29X[2XRandomElementClosure[102X( [3Xgens[103X, [3Xop[103X[, [3XN[103X[, [3Xprint[103X]] ) [32X function[133X
+  
+  [33X[0;0YFor  [3Xgens[103X  satisfying  [10XIsHomogeneousList[110X,  this  function  selects  a random
+  element  [3Xr[103X  in  [3Xgens[103X  and  computes  all elements of the form [10X[3X op[103X[10X([3Xr[103X[10X,[3Xx[103X[10X)[110X for [3Xx[103X
+  either  in  [3Xgens[103X  or  obtained in a previous closure step. Once this process
+  yields  a  set  of  elements  with equal cardinality [10X[3XN[103X[10X+1[110X times, the function
+  terminates  and  returns  all elements obtained so far as a set. The default
+  value  of  [3XN[103X  is  [10X1[110X.  The  optional  [3Xprint[103X argument, if supplied, prints the
+  cardinality of the set of elements obtain so far at each iteration.[133X
+  
+  [33X[0;0YCaution  must be exercised when using this function to prevent attempting to
+  compute  the  random closure of an infinite set. Caution is also required in
+  interpreting  the  output.  Even  for  large  values of [3XN[103X, the result is not
+  necessarily  the  full  closure  of set [3Xgens[103X. Furthermore, repeated calls to
+  this function may result in different outputs due to the random selection of
+  elements  involved  throughout.  If  the  size of the expected closed set is
+  known,  use  of  a  [10Xrepeat[110X-[10Xuntil[110X  loop can permit generating the full set of
+  elements faster than [2XClosure[102X ([14X6.1-1[114X) would.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xstart := Basis(QuaternionAlgebra(Rationals)){[2,3]};[127X[104X
+    [4X[28X[ i, j ][128X[104X
+    [4X[25Xgap>[125X [27Xrepeat[127X[104X
+    [4X[25X>[125X [27Xstart := RandomElementClosure(start, \*);[127X[104X
+    [4X[25X>[125X [27Xuntil Length(start) = 8;[127X[104X
+    [4X[25Xgap>[125X [27Xstart;[127X[104X
+    [4X[28X[ (-1)*e, (-1)*i, (-1)*j, (-1)*k, k, j, i, e ][128X[104X
+  [4X[32X[104X
+  
+  [1X6.2-2 RandomOrbitOnSets[101X
+  
+  [33X[1;0Y[29X[2XRandomOrbitOnSets[102X( [3Xgens[103X, [3Xstart[103X, [3Xop[103X[, [3XN[103X[, [3Xprint[103X]] ) [32X function[133X
+  
+  [33X[0;0YThis  function  proceeds  in  a  manner very similar to [2XRandomElementClosure[102X
+  ([14X6.2-1[114X)  with  the  following  differences.  This function instead selects a
+  random  element  [3Xr[103X  in  [3Xgens[103X  and  then  for every [3Xx[103X in [3Xstart[103X, or the set of
+  previously   generated   elements,   computes  [10X[3Xop[103X[10X([3Xr[103X[10X,[3Xx[103X[10X)[110X.  At  each  step  the
+  cardinality  of  the union of [3Xstart[103X and any previously generated elements is
+  computed.  Once  the  cardinality  is  fixed  for  [3XN + 1[103X steps, the function
+  returns the set of generated elements.[133X
+  
+  [33X[0;0YThe  same  cautions as described in [2XRandomElementClosure[102X ([14X6.2-1[114X) apply. Note
+  that  while [3Xstart[103X is always a subset of the output, the elements of [3Xgens[103X are
+  not necessarily included in the output.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xstart := Basis(QuaternionAlgebra(Rationals)){[1,2]};[127X[104X
+    [4X[28X[ e, i ][128X[104X
+    [4X[25Xgap>[125X [27Xgens := Basis(QuaternionAlgebra(Rationals)){[3]};[127X[104X
+    [4X[28X[ j ][128X[104X
+    [4X[25Xgap>[125X [27Xrepeat [127X[104X
+    [4X[25X>[125X [27Xstart := RandomOrbitOnSets(gens, start, {x,y} -> x*y);[127X[104X
+    [4X[25X>[125X [27Xuntil Length(start) = 8;[127X[104X
+    [4X[25Xgap>[125X [27Xstart;[127X[104X
+    [4X[28X[ (-1)*e, (-1)*i, (-1)*j, (-1)*k, k, j, i, e ][128X[104X
+  [4X[32X[104X
+  

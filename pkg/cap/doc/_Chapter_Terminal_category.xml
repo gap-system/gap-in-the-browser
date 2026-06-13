@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Terminal_category">
+<Heading>Terminal category</Heading>
+
+<P/>
+<Section Label="Chapter_Terminal_category_Section_GAP_Categories">
+<Heading>&GAP; Categories</Heading>
+
+<ManSection>
+  <Filt Arg="T" Type="Category" Name="IsCapTerminalCategoryWithSingleObject" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of a terminal category with a single object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="T" Type="Category" Name="IsObjectInCapTerminalCategoryWithSingleObject" Label="for IsCapCategoryObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of an object in a terminal category with a single object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="T" Type="Category" Name="IsMorphismInCapTerminalCategoryWithSingleObject" Label="for IsCapCategoryMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of a morphism in a terminal category with a single object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="T" Type="Category" Name="IsCapTerminalCategoryWithMultipleObjects" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of a terminal category with multiple objects.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="T" Type="Category" Name="IsObjectInCapTerminalCategoryWithMultipleObjects" Label="for IsCapCategoryObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of an object in a terminal category with multiple objects.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="T" Type="Category" Name="IsMorphismInCapTerminalCategoryWithMultipleObjects" Label="for IsCapCategoryMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; type of a morphism in a terminal category with multiple objects.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Prop Arg="C" Name="IsTerminalCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The property of the category <A>C</A> being terminal.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Terminal_category_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Func Arg="arg" Name="TerminalCategoryWithSingleObject" />
+ <Description>
+  Construct a terminal category with a single object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="arg" Name="TerminalCategoryWithMultipleObjects" />
+ <Description>
+  Construct a terminal category with multiple objects.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="options" Name="CAP_INTERNAL_CONSTRUCTOR_FOR_TERMINAL_CATEGORY" />
+ <Returns>a &CAP; category
+</Returns>
+ <Description>
+  This function takes a record of options suited for CategoryConstructor. 
+  It makes common adjustments for TerminalCategoryWithSingleObject and TerminalCategoryWithMultipleObjects
+  to the list of operations to install and the categorical properties of the given record,
+  before passing it on to CategoryConstructor.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Terminal_category_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="arg" Name="TerminalCategoryWithSingleObjectUniqueObject" Label="for IsCapTerminalCategoryWithSingleObject"/>
+ <Returns>a &CAP; object
+</Returns>
+ <Description>
+  The unique object in a terminal category with a single object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="arg" Name="TerminalCategoryWithSingleObjectUniqueMorphism" Label="for IsCapTerminalCategoryWithSingleObject"/>
+ <Returns>a &CAP; morphism
+</Returns>
+ <Description>
+  The unique morphism in a terminal category with a single object.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="object" Name="FunctorFromTerminalCategory" Label="for IsCapCategoryObject"/>
+ <Returns>a &CAP; functor
+</Returns>
+ <Description>
+  A functor from <Code>AsCapCategory( TerminalObject( CapCat ) )</Code> mapping the unique object to <A>object</A>.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

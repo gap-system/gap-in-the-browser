@@ -1,0 +1,200 @@
+\GAPDocLabFile{io}
+\makelabel{io:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{io:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{io:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{io:Preface}{1}{X874E1D45845007FE}
+\makelabel{io:Installation of the IO-package}{2}{X8203E34B78787118}
+\makelabel{io:Recompiling the documentation}{2.1}{X7FB00ED2787027A3}
+\makelabel{io:Functions directly available from the C library}{3}{X85DE7F82801DDA50}
+\makelabel{io:Differences in arguments - an overview}{3.1}{X85D3551379BA32FC}
+\makelabel{io:The low-level functions in detail}{3.2}{X800F9F3E810A7228}
+\makelabel{io:Further C level functions}{3.3}{X85065AD381BD8E0F}
+\makelabel{io:Types and the creation of File objects}{4.1}{X83C42F7778B704C7}
+\makelabel{io:Reading and writing}{4.2}{X818FA8A37C8BBB95}
+\makelabel{io:Other functions}{4.3}{X87C3D1B984960984}
+\makelabel{io:Inter process communication}{4.4}{X85BB2BA684485CD6}
+\makelabel{io:Object serialisation (Pickling)}{5}{X81BBA46880EBFC7D}
+\makelabel{io:Result objects}{5.1}{X7E504814811605B7}
+\makelabel{io:Pickling and unpickling}{5.2}{X7F68A8F47F87B243}
+\makelabel{io:Extending the pickling framework}{5.3}{X7B1C9A9C7D3C0312}
+\makelabel{io:Really random sources}{6}{X78A8811F7BD55ABA}
+\makelabel{io:The functions}{6.1}{X8173135A7D187358}
+\makelabel{io:A client side implementation of the HTTP protocol}{7}{X79DA05BB7CCC1749}
+\makelabel{io:Functions for client side HTTP}{7.1}{X7E8B5F0A87F2C1F7}
+\makelabel{io:Background jobs using fork}{8}{X7E9E9B3F7B585BA7}
+\makelabel{io:Background jobs}{8.1}{X7CCAF66D7E7E098E}
+\makelabel{io:Parallel programming skeletons}{8.2}{X7AF7D78B7F6F1212}
+\makelabel{io:Worker farms}{8.3}{X7D18519B879047B3}
+\makelabel{io:Introduction}{9.1}{X7DFB63A97E67C0A1}
+\makelabel{io:The operations for IOHub objects}{9.2}{X81EC9A3186F1DCDE}
+\makelabel{io:Examples}{9.3}{X7A489A5D79DA9E5C}
+\makelabel{io:Examples of usage}{10}{X7EADF566874177D8}
+\makelabel{io:Writing and reading a file}{10.1}{X7EC25CA68794860A}
+\makelabel{io:Using filtering programs to read and write files}{10.2}{X7AECE665813D6E4D}
+\makelabel{io:Using filters when reading or writing files sequentially}{10.3}{X7A8A180D7B335151}
+\makelabel{io:Accessing a web page}{10.4}{X7BD2BF7F87573C69}
+\makelabel{io:(Un-)Pickling}{10.5}{X81BD8400832EE20B}
+\makelabel{io:License}{11}{X861E5DF986F89AE2}
+\makelabel{io:Index}{Ind}{X83A0356F839C696F}
+\makelabel{io:IO}{1}{X874E1D45845007FE}
+\makelabel{io:IOaccept}{3.2.1}{X7E474E9787012FE4}
+\makelabel{io:IObind}{3.2.2}{X791A6341852001F8}
+\makelabel{io:IOchdir}{3.2.3}{X790139B37E87FA61}
+\makelabel{io:IOchmod}{3.2.4}{X83D4CB2681674FA4}
+\makelabel{io:IOchown}{3.2.5}{X85C0617479E4D952}
+\makelabel{io:IOclose}{3.2.6}{X820DA9C97C2E80BA}
+\makelabel{io:IOclosedir}{3.2.7}{X8078699B84F082A4}
+\makelabel{io:IOconnect}{3.2.8}{X7DE9D8B387D3A3D5}
+\makelabel{io:IOcreat}{3.2.9}{X78FCF69C7FCF3BD7}
+\makelabel{io:IOdup}{3.2.10}{X7DAAD93A80F76681}
+\makelabel{io:IOdup2}{3.2.11}{X7F7B8FAC7ABA285B}
+\makelabel{io:IOexecv}{3.2.12}{X7B30A7FA84692EC5}
+\makelabel{io:IOexecve}{3.2.13}{X875D9A9E8201D461}
+\makelabel{io:IOexecvp}{3.2.14}{X818044D07C64A412}
+\makelabel{io:IOexit}{3.2.15}{X843634347E88C357}
+\makelabel{io:IOfchmod}{3.2.16}{X7F08E1187BDB619A}
+\makelabel{io:IOfchown}{3.2.17}{X791C4B4A81059A88}
+\makelabel{io:IOfcntl}{3.2.18}{X7870647E866D29A4}
+\makelabel{io:IOfork}{3.2.19}{X86C819F37D07ECF7}
+\makelabel{io:IOfstat}{3.2.20}{X7E27748983EC7B5C}
+\makelabel{io:IOgetcwd}{3.2.21}{X826D86AF8013F184}
+\makelabel{io:IOgetenv}{3.2.22}{X84AECCE17832D6D8}
+\makelabel{io:IOgethostbyname}{3.2.23}{X7DD25BDC79EE65AD}
+\makelabel{io:IOgethostname}{3.2.24}{X7B7164EF8307D26B}
+\makelabel{io:IOgetpid}{3.2.25}{X7ECF948083E38BD0}
+\makelabel{io:IOgetppid}{3.2.26}{X7EC6ABAB7AB9F40F}
+\makelabel{io:IOgetsockname}{3.2.27}{X877A161482FC1769}
+\makelabel{io:IOgetsockopt}{3.2.28}{X790213D885BAB495}
+\makelabel{io:IOgettimeofday}{3.2.29}{X7BC965198011083B}
+\makelabel{io:IOgmtime}{3.2.30}{X7DC156EA86F3F356}
+\makelabel{io:IOkill}{3.2.31}{X7D0439128512FBF6}
+\makelabel{io:IOlchown}{3.2.32}{X8305F97C87FE448E}
+\makelabel{io:IOlink}{3.2.33}{X7E1C65EB84497185}
+\makelabel{io:IOlisten}{3.2.34}{X7957063B807025C7}
+\makelabel{io:IOlocaltime}{3.2.35}{X7B7D3D64805F335F}
+\makelabel{io:IOlseek}{3.2.36}{X85C475187C824830}
+\makelabel{io:IOlstat}{3.2.37}{X7A8C75038517A55A}
+\makelabel{io:IOmkdir}{3.2.38}{X83D968AB84F00ABF}
+\makelabel{io:IOmkfifo}{3.2.39}{X80BFF17A8099815F}
+\makelabel{io:IOmknod}{3.2.40}{X7928F1DB8379F850}
+\makelabel{io:IOmkstemp}{3.2.41}{X82B09BF27D5AA458}
+\makelabel{io:IOmkdtemp}{3.2.42}{X7F9C9F4B7CB7977A}
+\makelabel{io:IOopen}{3.2.43}{X8731A44E8032D9D2}
+\makelabel{io:IOopendir}{3.2.44}{X78E234797EB01883}
+\makelabel{io:IOpipe}{3.2.45}{X7C8F0A44837BBE8C}
+\makelabel{io:IOread}{3.2.46}{X84F3D862836BF17C}
+\makelabel{io:IOreaddir}{3.2.47}{X8410C6F17DE9302D}
+\makelabel{io:IOreadlink}{3.2.48}{X7943F25E7EBA9A6B}
+\makelabel{io:IOrecv}{3.2.49}{X78EB295E78B363B2}
+\makelabel{io:IOrecvfrom}{3.2.50}{X84C617887EE02EB4}
+\makelabel{io:IOrename}{3.2.51}{X78EC95007A92AB69}
+\makelabel{io:IOrewinddir}{3.2.52}{X7F86DBEB7876FBA5}
+\makelabel{io:IOrmdir}{3.2.53}{X7FA4DD537C83A199}
+\makelabel{io:IOseekdir}{3.2.54}{X84A98D2380BF6574}
+\makelabel{io:IOselect}{3.2.55}{X81CA6EE88062010E}
+\makelabel{io:IOsend}{3.2.56}{X87019FD887F55C27}
+\makelabel{io:IOsendto}{3.2.57}{X8388B0147B5745EC}
+\makelabel{io:IOsetenv}{3.2.58}{X7D2AB8E985C56AD4}
+\makelabel{io:IOsetsockopt}{3.2.59}{X7BE641C1784D0899}
+\makelabel{io:IOsocket}{3.2.60}{X852B16CF82B96C84}
+\makelabel{io:IOstat}{3.2.61}{X7F7D23867B45D525}
+\makelabel{io:IOsymlink}{3.2.62}{X7B0D9CEF7A3CD431}
+\makelabel{io:IOtelldir}{3.2.63}{X81FF8B678748900B}
+\makelabel{io:IOunlink}{3.2.64}{X78C93B6587B478C2}
+\makelabel{io:IOunsetenv}{3.2.65}{X8103218E7C5CF577}
+\makelabel{io:IOWaitPid}{3.2.66}{X80737A008450184F}
+\makelabel{io:IOIgnorePid}{3.2.67}{X84295FC77CCB1066}
+\makelabel{io:IOwrite}{3.2.68}{X84EB06707D1BD3F1}
+\makelabel{io:IOmakesockaddrin}{3.3.1}{X878007A67E806CEF}
+\makelabel{io:IOenviron}{3.3.2}{X7F3E88AD7EFD52F4}
+\makelabel{io:IOInstallSIGCHLDHandler}{3.3.3}{X8383E62D86BE30C6}
+\makelabel{io:IORestoreSIGCHLDHandler}{3.3.4}{X7EEB7471816B64DF}
+\makelabel{io:IsFile}{4.1.1}{X80C9B80A80E3A555}
+\makelabel{io:IOWrapFD}{4.1.2}{X7DDB0BA6836DA208}
+\makelabel{io:IOFile mode}{4.1.3}{X7EC160D07E815DBB}
+\makelabel{io:IOFile bufsize}{4.1.3}{X7EC160D07E815DBB}
+\makelabel{io:IOFile mode and bufsize}{4.1.3}{X7EC160D07E815DBB}
+\makelabel{io:IOReadUntilEOF}{4.2.1}{X865A873E78C822B7}
+\makelabel{io:IOReadBlock}{4.2.2}{X7D2686ED854BEF95}
+\makelabel{io:IOReadLine}{4.2.3}{X8738708E7B9DF8DB}
+\makelabel{io:IOReadLines}{4.2.4}{X81E72756806C0945}
+\makelabel{io:IOHasData}{4.2.5}{X87E0AC547835F21D}
+\makelabel{io:IORead}{4.2.6}{X84F3D862836BF17C}
+\makelabel{io:IOWrite}{4.2.7}{X84EB06707D1BD3F1}
+\makelabel{io:IOWriteLine}{4.2.8}{X83A03ACB81F53BB1}
+\makelabel{io:IOWriteLines}{4.2.9}{X87CE6EC17C1573AC}
+\makelabel{io:IOFlush}{4.2.10}{X7873A49F7CC7ECFB}
+\makelabel{io:IOWriteFlush}{4.2.11}{X7870634278F6C69F}
+\makelabel{io:IOReadyForWrite}{4.2.12}{X80CF240F78664DF4}
+\makelabel{io:IOWriteNonBlocking}{4.2.13}{X84052F9886ADED0D}
+\makelabel{io:IOReadyForFlush}{4.2.14}{X7C5786E07813434B}
+\makelabel{io:IOFlushNonBlocking}{4.2.15}{X80E977B48771D207}
+\makelabel{io:IOClose}{4.2.16}{X820DA9C97C2E80BA}
+\makelabel{io:IOGetFD}{4.3.1}{X7F893EFC7D0C7BF2}
+\makelabel{io:IOGetWBuf}{4.3.2}{X86666C9681EA7297}
+\makelabel{io:IOSelect}{4.3.3}{X81CA6EE88062010E}
+\makelabel{io:IOListDir}{4.3.4}{X84B16DB878265F02}
+\makelabel{io:ChangeDirectoryCurrent}{4.3.5}{X81DDD2E87F68E086}
+\makelabel{io:IOMakeIPAddressPort}{4.3.6}{X8568CE6684C90CE5}
+\makelabel{io:IOEnvironment}{4.3.7}{X7F9AAE018474E1D8}
+\makelabel{io:IOMakeEnvList}{4.3.8}{X7CF3DB5081A91600}
+\makelabel{io:IOFindExecutable}{4.4.1}{X84E91FE27A7860F3}
+\makelabel{io:IOCloseAllFDs}{4.4.2}{X7C43017E7AC5973A}
+\makelabel{io:IOPopen}{4.4.3}{X7891F56386C008CE}
+\makelabel{io:IOPopen2}{4.4.4}{X7E05CF6481CBC0A1}
+\makelabel{io:IOPopen3}{4.4.5}{X7975BC6D80BC71E5}
+\makelabel{io:IOStartPipeline}{4.4.6}{X813219C17FB54731}
+\makelabel{io:IOStringFilterFile}{4.4.7}{X86D61FAE871B23E8}
+\makelabel{io:IOFileFilterString append}{4.4.8}{X83E765D783531845}
+\makelabel{io:IOFilteredFile}{4.4.9}{X801CE3708656FB00}
+\makelabel{io:IOCompressedFile}{4.4.10}{X7B425F3B7A68C2FB}
+\makelabel{io:IOSendStringBackground}{4.4.11}{X7D62E9C57F1F96FB}
+\makelabel{io:IOPipeThrough}{4.4.12}{X8484B0CD7836A19E}
+\makelabel{io:IOPipeThroughWithError}{4.4.13}{X7A9ACA3979635506}
+\makelabel{io:IOError}{5.1.1}{X86E06A128511BA25}
+\makelabel{io:IONothing}{5.1.2}{X7887BFCF824B439B}
+\makelabel{io:IOOK}{5.1.3}{X7D4D092B8401EA0F}
+\makelabel{io:IOPickle}{5.2.1}{X7E01770481297DF1}
+\makelabel{io:IOUnpickle}{5.2.2}{X8228EE63809A6DEF}
+\makelabel{io:IOClearPickleCache}{5.2.3}{X844736FB80F6EE97}
+\makelabel{io:RandomSource}{6.1.1}{X7CB0B5BC82F8FD8F}
+\makelabel{io:OpenHTTPConnection}{7.1.1}{X7B5588D5856BE6DD}
+\makelabel{io:HTTPRequest}{7.1.2}{X80FF9E307BDA0659}
+\makelabel{io:HTTPTimeoutForSelect}{7.1.3}{X83526BF378B3D8F2}
+\makelabel{io:CloseHTTPConnection}{7.1.4}{X81702FA07F2AF472}
+\makelabel{io:SingleHTTPRequest}{7.1.5}{X7DBCB0B4801E4D6D}
+\makelabel{io:CheckForUpdates}{7.1.6}{X78BAF7A77F6BE631}
+\makelabel{io:ReadWeb}{7.1.7}{X872B174F7FFD345B}
+\makelabel{io:BackgroundJobByFork}{8.1.1}{X7FE0061F8484814B}
+\makelabel{io:IsIdle bgjob}{8.1.2}{X7B7D934583257B9A}
+\makelabel{io:HasTerminated}{8.1.3}{X86E1283D7AD05169}
+\makelabel{io:WaitUntilIdle}{8.1.4}{X7C139805804E6FE1}
+\makelabel{io:Pickup bgjob}{8.1.5}{X7F4B8B9078D0E18E}
+\makelabel{io:Submit bgjob}{8.1.6}{X864492F37E858197}
+\makelabel{io:Kill bgjob}{8.1.7}{X841B3A1A7967DEA4}
+\makelabel{io:ParTakeFirstResultByFork}{8.2.1}{X78A59A628449960F}
+\makelabel{io:ParDoByFork}{8.2.2}{X7A1F40D1841C36D2}
+\makelabel{io:ParListByFork}{8.2.3}{X80DA6945873DCC66}
+\makelabel{io:ParMapReduceByFork}{8.2.4}{X7AD5D85283BC41AC}
+\makelabel{io:Timeouts}{8.2.4}{X7AD5D85283BC41AC}
+\makelabel{io:IOCallWithTimeout}{8.2.5}{X7A5CCA557B7F8660}
+\makelabel{io:IOCallWithTimeoutList}{8.2.5}{X7A5CCA557B7F8660}
+\makelabel{io:ParWorkerFarmByFork}{8.3.1}{X87896E477DCB9C55}
+\makelabel{io:DoQueues}{8.3.2}{X7ED2CE687EA7FC66}
+\makelabel{io:Kill wfarm}{8.3.3}{X83289405792FF902}
+\makelabel{io:IsIdle wfarm}{8.3.4}{X7C4E3D5A7FE617FE}
+\makelabel{io:Submit wfarm}{8.3.5}{X81773CEC8246EDF3}
+\makelabel{io:Pickup wfarm}{8.3.6}{X7878258F84138DEA}
+\makelabel{io:IOHub}{9.2.1}{X83C0523D8538E866}
+\makelabel{io:NewConnection}{9.2.2}{X7D1D9A8D837ECCEB}
+\makelabel{io:CloseConnection}{9.2.3}{X8553D2E47C05797F}
+\makelabel{io:AttachServingSocket}{9.2.4}{X7F7FD824866CB582}
+\makelabel{io:ShutdownServingSocket}{9.2.5}{X7866F9DA8358968C}
+\makelabel{io:Shutdown}{9.2.6}{X84AFBD658118ABB8}
+\makelabel{io:AcceptNewConnection}{9.2.7}{X7BE1B9FD82C9B8E0}
+\makelabel{io:SubmitOutput}{9.2.8}{X85F634D4826D89F1}
+\makelabel{io:GetInput}{9.2.9}{X837629707DF9B60E}
+\makelabel{io:NewTCPConnection}{9.2.10}{X79031BC687502CB6}
+\makelabel{io:OutputQueue}{9.2.11}{X7F8C7F5782213A71}
+\makelabel{io:InputQueue}{9.2.12}{X7972FF1C7B59D0A4}
+\makelabel{io:DoIO}{9.2.13}{X810D418A802D09D1}

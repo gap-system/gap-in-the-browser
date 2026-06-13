@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    hecke
+  </Title>
+  <Subtitle>
+    Calculating decomposition matrices of Hecke algebras
+  </Subtitle>
+  <Version>
+    1.5.4
+  </Version>
+  <Author>
+    Dmitriy Traytel<Alt Only="LaTeX"><Br/></Alt>
+<Email>traytel@in.tum.de</Email>
+<Homepage>https://home.in.tum.de/~traytel/hecke/</Homepage>
+
+  </Author>
+  <Date>
+    27 August 2024
+  </Date>
+  <Copyright>
+                &copyright; 2010&ndash;2013 by Dmitriy Traytel<P/>
+
+            This package may be distributed under the terms and conditions of the
+            GNU Public License Version 2 or higher.
+            
+  </Copyright>
+  <Acknowledgements>
+                &Specht; is a port of the &GAP; 3 package <Package>Specht</Package> 2.4 to &GAP; 4.
+            <Package>Specht</Package> 2.4 was written by Andrew Mathas, who allowed
+            Dmitriy Traytel to use his source code as the basis for &specht;.
+            
+  </Acknowledgements>
+  </TitlePage>

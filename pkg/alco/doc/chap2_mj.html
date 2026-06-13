@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (ALCO) - Chapter 2: Octonions</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
+<p><a id="X7E7EE82D811283C0" name="X7E7EE82D811283C0"></a></p>
+<div class="ChapSects"><a href="chap2_mj.html#X7E7EE82D811283C0">2 <span class="Heading">Octonions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7833529F8000FCAD">2.1 <span class="Heading">Octonion Algebras</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X81A45FA7806BF5AC">2.1-1 <span class="Heading">Octonion Filters</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X78767B4A7F44F77D">2.1-2 OctonionAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87ABC5C38446DA89">2.1-3 <span class="Heading">Octavian Integers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E4DEB1E7C7F2C1D">2.1-4 OctonionE8Basis</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86E4523081C49806">2.2 <span class="Heading">Properties of Octonions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7CEAB1C67B22DA7E">2.2-1 Norm</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8794715F82DE210B">2.2-2 Trace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7DA1C9FC867AE862">2.2-3 ComplexConjugate</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7FCF154F7BD4E4ED">2.2-4 RealPart</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X80488CD07C9B9BD7">2.3 <span class="Heading">Other Octonion Tools</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7D66EA0A7C8036F6">2.3-1 <span class="Heading">Converting Octonion Vectors</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X85B2EBB27ED8A073">2.3-2 VectorToIdempotentMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X83DFA8B38603F6D6">2.3-3 WeylReflection</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7991AA0A852ABD60">2.4 <span class="Heading">Quaternion Tools</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7F1D2B237E4AF7A6">2.4-1 Norm</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X855FA7867B9D0A9E">2.4-2 Trace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A4069927811A5B7">2.4-3 <span class="Heading">Hurwitz Integers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X78FF8724803E2AB4">2.4-4 QuaternionD4Basis</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X79CDD8757D97A598">2.5 <span class="Heading">Icosian Tools</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87BAE3917C966AA5">2.5-1 <span class="Heading">Icosian Ring</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7F4267A77E5F8547">2.5-2 IcosianH4Generators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7C5123127E6FFFA7">2.5-3 <span class="Heading">GoldenModSigma</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X816679827A2DC3D4">2.6 <span class="Heading">Other Integer Rings</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87AE22947AC81C0E">2.6-1 EisensteinIntegers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X82AA45BF87E1AE33">2.6-2 KleinianIntegers</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Octonions</span></h3>
+
+<p>Let <span class="SimpleMath">\(C\)</span> be a vector space over field <span class="SimpleMath">\(k\)</span> equipped with a non-degenerate quadratic form <span class="SimpleMath">\(N:C \rightarrow k\)</span>. If <span class="SimpleMath">\(C\)</span> is also an algebra with a product that satifies the composition rule <span class="SimpleMath">\(N(x y) = N(x) N(y)\)</span> for all <span class="SimpleMath">\(x,y\)</span> in <span class="SimpleMath">\(C\)</span> then we call <span class="SimpleMath">\(C\)</span> a <em>composition algebra</em>. Quaternions and octonions are examples of composition algebras.</p>
+
+<p>As described in <a href="chapBib_mj.html#biBspringer_octonions_2000">[SV00, Theorm 1.6.2]</a>, a composition algebra has dimension <span class="SimpleMath">\(1\)</span>, <span class="SimpleMath">\(2\)</span>, <span class="SimpleMath">\( 4\)</span>, or <span class="SimpleMath">\(8\)</span>. Compositions algebras of dimension <span class="SimpleMath">\(1\)</span> or <span class="SimpleMath">\(2\)</span> are commutative and associative. A <em>quaternion algebra</em> is a composition algebra of dimension <span class="SimpleMath">\(4\)</span>. Quaternion algebras are associative but noncommutative. An <em>octonion algebra</em> is a composition algebra of dimension <span class="SimpleMath">\(8\)</span>. Octonion algebras are both noncommutative and nonassociative but still have many interesting properties.</p>
+
+<p>The non-degenerate quadratic form <span class="SimpleMath">\(N\)</span> of a composition algebra is called the <em>norm</em> of that algebra. In fact, a composition algebra is determined up to isomorphism by its norm so the task of classifying composition algebras is equivalent to the task of classifying the possible norms in that vector space <a href="chapBib_mj.html#biBspringer_octonions_2000">[SV00, chap. 1, sec. 7]</a>. A norm is either isotropic or anisotropic according to whether or not there exists a non-zero element <span class="SimpleMath">\(x\)</span> such that <span class="SimpleMath">\(N(x) = 0\)</span>. A composition algebra with a isotropic norm is called a <em>split composition algebra</em>. A composition algebra with an anisotropic norm is called a <em>division composition algebra</em> since each non-zero element has an inverse. An important theorem <a href="chapBib_mj.html#biBspringer_octonions_2000">[SV00, Theorem 1.8.1]</a> shows that for each field <span class="SimpleMath">\(k\)</span> there exists up to isomorphism one split composition algebra of dimension <span class="SimpleMath">\(2\)</span>, <span class="SimpleMath">\( 4\)</span>, and <span class="SimpleMath">\(8\)</span>. The built-in <code class="code">OctaveAlgebra(<var class="Arg">F</var>)</code> function in <strong class="pkg">GAP</strong> constructs the split-octonion algebra over the field given as the argument.</p>
+
+<p>As described in <a href="chapBib_mj.html#biBspringer_octonions_2000">[SV00, chap. 1, sec. 10]</a>, there are precisely one division composition algebra of dimension <span class="SimpleMath">\(4\)</span> and one of dimension <span class="SimpleMath">\( 8\)</span> over the real number field (likewise over the rationals). The <strong class="pkg">ALCO</strong> package provides constructions of <em>non-split</em> octonion algebras, provided that the algebra is constructed over a suitable field (e.g., octonions over any finite field are split).</p>
+
+<p><a id="X7833529F8000FCAD" name="X7833529F8000FCAD"></a></p>
+
+<h4>2.1 <span class="Heading">Octonion Algebras</span></h4>
+
+<p><a id="X81A45FA7806BF5AC" name="X81A45FA7806BF5AC"></a></p>
+
+<h5>2.1-1 <span class="Heading">Octonion Filters</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOctonion</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOctonionCollection</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOctonionAlgebra</code></td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>These filters determine whether an element is an octonion, an octonion collection, or an octonion algebra.</p>
+
+<p><a id="X78767B4A7F44F77D" name="X78767B4A7F44F77D"></a></p>
+
+<h5>2.1-2 OctonionAlgebra</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctonionAlgebra</code>( <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns an octonion algebra over field <var class="Arg">F</var> in a standard orthonormal basis <span class="SimpleMath">\(\{e_{i}, i = 1,...,8\}\)</span> such that <span class="SimpleMath">\(1 = e_8\)</span> is the identity element and <span class="SimpleMath">\(e_{i} = e_{i+1}e_{i+3} = - e_{i+3}e_{i+1}\)</span> for <span class="SimpleMath">\(i = 1,...,7\)</span>, with indices evaluated modulo 7. This corresponds to the basis provided in <a href="chapBib_mj.html#biBbaez_octonions_2002">[Bae02]</a> and <a href="chapBib_mj.html#biBconway_quaternions_2003">[CS03]</a> (except that <code class="code"> e7</code> corresponds to <span class="SimpleMath">\(e_0\)</span> in the literature, since the first entry in a <strong class="pkg">GAP</strong> list has index 1). Whether or not the algebra constructed is a division algebra or a split-octonion algebra depends on the choice of field <var class="Arg">F</var>. For example, <code class="code">OctonionAlgebra(Rationals)</code> is a division composition algebra, but <code class="code">OctonionAlgebra(GF(3))</code> is a split composition algebra. Other examples are discussed in <a href="chapBib_mj.html#biBspringer_octonions_2000">[SV00, chap. 1, sec. 10]</a>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">O := OctonionAlgebra(Rationals);</span>
+&lt;algebra-with-one of dimension 8 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LeftActingDomain(O);</span>
+Rationals
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAssociative(O);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e := BasisVectors(Basis(O));</span>
+[ e1, e2, e3, e4, e5, e6, e7, e8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">One(O);</span>
+e8
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e[1]*e[2];</span>
+e4
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e[2]*e[1];</span>
+(-1)*e4
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Derivations(Basis(O));</span>
+&lt;Lie algebra of dimension 14 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemiSimpleType(last);</span>
+"G2"</pre></div>
+
+<p><a id="X87ABC5C38446DA89" name="X87ABC5C38446DA89"></a></p>
+
+<h5>2.1-3 <span class="Heading">Octavian Integers</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctavianIntegers</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOctavianInt</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>The <code class="code">OctavianIntegers</code> are a subring of the octonion algebra with elements that have the geometry of scaled <span class="SimpleMath">\(E_8\)</span> lattice. This ring is named and studied in <a href="chapBib_mj.html#biBconway_quaternions_2003">[CS03, p. 105]</a>. <code class="code"> CanonicalBasis(OctavianIntegers)</code> returns <code class="func">OctonionE8Basis</code> (<a href="chap2_mj.html#X7E4DEB1E7C7F2C1D"><span class="RefLink">2.1-4</span></a>). We can test whether an octonion is in <code class="code">OctavianIntegers</code> using the operation <code class="code">IsOctavianInt(<var class="Arg">x</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := BasisVectors(Basis(OctavianIntegers));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for x in a do Display(x); od;</span>
+(-1/2)*e1+(1/2)*e5+(1/2)*e6+(1/2)*e7
+(-1/2)*e1+(-1/2)*e2+(-1/2)*e4+(-1/2)*e7
+(1/2)*e2+(1/2)*e3+(-1/2)*e5+(-1/2)*e7
+(1/2)*e1+(-1/2)*e3+(1/2)*e4+(1/2)*e5
+(-1/2)*e2+(1/2)*e3+(-1/2)*e5+(1/2)*e7
+(1/2)*e2+(-1/2)*e4+(1/2)*e5+(-1/2)*e6
+(-1/2)*e1+(-1/2)*e3+(1/2)*e4+(-1/2)*e5
+(1/2)*e1+(-1/2)*e4+(1/2)*e6+(-1/2)*e8
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(a, IsOctavianInt);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(a/2, IsOctavianInt);</span>
+false</pre></div>
+
+<p><a id="X7E4DEB1E7C7F2C1D" name="X7E4DEB1E7C7F2C1D"></a></p>
+
+<h5>2.1-4 OctonionE8Basis</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctonionE8Basis</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<p>The <strong class="pkg">ALCO</strong> package also loads a basis for <code class="code">OctonionAlgebra(<var class="Arg">Rationals</var>)</code> which also serves as generators for <code class="func">OctavianIntegers</code> (<a href="chap2_mj.html#X87ABC5C38446DA89"><span class="RefLink">2.1-3</span></a>). This octonion integer lattice has the geometry of a <span class="SimpleMath">\(E_8\)</span> (Gossett) lattice relative to the inner product defined by the octonion norm.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BasisVectors(OctonionE8Basis) = BasisVectors(Basis(OctavianIntegers));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g := List(OctonionE8Basis, x -&gt; List(OctonionE8Basis, y -&gt; </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">Norm(x+y) - Norm(x) - Norm(y)));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGossetLatticeGramMatrix(g);</span>
+true</pre></div>
+
+<p><a id="X86E4523081C49806" name="X86E4523081C49806"></a></p>
+
+<h4>2.2 <span class="Heading">Properties of Octonions</span></h4>
+
+<p><a id="X7CEAB1C67B22DA7E" name="X7CEAB1C67B22DA7E"></a></p>
+
+<h5>2.2-1 Norm</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Norm</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns the norm of octonion <var class="Arg">x</var>. Recall that an octonion algebra with norm <span class="SimpleMath">\(N\)</span> satisfies the composition property <span class="SimpleMath">\(N(xy) = N(x)N(y)\)</span>. In the canonical basis for <code class="func">OctonionAlgebra</code> (<a href="chap2_mj.html#X78767B4A7F44F77D"><span class="RefLink">2.1-2</span></a>), the norm is the sum of the squares of the coefficients.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Oct := OctonionAlgebra(Rationals);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(Basis(Oct), Norm);</span>
+[ 1, 1, 1, 1, 1, 1, 1, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Random(Oct);; y := Random(Oct);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Norm(x*y) = Norm(x)*Norm(y);</span>
+true</pre></div>
+
+<p><a id="X8794715F82DE210B" name="X8794715F82DE210B"></a></p>
+
+<h5>2.2-2 Trace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Trace</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns the trace of octonion <var class="Arg">x</var>. In the canonical basis for <code class="func">OctonionAlgebra</code> (<a href="chap2_mj.html#X78767B4A7F44F77D"><span class="RefLink">2.1-2</span></a>), the trace is twice the coefficient of the identity element <code class="code">e8</code>. The trace and real part are related via <code class="code">RealPart(<var class="Arg">x</var>) = Trace(<var class="Arg">x</var>)*One(<var class="Arg">x</var>)/2</code>. Note that <code class="code">Trace(<var class="Arg">x</var>)</code> is an element of <code class="code">LeftActingDomain(<var class="Arg">A</var>)</code>, where <var class="Arg">A</var> is the octonion algebra containing <var class="Arg">x</var>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e := BasisVectors(Basis(OctonionAlgebra(Rationals)));</span>
+[ e1, e2, e3, e4, e5, e6, e7, e8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(e, Trace);</span>
+[ 0, 0, 0, 0, 0, 0, 0, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(e, RealPart);</span>
+[ 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, e8 ]</pre></div>
+
+<p><a id="X7DA1C9FC867AE862" name="X7DA1C9FC867AE862"></a></p>
+
+<h5>2.2-3 ComplexConjugate</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ComplexConjugate</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns the octonion conjugate of octonion <var class="Arg">x</var>, defined by <code class="code">One(x)*Trace(x) - x</code>. In the canonical basis of <code class="func">OctonionAlgebra</code> (<a href="chap2_mj.html#X78767B4A7F44F77D"><span class="RefLink">2.1-2</span></a>), this method negates the coefficients of <span class="SimpleMath">\(e_1, e_2, \ldots, e_7\)</span> but leaves the identity <span class="SimpleMath">\(e_8\)</span> fixed.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e := BasisVectors(Basis(OctonionAlgebra(Rationals)));</span>
+[ e1, e2, e3, e4, e5, e6, e7, e8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(e, ComplexConjugate);</span>
+[ (-1)*e1, (-1)*e2, (-1)*e3, (-1)*e4, (-1)*e5, (-1)*e6, (-1)*e7, e8 ]</pre></div>
+
+<p><a id="X7FCF154F7BD4E4ED" name="X7FCF154F7BD4E4ED"></a></p>
+
+<h5>2.2-4 RealPart</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RealPart</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns the real component of octonion <var class="Arg">x</var>, defined by <code class="code"> (1/2)*One(x)*Trace(x)</code>. Note that <code class="code">RealPart</code> returns an octonion in the subspace spanned by the octonion identity element while <code class="code">Trace</code> returns an element in the coefficient field of the octonion algebra.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e := BasisVectors(Basis(OctonionAlgebra(Rationals)));</span>
+[ e1, e2, e3, e4, e5, e6, e7, e8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(e, RealPart);</span>
+[ 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, 0*e1, e8 ]</pre></div>
+
+<p><a id="X80488CD07C9B9BD7" name="X80488CD07C9B9BD7"></a></p>
+
+<h4>2.3 <span class="Heading">Other Octonion Tools</span></h4>
+
+<p><a id="X7D66EA0A7C8036F6" name="X7D66EA0A7C8036F6"></a></p>
+
+<h5>2.3-1 <span class="Heading">Converting Octonion Vectors</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctonionToRealVector</code>( <var class="Arg">B</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RealToOctonionVector</code>( <var class="Arg">B</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Let <var class="Arg">x</var> be an octonion vector of the form <span class="SimpleMath">\(x = (x_1, x_2, ..., x_n)\)</span>, for <span class="SimpleMath">\(x_i\)</span> octonion valued coefficients. Let <var class="Arg">B</var> be a basis for the octonion algebra containing coefficients <span class="SimpleMath">\(x_i\)</span>. The function <code class="code">OctonionToRealVector(<var class="Arg">B</var>, <var class="Arg">x</var>)</code> returns a vector <var class="Arg">y</var> of length <span class="SimpleMath">\(8n\)</span> containing the concatenation of the coefficients of <span class="SimpleMath">\(x_i\)</span> in the octonion basis given by <var class="Arg">B</var>. The function <code class="code">RealToOctonionVector(<var class="Arg">B</var>, <var class="Arg">y</var>)</code> provides the inverse operation.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">O := UnderlyingLeftModule(OctonionE8Basis);</span>
+&lt;algebra-with-one of dimension 8 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BasisVectors(CanonicalBasis(O));</span>
+[ e1, e2, e3, e4, e5, e6, e7, e8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := 2*OctonionE8Basis{[1,2]};</span>
+[ (-1)*e1+e5+e6+e7, (-1)*e1+(-1)*e2+(-1)*e4+(-1)*e7 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y := OctonionToRealVector(CanonicalBasis(O), x);</span>
+[ -1, 0, 0, 0, 1, 1, 1, 0, -1, -1, 0, -1, 0, 0, -1, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RealToOctonionVector(CanonicalBasis(O), y);</span>
+[ (-1)*e1+e5+e6+e7, (-1)*e1+(-1)*e2+(-1)*e4+(-1)*e7 ]</pre></div>
+
+<p><a id="X85B2EBB27ED8A073" name="X85B2EBB27ED8A073"></a></p>
+
+<h5>2.3-2 VectorToIdempotentMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VectorToIdempotentMatrix</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Let <var class="Arg">x</var> be a vector satisfying <code class="code">IsHomogeneousList</code> and <code class="code">IsAssociative</code> with elements that satisfy <code class="code">IsCyc</code>, <code class="code">IsQuaternion</code>, or <code class="code">IsOctonion</code>. Then this function returns the idempotent matrix <code class="code">M/Trace(M)</code> where <code class="code">M = TransposedMat([ComplexConjugate(<var class="Arg">x</var>)])*[<var class="Arg">x</var>]</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Oct := OctonionAlgebra(Rationals);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Basis(Oct){[8,1,2]};</span>
+[ e8, e1, e2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y := VectorToIdempotentMatrix(x);; Display(y);</span>
+[ [   (1/3)*e8,   (1/3)*e1,   (1/3)*e2 ],
+  [  (-1/3)*e1,   (1/3)*e8,  (-1/3)*e4 ],
+  [  (-1/3)*e2,   (1/3)*e4,   (1/3)*e8 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIdempotent(y);</span>
+true</pre></div>
+
+<p><a id="X83DFA8B38603F6D6" name="X83DFA8B38603F6D6"></a></p>
+
+<h5>2.3-3 WeylReflection</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeylReflection</code>( <var class="Arg">r</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Let <var class="Arg">r</var> be a vector satisfying <code class="code">IsHomogeneousList</code> and <code class="code"> IsAssociative</code> with elements in <code class="code">IsCyc</code>, <code class="code">IsQuaternion</code>, or <code class="code"> IsOctonion</code> and let <code class="code">IsHomogeneousList(Flat([<var class="Arg">r</var>,<var class="Arg">x</var>]))</code>. Then this function returns the Weyl reflection of vector <var class="Arg">x</var> using the projector defined by <code class="code">VectorToIdempotentMatrix(<var class="Arg">r</var>)</code>. Specifically, the result is <code class="code">x - 2*x*VectorToIdempotentMatrix(r)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeylReflection([1,0,1],[0,1,1]);</span>
+[ -1, 1, 0 ]</pre></div>
+
+<p><a id="X7991AA0A852ABD60" name="X7991AA0A852ABD60"></a></p>
+
+<h4>2.4 <span class="Heading">Quaternion Tools</span></h4>
+
+<p>The <strong class="pkg">ALCO</strong> package provides some additional tools for studying quaternion algebras in <strong class="pkg">GAP</strong>. These tools include methods to compute the quaternion norm and trace, certain important bases, and the subrings generated by those bases. <strong class="pkg">GAP</strong> already provides some built-in tools to construct and study the quaternion algebra in the standard Hamiltonian basis. The following example illustrates these tools:</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H := QuaternionAlgebra(Rationals);</span>
+&lt;algebra-with-one of dimension 4 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsQuaternion(Random(H));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAssociative(H);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCommutative(H);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">One(H);</span>
+e
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := BasisVectors(CanonicalBasis(H));</span>
+[ e, i, j, k ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(b, ComplexConjugate);</span>
+[ e, (-1)*i, (-1)*j, (-1)*k ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(b, Inverse);</span>
+[ e, (-1)*i, (-1)*j, (-1)*k ] 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(b, RealPart);</span>
+[ e, 0*e, 0*e, 0*e ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(b, ImaginaryPart);</span>
+[ 0*e, e, k, (-1)*j ]</pre></div>
+
+<p>Note that the <strong class="pkg">GAP</strong> method <code class="code">ImaginaryPart</code> acting on objects that satisfy <code class="code">IsQuaternion</code> involves dividing by <code class="code">i</code>, which yields a different result than the <code class="code">x - RealPart(x)</code> that some users may expect. The <strong class="pkg">ALCO</strong> package does not define an <code class="code">ImaginaryPart</code> method for octonions in order to avoid confusion about the behaviour of that method when applied to quaternions or octonions.</p>
+
+<p><a id="X7F1D2B237E4AF7A6" name="X7F1D2B237E4AF7A6"></a></p>
+
+<h5>2.4-1 Norm</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Norm</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns the norm of quaternion <var class="Arg">x</var>. Recall that a quaternion algebra with norm <span class="SimpleMath">\(N\)</span> satisfies the composition property <span class="SimpleMath">\(N(xy) = N(x)N(y)\)</span>. In the canonical basis of <code class="code">QuaternionAlgebra</code>, the norm is the sum of the squares of the coefficients.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H := QuaternionAlgebra(Rationals);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := BasisVectors(CanonicalBasis(H));</span>
+[ e, i, j, k ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(b, Norm);</span>
+[ 1, 1, 1, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Random(H);; y := Random(H);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Norm(x*y) = Norm(x)*Norm(y);</span>
+true</pre></div>
+
+<p><a id="X855FA7867B9D0A9E" name="X855FA7867B9D0A9E"></a></p>
+
+<h5>2.4-2 Trace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Trace</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;method&nbsp;)</td></tr></table></div>
+<p>Returns the trace of quaternion <var class="Arg">x</var>, such that <code class="code">RealPart(<var class="Arg">x</var>) = Trace(<var class="Arg">x</var>)*One(<var class="Arg">x</var>)/2</code>. In the canonical basis of <code class="code">QuaternionAlgebra</code>, the trace is twice the coefficient of the identity element.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H := QuaternionAlgebra(Rationals);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := BasisVectors(CanonicalBasis(H));</span>
+[ e, i, j, k ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(b, Trace);</span>
+[ 2, 0, 0, 0 ]</pre></div>
+
+<p><a id="X7A4069927811A5B7" name="X7A4069927811A5B7"></a></p>
+
+<h5>2.4-3 <span class="Heading">Hurwitz Integers</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HurwitzIntegers</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsHurwitzInt</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>The <code class="code">HurwitzIntegers</code> are a subring of the quaternion algebra with elements that have the geometry of scaled <span class="SimpleMath">\(D_4\)</span> lattice. This ring is named and studied in <a href="chapBib_mj.html#biBconway_quaternions_2003">[CS03, p. 55]</a>. <code class="code">CanonicalBasis(HurwitzIntegers)</code> returns <code class="func">QuaternionD4Basis</code> (<a href="chap2_mj.html#X78FF8724803E2AB4"><span class="RefLink">2.4-4</span></a>). We can test whether a quaternion is in <code class="code">HurwitzIntegers</code> using the operation <code class="code">IsHurwitzInt(<var class="Arg">x</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := BasisVectors(Basis(HurwitzIntegers));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for x in f do Display(x); od;</span>
+(-1/2)*e+(-1/2)*i+(-1/2)*j+(1/2)*k
+(-1/2)*e+(-1/2)*i+(1/2)*j+(-1/2)*k
+(-1/2)*e+(1/2)*i+(-1/2)*j+(-1/2)*k
+e
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(f, IsHurwitzInt);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(f/2, IsHurwitzInt);</span>
+false</pre></div>
+
+<p><a id="X78FF8724803E2AB4" name="X78FF8724803E2AB4"></a></p>
+
+<h5>2.4-4 QuaternionD4Basis</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuaternionD4Basis</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<p>The <strong class="pkg">ALCO</strong> package loads a basis for a quaternion algebra over ℚ with the geometry of a <span class="SimpleMath">\(D_4\)</span> simple root system. The ℤ-span of this basis is the <code class="func">HurwitzIntegers</code> (<a href="chap2_mj.html#X7A4069927811A5B7"><span class="RefLink">2.4-3</span></a>) ring. These basis vectors close under pairwise reflection or multiplication to form a <span class="SimpleMath">\( D_4\)</span> root system.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B := QuaternionD4Basis;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for x in BasisVectors(B) do Display(x); od;</span>
+(-1/2)*e+(-1/2)*i+(-1/2)*j+(1/2)*k
+(-1/2)*e+(-1/2)*i+(1/2)*j+(-1/2)*k
+(-1/2)*e+(1/2)*i+(-1/2)*j+(-1/2)*k
+e</pre></div>
+
+<p><a id="X79CDD8757D97A598" name="X79CDD8757D97A598"></a></p>
+
+<h4>2.5 <span class="Heading">Icosian Tools</span></h4>
+
+<p>The icosian ring is a subring of the quaternion algebra over the "golden field" <span class="SimpleMath">\(\mathbb{Q}(\sqrt{5})\)</span> This ring is described and studied in <a href="chapBib_mj.html#biBconway_sphere_2013">[CS13, pp. 207-211]</a> and <a href="chapBib_mj.html#biBwilson_finite_2009">[Wil09a, p. 220]</a>. The icosian ring has <span class="SimpleMath">\(120\)</span> units, or elements with quaternion norm of <span class="SimpleMath">\(1\)</span>. These units are closed under quaternion multiplication. These icosian units also exhibit a <span class="SimpleMath">\(H_4\)</span> geometry in the sense that they are closed under Weyl reflection relative to the standard Euclidean inner product defined by the quaternion norm. The Coxeter group generated by these reflections is the group <span class="SimpleMath">\(W(H_4)\)</span>. The coefficients of an icosian in the standard quaternion basis belong to the integer subring of the golden field, meaning that these coefficients have the form <span class="SimpleMath">\(a + b \sigma\)</span>, where <span class="SimpleMath">\(a,b\)</span> are rational integers and <span class="SimpleMath">\(\sigma = (1-\sqrt{5})/2\)</span>. The Euclidean inner product between any two icosians will be a golden field integer. As described in the references given above, if we define a new inner product between icosians that discards the <span class="SimpleMath">\(\sigma\)</span>-coefficient <span class="SimpleMath">\(b\)</span> then the icosian ring will exhibit the geometry of an <span class="SimpleMath">\(E_8\)</span> lattice relative to this new inner product. It is also possible to define a Leech lattice geometry on icosian triples.</p>
+
+<p>The <strong class="pkg">ALCO</strong> package provides tools to explore these icosian properties and construct certain important lattices using icosians. Note that the golden field can be constructed in <strong class="pkg">GAP</strong> as <code class="code">NF(5, [ 1, 4 ])</code> or <code class="code">Field(Sqrt(5))</code> and that <span class="SimpleMath">\(\sigma\)</span> is given by <code class="code">-EB(5)</code>.</p>
+
+<p><a id="X87BAE3917C966AA5" name="X87BAE3917C966AA5"></a></p>
+
+<h5>2.5-1 <span class="Heading">Icosian Ring</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IcosianRing</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIcosian</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>The <code class="code">IcosianRing</code> is a subring of the the quaternion algebra over <code class="code">NF(5,[1,4])</code> generated by a set of vectors with an <span class="SimpleMath">\(H_4\)</span> geometry. This ring is described well in <a href="chapBib_mj.html#biBwilson_finite_2009">[Wil09a, p. 220]</a>. <code class="code">CanonicalBasis(IcosianRing)</code> returns <code class="func">IcosianH4Generators</code> (<a href="chap2_mj.html#X7F4267A77E5F8547"><span class="RefLink">2.5-2</span></a>). We can test whether a quaternion is in <code class="code">IcosianRing</code> using the operation <code class="code">IsIcosian(<var class="Arg">x</var>)</code>. Note that a quaternion is an icosian when it is a ℤ-linear combination of the union of <code class="code">Basis(IcosianRing)</code> and <code class="code">Basis(IcosianRing)*EB(5)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := BasisVectors(Basis(IcosianRing));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for x in f do Display(x); od;</span>
+(-1)*i
+(-1/2*E(5)^2-1/2*E(5)^3)*i+(1/2)*j+(-1/2*E(5)-1/2*E(5)^4)*k
+(-1)*j
+(-1/2*E(5)-1/2*E(5)^4)*e+(1/2)*j+(-1/2*E(5)^2-1/2*E(5)^3)*k
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(f, IsIcosian);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(f/2, IsIcosian);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(f*EB(5), IsIcosian);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(f*Sqrt(5), IsIcosian);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(f*(1-Sqrt(5))/2, IsIcosian);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(f*(1+Sqrt(5))/2, IsIcosian);</span>
+true</pre></div>
+
+<p><a id="X7F4267A77E5F8547" name="X7F4267A77E5F8547"></a></p>
+
+<h5>2.5-2 IcosianH4Generators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IcosianH4Generators</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<p>The <strong class="pkg">ALCO</strong> package loads this variable as a basis for a quaternion algebra over <code class="code">NF(5,[1,4])</code>. Note that a quaternion is an icosian when it is a ℤ-linear combination of the union of <code class="code"> IcosianH4Generators</code> and <code class="code">IcosianH4Generators*EB(5)</code>. These basis vectors close under pairwise reflection or multiplication to form a <span class="SimpleMath">\(H_4\)</span> set of vectors.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := BasisVectors(IcosianH4Generators);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for x in f do Display(x); od;</span>
+(-1)*i
+(-1/2*E(5)^2-1/2*E(5)^3)*i+(1/2)*j+(-1/2*E(5)-1/2*E(5)^4)*k
+(-1)*j
+(-1/2*E(5)-1/2*E(5)^4)*e+(1/2)*j+(-1/2*E(5)^2-1/2*E(5)^3)*k</pre></div>
+
+<p><a id="X7C5123127E6FFFA7" name="X7C5123127E6FFFA7"></a></p>
+
+<h5>2.5-3 <span class="Heading">GoldenModSigma</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GoldenModSigma</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>For <var class="Arg">x</var> in the golden field <code class="code">NF(5,[ 1, 4 ])</code>, this function returns the rational coefficient of <code class="code">1</code> in the basis <code class="code">Basis(NF(5,[ 1, 4 ]), [1, (1-Sqrt(5))/2])</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">sigma := (1-Sqrt(5))/2;; tau := (1+Sqrt(5))/2;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := 5 + 3*sigma;; GoldenModSigma(x);</span>
+5
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GoldenModSigma(sigma);</span>
+0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GoldenModSigma(tau);</span>
+1</pre></div>
+
+<p><a id="X816679827A2DC3D4" name="X816679827A2DC3D4"></a></p>
+
+<h4>2.6 <span class="Heading">Other Integer Rings</span></h4>
+
+<p>Certain addition integer subrings of elements satisfying <code class="code">IsCyc</code> are also included in the <strong class="pkg">ALCO</strong> package. The rings constructed below are described in <a href="chapBib_mj.html#biBconway_quaternions_2003">[CS03, pp. 16-18]</a>.</p>
+
+<p><a id="X87AE22947AC81C0E" name="X87AE22947AC81C0E"></a></p>
+
+<h5>2.6-1 EisensteinIntegers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EisensteinIntegers</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEisenInt</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>The <code class="code">EisensteinIntegers</code> is a subring of the complex numbers generated by <code class="code">1</code> and <code class="code">E(3)</code>. This subring has the geometry of an <span class="SimpleMath">\(A_2\)</span> lattice. This ring is described well in <a href="chapBib_mj.html#biBconway_quaternions_2003">[CS03, p. 16]</a>. We can test whether an element in <code class="code">IsCyc</code> is an Eisenstein integer using the operation <code class="code">IsEisenInt(<var class="Arg">x</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := BasisVectors(Basis(EisensteinIntegers));</span>
+[ 1, E(3) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsEisenInt(E(4));</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsEisenInt(1+E(3)^2);</span>
+true</pre></div>
+
+<p><a id="X82AA45BF87E1AE33" name="X82AA45BF87E1AE33"></a></p>
+
+<h5>2.6-2 KleinianIntegers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KleinianIntegers</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsKleinInt</code>( <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>The <code class="code">KleinianIntegers</code> is a subring of the complex numbers generated by <code class="code">1</code> and <code class="code">(1/2)*(-1+Sqrt(-7))</code>. This ring is described in <a href="chapBib_mj.html#biBconway_quaternions_2003">[CS03, p. 18]</a>. We can test whether an element in <code class="code">IsCyc</code> is an Kleinian integer using the operation <code class="code">IsKleinInt(<var class="Arg">x</var>)</code>.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := BasisVectors(Basis(KleinianIntegers));</span>
+[ 1, E(7)+E(7)^2+E(7)^4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsKleinInt(E(4));</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsKleinInt(1+E(7)+E(7)^2+E(7)^4);</span>
+true</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

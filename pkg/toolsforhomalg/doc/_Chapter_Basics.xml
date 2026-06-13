@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Basics">
+<Heading>Basics</Heading>
+
+<Section Label="Chapter_Basics_Section_Global_variables">
+<Heading>Global variables</Heading>
+
+<ManSection>
+  <Var Name="HOMALG_TOOLS" />
+ <Description>
+ A central place for configurations.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Basics_Section_GAP_Categories">
+<Heading>GAP Categories</Heading>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsStructureObjectOrObjectOrMorphism" Label="for IsAttributeStoringRep"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ This is the super super GAP-category which will
+ include the GAP-categories IsStructureObjectOrObject and IsHomalgObjectOrMorphism
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsStructureObjectOrObject" Label="for IsStructureObjectOrObjectOrMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ This is the super GAP-category which will include the GAP-categories
+ IsHomalgSemiring, IsHomalgModule, IsHomalgSemiringOrModule and IsHomalgComplex
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsStructureObject" Label="for IsStructureObjectOrObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ This is the super GAP-category which will include the GAP-categories IsHomalgSemiring
+ we need this GAP-category to define things like Hom(M,R) as easy as Hom(M,N)
+ without distinguishing between structure objects (e.g. rings) and objects (e.g. modules)
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsStructureObjectMorphism" Label="for IsAttributeStoringRep"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ This is the super GAP-category which will include the GAP-categories
+ IsHomalgSemiringMap, etc.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsHomalgSemiringOrModule" Label="for IsStructureObjectOrObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+ this is the super GAP-category which will include the GAP-categories
+ IsHomalgSemiring, IsHomalgModule:
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Basics_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="semiring" Name="SemiringFilter" Label="for IsSemiring"/>
+ <Description>
+ A filter inheriting from <Code>IsSemiring</Code> which uniquely identifies the semiring <A>semiring</A>.
+ For example, the (semi)ring <Code>Integers</Code> is identified by <Code>IsIntegers</Code>.
+ If no filter uniquely identifying the semiring exists,
+ the most special filter available should be chosen.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="semiring" Name="SemiringElementFilter" Label="for IsSemiringElement"/>
+ <Description>
+ A filter inheriting from <Code>IsSemiringElement</Code> which uniquely identifies elements of the semiring <A>semiring</A>.
+ For example, the elements of the (semi)ring <Code>Integers</Code> are identified by <Code>IsInt</Code>.
+ If no filter uniquely identifying the elements of the semiring exists,
+ the most special filter available should be chosen.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="ring" Name="SemiringFilter" Label="for IsRing"/>
+ <Description>
+ A filter inheriting from <Code>IsRingWithOne</Code> which uniquely identifies the ring <A>ring</A>.
+ For example, the ring <Code>Integers</Code> is identified by <Code>IsIntegers</Code>.
+ If no filter uniquely identifying the ring exists,
+ the most special filter available should be chosen.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="ring" Name="SemiringElementFilter" Label="for IsRing"/>
+ <Description>
+ A filter inheriting from <Code>IsRingElement</Code> which uniquely identifies elements of the ring <A>ring</A>.
+ For example, the elements of the ring <Code>Integers</Code> are identified by <Code>IsInt</Code>.
+ If no filter uniquely identifying the elements of the ring exists,
+ the most special filter available should be chosen.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE Book SYSTEM "../../gapdoc/gapdoc.dtd"
+ [ <!ENTITY GAP "<Package>GAP</Package>">
+   <!ENTITY RCWA "<Package>RCWA</Package>">
+   <!ENTITY ResClasses "<Package>ResClasses</Package>">
+ ]>
+<?LaTeX ExtraPreamble="
+\usepackage{amsfonts}
+\usepackage{amsxtra}
+
+\tolerance 2500
+\hbadness 2500
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\clubpenalty=10000
+\vfuzz \hfuzz
+\raggedbottom
+"?>
+
+<!-- #################################################################### -->
+<!-- ##                                                                ## -->
+<!-- ##  main.xml           RCWA documentation            Stefan Kohl  ## -->
+<!-- ##                                                                ## -->
+<!-- #################################################################### -->
+
+<Book Name="RCWA"> 
+
+<!-- #################################################################### -->
+
+<#Include SYSTEM "title.xml">
+
+<!-- #################################################################### -->
+
+<TableOfContents/>
+
+<!-- #################################################################### -->
+
+<Body>
+
+<#Include SYSTEM "about.xml">
+<#Include SYSTEM "rcwamap.xml">
+<#Include SYSTEM "rcwagrp.xml">
+<#Include SYSTEM "rcwamono.xml">
+<#Include SYSTEM "zxz.xml">
+<#Include SYSTEM "databases.xml">
+<#Include SYSTEM "examples.xml">
+<#Include SYSTEM "algs.xml">
+<#Include SYSTEM "rcwaaux.xml">
+
+</Body>
+
+<!-- #################################################################### -->
+
+<Bibliography Databases="rcwabib.xml"/>
+
+<TheIndex/>
+
+<!-- #################################################################### -->
+
+</Book>
+
+<!-- #################################################################### -->

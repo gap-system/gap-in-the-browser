@@ -1,0 +1,128 @@
+\GAPDocLabFile{utils}
+\makelabel{utils:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{utils:Abstract}{}{X7AA6C5737B711C89}
+\makelabel{utils:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{utils:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{utils:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{utils:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{utils:Information for package authors}{1.1}{X8508AD637B79CEE8}
+\makelabel{utils:Printing Lists and Iterators}{2}{X83686EE47E4D4F66}
+\makelabel{utils:Printing selected items}{2.1}{X7F6817927F86240F}
+\makelabel{utils:Lists, Sets and Strings}{3}{X7AE6EFC086C0EB3C}
+\makelabel{utils:Functions for lists}{3.1}{X7C3F1E7D878AAA65}
+\makelabel{utils:Distinct and Common Representatives}{3.2}{X82F443FF84B8FCE3}
+\makelabel{utils:Functions for strings}{3.3}{X8033A2FE80FC2F2A}
+\makelabel{utils:Number-theoretic functions}{4}{X86E71C1687F2D0AD}
+\makelabel{utils:Functions for integers}{4.1}{X7D33B5B17BF785CA}
+\makelabel{utils:Groups and homomorphisms}{5}{X8171DAF2833FF728}
+\makelabel{utils:Functions for groups}{5.1}{X7E21E6D285E6B12C}
+\makelabel{utils:Left Cosets for Groups}{5.2}{X7FE4848B7DE6B3FD}
+\makelabel{utils:Inverse}{5.2.2}{X793E48267EF5FD77}
+\makelabel{utils:Functions for group homomorphisms}{5.3}{X80A512877F515DE7}
+\makelabel{utils:Matrices}{6}{X812CCAB278643A59}
+\makelabel{utils:Some operations for matrices}{6.1}{X802118FB7C94D6BA}
+\makelabel{utils:Iterators}{7}{X85A3F00985453F95}
+\makelabel{utils:Some iterators for groups and their isomorphisms}{7.1}{X7BB5350081B27D17}
+\makelabel{utils:Operations on iterators}{7.2}{X85413EED812C6497}
+\makelabel{utils:Records}{8}{X7AA1073C7E943DD7}
+\makelabel{utils:Functions for records}{8.1}{X82B3D1D583CDF0E5}
+\makelabel{utils:Option records for functions}{8.2}{X7E6207B47B9AA30C}
+\makelabel{utils:Web Downloads}{9}{X815B0C4B7EBE6E1E}
+\makelabel{utils:Functions for downloading files from the web}{9.1}{X8758CB7F79EFB6ED}
+\makelabel{utils:User preference DownloadVerifyCertificate}{9.1.2}{X85182BA486E3C2AA}
+\makelabel{utils:User preference DownloadMaxTime}{9.1.3}{X79E10E5B83EF929F}
+\makelabel{utils:Generalized Straight Line Programs}{10}{X8314837E85D3D052}
+\makelabel{utils:Functions for Generalized Straight Line Programs}{10.1}{X7D1B00C979C8AEFD}
+\makelabel{utils:GeneralizedStraightLineProgram}{10.1.2}{X8503408985150E37}
+\makelabel{utils:Various other functions}{11}{X83EFC3178180D918}
+\makelabel{utils:File operations}{11.1}{X81A0A4FF842B039B}
+\makelabel{utils:LaTeX strings}{11.2}{X84D2922D87EDE9E9}
+\makelabel{utils:Conversion to Magma strings}{11.3}{X79F021B1830B68F6}
+\makelabel{utils:Obsolete functions}{12}{X7F561B1D803182FF}
+\makelabel{utils:Operations from AutoDoc}{12.1}{X7A6BB3D084912F35}
+\makelabel{utils:Functions for printing}{12.2}{X86F322FC7DECE36F}
+\makelabel{utils:Other obsolete functions}{12.3}{X84A4F0B281FA0F94}
+\makelabel{utils:Applicable Methods}{12.3.1}{X78B7D1A982BE9866}
+\makelabel{utils:ExponentOfPrime}{12.3.2}{X7C1AF2467FB55D79}
+\makelabel{utils:The transfer procedure}{13}{X84AC9613842F014C}
+\makelabel{utils:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{utils:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{utils:Index}{Ind}{X83A0356F839C696F}
+\makelabel{utils:GitHub repository}{1}{X7DFB63A97E67C0A1}
+\makelabel{utils:PrintSelection for a list of positions}{2.1.1}{X784638AC84D49870}
+\makelabel{utils:PrintSelection for a first item and a step}{2.1.1}{X784638AC84D49870}
+\makelabel{utils:DifferencesList}{3.1.1}{X78B7C92681D2F13C}
+\makelabel{utils:QuotientsList}{3.1.2}{X7975371E865B89BC}
+\makelabel{utils:FloatQuotientsList}{3.1.2}{X7975371E865B89BC}
+\makelabel{utils:SearchCycle}{3.1.3}{X86096E73858CFABD}
+\makelabel{utils:RandomCombination}{3.1.4}{X7EF06CAD7F35245D}
+\makelabel{utils:distinct and common representatives}{3.2}{X82F443FF84B8FCE3}
+\makelabel{utils:DistinctRepresentatives}{3.2.1}{X78105CAA847A888C}
+\makelabel{utils:CommonRepresentatives}{3.2.1}{X78105CAA847A888C}
+\makelabel{utils:CommonTransversal}{3.2.1}{X78105CAA847A888C}
+\makelabel{utils:IsCommonTransversal}{3.2.1}{X78105CAA847A888C}
+\makelabel{utils:BlankFreeString}{3.3.1}{X870C964E7804B266}
+\makelabel{utils:AllSmoothIntegers for two integers}{4.1.1}{X8191A031788AC7C0}
+\makelabel{utils:AllSmoothIntegers for a list and an integer}{4.1.1}{X8191A031788AC7C0}
+\makelabel{utils:smooth integer}{4.1.1}{X8191A031788AC7C0}
+\makelabel{utils:AllProducts}{4.1.2}{X78BE6B8B878D250D}
+\makelabel{utils:RestrictedPartitionsWithoutRepetitions}{4.1.3}{X845F46E579CEA43F}
+\makelabel{utils:NextProbablyPrimeInt}{4.1.4}{X81708BF4858505E8}
+\makelabel{utils:PrimeNumbersIterator}{4.1.5}{X8021EEE5787FCA37}
+\makelabel{utils:Comm}{5.1.1}{X80761843831B468E}
+\makelabel{utils:IsCommuting}{5.1.2}{X803A050C7A183CCC}
+\makelabel{utils:ListOfPowers}{5.1.3}{X87A8F01286548037}
+\makelabel{utils:GeneratorsAndInverses}{5.1.4}{X820B71307E41BEE5}
+\makelabel{utils:UpperFittingSeries}{5.1.5}{X84CF95227F9D562F}
+\makelabel{utils:LowerFittingSeries}{5.1.5}{X84CF95227F9D562F}
+\makelabel{utils:FittingLength}{5.1.5}{X84CF95227F9D562F}
+\makelabel{utils:Fitting series}{5.1.5}{X84CF95227F9D562F}
+\makelabel{utils:LeftCoset}{5.2.1}{X8340B4537F17DCD3}
+\makelabel{utils:EpimorphismByGenerators}{5.3.1}{X80C9A0B583FEA7B9}
+\makelabel{utils:Pullback}{5.3.2}{X7C705F2A79F8E43C}
+\makelabel{utils:PullbackInfo}{5.3.2}{X7C705F2A79F8E43C}
+\makelabel{utils:CentralProduct}{5.3.3}{X78DD2C617B992BE2}
+\makelabel{utils:CentralProductInfo}{5.3.3}{X78DD2C617B992BE2}
+\makelabel{utils:IdempotentEndomorphisms}{5.3.4}{X801038CB808FC956}
+\makelabel{utils:IdempotentEndomorphismsData}{5.3.4}{X801038CB808FC956}
+\makelabel{utils:IdempotentEndomorphismsWithImage}{5.3.4}{X801038CB808FC956}
+\makelabel{utils:DirectProductOfFunctions}{5.3.5}{X81FA9E6C7F3B9238}
+\makelabel{utils:DirectProductOfAutomorphismGroups}{5.3.6}{X7CB2D5F27F4182AF}
+\makelabel{utils:DirectSumDecompositionMatrices}{6.1.1}{X787B89237E1398B6}
+\makelabel{utils:Iterators}{7.1}{X7BB5350081B27D17}
+\makelabel{utils:AllIsomorphismsIterator}{7.1.1}{X7F8B54D1806C762D}
+\makelabel{utils:AllIsomorphismsNumber}{7.1.1}{X7F8B54D1806C762D}
+\makelabel{utils:AllIsomorphisms}{7.1.1}{X7F8B54D1806C762D}
+\makelabel{utils:AllSubgroupsIterator}{7.1.2}{X831DA5AE8437578F}
+\makelabel{utils:CartesianIterator}{7.2.1}{X87395A9181A35301}
+\makelabel{utils:UnorderedPairsIterator}{7.2.2}{X7C95E27987A812EA}
+\makelabel{utils:AssignGlobals}{8.1.1}{X84D82EB579B2ACCD}
+\makelabel{utils:OptionRecordWithDefaults}{8.2.1}{X8322B9377CC590D2}
+\makelabel{utils:Download}{9.1.1}{X7A7438AE8448635E}
+\makelabel{utils:DownloadVerifyCertificate}{9.1.2}{X85182BA486E3C2AA}
+\makelabel{utils:DownloadMaxTime}{9.1.3}{X79E10E5B83EF929F}
+\makelabel{utils:IsGeneralizedStraightLineProgram}{10.1.1}{X7D6F31797B8C3452}
+\makelabel{utils:GeneralizedStraightLineProgram for a list of lines (and the number of generators)}{10.1.2}{X8503408985150E37}
+\makelabel{utils:GeneralizedStraightLineProgram for kind and list}{10.1.2}{X8503408985150E37}
+\makelabel{utils:DataOfGeneralizedStraightLineProgram}{10.1.3}{X7C5BD3777DBBB390}
+\makelabel{utils:NrInputsOfGeneralizedStraightLineProgram}{10.1.4}{X7F47B79F7D7A51AC}
+\makelabel{utils:NrOutputsOfGeneralizedStraightLineProgram}{10.1.5}{X7EFDD9F07F3AF218}
+\makelabel{utils:ResultOfGeneralizedStraightLineProgram}{10.1.6}{X785C69E2789B3985}
+\makelabel{utils:EquivalentStraightLineProgram}{10.1.7}{X81E725087E481727}
+\makelabel{utils:IsInternallyConsistent for generalized straight line program}{10.1.8}{X85E5CF147DAD5FA3}
+\makelabel{utils:Log2HTML}{11.1.1}{X7B7ECADF85F748BE}
+\makelabel{utils:IntOrInfinityToLaTeX}{11.2.1}{X85F11FFA7F036669}
+\makelabel{utils:LaTeXStringFactorsInt}{11.2.2}{X7DC642B97CD02F4E}
+\makelabel{utils:ConvertToMagmaInputString}{11.3.1}{X8768D7707B4CBBD4}
+\makelabel{utils:PermGroupToMagmaFormat}{11.3.1}{X8768D7707B4CBBD4}
+\makelabel{utils:PcGroupToMagmaFormat}{11.3.1}{X8768D7707B4CBBD4}
+\makelabel{utils:MatrixGroupToMagmaFormat}{11.3.1}{X8768D7707B4CBBD4}
+\makelabel{utils:FindMatchingFiles}{12.1}{X7A6BB3D084912F35}
+\makelabel{utils:CreateDirIfMissing}{12.1}{X7A6BB3D084912F35}
+\makelabel{utils:StringDotSuffix}{12.1}{X7A6BB3D084912F35}
+\makelabel{utils:GetSuffix}{12.1}{X7A6BB3D084912F35}
+\makelabel{utils:SetIfMissing}{12.1}{X7A6BB3D084912F35}
+\makelabel{utils:PrintOneItemPerLine}{12.2}{X86F322FC7DECE36F}
+\makelabel{utils:PrintApplicableMethod}{12.3.1}{X78B7D1A982BE9866}
+\makelabel{utils:ExponentOfPrime}{12.3.2}{X7C1AF2467FB55D79}
+\makelabel{utils:OKtoReadFromUtils}{13}{X84AC9613842F014C}

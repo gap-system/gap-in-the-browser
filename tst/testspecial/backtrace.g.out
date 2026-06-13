@@ -1,0 +1,535 @@
+gap> #############################################################################
+gap> ##
+gap> ##  This file tests Where and WhereWithVars, and in particular how backtraces
+gap> ##  are reported for different kinds of statements; there used to be various
+gap> ##  bugs related to that in the past.
+gap> ##
+gap> f := function() 
+>   local l;
+>   l := 0 * [1..6];
+>   l[[1..3]] := 1;
+> end;
+function(  ) ... end
+gap> f();
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `[]:=' on 3 arguments
+Stack trace:
+*[1] l[[ 1 .. 3 ]] := 1;
+   @ *stdin*:11
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:13
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] l[[ 1 .. 3 ]] := 1;
+   @ *stdin*:11
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] l[[ 1 .. 3 ]] := 1;
+   @ *stdin*:11
+  arguments: <none>
+  local variables:
+    l := [ 0, 0, 0, 0, 0, 0 ]
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() if true = 1/0 then return 1; fi; return 2; end;;
+gap> f();
+Error, Rational operations: <divisor> must not be zero
+Stack trace:
+*[1] 1 / 0
+   @ *stdin*:15
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:16
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] 1 / 0
+   @ *stdin*:15
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] 1 / 0
+   @ *stdin*:15
+  arguments: <none>
+  local variables: <none>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() local x; if x then return 1; fi; return 2; end;;
+gap> f();
+Error, Variable: 'x' must have an assigned value
+Stack trace:
+*[1] if x then
+    return 1;
+fi;
+   @ *stdin*:18
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:19
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] if x then
+    return 1;
+fi;
+   @ *stdin*:18
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] if x then
+    return 1;
+fi;
+   @ *stdin*:18
+  arguments: <none>
+  local variables:
+    x := <unassigned>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() if 1 then return 1; fi; return 2; end;;
+gap> f();
+Error, <expr> must be 'true' or 'false' (not the integer 1)
+Stack trace:
+*[1] if 1 then
+    return 1;
+fi;
+   @ *stdin*:21
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:22
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] if 1 then
+    return 1;
+fi;
+   @ *stdin*:21
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] if 1 then
+    return 1;
+fi;
+   @ *stdin*:21
+  arguments: <none>
+  local variables: <none>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() if 1 < 0 then return 1; elif 1 then return 2; fi; return 3; end;;
+gap> f();
+Error, <expr> must be 'true' or 'false' (not the integer 1)
+Stack trace:
+*[1] if 1 < 0 then
+    return 1;
+elif 1 then
+    return 2;
+fi;
+   @ *stdin*:24
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:25
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] if 1 < 0 then
+    return 1;
+elif 1 then
+    return 2;
+fi;
+   @ *stdin*:24
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] if 1 < 0 then
+    return 1;
+elif 1 then
+    return 2;
+fi;
+   @ *stdin*:24
+  arguments: <none>
+  local variables: <none>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() while 1 do return 1; od; return 2; end;;
+gap> f();
+Error, <expr> must be 'true' or 'false' (not the integer 1)
+Stack trace:
+*[1] while 1 do
+    return 1;
+od;
+   @ *stdin*:27
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:28
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] while 1 do
+    return 1;
+od;
+   @ *stdin*:27
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] while 1 do
+    return 1;
+od;
+   @ *stdin*:27
+  arguments: <none>
+  local variables: <none>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() local i; for i in 1 do return 1; od; return 2; end;;
+gap> f();
+Error, You cannot loop over the integer 1 did you mean the range [1..1]
+Stack trace:
+*[1] Error( "You cannot loop over the integer ", n, " did you mean the range [1..", n, "]" );
+   @ GAPROOT/lib/integer.gi:LINE
+ [2] for i in 1 do
+    return 1;
+od;
+   @ *stdin*:30
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:31
+you can enter 'quit;' to quit to outer loop, or
+you can enter 'return;' to continue
+brk> Where();
+Stack trace:
+*[1] Error( "You cannot loop over the integer ", n, " did you mean the range [1..", n, "]" );
+   @ GAPROOT/lib/integer.gi:LINE
+ [2] for i in 1 do
+    return 1;
+od;
+   @ *stdin*:30
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] Error( "You cannot loop over the integer ", n, " did you mean the range [1..", n, "]" );
+   @ GAPROOT/lib/integer.gi:LINE
+  arguments:
+    n := 1
+  local variables: <none>
+ [2] for i in 1 do
+    return 1;
+od;
+   @ *stdin*:30
+  arguments: <none>
+  local variables:
+    i := <unassigned>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() local i; for i in true do return 1; od; return 2; end;;
+gap> f();
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Iterator' on 1 arguments
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:33
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:34
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:33
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:33
+  arguments: <none>
+  local variables:
+    i := <unassigned>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> f:=function(x) local i,j; for i in true do return 1; od; return 2; end;;
+gap> f([1,2,3]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Iterator' on 1 arguments
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:35
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:36
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:35
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:35
+  arguments:
+    x := [ 1, 2, 3 ]
+  local variables:
+    i := <unassigned>
+    j := <unassigned>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> f:=function(x) local i,j; Unbind(x); for i in true do return 1; od; return 2; end;;
+gap> f([1,2,3]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Iterator' on 1 arguments
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:37
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:38
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:37
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:37
+  arguments:
+    x := <unassigned>
+  local variables:
+    i := <unassigned>
+    j := <unassigned>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> f:=function(x) local i,j; Unbind(x); j := 4; for i in true do return 1; od; return 2; end;;
+gap> f([1,2,3]);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Iterator' on 1 arguments
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:39
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:40
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:39
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] for i in true do
+    return 1;
+od;
+   @ *stdin*:39
+  arguments:
+    x := <unassigned>
+  local variables:
+    i := <unassigned>
+    j := 4
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> f:=function() local x; repeat x:=1; until 1; return 2; end;;
+gap> f();
+Error, <expr> must be 'true' or 'false' (not the integer 1)
+Stack trace:
+*[1] repeat
+    x := 1;
+until 1;
+   @ *stdin*:41
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:42
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] repeat
+    x := 1;
+until 1;
+   @ *stdin*:41
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] repeat
+    x := 1;
+until 1;
+   @ *stdin*:41
+  arguments: <none>
+  local variables:
+    x := 1
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() local x; Assert(0, 1); return 2; end;;
+gap> f();
+Error, Assert: <cond> must be 'true' or 'false' (not the integer 1)
+Stack trace:
+*[1] Assert( 0, 1 );
+   @ *stdin*:44
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:45
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] Assert( 0, 1 );
+   @ *stdin*:44
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] Assert( 0, 1 );
+   @ *stdin*:44
+  arguments: <none>
+  local variables:
+    x := <unassigned>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> f:=function() local x; Assert(0, 1, "hello"); return 2; end;;
+gap> f();
+Error, Assert: <cond> must be 'true' or 'false' (not the integer 1)
+Stack trace:
+*[1] Assert( 0, 1, "hello" );
+   @ *stdin*:47
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:48
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] Assert( 0, 1, "hello" );
+   @ *stdin*:47
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] Assert( 0, 1, "hello" );
+   @ *stdin*:47
+  arguments: <none>
+  local variables:
+    x := <unassigned>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> ##
+gap> ##  Verify issue #2656 is fixed
+gap> ##
+gap> InstallMethod( \[\,\], [ IsMatrixOrMatrixObj, IsPosInt, IsPosInt ],
+>     { m, row, col } -> ELM_LIST( m, row, col ) );
+gap> l := [[1]];; f := {} -> l[2,1];;
+gap> f();
+Error, List Element: <list>[2] must have an assigned value
+Stack trace:
+*[1] return m[i][j];
+   @ GAPROOT/lib/matrix.gi:LINE
+ [2] ELM_LIST( m, row, col )
+   @ *stdin*:54
+ [3] return l[2, 1];
+   @ *stdin*:55
+<function "f">( <arguments> )
+ called from read-eval loop at *stdin*:56
+you can enter 'quit;' to quit to outer loop
+brk> Where();
+Stack trace:
+*[1] return m[i][j];
+   @ GAPROOT/lib/matrix.gi:LINE
+ [2] ELM_LIST( m, row, col )
+   @ *stdin*:54
+ [3] return l[2, 1];
+   @ *stdin*:55
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:1
+brk> WhereWithVars();
+Stack trace:
+*[1] return m[i][j];
+   @ GAPROOT/lib/matrix.gi:LINE
+  arguments:
+    m := [ [ 1 ] ]
+    i := 2
+    j := 1
+  local variables: <none>
+ [2] ELM_LIST( m, row, col )
+   @ *stdin*:54
+  arguments:
+    m := [ [ 1 ] ]
+    row := 2
+    col := 1
+  local variables: <none>
+ [3] return l[2, 1];
+   @ *stdin*:55
+  arguments: <none>
+  local variables: <none>
+<function "f">( <arguments> )
+ called from read-eval loop at *errin*:2
+brk> quit;
+gap> 
+gap> #############################################################################
+gap> ##
+gap> ##  Verify issue #1373 is fixed
+gap> ##
+gap> InstallMethod( Matrix, [IsFilter, IsSemiring, IsMatrixObj], {a,b,c} -> fail );
+Error, FLAGS_FILTER: <oper> must be an operation (not a function)
+Stack trace:
+*[1] <<compiled GAP function "INSTALL_METHOD">>
+   @ GAPROOT/lib/oper1.g:LINE
+ [2] <<compiled GAP function "InstallMethod">>
+   @ GAPROOT/lib/oper1.g:LINE
+<function "InstallMethod">( <arguments> )
+ called from read-eval loop at *stdin*:61
+you can enter 'quit;' to quit to outer loop
+brk> QUIT;

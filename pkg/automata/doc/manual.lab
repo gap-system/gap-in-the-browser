@@ -1,0 +1,140 @@
+\GAPDocLabFile{automata}
+\makelabel{automata:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{automata:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{automata:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{automata:Colophon}{}{X7982162280BC7A61}
+\makelabel{automata:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{automata:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{automata:Finite Automata}{2}{X811E5FC2849C5644}
+\makelabel{automata:Automata generation}{2.1}{X821C3B3687B1F2FF}
+\makelabel{automata:Automata internals}{2.2}{X80AB906D86BBC153}
+\makelabel{automata:Comparison of automata}{2.3}{X8454E24E7D9FC1C2}
+\makelabel{automata:Tests involving automata}{2.4}{X867887A683961C63}
+\makelabel{automata:Basic operations}{2.5}{X82EB5BE77F9F686A}
+\makelabel{automata:Links with Semigroups}{2.6}{X79F21CB37B34A354}
+\makelabel{automata:Rational languages}{3}{X833D315483172905}
+\makelabel{automata:Rational Expressions}{3.1}{X7C144D368043DE01}
+\makelabel{automata:Comparison of rational expressions}{3.2}{X7FB9270D7E8FABF3}
+\makelabel{automata:Operations with rational languages}{3.3}{X83A280D47DB3A033}
+\makelabel{automata:Automata versus rational expressions}{4}{X7B5CD9B7796BD926}
+\makelabel{automata:From automata to rational expressions}{4.1}{X7E631B92873300C1}
+\makelabel{automata:From rational expression to automata}{4.2}{X8138227D7E65FC8C}
+\makelabel{automata:Some tests on automata}{4.3}{X85DCEFB88712056E}
+\makelabel{automata:Some functions involving automata}{5}{X7919AA9384EBC6A5}
+\makelabel{automata:From one type to another}{5.1}{X8050E142796E0CBF}
+\makelabel{automata:Minimalization of an automaton}{5.2}{X862A34E9801BEB25}
+\makelabel{automata:Finite regular languages}{6}{X7AF3E5D081126EBD}
+\makelabel{automata:Dealing with finite regular languages}{6.1}{X85643AEB7E7FB39A}
+\makelabel{automata:Directed graphs}{A}{X82FB3D357E1BE288}
+\makelabel{automata:Directed graphs}{A.1}{X82FB3D357E1BE288}
+\makelabel{automata:Drawing automata}{B}{X82D249F0793E6561}
+\makelabel{automata:Installing some external programs}{B.1}{X7988DBAB78EA0C06}
+\makelabel{automata:Functions to draw automata}{B.2}{X84C97CA079719B11}
+\makelabel{automata:Inverse automata and subgroups of the free group}{C}{X7DBBB0537ADC9899}
+\makelabel{automata:From subgroups to inverse automata}{C.1}{X7DDDA5127A3D170C}
+\makelabel{automata:From inverse automata to subgroups}{C.2}{X85F2060A86DBE62B}
+\makelabel{automata:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{automata:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{automata:Index}{Ind}{X83A0356F839C696F}
+\makelabel{automata:Automaton}{2.1.1}{X87D8222D7B50731E}
+\makelabel{automata:IsAutomaton}{2.1.2}{X83CCDEF9814F1E6D}
+\makelabel{automata:IsDeterministicAutomaton}{2.1.3}{X7D39CECC7E12DD8A}
+\makelabel{automata:IsNonDeterministicAutomaton}{2.1.4}{X83C1148481BAA3DD}
+\makelabel{automata:IsEpsilonAutomaton}{2.1.5}{X81EC5331790D6022}
+\makelabel{automata:String}{2.1.6}{X81FB5BE27903EC32}
+\makelabel{automata:RandomAutomaton}{2.1.7}{X801019097C93BCCC}
+\makelabel{automata:AlphabetOfAutomaton}{2.2.1}{X7A34B47778B50FFE}
+\makelabel{automata:AlphabetOfAutomatonAsList}{2.2.2}{X8044B24B82C59BBF}
+\makelabel{automata:TransitionMatrixOfAutomaton}{2.2.3}{X872BB42A81E4D0E7}
+\makelabel{automata:InitialStatesOfAutomaton}{2.2.4}{X7B5C3CFA83FF80EA}
+\makelabel{automata:SetInitialStatesOfAutomaton}{2.2.5}{X8408FE8487028B7F}
+\makelabel{automata:FinalStatesOfAutomaton}{2.2.6}{X78CDDCC27D085F00}
+\makelabel{automata:SetFinalStatesOfAutomaton}{2.2.7}{X80689F1480F9D959}
+\makelabel{automata:NumberStatesOfAutomaton}{2.2.8}{X7D22AD207A3D5FF4}
+\makelabel{automata:IsDenseAutomaton}{2.4.1}{X8356E41086482483}
+\makelabel{automata:IsRecognizedByAutomaton}{2.4.2}{X8676D8388053F1E7}
+\makelabel{automata:IsPermutationAutomaton}{2.4.3}{X80CCDD438258CD25}
+\makelabel{automata:IsInverseAutomaton}{2.4.4}{X7B7CA23680888C9C}
+\makelabel{automata:AddInverseEdgesToInverseAutomaton}{2.4.5}{X7A4CDEFB84B97849}
+\makelabel{automata:IsReversibleAutomaton}{2.4.6}{X8321BCE57E55FB30}
+\makelabel{automata:CopyAutomaton}{2.5.1}{X8225A1B886131707}
+\makelabel{automata:NullCompletionAutomaton}{2.5.2}{X80D423A584246E2E}
+\makelabel{automata:ListSinkStatesAut}{2.5.3}{X79F052EC81135807}
+\makelabel{automata:RemovedSinkStates}{2.5.4}{X8240136E7A26B1A6}
+\makelabel{automata:ReversedAutomaton}{2.5.5}{X7C0526217BFE7A65}
+\makelabel{automata:PermutedAutomaton}{2.5.6}{X7A4A066583C71ABE}
+\makelabel{automata:ListPermutedAutomata}{2.5.7}{X7A72DDF0782E8D5E}
+\makelabel{automata:NormalizedAutomaton}{2.5.8}{X7FA7DF6D87D63D67}
+\makelabel{automata:UnionAutomata}{2.5.9}{X7A94A77A7C65BA90}
+\makelabel{automata:ProductAutomaton}{2.5.10}{X83E772F2878546A4}
+\makelabel{automata:ProductOfLanguages}{2.5.11}{X85F6AD697DCA5765}
+\makelabel{automata:TransitionSemigroup}{2.6.1}{X7B9994827CF94CC7}
+\makelabel{automata:SyntacticSemigroupAut}{2.6.2}{X7E3F29DF86A26347}
+\makelabel{automata:SyntacticSemigroupLang}{2.6.3}{X7D058F0D83D7B49B}
+\makelabel{automata:rational expressions}{3}{X833D315483172905}
+\makelabel{automata:RationalExpression}{3.1.1}{X801EC6F38568426D}
+\makelabel{automata:RatExpOnnLetters}{3.1.2}{X7EE5A70F7F237C41}
+\makelabel{automata:RandomRatExp}{3.1.3}{X7DA59CBE8571796C}
+\makelabel{automata:SizeRatExp}{3.1.4}{X7E3AA84784019E6C}
+\makelabel{automata:IsRationalExpression}{3.1.5}{X7DDB46817D6E79BE}
+\makelabel{automata:AlphabetOfRatExp}{3.1.6}{X8773359880149A98}
+\makelabel{automata:AlphabetOfRatExpAsList}{3.1.7}{X84B9922B7C006158}
+\makelabel{automata:CopyRatExp}{3.1.8}{X786A096681CAC3CD}
+\makelabel{automata:UnionRatExp}{3.3.1}{X8206BD4E82A81D8F}
+\makelabel{automata:ProductRatExp}{3.3.2}{X7E29107587611CE2}
+\makelabel{automata: StarRatExp}{3.3.3}{X83D8DAE6862C8A96}
+\makelabel{automata:AutomatonToRatExp }{4.1.1}{X8751E3927CA4DEA1}
+\makelabel{automata:AutToRatExp}{4.1.1}{X8751E3927CA4DEA1}
+\makelabel{automata:FAtoRatExp}{4.1.1}{X8751E3927CA4DEA1}
+\makelabel{automata:RatExpToNDAut}{4.2.1}{X840EEB7B7DD8B03D}
+\makelabel{automata:RatExpToAutomaton}{4.2.2}{X866BCCB2788E8561}
+\makelabel{automata:RatExpToAut}{4.2.2}{X866BCCB2788E8561}
+\makelabel{automata:IsEmptyLang}{4.3.1}{X84E0143A860889A6}
+\makelabel{automata:IsFullLang}{4.3.2}{X86AA1A5F7E1EEAFE}
+\makelabel{automata:AreEqualLang}{4.3.3}{X8346D1B17DBF96E7}
+\makelabel{automata:AreEquivAut}{4.3.3}{X8346D1B17DBF96E7}
+\makelabel{automata:IsContainedLang}{4.3.4}{X7FCB176285FA5BBB}
+\makelabel{automata:AreDisjointLang}{4.3.5}{X83F1DE067C2D31A5}
+\makelabel{automata:EpsilonToNFA}{5.1.1}{X81E06D518428CA3C}
+\makelabel{automata:EpsilonToNFASet}{5.1.2}{X81DC84E17A170270}
+\makelabel{automata:EpsilonCompactedAut}{5.1.3}{X871F807D79CE148C}
+\makelabel{automata:ReducedNFA}{5.1.4}{X83B0473278DC14F3}
+\makelabel{automata:NFAtoDFA}{5.1.5}{X87D0F9F17F2BEB57}
+\makelabel{automata:FuseSymbolsAut}{5.1.6}{X7B61945581FE4AC6}
+\makelabel{automata:UsefulAutomaton}{5.2.1}{X7B5B5B10868FB525}
+\makelabel{automata:MinimalizedAut}{5.2.2}{X83C26846866AEE46}
+\makelabel{automata: MinimalAutomaton}{5.2.3}{X7F7AE088808A5D00}
+\makelabel{automata:AccessibleStates}{5.2.4}{X7F484D5A781BB643}
+\makelabel{automata:AccessibleAutomaton}{5.2.5}{X804A6BC979DA6E61}
+\makelabel{automata:IntersectionLanguage}{5.2.6}{X7BAACCAF7E2D213B}
+\makelabel{automata:IntersectionAutomaton}{5.2.6}{X7BAACCAF7E2D213B}
+\makelabel{automata:AutomatonAllPairsPaths}{5.2.7}{X8460C44386EE6225}
+\makelabel{automata:IsFiniteRegularLanguage}{6.1.1}{X82971FC2851B7B30}
+\makelabel{automata:FiniteRegularLanguageToListOfWords}{6.1.2}{X7E48CD3E78277FF7}
+\makelabel{automata:ListOfWordsToAutomaton}{6.1.3}{X7F9C5C6F815773E6}
+\makelabel{automata:RandomDiGraph}{A.1.1}{X86CF9F66788B2A24}
+\makelabel{automata:VertexInDegree}{A.1.2}{X868EE741872B932D}
+\makelabel{automata:VertexOutDegree}{A.1.3}{X84DF2E8E7A7B32C6}
+\makelabel{automata:AutoVertexDegree}{A.1.4}{X7FA6FAAE7AA8715D}
+\makelabel{automata:ReversedGraph}{A.1.5}{X7BA5F1DF7DA89DC5}
+\makelabel{automata:AutoConnectedComponents}{A.1.6}{X7F23780E7A12A79E}
+\makelabel{automata:GraphStronglyConnectedComponents}{A.1.7}{X7D5288C982F92481}
+\makelabel{automata:UnderlyingMultiGraphOfAutomaton}{A.1.8}{X859B7C517AFBD198}
+\makelabel{automata:UnderlyingGraphOfAutomaton}{A.1.9}{X78CF8E507E100C62}
+\makelabel{automata:DiGraphToRelation}{A.1.10}{X78869D478792B3AD}
+\makelabel{automata:MSccAutomaton}{A.1.11}{X7D63604A8413AAAF}
+\makelabel{automata:AutoIsAcyclicGraph}{A.1.12}{X7971EE367B6B7F36}
+\makelabel{automata:DrawAutomaton}{B.2.1}{X7BC2FDA77FD0237B}
+\makelabel{automata:DotForDrawingAutomaton}{B.2.2}{X7896CAD4832C7748}
+\makelabel{automata:DrawSubAutomaton}{B.2.3}{X84DF99868747DD69}
+\makelabel{automata:DotStringForDrawingSubAutomaton}{B.2.4}{X7BB5015378320678}
+\makelabel{automata:DotStringForDrawingGraph}{B.2.5}{X7870774E83892026}
+\makelabel{automata:DrawGraph}{B.2.5}{X7870774E83892026}
+\makelabel{automata:DrawSCCAutomaton}{B.2.6}{X7E478FDD807853CA}
+\makelabel{automata:GeneratorsToListRepresentation}{C.1.1}{X85358D097C314EB5}
+\makelabel{automata:ListToGeneratorsRepresentation}{C.1.2}{X80F3E10784590374}
+\makelabel{automata:FlowerAutomaton}{C.1.3}{X7EAFF7E879D115C5}
+\makelabel{automata:FoldFlowerAutomaton}{C.1.4}{X7F729A4E8784D92E}
+\makelabel{automata:SubgroupGenToInvAut}{C.1.5}{X826D581D794F1BFB}
+\makelabel{automata:GeodesicTreeOfInverseAutomaton}{C.2.1}{X81DA149779A167BD}
+\makelabel{automata:InverseAutomatonToGenerators}{C.2.2}{X7F117C43814F2CDE}

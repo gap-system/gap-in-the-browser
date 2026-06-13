@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Create_wrapper_hulls_of_a_category">
+<Heading>Create wrapper hulls of a category</Heading>
+
+<P/>
+<Section Label="Chapter_Create_wrapper_hulls_of_a_category_Section_GAP_categories">
+<Heading>GAP categories</Heading>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsWrapperCapCategory" Label="for IsCapCategory"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of a wrapper CAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsWrapperCapCategoryObject" Label="for IsCapCategoryObject"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of objects in a wrapper CAP category.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Filt Arg="arg" Type="Category" Name="IsWrapperCapCategoryMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns><K>true</K> or <K>false</K>
+</Returns>
+ <Description>
+  The &GAP; category of morphisms in a wrapper CAP category.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Create_wrapper_hulls_of_a_category_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="object" Name="UnderlyingCell" Label="for IsWrapperCapCategoryObject"/>
+ <Returns>a category object
+</Returns>
+ <Description>
+  The cell underlying the wrapper category object <A>object</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="morphism" Name="UnderlyingCell" Label="for IsWrapperCapCategoryMorphism"/>
+ <Returns>a category morphism
+</Returns>
+ <Description>
+  The cell underlying the wrapper category morphism <A>morphism</A>.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Create_wrapper_hulls_of_a_category_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Oper Arg="category, object" Name="AsObjectInWrapperCategory" Label="for IsWrapperCapCategory, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+  Wrap an object <A>object</A> (in the category underlying the wrapper category <A>category</A>) to form an object in <A>category</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="source, morphism, range" Name="AsMorphismInWrapperCategory" Label="for IsWrapperCapCategoryObject, IsCapCategoryMorphism, IsWrapperCapCategoryObject"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+  Wrap a morphism <A>morphism</A> (in the category underlying the wrapper category <Code>CapCategory(</Code><A>source</A><Code>)</Code>) to form a morphism in <Code>CapCategory(</Code><A>source</A><Code>)</Code>
+  with given source and range.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="category, morphism" Name="AsMorphismInWrapperCategory" Label="for IsWrapperCapCategory, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+  Wrap a morphism <A>morphism</A> (in the category underlying the wrapper category <A>category</A>) to form a morphism in <A>category</A>.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="cell, category" Name="/" Label="for IsCapCategoryCell, IsWrapperCapCategory"/>
+ <Description>
+  Convenience method for <Ref Oper="AsObjectInWrapperCategory" Label="for IsWrapperCapCategory, IsCapCategoryObject" />
+  and <Ref Oper="AsMorphismInWrapperCategory" Label="for IsWrapperCapCategory, IsCapCategoryMorphism" />.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="category, options" Name="WrapperCategory" Label="for IsCapCategory, IsRecord"/>
+ <Returns>a category
+</Returns>
+ <Description>
+  Wraps a category <A>category</A> to form a new category subject to the options given via <A>options</A>,
+  which is a record with the following keys:
+<List>
+<Item>
+<Code>name</Code> (optional): the name of the wrapper category
+</Item>
+<Item>
+<Code>only_primitive_operations</Code> (optional, default <Keyword>false</Keyword>): whether to only wrap primitive operations or all operations
+</Item>
+</List>
+<P/>
+  Additionally, the following options of <Ref Oper="CategoryConstructor" Label="for IsRecord" /> are supported:
+  <Code>category_filter</Code>, <Code>category_object_filter</Code>, <Code>category_morphism_filter</Code>.
+  The filters must imply <Code>IsWrapperCapCategory</Code>, <Code>IsWrapperCapCategoryObject</Code>, and <Code>IsWrapperCapCategoryMorphism</Code>, respectively.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Arg="W" Name="WrappingFunctor" Label="for IsWrapperCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+  Return the functor from the wrapped category <Code>ModelingCategory</Code>(<A>W</A>) to the wrapper category <A>W</A>
+  which simply wraps objects/morphisms.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+

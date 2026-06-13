@@ -1,0 +1,327 @@
+This file describes changes in the AutoDoc package.
+
+## 2026.05.11
+  - Fix an issue when running a `makedoc.g` from outside its package's
+    directory: if one e.g. did `gap ../somePackage/makedoc.g` and this tried
+    to load a file `lib/file.g`, then AutoDoc first attempt to resolve that
+    relative to the current working directory (and not relative to
+    `../somePackage/`), which could lead to the wrong file being used.
+
+## 2026.05.03
+  - Make `AutoDoc()` infer the package directory from `INPUT_FILENAME()`
+    when called from a `makedoc.g` file outside the package root
+  - Deprecate calling `AutoDoc()` with a package name
+  - Deprecate using GAP global options to pass settings to `AutoDoc()`,
+    suggest using option records instead
+
+## 2026.03.18
+  - Fix running the test suite via `TestPackage("AutoDoc")` when the
+    current working directory is not the package root
+
+## 2026.03.17
+
++ **Breaking changes**
+  - Remove the nonfunctional `@Level`, `@ResetLevel`, and undocumented
+    alias `@SetLevel` commands. They never affected generated output as
+    documented. Since nobody ever reported issues with them, and since
+    no distributed packages uses them, they probably are simply not in
+    use anywhere. Hence the removal instead of trying to fix this.
+  - Only document the first declaration immediately following an AutoDoc
+    source comment block; later consecutive declarations now require their
+    own `#!` comment block
+  - When documenting an `InstallMethod`, we now use the item type `Meth`
+    instead of `Oper`
+
++ **New Features**
+  - Add `nopdf` as a global option, and document the existing `NOPDF`
+    environment variable and `relativePath` global option
+  - Add a sub-option `subdir` for `extract_examples` to place generated
+    `.tst` files in a subdirectory such as `tst/generated`
+  - Add Markdown-style headings `#`/`##`/`###` as aliases for
+    `@Chapter`/`@Section`/`@Subsection` in `.autodoc` files and doc comments
+  - Add `@Appendix` for generating appendix XML from `.autodoc` input
+  - Add support for documenting `DeclareSynonym` and
+    `DeclareSynonymAttr` declarations
+  - Add `@ItemType` to override the type of a declaration, which is
+    especially useful for `DeclareSynonym` or `DeclareGlobalName`
+  - Add fenced code blocks using triple backticks or tildes in
+    Markdown-like text; `@listing`, `@example`, and `@log` info strings
+    select the corresponding GAPDoc element
+  - Add `@Index` command for generating index entries
+  - Allow overriding the LaTeX bibliography style via `scaffold.bibstyle`
+  - In Markdown-like inline backtick code spans, emit
+    `<Keyword>...</Keyword>` for GAP keywords (as returned by
+    `ALL_KEYWORDS()`), otherwise as before `<Code>...</Code>`
+  - Allow XML-style comments in `.autodoc` files
+  - Scan `autodoc.scan_dirs` and `gapdoc.scan_dirs` recursively so
+    nested source directories are picked up automatically
+
++ **Other Changes**
+  - Scaffold-generated package manual main files now default to
+    `_main.xml` instead of `PACKAGENAME.xml`; packages that need a
+    different name can continue to set `gapdoc.main`
+  - Don't insert extra newlines after author names for the PDF title
+    pages (this was a workaround for a GAPDoc issue; hopefully a
+    future GAPDoc release will fix this properly; for details, see
+    <https://github.com/frankluebeck/GAPDoc/issues/80>)
+  - Improve `DeclareGlobalName` handling: document it as a variable by
+    default, but switch to a function when `@Arguments` or `@Returns`
+    provides function-style documentation
+  - Ignore trailing blank lines after single-line worksheet title-page
+    commands such as `@Title`, `@Subtitle`, `@Version`, `@Author`, and
+    `@Date`, and trim trailing blank lines from generated title-page
+    content so they no longer leak into filenames or empty author entries
+  - Relax filtering for auto-generated chapter and section labels and
+    chapter XML filenames, preserving more punctuation while still
+    stripping characters that are known to cause trouble
+  - Strip XML-special characters from generated chapter, section, and
+    subsection labels so entity names in headings no longer produce
+    invalid XML
+  - Greatly improve the package manual.
+  - Convert the hand-written manual chapters from XML to `.autodoc`
+  - Fix an unexpected and confusing error when mixing explicit
+    `@Chapter`/`@Section` markup in one file with auto-generated
+    chapter/section placement in another
+  - Fix `InstallMethod` in first line of GAP source file leading to an error
+  - Fix multiline `InstallMethod` parsing for filter lists and
+    multiline `function(...)` argument lists
+  - Make AutoDoc command parsing more robust in plain-text mode when
+    `@Command` does not start at column 1
+  - Normalize parsed `InstallMethod` names by stripping surrounding
+    quotes, matching `Declare...` handling
+  - Document `InstallMethod` support in declaration comments
+  - Fix legacy list-style `scaffold.entities` handling so it receives
+    the standard default entities and works end-to-end again
+  - Convert Markdown-style math in chapter, section, and subsection
+    headings to the corresponding GAPDoc math markup
+  - Loosen requirements on `@Date` command: this used to allow free form,
+    but in recent versions was restricted to dates of the form YYYY-MM-DD
+    or DD/MM/YYYY; now we again allow any text, but text in those specific
+    formats is still parsed and formatted (e.g. 2026-03-08 as 8 March 2026)
+  - Require `@BeginExample`, `@BeginLog`, `@BeginExampleSession`, and
+    `@BeginLogSession` blocks to use their matching `@End...` markers
+  - Improve parser robustness by reporting clear EOF errors for
+    unterminated declaration headers and filter lists
+  - Make tests work when the package directory is read-only by writing
+    generated test output to temporary directories
+  - Remove `@DONT_SCAN_NEXT_LINE` parser hack and only treat `#!` as an
+    AutoDoc marker at the start of a line (ignoring leading whitespace)
+  - Warn if a chunk is defined (via `@BeginChunk`/`@BeginCode`) but never
+    inserted (via `@InsertChunk`/`@InsertCode`)
+  - Warn if a chunk is inserted (via `@InsertChunk`/`@InsertCode`) but never
+    defined (via `@BeginChunk`/`@BeginCode`)
+  - Expand package-manual fixture coverage for `AutoDoc()` invocation
+    variants and `extract_examples` settings
+
+## 2025.12.19
+  - Don't replace empty lines in `@BeginCode` blocks by `<P/>`
+  - Fix XML header in generated files (it had a syntax error, which somehow also
+    slips by GAPDoc; so it caused no problems in practice, but the resulting XML
+    was strictly speaking invalid)
+  - Predefine entities `VERSION`, `RELEASEYEAR`, `RELEASEDATE`
+  - Allow specifying scaffold settings *simultaneously* in `PackageInfo.g`
+    and `makedoc.g`; the records are merged, with values from `makedoc.g`
+    taken precedence if e.g. the same entity is defined in both places
+
+## 2025.10.16
+  - Make handling `Date` in `PackageInfo.g` more strict (previously some
+    malformed variants were accepted to deal with very old packages, but by
+    now all packages are compliant)
+  - Remove a bunch of features that were deprecated since 2019:
+    - `AutoDoc` option `scaffold.gapdoc_latex_options` has been
+      replaced by `gapdoc.LaTeXOptions`
+    - `AutoDoc` option `maketest` has been superseded by `extract_examples`
+    - Various AutoDoc commands were removed (see the manual for replacements)
+      - `@EndSection`, `@EndSubsection`
+      - `@AutoDoc`, `@BeginAutoDoc`, `@EndAutoDoc`
+      - `@System`, `@BeginSystem`, `@EndSystem`, `@InsertSystem`
+      - `@AutoDocPlainText`, `@BeginAutoDocPlainText`, `@EndAutoDocPlainText`
+
+## 2025.05.09
+  - Add `InfoAutoDoc` info class for messages
+  - Various janitorial changes
+
+## 2023.06.19
+  - Revise handling of chunks XML file
+  - Remove `AUTODOC_AbsolutePath`
+  - Don't build PDF docs if `NOPDF` environment variable is set
+  - Various janitorial changes
+
+## 2022.10.20
+  - Prevent some file descriptor leaks
+  - Do not try to read non-existing file `gap/ContextObject.gd`
+
+## 2022.07.10
+  - Output all entities defined via either the `scaffold.entities` option
+    to AutoDoc  (or equivalently via the `AutoDoc.entities` record in
+    `PackageInfo.g`) into a file `_entities.xml`, so that they can also
+    be used with a hand-made main XML file (and not just when AutoDoc
+    generated the main page)
+  - Remove `&see;` entity from the default list of entities
+
+## 2022.03.10
+  - Strip trailing newlines in `PostalAddress` and some TitlePage elements
+  - Allow AutoDoc record in `PackageInfo.g` to not contain a TitlePage entry
+
+## 2022.02.24
+  - true/false are keywords, not just code: use K tags
+  - extract examples: do not flush pkgname.tst
+  - remove duplicate entries in autodoc.files
+
+## 2020.08.11
+  - Add support for using the string `]]>` in examples
+  - Add support for `DeclareGlobalName` (new in GAP 4.12)
+  - Add `extract_examples.skip_empty_in_numbering` option
+  - Enhance `extract_examples` to remove outdated .tst files (e.g. if chapter
+    number changes, we won't leave outdated extracted .tst examples behind)
+  - Fix a warning about a missing file `/doc/_Chunks.xml` which appeared
+    when building the documentation of some packages
+
+## 2019.09.04
+  - Deprecate `@BeginAutoDoc` and `@EndAutoDoc`; they will be removed in a future
+    AutoDoc version
+  - Deprecate `@BeginAutoDocPlainText` and `@EndAutoDocPlainText`; they will be
+    removed in a future AutoDoc version
+  - Fix `@BeginCode` / `@EndCode` / `@InsertCode`, which were broken in version 2019.07.03
+
+## 2019.07.24
+  - Add support for ISO 8601 dates in package metadata (to prepare for GAP adding
+    official support for this in the future)
+  - Remove undocumented and long-unused support entities specified using a raw
+    `<!ENTITY NAME CONTENT>` entity string
+  - Fix the `&see;` entity we always generate (for legacy support) to display
+    the correct output in LaTeX / PDF mode
+  - Fix support for chunks with names / labels that contain spaces (GAPDoc does
+    not like these, so we replace the spaces by underscores)
+
+## 2019.07.17
+  - Fix bug in `extract_examples` option that could result in invalid .tst files
+
+## 2019.07.03
+  - Make Chunks compatible with GAPDoc chunks
+  - Tweak two error messages, add two more error checks
+  - Check that gapdoc.files is a list of strings
+  - Add `@GroupTitle` command (thanks to Glen Whitney)
+  - Make @Begin.../@EndExampleSession respect plain_text_mode (thanks to Glen Whitney)
+  - Handle documentation of DeclareCategoryCollection declarations (thanks to Glen Whitney)
+  - Repair minor omissions/imprecisions in AutoDoc() function doc (thanks to Glen Whitney)
+  - Improve manual further
+
+## 2019.05.20
+  - Ensure that starting a "manpage" (= documentation for a filter, function, property,
+    ...) ends any active subsection (in GAPDoc, manpages are equivalent to subsections
+    internally, and hence cannot be nested in each other)
+  - Add deprecation warnings for @InsertSystem, @System, @BeginSystem, @EndSystem
+    (use @Chunk etc. instead), and also @EndSection, @EndSubsection
+  - Rename scaffold.gapdoc_latex_options to gapdoc.LaTeXOptions. The old name is still
+    supported, but triggers a deprecation warning.
+  - Update copyright information and author's contact data
+  - Minor fixes in the manual
+
+## 2019.04.10
+  - Add opt.extract_examples to AutoDoc function
+  - Add @NotLatex command to complement @LatexOnly
+  - Allow disabling title page creation, by teaching `AutoDoc()` to correctly
+    handle `scaffold := rec( TitlePage := false )` instead of raising an error
+  - When generating a manual title page, only include persons as authors
+    for which IsAuthor is set to true in PackageInfo.g
+  - Some improvements to the manual
+  - Various internal changes
+
+## 2019.02.22
+  - Updated changes file
+
+## 2019.02.21
+  - Removed possibility to mark function arguments via curly braces, as {A},
+    as it caused problems with writing {} in math mode.
+
+## 2019.02.20
+  - Accept single backticks to indicate inline code spans
+  - Added possibility to mark function arguments via curly braces, as {A}
+
+## 2018.09.20
+  - Scan bracket `\[\]` declarations correctly (PR #162)
+  - Removed the hardcoded utf8 option, make it overridable via gapdoc_latex_option
+  - Allow AutoDoc() to take absolute dirs and run from any dir (thanks to Glen Whitney)
+  - Add a test suite for AutoDoc (thanks to Glen Whitney)
+  - Fix documenting DeclareInfoClass
+
+## 2018.02.14
+  - Added @*Title commands to specify titles for Chapters etc.
+  - Document @BeginExampleSession instead of @ExampleSession
+  - Document the aliases @Example, @ExampleSession, @Log, and @LogSession
+  - Improve manual (thanks to Chris Wensley):
+    - fix a few typos
+    - added abstract and acknowledgments
+    - added bibliography file AutoDoc.bib
+    - added checklist subsection 1.3.3
+    - added some index entries
+    - change makedoc.g to highlight some useful features of the AutoDoc() function
+  - Various other tweaks and fixes
+
+## 2017.09.08
+  - Add ChapterLabel, SectionLabel, and SubsectionLabel
+  - Add ExampleSession environment to support GAPDoc-Style examples
+  - Add support for documenting DeclareConstructor
+  - Empty lines in AutoDoc comments start a new paragraph, as in TeX
+  - Improve @Example documentation
+  - Fix some spelling mistakes in the manual
+  - Fix support for KeyDependendOperations (see issue #124)
+  - Don't show a return value if no @Returns is given
+  - Various other tweaks and fixes
+
+## 2016.12.04:
+  - Revise and officially document the `entities` option for AutoDoc()
+
+## 2016.11.26:
+  - Use english month names on title pages
+  - Ignore empty dependency lists in PackageInfo.g files
+  - Better error message when .six file is not available
+
+## 2016.03.08:
+  - Fix the "empty index" workaround from the previous release
+
+## 2016.03.04:
+  - Improved the manual.
+  - AutoDoc can now be instructed to invoke GAPDoc in such a way that links
+    in the generated documentation to the GAP reference manual use relative
+    paths.
+  - Also scan for .autodoc files (Issue #104)
+  - Workaround a problem with GAPDoc where an empty index could lead to an error.
+  - Allow entities in chapter and section titles.
+  - Fix a bug where the indentation for code blocks was not preserved.
+
+## 2016.02.24:
+  - Again improved the error messages produced by the parser.
+  - Document worksheets (and fix them -- the previous release broke them).
+  - Removed the @URL documentation comment command.
+  - Add current directory to default list of directories which are scanned
+    for *.{g,gi,gd} files containing documentation.
+  - Fixed various typos and other mistakes in the documentation.
+  - Make it possible to tell AutoDoc to build manuals with relative paths
+    (issue #103).
+
+## 2016.02.16:
+  - AutoDoc does not anymore produce an error when invoked on a new project
+    which has no documentation yet (issue #65)
+  - Various errors in the parser now produce much better error messages,
+    with information in which file and line the error occurred, and what
+    the error is (issue #89)
+  - Files generated by AutoDoc for chapters as well as the "main" file
+    now have names starting with an underscore, to make it easy to
+    distinguish generated files from those maintained by hand.
+  - Removed the old "Declare*WithDoc" API. Any packages still using it
+    must upgrade to use documentation comments.
+
+## 2016.01.31:
+  - Improved the documentation of AutoDoc itself
+  - Some code is now more robust, detects more error conditions and reports
+    them clearly to the user, instead of triggering some weird error later on.
+  - Lots of minor tweaks, fixes and cleanip
+
+## 2016-01-21:
+  - The AutoDoc() function now accepts IsDirectory() objects
+    as first argument, and you can omit the first argument
+    (it then defaults to the current directory).
+    Packages using AutoDoc may want to adapt their makedoc.g
+    to use this new facility for improved robustness.

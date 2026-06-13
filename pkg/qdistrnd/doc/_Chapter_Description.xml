@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Description">
+<Heading>Description of the algorithm</Heading>
+
+<P/>
+<Section Label="Section_SimpleVersion">
+<Heading>Elementary version</Heading>
+
+<P/>
+<Subsection Label="Subsection_TheGoal">
+<Heading>What it does?</Heading>
+
+<P/>
+In the simplest possible terms, we are given a pair of matrices <Math>P</Math>
+and <Math>Q</Math> with orthogonal rows, <Math>PQ^T=0</Math>.  The matrices have entries in
+a finite field <Math>F=\mathop{\rm GF}(q)</Math>, where <Math>q</Math> is a power of a prime.  The goal
+is to find the smallest weight of a non-zero vector <Math>c</Math> over the same
+field <Math>F</Math>, such that <Math>c</Math> be orthogonal with the rows of <Math>P</Math>, <Math>Pc^T=0</Math>,
+and linearly independent from the rows of <Math>Q</Math>.
+<P/>
+</Subsection>
+
+
+<Subsection Label="Subsection_TheProcedure">
+<Heading>The algorithm</Heading>
+
+<P/>
+We first construct a generator matrix <Math>G</Math> whose rows form
+a basis of the <Math>F</Math>-linear space of all vectors orthogonal to the rows
+of <Math>P</Math>.  At each step, a random permutation <Math>S</Math> is generated and
+applied to the columns of <Math>G</Math>.  Then, Gauss' elimination with back
+substitution  renders the resulting matrix to the reduced
+row echelon form, after which the inverse permutation <Math>S^{-1}</Math> is
+applied to the columns.  Rows of the resulting matrix <Math>G_S</Math> that are
+linearly independent from the rows of <Math>Q</Math> are considered as candidates
+for the minimum weight vectors.  Thus, after <Math>N</Math> steps, we are getting
+an upper bound on the distance which is improving with increasing <Math>N</Math>.
+<P/>
+</Subsection>
+
+
+<Subsection Label="Subsection_Intuition">
+<Heading>Intuition</Heading>
+
+<P/>
+The intuition is that each row of <Math>G_S</Math> is guaranteed to contain at
+least <Code>rank</Code><Math>(G_S)-1</Math> zeros.  Thus, we are sampling mostly
+lower-weight vectors from the linear space orthogonal to the rows of
+<Math>P</Math>.  Further, it is easy to see that any vector obtained this way is
+<Emph>irreducible</Emph> <Cite Key="Dumer-Kovalev-Pryadko-bnd-2015"/>, i.e., it
+cannot be decomposed into a pair of zero-syndrome vectors with
+non-overlapping supports.
+<P/>
+Furthermore, the eventual convergence is guaranteed.  Indeed, if <Math>c</Math>
+is a minimum-weight codeword of weight <Math>d</Math>, consider a permutation <Math>S</Math>
+which places one position from its support into the 1st column, and
+the remaining positions into the last <Math>d-1</Math> columns.  Vector <Math>c</Math> being
+the lowest-weight non-trivial vector, no pivot column may be in the
+block of last <Math>d-1</Math> columns. This guarantees that vector <Math>c</Math> is
+obtained as the first row of <Math>G_S</Math>.
+(This argument is adapted to degenerate quantum codes from
+<Cite Key="Cuellar-etal-2020"/>).
+<P/>
+</Subsection>
+
+
+<Subsection Label="Subsection_AlgorithmCSS">
+<Heading>CSS version of the algorithm</Heading>
+
+<P/>
+The described version of the algorithm is implemented in the function <Code>DistRandCSS</Code>
+(<Ref Sect="Section_DistanceFunctions"/>).  It applies to the case of
+Calderbank-Shor-Steane (CSS) codes, where the matrices <Math>P=H_X</Math> and
+<Math>Q=H_Z</Math> are called the CSS generator matrices, and the computed
+minimum weight is the distance <Math>d_Z</Math> of the code.  The number of
+columns <Math>n</Math> is the block length of the code, and it encodes <Math>k</Math>
+qudits, where <Math>k=n-</Math><Code>rank</Code><Math>(H_X)-</Math><Code>rank</Code><Math>(H_Z)</Math>.  To completely
+characterize the code, we also need the distance <Math>d_X</Math> which can be
+obtained by calling the same function with the two matrices interchanged.
+The conventional code distance <Math>d</Math> is the minimum of <Math>d_X</Math> and <Math>d_Z</Math>.
+Parameters of such a <Math>q</Math>-ary CSS code are commonly denoted as
+<Math>[[n,k,(d_X,d_Z)]]_q</Math>, or simply <Math>[[n,k,d]]_q</Math> as for a general
+<Math>q</Math>-ary stabilizer code.
+<P/>
+</Subsection>
+
+
+<Subsection Label="Subsection_AlgorithmGeneric">
+<Heading>Generic version of the algorithm</Heading>
+
+<P/>
+CSS codes are a subclass of general <Math>F</Math>-linear stabilizer codes which
+are specified by a single stabilizer generator matrix <Math>H=(A|B)</Math>
+written in terms of two blocks of <Math>n</Math> columns each.  The orthogonality
+condition is given in a symplectic form, <Display> A B^T-B A^T=0, </Display> or,
+equivalently, as orthogonality between the rows of <Math>H</Math> and the
+symplectic-dual matrix <Math>\tilde H=(B|-A)</Math>.  Non-trivial vectors in the code must be
+orthogonal to the rows of <Math>P=\tilde H</Math> and linearly independent from
+the rows of <Math>Q=H</Math>.  The difference with the CSS version of the
+algorithm is that we must minimize the <Emph>symplectic</Emph> weight of
+<Math>c=(a|b)</Math>, given by the number of positions <Math>i</Math>, <Math>1\le i\le n</Math>, such
+that either <Math>a_i</Math> or <Math>b_i</Math> (or both) be non-zero.
+<P/>
+The parameters of such a code are denoted as <Math>[[n,k,d]]_q</Math>, where
+<Math>k=n-</Math><Code>rank</Code><Math>H</Math> is the number of encoded qudits, and <Math>d</Math> is the
+minimal symplectic weight of a non-trivial vector in the code.  It is
+easy to check that a CSS code can also be represented in terms of a
+single stabilizer generator matrix.  Namely, for a CSS code with
+generators <Math>H_X</Math> and <Math>H_Z</Math>, the stabilizer generator matrix has a
+block-diagonal form, <Math>H=</Math><Code>diag</Code><Math>(H_X,H_Z)</Math>.
+<P/>
+A version of the algorithm for general <Math>F</Math>-linear stabilizer codes is
+implemented in the function <Code>DistRandStab</Code> (<Ref Sect="Section_DistanceFunctions"/>).
+<P/>
+<Emph>Important Notice</Emph>: In general, here one could use most general
+permutations of <Math>2n</Math> columns, or restricted permutations of <Math>n</Math>
+two-column blocks preserving the pair structure of the matrix.  While
+the latter method would be much faster, there is no guarantee that
+every vector would be found.  As a result, we decided to use general
+permutations of <Math>2n</Math> columns.
+<P/>
+</Subsection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Description_Section_Some_more_details">
+<Heading>Some more details</Heading>
+
+<Subsection Label="Chapter_Description_Section_Some_more_details_Subsection_Quantum_stabilizer_codes">
+<Heading>Quantum stabilizer codes</Heading>
+
+<P/>
+Representation of quantum codes in terms of linear spaces
+is just a convenient map.  In the case <Math>q=2</Math> (qubits), the details can
+be found, e.g., in the book of Nielsen and Chuang, <Cite
+Key="Nielsen-book"/>.  Further details on the theory of stabilizer
+quantum error correcting codes based on qubits can be found in the
+Caltech Ph.D. thesis of Daniel Gottesman <Cite Key="gottesman-thesis"/>
+and in the definitive 1997 paper by Calderbank, Rains, Shor, and
+Sloane <Cite Key="Calderbank-1997"/>.  Theory of stabilizer quantum
+ codes based on qudits (<Math>q</Math>-state quantum systems)
+was developed by Ashikhmin and Knill
+<Cite Key="Ashikhmin-Knill-2001"/>
+(prime fields with <Math>q</Math> prime) and by Ketkar, Klappenecker, Kumar, &#38; Sarvepalli <Cite
+Key="Ketkar-Klappenecker-Kumar-Sarvepalli-2006"/> (extension fields
+with <Math>q</Math> a non-trivial power of a prime).
+<P/>
+In the binary case (more generally, when <Math>q</Math> is a prime), <Math>F</Math>-linear
+codes coincide with <Emph>additive</Emph> codes.  The <Emph>linear</Emph> codes [e.g.,
+over <Math>\mathop{\rm GF}(4)</Math> in the binary case <Cite Key="Calderbank-1997"/>] is a
+different construction which assumes an additional symmetry.  A brief
+summary of <Math>F</Math>-linear quantum codes [where <Math>F=\mathop{\rm GF}(q)</Math> with <Math>q=p^m</Math>,
+<Math>m>1</Math> a non-trivial power of a prime] can be found in the introduction
+of Ref. <Cite Key="Zeng-Pryadko-hprod-2020"/>.  The construction is
+equivalent to a more physical approach in terms of a lifted Pauli
+group suggested by Gottesman <Cite
+Key="Gottesman-prime-power-2014"/>.
+<P/>
+</Subsection>
+
+
+<Subsection Label="Subsection_TheAlgorithmDetails">
+<Heading>The algorithm</Heading>
+
+<P/>
+<Alt Only="LaTeX"><![CDATA[
+\noindent\underline{%
+]]></Alt>
+Case of <Emph>classical linear codes</Emph> 
+<Alt Only="LaTeX"><![CDATA[
+}
+]]></Alt>
+<P/>
+The algorithm <Ref Subsect="Subsection_TheProcedure"/> is closely
+related to the algorithm for finding minimum-weight codewords in a
+classical linear code as presented by Leon <Cite Key="Leon-1988"/>,
+and a related family of <Emph>information set</Emph> (IS) decoding algorithms <Cite
+Key="Kruk-1989"/> <Cite Key="Coffey-Goodman-1990"/>.
+<P/>
+Consider a classical linear <Math>q</Math>-ary code <Math>[n,k,d]_q</Math> encoding <Math>k</Math>
+symbols into <Math>n</Math>, specified by a generator matrix <Math>G</Math> of rank <Math>k</Math>.
+Using Gauss' algorithm and column permutations, the generator matrix
+can be rendered into a <Emph>systematic form</Emph>, <Math>G=(I|A)</Math>, where the two
+blocks are <Math>I</Math>, the size-<Math>k</Math> identity matrix, and a <Math>k</Math> by <Math>n-k</Math>
+matrix <Math>A</Math>.  In such a representation, the first <Math>k</Math> positions are
+called the information set of the code (since the corresponding
+symbols are transmitted directly) and the remaining <Math>n-k</Math> symbols
+provide the redundancy.  Any <Math>k</Math> linearly-independent columns of <Math>G</Math>
+can be chosen as the information set, which defines the systematic
+form of <Math>G</Math> up to a permutation of the rows of <Math>A</Math>.
+<P/>
+The IS algorithm and the original performance bounds
+<Cite Key="Leon-1988"/>
+<Cite Key="Kruk-1989"/>
+<Cite Key="Coffey-Goodman-1990"/>
+are based on the observation that for a long random code a set of
+<Math>k+\Delta</Math> randomly selected columns, with <Math>\Delta</Math> of order one, are
+likely to contain an information set. ISs are (approximately) in
+one-to-one correspondence with the column permutations, and a random
+IS can thus be generated as a set of <Emph>pivot</Emph> columns in the Gauss'
+algorithm after a random column permutation.  Thus, if there is a
+codeword <Math>c</Math> of weight <Math>d</Math>, the probability to find it among the rows
+of reduced-row-echelon form <Math>G_S</Math> after a column permutation <Math>S</Math> can
+be estimated as that for a randomly selected set of <Math>k</Math> columns to hit
+exactly one non-zero position in <Math>c</Math>.
+<P/>
+The statistics of ISs is more complicated in other ensembles of random
+codes, e.g., in linear <Emph>low-density parity-check</Emph> (LDPC) codes where
+the check matrix <Math>H</Math> (of rank <Math>n-k</Math> and with rows orthogonal to those
+of <Math>G</Math>) is additionally required to be sparse.  Nevertheless, a
+provable bound can be obtained for a related <Emph>covering set</Emph> (CS)
+algorithm where a randomly selected set of <Math>s\ge k-1</Math> positions of a
+putative codeword are set to be zero, and the remaining positions are
+constructed with the help of linear algebra.  In this case, the
+optimal choice <Cite Key="Dumer-Kovalev-Pryadko-IEEE-2017"/> is to
+take <Math>s\approx n(1-\theta)</Math>, where <Math>\theta </Math> is the erasure threshold
+of the family of the codes under consideration.  Since <Math>\theta\ge R</Math>
+(here <Math>R=k/n</Math> is the code rate), here more zeros must be selected, and
+the complexity would grow (assuming the distance <Math>d</Math> remains the same,
+which is usually <Emph>not</Emph> the case for LDPC codes).
+<P/>
+Note however that rows of <Math>G_S</Math> other than the last are not expected
+to contain as many zeros (e.g., the first row is only guaranteed to
+have <Math>k-1</Math> zeros), so it is <Emph>possible</Emph> that the performance of the
+IS algorithm on classical LDPC codes is actually closer to that on
+random codes as estimated by Leon <Cite Key="Leon-1988"/>.
+<P/>
+<Alt Only="LaTeX"><![CDATA[
+\medskip\noindent\underline{%
+]]></Alt>
+Case of <Emph>quantum CSS codes</Emph>
+<Alt Only="LaTeX"><![CDATA[
+}
+]]></Alt>
+<P/>
+In the case of a random CSS code (with matrices <Math>P</Math> and <Math>Q</Math> selected
+randomly, with the only requirement being the orthogonality between
+the rows of <Math>P</Math> and <Math>Q</Math>), the performance of the algorithm <Ref
+Subsect="Subsection_TheProcedure"/> can be estimated as that of the CS
+algorithm, in terms of the erasure threshold of a linear code with the
+parity matrix <Math>P</Math>, see <Cite Key="Dumer-Kovalev-Pryadko-IEEE-2017"/>.
+<P/>
+Unfortunately, such an estimate fails dramatically in the case of
+<Emph>quantum LDPC codes</Emph>, where rows of <Math>P</Math> and <Math>Q</Math> have weights bounded
+by some constant <Math>w</Math>.  This is a reasonable requirement since the
+corresponding quantum operators (supported on <Math>w</Math> qudits) have to
+actually be measured frequently as a part of the operation of the
+code, and it is reasonable to expect that the measurement accuracy
+goes down (exponentially) quickly as <Math>w</Math> is increased.  Then, the
+linear code orthogonal to the rows of <Math>P</Math> has the distance <Math>\le w</Math>
+(the minimal weight of the rows of <Math>Q</Math>), and the corresponding erasure
+threshold is exactly zero.  In other words, there is a finite
+probability that a randomly selected <Math>w</Math> symbols contain a vector
+orthogonal to the rows of <Math>P</Math> (and such a vector would likely have nothing to
+do with non-trivial <Emph>quantum</Emph> codewords which must be linearly
+independent from the rows of <Math>Q</Math>).
+<P/>
+On the other hand, for every permutation <Math>S</Math> in the algorithm <Ref
+Subsect="Subsection_TheProcedure"/>, the matrix <Math>G_S</Math> contains exactly
+<Math>k=n-</Math><Code>rank</Code><Math>(P)-</Math><Code>rank</Code><Math>(Q)</Math> rows orthogonal to rows of <Math>P</Math> and
+linearly independent from rows of <Math>Q</Math> (with columns properly
+permuted).  These vectors contain at least <Math>s</Math> zeros, where
+<Math>[1-\theta_*(P,Q)] n\le s\le n-</Math><Code>rank</Code><Math>(Q)</Math>, where <Math>\theta_*(P,Q)</Math> is
+the erasure threshold for <Math>Z</Math>-like codewords in the quantum CSS code
+with <Math>H_X=P</Math> and <Math>H_Z=Q</Math>.
+<P/>
+<Alt Only="LaTeX"><![CDATA[
+\medskip\noindent\underline{%
+]]></Alt>
+<Emph>What is it that we do not understand?</Emph>
+<Alt Only="LaTeX"><![CDATA[
+}
+]]></Alt>
+<P/>
+What missing is an understanding of the statistics of the ISs of
+interest, namely, the ISs that overlap with a minimum-weight codeword
+in one (or a few) positions.  
+<P/>
+Second, we know that a given column permutation <Math>S</Math> leads to the
+unique information set, and that every information set can be obtained
+by a suitably chosen column permutation.  However, there is no
+guarantee that the resulting information sets have equal
+probabilities.  In fact, it is easy to construct small matrices where
+different information sets are obtained from different numbers of
+column permutations (and thus have <Emph>different</Emph> probabilities).  It is
+not clear whether some of the ISs may have vanishingly small
+probabilities in the limit of large codes; in such a case the
+algorithm may take an excessively long time to converge.
+<P/>
+</Subsection>
+
+
+</Section>
+
+
+<Section Label="Section_Empirical">
+<Heading>Empirical estimate of the success probability</Heading>
+
+<P/>
+The probability to find a codeword after <Math>N</Math> rounds of the algorithm
+can be estimated empirically, by counting the number of times each
+codeword of the minimum weight was discovered.  We <Emph>expect</Emph> the
+probability <Math>P(c)</Math> to discover a given codeword <Math>c</Math> to depend only on
+its (symplectic) weight <Code>wgt</Code><Math>(c)</Math>, with the probability a
+monotonously decreasing function of the weight.  If, after <Math>N</Math> steps,
+codewords <Math>c_1</Math>, <Math>c_2</Math>, <Math>\ldots</Math> , <Math>c_m</Math> of the same (minimal) weight <Math>w</Math>
+are discovered <Math>n_1</Math>, <Math>n_2</Math>, <Math>\ldots</Math> , <Math>n_m</Math> times, respectively, we can
+estimate the corresponding Poisson parameter as
+<Display> \lambda_w =\frac{1}{N m}\sum_{i=1}^m n_i. </Display>
+<P/>
+Then, the probability that a codeword <Math>c_0</Math> of the true minimal weight
+<Math> d &lt; w </Math> be <Emph>not</Emph> discovered after <Math>N</Math> steps can be upper
+bounded as (the inequalities tend to saturate and become equalities in
+the limit of small <Math>\lambda_w</Math>) <Display> P_{\rm fail} &lt; (1-\lambda_w)^N
+&lt; e^{-N\lambda_w}=\exp\left(-m^{-1}\sum_{i=1}^m n_i\right)\equiv
+\exp(-\langle n\rangle).  </Display> Thus, the probability to fail is
+decreasing as an exponent of the parameter <Math>\langle n\rangle</Math>, the
+<Emph>average number of times a minimum-weight codeword has been found.</Emph>
+<P/>
+The hypothesis about all <Math>P(c_i)</Math> being equal to <Math>\lambda_w</Math> is
+testable, e.g., if one considers the distribution of the ratios
+<Math>x_i=n_i/N</Math>, where <Math>N=\sum_{i=1}^m n_i</Math> is the total number of
+codewords found.  These quantities sum up to one and are distributed
+according to multinomial distribution<Cite
+Key="Steel-1953"/>.  Further, under our assumption
+of all <Math>P(c_i)</Math> being equal, we also expect the outcome probabilities
+in the multinomial distribution to be all equal, <Math>\pi_i=1/m</Math>, <Math>1\le
+i\le m</Math>.
+<P/>
+This hypothesis can be tested using Pearson's <Math>\chi^2</Math> test.  Namely,
+in the limit where the total number of observations <Math>N</Math> diverges, the
+quantity <Display> X^2=\sum_{i=1}^m \frac{(n_i-N \pi_i)^2}{ N\pi_i}=
+N^{-1}\sum_{i=1}^m \frac{n_i^2}{\pi_i}-N
+\stackrel{\pi_i=1/m}\to\frac{m}{N}\sum_{i=1}^m n_i^2-N, </Display> is expected to be
+distributed according to the <Math>\chi^2_{m-1}</Math> distribution with <Math>m-1</Math>
+parameters, see <Cite Key="Chernoff-Lehmann-1954"/> <Cite
+Key="Cramer-book-1999"/>.
+<P/>
+In practice, we can approximate with the <Math>\chi^2_{m-1}</Math> distribution
+as long as the total <Math>N</Math> be large compared to the number <Math>m</Math> of the
+codewords found (i.e., the average <Math>\langle n\rangle</Math> must be large,
+which is the same condition as needed for confidence in the result.)
+<P/>
+With <Code>debug[4]</Code> set (binary value 8) in <Code>DistRandCSS</Code> and
+<Code>DistRandStab</Code> (<Ref Sect="Section_DistanceFunctions"/>), whenever more
+than one minimum-weight vector is found, the quantity <Math>X^2</Math> is
+computed and output along with the average number of times <Math>\langle
+n\rangle</Math> a minimum-weight codeword has been found.  However, no
+attempt is made to analyze the corresponding value or calculate the
+likelihood of the null hypothesis that the codewords be equiprobable.
+<P/>
+</Section>
+
+
+</Chapter>
+

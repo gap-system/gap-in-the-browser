@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    GaussForHomalg
+  </Title>
+  <Subtitle>
+    Gauss functionality for the homalg project
+  </Subtitle>
+  <Version>
+    2026.04-01
+  </Version>
+  <Author>
+    Simon Görtzen
+<Address>
+Simon Görtzen<Br/>
+Lehrstuhl B fuer Mathematik, RWTH Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>simon.goertzen@rwth-aachen.de</Email>
+<Homepage>https://www.linkedin.com/in/simongoertzen/</Homepage>
+  </Author>
+  <Date>
+    10 April 2026
+  </Date>
+  <Abstract>
+    This document explains the primary uses of the &GaussForHomalg; package. Included in this manual is a documented list of the most important methods and functions you will need.<P/>
+  </Abstract>
+  <Copyright>
+    &copyright; 2007-2013 by Simon Goertzen<P/>
+
+This package may be distributed under the terms and conditions of the GNU Public License Version 2 or (at your option) any later version.
+  </Copyright>
+  <Acknowledgements>
+    Many thanks to Mohamed Barakat and the Lehrstuhl B für Mathematik at RWTH Aachen University in general for their support. It should be noted that &GaussForHomalg; is dependant on the &GAP; &MatricesForHomalg; package by M. Barakat et al. <Cite Key="homalg-package"/>, as well as the &Gauss; package by myself <Cite Key="Gauss"/>. This should be clear as &GaussForHomalg; presents a link between these two packages. This manual was created with the help of the &GAPDoc; package by M. Neunhöffer and F. Lübeck <Cite Key="GAPDoc"/>.
+  </Acknowledgements>
+  </TitlePage>

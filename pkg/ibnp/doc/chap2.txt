@@ -1,0 +1,133 @@
+  
+  [1X2 [33X[0;0YUsing the packages [5XGBNP[105X[101X[1X and [5XNMO[105X[101X[1X[133X[101X
+  
+  [33X[0;0YThis  package deals with polynomials in noncommutative algebras and to do so
+  makes  use  of the noncommutative polynomial operations provided by the [5XGBNP[105X
+  [CK24]  package,  and  orderings  provided  by the [5XNMO[105X package, which is now
+  included  within  [5XGBNP[105X.  In this chapter we remind users how to call some of
+  these operations.[133X
+  
+  
+  [1X2.1 [33X[0;0YNoncommutative polynomials (NPs)[133X[101X
+  
+  [33X[0;0YRecall  that  the  main  datatype  used  by  the  [5XGBNP[105X  package is a list of
+  noncommutative  polynomials  (NPs).  The  data  type  for  a  noncommutative
+  polynomial (its NP format) is a list of two lists:[133X
+  
+  [30X    [33X[0;6YThe first is a list [22Xm[122X of monomials.[133X
+  
+  [30X    [33X[0;6YThe second is a list [22Xc[122X of coefficients of these monomials.[133X
+  
+  [33X[0;0YThe  two  lists  have  the  same  length.  The polynomial represented by the
+  ordered  pair  [22X[m,c][122X  is  [22X∑_i  c_i  m_i[122X.  A  monomial  is a list of positive
+  integers.  They  are interpreted as the indices of the variables. So, if [22Xk =
+  [1,3,2,2,1][122X  and  the variables are [22Xx,y,z[122X (in this order), then [22Xk[122X represents
+  the  monomial [22Xxzy^2x[122X. There are various ways to print these, but the default
+  uses  variables [22Xa,b,c,...[122X. The zero polynomial is represented by [10X[[],[]][110X and
+  the polynomial [22X1[122X is represented by [10X[[[]],[1]][110X. The algorithms are applicable
+  for  the  algebra  [22XF[x_1,x_2,...,x_t][122X  of  noncommutative  polynomials  in [3Xt[103X
+  variables  over the field [22XF[122X. Accordingly, the list [22Xc[122X should contain elements
+  of [22XF[122X.[133X
+  
+  [33X[0;0YThe  [5XGBNP[105X  functions  [10XGP2NP[110X  and [10XNP2GP[110X convert a polynomial to NP format and
+  back  again.  Polynomials  returned  by  [10XNP2GP[110X print with their coefficients
+  enclosed  in  brackets.  Polynomials  may also be printed using the function
+  [10XPrintNP[110X.  The  function PrintNPList is used to print a list of NPs, with one
+  polynomial  per  line.  The  function  [10XCleanNP[110X  is used to collect terms and
+  reorder   them.   The   default   ordering  is  first  by  degree  and  then
+  lexicographically   -   [10XMonomialGrlexOrdering[110X.   Alternative  orderings  are
+  available - see section [14X2.3[114X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XA3 := FreeAssociativeAlgebraWithOne(Rationals,"a","b","c");;[127X[104X
+    [4X[25Xgap>[125X [27Xa := A3.1;; b := A3.2;; c := A3.3;;[127X[104X
+    [4X[25Xgap>[125X [27X## define a polynomial and convert to NP-format[127X[104X
+    [4X[25Xgap>[125X [27Xp1 := 7*a^2*b*c + 8*b*c*a;[127X[104X
+    [4X[28X(8)*b*c*a+(7)*a^2*b*c[128X[104X
+    [4X[25Xgap>[125X [27XLp1 := GP2NP( p1 );[127X[104X
+    [4X[28X[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ][128X[104X
+    [4X[25Xgap>[125X [27X## define an NP-poly; clean it; and convert to a polynomial[127X[104X
+    [4X[25Xgap>[125X [27XLp2 := [ [ [1,1], [1,2,1], [3], [1,1], [3,1,2] ], [5,6,7,8,9] ];;[127X[104X
+    [4X[25Xgap>[125X [27XPrintNP( Lp2 );[127X[104X
+    [4X[28X 5a^2 + 6aba + 7c + 8a^2 + 9cab[128X[104X
+    [4X[25Xgap>[125X [27XLp2 := CleanNP( Lp2 );[127X[104X
+    [4X[28X[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ][128X[104X
+    [4X[25Xgap>[125X [27X## note the degree lexicographic ordering[127X[104X
+    [4X[25Xgap>[125X [27XPrintNP( Lp2 );[127X[104X
+    [4X[28X 9cab + 6aba + 13a^2 + 7c[128X[104X
+    [4X[25Xgap>[125X [27Xp2 := NP2GP( Lp2, A3 );[127X[104X
+    [4X[28X(9)*c*a*b+(6)*a*b*a+(13)*a^2+(7)*c[128X[104X
+    [4X[25Xgap>[125X [27XPrintNPList( [ Lp1, Lp2, [ [], [] ], [ [ [] ], [9] ] ] );[127X[104X
+    [4X[28X 7a^2bc + 8bca[128X[104X
+    [4X[28X 9cab + 6aba + 13a^2 + 7c[128X[104X
+    [4X[28X 0[128X[104X
+    [4X[28X 9 [128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.2 [33X[0;0YGröbner Bases[133X[101X
+  
+  [33X[0;0YThe  [5XGBNP[105X package computes Gröbner bases using the function [10XSGrobner[110X. In the
+  example  below  the  polynomials [22X{p,q}[122X define an ideal in [22XZ[a,b][122X which has a
+  three element Gröbner basis.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xp := [ [ [2,2,2], [2,1], [1,2] ], [1,3,-1] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xq := [ [ [1,1], [2] ], [1,1] ];; [127X[104X
+    [4X[25Xgap>[125X [27XPrintNPList( [p,q] );[127X[104X
+    [4X[28X b^3 + 3ba - ab[128X[104X
+    [4X[28X a^2 + b [128X[104X
+    [4X[25Xgap>[125X [27XGB := SGrobner( [p,q] );;[127X[104X
+    [4X[25Xgap>[125X [27XPrintNPList(GB);[127X[104X
+    [4X[28X a^2 + b [128X[104X
+    [4X[28X ba - ab [128X[104X
+    [4X[28X b^3 + 2ab [128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.3 [33X[0;0YOrderings for monomials[133X[101X
+  
+  [33X[0;0YThe   three  monomial  orderings  provided  by  the  main  [5XGAP[105X  library  are
+  [10XMonomialLexOrdering[110X,  [10XMonomialGrlexOrdering[110X and [10XMonomialGrevlexOrdering[110X. The
+  first of these is the default used by [5XGBNP[105X.[133X
+  
+  [33X[0;0YThe  [5XNMO[105X  package  is  now part of the package [5XGBNP[105X. It provides a choice of
+  orderings  on  monomials,  including  lexicographic and length-lexicographic
+  ones.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XLp1;[127X[104X
+    [4X[28X[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ][128X[104X
+    [4X[25Xgap>[125X [27XLp2;[127X[104X
+    [4X[28X[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ][128X[104X
+    [4X[25Xgap>[125X [27XGtNPoly( Lp1, Lp2 );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X## select the lexicographic ordering and reorder p1, p2[127X[104X
+    [4X[25Xgap>[125X [27Xlexord := NCMonomialLeftLexicographicOrdering( A3 );;[127X[104X
+    [4X[25Xgap>[125X [27XPatchGBNP( lexord );[127X[104X
+    [4X[28XLtNP patched.[128X[104X
+    [4X[28XGtNP patched.[128X[104X
+    [4X[25Xgap>[125X [27XLp1 := CleanNP( Lp1 );[127X[104X
+    [4X[28X[ [ [ 2, 3, 1 ], [ 1, 1, 2, 3 ] ], [ 8, 7 ] ][128X[104X
+    [4X[25Xgap>[125X [27XLp2 := CleanNP( Lp2 );[127X[104X
+    [4X[28X[ [ [ 3, 1, 2 ], [ 3 ], [ 1, 2, 1 ], [ 1, 1 ] ], [ 9, 7, 6, 13 ] ][128X[104X
+    [4X[25Xgap>[125X [27XGtNPoly( Lp1, Lp2 );[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27X## revert to degree lex order[127X[104X
+    [4X[25Xgap>[125X [27XUnpatchGBNP();;[127X[104X
+    [4X[28XLtNP restored.[128X[104X
+    [4X[28XGtNP restored.[128X[104X
+    [4X[25Xgap>[125X [27XLp1 := CleanNP( Lp1 );[127X[104X
+    [4X[28X[ [ [ 1, 1, 2, 3 ], [ 2, 3, 1 ] ], [ 7, 8 ] ][128X[104X
+    [4X[25Xgap>[125X [27XLp2 := CleanNP( Lp2 );[127X[104X
+    [4X[28X[ [ [ 3, 1, 2 ], [ 1, 2, 1 ], [ 1, 1 ], [ 3 ] ], [ 9, 6, 13, 7 ] ][128X[104X
+    [4X[25Xgap>[125X [27XGtNPoly( Lp1, Lp2 );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  

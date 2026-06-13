@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (ALCO) - Chapter 1: Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1.html">[MathJax off]</a></p>
+<p><a id="X7DFB63A97E67C0A1" name="X7DFB63A97E67C0A1"></a></p>
+<div class="ChapSects"><a href="chap1_mj.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+</div>
+
+<h3>1 <span class="Heading">Introduction</span></h3>
+
+<p>The <strong class="pkg">ALCO</strong> package provides tools for algebraic combinatorics, most of which was written for <strong class="pkg">GAP</strong> during the author's Ph.D. program <a href="chapBib_mj.html#biBnasmith_tight_2023">[Nas23]</a>. This package provides implementations in <strong class="pkg">GAP</strong> of octonion algebras, Jordan algebras, and certain important integer subrings of those algebras. It also provides tools to compute the parameters of t-designs in spherical and projective spaces (modeled as manifolds of primitive idempotent elements in a simple Euclidean Jordan algebra). Finally, this package provides tools to explore octonion lattice constructions, including octonion Leech lattices. The following examples illustrate how one might use this package to explore these structures.</p>
+
+<p>The <strong class="pkg">ALCO</strong> package allows users to work with the octavian integer ring (also known as the octonion arithmetic), which is described carefully in <a href="chapBib_mj.html#biBconway_quaternions_2003">[CS03, chaps. 9-11]</a>. In the example below, we verify that the octavian integers define an <span class="SimpleMath">\(E_8\)</span> (Gossett) lattice relative to the standard octonion inner product:</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">O := OctavianIntegers;</span>
+OctavianIntegers
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g := List(Basis(O), x -&gt; List(Basis(O), y -&gt; </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">Norm(x+y) - Norm(x) - Norm(y)));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(g);</span>
+[ [   2,   0,  -1,   0,   0,   0,   0,   0 ],
+  [   0,   2,   0,  -1,   0,   0,   0,   0 ],
+  [  -1,   0,   2,  -1,   0,   0,   0,   0 ],
+  [   0,  -1,  -1,   2,  -1,   0,   0,   0 ],
+  [   0,   0,   0,  -1,   2,  -1,   0,   0 ],
+  [   0,   0,   0,   0,  -1,   2,  -1,   0 ],
+  [   0,   0,   0,   0,   0,  -1,   2,  -1 ],
+  [   0,   0,   0,   0,   0,   0,  -1,   2 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGossetLatticeGramMatrix(g);</span>
+true</pre></div>
+
+<p>The <strong class="pkg">ALCO</strong> package also provides tools to construct octonion lattices, including octonion Leech lattices (see for example <a href="chapBib_mj.html#biBwilson_octonions_2009">[Wil09b]</a>). In the following example we compute the shortest vectors in the <code class="code">OctavianIntegers</code> lattice and select one that is a root of polynomial <span class="SimpleMath">\(x^2 + x + 2\)</span>. We use this root <code class="code">s</code> to define a set <code class="code">gens</code> of octonion triples to serve as generators for the lattice. Finally, we construct the lattice <code class="code">L</code> and confirm that it is a Leech lattice.</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">short := Set(ShortestVectors(g,4).vectors, y -&gt; </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">LinearCombination(Basis(OctavianIntegers), y));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := First(short, x -&gt; x^2 + x + 2*One(x) = Zero(x));</span>
+(-1)*e1+(-1/2)*e2+(-1/2)*e3+(-1/2)*e4+(-1/2)*e8
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens := List(Basis(OctavianIntegers), x -&gt; </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">x*[[s,s,0],[0,s,s],ComplexConjugate([s,s,s])]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens := Concatenation(gens);; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := OctonionLatticeByGenerators(gens, One(O)*IdentityMat(3)/2);</span>
+&lt;free left module over Integers, with 24 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsLeechLatticeGramMatrix(GramMatrix(L));</span>
+true</pre></div>
+
+<p>We can also construct and study simple Euclidean Jordan algebras (described well in <a href="chapBib_mj.html#biBfaraut_analysis_1994">[FK94]</a>), including the Albert algebra:</p>
+
+
+<div class="example"><pre><span class="GAPprompt">gap&gt;</span> <span class="GAPinput">J := AlbertAlgebra(Rationals);</span>
+&lt;algebra-with-one of dimension 27 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemiSimpleType(Derivations(Basis(J)));</span>
+"F4"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i := Basis(J){[1..8]};</span>
+[ i1, i2, i3, i4, i5, i6, i7, i8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">j := Basis(J){[9..16]};</span>
+[ j1, j2, j3, j4, j5, j6, j7, j8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">k := Basis(J){[17..24]};</span>
+[ k1, k2, k3, k4, k5, k6, k7, k8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e := Basis(J){[25..27]};</span>
+[ ei, ej, ek ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(e, IsIdempotent);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Set(i, x -&gt; x^2);</span>
+[ ej+ek ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Set(j, x -&gt; x^2);</span>
+[ ei+ek ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">One(J);</span>
+ei+ej+ek
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Determinant(One(J));</span>
+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Trace(One(J));</span>
+3</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

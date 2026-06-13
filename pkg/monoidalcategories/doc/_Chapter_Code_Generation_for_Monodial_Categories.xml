@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Code_Generation_for_Monodial_Categories">
+<Heading>Code Generation for Monodial Categories</Heading>
+
+<P/>
+<Section Label="Chapter_Code_Generation_for_Monodial_Categories_Section_Monoidal_Categories">
+<Heading>Monoidal Categories</Heading>
+
+<P/>
+<ManSection>
+  <Func Arg="key_val_rec, package_name, files_rec" Name="WriteFileForMonoidalStructure" />
+ <Returns>nothing
+</Returns>
+ <Description>
+  This functions uses the dictionary <A>key_val_rec</A> to create a new monoidal structure.
+  It generates the necessary files in the package <A>package_name</A> using
+  the file-correspondence table <A>files_rec</A>.
+  See the implementation for details.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Code_Generation_for_Monodial_Categories_Section_Closed_Monoidal_Categories">
+<Heading>Closed Monoidal Categories</Heading>
+
+<P/>
+<ManSection>
+  <Func Arg="key_val_rec, package_name, files_rec" Name="WriteFileForClosedMonoidalStructure" />
+ <Returns>nothing
+</Returns>
+ <Description>
+  This functions uses the dictionary <A>key_val_rec</A> to create a new closed monoidal structure.
+  It generates the necessary files in the package <A>package_name</A> using
+  the file-correspondence table <A>files_rec</A>.
+  See the implementation for details.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="key_val_rec, package_name, files_rec" Name="WriteFileForLeftClosedMonoidalStructure" />
+ <Returns>nothing
+</Returns>
+ <Description>
+  This functions uses the dictionary <A>key_val_rec</A> to create a new left closed monoidal structure.
+  It generates the necessary files in the package <A>package_name</A> using
+  the file-correspondence table <A>files_rec</A>.
+  See the implementation for details.
+ </Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Chapter_Code_Generation_for_Monodial_Categories_Section_Coclosed_Monoidal_Categories">
+<Heading>Coclosed Monoidal Categories</Heading>
+
+<P/>
+<ManSection>
+  <Func Arg="key_val_rec, package_name, files_rec" Name="WriteFileForCoclosedMonoidalStructure" />
+ <Returns>nothing
+</Returns>
+ <Description>
+  This functions uses the dictionary <A>key_val_rec</A> to create a new coclosed monoidal structure.
+  It generates the necessary files in the package <A>package_name</A> using
+  the file-correspondence table <A>files_rec</A>.
+  See the implementation for details.
+ </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="key_val_rec, package_name, files_rec" Name="WriteFileForLeftCoclosedMonoidalStructure" />
+ <Returns>nothing
+</Returns>
+ <Description>
+  This functions uses the dictionary <A>key_val_rec</A> to create a new left coclosed monoidal structure.
+  It generates the necessary files in the package <A>package_name</A> using
+  the file-correspondence table <A>files_rec</A>.
+  See the implementation for details.
+ </Description>
+</ManSection>
+
+</Section>
+
+</Chapter>
+
