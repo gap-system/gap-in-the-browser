@@ -104,6 +104,14 @@ find "$SRC/pkg" "$SRC/doc" -name '*.pdf' -delete
 echo ">> Building wasm GAP and assembling the site"
 (cd "$SRC" && etc/emscripten/build-in-docker.sh)
 
+# Strip every .gitignore from the assembled site. Many GAP packages ship
+# a developer .gitignore that excludes their *built* doc artifacts
+# (doc/manual.six, doc/chap*.html, ...) -- the very files we just built
+# and want to serve. Left in place, deploy.sh's "git add" honours those
+# rules and silently drops the docs from the published site. They are
+# dead files in a static site regardless.
+find "$SRC/web-example" -name .gitignore -delete
+
 # Without this GitHub Pages runs the site through Jekyll, which drops
 # files starting with "_" and chokes on a 45000-file tree.
 touch "$SRC/web-example/.nojekyll"
