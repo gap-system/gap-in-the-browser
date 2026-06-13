@@ -6,7 +6,7 @@
 #
 # Requirements: git, curl, docker or podman, and a working native GAP
 # build toolchain (autotools, C compiler) -- the native build only exists
-# to run "make doc", since a git checkout contains no built manuals and
+# to run "make html", since a git checkout contains no built manuals and
 # the in-browser help would otherwise come up empty.
 #
 # Until the emscripten polish work is merged upstream, we build from the
@@ -64,6 +64,20 @@ echo ">> Extracting packages"
 mkdir "$SRC/pkg"
 tar -xzf build/packages.tar.gz -C "$SRC/pkg"
 
+echo ">> Native GAP build (only needed to build the manuals)"
+# The manuals must be built BEFORE pruning: doc/make_doc fails the build
+# on any unresolved reference, and the GAP manuals cross-reference the
+# manuals of packages we are about to delete (resolved via each package's
+# shipped manual.six). "make html" skips the PDF versions, which we would
+# delete anyway, so no TeX is needed.
+(
+    cd "$SRC"
+    ./autogen.sh
+    ./configure
+    make -j"$(nproc 2>/dev/null || sysctl -n hw.ncpu)"
+    make html
+)
+
 echo ">> Pruning packages that cannot work in the browser"
 for p in "${PRUNE_PACKAGES[@]}"; do
     # A missing directory means the distribution renamed or dropped the
@@ -80,18 +94,9 @@ done
 # Likewise guava's Leon binaries.
 rm -rf "$SRC"/pkg/grape/nauty* "$SRC"/pkg/guava/src "$SRC"/pkg/guava/bin
 
-echo ">> Native GAP build (only needed to build the manuals)"
-(
-    cd "$SRC"
-    ./autogen.sh
-    ./configure
-    make -j"$(nproc 2>/dev/null || sysctl -n hw.ncpu)"
-    make doc
-)
-
-# The in-browser help reads the txt/HTML manuals; the PDFs are ~60 MB of
-# dead weight. Do this after "make doc" (which may produce PDFs if TeX is
-# installed) and before the wasm build (so gap-fs.json never lists them).
+# The in-browser help reads the txt/HTML manuals; the package PDFs are
+# ~60 MB of dead weight. Delete before the wasm build, so gap-fs.json
+# never lists them.
 echo ">> Deleting PDFs"
 find "$SRC/pkg" "$SRC/doc" -name '*.pdf' -delete
 

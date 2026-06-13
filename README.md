@@ -17,8 +17,10 @@ holds the published site.
 
 Requirements: git, curl, docker or podman, and a native GAP build
 toolchain (autotools, C/C++ compiler). The native build exists only to
-run `make doc` -- a git checkout contains no built manuals, and without
-them the in-browser help is empty.
+run `make html` -- a git checkout contains no built manuals, and without
+them the in-browser help is empty. The manuals are built before the
+package pruning step, because the GAP manuals cross-reference package
+manuals and the doc build fails on unresolved references.
 
 Knobs (environment variables): `GAP_REPO` and `GAP_REF` select the GAP
 clone (currently defaulting to the ChrisJefferson fork until the
