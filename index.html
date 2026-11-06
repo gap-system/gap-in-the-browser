@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+  MAINTAINER NOTES: what was changed in this file, and why
+  =========================================================
+  The page was redesigned for beginners, university students (especially 1st and 2nd-year
+  undergraduates learning computational discrete algebra), accessibility, mobile
+  devices, and the visual identity of www.gap-system.org (Just the Docs).
+
+  SUMMARY OF KEY UX DECISIONS & ARCHITECTURE:
+  -------------------------------------------
+  1. WORKBENCH LAYOUT & DESKTOP SIDEBAR:
+     - On desktop, the left navigation sidebar starts COLLAPSED by default
+       via data-sidebar="collapsed" on <html>.
+     - Rationale: First/second-year students often work on 13"/14" laptop screens.
+       GAP algebra outputs (character tables, permutation representations,
+       subgroup lists, matrix displays) easily exceed 80 columns. Squeezing the
+       terminal between a fixed website menu and the side panel forced awkward line
+       wrapping.
+     - Toggling: Students can expand/collapse the sidebar anytime using the
+       toggle button [ | ] in the top bar or with the keyboard shortcut (Ctrl+B /
+       Cmd+B). The user's choice is saved in localStorage ('gap-sidebar-desktop')
+       and reapplied before first paint in <head> to avoid layout shifts.
+     - Mobile (<= 900px): The desktop sidebar rules are strictly scoped to
+       @media (min-width: 901px). On phones/tablets, the top header (GAP logo,
+       theme switch, hamburger menu) remains fully visible and intact.
+
+  2. FILES PANEL OPEN BY DEFAULT:
+     - <details class="panel" id="files-panel" open> starts in the open state.
+     - Rationale: Students typically arrive with an assignment script (e.g. lab1.g)
+       from their instructor. Starting with Files open ensures they immediately
+       see the file management area without having to hunt for it.
+
+  3. DRAG-AND-DROP FILE UPLOAD:
+     - Students can drag a .g or script file from their computer and drop it
+       directly onto the terminal or the Files panel.
+     - A backdrop overlay (#drop-overlay) provides visual guidance during drag.
+     - On drop, the file is transferred into the GAP virtual filesystem via the
+       mailbox sender, and if a single file is dropped, Read("filename.g"); is
+       inserted at the prompt. The user presses Enter to run it (no auto-execution).
+
+  4. THEME (Light / Auto / Dark):
+     - Three-way toggle button. "Automatic" matches prefers-color-scheme.
+     - Saved in localStorage ('gap-theme') and applied in <head> before first paint.
+
+  5. ACCESSIBILITY:
+     - Semantic landmarks (nav, main, aside, footer), skip link, live status regions,
+       visible focus outlines, 44px touch targets (36px fine pointer), reduced motion,
+       and Windows High Contrast (forced-colors) compliance.
+
+  6. SIZING & TERMINAL REFIT:
+     - The .app block is window-high (100dvh). The terminal flexes to fill available
+       space. A ResizeObserver on #terminal-wrap dispatches a window 'resize' event
+       whenever the frame changes size (e.g. sidebar collapse/expand, loading notice
+       disappearing), so xterm refits its columns and rows automatically.
+
+  CONTRACT WITH gap-ui.js:
+  ------------------------
+  Element IDs looked up by gap-ui.js (do not rename):
+  - restart, loading, unsupported, terminal, terminal-wrap
+  - upload-button, upload-input, files-panel, file-list, files-empty
+  - drop-overlay, example-list, reset-site
+
+  On-screen touch keys script looks for "#terminal .xterm-helper-textarea".
+-->
+<html lang="en" data-sidebar="collapsed">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-          content="GAP — Groups, Algorithms, Programming — running entirely in your browser via WebAssembly.">
+    <!-- viewport-fit=cover lets the page extend under notches and rounded
+         corners; the CSS uses env(safe-area-inset-*) to keep content clear. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!-- color-scheme: lets the browser draw scrollbars and form controls
+         in the matching light/dark style. theme-color: colours the browser
+         bar on phones. The switch script below updates both on change. -->
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#26252a" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="A WebAssembly build of GAP (Groups, Algorithms, Programming) running entirely in your browser.">
     <title>GAP in your browser</title>
+    <meta property="og:title" content="GAP in your browser">
+    <meta property="og:description" content="A WebAssembly build of GAP (Groups, Algorithms, Programming) running entirely in your browser.">
+    <meta property="og:type" content="website">
     <link rel="icon" href="vendor/favicon.svg" type="image/svg+xml">
     <script>
       // Configure coi-serviceworker (see below): everything this site
@@ -15,10 +88,36 @@
       window.coi = { coepCredentialless: () => false };
     </script>
     <script src="coi-serviceworker.js"></script>
+    <script>
+      // Apply a saved light/dark choice and sidebar state before first paint (no flash).
+      try {
+        var t = localStorage.getItem("gap-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+        var sb = localStorage.getItem("gap-sidebar-desktop");
+        // Collapsed by default; only expand if user previously chose expanded
+        if (sb === "expanded") {
+          document.documentElement.removeAttribute("data-sidebar");
+        }
+      } catch (e) { /* storage blocked: stay on defaults */ }
+    </script>
+    <!-- Without JavaScript the hamburger can't open the menu, so show it. -->
+    <noscript><style>#site-nav { display: block !important; }</style></noscript>
+    <!-- The early theme script above must stay in <head>, before the
+         stylesheet, to avoid a flash of the wrong theme. -->
     <link rel="stylesheet" href="vendor/xterm.css">
     <style>
-      /* Fonts and colours follow www.gap-system.org (Ubuntu fonts,
-         crimson #dc143c accents; dark palette from its darkgap scheme). */
+      /* STYLE GUIDE FOR MAINTAINERS
+         - All colours are CSS variables on :root (light), overridden for
+           dark below. Change a colour in one place, not in each rule.
+         - The page is a CSS grid on <body> (sidebar | content on desktop;
+           header rows on phones). Breakpoint: 900px.
+         - Sizes use rem/clamp so text follows the user's font settings.
+      */
+      /* Look and feel follows www.gap-system.org (Just the Docs layout:
+         left sidebar with the logo and menu, crimson #dc143c accents,
+         Ubuntu fonts, light / auto / dark theme switch). */
       @font-face {
         font-family: "Ubuntu";
         font-style: normal; font-weight: 400; font-display: swap;
@@ -45,329 +144,1115 @@
         src: url("vendor/fonts/UbuntuMono-Bold.woff2") format("woff2");
       }
 
+      /* Design tokens (light theme is the default). */
       :root {
+        color-scheme: light dark;
         --gap-crimson: #dc143c;
-        --bg: #ffffff;
-        --bg-soft: #f7f7f7;
+        --accent-text: #b8102f;      /* crimson with >= 4.5:1 on light surfaces */
+        --bg: #ffffff;               /* page */
+        --side-bg: #f5f5f5;          /* sidebar / mobile header */
         --card: #ffffff;
+        --bg-soft: #f5f5f5;          /* code chips */
         --border: #d2d2d7;
         --text: #27262b;
         --text-soft: #57565c;
-        --link: #205caa;
+        --link: #27262b;
+        --nav-hover: #e9e9ed;
+        --seg-active: #d2d2d7;
+        --focus: #205caa;
+        --err: #b00020;
+        --logo-chip: transparent;
+        --radius: 8px;
+        --tap: 44px;
+        --sidebar-w: clamp(16.5rem, 21vw, 20rem);
+        --sans: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+        --mono: "Ubuntu Mono", ui-monospace, "SF Mono", Menlo, Consolas,
+                "Liberation Mono", monospace;
+      }
+      /* Theme: "auto" (no data-theme attribute) follows the system; the
+         header switch sets data-theme to "light" or "dark" and remembers
+         it. The dark values appear twice on purpose: once for an explicit
+         choice, once for "auto" on a dark system (CSS cannot share one
+         block between an attribute selector and a media query). Keep the
+         two blocks identical when editing. */
+      :root[data-theme="light"] { color-scheme: light; }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --accent-text: #ff6b87;
+        --bg: #26252a;
+        --side-bg: #26252a;
+        --card: #2e2d33;
+        --bg-soft: #1d1c21;
+        --border: #44434a;
+        --text: #e9e6cc;
+        --text-soft: #b4b1a0;
+        --link: #e9e6cc;
+        --nav-hover: #111012;
+        --seg-active: #000000;
+        --focus: #8ab4e8;
+        --err: #ff8a9b;
+        /* Dark mode uses the official dark logo variant (vendor/gaplogo-dark.svg). */
         --logo-chip: transparent;
       }
       @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #19181b;
-          --bg-soft: #232227;
-          --card: #232227;
+        :root:not([data-theme]) {
+          --accent-text: #ff6b87;
+          --bg: #26252a;
+          --side-bg: #26252a;
+          --card: #2e2d33;
+          --bg-soft: #1d1c21;
           --border: #44434a;
           --text: #e9e6cc;
           --text-soft: #b4b1a0;
-          --link: #8ab4e8;
-          --logo-chip: #f7f7f7;
+          --link: #e9e6cc;
+          --nav-hover: #111012;
+          --seg-active: #000000;
+          --focus: #8ab4e8;
+          --err: #ff8a9b;
+          --logo-chip: transparent;
         }
       }
 
-      * { box-sizing: border-box; }
+      /* Compact controls where a precise pointer is used; touch devices keep
+         the larger 44px targets. */
+      @media (pointer: fine) { :root { --tap: 36px; } }
+
+      /* Base styles. */
+      *, *::before, *::after { box-sizing: border-box; }
+      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+      /* Crisp vector icons instead of font arrow glyphs. */
+      .ic { width: 1.05em; height: 1.05em; vertical-align: -0.15em; fill: none; stroke: currentColor;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .icon-button .ic { width: 16px; height: 16px; vertical-align: middle; }
+      html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      /* <body> is the page grid. Desktop: sidebar | content. 100dvh (with a
+         100vh fallback) tracks the visible height on phones whose browser
+         bar shows and hides. */
       body {
         margin: 0;
-        font-family: "Ubuntu", -apple-system, "Segoe UI", Roboto,
-                     "Helvetica Neue", Arial, sans-serif;
+        font-family: var(--sans);
+        font-size: 1rem;
+        line-height: 1.5;
         color: var(--text);
-        background: var(--bg-soft);
-        display: flex;
-        flex-direction: column;
+        background: var(--bg);
         min-height: 100vh;
+        min-height: 100dvh;
+        display: grid;
+        grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "side main";
+        -webkit-tap-highlight-color: transparent;
       }
-      a { color: var(--link); }
+      /* Links match the main site: text colour with a crimson underline. */
+      a {
+        color: var(--link);
+        text-decoration: underline;
+        text-decoration-color: var(--gap-crimson);
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+      }
+      a:hover { color: var(--accent-text); }
       code {
-        font-family: "Ubuntu Mono", Menlo, Consolas, monospace;
+        font-family: var(--mono);
+        font-size: 0.95em;
         background: var(--bg-soft);
         border: 1px solid var(--border);
         padding: 0 4px;
         border-radius: 3px;
+        overflow-wrap: anywhere;
       }
-
-      header.site-header {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 10px 20px;
+      /* Accessibility: a clearly visible outline for keyboard users. */
+      :focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 2px;
+        border-radius: 3px;
+      }
+      /* Text for screen readers only (status messages, extra link hints). */
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+      /* "Skip to the terminal": invisible until focused with the keyboard. */
+      .skip-link {
+        position: absolute;
+        left: 12px;
+        top: -100px;
+        z-index: 100;
+        padding: 10px 16px;
         background: var(--card);
-        border-bottom: 2px solid var(--gap-crimson);
+        color: var(--text);
+        border: 2px solid var(--gap-crimson);
+        border-radius: var(--radius);
+      }
+      .skip-link:focus { top: calc(8px + env(safe-area-inset-top)); }
+
+      /* The sidebar is sticky and scrolls on its own. The crimson border is the
+         divider seen on www.gap-system.org. On phones this element uses
+         display: contents (see the media query) so its children join the
+         header grid. */
+      /* ---------- Sidebar: logo + menu ---------- */
+      .side-bar {
+        grid-area: side;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        height: 100dvh;
+        overflow-y: auto;
+        background: var(--side-bg);
+        border-right: 1px solid var(--gap-crimson);
+        padding: 20px 16px 24px max(16px, env(safe-area-inset-left));
+        display: flex;
+        flex-direction: column;
+      }
+      /* Two logo files: the light one and the official dark variant. The
+         CSS shows the one matching the active theme (manual switch or
+         system setting). If the dark file is missing, the light logo is
+         shown on a light chip instead (the page adds .no-dark-logo). */
+      .site-logo.logo-dark { display: none; }
+      :root[data-theme="dark"] .logo-light { display: none; }
+      :root[data-theme="dark"] .logo-dark { display: block; }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) .logo-light { display: none; }
+        :root:not([data-theme]) .logo-dark { display: block; }
+      }
+      html.no-dark-logo .logo-light { display: block !important; }
+      html.no-dark-logo .logo-dark { display: none !important; }
+      html.no-dark-logo[data-theme="dark"] .logo-link { background: #f5f5f5; }
+      @media (prefers-color-scheme: dark) {
+        html.no-dark-logo:not([data-theme]) .logo-link { background: #f5f5f5; }
+      }
+      .logo-link {
+        display: inline-flex;
+        align-self: flex-start;
+        margin: 0 0 24px 8px;
+        padding: 6px 10px;
+        background: var(--logo-chip);
+        border-radius: var(--radius);
       }
       .site-logo {
-        height: 46px;
-        background: var(--logo-chip);
-        border-radius: 6px;
-        padding: 2px 4px;
+        display: block;
+        height: 76px;
+        width: auto;
       }
-      .site-title h1 { margin: 0; font-size: 20px; font-weight: 700; }
-      .site-title p { margin: 2px 0 0 0; font-size: 13px; color: var(--text-soft); }
-      .header-spacer { flex: 1; }
+      #site-nav ul { list-style: none; margin: 0; padding: 0; }
+      #site-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        min-height: var(--tap);
+        padding: 6px 12px;
+        font-size: 1.05rem;
+        color: var(--text);
+        text-decoration: none;
+        border-radius: var(--radius);
+      }
+      #site-nav a:hover { background: var(--nav-hover); color: var(--text); }
+      /* The theme switch lives at the bottom of the sidebar on desktop and in
+         the header row on phones (see the media query). */
+      .seg.seg-side { order: 2; margin-top: auto; align-self: flex-start; margin-left: 8px; }
+
+      /* Desktop sidebar collapse */
+      .sidebar-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--tap);
+        height: var(--tap);
+        padding: 0;
+        color: var(--text-soft);
+        background: transparent;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        cursor: pointer;
+        flex-shrink: 0;
+        touch-action: manipulation;
+      }
+      .sidebar-toggle:hover {
+        color: var(--text);
+        border-color: var(--gap-crimson);
+      }
+      .sidebar-toggle .ic {
+        width: 18px;
+        height: 18px;
+      }
+      @media (min-width: 901px) {
+        :root[data-sidebar="collapsed"] body {
+          grid-template-columns: 0 minmax(0, 1fr);
+        }
+        :root[data-sidebar="collapsed"] .side-bar {
+          display: none !important;
+        }
+      }
+
+      /* Drag and drop styling */
+      .drop-zone {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+      .drop-hint {
+        font-size: 0.85rem;
+        color: var(--text-soft);
+      }
+      details.panel.drag-over {
+        border-color: var(--gap-crimson) !important;
+        background: var(--bg-soft) !important;
+      }
+      .drop-overlay {
+        display: none;
+        position: absolute;
+        inset: 0;
+        background: rgba(29, 29, 29, 0.88);
+        border: 2px dashed var(--gap-crimson);
+        border-radius: var(--radius);
+        z-index: 20;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+      }
+      .drop-overlay.active {
+        display: flex;
+      }
+      .drop-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-align: center;
+        padding: 16px;
+      }
+      .drop-message .ic {
+        width: 38px;
+        height: 38px;
+        stroke: var(--gap-crimson);
+      }
+      .drop-sub {
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: #cccccc;
+      }
+
+      /* The hamburger only exists on phones (shown in the media query). */
+      .menu-btn { display: none; }
+
+      /* The theme switch is a group of three toggle buttons; the pressed one
+         is marked with aria-pressed (set by the theme script). */
+      /* ---------- Top bar: one compact row ----------
+         Title, a one-line subtitle and Restart GAP, so the terminal gets the space. */
+      .top-bar {
+        flex: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 6px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      .top-text { min-width: 0; }
+      .tagline { margin: 2px 0 0; font-size: 0.8rem; line-height: 1.3; color: var(--text-soft); }
+      .top-title { margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.2; white-space: nowrap; }
+      .top-title .gap { color: var(--gap-crimson); }
+      .top-spacer { flex: 1 1 0; min-width: 0; }
+      .top-bar .gap-button { flex: none; white-space: nowrap; }
+
+      /* The theme switch is a group of three toggle buttons; the pressed one
+         is marked with aria-pressed (set by the theme script). */
+      .seg {
+        display: inline-flex;
+        padding: 3px;
+        gap: 2px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+      }
+      .seg button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--tap);
+        height: calc(var(--tap) - 6px);
+        padding: 0;
+        color: var(--text-soft);
+        background: transparent;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        touch-action: manipulation;
+      }
+      .seg button:hover { color: var(--text); }
+      .seg button[aria-pressed="true"] { color: var(--text); background: var(--seg-active); }
+      .seg svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+      /* ---------- Content column ----------
+         .app is exactly as tall as the browser window (minus the phone
+         header): top bar, notices and the terminal/panels fill it, so the
+         terminal ALWAYS fits on screen and the page does not need scrolling
+         to use it. The About box and footer sit below it. */
+      .content { grid-area: main; display: flex; flex-direction: column; min-width: 0; }
+      .app {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 420px;   /* very short windows scroll instead of crushing the terminal */
+      }
+
+      /* Shared button style (crimson outline). Also used on <a> elements. */
       .gap-button {
         font: inherit;
-        font-size: 14px;
-        color: var(--gap-crimson);
+        font-size: 0.95rem;
+        min-height: var(--tap);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        color: var(--accent-text);
         background: transparent;
         border: 1px solid var(--gap-crimson);
-        border-radius: 4px;
-        padding: 6px 14px;
+        border-radius: var(--radius);
+        padding: 0 16px;
         cursor: pointer;
+        text-decoration: none;
+        touch-action: manipulation;
       }
       .gap-button:hover { background: var(--gap-crimson); color: #fff; }
+      .gap-button:active { transform: translateY(1px); }
 
+      /* Loading and "unsupported" messages. gap-ui.js shows/hides these. */
       .notice {
-        margin: 12px 20px 0 20px;
+        margin: 8px 16px 0;
+        flex: none;
         padding: 10px 16px;
         background: var(--card);
         border: 1px solid var(--border);
-        border-left: 3px solid var(--gap-crimson);
-        border-radius: 4px;
-        font-size: 14px;
+        border-left: 4px solid var(--gap-crimson);
+        border-radius: var(--radius);
+        font-size: 0.95rem;
       }
-      #unsupported { display: none; color: #b00020; border-color: #b00020; }
+      #unsupported { display: none; color: var(--err); border-color: var(--err); }
 
+      /* ---------- Main: terminal + side panel ---------- */
+      /* Terminal on the left, panels on the right; stacked on phones. */
       main {
         flex: 1;
         display: flex;
         align-items: stretch;
-        gap: 16px;
-        padding: 12px 20px;
+        gap: 12px;
+        padding: 12px 16px 16px;
         min-height: 0;
       }
-      #terminal-wrap {
+      /* The terminal column takes all the height left in .app; the terminal
+         flexes to fill it (no calc() offsets to keep in sync). */
+      .term-col {
         flex: 1;
         min-width: 0;
-        background: #1d1d1d;
-        padding: 8px;
-        border-radius: 6px;
-        border: 1px solid var(--border);
-        height: calc(100vh - 220px);
-        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-height: 0;
       }
-      #terminal, #terminal .xterm { height: 100%; }
-      /* xterm's scrollbar otherwise renders as a bright white strip on
-         the dark terminal background. */
-      #terminal .xterm-viewport { scrollbar-color: #555 #1d1d1d; }
+      /* On-screen Enter/Tab/arrow keys for touch devices (see the key-bar
+         script at the end). Hidden where a physical keyboard is likely. */
+      .key-bar { display: none; gap: 6px; width: 100%; align-items: stretch; }
+      @media (pointer: coarse), (max-width: 900px) { .key-bar { display: flex; } }
+      .key-bar button {
+        font: inherit;
+        font-size: 0.95rem;
+        min-height: var(--tap);
+        min-width: 36px;
+        padding: 0 6px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text);
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        cursor: pointer;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        flex-shrink: 0;
+      }
+      .key-bar button[data-key="Tab"] {
+        min-width: 42px;
+        padding: 0 8px;
+      }
+      .key-bar button[data-key^="Arrow"] {
+        min-width: 34px;
+        padding: 0 4px;
+      }
+      .key-bar button.key-enter {
+        flex: 1 1 auto;
+        min-width: 88px;
+        padding: 0 12px;
+        color: #fff;
+        background: var(--gap-crimson);
+        border-color: var(--gap-crimson);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .key-bar button:active { transform: translateY(1px); }
+      /* The terminal's frame has no fixed height; it flexes to fill the
+         column. The terminal itself is positioned absolutely inside it, so
+         the fit addon always measures a definite size. */
+      #terminal-wrap {
+        flex: 1 1 0;
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        background: #1d1d1d;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+      #terminal-wrap:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+      /* inset = padding around the terminal text (smaller on phones). */
+      #terminal { position: absolute; inset: 8px; touch-action: pan-y; }
+      #terminal .xterm { height: 100%; }
+      #terminal .xterm-viewport { scrollbar-color: #666 #1d1d1d; overscroll-behavior: contain; }
       #terminal .xterm-viewport::-webkit-scrollbar { width: 10px; }
       #terminal .xterm-viewport::-webkit-scrollbar-track { background: #1d1d1d; }
-      #terminal .xterm-viewport::-webkit-scrollbar-thumb {
-        background: #555;
-        border-radius: 5px;
-      }
+      #terminal .xterm-viewport::-webkit-scrollbar-thumb { background: #666; border-radius: 5px; }
 
+      /* Files / Examples panels. */
       #side-panel {
-        width: 290px;
+        width: 300px;
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
+        min-width: 0;
+        min-height: 0;
+        overflow-y: auto;   /* long panels scroll inside; the terminal stays put */
       }
-      .panel {
+      /* Panels are native <details>: keyboard and screen-reader support come
+         for free. The chevron is drawn in CSS (::after) and rotates when open. */
+      details.panel {
         background: var(--card);
         border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 12px 14px;
-        font-size: 14px;
+        border-radius: var(--radius);
+        padding: 0 14px 12px;
+        font-size: 0.95rem;
       }
-      .panel h2 {
-        margin: 0 0 8px 0;
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: var(--gap-crimson);
-      }
-      .panel p.hint { margin: 8px 0 0 0; font-size: 12.5px; color: var(--text-soft); }
-      #files-empty { margin: 4px 0; font-size: 13px; color: var(--text-soft); }
-      #file-list, #example-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      #file-list li {
+      details.panel:not([open]) { padding-bottom: 0; }
+      details.panel > summary {
         display: flex;
         align-items: center;
-        gap: 6px;
-        padding: 5px 0;
-        border-top: 1px solid var(--border);
+        min-height: var(--tap);
+        margin: 0 -14px;
+        padding: 0 14px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--accent-text);
+        cursor: pointer;
+        list-style: none;
+        border-radius: var(--radius);
       }
+      details.panel > summary::-webkit-details-marker { display: none; }
+      details.panel > summary::after {
+        content: "";
+        margin-left: auto;
+        width: 8px; height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+        transition: transform 0.15s;
+      }
+      details.panel[open] > summary::after { transform: rotate(-135deg); }
+      .panel p.hint { margin: 10px 0 0; font-size: 0.85rem; color: var(--text-soft); }
+      #files-empty { margin: 8px 0 4px; font-size: 0.9rem; color: var(--text-soft); }
+      #upload-button { margin-top: 4px; }
+      #file-list, #example-list { list-style: none; margin: 0; padding: 0; }
+      #file-list li { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-top: 1px solid var(--border); }
       #file-list li:first-child { border-top: none; }
       .file-text { flex: 1; min-width: 0; }
-      .file-name {
-        display: block;
-        font-family: "Ubuntu Mono", monospace;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .file-meta { display: block; font-size: 12px; color: var(--text-soft); }
+      .file-name { display: block; font-family: var(--mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .file-meta { display: block; font-size: 0.8rem; color: var(--text-soft); }
       .icon-button {
         font: inherit;
-        font-size: 15px;
+        font-size: 1rem;
         line-height: 1;
-        color: var(--gap-crimson);
+        min-width: var(--tap);
+        min-height: var(--tap);
+        color: var(--accent-text);
         background: transparent;
         border: 1px solid var(--border);
-        border-radius: 4px;
-        padding: 4px 7px;
+        border-radius: var(--radius);
         cursor: pointer;
+        touch-action: manipulation;
       }
       .icon-button:hover { border-color: var(--gap-crimson); }
-      #example-list li { padding: 2px 0; }
+      #example-list li { padding: 1px 0; }
       .example-button {
         font: inherit;
-        font-size: 13.5px;
+        font-size: 0.95rem;
         width: 100%;
+        min-height: var(--tap);
         text-align: left;
         color: var(--text);
         background: transparent;
         border: none;
-        border-radius: 4px;
-        padding: 5px 6px;
+        border-radius: var(--radius);
+        padding: 6px 8px;
         cursor: pointer;
+        touch-action: manipulation;
       }
-      .example-button:hover { background: var(--bg-soft); color: var(--gap-crimson); }
+      .example-button:hover { background: var(--nav-hover); color: var(--text); }
 
+      /* ---------- About + footer ---------- */
       details.about {
-        margin: 0 20px 12px 20px;
-        padding: 10px 16px;
+        margin: 0 24px 16px;
+        padding: 0 16px 8px;
         background: var(--card);
         border: 1px solid var(--border);
-        border-radius: 6px;
-        font-size: 14px;
+        border-radius: var(--radius);
+        font-size: 0.95rem;
       }
-      details.about summary { cursor: pointer; font-weight: 700; }
-      details.about[open] summary { margin-bottom: 8px; }
-      details.about p { margin: 8px 0; line-height: 1.45; max-width: 95ch; }
-
+      details.about summary {
+        min-height: var(--tap);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 700;
+        list-style: none;
+      }
+      details.about summary::-webkit-details-marker { display: none; }
+      details.about summary::after {
+        content: "";
+        margin-left: auto;
+        width: 8px; height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+        transition: transform 0.15s;
+      }
+      details.about[open] > summary::after { transform: rotate(-135deg); }
+      details.about p { margin: 8px 0; max-width: 75ch; }
       footer.site-footer {
-        padding: 12px 20px;
-        background: var(--card);
         border-top: 1px solid var(--border);
-        font-size: 13px;
+        padding: 8px 24px calc(8px + env(safe-area-inset-bottom));
+        font-size: 0.9rem;
         color: var(--text-soft);
       }
+      footer.site-footer ul { display: flex; flex-wrap: wrap; gap: 0 8px; list-style: none; margin: 0; padding: 0; }
+      footer.site-footer a { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 8px; }
 
-      @media (max-width: 820px) {
-        main { flex-direction: column; }
-        #terminal-wrap { height: 60vh; }
-        #side-panel { width: auto; }
+      /* Medium windows (901-1150px): slimmer sidebar and Files panel so the
+         terminal keeps a usable width. */
+      @media (min-width: 901px) and (max-width: 1150px) {
+        :root { --sidebar-w: 190px; }
+        #side-panel { width: 230px; }
+        .site-logo { height: 56px; }
       }
+
+      /* PHONES AND NARROW WINDOWS (max 900px).
+         The grid becomes: row 1 = logo | theme switch | hamburger, row 2 = the menu
+         (hidden until opened), row 3 = content (.app, whose height is the
+         window minus the header, so the terminal still fits on screen). .side-bar uses
+         display: contents so the logo, hamburger and menu become direct
+         grid items. body::before paints the header background. Safe-area
+         insets keep content clear of notches in landscape. */
+      /* ---------- Phones and narrow windows ---------- */
+      @media (max-width: 900px) {
+        body {
+          --hdr: calc(68px + env(safe-area-inset-top));
+          grid-template-columns: 1fr auto auto;
+          grid-template-rows: auto auto 1fr;
+          grid-template-areas: "logo tools menu" "nav nav nav" "main main main";
+          padding-top: env(safe-area-inset-top);
+        }
+        body::before {
+          content: "";
+          grid-area: 1 / 1 / 2 / -1;
+          background: var(--side-bg);
+          border-bottom: 1px solid var(--gap-crimson);
+        }
+        .side-bar { display: contents; }
+        .logo-link, .menu-btn, #site-nav { position: relative; }
+        .logo-link {
+          grid-area: logo;
+          align-self: center;
+          margin: 8px 8px 8px max(12px, env(safe-area-inset-left));
+          justify-self: start;
+        }
+        .logo-link { min-width: 0; }
+        .site-logo { height: 52px; max-width: 100%; object-fit: contain; }
+        /* On phones the app area is AT LEAST window-high but may grow: with big
+           text sizes or the long error notice, the terminal, key bar and panels
+           must never spill out over the footer. */
+        .app { height: auto; min-height: calc(100vh - var(--hdr)); min-height: calc(100dvh - var(--hdr)); }
+        .sidebar-toggle { display: none !important; }
+        .top-bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 6px 12px;
+          gap: 8px;
+          min-width: 0;
+        }
+        .top-text {
+          flex: 1 1 auto;
+          min-width: 0;
+          overflow: hidden;
+        }
+        .top-title {
+          margin: 0;
+          font-size: clamp(0.92rem, 3.8vw, 1.05rem);
+          line-height: 1.2;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .top-spacer { display: none; }
+        .top-bar .gap-button {
+          flex: 0 0 auto;
+          padding: 0 10px;
+          font-size: 0.85rem;
+          min-height: 36px;
+          height: 36px;
+          white-space: nowrap;
+        }
+        .seg.seg-side {
+          display: inline-flex;
+          grid-area: tools;
+          align-self: center;
+          position: relative;
+          margin: 0 4px;
+          margin-left: 4px;
+        }
+        .tagline { display: none; }   /* phones: the About box below has this sentence */
+        .menu-btn {
+          grid-area: menu;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          align-self: center;
+          width: var(--tap);
+          height: var(--tap);
+          margin: 0 max(12px, env(safe-area-inset-right)) 0 4px;
+          color: var(--text);
+          background: transparent;
+          border: none;
+          border-radius: var(--radius);
+          cursor: pointer;
+        }
+        .menu-btn svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+        #site-nav {
+          grid-area: nav;
+          display: none;
+          background: var(--side-bg);
+          border-bottom: 1px solid var(--gap-crimson);
+          padding: 4px max(12px, env(safe-area-inset-left)) 12px;
+        }
+        #site-nav[data-open="true"] { display: block; }
+        .notice { margin: 6px 12px 0; }
+        main { flex: 1 0 auto; flex-direction: column; padding: 8px 12px 12px; gap: 8px; }
+        #terminal-wrap { min-height: 160px; }
+        #terminal { inset: 4px; }
+        #side-panel { width: auto; flex: none; max-height: 42%; }
+        details.about { margin: 0 12px 16px; }
+        footer.site-footer { padding-left: 12px; padding-right: 12px; }
+      }
+      /* Left/right safe-area padding (notches, landscape). */
+      @media (max-width: 900px) {
+        body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+      }
+      /* Landscape phones (short and not very wide): a slimmer header, and the
+         panels go back beside the terminal so the terminal keeps its height. */
+      @media (max-width: 900px) and (orientation: landscape) and (max-height: 600px) {
+        body { --hdr: calc(48px + env(safe-area-inset-top)); }
+        .site-logo { height: 36px; }
+        .logo-link { margin-top: 6px; margin-bottom: 6px; }
+        .app { min-height: 300px; }
+        main { flex-direction: row; }
+        #side-panel { width: 220px; max-height: none; flex: none; }
+      }
+      /* Accessibility: no animation for people who ask for less motion. */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { transition: none !important; animation: none !important; }
+      }
+      /* Accessibility: Windows High Contrast / forced colours. Borders keep
+         controls visible when background colours are overridden. */
+      @media (forced-colors: active) {
+        .gap-button, .icon-button, details.panel, .notice, .seg { border: 1px solid CanvasText; }
+        .seg button[aria-pressed="true"] { outline: 2px solid Highlight; }
+        :focus-visible { outline-color: Highlight; }
+      }
+      /* Printing: hide navigation and controls. */
+      @media print { .side-bar, .top-bar, footer.site-footer, .key-bar { display: none; } body { display: block; } }
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <a href="https://www.gap-system.org" title="www.gap-system.org">
-        <img class="site-logo" src="vendor/gaplogo.svg"
-             alt="GAP — Groups, Algorithms, Programming">
+    <!-- Skip link: first focusable element on the page (keyboard users). -->
+    <a class="skip-link" href="#terminal-wrap">Skip to the GAP terminal</a>
+
+    <!-- SIDEBAR (desktop) / HEADER (phones): logo, hamburger, menu.
+         The logo link goes to the main site and is always top-left. -->
+    <div class="side-bar">
+      <a class="logo-link" href="https://www.gap-system.org"
+         aria-label="GAP — Groups, Algorithms, Programming: home page">
+        <img class="site-logo logo-light" src="vendor/gaplogo.svg" alt="GAP" width="190" height="76">
+        <img class="site-logo logo-dark" src="vendor/gaplogo-dark.svg" alt="" width="190" height="76"
+             onerror="document.documentElement.classList.add('no-dark-logo')">
       </a>
-      <div class="site-title">
-        <h1>GAP in your browser</h1>
-        <p>A WebAssembly build of GAP running entirely in your browser —
-           no installation. For real work, performance and memory,
-           <a href="https://www.gap-system.org/install/">install GAP</a>.</p>
+      <!-- Theme switch: bottom of the sidebar on desktop, header row on
+           phones. The theme script drives it via data-theme-choice. -->
+      <div class="seg seg-side" role="group" aria-label="Colour theme">
+        <button type="button" data-theme-choice="light" aria-pressed="false" aria-label="Light" title="Light">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button type="button" data-theme-choice="auto" aria-pressed="false" aria-label="Automatic (follow system)" title="Automatic (follow system)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+        </button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false" aria-label="Dark" title="Dark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
       </div>
-      <div class="header-spacer"></div>
-      <button id="restart" class="gap-button"
-              title="Stop GAP and start a fresh session (the only way to interrupt a runaway computation)">
-        Restart GAP
+      <!-- Phones only: toggles the menu. aria-expanded is kept in sync by the
+           menu script. -->
+      <button id="menu-btn" type="button" class="menu-btn" aria-expanded="false"
+              aria-controls="site-nav" aria-label="Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
-    </header>
-
-    <div id="loading" class="notice">Loading GAP…</div>
-
-    <div id="unsupported" class="notice">
-      This page needs <code>SharedArrayBuffer</code>, which is only
-      available when the page is served with the headers
-      <code>Cross-Origin-Opener-Policy: same-origin</code> and
-      <code>Cross-Origin-Embedder-Policy: require-corp</code>. The
-      bundled service worker handles this on hosts where you can't set
-      headers (e.g. GitHub Pages) — its first activation needs a reload,
-      so if you see this message, try reloading once. For local hosting
-      use <code>etc/emscripten/serve.py</code>.
+      <!-- Main menu. Only verified links are listed; add the main site's other
+           entries here. The GitHub link opens in a new tab and says so for
+           screen readers. -->
+      <nav id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="https://www.gap-system.org/install/">Installation</a></li>
+          <li><a href="https://www.gap-system.org/doc/">Documentation</a></li>
+          <li><a href="https://www.gap-system.org/packages/">GAP Packages</a></li>
+          <li><a href="https://www.gap-system.org/logo/">The GAP Logo</a></li>
+          <li><a href="https://github.com/gap-system/gap" target="_blank" rel="noopener">GAP on GitHub
+            <span aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <!-- Add the remaining www.gap-system.org menu entries here. -->
+        </ul>
+      </nav>
     </div>
 
-    <main>
-      <div id="terminal-wrap">
-        <div id="terminal"></div>
+    <!-- CONTENT COLUMN: .app is exactly window-high (terminal always fits);
+         the About box and footer follow below it. -->
+    <div class="content">
+     <div class="app">
+      <!-- TOP BAR: title, subtitle and Restart GAP. (Theme switch and GitHub
+           link live in the sidebar.) #theme-status announces theme changes. -->
+      <div class="top-bar">
+        <button id="sidebar-toggle" type="button" class="sidebar-toggle" aria-expanded="false" aria-controls="site-nav" title="Expand navigation sidebar (Ctrl+B)">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          <span class="visually-hidden">Toggle sidebar</span>
+        </button>
+        <div class="top-text">
+          <h1 class="top-title"><span class="gap">GAP</span> in your browser</h1>
+          <p class="tagline">A WebAssembly build of GAP running entirely in your
+            browser — no installation. For real work, performance and memory,
+            <a href="https://www.gap-system.org/install/">install GAP</a>.</p>
+        </div>
+        <span class="top-spacer"></span>
+        <button id="restart" type="button" class="gap-button"
+                title="Stop GAP and start a fresh session (the only way to interrupt a runaway computation)"
+                aria-describedby="restart-desc">
+          Restart GAP
+        </button>
+        <span id="theme-status" class="visually-hidden" role="status" aria-live="polite"></span>
+        <span id="restart-desc" hidden>Stops GAP and starts a fresh session. This is the only way to interrupt a running computation.</span>
       </div>
 
-      <aside id="side-panel">
-        <section class="panel">
-          <h2>Files</h2>
-          <button id="upload-button" class="gap-button">⬆ Upload file…</button>
-          <input id="upload-input" type="file" multiple hidden>
-          <p id="files-empty">Files you upload, or create from GAP (e.g.
-            with <code>PrintTo</code> or <code>LogTo</code>), appear
-            here.</p>
-          <ul id="file-list"></ul>
-          <p class="hint">↳ inserts <code>Read("file");</code> at the
-            prompt (press Enter to run it); ⬇ downloads the file. New
-            files show up when GAP next waits for input. Files live only
-            in this session — download anything you want to keep.</p>
-        </section>
+      <!-- Status notices. IDs and the role="status"/"alert" are used by
+           gap-ui.js; keep them. -->
+      <div id="loading" class="notice" role="status" aria-live="polite">Loading GAP…</div>
 
-        <section class="panel">
-          <h2>Examples</h2>
-          <ul id="example-list"></ul>
-          <p class="hint">Inserts the command at the prompt; press Enter
-            to run it.</p>
-        </section>
-      </aside>
-    </main>
+      <div id="unsupported" class="notice" role="alert">
+        This page needs <code>SharedArrayBuffer</code>, which is only
+        available when the page is served with the headers
+        <code>Cross-Origin-Opener-Policy: same-origin</code> and
+        <code>Cross-Origin-Embedder-Policy: require-corp</code>. The
+        bundled service worker handles this on hosts where you can't set
+        headers (e.g. GitHub Pages) — its first activation needs a reload,
+        so if you see this message, try reloading once. For local hosting
+        use <code>etc/emscripten/serve.py</code>.
+      </div>
 
-    <details class="about">
-      <summary>What is this? &middot; Licensing</summary>
-      <p>
-        <a href="https://www.gap-system.org">GAP</a> is a system for
-        computational discrete algebra, with particular emphasis on
-        computational group theory. This page is a self-contained
-        WebAssembly build, served as a static site and run inside a
-        Web Worker; you interact with it through an
-        <a href="https://github.com/mame/xterm-pty">xterm-pty</a>
-        terminal.
-      </p>
-      <p>
-        To get started, try <code>1+1;</code>,
-        <code>Factorial(20);</code>, or <code>SymmetricGroup(5);</code> —
-        or use the examples menu. The full
-        <a href="https://www.gap-system.org/doc/">GAP manuals</a> apply,
-        with some caveats: some packages won't load (anything that needs
-        a native compiler or system library), working memory is capped,
-        performance is reduced compared to a native build, and a running
-        computation cannot be interrupted — the Restart button is the
-        only way out of a loop.
-      </p>
-      <p>
-        Files downloaded on first visit are cached in your browser's
-        IndexedDB, so subsequent visits start much faster. Clear the
-        site data to reset the cache. Files you create in a session are
-        <em>not</em> kept across reloads or restarts beyond the panel's
-        download cache.
-      </p>
-      <p>
-        GAP is free software, distributed under the
-        <a href="LICENSE">GNU General Public License</a> (version 2 or
-        later). See the <a href="COPYRIGHT">copyright notice</a> for
-        the full statement. The Ubuntu fonts are distributed under the
-        <a href="vendor/fonts/UFL.txt">Ubuntu Font Licence</a>.
-      </p>
-    </details>
+      <noscript>
+        <div class="notice" style="color:var(--err)">GAP in your browser needs JavaScript. Please enable it and reload.</div>
+      </noscript>
 
-    <footer class="site-footer">
-      <a href="https://www.gap-system.org">GAP main site</a> ·
-      <a href="https://www.gap-system.org/doc/">Documentation</a> ·
-      <a href="https://www.gap-system.org/install/">Installation</a> ·
-      <a href="https://github.com/gap-system/gap">Source on GitHub</a> ·
-      <a href="https://www.gap-system.org/copyright/">Copyright</a> ·
-      <a href="#" id="reset-site"
-         title="Discard the browser's cached GAP files and service worker, then reload — use this if the page is stuck or broken">Reset
-        cached data</a>
-    </footer>
+      <!-- MAIN: terminal (left) and Files/Examples panels (right). -->
+      <main id="main">
+        <div class="term-col">
+          <div id="terminal-wrap" role="region" aria-label="GAP terminal">
+            <div id="terminal"></div>
+            <div id="drop-overlay" class="drop-overlay" aria-hidden="true">
+              <div class="drop-message">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                <span>Drop files to load into GAP</span>
+                <span class="drop-sub">Uploads to session and inserts Read("…");</span>
+              </div>
+            </div>
+          </div>
+          <!-- On-screen keys for touch devices (CSS shows them only there). -->
+          <div class="key-bar" id="key-bar" role="toolbar" aria-label="Terminal keys">
+            <button type="button" class="key-enter" data-key="Enter" aria-label="Enter">Enter ↵</button>
+            <button type="button" data-key="Tab" aria-label="Tab">Tab</button>
+            <button type="button" data-key="ArrowUp" aria-label="Previous command (up arrow)">↑</button>
+            <button type="button" data-key="ArrowDown" aria-label="Next command (down arrow)">↓</button>
+            <button type="button" data-key="ArrowLeft" aria-label="Left arrow">←</button>
+            <button type="button" data-key="ArrowRight" aria-label="Right arrow">→</button>
+          </div>
+        </div>
 
+        <!-- Side panels. gap-ui.js fills #file-list and #example-list. -->
+        <aside id="side-panel" aria-label="Files and examples">
+          <details class="panel" id="files-panel" open>
+            <summary>Files</summary>
+            <div class="drop-zone" id="drop-zone">
+              <button id="upload-button" type="button" class="gap-button"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg> Upload file…</button>
+              <button id="export-pr-btn" type="button" class="gap-button" title="Download modified PR files (index.html, gap-ui.js, vendor/gaplogo-dark.svg) as a ZIP archive"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Export PR (.zip)</button>
+              <span class="drop-hint">or drop .g files here</span>
+            </div>
+            <input id="upload-input" type="file" multiple hidden>
+            <p id="files-empty">Files you upload, or create from GAP (e.g.
+              with <code>PrintTo</code> or <code>LogTo</code>), appear
+              here.</p>
+            <ul id="file-list" aria-label="Files in this session"></ul>
+            <p class="hint"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v7a3 3 0 0 0 3 3h11M15 10l4 4-4 4"/></svg> inserts <code>Read("file");</code> at the
+              prompt (press Enter to run it); <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg> downloads the file. New
+              files show up when GAP next waits for input. Files live only
+              in this session — download anything you want to keep.</p>
+          </details>
+
+          <details class="panel" id="examples-panel">
+            <summary>Examples</summary>
+            <ul id="example-list" aria-label="Example commands"></ul>
+            <p class="hint">Inserts the command at the prompt; press Enter
+              to run it.</p>
+          </details>
+        </aside>
+      </main>
+     </div>
+
+      <!-- About / licensing text (collapsible). -->
+      <details class="about">
+        <summary>What is this? Licensing</summary>
+        <p>
+          A WebAssembly build of GAP running entirely in your browser —
+          no installation. For real work, performance and memory,
+          <a href="https://www.gap-system.org/install/">install GAP</a>.
+        </p>
+        <p>
+          <a href="https://www.gap-system.org">GAP</a> is a system for
+          computational discrete algebra, with particular emphasis on
+          computational group theory. This page is a self-contained
+          WebAssembly build, served as a static site and run inside a
+          Web Worker; you interact with it through an
+          <a href="https://github.com/mame/xterm-pty">xterm-pty</a>
+          terminal.
+        </p>
+        <p>
+          To get started, try <code>1+1;</code>,
+          <code>Factorial(20);</code>, or <code>SymmetricGroup(5);</code>,
+          or use the examples menu. The full
+          <a href="https://www.gap-system.org/doc/">GAP manuals</a> apply,
+          with some caveats: some packages won't load (anything that needs
+          a native compiler or system library), working memory is capped,
+          performance is reduced compared to a native build, and a running
+          computation cannot be interrupted. The Restart button is the
+          only way out of a loop.
+        </p>
+        <p>
+          Files downloaded on first visit are cached in your browser's
+          IndexedDB, so subsequent visits start much faster. Clear the
+          site data to reset the cache. Files you create in a session are
+          <em>not</em> kept across reloads or restarts beyond the panel's
+          download cache.
+        </p>
+        <p>
+          GAP is free software, distributed under the
+          <a href="LICENSE">GNU General Public License</a> (version 2 or
+          later). See the <a href="COPYRIGHT">copyright notice</a> for
+          the full statement. The Ubuntu fonts are distributed under the
+          <a href="vendor/fonts/UFL.txt">Ubuntu Font Licence</a>.
+        </p>
+      </details>
+
+      <!-- Footer links. #reset-site is handled by gap-ui.js. -->
+      <footer class="site-footer">
+        <ul>
+          <li><a href="https://www.gap-system.org">GAP main site</a></li>
+          <li><a href="https://www.gap-system.org/doc/">Documentation</a></li>
+          <li><a href="https://www.gap-system.org/install/">Installation</a></li>
+          <li><a href="https://github.com/gap-system/gap">Source on GitHub</a></li>
+          <li><a href="https://www.gap-system.org/copyright/">Copyright</a></li>
+          <li><a href="#" id="reset-site"
+                 title="Discard the browser's cached GAP files and service worker, then reload — use this if the page is stuck or broken">Reset cached data</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <script>
+      // THEME SWITCH: light / auto (system) / dark.
+      // - The choice is stored in localStorage as "gap-theme"; "auto" removes
+      //   the key. The <head> script applies it before first paint.
+      // - Sets/removes data-theme on <html>; the CSS does the rest.
+      // - Also updates <meta name="theme-color"> and announces the change.
+      (function () {
+        var root = document.documentElement;
+        var buttons = document.querySelectorAll("[data-theme-choice]");
+        var status = document.getElementById("theme-status");
+        var metas = document.querySelectorAll('meta[name="theme-color"]');
+        var original = Array.prototype.map.call(metas, function (m) { return m.content; });
+        var names = { auto: "Automatic", light: "Light", dark: "Dark" };
+
+        function current() {
+          var t = root.getAttribute("data-theme");
+          return t === "light" || t === "dark" ? t : "auto";
+        }
+        function render(announce) {
+          var t = current();
+          buttons.forEach(function (b) {
+            b.setAttribute("aria-pressed", String(b.dataset.themeChoice === t));
+          });
+          metas.forEach(function (m, i) {
+            m.content = t === "auto" ? original[i] : (t === "dark" ? "#26252a" : "#f5f5f5");
+          });
+          if (announce) status.textContent = "Colour theme: " + names[t];
+        }
+        buttons.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = b.dataset.themeChoice;
+            if (next === "auto") root.removeAttribute("data-theme");
+            else root.setAttribute("data-theme", next);
+            try {
+              if (next === "auto") localStorage.removeItem("gap-theme");
+              else localStorage.setItem("gap-theme", next);
+            } catch (e) { /* storage blocked: choice lasts for this page view */ }
+            render(true);
+          });
+        });
+        render(false);
+      })();
+    </script>
+    <script>
+      // MENU BUTTON (phones): shows / hides the navigation via the
+      // data-open attribute (CSS) and keeps aria-expanded in sync. Escape
+      // closes it and returns focus to the button.
+      (function () {
+        var btn = document.getElementById("menu-btn");
+        var nav = document.getElementById("site-nav");
+        function set(open) {
+          nav.setAttribute("data-open", String(open));
+          btn.setAttribute("aria-expanded", String(open));
+        }
+        btn.addEventListener("click", function () {
+          set(nav.getAttribute("data-open") !== "true");
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && nav.getAttribute("data-open") === "true") { set(false); btn.focus(); }
+        });
+      })();
+    </script>
+    <script>
+      // ON-SCREEN KEYS: send a key press to the terminal's hidden input
+      // (xterm's helper textarea), exactly as a physical key would.
+      // Why this way: the xterm object lives inside gap-ui.js, so the page
+      // dispatches a keydown on the textarea. keyCode/which are set
+      // explicitly because xterm reads them and browsers ignore them in the
+      // KeyboardEvent constructor. pointerdown is cancelled so the terminal
+      // keeps focus (the phone keyboard stays open); click handles keyboard
+      // and screen-reader activation. If xterm's internals change, this is
+      // the place to look; exposing the terminal from gap-ui.js and calling
+      // xterm.input("\r") would be a sturdier alternative.
+      (function () {
+        var codes = { Enter: 13, Tab: 9, ArrowLeft: 37, ArrowUp: 38,
+                      ArrowRight: 39, ArrowDown: 40 };
+        function sendKey(key) {
+          var ta = document.querySelector("#terminal .xterm-helper-textarea");
+          if (!ta) return;
+          ta.focus();
+          var ev = new KeyboardEvent("keydown", {
+            key: key, code: key, bubbles: true, cancelable: true
+          });
+          Object.defineProperty(ev, "keyCode", { get: function () { return codes[key]; } });
+          Object.defineProperty(ev, "which", { get: function () { return codes[key]; } });
+          ta.dispatchEvent(ev);
+        }
+        document.querySelectorAll("#key-bar button").forEach(function (b) {
+          var done = false;
+          b.addEventListener("pointerdown", function (e) { e.preventDefault(); });
+          b.addEventListener("pointerup", function () { done = true; sendKey(b.dataset.key); });
+          b.addEventListener("click", function () {
+            if (!done) sendKey(b.dataset.key);
+            done = false;
+          });
+        });
+      })();
+    </script>
+    <script>
+      // SIDE PANELS (Files, Examples) start collapsed on every screen size:
+      // the <details> elements have no "open" attribute.
+      // TERMINAL REFIT. gap-ui.js re-fits the terminal only on window
+      // "resize". The terminal's frame can also change size without that:
+      // when the "Loading GAP..." notice disappears, or when a side panel
+      // opens on a phone. A ResizeObserver turns those changes into a window
+      // "resize" event (at most one per frame), so the terminal always
+      // matches its frame.
+      (function () {
+        var wrap = document.getElementById("terminal-wrap");
+        if (!wrap || !("ResizeObserver" in window)) return;
+        var queued = false;
+        new ResizeObserver(function () {
+          if (queued) return;
+          queued = true;
+          requestAnimationFrame(function () {
+            queued = false;
+            window.dispatchEvent(new Event("resize"));
+          });
+        }).observe(wrap);
+      })();
+    </script>
+    <script>
+      // SIDEBAR TOGGLE (desktop): collapses or expands the left navigation
+      // sidebar to give maximum screen width to the terminal.
+      (function () {
+        var btn = document.getElementById("sidebar-toggle");
+        if (!btn) return;
+        var root = document.documentElement;
+        function updateBtn(isCollapsed) {
+          btn.setAttribute("aria-expanded", String(!isCollapsed));
+          btn.setAttribute("title", isCollapsed ? "Expand sidebar (Ctrl+B)" : "Collapse sidebar (Ctrl+B)");
+        }
+        function toggle() {
+          var isCollapsed = root.getAttribute("data-sidebar") === "collapsed";
+          if (isCollapsed) {
+            root.removeAttribute("data-sidebar");
+            try { localStorage.setItem("gap-sidebar-desktop", "expanded"); } catch (e) {}
+          } else {
+            root.setAttribute("data-sidebar", "collapsed");
+            try { localStorage.setItem("gap-sidebar-desktop", "collapsed"); } catch (e) {}
+          }
+          updateBtn(!isCollapsed);
+          window.dispatchEvent(new Event("resize"));
+        }
+        btn.addEventListener("click", toggle);
+        updateBtn(root.getAttribute("data-sidebar") === "collapsed");
+        document.addEventListener("keydown", function (e) {
+          if ((e.ctrlKey || e.metaKey) && (e.key === "b" || e.key === "B")) {
+            e.preventDefault();
+            toggle();
+          }
+        });
+      })();
+    </script>
     <script src="vendor/xterm.min.js"></script>
     <script src="vendor/xterm-addon-fit.min.js"></script>
     <script src="vendor/xterm-pty/index.js"></script>

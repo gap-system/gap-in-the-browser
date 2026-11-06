@@ -217,15 +217,17 @@ function renderFiles() {
 
     const insertB = document.createElement("button");
     insertB.className = "icon-button";
-    insertB.textContent = "↳";
+    insertB.innerHTML = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v7a3 3 0 0 0 3 3h11M15 10l4 4-4 4"/></svg>';
+    insertB.setAttribute("aria-label", "Insert Read command for " + path);
     insertB.title = "Insert Read(" + gapQuote(path) + "); at the prompt" +
       (entry.status === "previous" ? " (re-uploads the file first)" : "");
     insertB.addEventListener("click", () => insertEntry(path));
 
     const downloadB = document.createElement("button");
     downloadB.className = "icon-button";
-    downloadB.textContent = "⬇";
+    downloadB.innerHTML = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>';
     downloadB.title = "Download " + path;
+    downloadB.setAttribute("aria-label", "Download " + path);
     downloadB.addEventListener("click", () => downloadEntry(path));
 
     const text = document.createElement("div");
@@ -236,7 +238,29 @@ function renderFiles() {
   }
 }
 
+// Upload via the "Upload file..." button:
 uploadBtn.addEventListener("click", () => uploadInput.click());
+
+// Export PR files (.zip) via client-side Blob:
+const exportPrBtn = document.getElementById("export-pr-btn");
+if (exportPrBtn) {
+  exportPrBtn.addEventListener("click", async () => {
+    try {
+      const res = await fetch("gap-pr-files.zip");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "gap-pr-files.zip";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
+    } catch (err) {
+      console.error("Export download failed", err);
+    }
+  });
+}
 uploadInput.addEventListener("change", async () => {
   const files = [];
   for (const f of uploadInput.files) {
@@ -247,7 +271,90 @@ uploadInput.addEventListener("change", async () => {
     files.push({ name: name, data: data });
   }
   uploadInput.value = "";
-  if (files.length > 0) sendFiles(files);
+  if (files.length > 0) {
+    // Ensure the Files panel is visible to see the uploaded file
+    const fp = document.getElementById("files-panel");
+    if (fp) fp.open = true;
+    await sendFiles(files);
+    // Convenience for students: if uploading a single assignment file (e.g. lab1.g),
+    // insert Read("lab1.g"); at prompt so they just hit Enter to run it.
+    if (files.length === 1) {
+      insertAtPrompt("Read(" + gapQuote(files[0].name) + ");");
+    }
+  }
+});
+
+// ---------------------------------------------------------------------
+// Drag-and-drop file upload:
+// Allows users to drag a .g script from their computer and drop it
+// anywhere on the terminal or the page.
+//
+// Implementation notes:
+// 1. dragDepth counter: prevents child-element enter/leave events from
+//    causing the drop overlay to flicker.
+// 2. #drop-overlay on #terminal-wrap: provides visual confirmation during drag.
+// 3. Drop action: transfers bytes into GAP's virtual filesystem via sendFiles(),
+//    opens the Files panel, and inserts Read("file"); at the prompt if single file.
+const dropOverlay = document.getElementById("drop-overlay");
+const filesPanelEl = document.getElementById("files-panel");
+let dragDepth = 0;
+
+function isFileDrag(e) {
+  if (!e.dataTransfer || !e.dataTransfer.types) return false;
+  return Array.from(e.dataTransfer.types).includes("Files");
+}
+
+window.addEventListener("dragenter", (e) => {
+  if (!isFileDrag(e)) return;
+  e.preventDefault();
+  dragDepth++;
+  if (dropOverlay) dropOverlay.classList.add("active");
+  if (filesPanelEl) filesPanelEl.classList.add("drag-over");
+});
+
+window.addEventListener("dragover", (e) => {
+  if (!isFileDrag(e)) return;
+  e.preventDefault();
+  e.dataTransfer.dropEffect = "copy";
+});
+
+window.addEventListener("dragleave", (e) => {
+  if (!isFileDrag(e)) return;
+  e.preventDefault();
+  dragDepth--;
+  if (dragDepth <= 0) {
+    dragDepth = 0;
+    if (dropOverlay) dropOverlay.classList.remove("active");
+    if (filesPanelEl) filesPanelEl.classList.remove("drag-over");
+  }
+});
+
+window.addEventListener("drop", async (e) => {
+  if (!isFileDrag(e)) return;
+  e.preventDefault();
+  dragDepth = 0;
+  if (dropOverlay) dropOverlay.classList.remove("active");
+  if (filesPanelEl) filesPanelEl.classList.remove("drag-over");
+
+  const dt = e.dataTransfer;
+  if (!dt || !dt.files || dt.files.length === 0) return;
+
+  const files = [];
+  for (const f of dt.files) {
+    const name = f.name.split(/[/\\]/).pop();
+    if (name === "") continue;
+    const data = new Uint8Array(await f.arrayBuffer());
+    files.push({ name: name, data: data });
+  }
+
+  if (files.length > 0) {
+    if (filesPanelEl) filesPanelEl.open = true;
+    await sendFiles(files);
+    // Single file dropped: paste Read("..."); so student can immediately press Enter.
+    if (files.length === 1) {
+      insertAtPrompt("Read(" + gapQuote(files[0].name) + ");");
+    }
+  }
 });
 
 // ---------------------------------------------------------------------
